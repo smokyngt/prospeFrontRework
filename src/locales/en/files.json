@@ -1,0 +1,20 @@
+{
+  "actions": {
+    "download": "Download"
+  },
+  "viewer": {
+    "close": "Close",
+    "exit_fullscreen": "Exit fullscreen",
+    "fullscreen": "Fullscreen",
+    "next_page": "Next page",
+    "page": "Page {{current}} of {{total}}",
+    "page_count": "{{count}} page",
+    "previous_page": "Previous page",
+    "rotate": "Rotate",
+    "search": "Search match",
+    "zoom_in": "Zoom in",
+    "zoom_out": "Zoom out",
+    "zoom": "Zoom",
+    "file_details": "File details"
+  }
+}

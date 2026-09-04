@@ -1,0 +1,280 @@
+{
+  "actions": {
+    "cancel": "Annuler",
+    "send": "Envoyer le message"
+  },
+  "error": {
+    "edit_failed": "Échec de l'enregistrement de la modification. Veuillez réessayer."
+  },
+  "store": {
+    "select": "Sélectionner un store",
+    "search": "Rechercher des stores...",
+    "scope_hint": "Rechercher dans",
+    "unknown": "Store inconnu",
+    "empty": "Aucun store disponible",
+    "empty_hint": "Créez un store pour commencer à discuter",
+    "no_description": "Prêt à discuter"
+  },
+  "citations": {
+    "confidence_label": "Confiance",
+    "open_in_document": "Voir dans le document",
+    "page": "Page {{number}}",
+    "page_short": "P{{number}}",
+    "pages": "Pages {{pages}}",
+    "reference": "Réf {{index}}",
+    "retrieval_score_label": "Récupération",
+    "sources": "{{count}} sources"
+  },
+  "composer": {
+    "shortcut_hint": "Entrée envoie, Maj+Entrée saute une ligne"
+  },
+  "date": {
+    "older": "Plus ancien",
+    "previous_30_days": "30 derniers jours",
+    "previous_7_days": "7 derniers jours",
+    "today": "Aujourd'hui",
+    "yesterday": "Hier"
+  },
+  "empty": {
+    "description": "Envoyez un message pour commencer à discuter avec Prosperify",
+    "title": "Démarrer une conversation"
+  },
+  "hallucination": {
+    "confidence": "Confiance : {{value}}%",
+    "detected": "Inexactitude potentielle détectée",
+    "max_score": "max {{value}}%",
+    "no_source": "Aucun passage source pour cette affirmation",
+    "risk_label": "Risque",
+    "summary": "{{count}} inexactitude potentielle",
+    "summary_other": "{{count}} inexactitudes potentielles"
+  },
+  "input_placeholder": "Tapez votre message...",
+  "jump_to_latest": "Aller au plus récent",
+  "message": {
+    "agent": "Prosperify",
+    "you": "Vous"
+  },
+  "new_chat": "Nouveau chat",
+  "clarify": {
+    "pick": "Choisissez une option",
+    "other_placeholder": "Saisissez votre réponse..."
+  },
+  "reasoning": {
+    "hide": "Masquer la reflexion",
+    "show": "Afficher la reflexion",
+    "steps": "Étapes de raisonnement",
+    "tool_error": "Erreur : {{error}}",
+    "tools": "Appels d'outils"
+  },
+  "start_new_chat": "Démarrer une nouvelle conversation",
+  "feedback": {
+    "failed": "Impossible de soumettre le retour.",
+    "nudge": "Cela vous a-t-il été utile ?",
+    "popover": {
+      "title": "Qu'est-ce qui n'allait pas ?",
+      "submit": "Envoyer",
+      "comment_placeholder": "Facultatif : dites-nous en plus..."
+    },
+    "reasons": {
+      "inaccurate": "Inexact",
+      "incomplete": "Incomplet",
+      "irrelevant": "Non pertinent",
+      "outdated": "Obsolète",
+      "other": "Autre"
+    }
+  },
+  "status": {
+    "actions": {
+      "analyzing": "Analyse des documents...",
+      "block": "Impossible de traiter...",
+      "clarify": "Clarification en cours...",
+      "compressing": "Optimisation du contexte...",
+      "generate": "Génération de la réponse...",
+      "generating": "Génération de la réponse...",
+      "steer": "Application de votre réorientation...",
+      "ls": "Parcours de l'arborescence...",
+      "clarify_response": "Application de votre sélection...",
+      "retrieved": "Documents récupérés",
+      "screenshot": "Capture d'écran en cours...",
+      "search": "Recherche de documents...",
+      "searching": "Recherche de documents...",
+      "tool_call": "Exécution de l'outil...",
+      "read_file": "Lecture du contenu du fichier..."
+    },
+    "error": "Erreur de flux",
+    "error_title": "Impossible de répondre en raison d'une erreur",
+    "interrupted": "La réponse a été interrompue. Vous pouvez régénérer pour réessayer.",
+    "interrupted_title": "Réponse interrompue",
+    "first_token_latency": "Premier token en {{seconds}}s",
+    "no_sources_error": "Aucun contenu suffisamment pertinent n'a été trouvé dans vos documents. Reformulez la question, appliquez des filtres ou ajoutez des fichiers.",
+    "reasoning": "Raisonnement",
+    "response_unrecoverable": "Cette réponse n'a pas pu être récupérée en raison d'un problème de données.",
+    "retrieval_queries": "Requêtes",
+    "entities": "Entités",
+    "orchestration": "Orchestration",
+    "orchestration_hide": "Masquer l'orchestration",
+    "orchestration_show": "Afficher l'orchestration",
+    "retry_trace": {
+      "fallback": "Contexte classé utilisé",
+      "missing_ids": "Manquants",
+      "planner_title": "Nouvelle tentative du planificateur",
+      "requested_ids": "Demandés",
+      "retrying": "Nouvelle tentative",
+      "selected_ids": "Sélectionnés",
+      "selection_accepted": "Contexte final sélectionné",
+      "selection_failed": "Sélection du contexte final échouée"
+    },
+    "search_results": {
+      "title": "Documents pertinents",
+      "subtitle": "Organisés par fichier et par page pour retrouver rapidement les meilleurs passages.",
+      "documents": "{{count}} document",
+      "documents_other": "{{count}} documents",
+      "collapsed_title": "{{count}} document récupéré",
+      "collapsed_title_other": "{{count}} documents récupérés",
+      "pages": "{{count}} page",
+      "pages_other": "{{count}} pages",
+      "matches": "{{count}} correspondance",
+      "matches_other": "{{count}} correspondances",
+      "avg_score": "Moy {{score}}%",
+      "top_score": "Confiance {{score}}%",
+      "top_score_short": "Top {{score}}%",
+      "page": "Page {{number}}",
+      "page_unknown": "Page inconnue",
+      "open_page": "Ouvrir",
+      "summary_only": "Résumé des fichiers"
+    },
+    "sending": "Envoi...",
+    "streaming": "Réponse en cours...",
+    "thinking": "Réflexion...",
+    "thought": "Réflexion",
+    "tool_call_details": "Détails de {{name}}",
+    "tool_call_params": "Paramètres :",
+    "tool_call_response": "Réponse :",
+    "verifying_sources": "Vérification des sources...",
+    "waiting_first_token": "En attente du premier token ({{seconds}}s)",
+    "summary": {
+      "done": "Réflexion pendant {{duration}}",
+      "done_untimed": "Trace d'orchestration",
+      "steps": "{{count}} étape",
+      "steps_other": "{{count}} étapes",
+      "title": "Raisonnement et appels d'outils"
+    }
+  },
+  "thread": {
+    "archive": {
+      "action": "Archiver"
+    },
+    "delete": {
+      "confirm": "Supprimer",
+      "description": "Êtes-vous sûr de vouloir supprimer cette conversation ? Cette action est irréversible.",
+      "title": "Supprimer la conversation",
+      "action": "Supprimer la conversation"
+    },
+    "restore": {
+      "action": "Restaurer"
+    },
+    "toast": {
+      "archived": "Conversation archivée",
+      "created": "Conversation créée",
+      "deleted": "Conversation supprimée",
+      "restored": "Conversation restaurée"
+    }
+  },
+  "thread_groups": {
+    "last_week": "7 derniers jours",
+    "older": "Plus ancien",
+    "today": "Aujourd'hui",
+    "yesterday": "Hier"
+  },
+  "stores": {
+    "title": "Stores",
+    "empty": "Aucun store"
+  },
+  "threads": {
+    "active": "Actives",
+    "archived": "Archivées",
+    "close_sidebar": "Masquer les conversations",
+    "empty": "Aucune conversation",
+    "empty_hint": "Sélectionnez un store pour commencer à discuter",
+    "no_archived": "Aucune conversation archivée",
+    "open_sidebar": "Afficher les conversations",
+    "recent": "Conversations récentes"
+  },
+  "chat_upload": {
+    "cancel": "Annuler le téléversement",
+    "cancelled": "Téléversement annulé",
+    "processing": "Traitement des fichiers ({{done}}/{{total}})...",
+    "all_complete": "{{count}} fichier téléversé",
+    "all_complete_other": "{{count}} fichiers téléversés",
+    "to_store": "pour {{name}}",
+    "auto_filtered": "Fichiers ajoutés au contexte du chat",
+    "scope_prompt": "Ajouter les fichiers au contexte du chat ?",
+    "scope_accept": "Oui, cibler ces fichiers",
+    "scope_skip": "Non, rechercher tous les documents",
+    "status": {
+      "uploading": "Téléversement",
+      "loading": "Analyse",
+      "storing": "Stockage",
+      "embedding": "Vectorisation",
+      "indexing": "Indexation",
+      "complete": "Prêt",
+      "error": "Échoué"
+    }
+  },
+  "effort": {
+    "description": "Quantité de travail fournie pour trouver et vérifier les sources.",
+    "level_1": "Minimal",
+    "level_2": "Léger",
+    "level_3": "Équilibré",
+    "level_4": "Approfondi",
+    "level_5": "Exhaustif",
+    "selector": "Effort"
+  },
+  "filter": {
+    "label": "Filtrer",
+    "title": "Filtrer par fichiers et dossiers",
+    "panel_title": "Filtres de recherche",
+    "tab_stores": "Fichiers",
+    "tab_metadata": "Métadonnées",
+    "no_stores": "Sélectionnez un store pour filtrer ses fichiers.",
+    "clear_all": "Tout effacer",
+    "empty": "Aucun fichier ou dossier disponible",
+    "active": "Filtrage :",
+    "items": "éléments",
+    "applied": "Limité à",
+    "file_label": "Fichier : {{name}}",
+    "folder_label": "Dossier : {{name}}"
+  },
+  "stop": "Arrêter",
+  "title": "Chat",
+  "upload": {
+    "attach": "Joindre des fichiers",
+    "accepted_types": "PDF, Word, Excel, PowerPoint, ODT, TXT, CSV, Markdown"
+  },
+  "untitled_chat": "Chat sans titre",
+  "steer": {
+    "label": "Orienter l'agent",
+    "placeholder": "Orienter l'agent...",
+    "queued": "Envoi après l'arrêt...",
+    "active": "Réorientation..."
+  },
+  "version": {
+    "latest": "Dernière",
+    "previous": "Version précédente",
+    "next": "Version suivante"
+  },
+  "waterfall": {
+    "title": "Trace de recherche agentique",
+    "subtitle": "Chronologie des appels d'outils effectués pendant la recherche agentique.",
+    "duration": "{{duration}}",
+    "duration_label": "Durée",
+    "spans_label": "Étapes",
+    "rounds_label": "Cycles",
+    "overview_label": "agentic_search",
+    "stage_reasoning": "Raisonnement",
+    "stage_retrieval": "Recherche",
+    "stage_tools": "Outils",
+    "stage_generation": "Génération",
+    "stage_other": "Autre"
+  }
+}

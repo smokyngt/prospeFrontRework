@@ -1,0 +1,19 @@
+# Prosperify
+> Agent de recherche pour les documents juridiques, financiers et médicaux. Le modèle n'est jamais entraîné sur vos données, réponses citées à la page, déploiement dans votre périmètre.
+
+## Docs
+- Docs: https://prosperify.app
+- Blog: https://prosperify.app/blog
+
+## Features
+- Domaines couverts: droit, comptabilité/finance, santé
+- Réponses sourcées et vérifiables: Chaque réponse conserve le lien avec les extraits documentaires utilisés, page par page
+- Contradictions signalées: Croisement des passages et détection des contradictions entre documents
+- Recherche hybride: Sémantique, lexicale, visuelle et contextuelle dans les documents
+- Accès contrôlés: Permissions par rôle, store, corpus et niveau de confidentialité
+- Déploiement flexible: Cloud européen, hybride ou 100% local (BYOC)
+
+## Structured data
+- Organization: Prosperify (https://prosperify.app)
+- Contact: https://prosperify.app/#contact
+- LinkedIn: https://www.linkedin.com/company/prosperify-ai/

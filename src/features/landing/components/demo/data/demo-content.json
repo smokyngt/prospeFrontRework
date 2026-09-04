@@ -1,0 +1,559 @@
+{
+  "pdf": {
+    "totalPages": 7,
+    "url": "/assets/demo/rapport-dd-projet-helios.pdf"
+  },
+  "files": [
+    {
+      "fileId": "demo-helios",
+      "fileName": "rapport-dd-projet-helios.pdf",
+      "totalPages": 7,
+      "url": "/assets/demo/rapport-dd-projet-helios.pdf",
+      "metadata": {
+        "fileName": "rapport-dd-projet-helios.pdf",
+        "mime": "application/pdf",
+        "pages": "7",
+        "sourceAccess": "Secure workspace",
+        "sourceParser": "pdf text + page preview"
+      }
+    },
+    {
+      "fileId": "demo-annexe-c",
+      "fileName": "annexe-c-contrats-sous-traitance.pdf",
+      "totalPages": 3,
+      "url": "/assets/demo/annexe-c-contrats-sous-traitance.pdf",
+      "metadata": {
+        "fileName": "annexe-c-contrats-sous-traitance.pdf",
+        "mime": "application/pdf",
+        "pages": "3",
+        "sourceAccess": "Secure workspace",
+        "sourceParser": "pdf text + page preview"
+      }
+    }
+  ],
+  "filterMetadata": [
+    {
+      "key": "author",
+      "value": "Cabinet Verrière"
+    },
+    {
+      "key": "date",
+      "value": "2025-03-15"
+    },
+    {
+      "key": "section",
+      "value": "Synthèse exécutive"
+    }
+  ],
+  "stores": [
+    {
+      "id": "store-active",
+      "nameKey": "storeName",
+      "short": "S",
+      "disabled": false,
+      "selected": true
+    },
+    {
+      "id": "store-risk",
+      "nameKey": "risk",
+      "short": "RC",
+      "disabled": true,
+      "selected": false
+    },
+    {
+      "id": "store-legal",
+      "nameKey": "legal",
+      "short": "LR",
+      "disabled": true,
+      "selected": false
+    },
+    {
+      "id": "store-research",
+      "nameKey": "research",
+      "short": "RS",
+      "disabled": true,
+      "selected": false
+    }
+  ],
+  "filterFiles": ["rapport-dd-projet-helios.pdf", "annexe-c-contrats-sous-traitance.pdf"],
+  "filterFolders": [
+    {
+      "disabled": true,
+      "label": "Contracts"
+    },
+    {
+      "disabled": true,
+      "label": "Board memos"
+    }
+  ],
+  "userInitials": "CB",
+  "archivedThreadCount": 2,
+  "orchestrationDelays": [680, 620, 1320, 920, 1200, 980, 1260, 1040, 1380],
+  "citations": [
+    {
+      "confidence": "98%",
+      "fileId": "demo-helios",
+      "fileName": "rapport-dd-projet-helios.pdf",
+      "highlightText": "multiple de 8,0x l'EBITDA normalisé 2025",
+      "id": 1,
+      "page": 2,
+      "quote": "EBITDA normalisé 2025 : 14,2 M€, multiple 8,0x, valeur d'entreprise 113,6 M€."
+    },
+    {
+      "confidence": "95%",
+      "fileId": "demo-helios",
+      "fileName": "rapport-dd-projet-helios.pdf",
+      "highlightText": "Coûts de sous-traitance logistique « ponctuelle »",
+      "id": 2,
+      "page": 5,
+      "quote": "Coûts de sous-traitance logistique « ponctuelle » : 2,4 M€, qualifiés non récurrents par le management."
+    },
+    {
+      "confidence": "91%",
+      "fileId": "demo-helios",
+      "fileName": "rapport-dd-projet-helios.pdf",
+      "highlightText": "EBITDA normalisé 2025 ressort à 11,8 M€ , et non 14,2 M€",
+      "id": 3,
+      "page": 5,
+      "quote": "Retraités correctement, l'EBITDA normalisé 2025 ressort à 11,8 M€, et non 14,2 M€."
+    },
+    {
+      "confidence": "89%",
+      "fileId": "demo-annexe-c",
+      "fileName": "annexe-c-contrats-sous-traitance.pdf",
+      "highlightText": "reconduits sans interruption sur 2023-2025",
+      "id": 4,
+      "page": 2,
+      "quote": "Les trois contrats logistiques ont été reconduits sans interruption sur 2023-2025, par tacite reconduction annuelle."
+    }
+  ],
+  "document": {
+    "articleOne": "EBITDA normalisé 2025 : 14,2 M€ - Synthèse exécutive p.2",
+    "articleThree": "Retraitement de 2,4 M€ qualifié non récurrent par le management - Quality of Earnings p.5",
+    "title": "Rapport de due diligence financière - Projet HELIOS",
+    "verifiedClause": "Les coûts de sous-traitance de 2,4 M€ sont en réalité récurrents (contrats pluriannuels 2023-2025) - Observation des conseils p.5"
+  },
+  "content": {
+    "fr": {
+      "storeName": "Analyste financier",
+      "storeLabels": {
+        "risk": "Risques & conformité",
+        "legal": "Juridique",
+        "research": "Veille documentaire"
+      },
+      "finalAnswer": "[La synthèse exécutive (p.2) retient un EBITDA normalisé 2025 de 14,2 M€ appliqué à un multiple de 8,0x, soit une valeur d'entreprise de 113,6 M€](cite:1)[. Le pont de normalisation (section Quality of Earnings, p.5) détaille les retraitements : +0,7 M€ (rémunération dirigeant), +0,6 M€ (honoraires M&A), +2,4 M€ (sous-traitance logistique dite « [ponctuelle](halluc:1) »), −1,6 M€ (cession d'actifs). L'observation des conseils signale que les 2,4 M€ de sous-traitance correspondent à trois contrats pluriannuels reconduits sans interruption sur 2023-2025, donc de nature récurrente](cite:2)[. Retraités correctement, l'EBITDA normalisé ressort à 11,8 M€ et non 14,2 M€](cite:3)[. La base de valorisation de la synthèse (14,2 M€) contredit donc le détail de la section 04. À 11,8 M€, le même multiple de 8,0x donne 94,4 M€, soit un écart de valeur d'entreprise d'environ 19,2 M€. Le chiffre n'est pas fiable tant que le comité n'a pas tranché la qualification du retraitement (p.7). L'annexe C (contrats de sous-traitance logistique) confirme que les trois contrats ont été reconduits sans interruption sur 2023-2025, par tacite reconduction annuelle](cite:4).\n\nL'impact est suffisamment significatif pour changer la recommandation :\n\n| Base | EBITDA normalisé | Multiple | Valeur d'entreprise |\n| --- | --- | --- | --- |\n| Synthèse exécutive | 14,2 M€ | 8,0x | 113,6 M€ |\n| Retraité (conseils) | 11,8 M€ | 8,0x | [94,4 M€](cite:3) |\n| **Écart** | **2,4 M€** | - | **19,2 M€** |\n\nLe comité doit confirmer la base retenue avant signature.",
+      "question": "Vérifie l'EBITDA normalisé 2025 du rapport HELIOS et la fiabilité du multiple de 8,0x, en citant les passages exacts.",
+      "reasoning": "La question porte sur la cohérence entre la synthèse (p.2) et le détail du Quality of Earnings (p.5). Je relève l'EBITDA normalisé de 14,2 M€ mentionné dans la synthèse avec le multiple de 8,0x, puis je le compare au pont de normalisation. Je constate une contradiction : le management qualifie 2,4 M€ de sous-traitance logistique de « non récurrents », mais l'annexe C montre que ces contrats sont pluriannuels et reconduits. Je calcule l'impact : à 11,8 M€ d'EBITDA retraité, la valeur d'entreprise tombe à 94,4 M€ au lieu de 113,6 M€, soit un écart de 19,2 M€. Je cite chaque passage avec sa page pour que le comité puisse vérifier.",
+      "retrievalQueries": [
+        "EBITDA normalisé 2025 valorisation synthèse exécutive",
+        "pont de normalisation EBITDA retraitements management",
+        "sous-traitance logistique ponctuelle 2,4 M€",
+        "observation conseils EBITDA 11,8 M€ écart 19,2 M€"
+      ],
+      "threads": ["Agent Prosperify"],
+      "hallucinations": [
+        {
+          "start": 341,
+          "end": 351,
+          "reason": "Conflit de source : le management qualifie ces coûts de ponctuels, mais l'annexe C montre trois contrats pluriannuels reconduits sur 2023‑2025.",
+          "score": 0.82,
+          "counterCitationId": 4,
+          "evidence": "Les trois contrats logistiques ont été reconduits sans interruption sur 2023-2025, par tacite reconduction annuelle."
+        }
+      ],
+      "stepText": {
+        "analyze": "Décomposer la demande : confirmer la base de valorisation, vérifier la cohérence avec le détail QoE, évaluer la fiabilité du multiple.",
+        "ls": "Parcourir le store pour repérer les documents disponibles sur Projet HELIOS.",
+        "read": "Ouvrir le PDF et lire les sections clés : Synthèse exécutive (p.2), Analyse financière (p.4), Quality of Earnings (p.5).",
+        "screenshot": "Capturer un aperçu de page pour vérifier visuellement la source.",
+        "lexical": "Rechercher les formulations exactes : EBITDA normalisé, multiple 8,0x, retraitement sous-traitance.",
+        "lexicalResults": "Passages retrouvés et classés : synthèse p.2, pont de normalisation p.5, observation conseils p.5.",
+        "semantic": "Faire une seconde recherche sémantique pour retrouver la conclusion et l'écart de valorisation.",
+        "semanticResults": "Passage retrouvé dans la synthèse des risques p.7 : écart de VE de 19,2 M€ selon la qualification du retraitement.",
+        "reviewNote": "À 11,8 M€ d'EBITDA normalisé, le même multiple de 8,0x donnerait 94,4 M€, soit un écart de VE d'environ 19,2 M€.",
+        "generate": "Composer une note structurée : chiffre synthèse, détail QoE, contradiction, impact.",
+        "thinking": "Comparer la base de valorisation retenue dans la synthèse exécutive (14,2 M€) avec le détail du pont de normalisation en section Quality of Earnings (retraitement net de 2,4 M€). Les deux chiffres devraient converger si la méthodologie est appliquée de façon cohérente d'une section à l'autre.\n\nLe retraitement de 2,4 M€ inclut un poste de sous-traitance logistique qualifié de « ponctuel » dans le corps du rapport. Or l'annexe C montre trois contrats pluriannuels reconduits sans interruption sur 2023-2025 par tacite reconduction annuelle, ce qui invalide cette qualification et remet en cause l'ajustement correspondant.\n\nEn retirant ce retraitement non justifié, l'EBITDA normalisé recalculé s'établit à 11,8 M€ plutôt que 14,2 M€. Appliqué au même multiple de 8,0x, cela donne une valeur d'entreprise de 94,4 M€ au lieu de 113,6 M€, soit un écart de 19,2 M€ qui doit être signalé avant validation du comité."
+      },
+      "ui": {
+        "active": "Actifs",
+        "archived": "Archivés",
+        "chunks": "fragments",
+        "closeDocument": "Fermer le document",
+        "closeReview": "Fermer",
+        "closeSidebar": "Fermer le panneau",
+        "copy": "Copier",
+        "edit": "Modifier",
+        "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide. Les sources citées y apparaîtront dès qu'une réponse référence un passage.",
+        "emptyTitle": "Aucun document ouvert",
+        "entities": "entités",
+        "justNow": "à l'instant",
+        "metadata": "métadonnées",
+        "mobileChat": "Chat",
+        "mobileDocument": "Document",
+        "mobileThreads": "Fils",
+        "newChat": "Nouvelle conversation",
+        "openDocument": "Ouvrir le lecteur de document",
+        "openReview": "Essayer dans le chat",
+        "openSidebar": "Ouvrir la liste des fils",
+        "pages": "pages",
+        "papers": "Papers",
+        "regenerate": "Régénérer",
+        "sourceFile": "Fichier",
+        "storeStreaming": "Génération",
+        "today": "Aujourd'hui",
+        "tourBack": "Retour",
+        "tourDone": "Terminer",
+        "tourNext": "Suivant",
+        "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici. Cliquez pour tout dérouler.",
+        "tourOrchestrationTitle": "Suivez le raisonnement de l'agent",
+        "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.",
+        "tourPdfTitle": "Accédez à la source",
+        "tourSkip": "Passer",
+        "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.",
+        "tourSourcesTitle": "Chaque affirmation est citée"
+      }
+    },
+    "en": {
+      "storeName": "Financial analyst",
+      "storeLabels": {
+        "risk": "Risk & compliance",
+        "legal": "Legal reviewer",
+        "research": "Research scout"
+      },
+      "finalAnswer": "[The executive summary (p.2) uses a normalized 2025 EBITDA of €14.2M applied to an 8.0x multiple, giving an enterprise value of €113.6M](cite:1)[. The EBITDA bridge (Quality of Earnings section, p.5) details the adjustments: +€0.7M (director excess remuneration), +€0.6M (M&A advisory fees), +€2.4M ('[one-off](halluc:1)' logistics subcontracting), −€1.6M (asset disposal gain). The advisors' note states that the €2.4M subcontracting cost corresponds to three multi-year contracts renewed without interruption over 2023-2025, making them recurring in nature](cite:2)[. Adjusted correctly, normalized EBITDA stands at €11.8M, not €14.2M](cite:3)[. The valuation basis in the summary (€14.2M) therefore contradicts the detailed section 04. At €11.8M, the same 8.0x multiple yields €94.4M, an enterprise value gap of approximately €19.2M. The figure is not reliable until the committee rules on the adjustment classification (p.7). Appendix C (logistics subcontracting agreements) confirms the three contracts were renewed without interruption over 2023-2025 under an annual tacit renewal clause](cite:4).\n\nThe impact is material enough to change the recommendation:\n\n| Basis | Normalized EBITDA | Multiple | Enterprise value |\n| --- | --- | --- | --- |\n| Executive summary | €14.2M | 8.0x | €113.6M |\n| Restated (advisors) | €11.8M | 8.0x | [€94.4M](cite:3) |\n| **Gap** | **€2.4M** | - | **€19.2M** |\n\nThe committee should confirm which basis applies before signing.",
+      "question": "Verify the 2025 normalized EBITDA in the HELIOS report and whether the 8.0x multiple holds. Cite the exact passages.",
+      "reasoning": "The question is about consistency between the executive summary (p.2) and the Quality of Earnings detail (p.5). I extract the €14.2M normalized EBITDA from the summary with the 8.0x multiple, then compare against the bridge. I find a contradiction: management adds back €2.4M of logistics subcontracting as 'non-recurring', but Appendix C shows these are multi-year renewed contracts. I calculate the impact: restated EBITDA €11.8M → EV €94.4M instead of €113.6M, a gap of €19.2M. I cite each passage with its page so the committee can verify.",
+      "retrievalQueries": [
+        "normalized EBITDA 2025 valuation executive summary",
+        "EBITDA bridge management adjustments normalization",
+        "logistics subcontracting 2.4M one-off retreatment",
+        "advisors observation EBITDA 11.8M gap 19.2M"
+      ],
+      "threads": ["Prosperify agent"],
+      "hallucinations": [
+        {
+          "start": 293,
+          "end": 302,
+          "reason": "Source conflict: management labels these costs as 'one-off', but Appendix C shows three multi-year contracts renewed over 2023‑2025.",
+          "score": 0.82,
+          "counterCitationId": 4,
+          "evidence": "The three logistics contracts were renewed without interruption over 2023-2025, by annual tacit renewal."
+        }
+      ],
+      "stepText": {
+        "analyze": "Breaking down the request: confirm the valuation basis, verify QoE consistency, assess multiple reliability.",
+        "ls": "Browsing the store to see what documents are available for Projet HELIOS.",
+        "read": "Opening the uploaded PDF and reading key sections: Executive Summary (p.2), Financial Analysis (p.4), Quality of Earnings (p.5).",
+        "screenshot": "Capturing page preview for visual verification.",
+        "lexical": "Searching exact wording: normalized EBITDA, 8.0x multiple, subcontracting retreatment.",
+        "lexicalResults": "Retrieved and ranked passages: summary p.2, EBITDA bridge p.5, advisors observation p.5.",
+        "semantic": "Running a second semantic search to find the conclusion and valuation gap.",
+        "semanticResults": "Retrieved the risk summary passage p.7: EV gap of €19.2M depending on retreatment qualification.",
+        "reviewNote": "At €11.8M normalized EBITDA, the same 8.0x multiple would give €94.4M, an EV gap of approximately €19.2M.",
+        "generate": "Composing a structured note: summary figure, QoE detail, contradiction, impact.",
+        "thinking": "Cross-check the valuation basis in the executive summary (€14.2M) against the EBITDA bridge detailed in the Quality of Earnings section (€2.4M net retreatment). Both figures should converge if the methodology is applied consistently across sections.\n\nThe €2.4M retreatment includes a logistics subcontracting line item labeled \"non-recurring\" in the report body. But Annex C shows three multi-year contracts renewed without interruption over 2023-2025 through automatic annual renewal, which invalidates that classification and calls the corresponding adjustment into question.\n\nRemoving this unjustified retreatment, the recalculated normalized EBITDA comes out to €11.8M rather than €14.2M. Applied to the same 8.0x multiple, that gives an enterprise value of €94.4M instead of €113.6M, a €19.2M gap that needs to be flagged before committee sign-off."
+      },
+      "ui": {
+        "active": "Active",
+        "archived": "Archived",
+        "chunks": "chunks",
+        "closeDocument": "Close document",
+        "closeReview": "Close",
+        "closeSidebar": "Close sidebar",
+        "copy": "Copy",
+        "edit": "Edit",
+        "emptySubtitle": "Close this panel to open an empty document  Cited sources will appear here as soon as an answer references a passage.",
+        "emptyTitle": "No document open",
+        "entities": "entities",
+        "justNow": "just now",
+        "metadata": "metadata",
+        "mobileChat": "Chat",
+        "mobileDocument": "Document",
+        "mobileThreads": "Threads",
+        "newChat": "New chat",
+        "openDocument": "Open document viewer",
+        "openReview": "Try in chat",
+        "openSidebar": "Open thread list",
+        "pages": "pages",
+        "papers": "Papers",
+        "regenerate": "Regenerate",
+        "sourceFile": "File",
+        "storeStreaming": "Generating",
+        "today": "Today",
+        "tourBack": "Back",
+        "tourDone": "Done",
+        "tourNext": "Next",
+        "tourOrchestrationContent": "Every reasoning and search step is traced here. Click to expand the full trail.",
+        "tourOrchestrationTitle": "Follow the agent's reasoning",
+        "tourPdfContent": "Citations open the PDF at the exact highlighted passage.",
+        "tourPdfTitle": "Jump to the source",
+        "tourSkip": "Skip",
+        "tourSourcesContent": "Each sentence links to the passage that supports it.",
+        "tourSourcesTitle": "Every claim is cited"
+      }
+    }
+  },
+  "steps": [
+    {
+      "action": "analyzing",
+      "entities": ["Projet HELIOS", "EBITDA normalisé", "retraitement sous-traitance"],
+      "id": "intent",
+      "queries": "@queries",
+      "reasoning": "@text.analyze"
+    },
+    {
+      "action": "ls",
+      "id": "browse-store",
+      "reasoning": "@text.ls",
+      "toolName": "ls",
+      "toolParams": {
+        "path": "/Projet HELIOS"
+      },
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "",
+            "metadata": {
+              "treeData": {
+                "path": "/Projet HELIOS",
+                "folders": [],
+                "files": [
+                  {
+                    "fileId": "demo-helios",
+                    "name": "rapport-dd-projet-helios.pdf",
+                    "size": 842000
+                  },
+                  {
+                    "fileId": "demo-annexe-c",
+                    "name": "annexe-c-contrats-sous-traitance.pdf",
+                    "size": 214000
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "count": 2,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "searching",
+      "id": "lexical-search",
+      "queries": ["EBITDA normalisé 2025 valorisation", "retraitement sous-traitance logistique"],
+      "reasoning": "@text.lexical"
+    },
+    {
+      "action": "retrieved",
+      "chunks": 8,
+      "id": "lexical-results",
+      "reasoning": "@text.lexicalResults",
+      "toolName": "search",
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "@doc.title",
+            "fileName": "rapport-dd-projet-helios.pdf",
+            "metadata": {
+              "section": "Synthèse exécutive",
+              "type": "text"
+            },
+            "pageNumber": 2,
+            "score": 0.91
+          },
+          {
+            "content": "@doc.articleOne",
+            "fileName": "rapport-dd-projet-helios.pdf",
+            "metadata": {
+              "section": "Synthèse exécutive",
+              "type": "text"
+            },
+            "pageNumber": 2,
+            "score": 0.89
+          },
+          {
+            "content": "@doc.articleThree",
+            "fileName": "rapport-dd-projet-helios.pdf",
+            "metadata": {
+              "section": "Quality of Earnings",
+              "type": "text"
+            },
+            "pageNumber": 5,
+            "score": 0.84
+          }
+        ],
+        "count": 3,
+        "status": "ok"
+      },
+      "topScore": 0.91
+    },
+    {
+      "action": "readFile",
+      "id": "read-file",
+      "reasoning": "@text.read",
+      "toolName": "read",
+      "toolParams": {
+        "fileName": "rapport-dd-projet-helios.pdf",
+        "pageRange": "2,4-5"
+      },
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "Synthèse exécutive - EBITDA normalisé 2025 : 14,2 M€, multiple 8,0x, valeur d'entreprise 113,6 M€.",
+            "fileId": "demo-helios",
+            "fileName": "rapport-dd-projet-helios.pdf",
+            "pageNumber": 2,
+            "score": 0.98
+          },
+          {
+            "content": "Pont de normalisation de l'EBITDA 2025 - retraitement « sous-traitance logistique ponctuelle » : +2,4 M€, qualifié non récurrent par le management.",
+            "fileId": "demo-helios",
+            "fileName": "rapport-dd-projet-helios.pdf",
+            "pageNumber": 5,
+            "score": 0.95
+          },
+          {
+            "content": "Observation des conseils - les coûts de sous-traitance de 2,4 M€ correspondent à trois contrats pluriannuels reconduits sur 2023-2025. Retraités, l'EBITDA normalisé ressort à 11,8 M€.",
+            "fileId": "demo-helios",
+            "fileName": "rapport-dd-projet-helios.pdf",
+            "pageNumber": 5,
+            "score": 0.91
+          }
+        ],
+        "count": 3,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "screenshot",
+      "id": "page-screenshot",
+      "reasoning": "@text.screenshot",
+      "toolName": "screenshot",
+      "toolParams": {
+        "fileName": "rapport-dd-projet-helios.pdf",
+        "page": 1
+      },
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "",
+            "fileId": "demo-helios",
+            "fileName": "rapport-dd-projet-helios.pdf",
+            "metadata": {
+              "type": "screenshot"
+            },
+            "pageNumber": 1,
+            "score": 0.94,
+            "type": "image"
+          },
+          {
+            "content": "",
+            "fileId": "demo-helios",
+            "fileName": "rapport-dd-projet-helios.pdf",
+            "metadata": {
+              "type": "screenshot"
+            },
+            "pageNumber": 2,
+            "score": 0.91,
+            "type": "image"
+          }
+        ],
+        "count": 2,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "searching",
+      "id": "semantic-search",
+      "queries": ["impact écart valorisation EBITDA normalisé comité"],
+      "reasoning": "@text.semantic"
+    },
+    {
+      "action": "retrieved",
+      "chunks": 12,
+      "id": "semantic-results",
+      "reasoning": "@text.semanticResults",
+      "toolName": "search",
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "@doc.verifiedClause",
+            "fileName": "rapport-dd-projet-helios.pdf",
+            "metadata": {
+              "section": "Observation des conseils",
+              "type": "text"
+            },
+            "pageNumber": 5,
+            "score": 0.86
+          },
+          {
+            "content": "@text.reviewNote",
+            "fileName": "rapport-dd-projet-helios.pdf",
+            "metadata": {
+              "section": "Synthèse des risques",
+              "type": "text"
+            },
+            "pageNumber": 7,
+            "score": 0.74
+          },
+          {
+            "content": "Les trois contrats logistiques ont été reconduits sans interruption sur 2023-2025, par tacite reconduction annuelle prévue à l'article 4 de chaque contrat-cadre.",
+            "fileName": "annexe-c-contrats-sous-traitance.pdf",
+            "metadata": {
+              "section": "C.3.1 Reconduction",
+              "type": "text"
+            },
+            "pageNumber": 2,
+            "score": 0.71
+          }
+        ],
+        "count": 3,
+        "status": "ok"
+      },
+      "topScore": 0.86
+    },
+    {
+      "action": "generating",
+      "id": "answer",
+      "reasoning": "@text.generate",
+      "thinking": "@text.thinking"
+    }
+  ],
+  "tour": [
+    {
+      "uiKey": "tourOrchestration",
+      "target": "orchestration",
+      "placement": {
+        "desktop": "right",
+        "mobile": "bottom"
+      },
+      "targetWaitTimeout": 8000,
+      "onEnter": "expandReasoning",
+      "onLeave": "awaitAnswer"
+    },
+    {
+      "uiKey": "tourSources",
+      "target": "citations",
+      "placement": {
+        "desktop": "right",
+        "mobile": "bottom"
+      },
+      "targetWaitTimeout": 8000
+    },
+    {
+      "uiKey": "tourPdf",
+      "target": "pdf",
+      "placement": {
+        "desktop": "left",
+        "mobile": "center"
+      },
+      "targetWaitTimeout": 8000,
+      "onEnter": "openCitation"
+    }
+  ],
+  "streaming": {
+    "minDurationMs": 2600,
+    "durationRatio": 0.62,
+    "minWordPauseMs": 24
+  }
+}

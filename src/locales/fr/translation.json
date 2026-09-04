@@ -1,0 +1,473 @@
+{
+  "workflow": {
+    "badge": "WORKFLOW",
+    "title": "Vous choisissez les sources.",
+    "title_highlight": "L'agent cite les siennes.",
+    "subtitle": "Trois étapes, du choix des sources jusqu'à la réponse citée."
+  },
+  "workflow_tabs": {
+    "create": {
+      "title": "Connecter",
+      "heading": "Vos sources, votre périmètre",
+      "description": "Vous décidez ce que l'agent peut lire.",
+      "preview": {
+        "search": "Rechercher un data store",
+        "store_first": "Contrats fournisseurs",
+        "store_first_meta": "1 284 documents",
+        "store_second": "Politiques internes",
+        "store_second_meta": "312 documents",
+        "store_excluded": "Archives 2019",
+        "store_excluded_meta": "hors périmètre",
+        "selected": "1 data store et 1 dossier sélectionnés"
+      }
+    },
+    "unify": {
+      "title": "Rechercher",
+      "heading": "Sémantique, mots-clés et visuel",
+      "description": "Texte, tableaux et pages scannées.",
+      "preview": {
+        "file": "Contrat_cadre_2024.pdf",
+        "page": "3 / 42",
+        "title": "Article 12 - Responsabilité",
+        "highlight_first": "Le prestataire limite sa responsabilité",
+        "highlight_second": "à 12 mois de redevances."
+      }
+    },
+    "chat": {
+      "title": "Citer",
+      "heading": "Chaque réponse est sourcée",
+      "description": "Clause, page et document, à l'appui.",
+      "preview": {
+        "question_first": "Quelles clauses limitent",
+        "question_second": "notre responsabilité ?",
+        "answer_first": "La responsabilité est plafonnée à",
+        "answer_second": "12 mois de redevances.",
+        "sources": "Sources",
+        "source_first": "Contrat_cadre.pdf",
+        "source_first_page": "p. 3",
+        "source_second": "Avenant_2024.pdf",
+        "source_second_page": "p. 7"
+      }
+    }
+  },
+  "cookie": {
+    "accept": "Tout accepter",
+    "learn": "En savoir plus",
+    "message": "Ce site utilise des cookies à des fins d'analyse. Vous pouvez choisir les catégories à accepter.",
+    "reject": "Tout refuser",
+    "customize": "Personnaliser",
+    "save": "Enregistrer mes choix",
+    "back": "Retour",
+    "necessary": "Strictement nécessaires",
+    "necessary_hint": "Nécessaires au fonctionnement du site. Toujours actifs.",
+    "analytics": "Mesure d'audience",
+    "analytics_hint": "Nous aide à comprendre comment le site est utilisé."
+  },
+  "contact": {
+    "meeting": {
+      "title": "Échange de découverte Prosperify"
+    },
+    "form": {
+      "name_placeholder": "Votre nom complet",
+      "company_placeholder": "Nom de votre entreprise",
+      "email_placeholder": "Votre email",
+      "phone_placeholder": "Téléphone (optionnel)",
+      "subject_placeholder": "Sélectionnez l'objet",
+      "subject_information": "Demander une démonstration",
+      "subject_partnership": "Cadrer un pilote juridique",
+      "subject_other": "Cadrer un pilote comptabilité & finance",
+      "subject_api": "Cadrer un pilote médical & santé",
+      "subject_virtual_partner": "Évaluer un déploiement souverain",
+      "message_placeholder": "Votre message",
+      "status_send_error": "Erreur d'envoi."
+    }
+  },
+  "ai_chat": {
+    "pdf": {
+      "title": "rapport-dd-projet-helios.pdf"
+    }
+  },
+  "products": {
+    "badge": "L'OFFRE",
+    "title_prefix": "L'agent de recherche",
+    "title_highlight": "adapté à votre domaine",
+    "intro": "Un seul agent, trois métiers : juridique, finance, santé. Chacun avec son vocabulaire, ses documents et ses règles d'accès.",
+    "cta": "Demander une démo",
+    "view_all": "Voir tous les cas d'usage",
+    "explore": "Détails",
+    "use_cases": {
+      "legal": {
+        "slug": "legal",
+        "label": "Juridique",
+        "title": "La clause exacte, en quelques secondes",
+        "description": "Interrogez contrats, dossiers et textes réglementaires en langage naturel. Chaque réponse renvoie à la clause et à la page qui la justifient.",
+        "problems": [
+          "Une clause de renouvellement automatique passe inaperçue",
+          "Comparer les avenants version par version prend des heures",
+          "Un assistant générique ne cite ni clause ni page"
+        ],
+        "benefits": [
+          "Contradictions et clauses à risque signalées avant la contrepartie",
+          "Révisez data room et dossier complet en quelques minutes",
+          "Chaque réponse cite la clause et la page exactes"
+        ],
+        "security": [
+          "Accès contrôlé par dossier, client et rôle",
+          "Confidentialité préservée : le modèle n'est jamais entraîné sur vos documents",
+          "Déploiement dans notre cloud européen ou entièrement dans votre périmètre"
+        ],
+        "faq": [
+          {
+            "question": "Prosperify peut-il relire une data room entière d'un coup ?",
+            "answer": "Oui. Importez une data room, posez une question sur n'importe quelle clause, partie ou obligation, et chaque réponse cite sa clause et sa page."
+          },
+          {
+            "question": "Comment la confidentialité est-elle gérée pour les équipes juridiques ?",
+            "answer": "L'accès est limité par dossier, client et rôle, et le modèle n'est jamais entraîné sur vos documents. Vous pouvez le déployer dans votre propre cloud ou périmètre."
+          },
+          {
+            "question": "Signale-t-il les contradictions entre documents liés ?",
+            "answer": "Oui. Il croise les avenants et les versions et remonte les contradictions pour que vous les traitiez avant qu'une contrepartie ne les soulève."
+          }
+        ],
+        "sample_question": "Quels contrats fournisseurs se renouvellent automatiquement avant le T2, et lesquels incluent une clause de changement de contrôle ?"
+      },
+      "accounting": {
+        "slug": "accounting",
+        "label": "Comptabilité & finance",
+        "title": "Repérez l'écart avant le comité",
+        "description": "Chaque chiffre publié reste relié à sa source, du grand livre au rapport final. Les écarts remontent avant la clôture.",
+        "problems": [
+          "Réconcilier un état avec son tableau de passage est lent",
+          "Un écart enfoui dans une annexe atteint le comité",
+          "Un tableur ne dit jamais d'où vient le chiffre"
+        ],
+        "benefits": [
+          "Chaque chiffre publié reste tracé jusqu'à sa ligne d'origine",
+          "Écarts signalés avant la clôture ou la due diligence",
+          "Les réponses citent toujours la page exacte"
+        ],
+        "security": [
+          "Accès contrôlé par mission et client",
+          "Données financières confidentielles : le modèle n'est jamais entraîné sur vos documents",
+          "Déploiement dans notre cloud européen ou entièrement dans votre périmètre"
+        ],
+        "faq": [
+          {
+            "question": "Prosperify peut-il vérifier un chiffre publié jusqu'à sa source ?",
+            "answer": "Oui. Interrogez n'importe quel chiffre et il renvoie les retraitements sous-jacents et la page dont chacun provient."
+          },
+          {
+            "question": "Gère-t-il les dossiers d'audit et les data rooms de due diligence ?",
+            "answer": "Oui. Recherchez dans les états, dossiers d'audit, rapports de gestion et data rooms avec un accès limité par mission et client."
+          },
+          {
+            "question": "Comment un écart est-il traité ?",
+            "answer": "Prosperify croise les sources et signale lorsqu'un chiffre contredit son détail sous-jacent, pour que vous enquêtiez avant la publication."
+          }
+        ],
+        "sample_question": "L'EBITDA publié correspond-il aux retraitements du pont de normalisation, et quels chiffres proviennent d'éléments non récurrents ?"
+      },
+      "medical": {
+        "slug": "medical",
+        "label": "Médical & santé",
+        "title": "Ne manquez plus une contre-indication",
+        "description": "Croisez dossiers patients, études et protocoles en une seule question. Chaque réponse cite la page exacte, prête pour la revue.",
+        "problems": [
+          "Un détail clinique perdu dans des dizaines de pages",
+          "Les incohérences entre dossiers échappent au système",
+          "Une réponse sans page citée n'est pas validable"
+        ],
+        "benefits": [
+          "Recherchez dossiers patients, études et protocoles en une seule requête",
+          "Incohérences et contradictions remontées entre dossiers liés",
+          "Chaque réponse citée à la page exacte"
+        ],
+        "security": [
+          "Accès contrôlé par équipe soignante et niveau de confidentialité",
+          "Données de santé protégées : le modèle n'est jamais entraîné sur vos documents",
+          "Déploiement dans notre cloud européen ou entièrement dans votre périmètre"
+        ],
+        "faq": [
+          {
+            "question": "Prosperify peut-il rechercher dossiers patients et études cliniques ensemble ?",
+            "answer": "Oui. Posez une question et il interroge dossiers, études et protocoles, puis renvoie une réponse citée à la page exacte."
+          },
+          {
+            "question": "Comment l'accès et la confidentialité sont-ils gérés ?",
+            "answer": "L'accès est limité par équipe soignante et niveau de confidentialité, et le modèle n'est jamais entraîné sur vos documents. Vous pouvez le déployer dans votre périmètre."
+          },
+          {
+            "question": "Signale-t-il les incohérences entre dossiers ?",
+            "answer": "Oui. Il remonte les contradictions et incohérences entre dossiers liés pour que les réviseurs se concentrent sur ce qui compte."
+          }
+        ],
+        "sample_question": "Quels dossiers patients mentionnent cette contre-indication, et quel protocole en régit la prise en charge ?"
+      }
+    }
+  },
+  "use_cases_page": {
+    "badge": "CAS D'USAGE",
+    "title_prefix": "Conçu pour",
+    "title_highlight": "votre domaine",
+    "subtitle": "Découvrez comment l'agent de recherche s'applique aux équipes juridiques, comptables et médicales.",
+    "search_placeholder": "Rechercher un cas d'usage...",
+    "search_empty": "Aucun cas d'usage ne correspond à votre recherche.",
+    "view_details": "Voir le détail",
+    "back_to_use_cases": "Retour aux cas d'usage",
+    "back_to_home": "Retour à l'accueil"
+  },
+  "features": {
+    "badge": "FONCTIONNALITÉS",
+    "title": "Tout ce qu'il faut pour",
+    "title_highlight": "faire confiance à une réponse",
+    "subtitle": "Six capacités qui tiennent ensemble : chercher, vérifier, synthétiser et contrôler qui accède à quoi.",
+    "items": {
+      "precision": {
+        "short_title": "Réponses sourcées",
+        "title": "Réponses sourcées et vérifiables",
+        "subtitle": "Citations phrase par phrase",
+        "description": "Chaque réponse conserve le lien avec les extraits utilisés afin de faciliter la revue, l'audit et la validation métier."
+      },
+      "coverage": {
+        "short_title": "Recherche hybride",
+        "title": "Recherche hybride dans tous vos documents",
+        "subtitle": "Sémantique, mots-clés, visuelle et contextuelle",
+        "description": "Prosperify combine recherche sémantique, mots-clés, contexte documentaire et signaux visuels pour retrouver les passages utiles dans des ensembles de documents hétérogènes."
+      },
+      "performance": {
+        "short_title": "Synthèses fiables",
+        "title": "Synthèses cadrées par vos sources",
+        "subtitle": "Recherche, comparaison, extraction",
+        "description": "Grâce à des modèles adaptés à votre domaine, vos équipes synthétisent, comparent des clauses et extraient des informations clés à partir des documents autorisés."
+      },
+      "governance": {
+        "short_title": "Accès contrôlés",
+        "title": "Accès contrôlés par rôle et périmètre",
+        "subtitle": "Chaque utilisateur dans le bon périmètre",
+        "description": "Les accès peuvent être limités selon le rôle, le service, le niveau de confidentialité ou le data store autorisé."
+      },
+      "orchestration": {
+        "short_title": "Revue métier",
+        "title": "Un workflow de revue pour les équipes métier",
+        "subtitle": "Recherche, réponse, vérification",
+        "description": "Prosperify garde les passages retrouvés, les citations et le contexte visibles afin d'aider les équipes à relire les réponses importantes avant usage."
+      },
+      "differentiation": {
+        "short_title": "Souveraineté",
+        "title": "Vos données, votre périmètre",
+        "subtitle": "Isolées dans un périmètre de confiance",
+        "description": "Les documents restent isolés dans un périmètre de confiance défini. Le modèle n'est jamais entraîné sur vos données."
+      }
+    }
+  },
+  "sovereignty": {
+    "badge": "SÉCURITÉ & GOUVERNANCE",
+    "title_prefix": "Chaque édition,",
+    "title_highlight": "un même périmètre de confiance",
+    "title_suffix": "du document à la réponse"
+  },
+  "integrations": {
+    "badge": "INTÉGRATIONS",
+    "title_prefix": "Connectez",
+    "title_highlight": "Prosperify à votre stack",
+    "intro": "Connectez vos sources documentaires et vos outils existants, avec authentification OAuth, SSO et une API REST documentée (SDKs Python et TypeScript).",
+    "groups": {
+      "sources": {
+        "label": "Sources documentaires",
+        "items": [
+          "SharePoint",
+          "OneDrive",
+          "Google Drive",
+          "Amazon S3",
+          "MinIO",
+          "Serveurs de fichiers"
+        ]
+      },
+      "platforms": {
+        "label": "Plateformes & outils",
+        "items": [
+          "Slack",
+          "Confluence",
+          "Notion",
+          "Zendesk",
+          "Dropbox",
+          "GitHub",
+          "Jira"
+        ]
+      },
+      "identity": {
+        "label": "Fournisseurs d'identité",
+        "items": [
+          "Entra ID",
+          "Google Workspace",
+          "Okta",
+          "Keycloak"
+        ]
+      }
+    },
+    "auth_note_label": "Authentification :",
+    "auth_note": "OAuth 2.0 + PKCE pour les connecteurs tiers · SSO via OIDC et SAML · clés API pour l'API REST",
+    "cta": "Voir la documentation",
+    "more": "+ {{count}} autres"
+  },
+  "architecture": {
+    "title_prefix": "Une architecture pensée pour la",
+    "title_highlight": "confiance documentaire",
+    "subtitle": "De vos documents à une réponse sourcée : chaque étape reste visible, vérifiable et auditable.",
+    "steps": [
+      {
+        "title": "Data stores autorisés",
+        "description": "Rassemblez les documents utiles dans un espace contrôlé, sans imposer une refonte complète de vos outils."
+      },
+      {
+        "title": "Contenu analysé automatiquement",
+        "description": "Les textes, tableaux, pages et métadonnées sont préparés pour rendre chaque document plus facile à interroger."
+      },
+      {
+        "title": "Informations structurées",
+        "description": "Les contenus sont organisés selon leur logique : titres, clauses, articles, annexes, versions et éléments clés."
+      },
+      {
+        "title": "Recherche gouvernée",
+        "description": "Les utilisateurs retrouvent les passages pertinents grâce à une recherche hybride qui combine sens, termes exacts, contexte et éléments visuels lorsque le document s'y prête."
+      },
+      {
+        "title": "Réponses avec sources",
+        "description": "Prosperify sélectionne les extraits utiles et génère des réponses structurées, accompagnées des références nécessaires à la vérification."
+      },
+      {
+        "title": "Vérification des limites",
+        "description": "Les réponses peuvent signaler les zones d'incertitude ou les éléments qui nécessitent une validation humaine."
+      },
+      {
+        "title": "Suivi et amélioration continue",
+        "description": "Les usages, la qualité des réponses et les besoins d'évolution peuvent être suivis pour améliorer le service dans le temps."
+      },
+      {
+        "title": "Traçabilité et audit",
+        "description": "Chaque consultation reste journalisée et traçable, pour appuyer les audits et les exigences de conformité."
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title_line1": "Vous avez des",
+    "title_highlight": "questions ?",
+    "title_line2": "Nous avons les réponses.",
+    "subtitle": "Les réponses essentielles sur les sources, la sécurité, le déploiement et la gouvernance documentaire avec Prosperify.",
+    "items": [
+      {
+        "question": "Mes données servent-elles à entraîner des modèles ?",
+        "answer": "Non. Les documents clients ne sont pas utilisés pour entraîner les modèles. Prosperify interroge vos documents dans un périmètre dédié afin de produire des réponses sourcées, sans réutiliser votre capital documentaire."
+      },
+      {
+        "question": "Où sont hébergées les données ?",
+        "answer": "Cela dépend du mode retenu : cloud dédié, architecture hybride ou déploiement local. En mode cloud, l'hébergement s'appuie sur huit fournisseurs cloud européens (dont Hetzner, Scaleway, OVH), avec la possibilité d'apporter votre propre cluster. Le périmètre est défini avec vous selon vos contraintes de sécurité et de confidentialité."
+      },
+      {
+        "question": "Comment les documents sont-ils protégés techniquement ?",
+        "answer": "Les documents sont chiffrés au repos (AES-256) et en transit (TLS). Les clés sont gérées via HashiCorp Vault, avec rotation et dérivation par organisation, jamais mêlées aux données qu'elles protègent. La recherche s'exécute sur des vecteurs chiffrés : Prosperify utilise DCPE (distance-comparison-preserving encryption), une obfuscation à clé qui préserve les distances, afin de comparer les similarités sans jamais stocker ni interroger votre contenu en clair."
+      },
+      {
+        "question": "Prosperify remplace-t-il les experts ?",
+        "answer": "Non. Prosperify automatise la recherche, la synthèse, l'extraction et la comparaison documentaire. Les décisions, validations et interprétations restent portées par les experts métiers."
+      },
+      {
+        "question": "Comment les réponses sont-elles vérifiées ?",
+        "answer": "Les réponses sont générées à partir d'extraits documentaires retenus, puis reliées aux sources utilisées. Les affirmations insuffisamment étayées peuvent être signalées afin de faciliter la revue humaine."
+      },
+      {
+        "question": "Peut-on limiter l'accès par rôle, data store ou niveau de confidentialité ?",
+        "answer": "Oui. Les accès sont gouvernés par rôle, data store et niveau de confidentialité, avec authentification via SSO (Microsoft Entra ID, Google Workspace, Okta, Keycloak). Les opérations hors périmètre sont refusées selon les règles configurées."
+      },
+      {
+        "question": "Faut-il refondre le système d'information ?",
+        "answer": "Non. Prosperify s'ajoute comme couche d'intelligence documentaire au-dessus des systèmes existants. L'intégration peut commencer avec un data store et un cas métier avant extension."
+      },
+      {
+        "question": "Quels formats sont pris en charge ?",
+        "answer": "Prosperify est conçu pour traiter des documents structurés et non structurés, notamment PDF, Word, Excel, CSV, JSON et autres formats métier selon le périmètre du projet."
+      },
+      {
+        "question": "Quels modes de déploiement sont possibles ?",
+        "answer": "Trois approches sont possibles : cloud dédié, hybride ou local. Le choix dépend du niveau de confidentialité, des contraintes d'infrastructure et du besoin de souveraineté."
+      },
+      {
+        "question": "Quels métiers couvre Prosperify ?",
+        "answer": "Les métiers juridiques, la comptabilité/finance et le secteur médical/santé. Le même agent de recherche, adapté à la façon dont chaque métier lit ses documents : contrats et clauses, états financiers et dossiers de transaction, protocoles et dossiers réglementaires."
+      }
+    ]
+  },
+  "team": {
+    "badge": "Équipe",
+    "title_prefix": "L'équipe derrière",
+    "title_highlight": "Prosperify",
+    "subtitle": "Une équipe produit et ingénierie concentrée sur l'agent de recherche pour les organisations juridiques, comptables et de santé."
+  },
+  "jobs": {
+    "badge": "Recrutement",
+    "title_prefix": "Construire l'IA documentaire",
+    "title_highlight": "de confiance",
+    "subtitle": "Postes ouverts chez Prosperify. Nous gardons une équipe resserrée, technique et proche des professionnels du droit, de la comptabilité et de la santé.",
+    "apply": "Candidater",
+    "empty_title": "Aucun poste ouvert pour le moment",
+    "empty_description": "Nous ne recrutons pas sur un poste précis aujourd'hui, mais les profils infrastructure, produit et IA appliquée peuvent nous écrire.",
+    "view_all": "Voir les postes"
+  },
+  "footer": {
+    "tagline": "L'agent de recherche pour les documents de votre métier.",
+    "product": "Produit",
+    "legal": "Légal",
+    "links": {
+      "home": "Accueil",
+      "overview": "Aperçu",
+      "workflow": "Workflow",
+      "features": "Fonctionnalités",
+      "use_cases": "Cas d'usage",
+      "sovereignty": "Souveraineté",
+      "architecture": "Architecture",
+      "integrations": "Intégrations",
+      "blog": "Blog",
+      "team": "Équipe",
+      "jobs": "Recrutement",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "deployment": "Offres",
+      "integration": "Intégration",
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "rgpd": "RGPD",
+      "docs": "Documentation",
+      "legal_notice": "Mentions légales"
+    },
+    "copyright": "© 2025 Prosperify. Tous droits réservés.",
+    "partners_title": "Accompagnement & Partenaires"
+  },
+  "actions": {
+    "download": "Télécharger"
+  },
+  "markdown": {
+    "copy": "Copier",
+    "copy_code": "Copier le code",
+    "copied": "Copié"
+  },
+  "viewer": {
+    "page": "p.{{current}}/{{total}}",
+    "page_count": "{{count}} pages",
+    "previous_page": "Page précédente",
+    "next_page": "Page suivante",
+    "zoom_out": "Zoom arrière",
+    "zoom": "Zoom",
+    "zoom_in": "Zoom avant",
+    "rotate": "Pivoter",
+    "exit_fullscreen": "Quitter le plein écran",
+    "fullscreen": "Plein écran",
+    "search": "Rechercher",
+    "close": "Fermer"
+  },
+  "fallback": {
+    "unavailable_title": "Erreur réseau",
+    "unavailable_description": "Impossible de charger cette page. Vérifiez votre connexion et réessayez."
+  }
+}

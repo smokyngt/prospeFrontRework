@@ -1,0 +1,280 @@
+{
+  "actions": {
+    "cancel": "Cancel",
+    "send": "Send message"
+  },
+  "error": {
+    "edit_failed": "Failed to save your edit. Please try again."
+  },
+  "store": {
+    "select": "Select a Store",
+    "search": "Search stores...",
+    "scope_hint": "Search across",
+    "unknown": "Unknown store",
+    "empty": "No stores available",
+    "empty_hint": "Create a store to start chatting",
+    "no_description": "Ready to chat"
+  },
+  "citations": {
+    "confidence_label": "Confidence",
+    "open_in_document": "See in document",
+    "page": "Page {{number}}",
+    "page_short": "P{{number}}",
+    "pages": "Pages {{pages}}",
+    "reference": "Ref {{index}}",
+    "retrieval_score_label": "Retrieval",
+    "sources": "{{count}} sources"
+  },
+  "composer": {
+    "shortcut_hint": "Enter to send, Shift+Enter for a new line"
+  },
+  "date": {
+    "older": "Older",
+    "previous_30_days": "Previous 30 Days",
+    "previous_7_days": "Previous 7 Days",
+    "today": "Today",
+    "yesterday": "Yesterday"
+  },
+  "empty": {
+    "description": "Send a message to begin chatting with Prosperify",
+    "title": "Start a conversation"
+  },
+  "hallucination": {
+    "confidence": "Confidence: {{value}}%",
+    "detected": "Potential inaccuracy detected",
+    "max_score": "max {{value}}%",
+    "no_source": "No source passage for this claim",
+    "risk_label": "Risk",
+    "summary": "{{count}} potential inaccuracy",
+    "summary_other": "{{count}} potential inaccuracies"
+  },
+  "input_placeholder": "Type your message...",
+  "jump_to_latest": "Jump to latest",
+  "message": {
+    "agent": "Prosperify",
+    "you": "You"
+  },
+  "new_chat": "New Chat",
+  "clarify": {
+    "pick": "Choose an option",
+    "other_placeholder": "Type your answer..."
+  },
+  "reasoning": {
+    "hide": "Hide thinking",
+    "show": "Show thinking",
+    "steps": "Reasoning steps",
+    "tool_error": "Error: {{error}}",
+    "tools": "Tool calls"
+  },
+  "start_new_chat": "Start a new chat",
+  "feedback": {
+    "failed": "Could not submit feedback.",
+    "nudge": "Was this helpful?",
+    "popover": {
+      "title": "What went wrong?",
+      "submit": "Submit",
+      "comment_placeholder": "Optional: tell us more..."
+    },
+    "reasons": {
+      "inaccurate": "Inaccurate",
+      "incomplete": "Incomplete",
+      "irrelevant": "Irrelevant",
+      "outdated": "Outdated",
+      "other": "Other"
+    }
+  },
+  "status": {
+    "actions": {
+      "analyzing": "Analyzing documents...",
+      "block": "Unable to process...",
+      "clarify": "Clarifying...",
+      "compressing": "Compressing context...",
+      "generate": "Generating response...",
+      "generating": "Generating response...",
+      "steer": "Applying your steering...",
+      "retrieved": "Documents retrieved",
+      "screenshot": "Taking a screenshot...",
+      "search": "Searching documents...",
+      "searching": "Searching documents...",
+      "ls": "Browsing folder structure...",
+      "clarify_response": "Applying your selection...",
+      "tool_call": "Running tool...",
+      "read_file": "Reading file content..."
+    },
+    "entities": "Entities",
+    "error": "Stream Error",
+    "error_title": "Unable to answer due to an error",
+    "first_token_latency": "First token in {{seconds}}s",
+    "interrupted": "The response was interrupted. You can regenerate to try again.",
+    "interrupted_title": "Response interrupted",
+    "no_sources_error": "I could not find sufficiently relevant content in your uploaded documents. Try refining your question, selecting filters, or adding documents.",
+    "orchestration": "Orchestration",
+    "orchestration_hide": "Hide orchestration",
+    "orchestration_show": "Show orchestration",
+    "reasoning": "Reasoning",
+    "response_unrecoverable": "This response could not be recovered due to a data issue.",
+    "retrieval_queries": "Queries",
+    "retry_trace": {
+      "fallback": "Using ranked context",
+      "missing_ids": "Missing",
+      "planner_title": "Planner retry",
+      "requested_ids": "Requested",
+      "retrying": "Retrying",
+      "selected_ids": "Selected",
+      "selection_accepted": "Final context selected",
+      "selection_failed": "Final context selection failed"
+    },
+    "search_results": {
+      "title": "Relevant documents",
+      "subtitle": "Organized by file and page so you can inspect the strongest matches quickly.",
+      "documents": "{{count}} document",
+      "documents_other": "{{count}} documents",
+      "collapsed_title": "{{count}} document retrieved",
+      "collapsed_title_other": "{{count}} documents retrieved",
+      "pages": "{{count}} page",
+      "pages_other": "{{count}} pages",
+      "matches": "{{count}} match",
+      "matches_other": "{{count}} matches",
+      "avg_score": "Avg {{score}}%",
+      "top_score": "Confidence {{score}}%",
+      "top_score_short": "Top {{score}}%",
+      "page": "Page {{number}}",
+      "page_unknown": "Unknown page",
+      "open_page": "Open",
+      "summary_only": "File summary"
+    },
+    "sending": "Sending...",
+    "streaming": "Responding...",
+    "summary": {
+      "done": "Thought for {{duration}}",
+      "done_untimed": "Orchestration trace",
+      "steps": "{{count}} step",
+      "steps_other": "{{count}} steps",
+      "title": "Reasoning & tool calls"
+    },
+    "thinking": "Thinking...",
+    "thought": "Thought",
+    "tool_call_details": "{{name}} details",
+    "tool_call_params": "Parameters:",
+    "tool_call_response": "Response:",
+    "verifying_sources": "Verifying sources...",
+    "waiting_first_token": "Waiting for first token ({{seconds}}s)"
+  },
+  "thread": {
+    "archive": {
+      "action": "Archive"
+    },
+    "delete": {
+      "confirm": "Delete",
+      "description": "Are you sure you want to delete this conversation? This action cannot be undone.",
+      "title": "Delete Conversation",
+      "action": "Delete conversation"
+    },
+    "restore": {
+      "action": "Restore"
+    },
+    "toast": {
+      "archived": "Conversation archived",
+      "created": "Conversation created",
+      "deleted": "Conversation deleted",
+      "restored": "Conversation restored"
+    }
+  },
+  "thread_groups": {
+    "last_week": "Last 7 days",
+    "older": "Older",
+    "today": "Today",
+    "yesterday": "Yesterday"
+  },
+  "stores": {
+    "title": "Stores",
+    "empty": "No stores yet"
+  },
+  "threads": {
+    "active": "Active",
+    "archived": "Archived",
+    "close_sidebar": "Hide threads",
+    "empty": "No conversations yet",
+    "empty_hint": "Select a store to start chatting",
+    "no_archived": "No archived conversations",
+    "open_sidebar": "Show threads",
+    "recent": "Recent Conversations"
+  },
+  "chat_upload": {
+    "cancel": "Cancel upload",
+    "cancelled": "Upload cancelled",
+    "processing": "Processing files ({{done}}/{{total}})...",
+    "all_complete": "{{count}} file uploaded",
+    "all_complete_other": "{{count}} files uploaded",
+    "to_store": "for {{name}}",
+    "auto_filtered": "Files added to chat scope",
+    "scope_prompt": "Add files to chat scope?",
+    "scope_accept": "Yes, focus on these files",
+    "scope_skip": "No, search all documents",
+    "status": {
+      "uploading": "Uploading",
+      "loading": "Parsing",
+      "storing": "Storing",
+      "embedding": "Embedding",
+      "indexing": "Indexing",
+      "complete": "Ready",
+      "error": "Failed"
+    }
+  },
+  "effort": {
+    "description": "How much work the assistant puts into finding and checking sources.",
+    "level_1": "Minimal",
+    "level_2": "Light",
+    "level_3": "Balanced",
+    "level_4": "Deep",
+    "level_5": "Exhaustive",
+    "selector": "Effort"
+  },
+  "filter": {
+    "label": "Filter",
+    "title": "Filter by files & folders",
+    "panel_title": "Retrieval filters",
+    "tab_stores": "Files",
+    "tab_metadata": "Metadata",
+    "no_stores": "Select a store to filter its files.",
+    "clear_all": "Clear all",
+    "empty": "No files or folders available",
+    "active": "Filtering:",
+    "items": "items",
+    "applied": "Scoped to",
+    "file_label": "File: {{name}}",
+    "folder_label": "Folder: {{name}}"
+  },
+  "stop": "Stop",
+  "title": "Chat",
+  "upload": {
+    "attach": "Attach files",
+    "accepted_types": "PDF, Word, Excel, PowerPoint, ODT, TXT, CSV, Markdown"
+  },
+  "untitled_chat": "Untitled Chat",
+  "steer": {
+    "label": "Steer the agent",
+    "placeholder": "Steer the agent...",
+    "queued": "Sending after stop...",
+    "active": "Steering..."
+  },
+  "version": {
+    "latest": "Latest",
+    "previous": "Previous version",
+    "next": "Next version"
+  },
+  "waterfall": {
+    "title": "Agentic Search Trace",
+    "subtitle": "Waterfall timeline of tool calls issued during the agentic search.",
+    "duration": "{{duration}}",
+    "duration_label": "Duration",
+    "spans_label": "Spans",
+    "rounds_label": "Rounds",
+    "overview_label": "agentic_search",
+    "stage_reasoning": "Reasoning",
+    "stage_retrieval": "Search",
+    "stage_tools": "Tools",
+    "stage_generation": "Generation",
+    "stage_other": "Other"
+  }
+}
