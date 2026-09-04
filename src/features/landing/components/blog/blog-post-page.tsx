@@ -1,104 +1,78 @@
-import { ArrowLeft, CalendarDays, Clock3, User } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { ArrowLeft, CalendarDays, Clock3, User } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
-import { LandingFooter } from '@/features/landing/components/footer';
-import { LandingNavbar } from '@/features/landing/components/navigation';
-import { blog, blogLanguage, post, tag } from '@/features/landing/data/blog';
+import { LandingFooter } from "@/features/landing/components/footer";
+import { LandingNavbar } from "@/features/landing/components/navigation";
+import {
+  getBlogLanguage,
+  getBlogPost,
+  getPostAuthors,
+  getTagIcon,
+} from "@/features/landing/data/blog";
+import { getServerTranslation } from "@/lib/translations";
 
 type BlogPostPageProps = {
   lang?: string;
   slug: string;
 };
 
-export const BlogPostPage = async ({ lang, slug }: BlogPostPageProps) => {
-  const blogPost = await blog.post.retrieve(slug).catch(() => null);
+export async function BlogPostPage({ lang, slug }: BlogPostPageProps) {
+  const post = await getBlogPost(slug).catch(() => null);
 
-  if (!blogPost) {
+  if (!post) {
     notFound();
   }
 
-  const language = blogLanguage.get(lang);
-  const content = blogPost[language];
-  const authors = post.authors(blogPost);
-  const postUrl = `https://prosperify.app/blog/${slug}`;
-
-  const articleJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: content.title,
-    description: content.excerpt,
-    datePublished: new Date(blogPost.date).toISOString(),
-    author: authors.map((a) => ({
-      '@type': 'Person',
-      name: a.name,
-    })),
-    publisher: {
-      '@type': 'Organization',
-      name: 'Prosperify',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://prosperify.app/assets/brand/logo-icon.png',
-      },
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': postUrl,
-    },
-    ...(blogPost.readTime && {
-      timeRequired: blogPost.readTime,
-    }),
-    ...(blogPost.tags.length > 0 && {
-      keywords: blogPost.tags.join(', '),
-    }),
-    image: 'https://prosperify.app/opengraph-image',
-  };
-
-  const jsonLdHtml = JSON.stringify(articleJsonLd).replace(/</g, '\\u003c');
+  const language = getBlogLanguage(lang);
+  const tr = getServerTranslation(language);
+  const content = post[language];
+  const authors = getPostAuthors(post);
 
   return (
     <main className="min-h-screen bg-white text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml }} />
       <LandingNavbar />
       <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
         <Link
           className="inline-flex items-center gap-2 text-sm font-medium text-neutral-600 transition-colors hover:text-orange-600 dark:text-neutral-400"
           href="/blog"
-          title={language === 'fr' ? 'Retour au blog' : 'Back to blog'}
         >
           <ArrowLeft className="h-4 w-4" />
-          {language === 'fr' ? 'Retour au blog' : 'Back to blog'}
+          {tr.blog.backToBlog}
         </Link>
 
         <header className="mt-12 border-b border-neutral-200 pb-12 dark:border-neutral-800">
           <div>
             <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-500 dark:text-neutral-400">
               {(() => {
-                return blogPost.tags.slice(0, 3).map((tagStr) => {
-                  const BadgeIcon = tag.icon(tagStr);
+                return post.tags.slice(0, 3).map((tag) => {
+                  const BadgeIcon = getTagIcon(tag);
                   return (
                     <span
-                      key={tagStr}
+                      key={tag}
                       className="inline-flex items-center gap-1.5 bg-orange-50 px-2.5 py-1 font-medium text-orange-700 dark:bg-orange-500/10 dark:text-orange-400"
                     >
                       <BadgeIcon className="h-3.5 w-3.5" />
-                      {tagStr}
+                      {tag}
                     </span>
                   );
                 });
               })()}
               <span className="inline-flex items-center gap-1">
                 <CalendarDays className="h-3.5 w-3.5" />
-                {new Intl.DateTimeFormat(language === 'fr' ? 'fr-FR' : 'en-US', {
-                  day: 'numeric',
-                  month: 'long',
-                  year: 'numeric',
-                }).format(new Date(blogPost.date))}
+                {new Intl.DateTimeFormat(
+                  language === "fr" ? "fr-FR" : "en-US",
+                  {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  },
+                ).format(new Date(post.date))}
               </span>
               <span className="inline-flex items-center gap-1">
                 <Clock3 className="h-3.5 w-3.5" />
-                {blogPost.readTime}
+                {post.readTime}
               </span>
             </div>
 
@@ -146,9 +120,7 @@ export const BlogPostPage = async ({ lang, slug }: BlogPostPageProps) => {
                 </h2>
               ) : null}
               <div
-                className={`${
-                  section.heading ? 'mt-4' : ''
-                } border-l-2 border-orange-200 pl-5 dark:border-orange-500/40`}
+                className={`${section.heading ? "mt-4" : ""} border-l-2 border-orange-200 pl-5 dark:border-orange-500/40`}
               >
                 <div className="space-y-5">
                   {section.body.split(/\n{2,}/).map((paragraph) => (
@@ -169,14 +141,13 @@ export const BlogPostPage = async ({ lang, slug }: BlogPostPageProps) => {
           <Link
             className="inline-flex items-center gap-2 text-sm font-medium text-neutral-600 transition-colors hover:text-orange-600 dark:text-neutral-400"
             href="/blog"
-            title={language === 'fr' ? 'Retour au blog' : 'Back to blog'}
           >
             <ArrowLeft className="h-4 w-4" />
-            {language === 'fr' ? 'Retour au blog' : 'Back to blog'}
+            {tr.blog.backToBlog}
           </Link>
         </div>
       </article>
       <LandingFooter />
     </main>
   );
-};
+}

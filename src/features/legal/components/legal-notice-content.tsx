@@ -3,8 +3,6 @@
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
-import { uiLanguage } from '@/features/landing/lib/theme';
-
 import { LegalControls } from './legal-controls';
 
 const content = {
@@ -90,7 +88,7 @@ const content = {
 
 export default function LegalNoticeContent() {
   const { i18n } = useTranslation();
-  const lang = uiLanguage(i18n.language);
+  const lang = i18n.language === 'en' ? 'en' : 'fr';
   const copy = content[lang];
 
   return (

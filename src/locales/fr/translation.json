@@ -1,473 +1,1977 @@
 {
+  "meta": {
+    "title": "Prosperify - Intelligence documentaire gouvernée",
+    "description": "Déployez Prosperify Agent sur vos stores documentaires confidentiels, avec recherche hybride, permissions, audit et contrôle du déploiement.",
+    "pages": {
+      "team": {
+        "title": "Équipe | Prosperify",
+        "description": "L'équipe Prosperify, qui construit une IA documentaire gouvernée pour les connaissances d'entreprise."
+      },
+      "jobs": {
+        "title": "Recrutement | Prosperify",
+        "description": "Postes ouverts et actualités recrutement de Prosperify, la plateforme d'IA documentaire gouvernée."
+      },
+      "blog": {
+        "title": "Blog Prosperify | IA documentaire gouvernée",
+        "description": "Notes concrètes sur l'IA documentaire sourcée : recherche, gouvernance et déploiement en entreprise."
+      },
+      "blogError": "Le contenu workspace n'a pas pu être chargé.",
+      "privacy": {
+        "title": "Politique de confidentialité - Prosperify",
+        "description": "Politique de confidentialité Prosperify : comment nous collectons, traitons et protégeons vos données personnelles."
+      },
+      "terms": {
+        "title": "Conditions d'utilisation - Prosperify",
+        "description": "Conditions générales d'utilisation de Prosperify."
+      },
+      "gdpr": {
+        "title": "Conformité RGPD - Prosperify",
+        "description": "Conformité RGPD de Prosperify : vos droits et comment nous les mettons en œuvre."
+      },
+      "sectorLegal": {
+        "title": "Juridique | Prosperify",
+        "description": "Clauses, obligations et précédents dans des corpus confidentiels : réponses sourcées, accès gouvernés, périmètre hébergé en France."
+      },
+      "sectorHealthcare": {
+        "title": "Santé | Prosperify",
+        "description": "Protocoles, littérature et dossiers réglementaires : des réponses sourcées et vérifiables, dans un périmètre hébergé en France."
+      },
+      "sectorFinance": {
+        "title": "Financier | Prosperify",
+        "description": "Due diligence, reporting et conformité : des réponses vérifiables sur vos corpus financiers, hébergées en France."
+      },
+      "jobDetail": {
+        "title": "{{title}} | Recrutement Prosperify"
+      }
+    },
+    "ogTitle": "Prosperify - Intelligence documentaire gouvernée",
+    "ogDescription": "Prosperify Agent, sourcé, sur les connaissances confidentielles de l'entreprise.",
+    "twitterDescription": "Recherche hybride, réponses vérifiées, permissions et audit pour documents confidentiels."
+  },
+  "common": {
+    "backToLanding": "Retour à l'accueil"
+  },
+  "nav": {
+    "features": "Fonctionnalités",
+    "useCases": "Cas d'usage",
+    "products": "Offres",
+    "sovereignty": "Souveraineté",
+    "security": "Sécurité",
+    "blog": "Blog",
+    "team": "Équipe",
+    "jobs": "Jobs",
+    "featuresMenu": {
+      "overview": {
+        "label": "Vue d'ensemble",
+        "description": "Ce que fait la plateforme, de la source à la réponse citée."
+      },
+      "legal": {
+        "label": "Prosperify pour le juridique",
+        "description": "Clauses, obligations et précédents, avec la source."
+      },
+      "healthcare": {
+        "label": "Prosperify pour la santé",
+        "description": "Protocoles, littérature et dossiers réglementaires."
+      },
+      "finance": {
+        "label": "Prosperify pour la finance",
+        "description": "Due diligence, reporting et conformité."
+      }
+    }
+  },
+  "sectionLabels": {
+    "workflow": "Workflow",
+    "features": "Fonctionnalités",
+    "products": "Nos offres",
+    "integration": "Intégration",
+    "security": "Sécurité",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "demoPicker": {
+      "title": "Sur quel secteur voulez-vous la voir ?",
+      "subtitle": "Choisissez un secteur : la démo s'ouvre sur un vrai document, avec la question déjà posée et une visite guidée qui explique chaque étape.",
+      "promptLabel": "Question posée",
+      "steps": [
+        "La question part sur le corpus du secteur",
+        "La réponse se construit, sources à l'appui",
+        "Chaque citation renvoie à sa page"
+      ],
+      "sectorCta": "Lancer la démo",
+      "switchLabel": "Secteur",
+      "caseLink": "Voir le cas d'usage",
+      "tourDoneTitle": "Vous avez vu la démo, voici le cas d'usage complet",
+      "tourDoneCta": "Cas d'usage",
+      "legal": {
+        "prompt": "Le contrat Verdi se renouvelle-t-il par tacite reconduction, et comporte-t-il une clause de changement de contrôle ?"
+      },
+      "healthcare": {
+        "prompt": "Quelle posologie le protocole HELIOS-2 prévoit-il en cas d'insuffisance rénale ?"
+      },
+      "finance": {
+        "prompt": "Vérifie l'EBITDA normalisé 2025 du rapport HELIOS et la fiabilité du multiple de 8,0x."
+      }
+    },
+    "badge": "Intelligence documentaire · données sensibles",
+    "titleLine1": "L'intelligence documentaire",
+    "titleHighlight": "souveraine",
+    "titleLine2": "pour vos corpus sensibles.",
+    "subtitle": "Prosperify aide les équipes à interroger leurs corpus juridiques, médicaux et financiers avec des sources visibles, des accès gouvernés et un périmètre de déploiement clair.",
+    "primaryCta": "Demander une démo",
+    "secondaryCta": "Voir le workflow",
+    "demoCaption": "",
+    "stats": {
+      "citations": "réponses reliées aux sources consultées",
+      "deployment": "modes de déploiement : cloud, hybride, local",
+      "sources": "PDF, Word, Excel, CSV, JSON et corpus métier"
+    },
+    "trust": {
+      "sources": "Sources citées",
+      "permissions": "Accès gouvernés",
+      "deployment": "Cloud, hybride ou local",
+      "audit": "Sources et usage suivis",
+      "sovereignty": "Cloud, hybride ou sur site"
+    },
+    "guarantees": [
+      "Hébergé en France",
+      "Réponses sourcées",
+      "Instance dédiée",
+      "Humain dans la boucle"
+    ]
+  },
   "workflow": {
     "badge": "WORKFLOW",
     "title": "Vous choisissez les sources.",
-    "title_highlight": "L'agent cite les siennes.",
-    "subtitle": "Trois étapes, du choix des sources jusqu'à la réponse citée."
-  },
-  "workflow_tabs": {
-    "create": {
-      "title": "Connecter",
-      "heading": "Vos sources, votre périmètre",
-      "description": "Vous décidez ce que l'agent peut lire.",
-      "preview": {
-        "search": "Rechercher un data store",
-        "store_first": "Contrats fournisseurs",
-        "store_first_meta": "1 284 documents",
-        "store_second": "Politiques internes",
-        "store_second_meta": "312 documents",
-        "store_excluded": "Archives 2019",
-        "store_excluded_meta": "hors périmètre",
-        "selected": "1 data store et 1 dossier sélectionnés"
-      }
-    },
-    "unify": {
-      "title": "Rechercher",
-      "heading": "Sémantique, mots-clés et visuel",
-      "description": "Texte, tableaux et pages scannées.",
-      "preview": {
-        "file": "Contrat_cadre_2024.pdf",
+    "titleHighlight": "L'agent cite les siennes.",
+    "titleSuffix": "",
+    "subtitle": "Trois étapes, du choix des sources jusqu'à la réponse citée.",
+    "cards": {
+      "connect": {
+        "tag": "CONNECTER",
+        "title": "Vos sources, votre périmètre",
+        "description": "Vous décidez ce que l'agent peut lire.",
+        "searchPlaceholder": "Rechercher un data store",
+        "selected": [
+          {
+            "name": "Contrats fournisseurs",
+            "meta": "1 284 documents"
+          },
+          {
+            "name": "Politiques internes",
+            "meta": "312 documents"
+          }
+        ],
+        "excluded": {
+          "name": "Archives 2019",
+          "meta": "hors périmètre"
+        },
+        "summary": "2 sources sélectionnées · 1 exclue"
+      },
+      "search": {
+        "tag": "RECHERCHER",
+        "title": "Sémantique, mots-clés et visuel",
+        "description": "Texte, tableaux et pages scannées.",
+        "fileName": "Contrat_cadre_2024.pdf",
         "page": "3 / 42",
-        "title": "Article 12 - Responsabilité",
-        "highlight_first": "Le prestataire limite sa responsabilité",
-        "highlight_second": "à 12 mois de redevances."
+        "articleTitle": "Article 12 : Responsabilité",
+        "highlight": "Le prestataire limite sa responsabilité à 12 mois de redevances."
+      },
+      "cite": {
+        "tag": "CITER",
+        "title": "Chaque réponse est sourcée",
+        "description": "Clause, page et document, à l'appui.",
+        "storeLabel": "Contrats fournisseurs",
+        "question": "Quelles clauses limitent notre responsabilité ?",
+        "agentLabel": "Prosperify Agent",
+        "answerStart": "La responsabilité est plafonnée à ",
+        "answerHighlight": "12 mois de redevances",
+        "answerEnd": ".",
+        "sourcesLabel": "SOURCES UTILISÉES",
+        "citations": [
+          {
+            "label": "Contrat_cadre.pdf",
+            "page": "p.3"
+          },
+          {
+            "label": "Avenant_2024.pdf",
+            "page": "p.7"
+          }
+        ]
       }
+    }
+  },
+  "workflowTabs": {
+    "connect": {
+      "title": "Connecter & Interroger",
+      "heading": "Des sources validées à la réponse sourcée",
+      "subtitle": "Dossiers KYC, rapports de due diligence et listes de sanctions sont indexés dans des stores dédiés, puis interrogés par l'agent qui retourne un résultat cité.",
+      "sourcesLabel": "Sources",
+      "sourceStatus": "validé",
+      "sources": [
+        "Dossiers KYC clients",
+        "Rapports due diligence",
+        "Listes de sanctions"
+      ],
+      "processorName": "Prosperify",
+      "processorSubtitle": "Indexation & préparation",
+      "pipeline": [
+        "Lire",
+        "Préparer",
+        "Indexer"
+      ],
+      "storesReadyLabel": "Stores prêts",
+      "stores": [
+        {
+          "id": "kyc",
+          "label": "Store KYC",
+          "service": "Identité & UBO"
+        },
+        {
+          "id": "compliance",
+          "label": "Store Conformité",
+          "service": "Sanctions & AML"
+        },
+        {
+          "id": "duedil",
+          "label": "Store Due Dil",
+          "service": "Rapports & alertes"
+        }
+      ],
+      "queryLabel": "Requête KYC",
+      "queryText": "Ce client figure-t-il sur une liste de sanctions ou présente-t-il un UBO à risque ?",
+      "analysisInProgress": "Analyse en cours",
+      "analysisComplete": "Analyse complète",
+      "agentName": "Prosperify Agent",
+      "agentStatusInit": "Initialisation…",
+      "agentStatusAnalyzing": "Analyse de la requête",
+      "agentStatusDone": "Analyse terminée ✓",
+      "agentStatusQuerying": "Interrogation : {{label}}",
+      "resultsLabel": "Signaux",
+      "storesQueriedLabel": "Stores interrogés",
+      "answer": {
+        "sourcePrefix": "Source",
+        "sourceName": "ACAMS Report · p.4",
+        "description": "UBO non déclaré, lié à entité sanctionnée",
+        "highlight": "(OFAC · entrée #4821)",
+        "riskPrefix": "Risque global :",
+        "riskValue": "élevé"
+      },
+      "answerSources": [
+        "ACAMS · p.4",
+        "OFAC 2024",
+        "Kroll Report"
+      ]
     },
-    "chat": {
-      "title": "Citer",
-      "heading": "Chaque réponse est sourcée",
-      "description": "Clause, page et document, à l'appui.",
-      "preview": {
-        "question_first": "Quelles clauses limitent",
-        "question_second": "notre responsabilité ?",
-        "answer_first": "La responsabilité est plafonnée à",
-        "answer_second": "12 mois de redevances.",
-        "sources": "Sources",
-        "source_first": "Contrat_cadre.pdf",
-        "source_first_page": "p. 3",
-        "source_second": "Avenant_2024.pdf",
-        "source_second_page": "p. 7"
-      }
+    "control": {
+      "title": "Contrôler",
+      "heading": "Chaque accès est enregistré et gouverné",
+      "subtitle": "Journal d'audit immuable, contrôle d'accès par rôle, zéro donnée brute exposée.",
+      "auditLogLabel": "Journal d'audit",
+      "auditLog": [
+        {
+          "time": "09:14:32",
+          "user": "M. Dupont",
+          "action": "Requête KYC : Meridian Holdings",
+          "stores": "KYC · Sanctions",
+          "risk": "élevé",
+          "riskLevel": "high"
+        },
+        {
+          "time": "09:07:18",
+          "user": "L. Fontaine",
+          "action": "Vérification OFAC : Acme Corp",
+          "stores": "Conformité · Due Dil",
+          "risk": "faible",
+          "riskLevel": "low"
+        },
+        {
+          "time": "08:52:04",
+          "user": "A. Mbeki",
+          "action": "Due diligence : Orion Partners",
+          "stores": "Due Dil · KYC",
+          "risk": "moyen",
+          "riskLevel": "medium"
+        }
+      ],
+      "auditFooter": "Requête enregistrée · immuable · RGPD",
+      "accessControlLabel": "Contrôle d'accès",
+      "storeColumnLabel": "Store",
+      "roles": [
+        "Analyste",
+        "Compliance",
+        "Admin"
+      ],
+      "storePerms": [
+        {
+          "store": "Store KYC",
+          "allowed": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "store": "Store Conformité",
+          "allowed": [
+            false,
+            true,
+            true
+          ]
+        },
+        {
+          "store": "Store Due Dil",
+          "allowed": [
+            true,
+            true,
+            true
+          ]
+        }
+      ],
+      "footerBadge": "Accès tracé · zéro donnée brute exposée"
     }
   },
   "cookie": {
     "accept": "Tout accepter",
     "learn": "En savoir plus",
     "message": "Ce site utilise des cookies à des fins d'analyse. Vous pouvez choisir les catégories à accepter.",
-    "reject": "Tout refuser",
-    "customize": "Personnaliser",
-    "save": "Enregistrer mes choix",
-    "back": "Retour",
-    "necessary": "Strictement nécessaires",
-    "necessary_hint": "Nécessaires au fonctionnement du site. Toujours actifs.",
-    "analytics": "Mesure d'audience",
-    "analytics_hint": "Nous aide à comprendre comment le site est utilisé."
+    "reject": "Tout refuser"
   },
   "contact": {
+    "title": "Cadrons votre premier cas d'usage documentaire",
+    "lead": "Identifiez un corpus sensible, un store métier ou un workflow à fiabiliser. Prosperify vous aide à cadrer un pilote mesurable, sécurisé et aligné sur vos exigences de confidentialité.",
+    "checks": [
+      "Corpus sensible",
+      "Store métier",
+      "Pilote sécurisé"
+    ],
     "meeting": {
-      "title": "Échange de découverte Prosperify"
+      "heading": "Planifier une session de travail",
+      "description": "Vous préférez un échange direct ? Ouvrez un événement Google Calendar prérempli avec Prosperify déjà ajouté en invité.",
+      "cta": "Ouvrir Google Calendar",
+      "note": "Quand vous enregistrez ou envoyez l'événement, Prosperify est inclus dans l'invitation. Ajoutez Google Meet depuis l'événement si ce n'est pas activé par défaut.",
+      "title": "Discussion de déploiement Prosperify",
+      "details": "Échanger sur le périmètre documentaire, les exigences de sécurité, le modèle de déploiement et les prochaines étapes avec Prosperify.",
+      "location": "Google Meet"
     },
     "form": {
-      "name_placeholder": "Votre nom complet",
-      "company_placeholder": "Nom de votre entreprise",
-      "email_placeholder": "Votre email",
-      "phone_placeholder": "Téléphone (optionnel)",
-      "subject_placeholder": "Sélectionnez l'objet",
-      "subject_information": "Demander une démonstration",
-      "subject_partnership": "Cadrer un pilote juridique",
-      "subject_other": "Cadrer un pilote comptabilité & finance",
-      "subject_api": "Cadrer un pilote médical & santé",
-      "subject_virtual_partner": "Évaluer un déploiement souverain",
-      "message_placeholder": "Votre message",
-      "status_send_error": "Erreur d'envoi."
+      "namePlaceholder": "Votre nom complet",
+      "companyPlaceholder": "Nom de votre entreprise",
+      "emailPlaceholder": "Votre email",
+      "phonePlaceholder": "Téléphone (optionnel)",
+      "subjectPlaceholder": "Sélectionnez l'objet",
+      "subjectInformation": "Demander une démonstration",
+      "subjectPartnership": "Cadrer un pilote documentaire",
+      "subjectOther": "Évaluer un déploiement souverain",
+      "subjectApi": "Discuter d'une intégration API",
+      "subjectVirtualPartner": "Partenariat / collaborateur virtuel",
+      "messagePlaceholder": "Votre message",
+      "submit": "Envoyer ma demande",
+      "statusSending": "⏳ Envoi en cours...",
+      "statusSuccess": "✅ Message envoyé !",
+      "statusFixErrors": "❌ Merci de corriger les erreurs ci-dessus.",
+      "statusUnexpected": "❌ Erreur inattendue.",
+      "statusSendError": "❌ Erreur d'envoi.",
+      "available": "Créneaux disponibles",
+      "availableDates": "Dates disponibles",
+      "checking": "Vérification...",
+      "consent": "Je souhaite recevoir des actualités et conseils produits (optionnel)",
+      "copied": "Copié",
+      "copyInvite": "Copier le lien d'invitation",
+      "details": "Vos coordonnées",
+      "intro": "Dites-nous quels documents vous voulez interroger, où ils vivent, et quel niveau de contrôle le déploiement doit respecter.",
+      "meeting": "Rendez-vous",
+      "meetingCta": "Voir les créneaux disponibles",
+      "noSlots": "Aucun créneau disponible n'a été renvoyé pour les prochains jours ouvrés.",
+      "note": "Cela créera une invitation Google Meet de 15 minutes.",
+      "privacy": "Politique de confidentialité",
+      "schedule": "Envoyer et planifier",
+      "scheduling": "Planification...",
+      "success": "Rendez-vous planifié. Vous recevrez l'invitation calendrier par email.",
+      "unavailable": "Calendrier indisponible. Vous pouvez toujours envoyer le message.",
+      "selectSlot": "Veuillez sélectionner un créneau.",
+      "privacyNotice": "Nous traitons vos données (nom, email, entreprise, téléphone) pour répondre à votre demande et planifier un rendez-vous via Google Calendar. Base légale : intérêt légitime. Données conservées 36 mois après le dernier contact. Vous pouvez accéder, rectifier ou supprimer vos données à tout moment.",
+      "privacyComplaint": ". Vous pouvez saisir la CNIL.",
+      "openInvite": "Ouvrir l'invitation"
     }
   },
-  "ai_chat": {
+  "aiChat": {
+    "sidebar": {
+      "history": "Historique"
+    },
+    "conversations": [
+      "Contrat Verdi",
+      "Budget T4",
+      "Procédures RH",
+      "Rapport mensuel"
+    ],
+    "openDocumentFull": "Ouvrir Contrat_Verdi.pdf (page 10)",
+    "openDocumentShort": "Contrat_Verdi.pdf (page 10)",
     "pdf": {
-      "title": "rapport-dd-projet-helios.pdf"
+      "contractNameSecondary": "Rapport_Financier_T4.pdf",
+      "title": "Contrat Verdi.pdf"
     }
   },
-  "products": {
-    "badge": "L'OFFRE",
-    "title_prefix": "L'agent de recherche",
-    "title_highlight": "adapté à votre domaine",
-    "intro": "Un seul agent, trois métiers : juridique, finance, santé. Chacun avec son vocabulaire, ses documents et ses règles d'accès.",
-    "cta": "Demander une démo",
-    "view_all": "Voir tous les cas d'usage",
-    "explore": "Détails",
-    "use_cases": {
-      "legal": {
-        "slug": "legal",
-        "label": "Juridique",
-        "title": "La clause exacte, en quelques secondes",
-        "description": "Interrogez contrats, dossiers et textes réglementaires en langage naturel. Chaque réponse renvoie à la clause et à la page qui la justifient.",
-        "problems": [
-          "Une clause de renouvellement automatique passe inaperçue",
-          "Comparer les avenants version par version prend des heures",
-          "Un assistant générique ne cite ni clause ni page"
-        ],
-        "benefits": [
-          "Contradictions et clauses à risque signalées avant la contrepartie",
-          "Révisez data room et dossier complet en quelques minutes",
-          "Chaque réponse cite la clause et la page exactes"
-        ],
-        "security": [
-          "Accès contrôlé par dossier, client et rôle",
-          "Confidentialité préservée : le modèle n'est jamais entraîné sur vos documents",
-          "Déploiement dans notre cloud européen ou entièrement dans votre périmètre"
-        ],
-        "faq": [
-          {
-            "question": "Prosperify peut-il relire une data room entière d'un coup ?",
-            "answer": "Oui. Importez une data room, posez une question sur n'importe quelle clause, partie ou obligation, et chaque réponse cite sa clause et sa page."
-          },
-          {
-            "question": "Comment la confidentialité est-elle gérée pour les équipes juridiques ?",
-            "answer": "L'accès est limité par dossier, client et rôle, et le modèle n'est jamais entraîné sur vos documents. Vous pouvez le déployer dans votre propre cloud ou périmètre."
-          },
-          {
-            "question": "Signale-t-il les contradictions entre documents liés ?",
-            "answer": "Oui. Il croise les avenants et les versions et remonte les contradictions pour que vous les traitiez avant qu'une contrepartie ne les soulève."
-          }
-        ],
-        "sample_question": "Quels contrats fournisseurs se renouvellent automatiquement avant le T2, et lesquels incluent une clause de changement de contrôle ?"
+  "sectors": {
+    "common": {
+      "nav": {
+        "useCases": "Cas d'usage",
+        "workflow": "Workflow",
+        "security": "Sécurité",
+        "deployment": "Déploiement",
+        "faq": "FAQ"
       },
-      "accounting": {
-        "slug": "accounting",
-        "label": "Comptabilité & finance",
-        "title": "Repérez l'écart avant le comité",
-        "description": "Chaque chiffre publié reste relié à sa source, du grand livre au rapport final. Les écarts remontent avant la clôture.",
-        "problems": [
-          "Réconcilier un état avec son tableau de passage est lent",
-          "Un écart enfoui dans une annexe atteint le comité",
-          "Un tableur ne dit jamais d'où vient le chiffre"
-        ],
-        "benefits": [
-          "Chaque chiffre publié reste tracé jusqu'à sa ligne d'origine",
-          "Écarts signalés avant la clôture ou la due diligence",
-          "Les réponses citent toujours la page exacte"
-        ],
-        "security": [
-          "Accès contrôlé par mission et client",
-          "Données financières confidentielles : le modèle n'est jamais entraîné sur vos documents",
-          "Déploiement dans notre cloud européen ou entièrement dans votre périmètre"
-        ],
-        "faq": [
-          {
-            "question": "Prosperify peut-il vérifier un chiffre publié jusqu'à sa source ?",
-            "answer": "Oui. Interrogez n'importe quel chiffre et il renvoie les retraitements sous-jacents et la page dont chacun provient."
-          },
-          {
-            "question": "Gère-t-il les dossiers d'audit et les data rooms de due diligence ?",
-            "answer": "Oui. Recherchez dans les états, dossiers d'audit, rapports de gestion et data rooms avec un accès limité par mission et client."
-          },
-          {
-            "question": "Comment un écart est-il traité ?",
-            "answer": "Prosperify croise les sources et signale lorsqu'un chiffre contredit son détail sous-jacent, pour que vous enquêtiez avant la publication."
-          }
-        ],
-        "sample_question": "L'EBITDA publié correspond-il aux retraitements du pont de normalisation, et quels chiffres proviennent d'éléments non récurrents ?"
+      "labels": {
+        "useCases": "Cas d'usage",
+        "workflow": "Workflow RAG",
+        "security": "Sécurité & conformité",
+        "example": "Réponse sourcée",
+        "deployment": "Déploiement",
+        "faq": "FAQ",
+        "contact": "Contact",
+        "challenge": "Le problème",
+        "comparison": "LLM généraliste"
       },
-      "medical": {
-        "slug": "medical",
-        "label": "Médical & santé",
-        "title": "Ne manquez plus une contre-indication",
-        "description": "Croisez dossiers patients, études et protocoles en une seule question. Chaque réponse cite la page exacte, prête pour la revue.",
-        "problems": [
-          "Un détail clinique perdu dans des dizaines de pages",
-          "Les incohérences entre dossiers échappent au système",
-          "Une réponse sans page citée n'est pas validable"
-        ],
-        "benefits": [
-          "Recherchez dossiers patients, études et protocoles en une seule requête",
-          "Incohérences et contradictions remontées entre dossiers liés",
-          "Chaque réponse citée à la page exacte"
-        ],
-        "security": [
-          "Accès contrôlé par équipe soignante et niveau de confidentialité",
-          "Données de santé protégées : le modèle n'est jamais entraîné sur vos documents",
-          "Déploiement dans notre cloud européen ou entièrement dans votre périmètre"
-        ],
-        "faq": [
+      "ctaDemo": "Demander une démo",
+      "ctaCases": "Voir les cas d'usage",
+      "sourcesLabel": "SOURCES UTILISÉES",
+      "heroVerified": "Réponse vérifiée face aux sources",
+      "useCasesSubtitle": "Des tâches documentaires concrètes, fiabilisées par des réponses sourcées.",
+      "workflow": {
+        "title": "De la question à la réponse vérifiée",
+        "subtitle": "Une séquence simple et gouvernée : recherche hybride, passages sourcés, réponse recomparée aux sources.",
+        "footnote": "Sources, accès et vérification conservés à chaque étape",
+        "steps": [
           {
-            "question": "Prosperify peut-il rechercher dossiers patients et études cliniques ensemble ?",
-            "answer": "Oui. Posez une question et il interroge dossiers, études et protocoles, puis renvoie une réponse citée à la page exacte."
+            "tag": "question",
+            "label": "Votre question",
+            "description": "En langage naturel, comme à un collègue."
           },
           {
-            "question": "Comment l'accès et la confidentialité sont-ils gérés ?",
-            "answer": "L'accès est limité par équipe soignante et niveau de confidentialité, et le modèle n'est jamais entraîné sur vos documents. Vous pouvez le déployer dans votre périmètre."
+            "tag": "recherche",
+            "label": "Recherche hybride",
+            "description": "L'index est fouillé par le sens et par les mots-clés."
           },
           {
-            "question": "Signale-t-il les incohérences entre dossiers ?",
-            "answer": "Oui. Il remonte les contradictions et incohérences entre dossiers liés pour que les réviseurs se concentrent sur ce qui compte."
+            "tag": "passages",
+            "label": "Passages sourcés",
+            "description": "Les meilleurs extraits autorisés sont réunis."
+          },
+          {
+            "tag": "vérif.",
+            "label": "Réponse vérifiée",
+            "description": "La réponse est recomparée aux sources avant affichage."
+          }
+        ]
+      },
+      "security": {
+        "title": "Une sécurité alignée sur votre modèle de déploiement",
+        "intro": "Les contrôles dépendent du modèle retenu. Voici les domaines examinés lors d'une évaluation, du document à la réponse.",
+        "disclaimer": "Aperçu public des contrôles considérés pour les déploiements Prosperify. Ce n'est ni une spécification, ni une certification, ni un engagement contractuel.",
+        "areas": [
+          {
+            "title": "Identité & accès",
+            "description": "Authentification, permissions par rôle, accès administrateur et intégration au fournisseur d'identité (OIDC / SAML)."
+          },
+          {
+            "title": "Protection des données",
+            "description": "Chiffrement des données stockées et transmises, gestion des clés et règles de traitement du contenu."
+          },
+          {
+            "title": "Contrôles réseau",
+            "description": "Exposition des services, périmètres réseau, connexions autorisées et connectivité client."
+          },
+          {
+            "title": "Opérations",
+            "description": "Journalisation, supervision, gestion des vulnérabilités, communication d'incident et gestion des changements."
+          },
+          {
+            "title": "Résilience",
+            "description": "Sauvegarde, restauration, capacité et maintenance selon le modèle retenu."
+          }
+        ]
+      },
+      "example": {
+        "title": "Une réponse, ses sources, sa vérification",
+        "note": "Chaque affirmation reste reliée au passage d'origine"
+      },
+      "deployment": {
+        "title": "Une solution, trois niveaux de contrôle",
+        "subtitle": "Choisissez le bon niveau de contrôle, d'intégration et de souveraineté, jusqu'à un déploiement 100 % local.",
+        "offers": [
+          {
+            "title": "Cloud Dédié",
+            "meta": "CONTRÔLE · GÉRÉ · INFRA PROSPERIFY",
+            "badge": "",
+            "features": [
+              "Infrastructure dédiée haute performance",
+              "Maintenance et mises à jour gérées",
+              "Mise en service rapide"
+            ]
+          },
+          {
+            "title": "Hybride",
+            "meta": "CONTRÔLE · PARTAGÉ · DONNÉES CHEZ VOUS",
+            "badge": "",
+            "features": [
+              "Vos données restent sur votre infrastructure",
+              "Modèle hébergé et maintenu par nos soins",
+              "Conformité réglementaire maximale"
+            ]
+          },
+          {
+            "title": "100 % Local",
+            "meta": "CONTRÔLE · TOTAL · VOTRE INFRASTRUCTURE",
+            "badge": "SÉCURITÉ MAXIMALE",
+            "features": [
+              "Déploiement sur votre infrastructure",
+              "Souveraineté totale des données",
+              "Aucune dépendance externe"
+            ]
+          }
+        ]
+      },
+      "faqTitle": "Questions fréquentes",
+      "contact": {
+        "title": "Cadrons votre premier cas d'usage",
+        "subtitle": "Un corpus sensible, un assistant métier, un workflow à fiabiliser : nous cadrons un pilote mesurable, sécurisé et hébergé en France.",
+        "checks": [
+          "Corpus sensible",
+          "Assistant métier",
+          "Pilote sécurisé"
+        ]
+      },
+      "comparison": {
+        "title": "Un assistant généraliste ne lit pas vos documents",
+        "intro": "Un modèle généraliste répond depuis ce qu'il a appris, pas depuis vos corpus. Sur des documents sensibles, l'écart ne se voit pas dans la réponse : il se voit quand on essaie de la vérifier.",
+        "genericColumn": "Assistant généraliste",
+        "prosperifyColumn": "Prosperify",
+        "rows": [
+          {
+            "criterion": "Origine de la réponse",
+            "generic": "Ce que le modèle a mémorisé, sans lien vers un document.",
+            "prosperify": "Les passages de vos documents, cités avec leur page."
+          },
+          {
+            "criterion": "Périmètre interrogé",
+            "generic": "Ce qui a été collé dans la conversation, rien de plus.",
+            "prosperify": "Le corpus autorisé pour cet assistant, et lui seul."
+          },
+          {
+            "criterion": "Droits d'accès",
+            "generic": "Ceux de la personne qui colle le document.",
+            "prosperify": "Rôle, assistant et corpus : chacun reste dans son périmètre."
+          },
+          {
+            "criterion": "Fraîcheur",
+            "generic": "Figée à l'entraînement : une version périmée fait autorité.",
+            "prosperify": "L'index suit vos documents ; la version en vigueur reste identifiable."
           }
         ],
-        "sample_question": "Quels dossiers patients mentionnent cette contre-indication, et quel protocole en régit la prise en charge ?"
+        "failureLabel": "Ce que ça donne concrètement",
+        "costLabel": "Le coût"
+      }
+    },
+    "legal": {
+      "label": "Juridique",
+      "badge": "JURIDIQUE · DONNÉES CONFIDENTIELLES",
+      "titleStart": "Vos contrats et dossiers, en réponses sourcées ",
+      "titleHighlight": "à la clause près",
+      "titleEnd": ".",
+      "subtitle": "Prosperify aide les équipes juridiques à retrouver, comparer et vérifier clauses, obligations et précédents dans des corpus confidentiels : sources visibles, accès gouvernés, périmètre hébergé en France.",
+      "chatTitle": "Assistant juridique",
+      "question": "Quelle est la durée du contrat Verdi et ses conditions de renouvellement ?",
+      "answerStart": "Source « Contrat Verdi.pdf », p. 10 : durée initiale de ",
+      "answerHighlight": "trois ans",
+      "answerEnd": ". Renouvellement soumis à accord écrit (Clause 4.1).",
+      "sources": [
+        "Verdi.pdf · p.10",
+        "Clause 4.1"
+      ],
+      "useCasesTitle": "Ce que vos équipes juridiques peuvent enfin déléguer",
+      "useCases": [
+        {
+          "tag": "contrats",
+          "title": "Analyse de contrats",
+          "description": "Extraire durées, clauses de résiliation, obligations et pénalités : chaque réponse est reliée au passage exact."
+        },
+        {
+          "tag": "due dil.",
+          "title": "Due diligence",
+          "description": "Passer une data room au crible, comparer les versions et repérer les écarts entre contrats."
+        },
+        {
+          "tag": "précédents",
+          "title": "Recherche de précédents",
+          "description": "Retrouver clauses types, modèles et jurisprudence interne par le sens, pas seulement par mots-clés."
+        },
+        {
+          "tag": "conformité",
+          "title": "Revue de conformité",
+          "description": "Vérifier que les engagements respectent vos standards et signaler les zones à valider."
+        }
+      ],
+      "faq": [
+        {
+          "question": "Les réponses citent-elles la clause exacte ?",
+          "answer": "Oui. Chaque réponse reste reliée aux passages utilisés (document, page et clause) pour faciliter la revue et l'opposabilité."
+        },
+        {
+          "question": "Mes dossiers confidentiels restent-ils cloisonnés ?",
+          "answer": "Les accès sont gouvernés par rôle, assistant et corpus. Chaque équipe reste dans son périmètre, dans une instance dédiée hébergée en France."
+        },
+        {
+          "question": "Mes documents servent-ils à entraîner des modèles ?",
+          "answer": "Non. Les corpus clients ne servent pas à entraîner les modèles ; ils sont uniquement interrogés pour produire des réponses sourcées."
+        },
+        {
+          "question": "Prosperify remplace-t-il l'avocat ?",
+          "answer": "Non. Il automatise la recherche, la comparaison et l'extraction. L'analyse et la décision restent portées par les juristes."
+        }
+      ],
+      "challenge": {
+        "title": "La réponse existe. Encore faut-il pouvoir la prouver.",
+        "intro": "Les équipes juridiques ne manquent pas d'outils de recherche. Elles manquent de réponses opposables.",
+        "items": [
+          {
+            "title": "Retrouvable, pas vérifiable",
+            "description": "Un moteur de recherche rend une liste de documents. Il ne dit pas quelle phrase fonde la réponse, ni dans quelle version."
+          },
+          {
+            "title": "La version qui fait foi",
+            "description": "Contrats, avenants, versions négociées : la bonne clause existe souvent en plusieurs états, et l'écart se paie."
+          },
+          {
+            "title": "Le coût de l'erreur",
+            "description": "Une réponse rapide mais non opposable n'a pas de valeur : ce qui est engagé, c'est la responsabilité de l'équipe."
+          }
+        ]
+      },
+      "securityChips": [
+        "Cloisonnement par dossier",
+        "Traces de consultation",
+        "Instance dédiée",
+        "Hébergement en France"
+      ],
+      "genericFailure": {
+        "question": "Le contrat prévoit-il une clause de changement de contrôle ?",
+        "generic": "Un assistant généraliste produit une clause plausible, correctement rédigée, et absente du contrat.",
+        "cost": "Une clause inventée n'est pas opposable, et reste indétectable sans relecture intégrale du contrat."
+      }
+    },
+    "healthcare": {
+      "label": "Santé",
+      "badge": "SANTÉ · DONNÉES SENSIBLES",
+      "titleStart": "Protocoles, études et dossiers, interrogés en réponses ",
+      "titleHighlight": "sourcées et vérifiables",
+      "titleEnd": ".",
+      "subtitle": "Prosperify aide les équipes santé à retrouver et vérifier l'information dans protocoles, littérature et dossiers réglementaires, dans un périmètre de confiance clair, hébergé en France.",
+      "chatTitle": "Assistant santé",
+      "question": "Quelle posologie le protocole HELIOS-2 prévoit-il en cas d'insuffisance rénale ?",
+      "answerStart": "Source « Protocole HELIOS-2.pdf », §6.3 : dose ajustée à ",
+      "answerHighlight": "50 % de la dose standard",
+      "answerEnd": " si clairance < 30 mL/min. Validation médicale requise.",
+      "sources": [
+        "HELIOS-2.pdf · §6.3",
+        "Tableau 6"
+      ],
+      "useCasesTitle": "L'information médicale, retrouvée et vérifiée en confiance",
+      "useCases": [
+        {
+          "tag": "protocoles",
+          "title": "Protocoles & procédures",
+          "description": "Retrouver la bonne version d'un protocole ou d'une procédure qualité et la citer précisément."
+        },
+        {
+          "tag": "littérature",
+          "title": "Veille & littérature",
+          "description": "Synthétiser études, publications et données de pharmacovigilance avec les références utilisées."
+        },
+        {
+          "tag": "réglementaire",
+          "title": "Dossiers réglementaires",
+          "description": "Naviguer les dossiers d'AMM et documents réglementaires volumineux et en extraire l'essentiel."
+        },
+        {
+          "tag": "qualité",
+          "title": "Comptes-rendus & qualité",
+          "description": "Comparer comptes-rendus et documents qualité, repérer les écarts et les points à valider."
+        }
+      ],
+      "faq": [
+        {
+          "question": "Où sont hébergées les données de santé ?",
+          "answer": "Selon le modèle retenu (cloud dédié, hybride ou local), avec un périmètre hébergé en France. Les arrangements exacts sont définis avec le client."
+        },
+        {
+          "question": "Les réponses sont-elles vérifiables ?",
+          "answer": "Oui. Chaque réponse renvoie aux extraits utilisés (section, tableau, page) et signale les points nécessitant une validation médicale."
+        },
+        {
+          "question": "Mes corpus servent-ils à entraîner des modèles ?",
+          "answer": "Non. Les documents sont uniquement interrogés dans votre périmètre, jamais réutilisés pour entraîner des modèles généraux."
+        },
+        {
+          "question": "Prosperify pose-t-il un diagnostic ?",
+          "answer": "Non. Il retrouve et synthétise l'information documentaire. L'interprétation et la décision restent médicales."
+        }
+      ],
+      "challenge": {
+        "title": "L'information est éclatée, et elle est sensible.",
+        "intro": "Les équipes santé travaillent sur des corpus qui dépassent la relecture, dans un cadre qui n'autorise pas l'approximation.",
+        "items": [
+          {
+            "title": "Des versions concurrentes",
+            "description": "Protocoles, procédures qualité, notes internes : plusieurs versions coexistent et rien ne dit laquelle s'applique aujourd'hui."
+          },
+          {
+            "title": "Des corpus hors d'échelle",
+            "description": "Dossiers réglementaires, littérature, comptes rendus : le volume interdit la relecture exhaustive avant chaque décision."
+          },
+          {
+            "title": "Aucun droit à l'approximation",
+            "description": "Sur des données sensibles, une réponse non sourcée ou un périmètre de déploiement flou suffisent à bloquer le projet."
+          }
+        ]
+      },
+      "securityChips": [
+        "Hébergement en France",
+        "Aucune donnée patient",
+        "Isolé par assistant",
+        "Traces auditables"
+      ],
+      "genericFailure": {
+        "question": "Quelle posologie prévoir en cas d'insuffisance rénale ?",
+        "generic": "Un assistant généraliste répond depuis la littérature générale, pas depuis la version du protocole en vigueur chez vous.",
+        "cost": "Une posologie juste en général peut être fausse dans votre protocole, et rien dans la réponse ne signale l'écart."
+      }
+    },
+    "finance": {
+      "label": "Finance",
+      "badge": "FINANCE · DONNÉES CONFIDENTIELLES",
+      "titleStart": "Due diligence, reporting et conformité : des réponses ",
+      "titleHighlight": "vérifiables",
+      "titleEnd": " sur vos corpus financiers.",
+      "subtitle": "Prosperify aide les équipes finance à analyser rapports, contrats et data rooms : réponses sourcées, accès gouvernés et périmètre hébergé en France.",
+      "chatTitle": "Analyste financier",
+      "question": "L'EBITDA normalisé 2025 du rapport HELIOS est-il cohérent avec le pont de normalisation ?",
+      "answerStart": "Source « Rapport HELIOS.pdf », Quality of Earnings p. 42 : EBITDA normalisé de ",
+      "answerHighlight": "14,2 M€",
+      "answerEnd": ". Le multiple de 8,0x apparaît cohérent avec les ajustements listés.",
+      "sources": [
+        "HELIOS.pdf · p.42",
+        "QoE · pont"
+      ],
+      "useCasesTitle": "Des corpus financiers denses, transformés en réponses fiables",
+      "useCases": [
+        {
+          "tag": "M&A",
+          "title": "Due diligence M&A",
+          "description": "Explorer une data room, vérifier l'EBITDA normalisé et comparer les ponts de normalisation."
+        },
+        {
+          "tag": "rapports",
+          "title": "Analyse de rapports",
+          "description": "Extraire chiffres clés, hypothèses et multiples de rapports volumineux, sources à l'appui."
+        },
+        {
+          "tag": "reporting",
+          "title": "Reporting réglementaire",
+          "description": "Retrouver et recouper les données exigées par vos obligations de reporting."
+        },
+        {
+          "tag": "KYC",
+          "title": "KYC & conformité",
+          "description": "Vérifier pièces et dossiers de conformité, signaler les éléments manquants ou à valider."
+        }
+      ],
+      "faq": [
+        {
+          "question": "Les chiffres sont-ils traçables jusqu'à la source ?",
+          "answer": "Oui. Chaque montant ou hypothèse renvoie à la page et à la section d'origine pour faciliter la revue et l'audit."
+        },
+        {
+          "question": "Mes data rooms restent-elles cloisonnées ?",
+          "answer": "Les accès sont gouvernés par rôle, assistant et corpus, dans une instance dédiée hébergée en France."
+        },
+        {
+          "question": "Mes documents servent-ils à entraîner des modèles ?",
+          "answer": "Non. Les corpus clients sont interrogés dans votre périmètre, jamais réutilisés pour entraîner des modèles généraux."
+        },
+        {
+          "question": "Faut-il refondre nos outils ?",
+          "answer": "Non. Prosperify s'ajoute comme couche documentaire au-dessus de l'existant, en démarrant sur un corpus et un cas d'usage."
+        }
+      ],
+      "challenge": {
+        "title": "Entre le document et la décision, il y a des jours.",
+        "intro": "Les équipes finance ne cherchent pas seulement une information : elles cherchent à décider vite, sur une base qui tient.",
+        "items": [
+          {
+            "title": "Des data rooms hors d'échelle",
+            "description": "Plusieurs centaines de pièces à parcourir, souvent en quelques jours, avec une équipe réduite."
+          },
+          {
+            "title": "Des chiffres à recouper",
+            "description": "Le même agrégat apparaît dans la synthèse, l'annexe et le pont de normalisation, avec des périmètres différents."
+          },
+          {
+            "title": "Une décision engagée",
+            "description": "Un montant repris sans sa source, et c'est le comité qui valide sur une base fausse."
+          }
+        ]
+      },
+      "securityChips": [
+        "Piste d'audit",
+        "Aucun entraînement sur vos corpus",
+        "Instance dédiée",
+        "Hébergement en France"
+      ],
+      "genericFailure": {
+        "question": "Quel EBITDA normalisé retenir ?",
+        "generic": "Un assistant généraliste reprend le premier chiffre rencontré, sans distinguer synthèse, annexe et pont de normalisation.",
+        "cost": "Deux périmètres différents confondus, et la valorisation présentée au comité repose sur un écart invisible."
       }
     }
   },
-  "use_cases_page": {
-    "badge": "CAS D'USAGE",
-    "title_prefix": "Conçu pour",
-    "title_highlight": "votre domaine",
-    "subtitle": "Découvrez comment l'agent de recherche s'applique aux équipes juridiques, comptables et médicales.",
-    "search_placeholder": "Rechercher un cas d'usage...",
-    "search_empty": "Aucun cas d'usage ne correspond à votre recherche.",
-    "view_details": "Voir le détail",
-    "back_to_use_cases": "Retour aux cas d'usage",
-    "back_to_home": "Retour à l'accueil"
+  "products": {
+    "titlePrefix": "Une intelligence documentaire",
+    "titleHighlight": "pensée pour votre secteur",
+    "subtitle": "Prosperify se spécialise sur trois secteurs à forte exigence documentaire : juridique, santé et financier.",
+    "learnMore": "En savoir plus",
+    "sectors": {
+      "legal": {
+        "title": "Juridique",
+        "description": "Contrats, baux, actes et procédures : retrouvez la clause exacte, comparez les versions, citez la source.",
+        "tags": [
+          "Contrats",
+          "Due diligence",
+          "Contentieux"
+        ]
+      },
+      "healthcare": {
+        "title": "Santé",
+        "description": "Dossiers patients, protocoles et réglementation : une réponse sourcée, jamais une supposition clinique.",
+        "tags": [
+          "Dossiers patients",
+          "Protocoles",
+          "Conformité"
+        ]
+      },
+      "finance": {
+        "title": "Financier",
+        "description": "Rapports, due diligence et conformité KYC/AML : chaque chiffre relié à sa source.",
+        "tags": [
+          "KYC / AML",
+          "Due diligence",
+          "Rapports"
+        ]
+      }
+    }
   },
   "features": {
     "badge": "FONCTIONNALITÉS",
-    "title": "Tout ce qu'il faut pour",
-    "title_highlight": "faire confiance à une réponse",
-    "subtitle": "Six capacités qui tiennent ensemble : chercher, vérifier, synthétiser et contrôler qui accède à quoi.",
+    "title": "Une intelligence documentaire",
+    "titleHighlight": "sourcée, gouvernée et vérifiable",
+    "subtitle": "",
     "items": {
       "precision": {
-        "short_title": "Réponses sourcées",
+        "shortTitle": "Réponses sourcées",
         "title": "Réponses sourcées et vérifiables",
         "subtitle": "Citations phrase par phrase",
+        "short": "Chaque réponse reliée phrase par phrase à ses sources.",
         "description": "Chaque réponse conserve le lien avec les extraits utilisés afin de faciliter la revue, l'audit et la validation métier."
       },
       "coverage": {
-        "short_title": "Recherche hybride",
-        "title": "Recherche hybride dans tous vos documents",
-        "subtitle": "Sémantique, mots-clés, visuelle et contextuelle",
-        "description": "Prosperify combine recherche sémantique, mots-clés, contexte documentaire et signaux visuels pour retrouver les passages utiles dans des ensembles de documents hétérogènes."
-      },
-      "performance": {
-        "short_title": "Synthèses fiables",
-        "title": "Synthèses cadrées par vos sources",
-        "subtitle": "Recherche, comparaison, extraction",
-        "description": "Grâce à des modèles adaptés à votre domaine, vos équipes synthétisent, comparent des clauses et extraient des informations clés à partir des documents autorisés."
+        "shortTitle": "Recherche hybride",
+        "title": "Recherche et synthèse hybrides",
+        "subtitle": "Sémantique, lexicale, visuelle et contextuelle",
+        "short": "Sémantique, mots-clés, visuel et contexte : synthétisez et comparez sans sortir du périmètre documentaire.",
+        "description": "Prosperify combine recherche sémantique, mots-clés, contexte documentaire et signaux visuels pour retrouver les passages utiles dans des corpus hétérogènes."
       },
       "governance": {
-        "short_title": "Accès contrôlés",
-        "title": "Accès contrôlés par rôle et périmètre",
+        "shortTitle": "Accès contrôlés",
+        "title": "Accès contrôlés par rôle et par store",
         "subtitle": "Chaque utilisateur dans le bon périmètre",
-        "description": "Les accès peuvent être limités selon le rôle, le service, le niveau de confidentialité ou le data store autorisé."
+        "short": "Chaque utilisateur reste dans son rôle, son service, son store.",
+        "description": "Les accès peuvent être limités selon le rôle, le service, le niveau de confidentialité, le store ou le corpus autorisé."
       },
       "orchestration": {
-        "short_title": "Revue métier",
-        "title": "Un workflow de revue pour les équipes métier",
+        "shortTitle": "Revue métier",
+        "title": "Workflow de revue",
         "subtitle": "Recherche, réponse, vérification",
+        "short": "Passages et citations visibles pour valider avant usage.",
         "description": "Prosperify garde les passages retrouvés, les citations et le contexte visibles afin d'aider les équipes à relire les réponses importantes avant usage."
       },
       "differentiation": {
-        "short_title": "Souveraineté",
-        "title": "Vos données, votre périmètre",
-        "subtitle": "Isolées dans un périmètre de confiance",
-        "description": "Les documents restent isolés dans un périmètre de confiance défini. Le modèle n'est jamais entraîné sur vos données."
+        "shortTitle": "Souveraineté",
+        "title": "Souveraineté des données",
+        "subtitle": "Données dans un périmètre de confiance",
+        "short": "Dédié, hybride ou local : données isolées dans votre périmètre.",
+        "description": "Déploiement dédié, hybride ou local, avec isolation des données et sans entraînement de modèles généraux sur les corpus clients."
+      }
+    },
+    "illustrations": {
+      "citedAnswer": {
+        "answerLead": "La synthèse exécutive retient un EBITDA normalisé de ",
+        "valueReported": "14,2 M€",
+        "answerMid1": " au multiple de 8,0x.",
+        "file1": "rapport-dd-projet-helios.pdf",
+        "ref1": "p. 2",
+        "file2": "annexe-c-contrats.pdf",
+        "ref2": "p. 7"
+      },
+      "hybridSearch": {
+        "placeholder": "clause de résiliation anticipée",
+        "methodSemantic": "Sémantique",
+        "methodKeyword": "Mots-clés",
+        "methodVisual": "Visuelle",
+        "methodContext": "Contextuelle",
+        "resultFile": "Contrat_cadre.pdf",
+        "resultPage": "p. 18"
+      },
+      "synthesis": {
+        "sourceFile1": "rapport-dd.pdf",
+        "sourceFile2": "annexe-c.pdf",
+        "cardTitle": "Synthèse cadrée",
+        "value": "14,2 M€"
+      },
+      "governance": {
+        "storesLabel": "Vos stores",
+        "store1Name": "Projet Helios (DD)",
+        "store1Role": "Éditeur",
+        "store2Name": "Contrats 2025",
+        "store2Role": "Lecteur",
+        "store3Name": "Data Room M&A",
+        "store3Role": "Restreint"
+      },
+      "reviewFlow": {
+        "stepSearch": "Recherche",
+        "stepAnswer": "Réponse",
+        "stepVerify": "Vérification",
+        "hallucination": "1 hallucination",
+        "verified": "Vérifié"
+      },
+      "sovereignty": {
+        "perimeter": "VOTRE PÉRIMÈTRE",
+        "modeDedicated": "Dédié",
+        "modeHybrid": "Hybride",
+        "modeLocal": "Local"
+      }
+    },
+    "deployment": {
+      "dedicated": {
+        "title": "Cloud Dédié",
+        "line1": "Instance dédiée à votre organisation",
+        "line2": "Contrôles de sécurité et support de revue",
+        "line3": "Maintenance et mises à jour gérées",
+        "line4": "Capacité ajustable selon le périmètre"
+      },
+      "hybrid": {
+        "title": "Hybride",
+        "line1": "Données sensibles dans votre périmètre",
+        "line2": "Connecteurs privés selon besoin",
+        "line3": "Support pour vos revues internes",
+        "line4": "Flux d'information contrôlés"
+      },
+      "local": {
+        "title": "Déploiement local",
+        "badge": "CONTRÔLE RENFORCÉ",
+        "line1": "Déploiement sur votre infrastructure",
+        "line2": "Documents et opérations dans votre périmètre",
+        "line3": "Dépendances externes limitées selon le périmètre",
+        "line4": "Runbooks adaptés à vos opérations"
       }
     }
   },
   "sovereignty": {
     "badge": "SÉCURITÉ & GOUVERNANCE",
-    "title_prefix": "Chaque édition,",
-    "title_highlight": "un même périmètre de confiance",
-    "title_suffix": "du document à la réponse"
-  },
-  "integrations": {
-    "badge": "INTÉGRATIONS",
-    "title_prefix": "Connectez",
-    "title_highlight": "Prosperify à votre stack",
-    "intro": "Connectez vos sources documentaires et vos outils existants, avec authentification OAuth, SSO et une API REST documentée (SDKs Python et TypeScript).",
-    "groups": {
-      "sources": {
-        "label": "Sources documentaires",
-        "items": [
-          "SharePoint",
-          "OneDrive",
-          "Google Drive",
-          "Amazon S3",
-          "MinIO",
-          "Serveurs de fichiers"
-        ]
-      },
-      "platforms": {
-        "label": "Plateformes & outils",
-        "items": [
-          "Slack",
-          "Confluence",
-          "Notion",
-          "Zendesk",
-          "Dropbox",
-          "GitHub",
-          "Jira"
-        ]
-      },
-      "identity": {
-        "label": "Fournisseurs d'identité",
-        "items": [
-          "Entra ID",
-          "Google Workspace",
-          "Okta",
-          "Keycloak"
-        ]
-      }
+    "titlePrefix": "Vos données",
+    "titleHighlight": "protégées en instance dédiée",
+    "titleSuffix": "du document à la réponse",
+    "subtitle": "",
+    "mainCard": {
+      "titleLine1": "Une architecture single-tenant",
+      "titleLine2": "",
+      "description": "Chaque client dispose d'un périmètre isolé pour les documents, les stores, les droits et les traces d'usage.",
+      "chips": [
+        "Corpus",
+        "Droits",
+        "Sources"
+      ]
     },
-    "auth_note_label": "Authentification :",
-    "auth_note": "OAuth 2.0 + PKCE pour les connecteurs tiers · SSO via OIDC et SAML · clés API pour l'API REST",
-    "cta": "Voir la documentation",
-    "more": "+ {{count}} autres"
+    "cloud": {
+      "title": "Instance dédiée",
+      "description": "Un environnement propre à chaque organisation sépare les données, les traitements et les opérations sensibles.",
+      "chips": [
+        "Single-tenant",
+        "Isolé",
+        "Dédié"
+      ]
+    },
+    "encryption": {
+      "title": "Système de gestion des clés",
+      "description": "La gestion des clés protège les documents et métadonnées stockés dans la couche données.",
+      "chips": [
+        "Données stockées",
+        "Protection",
+        "Contrôle"
+      ]
+    },
+    "kubernetes": {
+      "title": "Accès maîtrisés",
+      "description": "Les accès sont limités par rôle, store, corpus et usage afin que chaque équipe reste dans son périmètre.",
+      "chips": [
+        "Rôles",
+        "Assistants",
+        "Scopes"
+      ]
+    },
+    "dataProtection": {
+      "title": "Suivi et audit",
+      "description": "Les éléments de suivi aident à comprendre l'usage, diagnostiquer les incidents et examiner les réponses sourcées.",
+      "chips": [
+        "Usage",
+        "Audit",
+        "Revue"
+      ]
+    },
+    "supervision": {
+      "title": "Déploiement adapté au périmètre",
+      "description": "Cloud dédié, hybride ou local : le mode retenu s'aligne sur vos exigences de confidentialité et d'exploitation.",
+      "badges": [
+        "Cloud dédié",
+        "Hybride",
+        "Local"
+      ],
+      "chips": [
+        "Cloud dédié",
+        "Hybride",
+        "Local"
+      ]
+    }
   },
-  "architecture": {
-    "title_prefix": "Une architecture pensée pour la",
-    "title_highlight": "confiance documentaire",
-    "subtitle": "De vos documents à une réponse sourcée : chaque étape reste visible, vérifiable et auditable.",
+  "integration": {
+    "badge": "INTÉGRATION",
+    "titlePrefix": "Connectez",
+    "titleHighlight": "Prosperify",
+    "titleSuffix": "à votre stack",
+    "subtitle": "SDKs Python et TypeScript, API REST documentée, authentification OAuth 2.0 et SSO.",
     "steps": [
       {
-        "title": "Data stores autorisés",
-        "description": "Rassemblez les documents utiles dans un espace contrôlé, sans imposer une refonte complète de vos outils."
+        "title": "Cadrage",
+        "description": "Cas d'usage clarifié, corpus identifié, règles d'accès cadrées."
       },
       {
-        "title": "Contenu analysé automatiquement",
-        "description": "Les textes, tableaux, pages et métadonnées sont préparés pour rendre chaque document plus facile à interroger."
+        "title": "Ingestion pilote",
+        "description": "Documents préparés, sources retrouvables, premières requêtes testées."
       },
       {
-        "title": "Informations structurées",
-        "description": "Les contenus sont organisés selon leur logique : titres, clauses, articles, annexes, versions et éléments clés."
+        "title": "Configuration",
+        "description": "Utilisateurs pilotes configurés, accès vérifiés, scénarios prêts."
       },
       {
-        "title": "Recherche gouvernée",
-        "description": "Les utilisateurs retrouvent les passages pertinents grâce à une recherche hybride qui combine sens, termes exacts, contexte et éléments visuels lorsque le document s'y prête."
+        "title": "Validation métier",
+        "description": "Qualité des réponses relue, limites identifiées, arbitrages réalisés."
       },
       {
-        "title": "Réponses avec sources",
-        "description": "Prosperify sélectionne les extraits utiles et génère des réponses structurées, accompagnées des références nécessaires à la vérification."
-      },
-      {
-        "title": "Vérification des limites",
-        "description": "Les réponses peuvent signaler les zones d'incertitude ou les éléments qui nécessitent une validation humaine."
-      },
-      {
-        "title": "Suivi et amélioration continue",
-        "description": "Les usages, la qualité des réponses et les besoins d'évolution peuvent être suivis pour améliorer le service dans le temps."
-      },
-      {
-        "title": "Traçabilité et audit",
-        "description": "Chaque consultation reste journalisée et traçable, pour appuyer les audits et les exigences de conformité."
+        "title": "Production & extension",
+        "description": "Usages suivis, supervision active, trajectoire d'extension définie."
       }
-    ]
+    ],
+    "stack": {
+      "groupTitles": [
+        "Sources documentaires",
+        "Plateformes & outils",
+        "Fournisseurs d'identité"
+      ],
+      "more_one": "+ {{count}} autre",
+      "more_other": "+ {{count}} autres",
+      "identityNote": "Tout fournisseur OIDC ou SAML 2.0",
+      "auth": "Authentification : OAuth 2.0 + PKCE pour les connecteurs tiers · SSO via OIDC et SAML · clés API pour l'API REST",
+      "docs": "Voir la documentation",
+      "copy": "Copier"
+    },
+    "snippets": {
+      "createStore": "Crée un store et verse les documents",
+      "query": "Interroge avec réponses sourcées"
+    }
+  },
+  "technical": {
+    "badge": "CHAÎNE DOCUMENTAIRE",
+    "title": "Une chaîne lisible, conçue pour la",
+    "titleHighlight": "preuve",
+    "subtitle": "Du document ajouté à la réponse citée, chaque étape conserve le lien avec la source.",
+    "footnote": "Sources, accès et vérification conservés à chaque étape",
+    "steps": {
+      "ingest": {
+        "title": "Corpus autorisé",
+        "body": "Documents et métadonnées rejoignent un périmètre défini avant usage.",
+        "metric": "Cas d'usage clair // Corpus cadré"
+      },
+      "parse": {
+        "title": "Préparation",
+        "body": "Textes, tableaux et pages sont préparés en conservant le contexte utile.",
+        "metric": "Structure conservée // Sources préparées"
+      },
+      "embed": {
+        "title": "Indexation",
+        "body": "Les passages sont découpés et indexés pour la recherche hybride.",
+        "metric": "Corpus isolé // Accès gouvernés"
+      },
+      "retrieve": {
+        "title": "Recherche hybride",
+        "body": "Recherche sémantique et lexicale travaillent ensemble pour retrouver les passages utiles.",
+        "metric": "Recherche sémantique + lexicale"
+      },
+      "cite": {
+        "title": "Citations",
+        "body": "Les affirmations restent reliées aux extraits consultables.",
+        "metric": "Réponse reliée aux sources"
+      },
+      "verify": {
+        "title": "Revue",
+        "body": "Les sources, accès et signaux de qualité restent disponibles pour l'examen humain.",
+        "metric": "Éléments utiles pour la revue"
+      }
+    }
+  },
+  "security": {
+    "titlePrefix": "Sécurité et",
+    "titleHighlight": "chiffrement de bout en bout",
+    "subtitle": "Les documents et les échanges restent protégés à chaque étape, du stockage jusqu'à la réponse.",
+    "items": {
+      "atRest": {
+        "title": "Chiffrement au repos",
+        "description": "Documents et index chiffrés (AES-256) sur l'ensemble du périmètre de stockage."
+      },
+      "inTransit": {
+        "title": "Chiffrement en transit",
+        "description": "Toutes les communications passent en TLS, de bout en bout."
+      },
+      "keys": {
+        "title": "Gestion des clés",
+        "description": "Clés de chiffrement isolées par client, avec rotation régulière."
+      },
+      "audit": {
+        "title": "Audit et traçabilité",
+        "description": "Chaque accès et chaque réponse générée sont journalisés."
+      },
+      "hosting": {
+        "title": "Hébergement en France",
+        "description": "Infrastructure hébergée en France, conforme au RGPD."
+      }
+    }
   },
   "faq": {
     "badge": "FAQ",
-    "title_line1": "Vous avez des",
-    "title_highlight": "questions ?",
-    "title_line2": "Nous avons les réponses.",
+    "titleLine1": "Questions",
+    "titleHighlight": "fréquentes",
+    "titleLine2": "",
     "subtitle": "Les réponses essentielles sur les sources, la sécurité, le déploiement et la gouvernance documentaire avec Prosperify.",
     "items": [
       {
-        "question": "Mes données servent-elles à entraîner des modèles ?",
-        "answer": "Non. Les documents clients ne sont pas utilisés pour entraîner les modèles. Prosperify interroge vos documents dans un périmètre dédié afin de produire des réponses sourcées, sans réutiliser votre capital documentaire."
+        "question": "Mes données servent-elles à entraîner des modèles ?",
+        "answer": "Non. Les corpus clients ne sont pas utilisés pour entraîner les modèles. Prosperify interroge vos documents dans un périmètre dédié afin de produire des réponses sourcées, sans réutiliser votre capital documentaire."
       },
       {
-        "question": "Où sont hébergées les données ?",
-        "answer": "Cela dépend du mode retenu : cloud dédié, architecture hybride ou déploiement local. En mode cloud, l'hébergement s'appuie sur huit fournisseurs cloud européens (dont Hetzner, Scaleway, OVH), avec la possibilité d'apporter votre propre cluster. Le périmètre est défini avec vous selon vos contraintes de sécurité et de confidentialité."
+        "question": "Où sont hébergées les données ?",
+        "answer": "Cela dépend du mode retenu : cloud dédié, architecture hybride ou déploiement local. Le périmètre de confiance est défini avec le client selon ses contraintes de sécurité, de confidentialité et d'exploitation."
       },
       {
-        "question": "Comment les documents sont-ils protégés techniquement ?",
-        "answer": "Les documents sont chiffrés au repos (AES-256) et en transit (TLS). Les clés sont gérées via HashiCorp Vault, avec rotation et dérivation par organisation, jamais mêlées aux données qu'elles protègent. La recherche s'exécute sur des vecteurs chiffrés : Prosperify utilise DCPE (distance-comparison-preserving encryption), une obfuscation à clé qui préserve les distances, afin de comparer les similarités sans jamais stocker ni interroger votre contenu en clair."
-      },
-      {
-        "question": "Prosperify remplace-t-il les experts ?",
+        "question": "Prosperify remplace-t-il les experts ?",
         "answer": "Non. Prosperify automatise la recherche, la synthèse, l'extraction et la comparaison documentaire. Les décisions, validations et interprétations restent portées par les experts métiers."
       },
       {
-        "question": "Comment les réponses sont-elles vérifiées ?",
+        "question": "Comment les réponses sont-elles vérifiées ?",
         "answer": "Les réponses sont générées à partir d'extraits documentaires retenus, puis reliées aux sources utilisées. Les affirmations insuffisamment étayées peuvent être signalées afin de faciliter la revue humaine."
       },
       {
-        "question": "Peut-on limiter l'accès par rôle, data store ou niveau de confidentialité ?",
-        "answer": "Oui. Les accès sont gouvernés par rôle, data store et niveau de confidentialité, avec authentification via SSO (Microsoft Entra ID, Google Workspace, Okta, Keycloak). Les opérations hors périmètre sont refusées selon les règles configurées."
+        "question": "Peut-on limiter l'accès par rôle, store ou corpus ?",
+        "answer": "Oui. Les accès peuvent être gouvernés par rôle, store, corpus, utilisateur ou niveau de confidentialité. Les opérations hors périmètre sont refusées selon les règles configurées."
       },
       {
-        "question": "Faut-il refondre le système d'information ?",
-        "answer": "Non. Prosperify s'ajoute comme couche d'intelligence documentaire au-dessus des systèmes existants. L'intégration peut commencer avec un data store et un cas métier avant extension."
+        "question": "Faut-il refondre le système d'information ?",
+        "answer": "Non. Prosperify s'ajoute comme couche d'intelligence documentaire au-dessus des systèmes existants. L'intégration peut commencer avec un corpus, un store et un cas métier avant extension."
       },
       {
-        "question": "Quels formats sont pris en charge ?",
-        "answer": "Prosperify est conçu pour traiter des documents structurés et non structurés, notamment PDF, Word, Excel, CSV, JSON et autres formats métier selon le périmètre du projet."
+        "question": "Quels formats sont pris en charge ?",
+        "answer": "Prosperify est conçu pour traiter des documents structurés et non structurés, notamment PDF, Word, Excel, CSV, JSON et autres corpus métier selon le périmètre du projet."
       },
       {
-        "question": "Quels modes de déploiement sont possibles ?",
-        "answer": "Trois approches sont possibles : cloud dédié, hybride ou local. Le choix dépend du niveau de confidentialité, des contraintes d'infrastructure et du besoin de souveraineté."
-      },
-      {
-        "question": "Quels métiers couvre Prosperify ?",
-        "answer": "Les métiers juridiques, la comptabilité/finance et le secteur médical/santé. Le même agent de recherche, adapté à la façon dont chaque métier lit ses documents : contrats et clauses, états financiers et dossiers de transaction, protocoles et dossiers réglementaires."
+        "question": "Quels modes de déploiement sont possibles ?",
+        "answer": "Trois approches sont possibles : cloud dédié, hybride ou local. Le choix dépend du niveau de confidentialité, des contraintes d'infrastructure et du besoin de souveraineté."
       }
     ]
   },
+  "blog": {
+    "all": "Tout",
+    "back": "Retour à Prosperify",
+    "backToBlog": "Retour au blog",
+    "badge": "Blog",
+    "newerFirst": "Plus récents",
+    "next": "Suivant",
+    "olderFirst": "Plus anciens",
+    "previous": "Précédent",
+    "read": "Lire",
+    "recency": "Période",
+    "recency30": "30 jours",
+    "recency90": "90 jours",
+    "recencyAll": "Toutes dates",
+    "results": "articles",
+    "search": "Rechercher",
+    "subtitle": "Actualites produit, notes d'implementation et retours terrain de l'equipe Prosperify.",
+    "title": "Notes terrain sur l'IA documentaire gouvernée.",
+    "empty": "Aucun article ne correspond à vos filtres.",
+    "noResults": "Aucun article publie n'est encore disponible.",
+    "error": "Les articles n'ont pas pu être chargés depuis l'API workspace."
+  },
   "team": {
     "badge": "Équipe",
-    "title_prefix": "L'équipe derrière",
-    "title_highlight": "Prosperify",
-    "subtitle": "Une équipe produit et ingénierie concentrée sur l'agent de recherche pour les organisations juridiques, comptables et de santé."
+    "titlePrefix": "L'équipe derrière",
+    "titleHighlight": "Prosperify",
+    "subtitle": "Une équipe produit et ingénierie concentrée sur l'IA documentaire pour les organisations qui manipulent des informations sensibles.",
+    "emptyState": "Les profils publics de l'équipe apparaîtront ici dès qu'ils seront activés dans le workspace.",
+    "error": "L'équipe n'a pas pu être chargée depuis l'API workspace."
   },
   "jobs": {
     "badge": "Recrutement",
-    "title_prefix": "Construire l'IA documentaire",
-    "title_highlight": "de confiance",
-    "subtitle": "Postes ouverts chez Prosperify. Nous gardons une équipe resserrée, technique et proche des professionnels du droit, de la comptabilité et de la santé.",
+    "titlePrefix": "Construire l'IA documentaire",
+    "titleHighlight": "de confiance",
+    "subtitle": "Postes ouverts et actualités recrutement de Prosperify. Nous gardons une équipe resserrée, technique et proche des problèmes clients.",
     "apply": "Candidater",
-    "empty_title": "Aucun poste ouvert pour le moment",
-    "empty_description": "Nous ne recrutons pas sur un poste précis aujourd'hui, mais les profils infrastructure, produit et IA appliquée peuvent nous écrire.",
-    "view_all": "Voir les postes"
+    "emptyTitle": "Aucun poste ouvert pour le moment",
+    "emptyDescription": "Nous ne recrutons pas sur un poste précis aujourd'hui, mais les profils infrastructure, produit et IA appliquée peuvent nous écrire.",
+    "viewAll": "Voir les postes",
+    "view": "Voir l'offre",
+    "backToJobs": "Retour aux offres",
+    "applySubject": "Candidature Prosperify : {{title}}",
+    "error": "Les offres n'ont pas pu être chargées depuis l'API workspace.",
+    "detail": {
+      "impact": "Impact",
+      "responsibilities": "Missions",
+      "requirements": "Profil recherché",
+      "seniority": "Séniorité : {{value}}",
+      "postedAt": "Publié le {{date}}",
+      "applyTitle": "Envie de nous rejoindre ?",
+      "applyLead": "Écrivez-nous en présentant votre parcours et ce que vous aimeriez construire chez Prosperify.",
+      "takenTitle": "Ce poste est pourvu",
+      "takenLead": "Cette offre n'est plus ouverte, mais les candidatures spontanées restent les bienvenues."
+    },
+    "filters": {
+      "allStatuses": "Tous les statuts",
+      "allTeams": "Toutes les équipes",
+      "clear": "Effacer",
+      "closed": "Pourvu",
+      "filledBy": "Pourvu par",
+      "filters": "Filtres",
+      "open": "Ouvert",
+      "search": "Rechercher un poste",
+      "showing": "Affichage",
+      "status": "Statut"
+    }
   },
   "footer": {
-    "tagline": "L'agent de recherche pour les documents de votre métier.",
+    "tagline": "Interrogez vos documents avec des réponses vérifiables.",
     "product": "Produit",
+    "support": "Support",
     "legal": "Légal",
     "links": {
       "home": "Accueil",
       "overview": "Aperçu",
       "workflow": "Workflow",
-      "features": "Fonctionnalités",
-      "use_cases": "Cas d'usage",
-      "sovereignty": "Souveraineté",
-      "architecture": "Architecture",
-      "integrations": "Intégrations",
+      "deployment": "Déploiement",
       "blog": "Blog",
       "team": "Équipe",
       "jobs": "Recrutement",
       "faq": "FAQ",
       "contact": "Contact",
-      "deployment": "Offres",
+      "features": "Fonctionnalités",
+      "sovereignty": "Souveraineté",
+      "security": "Sécurité",
       "integration": "Intégration",
       "privacy": "Confidentialité",
       "terms": "Conditions",
-      "rgpd": "RGPD",
-      "docs": "Documentation",
-      "legal_notice": "Mentions légales"
+      "rgpd": "RGPD"
     },
     "copyright": "© 2025 Prosperify. Tous droits réservés.",
-    "partners_title": "Accompagnement & Partenaires"
+    "ecosystemTitle": "Distinction & Écosystème",
+    "mappingText": "Prosperify figure parmi les 1 311 startups référencées en Auvergne-Rhône-Alpes",
+    "resources": "Ressources",
+    "company": "Entreprise"
   },
-  "actions": {
-    "download": "Télécharger"
+  "roadmap": {
+    "metaTitle": "Roadmap - Prosperify",
+    "metaDescription": "Découvrez la feuille de route de Prosperify et nos prochaines évolutions en intelligence documentaire sourcée.",
+    "items": [
+      {
+        "date": "14/06/2024",
+        "titlePrefix": "Début du projet",
+        "titleHighlight": "Prosperify",
+        "lead": "Lancement officiel de Prosperify, avec une idée simple : rendre la recherche documentaire en entreprise plus exploitable et vérifiable.",
+        "descriptionSegments": [
+          {
+            "text": "Cette étape marque la naissance d'un projet construit autour d'une vision : aider les organisations à "
+          },
+          {
+            "text": "mieux exploiter leurs données documentaires",
+            "emphasis": true
+          },
+          {
+            "text": " en réduisant les silos d'information et en rendant les sources plus faciles à retrouver grâce à une "
+          },
+          {
+            "text": "technologie de recherche documentaire intelligente",
+            "emphasis": true
+          },
+          {
+            "text": "."
+          }
+        ],
+        "imageAlt": "Prosperify (logo historique)",
+        "imageSrc": "/assets/brand/logo-mark.png",
+        "imageVariant": "brandMark"
+      },
+      {
+        "date": "26/09/2024",
+        "titlePrefix": "Contact avec",
+        "titleHighlight": "Orpi",
+        "lead": "Premier échange avec Orpi pour explorer une potentielle collaboration.",
+        "description": "Rendez-vous dédié à la compréhension des barrages liés à l'exploitation des données dans les ETI françaises, ainsi qu'à l'analyse de l'impact de la fragmentation de l'information sur les opportunités commerciales manquées.",
+        "imageAlt": "Orpi",
+        "imageSrc": "/assets/partners/orpi.webp",
+        "imageVariant": "partnerSmall"
+      },
+      {
+        "date": "03/10/2024",
+        "titlePrefix": "Revue de design avec",
+        "titleHighlight": "ESA",
+        "lead": "Rendez-vous avec l'Agence Spatiale Européenne pour une première revue de design.",
+        "descriptionSegments": [
+          {
+            "text": "Rencontre axée sur la compréhension des "
+          },
+          {
+            "text": "standards de sécurité",
+            "emphasis": true
+          },
+          {
+            "text": " et de "
+          },
+          {
+            "text": "souveraineté",
+            "emphasis": true
+          },
+          {
+            "text": " exigés par ce type d'agences, tout en explorant leur intérêt pour une "
+          },
+          {
+            "text": "technologie de recherche documentaire",
+            "emphasis": true
+          },
+          {
+            "text": " adaptée à leurs besoins spécifiques."
+          }
+        ],
+        "imageAlt": "ESA",
+        "imageSrc": "/assets/partners/esa.png",
+        "imageVariant": "partnerMedium"
+      },
+      {
+        "date": "02/01/2025",
+        "title": "Intégration Pépite France",
+        "lead": "Prosperify rejoint le réseau Pépite France pour soutenir l'innovation étudiante.",
+        "imageAlt": "Pépite France",
+        "imageSrc": "/assets/partners/pepite-beelyss.png",
+        "imageVariant": "partnerLarge"
+      },
+      {
+        "date": "04/01/2025",
+        "titlePrefix": "Rencontre avec",
+        "titleHighlight": "TUBA",
+        "lead": "Échange avec l'écosystème TUBA autour de l'innovation urbaine et des nouveaux usages numériques.",
+        "descriptionSegments": [
+          {
+            "text": "Cette rencontre a permis d'explorer les "
+          },
+          {
+            "text": "défis liés à l'exploitation des données en milieu urbain",
+            "emphasis": true
+          },
+          {
+            "text": " et d'identifier les opportunités offertes par Prosperify dans un contexte d'"
+          },
+          {
+            "text": "innovation territoriale",
+            "emphasis": true
+          },
+          {
+            "text": ". Un moment clé pour comprendre comment notre technologie peut répondre aux enjeux de "
+          },
+          {
+            "text": "centralisation de l'information",
+            "emphasis": true
+          },
+          {
+            "text": " et de "
+          },
+          {
+            "text": "valorisation des données",
+            "emphasis": true
+          },
+          {
+            "text": " au service des acteurs locaux."
+          }
+        ],
+        "imageAlt": "TUBA",
+        "imageSrc": "/assets/partners/tuba.png",
+        "imageVariant": "partnerWide"
+      },
+      {
+        "date": "17/02/2025",
+        "titlePrefix": "Contact avec",
+        "titleHighlight": "AXA",
+        "lead": "Premier échange avec AXA autour d'une potentielle collaboration stratégique.",
+        "descriptionSegments": [
+          {
+            "text": "Rencontre en deux phases : d'abord, une analyse des "
+          },
+          {
+            "text": "barrages liés à l'exploitation de la recherche documentaire",
+            "emphasis": true
+          },
+          {
+            "text": " dans les grands groupes, ainsi que des "
+          },
+          {
+            "text": "outils actuellement utilisés",
+            "emphasis": true
+          },
+          {
+            "text": ". Ensuite, une "
+          },
+          {
+            "text": "présentation de Prosperify",
+            "emphasis": true
+          },
+          {
+            "text": ", de sa mission et de la "
+          },
+          {
+            "text": "technologie employée",
+            "emphasis": true
+          },
+          {
+            "text": " pour répondre à ces enjeux."
+          }
+        ],
+        "imageAlt": "AXA",
+        "imageSrc": "/assets/partners/axa.png",
+        "imageVariant": "partnerMedium"
+      },
+      {
+        "date": "12/05/2025",
+        "titlePrefix": "Intégration",
+        "titleHighlight": "La French Tech",
+        "lead": "Prosperify rejoint La French Tech afin de s'inscrire dans un écosystème national d'innovation.",
+        "descriptionSegments": [
+          {
+            "text": "Cette intégration marque une nouvelle étape dans le développement de Prosperify en tant que "
+          },
+          {
+            "text": "start-up membre",
+            "emphasis": true
+          },
+          {
+            "text": ". Elle ouvre l'accès à un "
+          },
+          {
+            "text": "écosystème actif de jeunes entreprises",
+            "emphasis": true
+          },
+          {
+            "text": ", ouvrant des opportunités de synergies, de partenariats et de visibilité au sein du réseau français de l'innovation."
+          }
+        ],
+        "imageAlt": "La French Tech",
+        "imageSrc": "/assets/partners/french-tech.png",
+        "imageVariant": "partnerLarge"
+      },
+      {
+        "date": "08/2025",
+        "titlePrefix": "Lancement officiel de",
+        "titleHighlight": "Prosperify",
+        "lead": "Mise sur le marché de la solution après plusieurs mois de conception, de tests et d'échanges avec l'écosystème.",
+        "descriptionSegments": [
+          {
+            "text": "Le lancement concrétise une vision : proposer aux entreprises un "
+          },
+          {
+            "text": "assistant documentaire souverain",
+            "emphasis": true
+          },
+          {
+            "text": ", capable de "
+          },
+          {
+            "text": "centraliser",
+            "emphasis": true
+          },
+          {
+            "text": " et "
+          },
+          {
+            "text": "simplifier l'accès aux données",
+            "emphasis": true
+          },
+          {
+            "text": ", avec des sources visibles, des accès gouvernés et un périmètre de sécurité clair."
+          }
+        ],
+        "imageAlt": "Prosperify (lancement)",
+        "imageSrc": "/assets/brand/logo-full.png",
+        "imageVariant": "brandFull"
+      }
+    ]
   },
-  "markdown": {
-    "copy": "Copier",
-    "copy_code": "Copier le code",
-    "copied": "Copié"
+  "legal": {
+    "privacy": {
+      "back": "Retour à l'accueil",
+      "title": "Politique de protection des données à caractère personnel",
+      "updated": "Version : septembre 2026",
+      "summaryLabel": "Sommaire",
+      "sections": [
+        {
+          "id": "introduction",
+          "title": "Introduction",
+          "body": "Le respect de la vie privée est une condition de notre métier : Prosperify traite des corpus documentaires confidentiels pour le compte de ses clients. Prosperify s'engage à respecter la réglementation française et européenne sur la protection des données, en particulier le Règlement (UE) 2016/679 du 27 avril 2016 (« RGPD ») et la loi Informatique et Libertés du 6 janvier 1978 modifiée.",
+          "items": [
+            "Les données que vous nous confiez en tant que client restent dans le périmètre de déploiement que vous choisissez : cloud dédié, hybride ou installation sur votre infrastructure.",
+            "Les corpus de nos clients ne servent pas à entraîner des modèles généraux.",
+            "La présente politique couvre le site prosperify.app et nos échanges commerciaux. Le traitement des documents que vous nous confiez dans le cadre d'un contrat est régi par l'accord de sous-traitance annexé à ce contrat."
+          ]
+        },
+        {
+          "id": "definitions",
+          "title": "1. Définitions",
+          "body": "Les termes employés avec une majuscule ont le sens que leur donne l'article 4 du RGPD. En particulier : « Données à caractère personnel » désigne toute information se rapportant à une personne physique identifiée ou identifiable ; « Traitement » désigne toute opération portant sur ces données ; « Responsable de traitement » désigne celui qui détermine les finalités et les moyens du traitement ; « Sous-traitant » désigne celui qui traite les données pour le compte du responsable de traitement."
+        },
+        {
+          "id": "objet",
+          "title": "2. Quel est l'objet de cette politique ?",
+          "body": "Cette politique décrit la manière dont Prosperify collecte, utilise et protège vos données à caractère personnel. Elle s'applique aux personnes suivantes :",
+          "items": [
+            "les visiteurs du site prosperify.app et de ses sous-pages (blog, équipe, offres d'emploi) ;",
+            "les personnes qui nous contactent via le formulaire de contact ou demandent une démonstration ;",
+            "les candidats qui postulent à une offre ;",
+            "les interlocuteurs de nos clients, prospects et partenaires."
+          ]
+        },
+        {
+          "id": "role",
+          "title": "3. Quel est le rôle de Prosperify sur vos données ?",
+          "body": "Le rôle de Prosperify dépend du traitement concerné, et cette distinction est importante :",
+          "items": [
+            "Pour les données collectées via le site, la prospection et la relation commerciale, Prosperify agit en qualité de responsable de traitement : elle décide des finalités et des moyens.",
+            "Pour les documents et les données que vous déposez dans la plateforme dans le cadre d'un contrat, Prosperify agit en qualité de sous-traitant : elle n'intervient que sur instruction du client, dans les conditions fixées par l'accord de sous-traitance. Le client reste responsable de traitement de son corpus."
+          ]
+        },
+        {
+          "id": "collecte",
+          "title": "4. De quelle manière Prosperify recueille-t-elle vos données ?",
+          "body": "Vos données proviennent de trois sources.",
+          "items": [
+            "Directement auprès de vous : formulaire de contact (nom, adresse email, numéro de téléphone facultatif, objet et contenu du message), demande de démonstration, candidature à une offre d'emploi, échanges par email, téléphone ou lors d'événements professionnels.",
+            "Auprès de tiers ou de sources publiques : coordonnées professionnelles issues de sources publiques ou de bases de données professionnelles, dans le cadre d'une prospection interentreprises, ainsi que les mises en relation par nos partenaires.",
+            "Automatiquement lors de votre navigation : données de connexion et de navigation collectées via les cookies et traceurs soumis à votre consentement. Aucun traceur non essentiel n'est déposé avant votre choix dans le bandeau."
+          ]
+        },
+        {
+          "id": "finalites",
+          "title": "5. Que fait Prosperify de vos données ?",
+          "body": "Chaque traitement répond à une finalité, s'appuie sur une base légale et fait l'objet d'une durée de conservation déterminée.",
+          "table": {
+            "headers": [
+              "Finalité",
+              "Données utilisées",
+              "Base légale",
+              "Durée de conservation"
+            ],
+            "rows": [
+              [
+                "Répondre à une demande de contact ou de démonstration",
+                "Nom, adresse email, numéro de téléphone, objet de la demande, contenu du message",
+                "Mesures précontractuelles prises à votre demande (art. 6.1.b)",
+                "3 ans à compter du dernier contact"
+              ],
+              [
+                "Gérer les candidatures aux offres d'emploi",
+                "Nom, adresse email, curriculum vitae et pièces transmises, échanges liés au recrutement",
+                "Mesures précontractuelles prises à votre demande (art. 6.1.b)",
+                "2 ans à compter du dernier contact, sauf accord pour une conservation plus longue"
+              ],
+              [
+                "Gérer la relation contractuelle et la facturation",
+                "Identité et coordonnées professionnelles, données de compte, données de facturation",
+                "Exécution du contrat (art. 6.1.b) et obligation légale pour les pièces comptables (art. 6.1.c)",
+                "Durée du contrat, puis 10 ans pour les pièces comptables"
+              ],
+              [
+                "Prospection commerciale interentreprises",
+                "Identité, coordonnées professionnelles, fonction, société, historique des échanges",
+                "Intérêt légitime de Prosperify à promouvoir ses services (art. 6.1.f)",
+                "3 ans à compter du dernier contact, ou jusqu'à opposition"
+              ],
+              [
+                "Mesurer l'audience du site et améliorer son contenu",
+                "Pages consultées, date et heure de visite, provenance, type de terminal, identifiants de session",
+                "Consentement recueilli dans le bandeau cookies (art. 6.1.a)",
+                "13 mois pour les traceurs, 25 mois pour les statistiques agrégées"
+              ],
+              [
+                "Assurer la sécurité du site et prévenir les abus",
+                "Adresse IP, journaux de connexion, informations techniques sur le terminal",
+                "Intérêt légitime de Prosperify à sécuriser son service (art. 6.1.f)",
+                "12 mois à compter de l'enregistrement"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "destinataires",
+          "title": "6. À qui Prosperify transmet-elle vos données ?",
+          "body": "Vos données sont accessibles aux équipes de Prosperify qui en ont besoin, dans la limite de leurs attributions, ainsi qu'aux destinataires suivants :",
+          "items": [
+            "Hébergement : le site et ses services sont hébergés par [À COMPLÉTER] (hébergeur, pays d'implantation et localisation des serveurs). Les déploiements clients suivent le périmètre défini au contrat.",
+            "Sous-traitants : les prestataires listés en annexe 1 interviennent pour notre compte, sur instruction, et sont tenus par un contrat conforme à l'article 28 du RGPD.",
+            "Autorités : Prosperify peut transmettre des données à une autorité publique ou judiciaire lorsqu'une obligation légale l'impose.",
+            "Transferts hors Union européenne : lorsqu'un prestataire est situé hors de l'Union européenne dans un pays ne bénéficiant pas d'une décision d'adéquation, le transfert est encadré par les clauses contractuelles types de la Commission européenne ou par une autre garantie prévue aux articles 46 et 49 du RGPD."
+          ]
+        },
+        {
+          "id": "droits",
+          "title": "7. Quels sont vos droits sur vos données ?",
+          "body": "Conformément au RGPD et à la loi du 6 janvier 1978, vous disposez des droits suivants :",
+          "items": [
+            "Droit d'accès (art. 15) : obtenir la confirmation que vos données sont traitées et en recevoir une copie.",
+            "Droit de rectification (art. 16) et droit d'effacement (art. 17) : faire corriger ou supprimer vos données.",
+            "Droit à la limitation du traitement (art. 18) : en cas de contestation de l'exactitude des données, de traitement que vous estimez illicite, ou pour la défense de vos droits en justice.",
+            "Droit à la portabilité (art. 20) : récupérer les données que vous nous avez fournies, dans un format structuré, lorsque le traitement repose sur votre consentement ou sur un contrat.",
+            "Droit d'opposition (art. 21) : vous opposer à tout moment à la prospection commerciale, et aux traitements fondés sur notre intérêt légitime.",
+            "Droit de retirer votre consentement à tout moment, sans que cela remette en cause la licéité du traitement effectué auparavant.",
+            "Droit de définir des directives sur le sort de vos données après votre décès.",
+            "Droit d'introduire une réclamation auprès de la CNIL : www.cnil.fr/fr/plaintes."
+          ]
+        },
+        {
+          "id": "securite",
+          "title": "8. Comment Prosperify protège-t-elle vos données ?",
+          "body": "Prosperify met en œuvre les mesures techniques et organisationnelles appropriées prévues à l'article 32 du RGPD, au regard des risques de destruction, de perte, d'altération, de divulgation non autorisée ou d'accès non autorisé.",
+          "items": [
+            "Chiffrement des données en transit et au repos.",
+            "Cloisonnement des accès par rôle, par service et par store documentaire, et journalisation des consultations.",
+            "Isolation des environnements clients selon le mode de déploiement retenu.",
+            "Revues de sécurité et gestion des incidents, avec notification à la CNIL et aux personnes concernées dans les cas prévus aux articles 33 et 34 du RGPD."
+          ]
+        },
+        {
+          "id": "cookies",
+          "title": "9. Et concernant les cookies ?",
+          "body": "Lors de votre première visite, un bandeau vous permet d'accepter ou de refuser les traceurs non essentiels. Le refus est aussi simple que l'acceptation et n'empêche pas la consultation du site. Seuls les cookies strictement nécessaires au fonctionnement du site sont déposés sans votre accord. Votre choix est conservé 6 mois et peut être modifié à tout moment depuis le bandeau. Les traceurs de mesure d'audience ont une durée de vie maximale de 13 mois."
+        },
+        {
+          "id": "tiers",
+          "title": "10. Et concernant les réseaux sociaux et les sites tiers ?",
+          "body": "Le site comporte des liens vers des sites externes, notamment LinkedIn. Cliquer sur ces liens vous redirige vers ces services : Prosperify ne collecte alors aucune donnée relative à cette visite. Les informations recueillies par ces plateformes relèvent de leurs propres politiques de confidentialité et des paramètres que vous y avez définis. Prosperify n'est pas responsable du contenu ni des pratiques de ces sites."
+        },
+        {
+          "id": "utilisateurs",
+          "title": "11. Qui peut utiliser Prosperify ?",
+          "body": "Les services de Prosperify s'adressent à des professionnels agissant dans le cadre de leur activité, majeurs et capables de contracter. Le site n'est pas destiné aux mineurs et Prosperify ne collecte pas sciemment de données les concernant. Si vous estimez qu'un mineur nous a transmis des données, écrivez-nous et elles seront supprimées."
+        },
+        {
+          "id": "application",
+          "title": "12. Quelles sont les conditions d'application de cette politique ?",
+          "body": "Prosperify peut modifier cette politique pour tenir compte d'une évolution légale, réglementaire ou technique. En cas de modification substantielle portant sur les finalités, les données collectées, l'exercice de vos droits ou les transferts, vous en serez informé par tout moyen écrit au moins quinze (15) jours avant l'entrée en vigueur. La version en ligne à la date de votre visite est celle qui fait foi."
+        },
+        {
+          "id": "contact",
+          "title": "13. Comment contacter Prosperify ?",
+          "body": "Pour exercer vos droits ou pour toute question relative à cette politique, écrivez-nous. Pour traiter votre demande, nous pouvons être amenés à vérifier votre identité.",
+          "items": [
+            "Responsable de traitement : [À COMPLÉTER] (raison sociale, forme juridique, adresse du siège, numéro RCS).",
+            "Contact protection des données : [À COMPLÉTER] (adresse email dédiée, et coordonnées du délégué à la protection des données s'il en a été désigné un).",
+            "Délai de réponse : un mois à compter de la réception de la demande, prolongeable de deux mois en cas de complexité."
+          ]
+        },
+        {
+          "id": "annexe",
+          "title": "Annexe 1 : liste des sous-traitants",
+          "body": "Les prestataires ci-dessous interviennent pour le compte de Prosperify. Cette liste est tenue à jour ; elle doit être complétée avec les prestataires effectivement utilisés avant publication.",
+          "table": {
+            "headers": [
+              "Sous-traitant",
+              "Pays d'origine",
+              "Localisation des serveurs",
+              "Tâche effectuée"
+            ],
+            "rows": [
+              [
+                "[À COMPLÉTER]",
+                "[À COMPLÉTER]",
+                "[À COMPLÉTER]",
+                "Hébergement du site et des services"
+              ],
+              [
+                "[À COMPLÉTER]",
+                "[À COMPLÉTER]",
+                "[À COMPLÉTER]",
+                "Envoi des emails transactionnels (formulaire de contact)"
+              ],
+              [
+                "[À COMPLÉTER]",
+                "[À COMPLÉTER]",
+                "[À COMPLÉTER]",
+                "Mesure d'audience du site"
+              ],
+              [
+                "[À COMPLÉTER]",
+                "[À COMPLÉTER]",
+                "[À COMPLÉTER]",
+                "Gestion de la relation client et de la prospection"
+              ],
+              [
+                "[À COMPLÉTER]",
+                "[À COMPLÉTER]",
+                "[À COMPLÉTER]",
+                "Supervision technique et suivi des erreurs"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "terms": {
+      "back": "Retour à l'accueil",
+      "title": "Conditions générales d'utilisation",
+      "updated": "Version : septembre 2026",
+      "summaryLabel": "Sommaire",
+      "sections": [
+        {
+          "id": "objet",
+          "title": "1. Objet et champ d'application",
+          "body": "Les présentes conditions régissent l'accès au site prosperify.app et l'utilisation des services Prosperify. Elles s'appliquent à tout visiteur du site et à tout utilisateur des services. L'utilisation de la plateforme dans un cadre professionnel fait en outre l'objet d'un contrat conclu entre Prosperify et l'organisation cliente : en cas de contradiction, les stipulations de ce contrat prévalent sur les présentes conditions."
+        },
+        {
+          "id": "definitions",
+          "title": "2. Définitions",
+          "body": "Dans les présentes conditions :",
+          "items": [
+            "« Services » désigne le site, la plateforme Prosperify et les fonctionnalités associées.",
+            "« Client » désigne l'organisation ayant conclu un contrat avec Prosperify.",
+            "« Utilisateur » désigne la personne physique accédant aux Services, pour son compte ou pour celui d'un Client.",
+            "« Corpus » désigne l'ensemble des documents et données qu'un Client dépose ou connecte dans la plateforme.",
+            "« Réponse » désigne le résultat produit par l'agent à partir du Corpus, accompagné de ses citations."
+          ]
+        },
+        {
+          "id": "acceptation",
+          "title": "3. Acceptation et modification",
+          "body": "L'accès aux Services vaut acceptation des présentes conditions. Prosperify peut les modifier pour tenir compte d'une évolution légale, réglementaire ou fonctionnelle. En cas de modification substantielle, les Utilisateurs concernés en sont informés par écrit au moins quinze (15) jours avant l'entrée en vigueur. La version applicable est celle en ligne à la date de l'accès."
+        },
+        {
+          "id": "services",
+          "title": "4. Description des Services",
+          "body": "Prosperify fournit une solution d'intelligence documentaire permettant d'interroger des corpus internes et d'obtenir des réponses reliées à leurs sources. Les Services comprennent notamment :",
+          "items": [
+            "la recherche combinant sémantique, mots-clés, contexte documentaire et signaux visuels ;",
+            "la génération de réponses citant les passages utilisés, avec renvoi au document et à la page ;",
+            "la gestion des accès par rôle, par service et par store documentaire ;",
+            "des modes de déploiement distincts : cloud dédié, hybride ou installation sur l'infrastructure du Client."
+          ]
+        },
+        {
+          "id": "acces",
+          "title": "5. Accès, comptes et sécurité",
+          "body": "Les Services sont réservés aux professionnels majeurs et capables de contracter. Les identifiants sont personnels et confidentiels : l'Utilisateur est responsable des actions effectuées depuis son compte et informe Prosperify sans délai de toute utilisation non autorisée. Le Client administre les droits de ses propres Utilisateurs et reste responsable du périmètre qu'il leur ouvre."
+        },
+        {
+          "id": "obligations",
+          "title": "6. Obligations de l'Utilisateur",
+          "body": "L'Utilisateur s'engage à utiliser les Services conformément à leur destination et à la réglementation applicable. Sont notamment interdits :",
+          "items": [
+            "le dépôt de contenus illicites, ou de documents pour lesquels l'Utilisateur ne dispose pas des droits nécessaires ;",
+            "toute tentative d'accès non autorisé, de contournement des mesures de sécurité ou de dégradation du service ;",
+            "l'extraction automatisée massive du site ou de la plateforme, ainsi que la rétro-ingénierie des Services ;",
+            "la revente, la mise à disposition ou le partage des accès en dehors du périmètre prévu au contrat."
+          ]
+        },
+        {
+          "id": "corpus",
+          "title": "7. Corpus et données du Client",
+          "body": "Le Client conserve l'entière propriété de son Corpus. Prosperify n'acquiert aucun droit sur ces documents et bénéficie uniquement d'une licence limitée, non exclusive et strictement nécessaire à la fourniture des Services, pour la durée du contrat. Les Corpus des Clients ne sont pas utilisés pour entraîner des modèles généraux. À l'issue du contrat, les données sont supprimées ou restituées selon les modalités prévues au contrat et à l'accord de sous-traitance."
+        },
+        {
+          "id": "propriete",
+          "title": "8. Propriété intellectuelle de Prosperify",
+          "body": "Les Services, leurs composants logiciels, leur documentation, leurs marques et leurs éléments graphiques sont protégés et demeurent la propriété exclusive de Prosperify ou de ses concédants. Le contrat confère un droit d'usage personnel, non exclusif et non cessible, limité à la durée et au périmètre convenus. Aucune autre cession de droit n'est consentie."
+        },
+        {
+          "id": "nature",
+          "title": "9. Nature des réponses produites",
+          "body": "Les Réponses sont produites à partir du Corpus du Client et destinées à être vérifiées. Elles restent reliées aux extraits utilisés précisément pour permettre cette vérification.",
+          "items": [
+            "Les Réponses ne constituent ni un conseil juridique, ni un avis médical, ni une recommandation d'investissement.",
+            "Elles ne remplacent pas l'appréciation d'un professionnel compétent, à qui il revient de relire les passages cités avant tout usage engageant.",
+            "Prosperify ne garantit pas l'exhaustivité d'un Corpus incomplet, ni l'exactitude des documents qui lui sont fournis."
+          ]
+        },
+        {
+          "id": "disponibilite",
+          "title": "10. Disponibilité et maintenance",
+          "body": "Prosperify met en œuvre les moyens raisonnables pour assurer la disponibilité des Services. Des interruptions peuvent survenir pour maintenance, mise à jour ou en cas d'incident. Les engagements de niveau de service, lorsqu'ils existent, sont définis au contrat. [À COMPLÉTER] (préciser ici les engagements de disponibilité et les fenêtres de maintenance applicables)."
+        },
+        {
+          "id": "tarifs",
+          "title": "11. Tarifs, commande et paiement",
+          "body": "L'accès aux Services dans un cadre professionnel est payant et fait l'objet d'un devis ou d'un bon de commande. [À COMPLÉTER] (préciser les modalités : périodicité de facturation, délai de paiement, pénalités de retard, conditions de renouvellement). La consultation du site et de ses contenus publics reste gratuite."
+        },
+        {
+          "id": "duree",
+          "title": "12. Durée, suspension et résiliation",
+          "body": "La durée du contrat, ses conditions de renouvellement et de résiliation sont fixées au contrat. Prosperify peut suspendre l'accès en cas de manquement grave aux présentes conditions, de risque de sécurité avéré ou de défaut de paiement, après mise en demeure restée sans effet sauf urgence justifiée. La résiliation n'affecte pas les obligations nées avant sa prise d'effet."
+        },
+        {
+          "id": "responsabilite",
+          "title": "13. Garanties et limitation de responsabilité",
+          "body": "Prosperify est tenue d'une obligation de moyens dans la fourniture des Services. Sa responsabilité ne peut être engagée qu'en cas de faute prouvée et pour les seuls dommages directs. Sont notamment exclus les préjudices indirects, la perte de chance, la perte de données imputable à un défaut de sauvegarde du Client, ainsi que les conséquences d'une utilisation non conforme aux présentes conditions ou d'une décision prise sans vérification des passages cités. [À COMPLÉTER] (préciser le plafond de responsabilité retenu au contrat). Aucune clause ne limite la responsabilité en cas de dol, de faute lourde ou de dommage corporel."
+        },
+        {
+          "id": "donnees",
+          "title": "14. Protection des données à caractère personnel",
+          "body": "Le traitement des données à caractère personnel est décrit dans la politique de protection des données. Lorsque Prosperify traite des données pour le compte d'un Client, un accord de sous-traitance conforme à l'article 28 du RGPD est annexé au contrat et précise les instructions, les mesures de sécurité et le sort des données en fin de relation."
+        },
+        {
+          "id": "force-majeure",
+          "title": "15. Force majeure",
+          "body": "Aucune des parties ne peut être tenue responsable d'un manquement résultant d'un cas de force majeure au sens de l'article 1218 du Code civil et de la jurisprudence des tribunaux français. La partie affectée en informe l'autre sans délai. Si l'empêchement se prolonge au-delà de trente (30) jours, chaque partie peut résilier le contrat sans indemnité."
+        },
+        {
+          "id": "droit",
+          "title": "16. Droit applicable et juridiction",
+          "body": "Les présentes conditions sont régies par le droit français. À défaut de résolution amiable dans un délai de trente (30) jours à compter de la notification du différend, celui-ci sera porté devant les tribunaux compétents de [À COMPLÉTER] (ressort retenu), y compris en cas de pluralité de défendeurs ou d'appel en garantie."
+        },
+        {
+          "id": "contact",
+          "title": "17. Mentions légales et contact",
+          "body": "Éditeur du site : [À COMPLÉTER] (raison sociale, forme juridique, capital, adresse du siège, RCS, numéro de TVA intracommunautaire). Directeur de la publication : [À COMPLÉTER]. Hébergeur : [À COMPLÉTER] (nom, adresse, contact). Pour toute question relative aux présentes conditions : [À COMPLÉTER] (adresse email de contact)."
+        }
+      ]
+    },
+    "gdpr": {
+      "back": "Retour à l'accueil",
+      "title": "Conformité RGPD",
+      "updated": "Version : septembre 2026",
+      "summaryLabel": "Sommaire",
+      "sections": [
+        {
+          "id": "approche",
+          "title": "1. Notre approche",
+          "body": "Prosperify traite des corpus confidentiels : la conformité n'est pas une formalité ajoutée après coup, elle conditionne la conception du produit. Cette page décrit les engagements pris envers nos clients et les personnes concernées. Elle complète la politique de protection des données, qui décrit les traitements dont Prosperify est responsable."
+        },
+        {
+          "id": "roles",
+          "title": "2. Répartition des rôles",
+          "body": "La qualification change selon le traitement, et détermine qui décide quoi :",
+          "items": [
+            "Responsable de traitement : Prosperify, pour les données du site, de la prospection et de la relation commerciale.",
+            "Sous-traitant : Prosperify, pour les documents et données traités dans la plateforme pour le compte d'un client, sur ses seules instructions.",
+            "Responsable de traitement : le client, pour son corpus, ses utilisateurs et les finalités qu'il poursuit."
+          ]
+        },
+        {
+          "id": "dpa",
+          "title": "3. Accord de sous-traitance",
+          "body": "Un accord conforme à l'article 28 du RGPD est annexé à chaque contrat client. Il précise notamment :",
+          "items": [
+            "l'objet, la durée, la nature et la finalité du traitement, ainsi que les catégories de données et de personnes concernées ;",
+            "l'obligation d'agir sur instruction documentée du client, y compris pour les transferts ;",
+            "l'engagement de confidentialité des personnes autorisées à traiter les données ;",
+            "les mesures de sécurité mises en œuvre au titre de l'article 32 ;",
+            "les conditions de recours à des sous-traitants ultérieurs et l'information préalable du client ;",
+            "l'assistance du client pour les demandes d'exercice de droits, les analyses d'impact et les notifications de violation ;",
+            "le sort des données en fin de contrat : suppression ou restitution, au choix du client."
+          ]
+        },
+        {
+          "id": "droits",
+          "title": "4. Vos droits et leur exercice",
+          "body": "Toute personne dispose des droits d'accès, de rectification, d'effacement, de limitation, de portabilité et d'opposition, ainsi que du droit de retirer son consentement et de définir des directives post-mortem. Lorsque la demande porte sur des données traitées pour le compte d'un client, elle doit être adressée à ce client, responsable de traitement : Prosperify l'assiste pour y répondre dans les délais. Les demandes reçues directement sont transmises sans délai au client concerné.",
+          "items": [
+            "Délai de réponse : un mois à compter de la réception, prolongeable de deux mois pour les demandes complexes.",
+            "Contact : [À COMPLÉTER] (adresse email dédiée à la protection des données).",
+            "Réclamation : vous pouvez saisir la CNIL à tout moment, www.cnil.fr/fr/plaintes."
+          ]
+        },
+        {
+          "id": "registre",
+          "title": "5. Registre des traitements",
+          "body": "Prosperify tient le registre prévu à l'article 30 du RGPD, pour les traitements dont elle est responsable comme pour ceux réalisés pour le compte de ses clients. Un extrait pertinent peut être communiqué à un client dans le cadre de ses propres obligations de conformité, sur demande écrite."
+        },
+        {
+          "id": "sous-traitants",
+          "title": "6. Sous-traitants ultérieurs",
+          "body": "Le recours à un sous-traitant ultérieur fait l'objet d'une autorisation du client dans les conditions prévues à l'accord de sous-traitance, et d'une information préalable en cas d'ajout ou de remplacement, laissant au client un délai pour formuler une objection motivée. Chaque sous-traitant est lié par des obligations équivalentes à celles de Prosperify. La liste des sous-traitants figure en annexe de la politique de protection des données."
+        },
+        {
+          "id": "transferts",
+          "title": "7. Transferts hors Union européenne",
+          "body": "Prosperify privilégie un traitement et un stockage au sein de l'Union européenne. Lorsqu'un transfert vers un pays tiers est nécessaire et que ce pays ne bénéficie pas d'une décision d'adéquation, le transfert est encadré par les clauses contractuelles types de la Commission européenne, complétées le cas échéant par des mesures supplémentaires après analyse du contexte juridique local. En déploiement dédié ou local, le périmètre géographique est fixé au contrat."
+        },
+        {
+          "id": "securite",
+          "title": "8. Mesures de sécurité",
+          "body": "Les mesures suivantes sont mises en œuvre au titre de l'article 32 du RGPD :",
+          "items": [
+            "chiffrement des données en transit et au repos ;",
+            "gestion des accès par rôle, par service et par store documentaire, avec journalisation des consultations ;",
+            "isolation des environnements clients, jusqu'à l'instance dédiée ou l'installation sur l'infrastructure du client ;",
+            "sauvegardes régulières et procédures de restauration testées ;",
+            "revues de code et de configuration, et gestion des vulnérabilités ;",
+            "sensibilisation des équipes et engagement de confidentialité contractuel.",
+            "[À COMPLÉTER] (compléter avec les certifications ou audits effectivement obtenus : ISO 27001, SOC 2, HDS, tests d'intrusion. Ne rien indiquer qui ne soit pas en cours de validité.)"
+          ]
+        },
+        {
+          "id": "violations",
+          "title": "9. Violations de données",
+          "body": "En cas de violation de données à caractère personnel, Prosperify notifie le client concerné dans les meilleurs délais après en avoir pris connaissance, avec les éléments nécessaires à sa propre notification à l'autorité de contrôle dans le délai de 72 heures prévu à l'article 33. Lorsque Prosperify est responsable de traitement, elle notifie elle-même la CNIL et, lorsque le risque est élevé, informe les personnes concernées conformément à l'article 34."
+        },
+        {
+          "id": "conservation",
+          "title": "10. Conservation et suppression",
+          "body": "Les durées de conservation des traitements dont Prosperify est responsable figurent dans la politique de protection des données. Pour les données traitées pour le compte d'un client, la durée est celle fixée par le client. À la fin du contrat, les données sont supprimées ou restituées selon son choix, dans le délai convenu, y compris dans les sauvegardes selon leur cycle de rotation."
+        },
+        {
+          "id": "aipd",
+          "title": "11. Analyses d'impact",
+          "body": "Lorsqu'un traitement est susceptible d'engendrer un risque élevé, le client réalise une analyse d'impact relative à la protection des données au titre de l'article 35. Prosperify fournit les informations techniques nécessaires : architecture, flux de données, mesures de sécurité, localisation et sous-traitants."
+        },
+        {
+          "id": "souverainete",
+          "title": "12. Localisation et souveraineté",
+          "body": "Le mode de déploiement détermine le périmètre des données. En cloud dédié, l'instance est isolée et sa localisation est fixée au contrat. En hybride, les traitements sensibles restent dans le périmètre du client. En déploiement local, les documents et les traitements ne quittent pas son infrastructure. Dans tous les cas, les corpus clients ne servent pas à entraîner des modèles généraux."
+        },
+        {
+          "id": "contact",
+          "title": "13. Contact",
+          "body": "Pour toute question relative à la conformité, à l'accord de sous-traitance ou à l'exercice de vos droits : [À COMPLÉTER] (adresse email dédiée, et coordonnées du délégué à la protection des données s'il en a été désigné un). Vous pouvez également saisir la CNIL, 3 place de Fontenoy, 75007 Paris, www.cnil.fr."
+        }
+      ]
+    }
   },
-  "viewer": {
-    "page": "p.{{current}}/{{total}}",
-    "page_count": "{{count}} pages",
-    "previous_page": "Page précédente",
-    "next_page": "Page suivante",
-    "zoom_out": "Zoom arrière",
-    "zoom": "Zoom",
-    "zoom_in": "Zoom avant",
-    "rotate": "Pivoter",
-    "exit_fullscreen": "Quitter le plein écran",
-    "fullscreen": "Plein écran",
-    "search": "Rechercher",
-    "close": "Fermer"
-  },
-  "fallback": {
-    "unavailable_title": "Erreur réseau",
-    "unavailable_description": "Impossible de charger cette page. Vérifiez votre connexion et réessayez."
+  "notFound": {
+    "description": "Cette page n'existe pas ou a été déplacée.",
+    "back": "Retour à l'accueil"
   }
 }

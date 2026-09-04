@@ -1,1 +1,2 @@
-export * from './document-intelligence-demo';
+export * from './hero-demo-picker';
+export * from './lazy-hero-demo';

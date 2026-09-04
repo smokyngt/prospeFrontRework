@@ -10,12 +10,10 @@ export function normalizeLandingTheme(theme: string | null): LandingTheme {
   return theme === 'dark' ? 'dark' : 'light';
 }
 
-export function normalizeLandingLanguage(language: string | null): LandingLanguage {
+export function normalizeLandingLanguage(
+  language: string | null,
+): LandingLanguage {
   return language === 'en' ? 'en' : 'fr';
-}
-
-export function uiLanguage(locale: string | undefined): LandingLanguage {
-  return locale?.startsWith('fr') ? 'fr' : 'en';
 }
 
 export function readStoredLandingTheme(): LandingTheme {
@@ -23,7 +21,9 @@ export function readStoredLandingTheme(): LandingTheme {
     return 'light';
   }
 
-  return normalizeLandingTheme(window.localStorage.getItem(LANDING_THEME_STORAGE_KEY));
+  return normalizeLandingTheme(
+    window.localStorage.getItem(LANDING_THEME_STORAGE_KEY),
+  );
 }
 
 export function readStoredLandingLanguage(): LandingLanguage {
@@ -31,7 +31,9 @@ export function readStoredLandingLanguage(): LandingLanguage {
     return 'fr';
   }
 
-  return normalizeLandingLanguage(window.localStorage.getItem(LANDING_LANGUAGE_STORAGE_KEY));
+  return normalizeLandingLanguage(
+    window.localStorage.getItem(LANDING_LANGUAGE_STORAGE_KEY),
+  );
 }
 
 export function getCurrentLandingTheme(): LandingTheme {
@@ -47,7 +49,9 @@ export function getCurrentLandingLanguage(): LandingLanguage {
     return 'fr';
   }
 
-  return normalizeLandingLanguage(document.documentElement.dataset.lang ?? null);
+  return normalizeLandingLanguage(
+    document.documentElement.dataset.lang ?? null,
+  );
 }
 
 export function applyLandingTheme(theme: LandingTheme): boolean {
@@ -64,7 +68,9 @@ export function applyLandingTheme(theme: LandingTheme): boolean {
   return dark;
 }
 
-export function applyLandingLanguage(language: LandingLanguage): LandingLanguage {
+export function applyLandingLanguage(
+  language: LandingLanguage,
+): LandingLanguage {
   document.documentElement.dataset.lang = language;
   document.documentElement.lang = language;
   window.localStorage.setItem(LANDING_LANGUAGE_STORAGE_KEY, language);

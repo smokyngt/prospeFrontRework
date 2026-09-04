@@ -1,0 +1,378 @@
+{
+  "pdf": {
+    "totalPages": 14,
+    "url": "/assets/demo/Protocole_HELIOS-2.pdf"
+  },
+  "files": [
+    {
+      "fileId": "demo-helios2-protocole",
+      "fileName": "Protocole_HELIOS-2.pdf",
+      "totalPages": 14,
+      "url": "/assets/demo/Protocole_HELIOS-2.pdf",
+      "metadata": {
+        "fileName": "Protocole_HELIOS-2.pdf",
+        "mime": "application/pdf",
+        "pages": "14",
+        "sourceAccess": "Secure workspace",
+        "sourceParser": "pdf text + page preview"
+      }
+    }
+  ],
+  "filterFiles": [
+    "Protocole_HELIOS-2.pdf"
+  ],
+  "filterMetadata": [
+    {
+      "key": "author",
+      "value": "Assurance qualité"
+    },
+    {
+      "key": "date",
+      "value": "2026-01-12"
+    },
+    {
+      "key": "section",
+      "value": "Section 6"
+    }
+  ],
+  "citations": [
+    {
+      "confidence": "96%",
+      "fileId": "demo-helios2-protocole",
+      "fileName": "Protocole_HELIOS-2.pdf",
+      "highlightText": "Aucun ajustement posologique n'est requis en cas d'insuffisance rénale",
+      "id": 1,
+      "page": 2,
+      "quote": "Aucun ajustement posologique n'est requis en cas d'insuffisance rénale. La dose standard s'applique à l'ensemble des participants inclus."
+    },
+    {
+      "confidence": "97%",
+      "fileId": "demo-helios2-protocole",
+      "fileName": "Protocole_HELIOS-2.pdf",
+      "highlightText": "la dose est réduite à 50 % de la dose standard",
+      "id": 2,
+      "page": 10,
+      "quote": "En cas d'insuffisance rénale sévère (clairance de la créatinine inférieure à 30 mL/min), la dose est réduite à 50 % de la dose standard, soit 100 mg par jour."
+    },
+    {
+      "confidence": "95%",
+      "fileId": "demo-helios2-protocole",
+      "fileName": "Protocole_HELIOS-2.pdf",
+      "highlightText": "La fiche de synthèse en circulation reprend la version 1.2 et n'a pas été mise à jour après l'amendement n° 2",
+      "id": 3,
+      "page": 13,
+      "quote": "La fiche de synthèse en circulation reprend la version 1.2 et n'a pas été mise à jour après l'amendement n° 2. En cas de divergence, le protocole en vigueur prévaut sur tout document de synthèse."
+    },
+    {
+      "confidence": "93%",
+      "fileId": "demo-helios2-protocole",
+      "fileName": "Protocole_HELIOS-2.pdf",
+      "highlightText": "Toute décision de posologie relève de l'investigateur",
+      "id": 4,
+      "page": 14,
+      "quote": "Toute décision de posologie relève de l'investigateur, au vu de l'état clinique du participant et des résultats biologiques disponibles."
+    }
+  ],
+  "document": {
+    "articleOne": "Dose standard de 200 mg par jour en une prise unique - Section 6.1, p.10",
+    "articleThree": "Insuffisance rénale sévère : dose réduite à 50 % de la dose standard - Section 6.3, p.10",
+    "title": "Protocole d'étude clinique HELIOS-2 - version 2.0 du 12 janvier 2026",
+    "verifiedClause": "La fiche de synthèse reprend la version 1.2 et n'a pas été mise à jour après l'amendement n° 2 - Section 9.1, p.13"
+  },
+  "steps": [
+    {
+      "action": "analyzing",
+      "entities": [
+        "HELIOS-2",
+        "insuffisance rénale",
+        "adaptation de dose"
+      ],
+      "id": "intent",
+      "queries": "@queries",
+      "reasoning": "@text.analyze"
+    },
+    {
+      "action": "ls",
+      "id": "browse-store",
+      "reasoning": "@text.ls",
+      "toolName": "ls",
+      "toolParams": {
+        "path": "/Protocoles/HELIOS-2"
+      },
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "",
+            "metadata": {
+              "treeData": {
+                "path": "/Protocoles/HELIOS-2",
+                "folders": [],
+                "files": [
+                  {
+                    "fileId": "demo-helios2-protocole",
+                    "name": "Protocole_HELIOS-2.pdf",
+                    "size": 486000
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "count": 1,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "searching",
+      "id": "lexical-search",
+      "queries": [
+        "adaptation de dose insuffisance rénale clairance",
+        "fiche de synthèse version protocole"
+      ],
+      "reasoning": "@text.lexical"
+    },
+    {
+      "action": "retrieved",
+      "chunks": 9,
+      "id": "lexical-results",
+      "reasoning": "@text.lexicalResults",
+      "toolName": "search",
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "@doc.title",
+            "fileName": "Protocole_HELIOS-2.pdf",
+            "metadata": {
+              "section": "Fiche de synthèse",
+              "type": "text"
+            },
+            "pageNumber": 2,
+            "score": 0.93
+          },
+          {
+            "content": "@doc.articleThree",
+            "fileName": "Protocole_HELIOS-2.pdf",
+            "metadata": {
+              "section": "6. Posologie et adaptation de dose",
+              "type": "text"
+            },
+            "pageNumber": 10,
+            "score": 0.91
+          },
+          {
+            "content": "@doc.verifiedClause",
+            "fileName": "Protocole_HELIOS-2.pdf",
+            "metadata": {
+              "section": "9. Historique des versions",
+              "type": "text"
+            },
+            "pageNumber": 13,
+            "score": 0.86
+          }
+        ],
+        "count": 3,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "readFile",
+      "id": "read-file",
+      "reasoning": "@text.read",
+      "toolName": "read",
+      "toolParams": {
+        "fileName": "Protocole_HELIOS-2.pdf",
+        "pageRange": "2,10,13"
+      },
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "Fiche de synthèse, point 2 - aucun ajustement posologique n'est requis en cas d'insuffisance rénale ; la dose standard s'applique à l'ensemble des participants inclus.",
+            "fileId": "demo-helios2-protocole",
+            "fileName": "Protocole_HELIOS-2.pdf",
+            "pageNumber": 2,
+            "score": 0.96
+          },
+          {
+            "content": "Section 6.3 - en cas d'insuffisance rénale sévère (clairance inférieure à 30 mL/min), la dose est réduite à 50 % de la dose standard, soit 100 mg par jour. Entre 30 et 60 mL/min, la dose est réduite à 150 mg par jour.",
+            "fileId": "demo-helios2-protocole",
+            "fileName": "Protocole_HELIOS-2.pdf",
+            "pageNumber": 10,
+            "score": 0.97
+          },
+          {
+            "content": "Section 9.1 - la fiche de synthèse en circulation reprend la version 1.2 et n'a pas été mise à jour après l'amendement n° 2, qui a introduit l'adaptation de dose.",
+            "fileId": "demo-helios2-protocole",
+            "fileName": "Protocole_HELIOS-2.pdf",
+            "pageNumber": 13,
+            "score": 0.94
+          }
+        ],
+        "count": 3,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "screenshot",
+      "id": "page-screenshot",
+      "reasoning": "@text.screenshot",
+      "toolName": "screenshot",
+      "toolParams": {
+        "fileName": "Protocole_HELIOS-2.pdf",
+        "page": 1
+      },
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "",
+            "fileId": "demo-helios2-protocole",
+            "fileName": "Protocole_HELIOS-2.pdf",
+            "metadata": {
+              "type": "screenshot"
+            },
+            "pageNumber": 1,
+            "score": 0.94,
+            "type": "image"
+          },
+          {
+            "content": "",
+            "fileId": "demo-helios2-protocole",
+            "fileName": "Protocole_HELIOS-2.pdf",
+            "metadata": {
+              "type": "screenshot"
+            },
+            "pageNumber": 10,
+            "score": 0.92,
+            "type": "image"
+          }
+        ],
+        "count": 2,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "searching",
+      "id": "semantic-search",
+      "queries": [
+        "responsabilité décision posologie investigateur"
+      ],
+      "reasoning": "@text.semantic"
+    },
+    {
+      "action": "retrieved",
+      "chunks": 12,
+      "id": "semantic-results",
+      "reasoning": "@text.semanticResults",
+      "toolName": "search",
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "Section 10.2 - toute décision de posologie relève de l'investigateur, au vu de l'état clinique du participant et des résultats biologiques disponibles.",
+            "fileName": "Protocole_HELIOS-2.pdf",
+            "metadata": {
+              "section": "10. Responsabilités",
+              "type": "text"
+            },
+            "pageNumber": 14,
+            "score": 0.89
+          },
+          {
+            "content": "@text.reviewNote",
+            "fileName": "Protocole_HELIOS-2.pdf",
+            "metadata": {
+              "section": "Version en vigueur",
+              "type": "text"
+            },
+            "pageNumber": 13,
+            "score": 0.78
+          }
+        ],
+        "count": 2,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "generating",
+      "id": "answer",
+      "reasoning": "@text.generate",
+      "thinking": "@text.thinking"
+    }
+  ],
+  "content": {
+    "fr": {
+      "storeName": "Protocoles & qualité",
+      "finalAnswer": "La fiche de synthèse assurance qualité (p.2) indique qu'aucun ajustement posologique n'est requis en cas d'insuffisance rénale [1]. Le protocole en vigueur dit l'inverse : la section 6.3 (p.10) impose, en cas d'insuffisance rénale sévère (clairance inférieure à 30 mL/min), une dose réduite à 50 % de la dose standard, soit 100 mg par jour [2], et une réduction à 150 mg entre 30 et 60 mL/min. L'écart s'explique : l'historique des versions (section 9.1, p.13) précise que la fiche de synthèse en circulation reprend la version 1.2 et n'a pas été mise à jour après l'amendement n° 2, qui a introduit cette adaptation de dose [3]. C'est donc le protocole en vigueur (version 2.0) qui fait foi, et non la fiche. La section 10.2 (p.14) rappelle par ailleurs que toute décision de posologie relève de l'investigateur, au vu de l'état clinique du participant [4] : cette réponse documente la règle applicable, elle ne la remplace pas. Deux actions : faire retirer la fiche de synthèse périmée des centres, et vérifier que les inclusions déjà réalisées sous clairance basse ont bien appliqué la réduction.",
+      "question": "Quelle posologie le protocole HELIOS-2 prévoit-il en cas d'insuffisance rénale ? Vérifie la cohérence avec la fiche de synthèse et cite les passages exacts.",
+      "reasoning": "La question porte sur l'adaptation de dose. Je relève ce qu'affirme la fiche de synthèse (p.2), puis je cherche la section posologie du protocole. La section 6.3 (p.10) impose une réduction à 50 % sous 30 mL/min, ce qui contredit la fiche. Je cherche ensuite l'origine de l'écart : l'historique des versions (p.13) montre que la fiche reprend la version 1.2, antérieure à l'amendement n° 2. Je cite chaque passage avec sa page, et je rappelle que la décision reste médicale.",
+      "retrievalQueries": [
+        "insuffisance rénale adaptation dose clairance créatinine",
+        "section 6.3 posologie réduction 50 %",
+        "fiche de synthèse version 1.2 amendement",
+        "responsabilité investigateur décision posologie"
+      ],
+      "threads": [
+        "Agent Prosperify"
+      ],
+      "hallucinations": [
+        {
+          "start": 56,
+          "end": 97,
+          "reason": "Conflit de source : la fiche de synthèse reprend la version 1.2, alors que la section 6.3 du protocole en vigueur impose une réduction de dose à 50 % sous 30 mL/min.",
+          "score": 0.9,
+          "counterCitationId": 2,
+          "evidence": "En cas d'insuffisance rénale sévère (clairance de la créatinine inférieure à 30 mL/min), la dose est réduite à 50 % de la dose standard, soit 100 mg par jour."
+        }
+      ],
+      "stepText": {
+        "analyze": "Décomposer la demande : retrouver la règle de posologie en insuffisance rénale, la confronter à la fiche de synthèse, et identifier la version qui fait foi.",
+        "ls": "Parcourir le store pour repérer les documents disponibles sur le protocole HELIOS-2.",
+        "read": "Ouvrir le PDF et lire les sections clés : fiche de synthèse (p.2), posologie (p.10), historique des versions (p.13).",
+        "screenshot": "Capturer un aperçu de page pour vérifier visuellement la source.",
+        "lexical": "Rechercher les formulations exactes : ajustement posologique, clairance de la créatinine, réduction de dose.",
+        "lexicalResults": "Passages retrouvés et classés : fiche de synthèse p.2, section 6.3 p.10, historique des versions p.13.",
+        "semantic": "Faire une seconde recherche sémantique sur la responsabilité de la décision posologique.",
+        "semanticResults": "Passage retrouvé à la section 10.2 p.14 : la décision de posologie relève de l'investigateur.",
+        "reviewNote": "En cas de divergence entre un document de synthèse et le protocole, c'est la version en vigueur du protocole qui fait foi : ici la version 2.0, section 6.3.",
+        "generate": "Composer une note structurée : ce qu'affirme la fiche, la règle réelle, l'origine de l'écart, et le rappel de responsabilité médicale.",
+        "thinking": "Règle de rédaction : la réponse porte sur une posologie, elle doit être strictement citée et jamais reformulée. Je présente la fiche, puis la section 6.3, puis l'explication de l'écart par l'historique des versions. Je termine sur la section 10.2 : la réponse documente la règle applicable, elle ne se substitue pas au jugement de l'investigateur."
+      }
+    },
+    "en": {
+      "storeName": "Protocols & quality",
+      "finalAnswer": "The quality assurance summary sheet (p.2) states that no dose adjustment is required in case of renal impairment [1]. The protocol in force says the opposite: section 6.3 (p.10) requires, for severe renal impairment (clearance below 30 mL/min), a dose reduced to 50% of the standard dose, i.e. 100 mg per day [2], and a reduction to 150 mg between 30 and 60 mL/min. The gap is explained: the version history (section 9.1, p.13) states that the summary sheet in circulation reflects version 1.2 and was not updated after amendment no. 2, which introduced this dose adaptation [3]. The protocol in force (version 2.0) therefore governs, not the sheet. Section 10.2 (p.14) also states that any dosing decision rests with the investigator, in light of the participant's clinical status [4]: this answer documents the applicable rule, it does not replace it. Two actions: have the outdated summary sheet withdrawn from the sites, and check that inclusions already made under low clearance did apply the reduction.",
+      "question": "What dosage does protocol HELIOS-2 set for renal impairment? Check consistency with the summary sheet and cite exact passages.",
+      "reasoning": "The question is about dose adaptation. I extract what the summary sheet claims (p.2), then look for the protocol's dosing section. Section 6.3 (p.10) requires a 50% reduction below 30 mL/min, contradicting the sheet. I then look for the cause of the gap: the version history (p.13) shows the sheet reflects version 1.2, predating amendment no. 2. I cite each passage with its page, and restate that the decision remains medical.",
+      "retrievalQueries": [
+        "renal impairment dose adaptation creatinine clearance",
+        "section 6.3 dosing 50% reduction",
+        "summary sheet version 1.2 amendment",
+        "investigator responsibility dosing decision"
+      ],
+      "threads": [
+        "Agent Prosperify"
+      ],
+      "hallucinations": [
+        {
+          "start": 54,
+          "end": 84,
+          "reason": "Source conflict: the summary sheet reflects version 1.2, whereas section 6.3 of the protocol in force requires a 50% dose reduction below 30 mL/min.",
+          "score": 0.9,
+          "counterCitationId": 2,
+          "evidence": "For severe renal impairment (creatinine clearance below 30 mL/min), the dose is reduced to 50% of the standard dose, i.e. 100 mg per day."
+        }
+      ],
+      "stepText": {
+        "analyze": "Breaking down the request: find the dosing rule for renal impairment, compare it against the summary sheet, and identify which version governs.",
+        "ls": "Browsing the store to list the documents available on protocol HELIOS-2.",
+        "read": "Opening the PDF and reading key sections: summary sheet (p.2), dosing (p.10), version history (p.13).",
+        "screenshot": "Capturing a page preview for visual verification.",
+        "lexical": "Searching exact wording: dose adjustment, creatinine clearance, dose reduction.",
+        "lexicalResults": "Retrieved and ranked passages: summary sheet p.2, section 6.3 p.10, version history p.13.",
+        "semantic": "Running a second semantic search on responsibility for the dosing decision.",
+        "semanticResults": "Retrieved section 10.2 p.14: the dosing decision rests with the investigator.",
+        "reviewNote": "Where a summary document and the protocol diverge, the protocol version in force governs: here version 2.0, section 6.3.",
+        "generate": "Composing a structured note: what the sheet claims, the actual rule, the cause of the gap, and the reminder of medical responsibility.",
+        "thinking": "Drafting rule: the answer concerns a dosage, so it must be quoted strictly and never paraphrased. Present the sheet, then section 6.3, then the version history explaining the gap. Close on section 10.2: the answer documents the applicable rule, it does not replace the investigator's judgement."
+      }
+    }
+  }
+}

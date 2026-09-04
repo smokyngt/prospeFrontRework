@@ -1,2 +1,2 @@
-export { TeamPage } from './team-page';
-export { TeamSection } from './team-section';
+export { TeamPage } from "./team-page";
+export { TeamSection } from "./team-section";

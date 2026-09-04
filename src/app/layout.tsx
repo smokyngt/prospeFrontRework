@@ -1,6 +1,6 @@
 import './globals.css';
 
-import { Inter } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
 import { Suspense } from 'react';
 
@@ -17,9 +17,15 @@ const siteDescription =
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
-const inter = Inter({
+const bodyFont = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-body',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
   display: 'swap',
 });
 
@@ -167,9 +173,17 @@ export default function RootLayout({
         ) : null}
       </head>
       <body
-        className={`font-sans bg-white ${inter.variable} antialiased dark:bg-neutral-950`}
+        className={`font-sans bg-white ${bodyFont.variable} ${jetbrainsMono.variable} antialiased dark:bg-neutral-950`}
         suppressHydrationWarning
       >
+        {/* Sans JavaScript, les sections ne doivent pas rester masquées */}
+        <noscript>
+          <style
+            dangerouslySetInnerHTML={{
+              __html: '.pf-reveal{opacity:1!important;transform:none!important}',
+            }}
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

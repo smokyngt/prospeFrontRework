@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react';
 import {
   applyLandingTheme,
   getCurrentLandingTheme,
+  initializeLandingTheme,
   LANDING_THEME_CHANGE_EVENT,
-  readStoredLandingTheme,
 } from '@/features/landing/lib/theme';
 
 export function ThemeToggle() {
@@ -16,8 +16,7 @@ export function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true);
-    const nextDark = applyLandingTheme(readStoredLandingTheme());
-    setDark(nextDark);
+    setDark(initializeLandingTheme());
   }, []);
 
   useEffect(() => {
@@ -26,7 +25,8 @@ export function ThemeToggle() {
     };
 
     window.addEventListener(LANDING_THEME_CHANGE_EVENT, handleThemeChange);
-    return () => window.removeEventListener(LANDING_THEME_CHANGE_EVENT, handleThemeChange);
+    return () =>
+      window.removeEventListener(LANDING_THEME_CHANGE_EVENT, handleThemeChange);
   }, []);
 
   const toggleTheme = () => {
@@ -41,7 +41,11 @@ export function ThemeToggle() {
       className="inline-flex h-9 w-9 items-center justify-center border border-neutral-200 bg-white/85 text-neutral-700 shadow-sm backdrop-blur transition-colors hover:border-orange-200 hover:text-orange-600 dark:border-neutral-800 dark:bg-neutral-950/80 dark:text-neutral-200"
       aria-label={dark ? 'Use light mode' : 'Use dark mode'}
     >
-      {mounted && dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+      {mounted && dark ? (
+        <Sun className="h-4 w-4" />
+      ) : (
+        <Moon className="h-4 w-4" />
+      )}
     </button>
   );
 }

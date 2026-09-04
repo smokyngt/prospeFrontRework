@@ -1,1 +1,1 @@
-export { GridBackground } from './animated-grid-background';
+export { AnimatedGridBackground } from "./animated-grid-background";

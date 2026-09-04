@@ -1,1 +1,1 @@
-export { default as ProsperifyFeatures } from './prosperify-features';
+export { default as ProsperifyFeatures } from "./prosperify-features";

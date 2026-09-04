@@ -1,1 +1,1 @@
-export * from './workflow-section';
+export * from "./workflow-section";

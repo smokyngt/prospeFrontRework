@@ -1,27 +1,18 @@
-import { TeamPage } from '@/features/landing/components/team';
-import { loadTeamMembers } from '@/features/landing/data/workspace-api';
+import { TeamPage } from "@/features/landing/components/team";
+import { workspace } from "@/features/landing/data/workspace-api";
+import { getServerTranslation } from "@/lib/translations";
 
-export const metadata = {
-  title: 'Team | Prosperify',
-  description: 'Meet the Prosperify team building governed document AI for enterprise knowledge.',
-  alternates: {
-    canonical: 'https://prosperify.app/team',
-    languages: {
-      fr: 'https://prosperify.app/team',
-      en: 'https://prosperify.app/team',
-      'x-default': 'https://prosperify.app/team',
-    },
-  },
-  openGraph: {
-    title: 'Team | Prosperify',
-    description: 'Meet the Prosperify team building governed document AI for enterprise knowledge.',
-  },
+import type { Metadata } from "next";
+
+const tr = getServerTranslation("fr");
+
+export const metadata: Metadata = {
+  title: tr.meta.pages.team.title,
+  description: tr.meta.pages.team.description,
 };
 
-const TeamRoute = async () => {
-  const members = await loadTeamMembers();
+export default async function TeamRoute() {
+  const members = await workspace.team.members();
 
   return <TeamPage initialMembers={members} lang="fr" />;
-};
-
-export default TeamRoute;
+}

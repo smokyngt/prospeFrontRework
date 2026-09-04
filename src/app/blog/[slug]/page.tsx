@@ -1,46 +1,28 @@
-import { canonicalUrl } from '@/config/constants';
-import { BlogPostPage } from '@/features/landing/components/blog';
-import { blog, post } from '@/features/landing/data/blog';
+import { BlogPostPage } from "@/features/landing/components/blog";
+import { getAllBlogSlugs, getBlogPost } from "@/features/landing/data/blog";
 
 type BlogPostRouteProps = {
   params: Promise<{ slug: string }>;
 };
 
-const BlogPostRoute = async ({ params }: BlogPostRouteProps) => {
+export default async function BlogPostRoute({ params }: BlogPostRouteProps) {
   const { slug } = await params;
 
   return <BlogPostPage lang="fr" slug={slug} />;
-};
+}
 
-export default BlogPostRoute;
-
-export const generateMetadata = async ({ params }: BlogPostRouteProps) => {
+export async function generateMetadata({ params }: BlogPostRouteProps) {
   const { slug } = await params;
-  const blogPost = await blog.post.retrieve(slug).catch(() => null);
-  const title = blogPost?.fr.title ?? 'Blog | Prosperify';
-  const description = blogPost?.fr.excerpt ?? 'Prosperify blog post.';
-  const postUrl = canonicalUrl(`/blog/${slug}`);
+  const post = await getBlogPost(slug).catch(() => null);
 
   return {
-    title,
-    description,
-    alternates: {
-      canonical: postUrl,
-    },
-    openGraph: {
-      title,
-      description,
-      url: postUrl,
-      type: 'article',
-      publishedTime: blogPost?.date ? new Date(blogPost.date).toISOString() : undefined,
-      authors: blogPost ? post.authors(blogPost).map((a: { name: string }) => a.name) : undefined,
-      tags: blogPost?.tags,
-    },
+    title: post?.fr.title ?? "Blog | Prosperify",
+    description: post?.fr.excerpt ?? "Prosperify blog post.",
   };
-};
+}
 
-export const generateStaticParams = async () => {
-  const slugs = await blog.slugs.all().catch(() => []);
+export async function generateStaticParams() {
+  const slugs = await getAllBlogSlugs().catch(() => []);
 
   return slugs.map((slug) => ({ slug }));
-};
+}

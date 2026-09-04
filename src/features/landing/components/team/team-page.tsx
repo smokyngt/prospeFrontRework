@@ -1,14 +1,16 @@
-'use client';
+"use client";
 
-import { ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
-import { LandingFooter } from '@/features/landing/components/footer';
-import { LandingNavbar } from '@/features/landing/components/navigation';
-import { TeamSection } from '@/features/landing/components/team/team-section';
-import { useLandingLanguageSync } from '@/hooks/use-landing-language';
+import { LandingFooter } from "@/features/landing/components/footer";
+import { LandingNavbar } from "@/features/landing/components/navigation";
+import { TeamSection } from "@/features/landing/components/team/team-section";
+import i18n from "@/lib/i18n";
 
-import type { WorkspaceTeamMember } from '@/features/landing/data/workspace-api';
+import type { WorkspaceTeamMember } from "@/features/landing/data/workspace-api";
 
 type TeamPageProps = {
   initialMembers?: WorkspaceTeamMember[];
@@ -16,7 +18,13 @@ type TeamPageProps = {
 };
 
 export function TeamPage({ initialMembers, lang }: TeamPageProps) {
-  useLandingLanguageSync(lang);
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    if (lang === "fr" || lang === "en") {
+      i18n.changeLanguage(lang).catch(() => undefined);
+    }
+  }, [lang]);
 
   return (
     <main className="min-h-screen bg-white text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50">
@@ -25,10 +33,9 @@ export function TeamPage({ initialMembers, lang }: TeamPageProps) {
         <Link
           className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-neutral-600 hover:text-orange-600"
           href="/"
-          title={lang === 'en' ? 'Back to landing' : "Retour à l'accueil"}
         >
           <ArrowLeft className="h-4 w-4" />
-          {lang === 'en' ? 'Back to landing' : "Retour à l'accueil"}
+          {t("common.backToLanding")}
         </Link>
         <TeamSection initialMembers={initialMembers} />
       </section>

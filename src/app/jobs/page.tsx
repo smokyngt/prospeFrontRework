@@ -1,25 +1,18 @@
-import { canonicalUrl } from '@/config/constants';
-import { JobsPage } from '@/features/landing/components/jobs';
-import { workspace } from '@/features/landing/data/workspace-api';
+import { JobsPage } from "@/features/landing/components/jobs";
+import { workspace } from "@/features/landing/data/workspace-api";
+import { getServerTranslation } from "@/lib/translations";
 
-export const metadata = {
-  title: 'Jobs | Prosperify',
-  description:
-    'Open roles and hiring updates from Prosperify, the governed document AI platform for enterprise teams.',
-  alternates: {
-    canonical: canonicalUrl('/jobs'),
-  },
-  openGraph: {
-    title: 'Jobs | Prosperify',
-    description:
-      'Open roles and hiring updates from Prosperify, the governed document AI platform for enterprise teams.',
-  },
+import type { Metadata } from "next";
+
+const tr = getServerTranslation("fr");
+
+export const metadata: Metadata = {
+  title: tr.meta.pages.jobs.title,
+  description: tr.meta.pages.jobs.description,
 };
 
-const JobsRoute = async () => {
+export default async function JobsRoute() {
   const openings = await workspace.job.openings();
 
   return <JobsPage initialOpenings={openings} lang="fr" />;
-};
-
-export default JobsRoute;
+}

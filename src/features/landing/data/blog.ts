@@ -1,9 +1,10 @@
-import { Folder, Tag } from 'lucide-react';
+import { Folder, Tag } from "lucide-react";
 
-import { workspace } from '@/features/landing/data/workspace-api';
-import { uiLanguage } from '@/features/landing/lib/theme';
+import { workspace } from "./workspace-api";
 
-import type { LucideIcon } from 'lucide-react';
+import type { LucideIcon } from "lucide-react";
+
+type BlogLanguage = "en" | "fr";
 
 type BlogPostContent = {
   excerpt: string;
@@ -24,62 +25,54 @@ export type BlogPost = {
   tags: string[];
 };
 
-export const blogLanguage = {
-  get(lang?: string): 'en' | 'fr' {
-    return uiLanguage(lang);
-  },
-};
-
 export const blog = {
   async posts(): Promise<BlogPost[]> {
     return workspace.blog.posts();
   },
-  post: {
-    async retrieve(id: string): Promise<BlogPost | null> {
-      const posts = await blog.posts();
-
-      return posts.find((post) => post.id === id) ?? null;
-    },
-  },
-  slugs: {
-    async all(): Promise<string[]> {
-      const posts = await blog.posts();
-
-      return posts.map((post) => post.id);
-    },
-  },
 };
 
-export const post = {
-  authors(post: BlogPost): Array<{
-    avatarUrl?: string;
-    id: string;
-    initials: string;
-    linkedinUrl?: string;
-    name: string;
-  }> {
-    if (post.authors && post.authors.length > 0) {
-      return post.authors.map((a) => ({
-        avatarUrl: a.avatarUrl,
-        id: a.id,
-        initials: a.name.slice(0, 2).toUpperCase(),
-        name: a.name,
-      }));
-    }
+export async function getBlogPost(id: string): Promise<BlogPost | null> {
+  const posts = await blog.posts();
 
-    return post.authorIds.map((id) => {
-      const initials = id.slice(0, 2).toUpperCase();
-      return { avatarUrl: undefined, id, initials, name: id };
-    });
-  },
-};
+  return posts.find((post) => post.id === id) ?? null;
+}
 
-export const tag = {
-  icon(tag?: string): LucideIcon {
-    if (!tag) {
-      return Folder;
-    }
+export async function getAllBlogSlugs(): Promise<string[]> {
+  const posts = await blog.posts();
 
-    return Tag;
-  },
-};
+  return posts.map((post) => post.id);
+}
+
+export function getBlogLanguage(value?: string): BlogLanguage {
+  return value === "fr" ? "fr" : "en";
+}
+
+export function getPostAuthors(post: BlogPost): Array<{
+  avatarUrl?: string;
+  id: string;
+  initials: string;
+  linkedinUrl?: string;
+  name: string;
+}> {
+  if (post.authors && post.authors.length > 0) {
+    return post.authors.map((a) => ({
+      avatarUrl: a.avatarUrl,
+      id: a.id,
+      initials: a.name.slice(0, 2).toUpperCase(),
+      name: a.name,
+    }));
+  }
+
+  return post.authorIds.map((id) => {
+    const initials = id.slice(0, 2).toUpperCase();
+    return { avatarUrl: undefined, id, initials, name: id };
+  });
+}
+
+export function getTagIcon(tag?: string): LucideIcon {
+  if (!tag) {
+    return Folder;
+  }
+
+  return Tag;
+}

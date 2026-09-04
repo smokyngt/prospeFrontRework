@@ -1,37 +1,25 @@
-import { canonicalUrl } from '@/config/constants';
-import { BlogIndexPage } from '@/features/landing/components/blog';
-import { workspace } from '@/features/landing/data/workspace-api';
+import { BlogIndexPage } from "@/features/landing/components/blog";
+import { workspace } from "@/features/landing/data/workspace-api";
+import { getServerTranslation } from "@/lib/translations";
 
-export const metadata = {
-  title: 'Prosperify Blog | Governed document AI insights',
-  description:
-    'Practical writing on evidence-backed document AI, retrieval, governance and enterprise deployment.',
-  alternates: {
-    canonical: canonicalUrl('/blog'),
-  },
-  openGraph: {
-    title: 'Blog | Prosperify - Intelligence documentaire gouvernée',
-    description:
-      "Articles sur l'IA documentaire sourcée, la recherche hybride, la gouvernance et le déploiement en entreprise.",
-  },
-  twitter: {
-    title: 'Blog | Prosperify - Intelligence documentaire gouvernée',
-    description:
-      "Articles sur l'IA documentaire sourcée, la recherche hybride, la gouvernance et le déploiement en entreprise.",
-  },
+import type { Metadata } from "next";
+
+const tr = getServerTranslation("fr");
+
+export const metadata: Metadata = {
+  title: tr.meta.pages.blog.title,
+  description: tr.meta.pages.blog.description,
 };
 
-const BlogPage = async () => {
+export default async function BlogPage() {
   try {
     const posts = await workspace.blog.posts();
 
     return <BlogIndexPage initialPosts={posts} lang="fr" />;
   } catch (error) {
     const message =
-      error instanceof Error ? error.message : 'Workspace content could not be loaded.';
+      error instanceof Error ? error.message : tr.meta.pages.blogError;
 
     return <BlogIndexPage initialError={message} initialPosts={[]} lang="fr" />;
   }
-};
-
-export default BlogPage;
+}

@@ -1,0 +1,378 @@
+{
+  "pdf": {
+    "totalPages": 12,
+    "url": "/assets/demo/Contrat_Cadre_Verdi.pdf"
+  },
+  "files": [
+    {
+      "fileId": "demo-verdi",
+      "fileName": "Contrat_Cadre_Verdi.pdf",
+      "totalPages": 12,
+      "url": "/assets/demo/Contrat_Cadre_Verdi.pdf",
+      "metadata": {
+        "fileName": "Contrat_Cadre_Verdi.pdf",
+        "mime": "application/pdf",
+        "pages": "12",
+        "sourceAccess": "Secure workspace",
+        "sourceParser": "pdf text + page preview"
+      }
+    }
+  ],
+  "filterFiles": [
+    "Contrat_Cadre_Verdi.pdf"
+  ],
+  "filterMetadata": [
+    {
+      "key": "author",
+      "value": "Direction juridique"
+    },
+    {
+      "key": "date",
+      "value": "2024-03-14"
+    },
+    {
+      "key": "section",
+      "value": "Article 4"
+    }
+  ],
+  "citations": [
+    {
+      "confidence": "97%",
+      "fileId": "demo-verdi",
+      "fileName": "Contrat_Cadre_Verdi.pdf",
+      "highlightText": "Le contrat est renouvelable par tacite reconduction pour des périodes successives de trois (3) ans",
+      "id": 1,
+      "page": 2,
+      "quote": "Le contrat est renouvelable par tacite reconduction pour des périodes successives de trois (3) ans, sauf dénonciation par l'une des Parties."
+    },
+    {
+      "confidence": "96%",
+      "fileId": "demo-verdi",
+      "fileName": "Contrat_Cadre_Verdi.pdf",
+      "highlightText": "Le renouvellement du présent contrat est subordonné à l'accord exprès et écrit des deux parties",
+      "id": 2,
+      "page": 10,
+      "quote": "Le renouvellement du présent contrat est subordonné à l'accord exprès et écrit des deux parties, notifié au plus tard six (6) mois avant le terme."
+    },
+    {
+      "confidence": "95%",
+      "fileId": "demo-verdi",
+      "fileName": "Contrat_Cadre_Verdi.pdf",
+      "highlightText": "Aucune clause de changement de contrôle n'a été identifiée dans le contrat",
+      "id": 3,
+      "page": 2,
+      "quote": "Aucune clause de changement de contrôle n'a été identifiée dans le contrat."
+    },
+    {
+      "confidence": "94%",
+      "fileId": "demo-verdi",
+      "fileName": "Contrat_Cadre_Verdi.pdf",
+      "highlightText": "En cas de changement de contrôle direct ou indirect de l'une des parties, l'autre partie peut résilier le contrat de plein droit",
+      "id": 4,
+      "page": 12,
+      "quote": "En cas de changement de contrôle direct ou indirect de l'une des parties, l'autre partie peut résilier le contrat de plein droit, par lettre recommandée avec accusé de réception, dans un délai de soixante (60) jours."
+    }
+  ],
+  "document": {
+    "articleOne": "Durée initiale de trois (3) ans à compter de la prise d'effet - Article 4.1, p.10",
+    "articleThree": "Renouvellement subordonné à l'accord exprès et écrit des deux parties, six (6) mois avant le terme - Article 4.1, p.10",
+    "title": "Contrat-cadre de prestations de services - CTR-2024-VERDI-017",
+    "verifiedClause": "Clause de changement de contrôle : résiliation de plein droit dans les soixante (60) jours - Article 6.2, p.12"
+  },
+  "steps": [
+    {
+      "action": "analyzing",
+      "entities": [
+        "CTR-2024-VERDI-017",
+        "renouvellement",
+        "changement de contrôle"
+      ],
+      "id": "intent",
+      "queries": "@queries",
+      "reasoning": "@text.analyze"
+    },
+    {
+      "action": "ls",
+      "id": "browse-store",
+      "reasoning": "@text.ls",
+      "toolName": "ls",
+      "toolParams": {
+        "path": "/Contrats/Verdi"
+      },
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "",
+            "metadata": {
+              "treeData": {
+                "path": "/Contrats/Verdi",
+                "folders": [],
+                "files": [
+                  {
+                    "fileId": "demo-verdi",
+                    "name": "Contrat_Cadre_Verdi.pdf",
+                    "size": 318000
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "count": 1,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "searching",
+      "id": "lexical-search",
+      "queries": [
+        "tacite reconduction renouvellement contrat",
+        "changement de contrôle résiliation"
+      ],
+      "reasoning": "@text.lexical"
+    },
+    {
+      "action": "retrieved",
+      "chunks": 7,
+      "id": "lexical-results",
+      "reasoning": "@text.lexicalResults",
+      "toolName": "search",
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "@doc.title",
+            "fileName": "Contrat_Cadre_Verdi.pdf",
+            "metadata": {
+              "section": "Note de synthèse",
+              "type": "text"
+            },
+            "pageNumber": 2,
+            "score": 0.92
+          },
+          {
+            "content": "@doc.articleThree",
+            "fileName": "Contrat_Cadre_Verdi.pdf",
+            "metadata": {
+              "section": "Article 4 - Durée et renouvellement",
+              "type": "text"
+            },
+            "pageNumber": 10,
+            "score": 0.9
+          },
+          {
+            "content": "@doc.verifiedClause",
+            "fileName": "Contrat_Cadre_Verdi.pdf",
+            "metadata": {
+              "section": "Article 6 - Cession et changement de contrôle",
+              "type": "text"
+            },
+            "pageNumber": 12,
+            "score": 0.85
+          }
+        ],
+        "count": 3,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "readFile",
+      "id": "read-file",
+      "reasoning": "@text.read",
+      "toolName": "read",
+      "toolParams": {
+        "fileName": "Contrat_Cadre_Verdi.pdf",
+        "pageRange": "2,10,12"
+      },
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "Note de synthèse - durée initiale de trois (3) ans ; le contrat est renouvelable par tacite reconduction pour des périodes successives de trois (3) ans.",
+            "fileId": "demo-verdi",
+            "fileName": "Contrat_Cadre_Verdi.pdf",
+            "pageNumber": 2,
+            "score": 0.97
+          },
+          {
+            "content": "Article 4.1 - le renouvellement du présent contrat est subordonné à l'accord exprès et écrit des deux parties, notifié au plus tard six (6) mois avant le terme. Les Parties écartent expressément toute reconduction tacite.",
+            "fileId": "demo-verdi",
+            "fileName": "Contrat_Cadre_Verdi.pdf",
+            "pageNumber": 10,
+            "score": 0.96
+          },
+          {
+            "content": "Article 6.2 - en cas de changement de contrôle direct ou indirect de l'une des parties, l'autre partie peut résilier le contrat de plein droit, dans un délai de soixante (60) jours.",
+            "fileId": "demo-verdi",
+            "fileName": "Contrat_Cadre_Verdi.pdf",
+            "pageNumber": 12,
+            "score": 0.94
+          }
+        ],
+        "count": 3,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "screenshot",
+      "id": "page-screenshot",
+      "reasoning": "@text.screenshot",
+      "toolName": "screenshot",
+      "toolParams": {
+        "fileName": "Contrat_Cadre_Verdi.pdf",
+        "page": 1
+      },
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "",
+            "fileId": "demo-verdi",
+            "fileName": "Contrat_Cadre_Verdi.pdf",
+            "metadata": {
+              "type": "screenshot"
+            },
+            "pageNumber": 1,
+            "score": 0.94,
+            "type": "image"
+          },
+          {
+            "content": "",
+            "fileId": "demo-verdi",
+            "fileName": "Contrat_Cadre_Verdi.pdf",
+            "metadata": {
+              "type": "screenshot"
+            },
+            "pageNumber": 10,
+            "score": 0.92,
+            "type": "image"
+          }
+        ],
+        "count": 2,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "searching",
+      "id": "semantic-search",
+      "queries": [
+        "hiérarchie documents contractuels note interne portée"
+      ],
+      "reasoning": "@text.semantic"
+    },
+    {
+      "action": "retrieved",
+      "chunks": 11,
+      "id": "semantic-results",
+      "reasoning": "@text.semanticResults",
+      "toolName": "search",
+      "toolResponse": {
+        "chunks": [
+          {
+            "content": "Article 2.5 - aucune note interne, présentation ou synthèse établie par l'une des Parties ne saurait modifier la portée des stipulations contractuelles.",
+            "fileName": "Contrat_Cadre_Verdi.pdf",
+            "metadata": {
+              "section": "Article 2 - Objet du contrat",
+              "type": "text"
+            },
+            "pageNumber": 5,
+            "score": 0.88
+          },
+          {
+            "content": "@text.reviewNote",
+            "fileName": "Contrat_Cadre_Verdi.pdf",
+            "metadata": {
+              "section": "Hiérarchie des documents",
+              "type": "text"
+            },
+            "pageNumber": 5,
+            "score": 0.76
+          }
+        ],
+        "count": 2,
+        "status": "ok"
+      }
+    },
+    {
+      "action": "generating",
+      "id": "answer",
+      "reasoning": "@text.generate",
+      "thinking": "@text.thinking"
+    }
+  ],
+  "content": {
+    "fr": {
+      "storeName": "Contrats & baux",
+      "finalAnswer": "La note de synthèse de la direction juridique (p.2) affirme que le contrat se renouvelle par tacite reconduction pour des périodes successives de trois (3) ans [1]. Le corps du contrat dit l'inverse : l'article 4.1 (p.10) subordonne le renouvellement à l'accord exprès et écrit des deux parties, notifié au plus tard six (6) mois avant le terme, et écarte expressément toute reconduction tacite [2]. À défaut d'accord notifié dans ce délai, le contrat prend fin de plein droit au terme de la période en cours, sans indemnité. La même note affirme qu'aucune clause de changement de contrôle n'a été identifiée [3] : l'article 6.2 (p.12) en contient pourtant une, qui ouvre à l'autre partie un droit de résiliation de plein droit dans un délai de soixante (60) jours à compter de la notification de l'opération [4]. L'article 2.5 (p.5) tranche : aucune note interne ne peut modifier la portée des stipulations contractuelles. Deux actions avant toute opération : notifier le renouvellement dans la fenêtre de six mois, et intégrer le risque de résiliation au titre du changement de contrôle.",
+      "question": "Le contrat Verdi se renouvelle-t-il par tacite reconduction, et comporte-t-il une clause de changement de contrôle ? Compare la note de synthèse au corps du contrat et cite les passages exacts.",
+      "reasoning": "La question oppose la note de synthèse (p.2) au corps du contrat. Je relève les deux affirmations de la note : renouvellement par tacite reconduction, et absence de clause de changement de contrôle. Je cherche ensuite les stipulations correspondantes : l'article 4.1 (p.10) impose au contraire un accord exprès et écrit six mois avant le terme, et l'article 6.2 (p.12) contient bien une clause de changement de contrôle. L'article 2.5 tranche le conflit entre les deux documents. Je cite chaque passage avec sa page pour que la revue soit opposable.",
+      "retrievalQueries": [
+        "tacite reconduction renouvellement note de synthèse",
+        "article 4 durée renouvellement accord exprès écrit",
+        "clause changement de contrôle résiliation de plein droit",
+        "hiérarchie documents contractuels note interne"
+      ],
+      "threads": [
+        "Agent Prosperify"
+      ],
+      "hallucinations": [
+        {
+          "start": 93,
+          "end": 112,
+          "reason": "Conflit de source : la note de synthèse retient la tacite reconduction, alors que l'article 4.1 (p.10) l'écarte expressément et impose un accord exprès et écrit.",
+          "score": 0.88,
+          "counterCitationId": 2,
+          "evidence": "Les Parties conviennent expressément d'écarter toute reconduction tacite. Aucun commencement d'exécution postérieur au terme ne saurait valoir renouvellement."
+        }
+      ],
+      "stepText": {
+        "analyze": "Décomposer la demande : identifier le mécanisme de renouvellement, vérifier l'existence d'une clause de changement de contrôle, confronter la note de synthèse au corps du contrat.",
+        "ls": "Parcourir le store pour repérer les documents disponibles sur le contrat Verdi.",
+        "read": "Ouvrir le PDF et lire les sections clés : note de synthèse (p.2), article 4 (p.10), article 6 (p.12).",
+        "screenshot": "Capturer un aperçu de page pour vérifier visuellement la source.",
+        "lexical": "Rechercher les formulations exactes : tacite reconduction, accord exprès et écrit, changement de contrôle.",
+        "lexicalResults": "Passages retrouvés et classés : note de synthèse p.2, article 4.1 p.10, article 6.2 p.12.",
+        "semantic": "Faire une seconde recherche sémantique sur la hiérarchie des documents contractuels.",
+        "semanticResults": "Passage retrouvé à l'article 2.5 p.5 : aucune note interne ne peut modifier la portée des stipulations.",
+        "reviewNote": "En cas de conflit entre la note de synthèse et le contrat, le corps du contrat prévaut : ce sont les articles 4.1 et 6.2 qui font foi.",
+        "generate": "Composer une note structurée : affirmation de la synthèse, stipulation réelle, contradiction, conséquence opérationnelle.",
+        "thinking": "Règle de rédaction : la question oppose un document de travail au contrat lui-même. Je cite l'affirmation, puis la stipulation, et je laisse l'écart apparaître. Le lecteur doit voir les deux formulations et savoir laquelle fait foi. Aucune clause n'est reformulée : le texte du contrat est cité mot pour mot."
+      }
+    },
+    "en": {
+      "storeName": "Contracts & leases",
+      "finalAnswer": "The legal department's summary note (p.2) states that the contract renews by tacit renewal for successive three (3) year periods [1]. The contract body says the opposite: article 4.1 (p.10) makes renewal subject to the express written agreement of both parties, notified no later than six (6) months before the term, and expressly rules out any tacit renewal [2]. Absent an agreement notified within that window, the contract terminates automatically at the end of the current period, with no indemnity. The same note states that no change-of-control clause was identified [3]: article 6.2 (p.12) does contain one, giving the other party a right of automatic termination within sixty (60) days of the transaction being notified [4]. Article 2.5 (p.5) settles it: no internal note may alter the scope of the contractual provisions. Two actions before any transaction: notify renewal within the six-month window, and factor in the termination risk under the change-of-control clause.",
+      "question": "Does the Verdi contract renew automatically, and does it include a change-of-control clause? Compare the summary note against the contract body and cite exact passages.",
+      "reasoning": "The question sets the summary note (p.2) against the contract body. I extract the note's two claims: renewal by tacit renewal, and no change-of-control clause. I then look for the matching provisions: article 4.1 (p.10) instead requires an express written agreement six months before the term, and article 6.2 (p.12) does contain a change-of-control clause. Article 2.5 settles the conflict between the two documents. I cite each passage with its page so the review is defensible.",
+      "retrievalQueries": [
+        "tacit renewal summary note contract",
+        "article 4 term renewal express written agreement",
+        "change of control clause automatic termination",
+        "contractual order of precedence internal note"
+      ],
+      "threads": [
+        "Agent Prosperify"
+      ],
+      "hallucinations": [
+        {
+          "start": 77,
+          "end": 90,
+          "reason": "Source conflict: the summary note assumes tacit renewal, whereas article 4.1 (p.10) expressly rules it out and requires an express written agreement.",
+          "score": 0.88,
+          "counterCitationId": 2,
+          "evidence": "The Parties expressly agree to rule out any tacit renewal. No performance after the term may amount to renewal."
+        }
+      ],
+      "stepText": {
+        "analyze": "Breaking down the request: identify the renewal mechanism, check whether a change-of-control clause exists, compare the summary note against the contract body.",
+        "ls": "Browsing the store to list the documents available on the Verdi contract.",
+        "read": "Opening the PDF and reading key sections: summary note (p.2), article 4 (p.10), article 6 (p.12).",
+        "screenshot": "Capturing a page preview for visual verification.",
+        "lexical": "Searching exact wording: tacit renewal, express written agreement, change of control.",
+        "lexicalResults": "Retrieved and ranked passages: summary note p.2, article 4.1 p.10, article 6.2 p.12.",
+        "semantic": "Running a second semantic search on the contractual order of precedence.",
+        "semanticResults": "Retrieved article 2.5 p.5: no internal note may alter the scope of the provisions.",
+        "reviewNote": "Where the summary note and the contract conflict, the contract body prevails: articles 4.1 and 6.2 govern.",
+        "generate": "Composing a structured note: the summary claim, the actual provision, the contradiction, the operational consequence.",
+        "thinking": "Drafting rule: the question sets a working document against the contract itself. Cite the claim, then the provision, and let the gap show. The reader needs to see both wordings and know which one governs. No clause is paraphrased: the contract text is quoted verbatim."
+      }
+    }
+  }
+}

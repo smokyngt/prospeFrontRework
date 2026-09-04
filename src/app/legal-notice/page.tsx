@@ -1,7 +1,6 @@
 import { headers } from 'next/headers';
 
 import { canonicalUrl } from '@/config/constants';
-import { uiLanguage } from '@/features/landing/lib/theme';
 import LegalNoticeContent from '@/features/legal/components/legal-notice-content';
 
 import type { Metadata } from 'next';
@@ -9,7 +8,7 @@ import type { Metadata } from 'next';
 const getLang = async (): Promise<'en' | 'fr'> => {
   try {
     const accept = (await headers()).get('Accept-Language') ?? '';
-    return uiLanguage(accept);
+    return accept.startsWith('fr') ? 'fr' : 'en';
   } catch {
     return 'en';
   }

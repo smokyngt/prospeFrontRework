@@ -1,1 +1,1 @@
-export { default as SovereigntySection } from './sovereignty-section';
+export { SovereigntySection } from "./sovereignty-section";
