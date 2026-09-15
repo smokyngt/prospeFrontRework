@@ -39,12 +39,16 @@ import {
   demoContent,
   demoFileById,
   demoFilesFor,
+  demoQuestionsFor,
   orchestrationDelaysFor,
   streamingConfigFor,
 } from './demo-config';
 import { steps as stepsConfig } from './demo-steps';
 import { guidedTourSteps, tourMeta } from './demo-tour';
 import { demoUi } from './demo-ui';
+import { useTypingCycle } from './use-typing-cycle';
+
+import { DEMO_SECTORS } from './data';
 
 import type { DemoSector } from './data';
 import type { PrerenderRequest } from './chat/citation/page-cache';
@@ -133,11 +137,50 @@ function DocumentPanel({ onClose }: { onClose: () => void }) {
   );
 }
 
+/** Bandeau « essayer une autre question » : les 3 autres prompts du secteur. */
+function TryAnotherPrompt({
+  onPick,
+  questions,
+}: {
+  onPick: (index: number) => void;
+  questions: { index: number; question: string }[];
+}) {
+  if (questions.length === 0) {
+    return null;
+  }
+
+  return (
+    <div
+      data-demo-tour="try-another"
+      className="flex shrink-0 flex-col gap-1.5 border-t border-border/50 bg-muted/20 px-3 py-2.5"
+    >
+      <span className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+        Essayer une autre question
+      </span>
+      <div className="flex flex-wrap gap-1.5">
+        {questions.map(({ index, question }) => (
+          <button
+            key={question}
+            type="button"
+            onClick={() => onPick(index)}
+            className="max-w-full truncate rounded-md border border-border/60 bg-background px-2.5 py-1 text-left text-[11.5px] text-foreground transition-colors hover:border-primary/50 hover:bg-muted/40"
+            title={question}
+          >
+            {question}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function IntelligenceDemo({
   autoOpenTick = 0,
   onTourEnd,
   overlay,
   sector = 'finance',
+  promptIndex = 0,
+  sectorTeaser = false,
 }: {
   /**
    * Incrémenté par le parent pour ouvrir la démo plein écran et lancer la
@@ -150,18 +193,55 @@ export function IntelligenceDemo({
   overlay?: ReactNode;
   /** Jeu de données joué par la démo : un document et un scénario par secteur. */
   sector?: DemoSector;
+  /** Quel prompt (parmi les 4 de demo-flow.md) est actuellement joué. */
+  promptIndex?: number;
+  /**
+   * Aperçu du hero avant choix de secteur : la barre de saisie tape et
+   * efface tour à tour la première question de chaque secteur.
+   */
+  sectorTeaser?: boolean;
 } = {}) {
   const { i18n } = useTranslation();
+  /**
+   * Copie interne de `promptIndex` : resynchronisée à chaque nouvelle
+   * ouverture (voir l'effet sur `autoOpenTick`), mais modifiable ensuite par
+   * les suggestions « essayer une autre question » sans rouvrir le voile.
+   */
+  const [activeScenario, setActiveScenario] = useState(promptIndex);
   const ui = useMemo(() => demoUi.get(i18n.language, sector), [i18n.language, sector]);
   const copy = useMemo(
-    () => demoContent.get(i18n.language, sector),
-    [i18n.language, sector],
+    () => demoContent.get(i18n.language, sector, activeScenario),
+    [i18n.language, sector, activeScenario],
   );
-  const steps = useMemo(() => stepsConfig.build(copy, sector), [copy, sector]);
+  const steps = useMemo(
+    () => stepsConfig.build(copy, sector, activeScenario),
+    [copy, sector, activeScenario],
+  );
   const chatConfig = useMemo(() => demoChatConfigFor(sector), [sector]);
   const demoFiles = useMemo(() => demoFilesFor(sector), [sector]);
-  const orchestrationDelays = useMemo(() => orchestrationDelaysFor(sector), [sector]);
+  const orchestrationDelays = useMemo(
+    () => orchestrationDelaysFor(sector, activeScenario),
+    [sector, activeScenario],
+  );
   const streamingConfig = useMemo(() => streamingConfigFor(sector), [sector]);
+  const otherQuestions = useMemo(
+    () =>
+      demoQuestionsFor(i18n.language, sector)
+        .map((question, index) => ({ index, question }))
+        .filter((item) => item.index !== activeScenario),
+    [i18n.language, sector, activeScenario],
+  );
+  const teaserQuestions = useMemo(
+    () =>
+      sectorTeaser
+        ? DEMO_SECTORS.map((s) => demoQuestionsFor(i18n.language, s)[0]).filter(
+            (question): question is string => Boolean(question),
+          )
+        : [],
+    [i18n.language, sectorTeaser],
+  );
+  const typedTeaserQuestion = useTypingCycle(teaserQuestions);
+  const displayQuestion = sectorTeaser && teaserQuestions.length > 0 ? typedTeaserQuestion : copy.question;
 
   const [activeMarker, setActiveMarker] = useState<{
     citation: DemoCitation;
@@ -502,10 +582,15 @@ export function IntelligenceDemo({
     copy.finalAnswer,
     copy.hallucinations,
     copy.question,
+    demoFiles,
     hasRun,
     isRunning,
+    orchestrationDelays,
     schedule,
     steps,
+    streamingConfig.durationRatio,
+    streamingConfig.minDurationMs,
+    streamingConfig.minWordPauseMs,
   ]);
 
   const stopDemo = useCallback(() => {
@@ -681,15 +766,32 @@ export function IntelligenceDemo({
   }, [isRunning, runEnterEffect, tourAdvancePending]);
 
   const openInteractiveDemo = useCallback(() => {
+    setActiveScenario(promptIndex);
     resetDemo({ keepFullscreen: true });
     setFullscreen(true);
     setThreadOpen(false);
     setTourPending(true);
     window.setTimeout(() => handleRunDemoRef.current(), 260);
-  }, [resetDemo]);
+  }, [promptIndex, resetDemo]);
 
   const openInteractiveDemoRef = useRef(openInteractiveDemo);
   openInteractiveDemoRef.current = openInteractiveDemo;
+
+  /**
+   * Suggestions « essayer une autre question » affichées une fois la réponse
+   * jouée : relance la démo sur un autre scénario sans fermer le plein écran.
+   */
+  const switchScenario = useCallback(
+    (nextIndex: number) => {
+      if (isRunning) {
+        return;
+      }
+      resetDemo({ keepFullscreen: true });
+      setActiveScenario(nextIndex);
+      window.setTimeout(() => handleRunDemoRef.current(), 120);
+    },
+    [isRunning, resetDemo],
+  );
 
   /**
    * Le parent (choix de secteur sur l'accueil) demande l'ouverture : on attend
@@ -850,25 +952,30 @@ export function IntelligenceDemo({
                           {copy.threads[0]}
                         </p>
                       </header>
-                      <div className="min-h-0 flex-1">
-                        <ChatPanel
-                          activeCitation={activeCitation}
-                          chatConfig={chatConfig}
-                          delays={orchestrationDelays}
-                          storeLabels={copy.storeLabels}
-                          currentStepIndex={currentStepIndex}
-                          forceExpandOrchestration={forceExpandOrchestration}
-                          hasRun={hasRun}
-                          isRunning={isRunning}
-                          messages={messages}
-                          mobileNavInset={fullscreen}
-                          onCitationSelect={handleCitationSelect}
-                          onHallucinationSelect={handleHallucinationSelect}
-                          onRunDemo={handleRunDemo}
-                          onStopDemo={stopDemo}
-                          question={copy.question}
-                          steps={steps}
-                        />
+                      <div className="flex min-h-0 flex-1 flex-col">
+                        <div className="min-h-0 flex-1">
+                          <ChatPanel
+                            activeCitation={activeCitation}
+                            chatConfig={chatConfig}
+                            delays={orchestrationDelays}
+                            storeLabels={copy.storeLabels}
+                            currentStepIndex={currentStepIndex}
+                            forceExpandOrchestration={forceExpandOrchestration}
+                            hasRun={hasRun}
+                            isRunning={isRunning}
+                            messages={messages}
+                            mobileNavInset={fullscreen}
+                            onCitationSelect={handleCitationSelect}
+                            onHallucinationSelect={handleHallucinationSelect}
+                            onRunDemo={handleRunDemo}
+                            onStopDemo={stopDemo}
+                            question={displayQuestion}
+                            steps={steps}
+                          />
+                        </div>
+                        {hasRun && !isRunning ? (
+                          <TryAnotherPrompt onPick={switchScenario} questions={otherQuestions} />
+                        ) : null}
                       </div>
                     </div>
                   )}
@@ -922,24 +1029,29 @@ export function IntelligenceDemo({
                           </Button>
                         ) : null}
                       </header>
-                      <div className="min-h-0 flex-1">
-                        <ChatPanel
-                          activeCitation={activeCitation}
-                          chatConfig={chatConfig}
-                          delays={orchestrationDelays}
-                          storeLabels={copy.storeLabels}
-                          currentStepIndex={currentStepIndex}
-                          forceExpandOrchestration={forceExpandOrchestration}
-                          hasRun={hasRun}
-                          isRunning={isRunning}
-                          messages={messages}
-                          onCitationSelect={handleCitationSelect}
-                          onHallucinationSelect={handleHallucinationSelect}
-                          onRunDemo={handleRunDemo}
-                          onStopDemo={stopDemo}
-                          question={copy.question}
-                          steps={steps}
-                        />
+                      <div className="flex min-h-0 flex-1 flex-col">
+                        <div className="min-h-0 flex-1">
+                          <ChatPanel
+                            activeCitation={activeCitation}
+                            chatConfig={chatConfig}
+                            delays={orchestrationDelays}
+                            storeLabels={copy.storeLabels}
+                            currentStepIndex={currentStepIndex}
+                            forceExpandOrchestration={forceExpandOrchestration}
+                            hasRun={hasRun}
+                            isRunning={isRunning}
+                            messages={messages}
+                            onCitationSelect={handleCitationSelect}
+                            onHallucinationSelect={handleHallucinationSelect}
+                            onRunDemo={handleRunDemo}
+                            onStopDemo={stopDemo}
+                            question={displayQuestion}
+                            steps={steps}
+                          />
+                        </div>
+                        {hasRun && !isRunning ? (
+                          <TryAnotherPrompt onPick={switchScenario} questions={otherQuestions} />
+                        ) : null}
                       </div>
                     </div>
                   </div>

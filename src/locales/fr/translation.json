@@ -151,22 +151,13 @@
         "tag": "CONNECTER",
         "title": "Vos sources, votre périmètre",
         "description": "Vous décidez ce que l'agent peut lire.",
-        "searchPlaceholder": "Rechercher un data store",
-        "selected": [
-          {
-            "name": "Contrats fournisseurs",
-            "meta": "1 284 documents"
-          },
-          {
-            "name": "Politiques internes",
-            "meta": "312 documents"
-          }
-        ],
-        "excluded": {
-          "name": "Archives 2019",
-          "meta": "hors périmètre"
-        },
-        "summary": "2 sources sélectionnées · 1 exclue"
+        "searchPlaceholder": "Rechercher un data store...",
+        "sources": [
+          { "name": "Contrats fournisseurs", "checked": true },
+          { "name": "Politiques internes", "checked": true },
+          { "name": "Archives 2019", "checked": false },
+          { "name": "Données RH", "checked": false }
+        ]
       },
       "search": {
         "tag": "RECHERCHER",
@@ -181,21 +172,19 @@
         "tag": "CITER",
         "title": "Chaque réponse est sourcée",
         "description": "Clause, page et document, à l'appui.",
-        "storeLabel": "Contrats fournisseurs",
         "question": "Quelles clauses limitent notre responsabilité ?",
-        "agentLabel": "Prosperify Agent",
         "answerStart": "La responsabilité est plafonnée à ",
         "answerHighlight": "12 mois de redevances",
         "answerEnd": ".",
-        "sourcesLabel": "SOURCES UTILISÉES",
+        "sourcesLabel": "Sources",
         "citations": [
           {
-            "label": "Contrat_cadre.pdf",
-            "page": "p.3"
+            "label": "Contrat_cadre_2024.pdf",
+            "page": "p. 3"
           },
           {
             "label": "Avenant_2024.pdf",
-            "page": "p.7"
+            "page": "p. 7"
           }
         ]
       }
@@ -418,6 +407,8 @@
         "useCases": "Cas d'usage",
         "workflow": "Workflow",
         "security": "Sécurité",
+        "insights": "Preuves",
+        "integration": "Intégration",
         "deployment": "Déploiement",
         "faq": "FAQ"
       },
@@ -426,6 +417,9 @@
         "workflow": "Workflow RAG",
         "security": "Sécurité & conformité",
         "example": "Réponse sourcée",
+        "insights": "Preuves tirées de la démo",
+        "criteria": "Ce qui compte",
+        "integration": "Intégration & DSI",
         "deployment": "Déploiement",
         "faq": "FAQ",
         "contact": "Contact",
@@ -645,7 +639,8 @@
             "title": "Le coût de l'erreur",
             "description": "Une réponse rapide mais non opposable n'a pas de valeur : ce qui est engagé, c'est la responsabilité de l'équipe."
           }
-        ]
+        ],
+        "cta": "Voir comment ça se passe sur vos contrats"
       },
       "securityChips": [
         "Cloisonnement par dossier",
@@ -732,7 +727,8 @@
             "title": "Aucun droit à l'approximation",
             "description": "Sur des données sensibles, une réponse non sourcée ou un périmètre de déploiement flou suffisent à bloquer le projet."
           }
-        ]
+        ],
+        "cta": "Voir comment ça se passe sur vos protocoles"
       },
       "securityChips": [
         "Hébergement en France",
@@ -801,11 +797,19 @@
         {
           "question": "Faut-il refondre nos outils ?",
           "answer": "Non. Prosperify s'ajoute comme couche documentaire au-dessus de l'existant, en démarrant sur un corpus et un cas d'usage."
+        },
+        {
+          "question": "Comment Prosperify s'intègre-t-il à notre ERP ou notre GED existants ?",
+          "answer": "Par des connecteurs vers vos référentiels actuels (data room, partage de fichiers, exports comptables) et une authentification SSO alignée sur votre fournisseur d'identité. Prosperify vient lire par-dessus l'existant, il ne le remplace pas."
+        },
+        {
+          "question": "Qui, côté technique, peut répondre aux questions de notre DSI ?",
+          "answer": "Un ingénieur Prosperify peut échanger directement avec votre DSI ou votre RSSI avant le comité, sur l'architecture, l'isolation des données et la réversibilité."
         }
       ],
       "challenge": {
         "title": "Entre le document et la décision, il y a des jours.",
-        "intro": "Les équipes finance ne cherchent pas seulement une information : elles cherchent à décider vite, sur une base qui tient.",
+        "intro": "Les équipes finance ne cherchent pas seulement une information : elles cherchent à décider vite, sur une base qui tient. Et parce que ces documents touchent au reporting et à la gouvernance, le sujet ne s'arrête jamais au contrôleur de gestion : il finit sur le bureau du DSI, qui doit valider l'outil avant que la finance ne puisse s'en servir sur des données sensibles.",
         "items": [
           {
             "title": "Des data rooms hors d'échelle",
@@ -819,7 +823,8 @@
             "title": "Une décision engagée",
             "description": "Un montant repris sans sa source, et c'est le comité qui valide sur une base fausse."
           }
-        ]
+        ],
+        "cta": "Voir la démo sur un cas réel"
       },
       "securityChips": [
         "Piste d'audit",
@@ -831,6 +836,80 @@
         "question": "Quel EBITDA normalisé retenir ?",
         "generic": "Un assistant généraliste reprend le premier chiffre rencontré, sans distinguer synthèse, annexe et pont de normalisation.",
         "cost": "Deux périmètres différents confondus, et la valorisation présentée au comité repose sur un écart invisible."
+      },
+      "insights": {
+        "title": "Ce que Prosperify vient de vérifier sur ce corpus",
+        "intro": "Quatre questions réellement posées dans la démo ci-dessus, sur les huit documents de la clôture d'août 2026. Chaque chiffre est recalculé depuis la source, jamais résumé de mémoire — voici ce qu'un contrôleur de gestion aurait mis plusieurs heures, et plusieurs documents ouverts en parallèle, à établir lui-même.",
+        "footnote": "Choisissez « essayer un autre prompt » dans la démo ci-dessus pour rejouer chacune de ces questions.",
+        "cta": "Rejouer ces scénarios avec vos propres documents",
+        "items": [
+          {
+            "tag": "Paradoxe croissance / trésorerie",
+            "question": "Résume la performance YTD et explique le paradoxe entre croissance et trésorerie.",
+            "finding": "CA à 12,4 M€ (+24 %), EBITDA à 1,1 M€ : sur le seul compte de résultat, l'activité est saine, et un premier coup d'œil s'arrêterait là. Mais la trésorerie recule de 2,2 M€ sur la période, un recul entièrement porté par l'exploitation. En recoupant le P&L avec le détail du tableau de flux, l'écart se resserre sur une seule cause : la hausse du poste clients, sans anomalie sur les autres composantes du besoin en fonds de roulement.",
+            "sources": ["FIN-02 · p.1", "FIN-02 · p.2", "FIN-03 · p.1", "FIN-03 · p.3"]
+          },
+          {
+            "tag": "Écart budget vs réel",
+            "question": "Compare le réel au budget et identifie la variance qui mérite l'attention du board.",
+            "finding": "Le CA dépasse le budget de 0,6 M€ : sur ce seul indicateur, le trimestre a l'air d'un succès. Mais la trésorerie manque 1,4 M€ à l'appel, un écart proportionnellement plus lourd que celui de l'EBITDA. La cause se lit dans le délai de règlement client, 78 jours contre 49 budgétés, soit 1,52 M€ immobilisés en plus que prévu — un chiffre qu'aucun des deux documents ne donne isolément.",
+            "sources": ["FIN-04 · p.1", "FIN-04 · p.4", "FIN-05 · p.1"]
+          },
+          {
+            "tag": "Concentration du risque client",
+            "question": "Quelles créances expliquent le risque et les factures confirment-elles la balance âgée ?",
+            "finding": "Deux comptes, MetroFleet (1,20 M€, 62 jours de retard) et NordTransit (0,75 M€, en litige), cumulent 47,6 % du poste clients à eux seuls. Les factures sources, recalculées ligne à ligne, concordent au centime près avec la balance âgée : le retard n'est donc pas une erreur de saisie, mais un vrai sujet de recouvrement, avec pour chaque compte une cause différente et documentée.",
+            "sources": ["FIN-05 · p.3", "FIN-06 · p.1", "FIN-06 · p.3"]
+          },
+          {
+            "tag": "Fact-check de la note CFO",
+            "question": "Challenge la note CFO et prépare trois actions de clôture sourcées.",
+            "finding": "La note destinée au board qualifie la tension de trésorerie de « principalement saisonnière ». Le délai de règlement structurel, 78 contre 49 jours budgétés, contredit ce diagnostic : ce n'est pas un effet de calendrier, c'est une dérive qui dure. Le litige NordTransit, qui pèse 0,75 M€, n'est même pas mentionné dans la note — c'est ce genre d'angle mort qu'une lecture croisée révèle avant le comité, pas pendant.",
+            "sources": ["FIN-08 · p.2", "FIN-08 · p.3", "FIN-04 · p.4", "FIN-07 · p.1"]
+          }
+        ]
+      },
+      "criteria": {
+        "title": "Ce qu'une réponse fiable doit garantir, en finance",
+        "intro": "Sur des chiffres qui vont au comité, l'ordre des priorités n'est pas celui d'un usage générique.",
+        "cta": "Discuter de votre cas d'usage",
+        "items": [
+          {
+            "title": "Rapidité de détection",
+            "description": "Un contrôleur de gestion qui recroise manuellement un P&L, un tableau de flux et une balance âgée met généralement plusieurs heures à repérer un écart comme celui des scénarios ci-dessus, et seulement s'il sait où chercher. Prosperify pose la question en langage naturel et recroise les documents en quelques secondes, avant que l'écart ne remonte en comité sous une forme déjà édulcorée. Le gain n'est pas seulement le temps gagné : c'est la capacité à challenger un narratif avant qu'il ne devienne la version officielle."
+          },
+          {
+            "title": "Exactitude des valeurs",
+            "description": "Un modèle généraliste reformule et arrondit ; sur un P&L ou une balance âgée, l'arrondi suffit à faire disparaître l'écart qui compte. Prosperify recalcule chaque montant depuis les documents sources — 1,20 + 0,75 = 1,95 M€, vérifiable ligne par ligne — et n'avance jamais un chiffre qu'il n'a pas retrouvé écrit noir sur blanc dans le corpus. C'est la différence entre une réponse plausible et une réponse défendable devant un comité d'audit."
+          },
+          {
+            "title": "Traçabilité complète",
+            "description": "Chaque affirmation de la réponse est reliée au document, à la page et à la phrase qui la justifie, et un clic ouvre le PDF au passage exact, surligné. En cas de contrôle ou de revue, ce n'est plus le contrôleur de gestion qui doit retrouver la source à la main : la source est déjà là, prête à être montrée telle quelle."
+          }
+        ]
+      },
+      "integration": {
+        "title": "Ce que votre DSI va vérifier avant de signer",
+        "intro": "Un DAF peut être convaincu par la démonstration ci-dessus. Un DSI regarde autre chose : où vivent les documents, qui peut y accéder, ce qui se passe si l'éditeur change de politique, et combien de temps prendra réellement l'intégration. Sur un corpus qui contient des comptes de clôture, des factures clients et des notes internes destinées au board, ces questions ne sont pas secondaires : elles conditionnent le go/no-go, souvent avant même la qualité des réponses.",
+        "cta": "Parler à un ingénieur avant le comité technique",
+        "items": [
+          {
+            "title": "Intégration avec l'existant",
+            "description": "Prosperify ne remplace ni votre ERP ni votre GED : il vient lire par-dessus, avec des connecteurs vers les référentiels que votre équipe finance utilise déjà (data room, partage de fichiers, exports comptables) et une authentification alignée sur votre fournisseur d'identité via SSO (OIDC ou SAML). Aucune ressaisie, aucun référentiel documentaire supplémentaire à maintenir."
+          },
+          {
+            "title": "Isolation et chiffrement",
+            "description": "Chaque client dispose d'une instance cloisonnée, sans mutualisation d'index entre organisations. Les documents sont chiffrés au repos et en transit, et selon le modèle de déploiement retenu, les clés peuvent rester sous votre contrôle. Vos documents ne servent jamais à entraîner un modèle général : ils sont interrogés dans votre périmètre, point final."
+          },
+          {
+            "title": "Traçabilité opérationnelle",
+            "description": "Chaque accès, chaque requête et chaque document consulté est journalisé. En cas de revue de sécurité ou d'audit interne, votre RSSI dispose d'une piste complète à présenter, pas d'une promesse à vérifier sur parole."
+          },
+          {
+            "title": "Réversibilité",
+            "description": "Vos documents et vos index restent exportables à tout moment. Si vous changez d'outil, vous repartez avec vos données et l'historique de vos conversations, pas avec un silo propriétaire qu'il faut négocier pour récupérer."
+          }
+        ]
       }
     }
   },
@@ -1161,6 +1240,13 @@
         "title": "Hébergement en France",
         "description": "Infrastructure hébergée en France, conforme au RGPD."
       }
+    },
+    "pipeline": {
+      "document": { "label": "Document", "caption": "Upload sécurisé" },
+      "storage": { "label": "Stockage", "caption": "Chiffré (AES-256)" },
+      "transit": { "label": "Transit", "caption": "TLS 1.3" },
+      "processing": { "label": "Traitement", "caption": "Environnement isolé" },
+      "response": { "label": "Réponse", "caption": "Sourcée et sécurisée" }
     }
   },
   "faq": {

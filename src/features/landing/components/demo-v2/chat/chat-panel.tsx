@@ -1,6 +1,5 @@
 import {
   Archive,
-  Check,
   ChevronDown,
   ChevronRight,
   Copy as CopyIcon,

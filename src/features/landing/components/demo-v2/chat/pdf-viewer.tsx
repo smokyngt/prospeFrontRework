@@ -21,6 +21,33 @@ import type { PDFDocumentProxy } from 'pdfjs-dist';
 
 pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
 
+/**
+ * react-pdf appelle inconditionnellement `console.error` (via le paquet
+ * `warning`) quand pdf.js annule un rendu de calque de texte en cours — ce
+ * qui arrive normalement dès qu'on change de page/document avant la fin du
+ * rendu (ex. clic rapide sur une autre citation). Ce n'est pas une erreur
+ * applicative : on filtre uniquement ce message précis, sans toucher au
+ * reste de la console.
+ */
+const CANCELLED_TEXT_LAYER_PATTERN = /AbortException.*TextLayer task cancelled/;
+
+if (typeof window !== 'undefined') {
+  const consoleErrorWithFilter = console.error as { __pfFiltersTextLayerAbort?: boolean };
+
+  if (!consoleErrorWithFilter.__pfFiltersTextLayerAbort) {
+    const originalConsoleError = console.error.bind(console);
+    const patched = (...args: unknown[]) => {
+      const [first] = args;
+      if (typeof first === 'string' && CANCELLED_TEXT_LAYER_PATTERN.test(first)) {
+        return;
+      }
+      originalConsoleError(...args);
+    };
+    patched.__pfFiltersTextLayerAbort = true;
+    console.error = patched;
+  }
+}
+
 const NO_HIGHLIGHTS: BboxHighlight[] = [];
 
 type Span = { el: HTMLElement; from: number; to: number };

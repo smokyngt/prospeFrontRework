@@ -93,6 +93,7 @@ export function HeroDemoPicker() {
         autoOpenTick={autoOpenTick}
         overlay={<PickerOverlay onPick={pick} />}
         sector={sector}
+        sectorTeaser={!sector}
       />
     </div>
   );

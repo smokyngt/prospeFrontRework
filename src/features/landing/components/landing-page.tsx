@@ -67,7 +67,7 @@ function HeroSectionWrapper() {
     >
       <div className="flex flex-wrap items-center gap-10 lg:gap-12">
         {/* Left: copy */}
-        <div className="min-w-0 max-w-[560px] flex-1 basis-80 text-center">
+        <div className="min-w-0 max-w-[560px] flex-1 basis-80">
           <h1
             className="m-0 font-extrabold leading-[1.02] tracking-[-0.03em] text-[var(--pf-fg)]"
             style={{ fontSize: "clamp(2.4rem, 6vw, 4.5rem)" }}
@@ -78,12 +78,12 @@ function HeroSectionWrapper() {
             {t("hero.titleLine2")}
           </h1>
           <p
-            className="mx-auto mt-6 max-w-[620px] leading-[1.65] text-[var(--pf-fg-muted)]"
+            className="mt-6 max-w-[620px] leading-[1.65] text-[var(--pf-fg-muted)]"
             style={{ fontSize: "clamp(1rem, 1.5vw, 1.2rem)" }}
           >
             {t("hero.subtitle")}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#contact"
               className="inline-flex items-center gap-2 bg-[#FF6A13] px-6 py-3.5 text-sm font-semibold text-[var(--pf-on-accent)] transition-colors hover:bg-[#ff8232]"

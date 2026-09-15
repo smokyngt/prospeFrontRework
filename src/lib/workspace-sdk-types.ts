@@ -1,7 +1,7 @@
 /**
  * Common pagination parameters for list endpoints.
  */
-export interface PaginationParams {
+export type PaginationParams = {
   /** Cursor for cursor-based pagination (base64-encoded item ID). */
   cursor?: string;
   /** Maximum number of items per page. */
@@ -15,7 +15,7 @@ export interface PaginationParams {
 /**
  * Date range filter for list endpoints.
  */
-export interface DateFilter {
+export type DateFilter = {
   /** End date (ISO string or Unix timestamp in ms). */
   end?: number | string;
   /** Start date (ISO string or Unix timestamp in ms). */
@@ -25,7 +25,7 @@ export interface DateFilter {
 /**
  * @internal
  */
-export interface ApiResponse<T> {
+export type ApiResponse<T> = {
   data: T;
   event: {
     code: string;
@@ -35,7 +35,7 @@ export interface ApiResponse<T> {
 /**
  * Generic success response for operations without data.
  */
-export interface SuccessResponse {
+export type SuccessResponse = {
   /** Whether the operation was successful. */
   success: boolean;
 }
@@ -43,7 +43,7 @@ export interface SuccessResponse {
 /**
  * A knowledge store that can answer questions using uploaded documents.
  */
-export interface Store {
+export type Store = {
   /** User ID or ApiKey Id (actor) who created the store. */
   actor: string;
   /** Unix timestamp (ms) when the store was created. */
@@ -65,7 +65,7 @@ export interface Store {
 /**
  * Parameters for creating a new store.
  */
-export interface CreateStoreParams {
+export type CreateStoreParams = {
   /** Description of the store. */
   description?: string;
   /** Name for the store. */
@@ -75,7 +75,7 @@ export interface CreateStoreParams {
 /**
  * Parameters for updating a store.
  */
-export interface UpdateStoreParams {
+export type UpdateStoreParams = {
   /** Description of the store's purpose. */
   description?: string;
   /** New name for the store. */
@@ -85,12 +85,12 @@ export interface UpdateStoreParams {
 /**
  * Parameters for listing stores.
  */
-export interface ListStoresParams extends PaginationParams {}
+export type ListStoresParams = {} & PaginationParams
 
 /**
  * Response from listing stores.
  */
-export interface ListStoresResponse {
+export type ListStoresResponse = {
   /** Array of stores. */
   items: Store[];
   /** Whether there are more results. */
@@ -104,7 +104,7 @@ export interface ListStoresResponse {
 /**
  * Response from creating a store.
  */
-export interface CreateStoreResponse {
+export type CreateStoreResponse = {
   /** The created store. */
   store: Store;
 }
@@ -112,12 +112,12 @@ export interface CreateStoreResponse {
 /**
  * Response from retrieving a store.
  */
-export interface RetrieveStoreResponse {
+export type RetrieveStoreResponse = {
   /** The store. */
   store: Store;
 }
 
-export interface ToolCall {
+export type ToolCall = {
   id: string;
   type: 'function';
   function: {
@@ -126,14 +126,14 @@ export interface ToolCall {
   };
 }
 
-export interface ToolResponse {
+export type ToolResponse = {
   error?: string;
   id: string;
   name: string;
   result?: unknown;
 }
 
-export interface ToolUse {
+export type ToolUse = {
   function: {
     name: string;
     arguments: string;
@@ -143,12 +143,12 @@ export interface ToolUse {
   type: 'function';
 }
 
-export interface ReasoningStep {
+export type ReasoningStep = {
   content: string;
   toolCallId?: string;
 }
 
-export interface OrchestrationStep {
+export type OrchestrationStep = {
   /** The action taken during this step (search, read, compressing, generate, etc.). */
   action: string;
   /** Number of candidate chunks before sorting. */
@@ -180,7 +180,7 @@ export interface OrchestrationStep {
   thinking?: string;
 }
 
-export interface Message {
+export type Message = {
   actor: string;
   /** Citations linking this response to source documents. */
   citations?: Citation[];
@@ -222,7 +222,7 @@ export interface Message {
   tokens?: null | number;
 }
 
-export interface ArchivalState {
+export type ArchivalState = {
   at?: number;
   by?: string;
   status: boolean;
@@ -233,7 +233,7 @@ export type ThreadArchival = ArchivalState;
 /**
  * A conversation thread containing messages.
  */
-export interface Thread {
+export type Thread = {
   /** User ID or ApiKey Id (actor) who created the thread. */
   actor: string;
   /** Archival status. */
@@ -259,7 +259,7 @@ export interface Thread {
 /**
  * Parameters for creating a new thread.
  */
-export interface CreateThreadParams {
+export type CreateThreadParams = {
   /** Store IDs to associate with this thread (at least one required). */
   storeIds: string[];
 }
@@ -267,7 +267,7 @@ export interface CreateThreadParams {
 /**
  * Parameters for listing threads.
  */
-export interface ListThreadsParams extends PaginationParams {
+export type ListThreadsParams = {
   /** Filter by archived status. */
   archived?: boolean;
   /** Filter by store ID. */
@@ -276,12 +276,12 @@ export interface ListThreadsParams extends PaginationParams {
   date?: DateFilter;
   /** Filter by user ID who created the thread. */
   userId?: string;
-}
+} & PaginationParams
 
 /**
  * Response from listing threads.
  */
-export interface ListThreadsResponse {
+export type ListThreadsResponse = {
   /** Array of threads. */
   items: Thread[];
   /** Whether there are more results. */
@@ -295,7 +295,7 @@ export interface ListThreadsResponse {
 /**
  * Response from creating a thread.
  */
-export interface CreateThreadResponse {
+export type CreateThreadResponse = {
   /** The created thread. */
   thread: Thread;
 }
@@ -303,7 +303,7 @@ export interface CreateThreadResponse {
 /**
  * Response from retrieving a thread.
  */
-export interface RetrieveThreadResponse {
+export type RetrieveThreadResponse = {
   /** The thread with messages. */
   thread: Thread;
 }
@@ -311,7 +311,7 @@ export interface RetrieveThreadResponse {
 /**
  * Parameters for updating a thread's associated stores.
  */
-export interface UpdateThreadParams {
+export type UpdateThreadParams = {
   /** UUIDs of the stores to associate with this thread (at least one required). */
   storeIds: string[];
 }
@@ -319,7 +319,7 @@ export interface UpdateThreadParams {
 /**
  * Response from updating a thread.
  */
-export interface UpdateThreadResponse {
+export type UpdateThreadResponse = {
   /** The updated thread. */
   thread: Thread;
 }
@@ -327,7 +327,7 @@ export interface UpdateThreadResponse {
 /**
  * Parameters for sending a chat message.
  */
-export interface SendMessageParams {
+export type SendMessageParams = {
   /** Store IDs to use for retrieval (optional). */
   storeIds?: string[];
   /** Maximum orchestration rounds the orchestrator may run (5-50). Values outside the range are clamped. */
@@ -353,7 +353,7 @@ export interface SendMessageParams {
 /**
  * A citation linking a response to source documents.
  */
-export interface Citation {
+export type Citation = {
   /** The span of the AI answer that this citation supports. */
   answer: string;
   /** Multiple bounding boxes for citations spanning several layout regions on the same page. */
@@ -385,7 +385,7 @@ export interface Citation {
 /**
  * A detected hallucination in the response.
  */
-export interface Hallucination {
+export type Hallucination = {
   /** Chunk containing the excerpt that contradicts the claim. */
   chunkId?: string;
   /** End character index in the response. */
@@ -403,7 +403,7 @@ export interface Hallucination {
 /**
  * Response from sending a chat message.
  */
-export interface SendMessageResponse {
+export type SendMessageResponse = {
   /** Citations linking response to source documents. */
   citations?: Citation[];
   /** Detected hallucinations in the response. */
@@ -415,7 +415,7 @@ export interface SendMessageResponse {
 /**
  * Status of a server-side SSE stream for a thread.
  */
-export interface StreamStatusResponse {
+export type StreamStatusResponse = {
   /** Whether the stream is actively generating on the server. */
   active: boolean;
   /** Whether there are buffered events available for replay. */
@@ -426,7 +426,7 @@ export interface StreamStatusResponse {
  * Parameters for regenerating a message.
  * All fields are optional - they override the defaults derived from the original message's thread.
  */
-export interface RegenerateParams {
+export type RegenerateParams = {
   /** Override the store IDs used for retrieval. */
   storeIds?: string[];
   /** Maximum orchestration rounds the orchestrator may run (5-50). Values outside the range are clamped. */
@@ -446,7 +446,7 @@ export interface RegenerateParams {
 /**
  * Response from editing a message.
  */
-export interface EditMessageResponse {
+export type EditMessageResponse = {
   /** Timestamp of the edit. */
   editedAt: number;
   /** The edited message's ID. */
@@ -458,7 +458,7 @@ export interface EditMessageResponse {
 /**
  * Response from regenerating a message.
  */
-export interface RegenerateMessageResponse {
+export type RegenerateMessageResponse = {
   /** Citations linking response to source documents. */
   citations?: Citation[];
   /** Detected hallucinations in the response. */
@@ -470,7 +470,7 @@ export interface RegenerateMessageResponse {
 /**
  * Response from uploading documents.
  */
-export interface UploadDocumentsResponse {
+export type UploadDocumentsResponse = {
   /** IDs of every file record created by this upload, in the same order as the submitted files. */
   files: string[];
 }
@@ -489,7 +489,7 @@ export type UploadStatus =
 /**
  * An upload session returned by the upload lifecycle endpoints.
  */
-export interface Upload {
+export type Upload = {
   /** Upload session ID. */
   id: string;
   /** Object type identifier (always `'upload'`). */
@@ -533,7 +533,7 @@ export type UploadItemStatus =
 /**
  * A contiguous range of bytes that has been accepted for an upload item.
  */
-export interface UploadAcceptedByteRange {
+export type UploadAcceptedByteRange = {
   /** Zero-based start byte of the accepted range. */
   start: number;
   /** Zero-based end byte of the accepted range. */
@@ -543,7 +543,7 @@ export interface UploadAcceptedByteRange {
 /**
  * A single file declared within an upload session.
  */
-export interface UploadItem {
+export type UploadItem = {
   /** Item ID, used as the target of part uploads. */
   id: string;
   /** Name of the file. */
@@ -569,7 +569,7 @@ export interface UploadItem {
 /**
  * A file to declare when creating an upload session.
  */
-export interface CreateUploadItem {
+export type CreateUploadItem = {
   /** Name of the file to upload. */
   fileName: string;
   /** MIME type of the file to upload. */
@@ -583,7 +583,7 @@ export interface CreateUploadItem {
 /**
  * Parameters for creating a new upload session.
  */
-export interface CreateUploadParams {
+export type CreateUploadParams = {
   /** UUID of the store to associate the upload with. */
   storeId: string;
   /** Total number of bytes to upload. */
@@ -597,14 +597,14 @@ export interface CreateUploadParams {
 /**
  * Response from creating or retrieving an upload session.
  */
-export interface UploadResponse {
+export type UploadResponse = {
   upload: Upload;
 }
 
 /**
  * Parameters for completing an upload session.
  */
-export interface CompleteUploadParams {
+export type CompleteUploadParams = {
   /** Optional UUID of the folder to place the completed files in. */
   folderId?: string;
   /** Optional metadata to associate with the completed files. */
@@ -614,7 +614,7 @@ export interface CompleteUploadParams {
 /**
  * Response from completing an upload session.
  */
-export interface CompleteUploadResponse {
+export type CompleteUploadResponse = {
   /** IDs of the file records created by this upload, in the order of the declared items. */
   files: string[];
 }
@@ -622,7 +622,7 @@ export interface CompleteUploadResponse {
 /**
  * Parameters for listing upload sessions.
  */
-export interface ListUploadsParams {
+export type ListUploadsParams = {
   /** Cursor for cursor-based pagination. */
   cursor?: string;
   /** Maximum number of uploads to return (1-100). */
@@ -640,7 +640,7 @@ export interface ListUploadsParams {
 /**
  * Response from listing upload sessions.
  */
-export interface ListUploadsResponse {
+export type ListUploadsResponse = {
   items: Upload[];
   more: boolean;
   next?: string;
@@ -650,7 +650,7 @@ export interface ListUploadsResponse {
 /**
  * Per-status counts returned by the upload poll endpoint.
  */
-export interface UploadPollItem {
+export type UploadPollItem = {
   status: string;
   count: number;
 }
@@ -658,7 +658,7 @@ export interface UploadPollItem {
 /**
  * Response from polling an upload session's processing status.
  */
-export interface PollUploadResponse {
+export type PollUploadResponse = {
   status: string;
   items: UploadPollItem[];
 }
@@ -671,7 +671,7 @@ export type FileArchival = ArchivalState;
 /**
  * An entity extracted from a document.
  */
-export interface FileEntity {
+export type FileEntity = {
   /** Page ID where the entity was found. */
   pageId: string;
   /** Page number (1-indexed). */
@@ -684,7 +684,7 @@ export interface FileEntity {
   type?: string;
 }
 
-export interface FilePreview {
+export type FilePreview = {
   /** MIME type of the derived preview artifact. */
   contentType?: string;
   /** Preview artifact size in bytes. */
@@ -694,7 +694,7 @@ export interface FilePreview {
 /**
  * An uploaded document file.
  */
-export interface File {
+export type File = {
   /** User ID or ApiKey Id (actor) who uploaded the file. */
   actor: string;
   /** Archival status. */
@@ -734,7 +734,7 @@ export interface File {
 /**
  * Parameters for listing files.
  */
-export interface ListFilesParams extends PaginationParams {
+export type ListFilesParams = {
   /** Include archived files. */
   archived?: boolean;
   /** Filter by store ID. */
@@ -753,12 +753,12 @@ export interface ListFilesParams extends PaginationParams {
   size?: { max?: number; min?: number };
   /** Filter by processing status. */
   status?: 'complete' | 'embedding' | 'error' | 'indexing' | 'loading' | 'storing';
-}
+} & PaginationParams
 
 /**
  * Parameters for searching files.
  */
-export interface SearchFilesParams {
+export type SearchFilesParams = {
   /** Limit search to specific stores. */
   storeIds?: string[];
   /** Entity text to search for (when mode is 'entity'). */
@@ -776,7 +776,7 @@ export interface SearchFilesParams {
 /**
  * Response from listing files.
  */
-export interface ListFilesResponse {
+export type ListFilesResponse = {
   /** Array of files. */
   items: File[];
   /** Whether there are more results. */
@@ -790,7 +790,7 @@ export interface ListFilesResponse {
 /**
  * A single indexed chunk stored in the database.
  */
-export interface FileChunk {
+export type FileChunk = {
   assetKey?: string;
   bboxes?: number[][];
   content: string;
@@ -807,12 +807,12 @@ export interface FileChunk {
 /**
  * Parameters for listing file chunks.
  */
-export interface ListFileChunksParams extends PaginationParams {}
+export type ListFileChunksParams = {} & PaginationParams
 
 /**
  * Response from listing file chunks.
  */
-export interface ListFileChunksResponse {
+export type ListFileChunksResponse = {
   /** Array of chunks for the file. */
   items: FileChunk[];
   /** Whether there are more results. */
@@ -826,7 +826,7 @@ export interface ListFileChunksResponse {
 /**
  * Response from searching files.
  */
-export interface SearchFilesResponse {
+export type SearchFilesResponse = {
   /** Matching files. */
   items: File[];
 }
@@ -834,7 +834,7 @@ export interface SearchFilesResponse {
 /**
  * Response from retrieving a file.
  */
-export interface RetrieveFileResponse {
+export type RetrieveFileResponse = {
   /** The file with metadata. */
   file: File;
 }
@@ -842,7 +842,7 @@ export interface RetrieveFileResponse {
 /**
  * Response from archiving a file.
  */
-export interface ArchiveFileResponse {
+export type ArchiveFileResponse = {
   /** Whether the archive was successful. */
   success: boolean;
 }
@@ -850,7 +850,7 @@ export interface ArchiveFileResponse {
 /**
  * Response from restoring a file.
  */
-export interface RestoreFileResponse {
+export type RestoreFileResponse = {
   /** Whether the restore was successful. */
   success: boolean;
 }
@@ -858,7 +858,7 @@ export interface RestoreFileResponse {
 /**
  * Response from repairing a file.
  */
-export interface RepairFileResponse {
+export type RepairFileResponse = {
   /** Whether the repair was successfully queued. */
   success: boolean;
 }
@@ -866,7 +866,7 @@ export interface RepairFileResponse {
 /**
  * Parameters for updating a file.
  */
-export interface UpdateFileParams {
+export type UpdateFileParams = {
   /** New folder ID to move the file to. */
   folderId?: string | null;
   /** New name for the file. */
@@ -876,7 +876,7 @@ export interface UpdateFileParams {
 /**
  * Response from updating a file.
  */
-export interface UpdateFileResponse {
+export type UpdateFileResponse = {
   /** Whether the update was successful. */
   success: boolean;
 }
@@ -889,7 +889,7 @@ export type FolderArchival = ArchivalState;
 /**
  * A folder for organizing files.
  */
-export interface Folder {
+export type Folder = {
   /** User ID who created the folder. */
   actor: string;
   /** Archival status. */
@@ -917,7 +917,7 @@ export interface Folder {
 /**
  * Parameters for creating a new folder.
  */
-export interface CreateFolderParams {
+export type CreateFolderParams = {
   /** Store ID to create the folder in. */
   storeId: string;
   /** Folder name. */
@@ -929,7 +929,7 @@ export interface CreateFolderParams {
 /**
  * Parameters for updating a folder.
  */
-export interface UpdateFolderParams {
+export type UpdateFolderParams = {
   /** Reassign to a different store. */
   store?: string;
   /** Move to a different parent folder (null = root). */
@@ -941,7 +941,7 @@ export interface UpdateFolderParams {
 /**
  * Parameters for listing folders.
  */
-export interface ListFoldersParams extends PaginationParams {
+export type ListFoldersParams = {
   /** Include archived folders. */
   archived?: boolean;
   /** Filter by store ID. */
@@ -952,12 +952,12 @@ export interface ListFoldersParams extends PaginationParams {
   parentId?: string;
   /** Only return root-level folders. */
   root?: boolean;
-}
+} & PaginationParams
 
 /**
  * Response from listing folders.
  */
-export interface ListFoldersResponse {
+export type ListFoldersResponse = {
   /** Array of folders. */
   items: Folder[];
   /** Whether there are more results. */
@@ -971,7 +971,7 @@ export interface ListFoldersResponse {
 /**
  * Response from creating a folder.
  */
-export interface CreateFolderResponse {
+export type CreateFolderResponse = {
   /** The created folder. */
   folder: Folder;
 }
@@ -979,7 +979,7 @@ export interface CreateFolderResponse {
 /**
  * Response from retrieving a folder.
  */
-export interface RetrieveFolderResponse {
+export type RetrieveFolderResponse = {
   /** The folder. */
   folder: Folder;
 }
@@ -987,7 +987,7 @@ export interface RetrieveFolderResponse {
 /**
  * Response from archiving a folder.
  */
-export interface ArchiveFolderResponse {
+export type ArchiveFolderResponse = {
   /** Whether the operation succeeded. */
   success: boolean;
 }
@@ -995,7 +995,7 @@ export interface ArchiveFolderResponse {
 /**
  * Response from restoring a folder.
  */
-export interface RestoreFolderResponse {
+export type RestoreFolderResponse = {
   /** The restored folder. */
   folder: Folder;
 }
@@ -1003,7 +1003,7 @@ export interface RestoreFolderResponse {
 /**
  * Current billing plan and limit response.
  */
-export interface BillingPlanResponse {
+export type BillingPlanResponse = {
   client: {
     id: string;
     limits?: Record<string, number>;
@@ -1024,7 +1024,7 @@ export interface BillingPlanResponse {
   usage: Record<string, number>;
 }
 
-export interface BillingInvoice {
+export type BillingInvoice = {
   client: string;
   createdAt: number;
   currency: string;
@@ -1036,14 +1036,14 @@ export interface BillingInvoice {
   updatedAt: number;
 }
 
-export interface BillingInvoiceListResponse {
+export type BillingInvoiceListResponse = {
   more: boolean;
   items: BillingInvoice[];
   next?: string;
   total: number;
 }
 
-export interface BillingInvoiceListParams {
+export type BillingInvoiceListParams = {
   cursor?: string;
   date?: {
     end?: number | string;
@@ -1058,7 +1058,7 @@ export interface BillingInvoiceListParams {
 /**
  * Usage limits for an organization.
  */
-export interface OrganizationLimits {
+export type OrganizationLimits = {
   /** Maximum number of stores. */
   stores?: number;
   /** Maximum number of files. */
@@ -1077,7 +1077,7 @@ export type OrganizationArchival = ArchivalState;
 /**
  * An organization (team or company).
  */
-export interface Organization {
+export type Organization = {
   /** User ID who created the organization. */
   actor: string;
   /** Archival status. */
@@ -1115,7 +1115,7 @@ export interface Organization {
 /**
  * Parameters for creating an organization.
  */
-export interface CreateOrganizationParams {
+export type CreateOrganizationParams = {
   /** Organization name. */
   name: string;
 }
@@ -1123,7 +1123,7 @@ export interface CreateOrganizationParams {
 /**
  * SSO configuration for updating an organization.
  */
-export interface SsoConfig {
+export type SsoConfig = {
   /** List of email domains allowed for SSO login. */
   allowedDomains?: string[];
   /** OAuth client ID from your identity provider. */
@@ -1139,7 +1139,7 @@ export interface SsoConfig {
 /**
  * SAML configuration for updating an organization.
  */
-export interface SamlConfig {
+export type SamlConfig = {
   /** List of email domains allowed for SAML login. */
   allowedDomains?: string[];
   /** ACS assertion consumer service URL (optional). */
@@ -1161,7 +1161,7 @@ export interface SamlConfig {
 /**
  * Parameters for updating an organization.
  */
-export interface UpdateOrganizationParams {
+export type UpdateOrganizationParams = {
   /** New organization name. */
   name?: string;
   /** OTP configuration. */
@@ -1180,7 +1180,7 @@ export interface UpdateOrganizationParams {
 /**
  * Parameters for transferring organization ownership.
  */
-export interface TransferOwnershipParams {
+export type TransferOwnershipParams = {
   /** UUID of the member who will become the new owner. */
   newOwnerId: string;
 }
@@ -1188,7 +1188,7 @@ export interface TransferOwnershipParams {
 /**
  * Response from creating an organization.
  */
-export interface CreateOrganizationResponse {
+export type CreateOrganizationResponse = {
   /** The created organization. */
   organization: Organization;
 }
@@ -1196,7 +1196,7 @@ export interface CreateOrganizationResponse {
 /**
  * Response from retrieving an organization.
  */
-export interface RetrieveOrganizationResponse {
+export type RetrieveOrganizationResponse = {
   /** The organization. */
   organization: Organization;
 }
@@ -1204,7 +1204,7 @@ export interface RetrieveOrganizationResponse {
 /**
  * User preferences.
  */
-export interface UserPreferences {
+export type UserPreferences = {
   /** Language preference. */
   language?: 'en' | 'fr';
   /** UI theme preference. */
@@ -1221,7 +1221,7 @@ export interface UserPreferences {
 /**
  * A user account.
  */
-export interface User {
+export type User = {
   /** User ID who invited this user. */
   actor?: null | string;
   /** Unix timestamp (ms) when the user was created. */
@@ -1259,7 +1259,7 @@ export interface User {
 /**
  * Parameters for creating a new user.
  */
-export interface CreateUserParams {
+export type CreateUserParams = {
   /** User's email address. */
   email: string;
   /** Invitation token required after the first user is bootstrapped. */
@@ -1271,7 +1271,7 @@ export interface CreateUserParams {
 /**
  * Parameters for updating a user.
  */
-export interface UpdateUserParams {
+export type UpdateUserParams = {
   /** New email address. */
   email?: string;
   /** Usage limits. */
@@ -1299,15 +1299,15 @@ export interface UpdateUserParams {
 /**
  * Parameters for listing users.
  */
-export interface ListUsersParams extends PaginationParams {
+export type ListUsersParams = {
   /** Filter by role ID. */
   roleId?: string;
-}
+} & PaginationParams
 
 /**
  * Response from listing users.
  */
-export interface ListUsersResponse {
+export type ListUsersResponse = {
   /** Array of users. */
   items: User[];
   /** Whether there are more results. */
@@ -1321,7 +1321,7 @@ export interface ListUsersResponse {
 /**
  * Response from creating a user.
  */
-export interface CreateUserResponse {
+export type CreateUserResponse = {
   /** QR Code URL for OTP enrollment. */
   qrCode: string;
   /** Recovery codes generated for the user. */
@@ -1337,7 +1337,7 @@ export interface CreateUserResponse {
 /**
  * Response from initiating OTP setup.
  */
-export interface OtpSetupResponse {
+export type OtpSetupResponse = {
   /** QR code data URL for authenticator app enrollment. */
   qrCode: string;
   /** OTP secret for manual entry. */
@@ -1347,7 +1347,7 @@ export interface OtpSetupResponse {
 /**
  * Parameters for confirming OTP setup.
  */
-export interface OtpConfirmParams {
+export type OtpConfirmParams = {
   /** The 6-digit OTP code from the authenticator app. */
   code: string;
   /** The OTP secret returned from setup. */
@@ -1357,7 +1357,7 @@ export interface OtpConfirmParams {
 /**
  * Response from confirming OTP setup.
  */
-export interface OtpConfirmResponse {
+export type OtpConfirmResponse = {
   /** Recovery codes to store securely. */
   recoveryCodes: string[];
   /** Whether the operation succeeded. */
@@ -1367,7 +1367,7 @@ export interface OtpConfirmResponse {
 /**
  * Response from retrieving a user.
  */
-export interface RetrieveUserResponse {
+export type RetrieveUserResponse = {
   /** The user. */
   user: User;
 }
@@ -1375,7 +1375,7 @@ export interface RetrieveUserResponse {
 /**
  * Response containing user's permission scopes.
  */
-export interface UserScopesResponse {
+export type UserScopesResponse = {
   /** Permission scopes granted to the user. */
   scopes: string[];
 }
@@ -1383,7 +1383,7 @@ export interface UserScopesResponse {
 /**
  * Parameters for user login.
  */
-export interface LoginParams {
+export type LoginParams = {
   /** User's email address. */
   email: string;
   /** OTP code from authenticator app or recovery code. */
@@ -1393,7 +1393,7 @@ export interface LoginParams {
 /**
  * Parameters for resolving the preferred login strategy for a user.
  */
-export interface LoginStrategyParams {
+export type LoginStrategyParams = {
   /** User's email address. */
   email: string;
 }
@@ -1401,7 +1401,7 @@ export interface LoginStrategyParams {
 /**
  * A redirect step that sends the user to an identity provider.
  */
-export interface LoginStrategyRedirectStep {
+export type LoginStrategyRedirectStep = {
   /** Authorization URL that redirects the user to the identity provider. */
   authorizationUrl?: string;
   /** Registered error code when the provider cannot produce an authorization URL. */
@@ -1417,7 +1417,7 @@ export interface LoginStrategyRedirectStep {
 /**
  * A step that collects an OTP code from the user's authenticator app.
  */
-export interface LoginStrategyOtpStep {
+export type LoginStrategyOtpStep = {
   /** Step type discriminator. */
   type: 'otp';
 }
@@ -1430,7 +1430,7 @@ export type LoginStrategyStep = LoginStrategyRedirectStep | LoginStrategyOtpStep
 /**
  * Response from login strategy resolution.
  */
-export interface LoginStrategyResponse {
+export type LoginStrategyResponse = {
   /** Ordered list of authentication steps the login UI should present. */
   steps: LoginStrategyStep[];
 }
@@ -1438,7 +1438,7 @@ export interface LoginStrategyResponse {
 /**
  * Response from successful login.
  */
-export interface LoginResponse {
+export type LoginResponse = {
   /** JWT access token for API requests. */
   accessToken?: string;
   /** Refresh token for obtaining new access tokens. */
@@ -1458,7 +1458,7 @@ export interface LoginResponse {
 /**
  * Parameters for refreshing an access token.
  */
-export interface RefreshTokenParams {
+export type RefreshTokenParams = {
   /** The refresh token from login. */
   refreshToken: string;
 }
@@ -1466,7 +1466,7 @@ export interface RefreshTokenParams {
 /**
  * Response from token refresh.
  */
-export interface RefreshTokenResponse {
+export type RefreshTokenResponse = {
   /** New JWT access token. */
   accessToken: string;
   /** New refresh token. */
@@ -1476,7 +1476,7 @@ export interface RefreshTokenResponse {
 /**
  * Active login session metadata.
  */
-export interface AuthSession {
+export type AuthSession = {
   /** Source city if available from edge/proxy headers. */
   city?: string;
   /** Source country code if available from edge/proxy headers. */
@@ -1504,7 +1504,7 @@ export interface AuthSession {
 /**
  * Response from listing active sessions.
  */
-export interface ListSessionsResponse {
+export type ListSessionsResponse = {
   /** Active sessions for the authenticated user. */
   items: AuthSession[];
   /** Whether there are more results. */
@@ -1518,7 +1518,7 @@ export interface ListSessionsResponse {
 /**
  * Parameters for email verification.
  */
-export interface VerifyEmailParams {
+export type VerifyEmailParams = {
   /** Email address to verify. */
   email: string;
   /** One-time password from verification email. */
@@ -1528,7 +1528,7 @@ export interface VerifyEmailParams {
 /**
  * Parameters for password reset.
  */
-export interface ResetPasswordParams {
+export type ResetPasswordParams = {
   /** New password (min 8 characters). */
   password: string;
 }
@@ -1536,7 +1536,7 @@ export interface ResetPasswordParams {
 /**
  * An OAuth App registered with the organization.
  */
-export interface App {
+export type App = {
   /** User ID who created the app. */
   actor: string;
   /** OAuth client ID. */
@@ -1568,7 +1568,7 @@ export interface App {
 /**
  * Parameters for creating an OAuth App.
  */
-export interface CreateAppParams {
+export type CreateAppParams = {
   /** Display name. */
   name: string;
   /** Optional description. */
@@ -1590,7 +1590,7 @@ export interface CreateAppParams {
 /**
  * Response from creating an OAuth App (includes client secret).
  */
-export interface CreateAppResponse {
+export type CreateAppResponse = {
   /** The created app. */
   app: App;
   /** OAuth client secret, returned only once. */
@@ -1600,7 +1600,7 @@ export interface CreateAppResponse {
 /**
  * Parameters for listing OAuth Apps.
  */
-export interface ListAppsParams {
+export type ListAppsParams = {
   /** Cursor for cursor-based pagination. */
   cursor?: string;
   /** Maximum number of items per page. */
@@ -1616,7 +1616,7 @@ export interface ListAppsParams {
 /**
  * Response from listing OAuth Apps.
  */
-export interface ListAppsResponse {
+export type ListAppsResponse = {
   /** Array of apps. */
   items: App[];
   /** Whether there are more results. */
@@ -1630,7 +1630,7 @@ export interface ListAppsResponse {
 /**
  * Response from retrieving an OAuth App.
  */
-export interface RetrieveAppResponse {
+export type RetrieveAppResponse = {
   /** The app (without client secret). */
   app: App;
 }
@@ -1638,7 +1638,7 @@ export interface RetrieveAppResponse {
 /**
  * Parameters for updating an OAuth App.
  */
-export interface UpdateAppParams {
+export type UpdateAppParams = {
   /** New display name. */
   name?: string;
   /** Updated description. */
@@ -1658,7 +1658,7 @@ export interface UpdateAppParams {
 /**
  * Response from updating an OAuth App.
  */
-export interface UpdateAppResponse {
+export type UpdateAppResponse = {
   /** The updated app. */
   app: App;
 }
@@ -1666,7 +1666,7 @@ export interface UpdateAppResponse {
 /**
  * Response from regenerating an OAuth App secret.
  */
-export interface RegenerateAppSecretResponse {
+export type RegenerateAppSecretResponse = {
   /** OAuth client ID. */
   clientId: string;
   /** New OAuth client secret, returned only once. */
@@ -1676,7 +1676,7 @@ export interface RegenerateAppSecretResponse {
 /**
  * Store-level permissions for a role.
  */
-export interface StoreGrant {
+export type StoreGrant = {
   /** Store ID. */
   id: string;
   /** Scopes granted for this store. */
@@ -1701,7 +1701,7 @@ export type RoleScope =
 /**
  * A role defining user permissions.
  */
-export interface Role {
+export type Role = {
   /** User ID who created the role. */
   actor: string;
   /** Per-store permissions. */
@@ -1725,7 +1725,7 @@ export interface Role {
 /**
  * Parameters for creating a role.
  */
-export interface CreateRoleParams {
+export type CreateRoleParams = {
   /** Per-store permissions. */
   stores?: StoreGrant[];
   /** Role name. */
@@ -1737,7 +1737,7 @@ export interface CreateRoleParams {
 /**
  * Parameters for updating a role.
  */
-export interface UpdateRoleParams {
+export type UpdateRoleParams = {
   /** Updated per-store permissions. */
   stores?: StoreGrant[];
   /** New role name. */
@@ -1749,15 +1749,15 @@ export interface UpdateRoleParams {
 /**
  * Parameters for listing roles.
  */
-export interface ListRolesParams extends PaginationParams {
+export type ListRolesParams = {
   /** Filter by user ID to get roles assigned to a user. */
   userId?: string;
-}
+} & PaginationParams
 
 /**
  * Response from listing roles.
  */
-export interface ListRolesResponse {
+export type ListRolesResponse = {
   /** Array of roles. */
   items: Role[];
   /** Whether there are more results. */
@@ -1771,7 +1771,7 @@ export interface ListRolesResponse {
 /**
  * Response from creating a role.
  */
-export interface CreateRoleResponse {
+export type CreateRoleResponse = {
   /** The created role. */
   role: Role;
 }
@@ -1779,7 +1779,7 @@ export interface CreateRoleResponse {
 /**
  * Response from retrieving a role.
  */
-export interface RetrieveRoleResponse {
+export type RetrieveRoleResponse = {
   /** The role. */
   role: Role;
 }
@@ -1787,7 +1787,7 @@ export interface RetrieveRoleResponse {
 /**
  * Usage tracking for an invitation.
  */
-export interface InvitationUsage {
+export type InvitationUsage = {
   /** User IDs who have used this invitation. */
   by: string[];
   /** Number of times the invitation has been used. */
@@ -1799,7 +1799,7 @@ export interface InvitationUsage {
 /**
  * An invitation to join an organization.
  */
-export interface Invitation {
+export type Invitation = {
   /** User ID who created the invitation. */
   actor: string;
   /** Unix timestamp (ms) when the invitation was created. */
@@ -1827,7 +1827,7 @@ export interface Invitation {
 /**
  * Parameters for creating an invitation.
  */
-export interface CreateInvitationParams {
+export type CreateInvitationParams = {
   /** Email address the invitation is intended for. */
   email?: string;
   /** Expiration time in seconds from now. */
@@ -1841,19 +1841,19 @@ export interface CreateInvitationParams {
 /**
  * Parameters for listing invitations.
  */
-export interface ListInvitationsParams extends PaginationParams {
+export type ListInvitationsParams = {
   /** Filter by creation date range. */
   date?: DateFilter;
   /** Filter by organization ID. */
   organizationId?: string;
   /** Filter by user ID who created the invitation. */
   userId?: string;
-}
+} & PaginationParams
 
 /**
  * Response from listing invitations.
  */
-export interface ListInvitationsResponse {
+export type ListInvitationsResponse = {
   /** Array of invitations. */
   items: Invitation[];
   /** Whether there are more results. */
@@ -1867,7 +1867,7 @@ export interface ListInvitationsResponse {
 /**
  * Response from creating an invitation.
  */
-export interface CreateInvitationResponse {
+export type CreateInvitationResponse = {
   /** The created invitation. */
   invitation: Invitation;
 }
@@ -1875,7 +1875,7 @@ export interface CreateInvitationResponse {
 /**
  * Response from retrieving an invitation.
  */
-export interface RetrieveInvitationResponse {
+export type RetrieveInvitationResponse = {
   /** The invitation. */
   invitation: Invitation;
 }
@@ -1883,7 +1883,7 @@ export interface RetrieveInvitationResponse {
 /**
  * Metadata associated with a log entry.
  */
-export interface LogMetadata {
+export type LogMetadata = {
   /** Store ID involved in the action. */
   storeId?: string;
   /** Request duration in milliseconds. */
@@ -1911,7 +1911,7 @@ export interface LogMetadata {
 /**
  * An audit log entry.
  */
-export interface Log {
+export type Log = {
   /** Actor ID (user or API key). */
   actor: string;
   /** Unix timestamp (ms) when the event occurred. */
@@ -1935,7 +1935,7 @@ export interface Log {
 /**
  * Parameters for listing logs.
  */
-export interface ListLogsParams extends PaginationParams {
+export type ListLogsParams = {
   /** Filter by date range. */
   date?: DateFilter;
   /** Filter by API key IDs. */
@@ -1948,12 +1948,12 @@ export interface ListLogsParams extends PaginationParams {
   appIds?: string[];
   /** Filter by roles. */
   roles?: string[];
-}
+} & PaginationParams
 
 /**
  * Response from listing logs.
  */
-export interface ListLogsResponse {
+export type ListLogsResponse = {
   /** Array of log entries. */
   items: Log[];
   /** Whether there are more results. */
@@ -1967,14 +1967,14 @@ export interface ListLogsResponse {
 /**
  * Response from retrieving a log entry.
  */
-export interface RetrieveLogResponse {
+export type RetrieveLogResponse = {
   /** The log entry. */
   log: Log;
 }
 
 export type NotificationSeverity = 'error' | 'info' | 'success' | 'warning';
 
-export interface NotificationAction {
+export type NotificationAction = {
   /** In-app route associated with the notification. */
   href?: string;
 }
@@ -1982,7 +1982,7 @@ export interface NotificationAction {
 /**
  * An in-app notification for the authenticated user.
  */
-export interface Notification {
+export type Notification = {
   /** Optional route information for opening a related screen. */
   action?: NotificationAction;
   /** Code used by the client to render localized notification copy. */
@@ -2008,10 +2008,10 @@ export interface Notification {
 /**
  * Parameters for listing notifications.
  */
-export interface ListNotificationsParams extends PaginationParams {
+export type ListNotificationsParams = {
   /** When true, only unread notifications are returned. */
   unread?: boolean;
-}
+} & PaginationParams
 
 /** Notification categories that can be enabled independently. */
 export type NotificationCategory =
@@ -2025,7 +2025,7 @@ export type NotificationCategory =
 /**
  * Response from listing notifications.
  */
-export interface ListNotificationsResponse {
+export type ListNotificationsResponse = {
   /** Array of notifications. */
   items: Notification[];
   /** Whether there are more results. */
@@ -2041,7 +2041,7 @@ export interface ListNotificationsResponse {
 /**
  * Response from marking a notification as read.
  */
-export interface ReadNotificationResponse {
+export type ReadNotificationResponse = {
   /** The updated notification. */
   notification: Notification;
   /** Current unread notification count for the user. */
@@ -2051,7 +2051,7 @@ export interface ReadNotificationResponse {
 /**
  * Response from marking all notifications as read.
  */
-export interface ReadAllNotificationsResponse {
+export type ReadAllNotificationsResponse = {
   /** Whether the operation succeeded. */
   success: boolean;
   /** Current unread notification count for the user. */
@@ -2061,7 +2061,7 @@ export interface ReadAllNotificationsResponse {
 /**
  * Scope of a metric - identifies related resources.
  */
-export interface MetricScope {
+export type MetricScope = {
   /** API key ID(s) this metric is scoped to. */
   apiKey?: string | string[];
   /** OAuth app client ID(s) this metric is scoped to. */
@@ -2082,27 +2082,27 @@ export type MetricFamily = 'knowledge' | 'performance' | 'system' | 'trust' | 'u
 
 export type MetricKind = 'counter' | 'event' | 'gauge' | 'histogram';
 
-export interface MetricDimensions {
+export type MetricDimensions = {
   storeId?: string;
   roleId?: string;
   userId?: string;
 }
 
-export interface MetricEntities {
+export type MetricEntities = {
   fileId?: string;
   messageId?: string;
   pageId?: string;
   threadId?: string;
 }
 
-export interface MetricSource {
+export type MetricSource = {
   model?: string;
   pipeline?: string;
   service: string;
   version?: string;
 }
 
-export interface MetricTrace {
+export type MetricTrace = {
   correlationId?: string;
   requestId?: string;
 }
@@ -2110,7 +2110,7 @@ export interface MetricTrace {
 /**
  * A usage metric entry.
  */
-export interface Metric {
+export type Metric = {
   /** Flat attributes captured alongside the event. */
   attributes?: Record<string, boolean | number | string>;
   /** Unix timestamp (ms) when the metric was recorded. */
@@ -2144,19 +2144,19 @@ export interface Metric {
 /**
  * Parameters for listing metrics.
  */
-export interface ListMetricsParams extends PaginationParams {
+export type ListMetricsParams = {
   /** Filter by date range. */
   date?: DateFilter;
   /** Filter by metric name. */
   name?: string;
   /** Filter by scope (resources the metric is associated with). */
   scope?: MetricScope;
-}
+} & PaginationParams
 
 /**
  * Response from listing metrics.
  */
-export interface ListMetricsResponse {
+export type ListMetricsResponse = {
   /** Whether there are more results available. */
   more: boolean;
   /** Maximum items returned per page. */
@@ -2172,7 +2172,7 @@ export interface ListMetricsResponse {
 /**
  * Response from retrieving a metric.
  */
-export interface RetrieveMetricResponse {
+export type RetrieveMetricResponse = {
   /** The metric. */
   metric: Metric;
 }
@@ -2180,7 +2180,7 @@ export interface RetrieveMetricResponse {
 /**
  * Aggregated metric summary per metric name.
  */
-export interface MetricSummaryItem {
+export type MetricSummaryItem = {
   /** Average value. */
   avg: number;
   /** Number of recorded events. */
@@ -2202,7 +2202,7 @@ export interface MetricSummaryItem {
 /**
  * Daily trend bucket for a metric.
  */
-export interface MetricTrendBucket {
+export type MetricTrendBucket = {
   /** Date string (YYYY-MM-DD). */
   day: string;
   /** Metric name. */
@@ -2214,7 +2214,7 @@ export interface MetricTrendBucket {
 /**
  * Parameters for metric summary.
  */
-export interface MetricSummaryParams {
+export type MetricSummaryParams = {
   /** Filter by date range. */
   date?: DateFilter;
   /** Filter by scope. */
@@ -2224,7 +2224,7 @@ export interface MetricSummaryParams {
 /**
  * Response from the metric summary endpoint.
  */
-export interface MetricSummaryResponse {
+export type MetricSummaryResponse = {
   /** Per-metric aggregated summaries with percentiles. */
   summaries: MetricSummaryItem[];
   /** Daily trend buckets for all metrics. */
@@ -2234,7 +2234,7 @@ export interface MetricSummaryResponse {
 /**
  * Client telemetry error event.
  */
-export interface TelemetryErrorEvent {
+export type TelemetryErrorEvent = {
   code: string;
   route: string;
   source: string;
@@ -2244,7 +2244,7 @@ export interface TelemetryErrorEvent {
 /**
  * Client telemetry navigation event.
  */
-export interface TelemetryNavigationEvent {
+export type TelemetryNavigationEvent = {
   duration: number;
   from: string;
   to: string;
@@ -2254,7 +2254,7 @@ export interface TelemetryNavigationEvent {
 /**
  * Client telemetry page load event.
  */
-export interface TelemetryPageLoadEvent {
+export type TelemetryPageLoadEvent = {
   duration: number;
   route: string;
   type: 'page_load';
@@ -2263,7 +2263,7 @@ export interface TelemetryPageLoadEvent {
 /**
  * Client telemetry Web Vital event.
  */
-export interface TelemetryWebVitalEvent {
+export type TelemetryWebVitalEvent = {
   name: string;
   route: string;
   type: 'web_vital';
@@ -2282,21 +2282,21 @@ export type TelemetryEvent =
 /**
  * Parameters for posting telemetry events.
  */
-export interface SendTelemetryParams {
+export type SendTelemetryParams = {
   events: TelemetryEvent[];
 }
 
 /**
  * Response from telemetry ingestion endpoint.
  */
-export interface SendTelemetryResponse {
+export type SendTelemetryResponse = {
   accepted: number;
 }
 
 /**
  * Parameters for uploading text as a document.
  */
-export interface UploadTextParams {
+export type UploadTextParams = {
   /** Store IDs to add the document to. */
   storeIds: string[];
   /** Optional folder ID to place the document in. */
@@ -2318,7 +2318,7 @@ export type TokenRefreshCallback = () => Promise<null | string>;
 /**
  * Configuration options for the Prosperify client.
  */
-export interface ProsperifyClientConfig {
+export type ProsperifyClientConfig = {
   /**
    * @default 'https://api.prosperify.app'
    */
@@ -2371,7 +2371,7 @@ export interface ProsperifyClientConfig {
 // Analytics
 // ---------------------------------------------------------------------------
 
-export interface AnalyticsParams {
+export type AnalyticsParams = {
   store?: string;
   date: {
     end: string;
@@ -2379,7 +2379,7 @@ export interface AnalyticsParams {
   };
 }
 
-export interface UsageMetrics {
+export type UsageMetrics = {
   'conversation.total': number;
   'feedback.dismissed.count': number;
   'feedback.reasons'?: Array<{ count: number; reason: FeedbackReason }>;
@@ -2392,7 +2392,7 @@ export interface UsageMetrics {
   'user.active.total': number;
 }
 
-export interface PerformanceMetrics {
+export type PerformanceMetrics = {
   'answer.total': number;
   'chunk.retrieved.total': number;
   'chunk.used.total': number;
@@ -2406,33 +2406,33 @@ export interface PerformanceMetrics {
   'response.count': number;
 }
 
-export interface AnalyticsUsageResponse {
+export type AnalyticsUsageResponse = {
   metrics: UsageMetrics;
 }
 
-export interface AnalyticsPerformanceResponse {
+export type AnalyticsPerformanceResponse = {
   metrics: PerformanceMetrics;
 }
 
-export interface InsightsTopDocument {
+export type InsightsTopDocument = {
   count: number;
   id: string;
   name: string;
 }
 
-export interface InsightsTopUser {
+export type InsightsTopUser = {
   count: number;
   id: string;
   name: string;
 }
 
-export interface InsightsPeakCell {
+export type InsightsPeakCell = {
   count: number;
   day: number;
   hour: number;
 }
 
-export interface NeverAccessedFile {
+export type NeverAccessedFile = {
   store: string;
   createdAt: number;
   id: string;
@@ -2443,7 +2443,7 @@ export interface NeverAccessedFile {
   uploadedBy?: string;
 }
 
-export interface InsightsMetrics {
+export type InsightsMetrics = {
   adoption: {
     activeUsers: number;
     rate: number;
@@ -2456,11 +2456,11 @@ export interface InsightsMetrics {
   'top.users': InsightsTopUser[];
 }
 
-export interface AnalyticsInsightsResponse {
+export type AnalyticsInsightsResponse = {
   metrics: InsightsMetrics;
 }
 
-export interface MetricsOverviewSummary {
+export type MetricsOverviewSummary = {
   adoptionRate: number;
   avgResponseMs: number;
   avgCitationConfidence: number;
@@ -2470,7 +2470,7 @@ export interface MetricsOverviewSummary {
   resolutionRate: number;
 }
 
-export interface MetricsOverviewAdoption {
+export type MetricsOverviewAdoption = {
   engagement: {
     peakUsage: InsightsPeakCell[];
     requestTrend: Array<{ timestamp: string; value: number }>;
@@ -2487,7 +2487,7 @@ export interface MetricsOverviewAdoption {
   };
 }
 
-export interface MetricsOverviewTrust {
+export type MetricsOverviewTrust = {
   feedback: {
     dismissed: number;
     reasons: Array<{ count: number; reason: FeedbackReason }>;
@@ -2512,7 +2512,7 @@ export interface MetricsOverviewTrust {
   };
 }
 
-export interface MetricsOverviewPerformance {
+export type MetricsOverviewPerformance = {
   latency: {
     avg: number;
     p50: number;
@@ -2535,7 +2535,7 @@ export interface MetricsOverviewPerformance {
   };
 }
 
-export interface MetricsOverviewKnowledge {
+export type MetricsOverviewKnowledge = {
   distribution: {
     p95FileSizeBytes: number;
     p95PageCount: number;
@@ -2559,7 +2559,7 @@ export interface MetricsOverviewKnowledge {
   };
 }
 
-export interface MetricsOverviewMetrics {
+export type MetricsOverviewMetrics = {
   adoption: MetricsOverviewAdoption;
   knowledge: MetricsOverviewKnowledge;
   overview: MetricsOverviewSummary;
@@ -2567,7 +2567,7 @@ export interface MetricsOverviewMetrics {
   trust: MetricsOverviewTrust;
 }
 
-export interface MetricsOverviewResponse {
+export type MetricsOverviewResponse = {
   metrics: MetricsOverviewMetrics;
 }
 
@@ -2577,13 +2577,13 @@ export interface MetricsOverviewResponse {
 
 export type FeedbackReason = 'inaccurate' | 'incomplete' | 'irrelevant' | 'outdated' | 'other';
 
-export interface SubmitFeedbackParams {
+export type SubmitFeedbackParams = {
   comment?: string;
   reason?: FeedbackReason;
   resolved: boolean | null;
 }
 
-export interface MessageFeedback {
+export type MessageFeedback = {
   comment?: string;
   reason?: FeedbackReason;
   resolved: boolean | null;
@@ -2591,7 +2591,7 @@ export interface MessageFeedback {
   submitted: number;
 }
 
-export interface SubmitFeedbackResponse {
+export type SubmitFeedbackResponse = {
   message: {
     feedback: MessageFeedback;
     id: string;
@@ -2601,7 +2601,7 @@ export interface SubmitFeedbackResponse {
 /**
  * OAuth token endpoint response.
  */
-export interface OAuthTokenResponse {
+export type OAuthTokenResponse = {
   accessToken: string;
   expiresIn: number;
   refreshToken?: string;
@@ -2612,7 +2612,7 @@ export interface OAuthTokenResponse {
 /**
  * Parameters for OAuth authorize request.
  */
-export interface OAuthAuthorizeParams {
+export type OAuthAuthorizeParams = {
   clientId: string;
   redirectUri: string;
   response_type: 'code';
@@ -2625,7 +2625,7 @@ export interface OAuthAuthorizeParams {
 /**
  * Parameters for OAuth token exchange.
  */
-export interface OAuthTokenParams {
+export type OAuthTokenParams = {
   clientId?: string;
   clientSecret?: string;
   code?: string;
@@ -2640,7 +2640,7 @@ export interface OAuthTokenParams {
 /**
  * Response from OAuth authorize endpoint.
  */
-export interface OAuthAuthorizeResponse {
+export type OAuthAuthorizeResponse = {
   code: string;
   state?: string;
 }
@@ -2648,7 +2648,7 @@ export interface OAuthAuthorizeResponse {
 /**
  * Parameters for client credentials grant.
  */
-export interface ClientCredentialsParams {
+export type ClientCredentialsParams = {
   clientId?: string;
   clientSecret?: string;
   scope?: string[];
@@ -2657,7 +2657,7 @@ export interface ClientCredentialsParams {
 /**
  * Parameters for the OAuth device code flow initiation.
  */
-export interface OAuthDeviceCodeParams {
+export type OAuthDeviceCodeParams = {
   clientId?: string;
   clientSecret?: string;
   scope?: string;
@@ -2666,7 +2666,7 @@ export interface OAuthDeviceCodeParams {
 /**
  * Response from the OAuth device code flow initiation.
  */
-export interface OAuthDeviceCodeResponse {
+export type OAuthDeviceCodeResponse = {
   deviceCode: string;
   expiresIn: number;
   interval: number;

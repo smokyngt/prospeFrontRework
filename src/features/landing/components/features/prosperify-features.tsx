@@ -112,7 +112,7 @@ function CitedAnswerIllustration() {
 
       <div className="mt-4 min-w-0" style={PANEL}>
         <div className="flex flex-col gap-2.5 px-3 py-3">
-          {files.map((f, i) => (
+          {files.map((f) => (
             <div key={f.name} className="flex items-center gap-2.5">
               <FileText size={15} className="shrink-0" style={{ color: ACCENT }} />
               <span className="min-w-0 flex-1 truncate font-mono text-[11.5px] text-[var(--pf-fg)]">
@@ -276,7 +276,7 @@ function GovernanceIllustration() {
         </span>
       </div>
 
-      {STORES.map((store, i) => (
+      {STORES.map((store) => (
         <div
           key={store.key}
           className="flex items-center gap-2.5 px-3 py-2.5"
@@ -426,7 +426,7 @@ function SovereigntyIllustration() {
         </div>
 
         <div className="mt-[18px] flex flex-wrap justify-center gap-1.5">
-          {SOVEREIGNTY_MODES.map((key, i) => (
+          {SOVEREIGNTY_MODES.map((key) => (
             <PopChip
               key={key}
               className="text-[10.5px] font-semibold"

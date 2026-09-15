@@ -84,9 +84,16 @@ const CitationSegment = memo(function CitationSegment({
   const open = isOpenable || hallucination?.chunkId ? onOpen : undefined;
   const key = segmentKey(citation, hallucination);
   const activate = () => {
-    cancelClose();
-    setPinned(isPinned ? null : key);
-    setTooltipOpen(!isPinned);
+    // Tactile : pas de survol, donc le clic épingle l'infobulle (qui expose
+    // ensuite son propre bouton « ouvrir »). Souris : le survol montre déjà
+    // l'infobulle, le clic doit directement ouvrir le PDF à la bonne page.
+    if (isTouch) {
+      cancelClose();
+      setPinned(isPinned ? null : key);
+      setTooltipOpen(!isPinned);
+      return;
+    }
+    open?.();
   };
 
   return (

@@ -9,9 +9,10 @@ import {
   Scale,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment, useEffect, useRef, useState } from "react";
+
+import type { MouseEvent } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -61,8 +62,12 @@ const useCasesMenuItems: NavbarMenuItem[] = [
  * Son `href` pointe sur le premier secteur — il sert de repli au clic mobile
  * et a l'etat actif. Surtout, il ne doit pas doublonner avec l'ancre de
  * l'entree « Fonctionnalites » : la navbar s'en sert comme cle React.
+ *
+ * Simple constructeur de donnees (pas un hook) : le prefixe `use` viendrait
+ * du sens anglais de « use cases », pas de la convention React — renomme
+ * pour ne pas se faire flager par `react-hooks/rules-of-hooks`.
  */
-export function useCasesMenuLink(): NavbarLink {
+export function casesMenuLink(): NavbarLink {
   return {
     labelKey: "nav.useCases",
     href: useCasesMenuItems[0].href,
@@ -72,7 +77,7 @@ export function useCasesMenuLink(): NavbarLink {
 
 const defaultNavLinks: NavbarLink[] = [
   { labelKey: "nav.features", href: "#features" },
-  useCasesMenuLink(),
+  casesMenuLink(),
   { labelKey: "nav.products", href: "#products" },
   { labelKey: "nav.sovereignty", href: "#sovereignty" },
   { labelKey: "nav.security", href: "#security" },
@@ -133,11 +138,9 @@ function MoonIcon() {
 function NavDropdown({
   active,
   link,
-  overviewHref,
 }: {
   active: boolean;
   link: NavbarLink;
-  overviewHref: string;
 }) {
   const { t } = useTranslation();
   const pathname = usePathname();
@@ -202,7 +205,7 @@ function NavDropdown({
             const current = pathname === item.href;
 
             return (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
@@ -234,7 +237,7 @@ function NavDropdown({
                     {t(item.descriptionKey)}
                   </span>
                 </span>
-              </Link>
+              </a>
             );
           })}
         </div>
@@ -320,13 +323,32 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
     return localAnchors ? href : `/${href}`;
   };
 
+  /**
+   * Le navigateur saute directement vers un `#hash`, sans animation (ignore
+   * `scroll-behavior: smooth`). On intercepte pour ancrer soi-même la
+   * section, en douceur.
+   */
+  const handleAnchorClick = (href: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!localAnchors || !href.startsWith("#")) {
+      return;
+    }
+    const target = document.querySelector(href);
+    if (!target) {
+      return;
+    }
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.pushState(null, "", href);
+  };
+
   return (
     <nav
       className="fixed inset-x-0 top-0 z-50 border-b border-[var(--pf-border)] backdrop-blur-xl"
       style={{ background: "var(--pf-nav-bg)" }}
     >
       <div className="mx-auto flex h-16 max-w-[1360px] items-center justify-between border-x border-[var(--pf-border)] px-5 sm:px-8 lg:px-12">
-        <Link
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- <a> volontaire pour les changements de page (cf. demande explicite) */}
+        <a
           href="/"
           className="flex min-w-0 items-center gap-3"
           aria-label="Prosperify"
@@ -340,7 +362,7 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
               </span>
             </span>
           )}
-        </Link>
+        </a>
 
         {/* Desktop nav links */}
         <div className="hidden items-center gap-0.5 lg:flex">
@@ -349,17 +371,12 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
 
             if (link.items) {
               return (
-                <NavDropdown
-                  key={link.labelKey}
-                  active={active}
-                  link={link}
-                  overviewHref={resolveHref(link.href)}
-                />
+                <NavDropdown key={link.labelKey} active={active} link={link} />
               );
             }
 
             return (
-              <Link
+              <a
                 key={link.labelKey}
                 href={resolveHref(link.href)}
                 className={cn(
@@ -368,13 +385,13 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
                     ? "text-[var(--pf-fg)]"
                     : "text-[var(--pf-fg-muted)] hover:text-[var(--pf-fg)]",
                 )}
-                scroll
+                onClick={handleAnchorClick(link.href)}
               >
                 {t(link.labelKey)}
                 {active && (
                   <span className="absolute inset-x-3 -bottom-[13px] h-0.5 bg-[#FF6A13]" />
                 )}
-              </Link>
+              </a>
             );
           })}
         </div>
@@ -458,7 +475,7 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
           <div className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <Fragment key={link.labelKey}>
-                <Link
+                <a
                   href={resolveHref(link.href)}
                   className={cn(
                     "px-3 py-2.5 text-sm font-medium transition-colors hover:text-[#FF6A13]",
@@ -466,18 +483,20 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
                       ? "border-l-2 border-[#FF6A13] bg-[#FF6A13]/5 text-[var(--pf-fg)]"
                       : "text-[var(--pf-fg-muted)]",
                   )}
-                  scroll
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(event) => {
+                    handleAnchorClick(link.href)(event);
+                    setMobileOpen(false);
+                  }}
                 >
                   {t(link.labelKey)}
-                </Link>
+                </a>
 
                 {/* Sur mobile le menu reste déplié : pas de survol pour l'ouvrir */}
                 {link.items?.map((item) => {
                   const Icon = item.icon;
 
                   return (
-                    <Link
+                    <a
                       key={item.href}
                       href={item.href}
                       className={cn(
@@ -490,7 +509,7 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
                     >
                       <Icon size={14} />
                       {t(item.labelKey)}
-                    </Link>
+                    </a>
                   );
                 })}
               </Fragment>

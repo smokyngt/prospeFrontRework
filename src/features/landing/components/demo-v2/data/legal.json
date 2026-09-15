@@ -1,378 +1,253 @@
 {
-  "pdf": {
-    "totalPages": 12,
-    "url": "/assets/demo/Contrat_Cadre_Verdi.pdf"
-  },
+  "pdf": { "totalPages": 18, "url": "/assets/demo-usecase/legal/JUR-01_MSA_NimbusCore_v7_redline.pdf" },
   "files": [
-    {
-      "fileId": "demo-verdi",
-      "fileName": "Contrat_Cadre_Verdi.pdf",
-      "totalPages": 12,
-      "url": "/assets/demo/Contrat_Cadre_Verdi.pdf",
-      "metadata": {
-        "fileName": "Contrat_Cadre_Verdi.pdf",
-        "mime": "application/pdf",
-        "pages": "12",
-        "sourceAccess": "Secure workspace",
-        "sourceParser": "pdf text + page preview"
-      }
-    }
-  ],
-  "filterFiles": [
-    "Contrat_Cadre_Verdi.pdf"
+    { "fileId": "JUR-01", "fileName": "JUR-01_MSA_NimbusCore_v7_redline.pdf", "totalPages": 18, "url": "/assets/demo-usecase/legal/JUR-01_MSA_NimbusCore_v7_redline.pdf", "metadata": { "fileName": "JUR-01_MSA_NimbusCore_v7_redline.pdf", "mime": "application/pdf", "pages": "18", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" } },
+    { "fileId": "JUR-02", "fileName": "JUR-02_Politique_contractuelle_Asteria_v5-2.pdf", "totalPages": 7, "url": "/assets/demo-usecase/legal/JUR-02_Politique_contractuelle_Asteria_v5-2.pdf", "metadata": { "fileName": "JUR-02_Politique_contractuelle_Asteria_v5-2.pdf", "mime": "application/pdf", "pages": "7", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" } },
+    { "fileId": "JUR-03", "fileName": "JUR-03_SLA_NimbusCore_v3.pdf", "totalPages": 6, "url": "/assets/demo-usecase/legal/JUR-03_SLA_NimbusCore_v3.pdf", "metadata": { "fileName": "JUR-03_SLA_NimbusCore_v3.pdf", "mime": "application/pdf", "pages": "6", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" } },
+    { "fileId": "JUR-04", "fileName": "JUR-04_DPA_NimbusCore_v2.pdf", "totalPages": 9, "url": "/assets/demo-usecase/legal/JUR-04_DPA_NimbusCore_v2.pdf", "metadata": { "fileName": "JUR-04_DPA_NimbusCore_v2.pdf", "mime": "application/pdf", "pages": "9", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" } },
+    { "fileId": "JUR-05", "fileName": "JUR-05_Note_negociation_Legal_Achats.pdf", "totalPages": 4, "url": "/assets/demo-usecase/legal/JUR-05_Note_negociation_Legal_Achats.pdf", "metadata": { "fileName": "JUR-05_Note_negociation_Legal_Achats.pdf", "mime": "application/pdf", "pages": "4", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" } },
+    { "fileId": "JUR-06", "fileName": "JUR-06_Order_Form_Asteria_NimbusCore_v4.pdf", "totalPages": 3, "url": "/assets/demo-usecase/legal/JUR-06_Order_Form_Asteria_NimbusCore_v4.pdf", "metadata": { "fileName": "JUR-06_Order_Form_Asteria_NimbusCore_v4.pdf", "mime": "application/pdf", "pages": "3", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" } }
   ],
   "filterMetadata": [
-    {
-      "key": "author",
-      "value": "Direction juridique"
-    },
-    {
-      "key": "date",
-      "value": "2024-03-14"
-    },
-    {
-      "key": "section",
-      "value": "Article 4"
-    }
+    { "key": "author", "value": "Direction juridique" },
+    { "key": "date", "value": "2026-09-10" },
+    { "key": "section", "value": "Revue contractuelle" }
   ],
-  "citations": [
-    {
-      "confidence": "97%",
-      "fileId": "demo-verdi",
-      "fileName": "Contrat_Cadre_Verdi.pdf",
-      "highlightText": "Le contrat est renouvelable par tacite reconduction pour des périodes successives de trois (3) ans",
-      "id": 1,
-      "page": 2,
-      "quote": "Le contrat est renouvelable par tacite reconduction pour des périodes successives de trois (3) ans, sauf dénonciation par l'une des Parties."
-    },
-    {
-      "confidence": "96%",
-      "fileId": "demo-verdi",
-      "fileName": "Contrat_Cadre_Verdi.pdf",
-      "highlightText": "Le renouvellement du présent contrat est subordonné à l'accord exprès et écrit des deux parties",
-      "id": 2,
-      "page": 10,
-      "quote": "Le renouvellement du présent contrat est subordonné à l'accord exprès et écrit des deux parties, notifié au plus tard six (6) mois avant le terme."
-    },
-    {
-      "confidence": "95%",
-      "fileId": "demo-verdi",
-      "fileName": "Contrat_Cadre_Verdi.pdf",
-      "highlightText": "Aucune clause de changement de contrôle n'a été identifiée dans le contrat",
-      "id": 3,
-      "page": 2,
-      "quote": "Aucune clause de changement de contrôle n'a été identifiée dans le contrat."
-    },
-    {
-      "confidence": "94%",
-      "fileId": "demo-verdi",
-      "fileName": "Contrat_Cadre_Verdi.pdf",
-      "highlightText": "En cas de changement de contrôle direct ou indirect de l'une des parties, l'autre partie peut résilier le contrat de plein droit",
-      "id": 4,
-      "page": 12,
-      "quote": "En cas de changement de contrôle direct ou indirect de l'une des parties, l'autre partie peut résilier le contrat de plein droit, par lettre recommandée avec accusé de réception, dans un délai de soixante (60) jours."
-    }
+  "stores": [
+    { "id": "store-active", "nameKey": "storeName", "short": "J", "disabled": false, "selected": true },
+    { "id": "store-risk", "nameKey": "risk", "short": "RC", "disabled": true, "selected": false },
+    { "id": "store-legal", "nameKey": "legal", "short": "LR", "disabled": true, "selected": false },
+    { "id": "store-research", "nameKey": "research", "short": "RS", "disabled": true, "selected": false }
   ],
-  "document": {
-    "articleOne": "Durée initiale de trois (3) ans à compter de la prise d'effet - Article 4.1, p.10",
-    "articleThree": "Renouvellement subordonné à l'accord exprès et écrit des deux parties, six (6) mois avant le terme - Article 4.1, p.10",
-    "title": "Contrat-cadre de prestations de services - CTR-2024-VERDI-017",
-    "verifiedClause": "Clause de changement de contrôle : résiliation de plein droit dans les soixante (60) jours - Article 6.2, p.12"
-  },
-  "steps": [
-    {
-      "action": "analyzing",
-      "entities": [
-        "CTR-2024-VERDI-017",
-        "renouvellement",
-        "changement de contrôle"
-      ],
-      "id": "intent",
-      "queries": "@queries",
-      "reasoning": "@text.analyze"
-    },
-    {
-      "action": "ls",
-      "id": "browse-store",
-      "reasoning": "@text.ls",
-      "toolName": "ls",
-      "toolParams": {
-        "path": "/Contrats/Verdi"
-      },
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "",
-            "metadata": {
-              "treeData": {
-                "path": "/Contrats/Verdi",
-                "folders": [],
-                "files": [
-                  {
-                    "fileId": "demo-verdi",
-                    "name": "Contrat_Cadre_Verdi.pdf",
-                    "size": 318000
-                  }
-                ]
-              }
-            }
-          }
-        ],
-        "count": 1,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "searching",
-      "id": "lexical-search",
-      "queries": [
-        "tacite reconduction renouvellement contrat",
-        "changement de contrôle résiliation"
-      ],
-      "reasoning": "@text.lexical"
-    },
-    {
-      "action": "retrieved",
-      "chunks": 7,
-      "id": "lexical-results",
-      "reasoning": "@text.lexicalResults",
-      "toolName": "search",
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "@doc.title",
-            "fileName": "Contrat_Cadre_Verdi.pdf",
-            "metadata": {
-              "section": "Note de synthèse",
-              "type": "text"
-            },
-            "pageNumber": 2,
-            "score": 0.92
-          },
-          {
-            "content": "@doc.articleThree",
-            "fileName": "Contrat_Cadre_Verdi.pdf",
-            "metadata": {
-              "section": "Article 4 - Durée et renouvellement",
-              "type": "text"
-            },
-            "pageNumber": 10,
-            "score": 0.9
-          },
-          {
-            "content": "@doc.verifiedClause",
-            "fileName": "Contrat_Cadre_Verdi.pdf",
-            "metadata": {
-              "section": "Article 6 - Cession et changement de contrôle",
-              "type": "text"
-            },
-            "pageNumber": 12,
-            "score": 0.85
-          }
-        ],
-        "count": 3,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "readFile",
-      "id": "read-file",
-      "reasoning": "@text.read",
-      "toolName": "read",
-      "toolParams": {
-        "fileName": "Contrat_Cadre_Verdi.pdf",
-        "pageRange": "2,10,12"
-      },
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "Note de synthèse - durée initiale de trois (3) ans ; le contrat est renouvelable par tacite reconduction pour des périodes successives de trois (3) ans.",
-            "fileId": "demo-verdi",
-            "fileName": "Contrat_Cadre_Verdi.pdf",
-            "pageNumber": 2,
-            "score": 0.97
-          },
-          {
-            "content": "Article 4.1 - le renouvellement du présent contrat est subordonné à l'accord exprès et écrit des deux parties, notifié au plus tard six (6) mois avant le terme. Les Parties écartent expressément toute reconduction tacite.",
-            "fileId": "demo-verdi",
-            "fileName": "Contrat_Cadre_Verdi.pdf",
-            "pageNumber": 10,
-            "score": 0.96
-          },
-          {
-            "content": "Article 6.2 - en cas de changement de contrôle direct ou indirect de l'une des parties, l'autre partie peut résilier le contrat de plein droit, dans un délai de soixante (60) jours.",
-            "fileId": "demo-verdi",
-            "fileName": "Contrat_Cadre_Verdi.pdf",
-            "pageNumber": 12,
-            "score": 0.94
-          }
-        ],
-        "count": 3,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "screenshot",
-      "id": "page-screenshot",
-      "reasoning": "@text.screenshot",
-      "toolName": "screenshot",
-      "toolParams": {
-        "fileName": "Contrat_Cadre_Verdi.pdf",
-        "page": 1
-      },
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "",
-            "fileId": "demo-verdi",
-            "fileName": "Contrat_Cadre_Verdi.pdf",
-            "metadata": {
-              "type": "screenshot"
-            },
-            "pageNumber": 1,
-            "score": 0.94,
-            "type": "image"
-          },
-          {
-            "content": "",
-            "fileId": "demo-verdi",
-            "fileName": "Contrat_Cadre_Verdi.pdf",
-            "metadata": {
-              "type": "screenshot"
-            },
-            "pageNumber": 10,
-            "score": 0.92,
-            "type": "image"
-          }
-        ],
-        "count": 2,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "searching",
-      "id": "semantic-search",
-      "queries": [
-        "hiérarchie documents contractuels note interne portée"
-      ],
-      "reasoning": "@text.semantic"
-    },
-    {
-      "action": "retrieved",
-      "chunks": 11,
-      "id": "semantic-results",
-      "reasoning": "@text.semanticResults",
-      "toolName": "search",
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "Article 2.5 - aucune note interne, présentation ou synthèse établie par l'une des Parties ne saurait modifier la portée des stipulations contractuelles.",
-            "fileName": "Contrat_Cadre_Verdi.pdf",
-            "metadata": {
-              "section": "Article 2 - Objet du contrat",
-              "type": "text"
-            },
-            "pageNumber": 5,
-            "score": 0.88
-          },
-          {
-            "content": "@text.reviewNote",
-            "fileName": "Contrat_Cadre_Verdi.pdf",
-            "metadata": {
-              "section": "Hiérarchie des documents",
-              "type": "text"
-            },
-            "pageNumber": 5,
-            "score": 0.76
-          }
-        ],
-        "count": 2,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "generating",
-      "id": "answer",
-      "reasoning": "@text.generate",
-      "thinking": "@text.thinking"
-    }
+  "filterFiles": [
+    "JUR-01_MSA_NimbusCore_v7_redline.pdf",
+    "JUR-02_Politique_contractuelle_Asteria_v5-2.pdf",
+    "JUR-03_SLA_NimbusCore_v3.pdf",
+    "JUR-04_DPA_NimbusCore_v2.pdf",
+    "JUR-05_Note_negociation_Legal_Achats.pdf",
+    "JUR-06_Order_Form_Asteria_NimbusCore_v4.pdf"
   ],
-  "content": {
-    "fr": {
-      "storeName": "Contrats & baux",
-      "finalAnswer": "La note de synthèse de la direction juridique (p.2) affirme que le contrat se renouvelle par tacite reconduction pour des périodes successives de trois (3) ans [1]. Le corps du contrat dit l'inverse : l'article 4.1 (p.10) subordonne le renouvellement à l'accord exprès et écrit des deux parties, notifié au plus tard six (6) mois avant le terme, et écarte expressément toute reconduction tacite [2]. À défaut d'accord notifié dans ce délai, le contrat prend fin de plein droit au terme de la période en cours, sans indemnité. La même note affirme qu'aucune clause de changement de contrôle n'a été identifiée [3] : l'article 6.2 (p.12) en contient pourtant une, qui ouvre à l'autre partie un droit de résiliation de plein droit dans un délai de soixante (60) jours à compter de la notification de l'opération [4]. L'article 2.5 (p.5) tranche : aucune note interne ne peut modifier la portée des stipulations contractuelles. Deux actions avant toute opération : notifier le renouvellement dans la fenêtre de six mois, et intégrer le risque de résiliation au titre du changement de contrôle.",
-      "question": "Le contrat Verdi se renouvelle-t-il par tacite reconduction, et comporte-t-il une clause de changement de contrôle ? Compare la note de synthèse au corps du contrat et cite les passages exacts.",
-      "reasoning": "La question oppose la note de synthèse (p.2) au corps du contrat. Je relève les deux affirmations de la note : renouvellement par tacite reconduction, et absence de clause de changement de contrôle. Je cherche ensuite les stipulations correspondantes : l'article 4.1 (p.10) impose au contraire un accord exprès et écrit six mois avant le terme, et l'article 6.2 (p.12) contient bien une clause de changement de contrôle. L'article 2.5 tranche le conflit entre les deux documents. Je cite chaque passage avec sa page pour que la revue soit opposable.",
-      "retrievalQueries": [
-        "tacite reconduction renouvellement note de synthèse",
-        "article 4 durée renouvellement accord exprès écrit",
-        "clause changement de contrôle résiliation de plein droit",
-        "hiérarchie documents contractuels note interne"
+  "filterFolders": [
+    { "disabled": true, "label": "Contracts" },
+    { "disabled": true, "label": "Board memos" }
+  ],
+  "userInitials": "DJ",
+  "archivedThreadCount": 2,
+  "tour": [
+    { "uiKey": "tourOrchestration", "target": "orchestration", "placement": { "desktop": "right", "mobile": "bottom" }, "targetWaitTimeout": 8000, "onEnter": "expandReasoning", "onLeave": "awaitAnswer" },
+    { "uiKey": "tourSources", "target": "citations", "placement": { "desktop": "right", "mobile": "bottom" }, "targetWaitTimeout": 8000 },
+    { "uiKey": "tourPdf", "target": "pdf", "placement": { "desktop": "left", "mobile": "center" }, "targetWaitTimeout": 8000, "onEnter": "openCitation" }
+  ],
+  "streaming": { "minDurationMs": 2600, "durationRatio": 0.62, "minWordPauseMs": 24 },
+  "scenarios": [
+    {
+      "document": {},
+      "citations": [
+        { "id": 1, "fileId": "JUR-06", "fileName": "JUR-06_Order_Form_Asteria_NimbusCore_v4.pdf", "page": 1, "confidence": "97%", "quote": "90 000 €/mois x 36 mois = 3 240 000 € HT, 420 magasins.", "highlightText": "3 240 000 € HT" },
+        { "id": 2, "fileId": "JUR-01", "fileName": "JUR-01_MSA_NimbusCore_v7_redline.pdf", "page": 4, "confidence": "95%", "quote": "Durée initiale de trente-six (36) mois, renouvellement automatique par périodes de douze (12) mois.", "highlightText": "durée initiale de trente-six (36) mois" },
+        { "id": 3, "fileId": "JUR-01", "fileName": "JUR-01_MSA_NimbusCore_v7_redline.pdf", "page": 8, "confidence": "94%", "quote": "Le Fournisseur peut résilier pour convenance après le douzième mois.", "highlightText": "le Fournisseur peut sortir après 12 mois" },
+        { "id": 4, "fileId": "JUR-01", "fileName": "JUR-01_MSA_NimbusCore_v7_redline.pdf", "page": 11, "confidence": "95%", "quote": "Plafond de responsabilité : 12 mois de fees = 1,08 M€.", "highlightText": "12 mois de fees = 1,08 M€" },
+        { "id": 5, "fileId": "JUR-03", "fileName": "JUR-03_SLA_NimbusCore_v3.pdf", "page": 2, "confidence": "93%", "quote": "Disponibilité mensuelle mesurée à 99,5 %.", "highlightText": "Le taux mesuré selon la présente annexe est de 99,5 %" },
+        { "id": 6, "fileId": "JUR-04", "fileName": "JUR-04_DPA_NimbusCore_v2.pdf", "page": 4, "confidence": "94%", "quote": "Notification d'incident sous 72 heures après confirmation.", "highlightText": "soixante-douze (72) heures après la" }
       ],
-      "threads": [
-        "Agent Prosperify"
+      "orchestrationDelays": [750, 950, 1400],
+      "steps": [
+        { "id": "intent", "action": "analyzing", "entities": ["Asteria Retail", "NimbusCore", "MSA"], "queries": "@queries", "reasoning": "@text.analyze" },
+        { "id": "search", "action": "searching", "queries": ["conditions commerciales durée MSA", "clauses ouvertes résiliation plafond SLA incident"], "reasoning": "@text.search" },
+        { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
-      "hallucinations": [
-        {
-          "start": 93,
-          "end": 112,
-          "reason": "Conflit de source : la note de synthèse retient la tacite reconduction, alors que l'article 4.1 (p.10) l'écarte expressément et impose un accord exprès et écrit.",
-          "score": 0.88,
-          "counterCitationId": 2,
-          "evidence": "Les Parties conviennent expressément d'écarter toute reconduction tacite. Aucun commencement d'exécution postérieur au terme ne saurait valoir renouvellement."
+      "content": {
+        "fr": {
+          "storeName": "Juriste d'entreprise",
+          "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
+          "question": "Résume les termes clés de cet accord et dis-moi ce qui reste ouvert avant signature.",
+          "finalAnswer": "[Le contrat lie Asteria Retail SAS et NimbusCore Ltd pour une plateforme SaaS de prévision de la demande, 420 magasins, 90 000 €/mois sur 36 mois soit 3 240 000 € HT](cite:1)[, avec un renouvellement automatique par périodes de douze mois](cite:2). Cinq sujets restent ouverts avant signature : [la résiliation pour convenance, ouverte au seul fournisseur après douze mois](cite:3)[, le plafond de responsabilité limité à douze mois de redevances](cite:4)[, le niveau de service mesuré à 99,5 % par le SLA](cite:5)[, et le délai de notification d'incident du DPA, qui part de la confirmation et non de la découverte](cite:6).\n\nEn l'état, aucun de ces cinq points n'est aligné avec le standard interne d'Asteria.",
+          "reasoning": "Je résume les conditions commerciales du bon de commande, la durée du MSA, puis je relève les clauses marquées comme des écarts par la policy interne pour identifier ce qui reste ouvert.",
+          "retrievalQueries": ["conditions commerciales durée MSA", "clauses ouvertes résiliation plafond SLA incident"],
+          "threads": ["Agent Prosperify"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "Décomposer la demande : termes économiques puis clauses marquées ouvertes par la revue juridique.",
+            "search": "Rechercher les conditions commerciales et les clauses de résiliation, responsabilité, SLA, incident.",
+            "generate": "Composer la réponse : termes clés puis liste des points ouverts, chacun sourcé.",
+            "thinking": "Le bon de commande fixe l'économie du contrat : 90 000 €/mois sur 36 mois, 3 240 000 € HT, 420 magasins. Le MSA prévoit un renouvellement automatique par périodes de 12 mois. En parcourant les redlines, je relève quatre clauses marquées comme écarts : la résiliation pour convenance n'est ouverte qu'au fournisseur après 12 mois, le plafond de responsabilité est limité à 12 mois de redevances au lieu du minimum policy de 24 mois, le SLA n'engage que 99,5 % de disponibilité contre un minimum Tier 1 de 99,9 %, et le DPA fait courir le délai de notification d'incident à partir de la confirmation plutôt que de la découverte.",
+            "ls": "Parcourir le workspace du dossier Asteria/NimbusCore.", "read": "Ouvrir le MSA et le bon de commande.", "screenshot": "Capturer un aperçu de page.", "lexical": "Rechercher les formulations exactes.", "lexicalResults": "Passages retrouvés.", "semantic": "Recherche sémantique.", "semanticResults": "Passage retrouvé.", "reviewNote": "Voir détail.",
+            "active": "Actifs", "archived": "Archivés", "chunks": "fragments", "closeDocument": "Fermer le document", "closeReview": "Fermer", "closeSidebar": "Fermer le panneau", "copy": "Copier", "edit": "Modifier", "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide.", "emptyTitle": "Aucun document ouvert", "entities": "entités", "justNow": "à l'instant", "metadata": "métadonnées", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Fils", "newChat": "Nouvelle conversation", "openDocument": "Ouvrir le lecteur de document", "openReview": "Essayer dans le chat", "openSidebar": "Ouvrir la liste des fils", "pages": "pages", "papers": "Papers", "regenerate": "Régénérer", "sourceFile": "Fichier", "storeStreaming": "Génération", "today": "Aujourd'hui", "tourBack": "Retour", "tourDone": "Terminer", "tourNext": "Suivant", "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici.", "tourOrchestrationTitle": "Suivez le raisonnement de l'agent", "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.", "tourPdfTitle": "Accédez à la source", "tourSkip": "Passer", "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.", "tourSourcesTitle": "Chaque affirmation est citée"
+          }
+        },
+        "en": {
+          "storeName": "Corporate lawyer",
+          "storeLabels": { "risk": "Risk & compliance", "legal": "Legal reviewer", "research": "Research scout" },
+          "question": "Résume les termes clés de cet accord et dis-moi ce qui reste ouvert avant signature.",
+          "finalAnswer": "[The contract binds Asteria Retail SAS and NimbusCore Ltd for a demand-forecasting SaaS platform, 420 stores, €90,000/month over 36 months](cite:1)[, with automatic renewal every 12 months](cite:2). [Termination for convenience is one-sided](cite:3)[, the liability cap is 12 months of fees](cite:4)[, SLA is measured at 99.5%](cite:5)[, and the DPA incident notice runs from confirmation, not discovery](cite:6).",
+          "reasoning": "English version pending.",
+          "retrievalQueries": ["commercial terms MSA duration", "open clauses termination cap SLA incident"],
+          "threads": ["Prosperify agent"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "English version pending.", "search": "English version pending.", "generate": "English version pending.", "thinking": "English version pending.",
+            "ls": "English version pending.", "read": "English version pending.", "screenshot": "English version pending.", "lexical": "English version pending.", "lexicalResults": "English version pending.", "semantic": "English version pending.", "semanticResults": "English version pending.", "reviewNote": "English version pending.",
+            "active": "Active", "archived": "Archived", "chunks": "chunks", "closeDocument": "Close document", "closeReview": "Close", "closeSidebar": "Close sidebar", "copy": "Copy", "edit": "Edit", "emptySubtitle": "Close this panel to open an empty document.", "emptyTitle": "No document open", "entities": "entities", "justNow": "just now", "metadata": "metadata", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Threads", "newChat": "New chat", "openDocument": "Open document viewer", "openReview": "Try in chat", "openSidebar": "Open thread list", "pages": "pages", "papers": "Papers", "regenerate": "Regenerate", "sourceFile": "File", "storeStreaming": "Generating", "today": "Today", "tourBack": "Back", "tourDone": "Done", "tourNext": "Next", "tourOrchestrationContent": "Every reasoning and search step is traced here.", "tourOrchestrationTitle": "Follow the agent's reasoning", "tourPdfContent": "Citations open the PDF at the exact highlighted passage.", "tourPdfTitle": "Jump to the source", "tourSkip": "Skip", "tourSourcesContent": "Each sentence links to the passage that supports it.", "tourSourcesTitle": "Every claim is cited"
+          }
         }
-      ],
-      "stepText": {
-        "analyze": "Décomposer la demande : identifier le mécanisme de renouvellement, vérifier l'existence d'une clause de changement de contrôle, confronter la note de synthèse au corps du contrat.",
-        "ls": "Parcourir le store pour repérer les documents disponibles sur le contrat Verdi.",
-        "read": "Ouvrir le PDF et lire les sections clés : note de synthèse (p.2), article 4 (p.10), article 6 (p.12).",
-        "screenshot": "Capturer un aperçu de page pour vérifier visuellement la source.",
-        "lexical": "Rechercher les formulations exactes : tacite reconduction, accord exprès et écrit, changement de contrôle.",
-        "lexicalResults": "Passages retrouvés et classés : note de synthèse p.2, article 4.1 p.10, article 6.2 p.12.",
-        "semantic": "Faire une seconde recherche sémantique sur la hiérarchie des documents contractuels.",
-        "semanticResults": "Passage retrouvé à l'article 2.5 p.5 : aucune note interne ne peut modifier la portée des stipulations.",
-        "reviewNote": "En cas de conflit entre la note de synthèse et le contrat, le corps du contrat prévaut : ce sont les articles 4.1 et 6.2 qui font foi.",
-        "generate": "Composer une note structurée : affirmation de la synthèse, stipulation réelle, contradiction, conséquence opérationnelle.",
-        "thinking": "Règle de rédaction : la question oppose un document de travail au contrat lui-même. Je cite l'affirmation, puis la stipulation, et je laisse l'écart apparaître. Le lecteur doit voir les deux formulations et savoir laquelle fait foi. Aucune clause n'est reformulée : le texte du contrat est cité mot pour mot."
       }
     },
-    "en": {
-      "storeName": "Contracts & leases",
-      "finalAnswer": "The legal department's summary note (p.2) states that the contract renews by tacit renewal for successive three (3) year periods [1]. The contract body says the opposite: article 4.1 (p.10) makes renewal subject to the express written agreement of both parties, notified no later than six (6) months before the term, and expressly rules out any tacit renewal [2]. Absent an agreement notified within that window, the contract terminates automatically at the end of the current period, with no indemnity. The same note states that no change-of-control clause was identified [3]: article 6.2 (p.12) does contain one, giving the other party a right of automatic termination within sixty (60) days of the transaction being notified [4]. Article 2.5 (p.5) settles it: no internal note may alter the scope of the contractual provisions. Two actions before any transaction: notify renewal within the six-month window, and factor in the termination risk under the change-of-control clause.",
-      "question": "Does the Verdi contract renew automatically, and does it include a change-of-control clause? Compare the summary note against the contract body and cite exact passages.",
-      "reasoning": "The question sets the summary note (p.2) against the contract body. I extract the note's two claims: renewal by tacit renewal, and no change-of-control clause. I then look for the matching provisions: article 4.1 (p.10) instead requires an express written agreement six months before the term, and article 6.2 (p.12) does contain a change-of-control clause. Article 2.5 settles the conflict between the two documents. I cite each passage with its page so the review is defensible.",
-      "retrievalQueries": [
-        "tacit renewal summary note contract",
-        "article 4 term renewal express written agreement",
-        "change of control clause automatic termination",
-        "contractual order of precedence internal note"
+    {
+      "document": {},
+      "citations": [
+        { "id": 1, "fileId": "JUR-01", "fileName": "JUR-01_MSA_NimbusCore_v7_redline.pdf", "page": 11, "confidence": "95%", "quote": "Plafond : 12 mois de fees = 1,08 M€.", "highlightText": "12 mois de fees = 1,08 M€" },
+        { "id": 2, "fileId": "JUR-02", "fileName": "JUR-02_Politique_contractuelle_Asteria_v5-2.pdf", "page": 3, "confidence": "96%", "quote": "Minimum policy : 24 mois de fees = 2,16 M€, carve-outs réciproques.", "highlightText": "vingt-quatre mois de redevances" },
+        { "id": 3, "fileId": "JUR-01", "fileName": "JUR-01_MSA_NimbusCore_v7_redline.pdf", "page": 8, "confidence": "94%", "quote": "Résiliation pour convenance ouverte au seul fournisseur après 12 mois.", "highlightText": "le Fournisseur peut sortir après 12 mois" },
+        { "id": 4, "fileId": "JUR-02", "fileName": "JUR-02_Politique_contractuelle_Asteria_v5-2.pdf", "page": 4, "confidence": "95%", "quote": "Résiliation réciproque, préavis identique pour les deux parties.", "highlightText": "Réciproque, préavis identique pour les deux parties" },
+        { "id": 5, "fileId": "JUR-04", "fileName": "JUR-04_DPA_NimbusCore_v2.pdf", "page": 4, "confidence": "93%", "quote": "Notification 72h après confirmation.", "highlightText": "soixante-douze (72) heures après la" },
+        { "id": 6, "fileId": "JUR-02", "fileName": "JUR-02_Politique_contractuelle_Asteria_v5-2.pdf", "page": 5, "confidence": "95%", "quote": "Notification 24h après découverte.", "highlightText": "dans les 24 heures suivant sa" }
       ],
-      "threads": [
-        "Agent Prosperify"
+      "orchestrationDelays": [750, 950, 1450],
+      "steps": [
+        { "id": "intent", "action": "analyzing", "entities": ["policy Asteria", "écarts", "priorité"], "queries": "@queries", "reasoning": "@text.analyze" },
+        { "id": "search", "action": "searching", "queries": ["MSA vs politique contractuelle plafond résiliation", "incident 24h 72h découverte confirmation"], "reasoning": "@text.search" },
+        { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
-      "hallucinations": [
-        {
-          "start": 77,
-          "end": 90,
-          "reason": "Source conflict: the summary note assumes tacit renewal, whereas article 4.1 (p.10) expressly rules it out and requires an express written agreement.",
-          "score": 0.88,
-          "counterCitationId": 2,
-          "evidence": "The Parties expressly agree to rule out any tacit renewal. No performance after the term may amount to renewal."
+      "content": {
+        "fr": {
+          "storeName": "Juriste d'entreprise",
+          "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
+          "question": "Compare le paquet final à notre politique contractuelle et classe les écarts par priorité.",
+          "finalAnswer": "[Le plafond de responsabilité du MSA est limité à 12 mois de redevances, soit 1,08 M€](cite:1)[quand le standard interne impose au minimum 24 mois, soit 2,16 M€, avec des carve-outs réciproques](cite:2)[. La résiliation pour convenance n'est ouverte qu'au fournisseur après 12 mois](cite:3)[alors que la policy exige une faculté réciproque avec un préavis identique](cite:4)[. Le délai de notification d'incident du DPA part de la confirmation par l'équipe de sécurité, soit 72 heures](cite:5)[quand la policy exige 24 heures à partir de la découverte](cite:6).\n\n| Sujet | Contrat | Standard Asteria | Statut |\n| --- | --- | --- | --- |\n| Plafond | 12 mois = 1,08 M€ | 24 mois = 2,16 M€ | Prioritaire |\n| Résiliation | Fournisseur seul | Réciproque | Prioritaire |\n| Incident | 72h/confirmation | 24h/découverte | Prioritaire |\n| Non-renouvellement | 30 jours | ≥ 60 jours | Secondaire |\n| Disponibilité | SLA 99,5 % | Tier 1 ≥ 99,9 % | Secondaire |\n\nLe droit irlandais est acceptable sous réserve d'approbation Legal — ce n'est pas un point bloquant.",
+          "reasoning": "Je compare terme à terme le MSA négocié à la politique contractuelle interne, pour classer chaque écart par priorité.",
+          "retrievalQueries": ["MSA vs politique contractuelle plafond résiliation", "incident 24h 72h découverte confirmation"],
+          "threads": ["Agent Prosperify"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "Décomposer la demande : comparer chaque clause au standard policy puis classer par priorité.",
+            "search": "Rechercher le MSA négocié et la politique contractuelle interne.",
+            "generate": "Composer la réponse : écarts prioritaires puis secondaires, chacun sourcé des deux côtés.",
+            "thinking": "Trois écarts touchent des protections structurelles et sont prioritaires : le plafond de responsabilité (1,08 M€ contre un minimum de 2,16 M€), la résiliation asymétrique, et le délai d'incident (72h après confirmation contre 24h après découverte — deux points de départ différents qui peuvent créer un écart réel supérieur à 48h).\n\nDeux écarts sont secondaires : le SLA à 99,5% reste inférieur au minimum Tier 1 de 99,9% mais dispose déjà de crédits de service ; le préavis de non-renouvellement à 30 jours contre 60 jours est un délai de procédure. Le droit irlandais est déjà couvert par la policy sous réserve d'approbation.",
+            "ls": "Parcourir le workspace du dossier Asteria/NimbusCore.", "read": "Ouvrir le MSA et la politique contractuelle.", "screenshot": "Capturer un aperçu de page.", "lexical": "Rechercher les formulations exactes.", "lexicalResults": "Passages retrouvés.", "semantic": "Recherche sémantique.", "semanticResults": "Passage retrouvé.", "reviewNote": "Voir détail.",
+            "active": "Actifs", "archived": "Archivés", "chunks": "fragments", "closeDocument": "Fermer le document", "closeReview": "Fermer", "closeSidebar": "Fermer le panneau", "copy": "Copier", "edit": "Modifier", "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide.", "emptyTitle": "Aucun document ouvert", "entities": "entités", "justNow": "à l'instant", "metadata": "métadonnées", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Fils", "newChat": "Nouvelle conversation", "openDocument": "Ouvrir le lecteur de document", "openReview": "Essayer dans le chat", "openSidebar": "Ouvrir la liste des fils", "pages": "pages", "papers": "Papers", "regenerate": "Régénérer", "sourceFile": "Fichier", "storeStreaming": "Génération", "today": "Aujourd'hui", "tourBack": "Retour", "tourDone": "Terminer", "tourNext": "Suivant", "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici.", "tourOrchestrationTitle": "Suivez le raisonnement de l'agent", "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.", "tourPdfTitle": "Accédez à la source", "tourSkip": "Passer", "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.", "tourSourcesTitle": "Chaque affirmation est citée"
+          }
+        },
+        "en": {
+          "storeName": "Corporate lawyer",
+          "storeLabels": { "risk": "Risk & compliance", "legal": "Legal reviewer", "research": "Research scout" },
+          "question": "Compare le paquet final à notre politique contractuelle et classe les écarts par priorité.",
+          "finalAnswer": "[The liability cap is 12 months of fees](cite:1)[against a 24-month policy minimum](cite:2)[. Termination for convenience is one-sided](cite:3)[against a reciprocal requirement](cite:4)[. Incident notice runs 72h from confirmation](cite:5)[against 24h from discovery](cite:6).",
+          "reasoning": "English version pending.",
+          "retrievalQueries": ["MSA vs policy cap termination", "incident 24h 72h discovery confirmation"],
+          "threads": ["Prosperify agent"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "English version pending.", "search": "English version pending.", "generate": "English version pending.", "thinking": "English version pending.",
+            "ls": "English version pending.", "read": "English version pending.", "screenshot": "English version pending.", "lexical": "English version pending.", "lexicalResults": "English version pending.", "semantic": "English version pending.", "semanticResults": "English version pending.", "reviewNote": "English version pending.",
+            "active": "Active", "archived": "Archived", "chunks": "chunks", "closeDocument": "Close document", "closeReview": "Close", "closeSidebar": "Close sidebar", "copy": "Copy", "edit": "Edit", "emptySubtitle": "Close this panel to open an empty document.", "emptyTitle": "No document open", "entities": "entities", "justNow": "just now", "metadata": "metadata", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Threads", "newChat": "New chat", "openDocument": "Open document viewer", "openReview": "Try in chat", "openSidebar": "Open thread list", "pages": "pages", "papers": "Papers", "regenerate": "Regenerate", "sourceFile": "File", "storeStreaming": "Generating", "today": "Today", "tourBack": "Back", "tourDone": "Done", "tourNext": "Next", "tourOrchestrationContent": "Every reasoning and search step is traced here.", "tourOrchestrationTitle": "Follow the agent's reasoning", "tourPdfContent": "Citations open the PDF at the exact highlighted passage.", "tourPdfTitle": "Jump to the source", "tourSkip": "Skip", "tourSourcesContent": "Each sentence links to the passage that supports it.", "tourSourcesTitle": "Every claim is cited"
+          }
         }
+      }
+    },
+    {
+      "document": {},
+      "citations": [
+        { "id": 1, "fileId": "JUR-06", "fileName": "JUR-06_Order_Form_Asteria_NimbusCore_v4.pdf", "page": 2, "confidence": "96%", "quote": "Disponibilité 99,9 % — cible contractuelle.", "highlightText": "99,9 % — cible contractuelle" },
+        { "id": 2, "fileId": "JUR-03", "fileName": "JUR-03_SLA_NimbusCore_v3.pdf", "page": 2, "confidence": "95%", "quote": "Taux mesuré de 99,5 %.", "highlightText": "Le taux mesuré selon la présente annexe est de 99,5 %" },
+        { "id": 3, "fileId": "JUR-05", "fileName": "JUR-05_Note_negociation_Legal_Achats.pdf", "page": 3, "confidence": "88%", "quote": "Mention erronée « SLA resolved » dans le suivi achats.", "highlightText": "SLA RESOLVED" },
+        { "id": 4, "fileId": "JUR-04", "fileName": "JUR-04_DPA_NimbusCore_v2.pdf", "page": 4, "confidence": "94%", "quote": "72h après confirmation.", "highlightText": "soixante-douze (72) heures après la" },
+        { "id": 5, "fileId": "JUR-02", "fileName": "JUR-02_Politique_contractuelle_Asteria_v5-2.pdf", "page": 5, "confidence": "95%", "quote": "24h après découverte.", "highlightText": "dans les 24 heures suivant sa" },
+        { "id": 6, "fileId": "JUR-01", "fileName": "JUR-01_MSA_NimbusCore_v7_redline.pdf", "page": 18, "confidence": "90%", "quote": "Ordre de préséance ambigu sur la disponibilité.", "highlightText": "Le niveau de disponibilité est à la fois une mention" }
       ],
-      "stepText": {
-        "analyze": "Breaking down the request: identify the renewal mechanism, check whether a change-of-control clause exists, compare the summary note against the contract body.",
-        "ls": "Browsing the store to list the documents available on the Verdi contract.",
-        "read": "Opening the PDF and reading key sections: summary note (p.2), article 4 (p.10), article 6 (p.12).",
-        "screenshot": "Capturing a page preview for visual verification.",
-        "lexical": "Searching exact wording: tacit renewal, express written agreement, change of control.",
-        "lexicalResults": "Retrieved and ranked passages: summary note p.2, article 4.1 p.10, article 6.2 p.12.",
-        "semantic": "Running a second semantic search on the contractual order of precedence.",
-        "semanticResults": "Retrieved article 2.5 p.5: no internal note may alter the scope of the provisions.",
-        "reviewNote": "Where the summary note and the contract conflict, the contract body prevails: articles 4.1 and 6.2 govern.",
-        "generate": "Composing a structured note: the summary claim, the actual provision, the contradiction, the operational consequence.",
-        "thinking": "Drafting rule: the question sets a working document against the contract itself. Cite the claim, then the provision, and let the gap show. The reader needs to see both wordings and know which one governs. No clause is paraphrased: the contract text is quoted verbatim."
+      "orchestrationDelays": [750, 1000, 1450],
+      "steps": [
+        { "id": "intent", "action": "analyzing", "entities": ["SLA", "incident", "préséance"], "queries": "@queries", "reasoning": "@text.analyze" },
+        { "id": "search", "action": "searching", "queries": ["disponibilité 99,9 vs 99,5", "notification incident délai contradiction"], "reasoning": "@text.search" },
+        { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
+      ],
+      "content": {
+        "fr": {
+          "storeName": "Juriste d'entreprise",
+          "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
+          "question": "Les documents se contredisent-ils sur le niveau de service et la sécurité ?",
+          "finalAnswer": "Oui, sur les deux plans. [L'Order Form affiche 99,9 % comme « cible contractuelle »](cite:1)[alors que le SLA, seul document qui définit la méthode de mesure, n'engage que 99,5 %](cite:2)[, et la note de négociation affirme à tort que ce sujet est « résolu »](cite:3). Sur la sécurité, [le DPA fait courir le délai de notification à 72 heures à partir de la confirmation de l'incident](cite:4)[quand la politique interne exige 24 heures à partir de sa découverte](cite:5)[. L'ordre de préséance du MSA donne priorité au bon de commande pour les éléments commerciaux, mais ne précise pas lequel des deux chiffres de disponibilité constitue l'engagement mesurable](cite:6).\n\nCes deux contradictions doivent être résolues avant signature.",
+          "reasoning": "Je recherche chaque mention du taux de disponibilité et du délai d'incident dans les six documents, pour vérifier s'ils concordent, puis je vérifie si l'ordre de préséance du MSA tranche ces conflits.",
+          "retrievalQueries": ["disponibilité 99,9 vs 99,5", "notification incident délai contradiction"],
+          "threads": ["Agent Prosperify"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "Décomposer la demande : vérifier la cohérence du SLA puis du délai d'incident entre tous les documents.",
+            "search": "Rechercher chaque mention de disponibilité et de délai de notification.",
+            "generate": "Composer la réponse : deux contradictions, sourcées des deux côtés, puis limite de l'ordre de préséance.",
+            "thinking": "Sur le SLA : l'Order Form dit 99,9% « cible », le SLA dit 99,5%, et la note de négociation dit « résolu » en citant un email du fournisseur — mais le SLA signé transmis deux jours plus tard contredit cet email.\n\nSur l'incident : le DPA fixe 72h après confirmation, la policy exige 24h après découverte — deux points de départ différents, pas seulement deux durées différentes.\n\nL'ordre de préséance du MSA règle les conflits commerciaux mais ne dit pas explicitement lequel des deux chiffres de disponibilité doit prévaloir en cas de litige.",
+            "ls": "Parcourir le workspace du dossier Asteria/NimbusCore.", "read": "Ouvrir l'Order Form, le SLA, le DPA et la note de négociation.", "screenshot": "Capturer un aperçu de page.", "lexical": "Rechercher les formulations exactes.", "lexicalResults": "Passages retrouvés.", "semantic": "Recherche sémantique.", "semanticResults": "Passage retrouvé.", "reviewNote": "Voir détail.",
+            "active": "Actifs", "archived": "Archivés", "chunks": "fragments", "closeDocument": "Fermer le document", "closeReview": "Fermer", "closeSidebar": "Fermer le panneau", "copy": "Copier", "edit": "Modifier", "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide.", "emptyTitle": "Aucun document ouvert", "entities": "entités", "justNow": "à l'instant", "metadata": "métadonnées", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Fils", "newChat": "Nouvelle conversation", "openDocument": "Ouvrir le lecteur de document", "openReview": "Essayer dans le chat", "openSidebar": "Ouvrir la liste des fils", "pages": "pages", "papers": "Papers", "regenerate": "Régénérer", "sourceFile": "Fichier", "storeStreaming": "Génération", "today": "Aujourd'hui", "tourBack": "Retour", "tourDone": "Terminer", "tourNext": "Suivant", "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici.", "tourOrchestrationTitle": "Suivez le raisonnement de l'agent", "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.", "tourPdfTitle": "Accédez à la source", "tourSkip": "Passer", "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.", "tourSourcesTitle": "Chaque affirmation est citée"
+          }
+        },
+        "en": {
+          "storeName": "Corporate lawyer",
+          "storeLabels": { "risk": "Risk & compliance", "legal": "Legal reviewer", "research": "Research scout" },
+          "question": "Les documents se contredisent-ils sur le niveau de service et la sécurité ?",
+          "finalAnswer": "Yes, on both fronts. [The Order Form shows 99.9% as a « contractual target »](cite:1)[while the SLA, the only document defining the measurement method, commits to 99.5%](cite:2)[, and the negotiation note wrongly states this is « resolved »](cite:3). [The DPA runs the incident notice from confirmation (72h)](cite:4)[against the policy's 24h from discovery](cite:5)[, and the MSA precedence order doesn't settle which availability figure applies](cite:6).",
+          "reasoning": "English version pending.",
+          "retrievalQueries": ["availability 99.9 vs 99.5", "incident notice contradiction"],
+          "threads": ["Prosperify agent"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "English version pending.", "search": "English version pending.", "generate": "English version pending.", "thinking": "English version pending.",
+            "ls": "English version pending.", "read": "English version pending.", "screenshot": "English version pending.", "lexical": "English version pending.", "lexicalResults": "English version pending.", "semantic": "English version pending.", "semanticResults": "English version pending.", "reviewNote": "English version pending.",
+            "active": "Active", "archived": "Archived", "chunks": "chunks", "closeDocument": "Close document", "closeReview": "Close", "closeSidebar": "Close sidebar", "copy": "Copy", "edit": "Edit", "emptySubtitle": "Close this panel to open an empty document.", "emptyTitle": "No document open", "entities": "entities", "justNow": "just now", "metadata": "metadata", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Threads", "newChat": "New chat", "openDocument": "Open document viewer", "openReview": "Try in chat", "openSidebar": "Open thread list", "pages": "pages", "papers": "Papers", "regenerate": "Regenerate", "sourceFile": "File", "storeStreaming": "Generating", "today": "Today", "tourBack": "Back", "tourDone": "Done", "tourNext": "Next", "tourOrchestrationContent": "Every reasoning and search step is traced here.", "tourOrchestrationTitle": "Follow the agent's reasoning", "tourPdfContent": "Citations open the PDF at the exact highlighted passage.", "tourPdfTitle": "Jump to the source", "tourSkip": "Skip", "tourSourcesContent": "Each sentence links to the passage that supports it.", "tourSourcesTitle": "Every claim is cited"
+          }
+        }
+      }
+    },
+    {
+      "document": {},
+      "citations": [
+        { "id": 1, "fileId": "JUR-01", "fileName": "JUR-01_MSA_NimbusCore_v7_redline.pdf", "page": 11, "confidence": "95%", "quote": "Plafond actuel : 1,08 M€.", "highlightText": "12 mois de fees = 1,08 M€" },
+        { "id": 2, "fileId": "JUR-02", "fileName": "JUR-02_Politique_contractuelle_Asteria_v5-2.pdf", "page": 3, "confidence": "96%", "quote": "Minimum policy : 2,16 M€.", "highlightText": "vingt-quatre mois de redevances" },
+        { "id": 3, "fileId": "JUR-01", "fileName": "JUR-01_MSA_NimbusCore_v7_redline.pdf", "page": 8, "confidence": "94%", "quote": "Résiliation au seul bénéfice du fournisseur.", "highlightText": "le Fournisseur peut sortir après 12 mois" },
+        { "id": 4, "fileId": "JUR-02", "fileName": "JUR-02_Politique_contractuelle_Asteria_v5-2.pdf", "page": 4, "confidence": "95%", "quote": "Résiliation réciproque exigée.", "highlightText": "Réciproque, préavis identique pour les deux parties" },
+        { "id": 5, "fileId": "JUR-04", "fileName": "JUR-04_DPA_NimbusCore_v2.pdf", "page": 4, "confidence": "93%", "quote": "72h après confirmation.", "highlightText": "soixante-douze (72) heures après la" },
+        { "id": 6, "fileId": "JUR-02", "fileName": "JUR-02_Politique_contractuelle_Asteria_v5-2.pdf", "page": 5, "confidence": "95%", "quote": "24h après découverte exigées.", "highlightText": "dans les 24 heures suivant sa" },
+        { "id": 7, "fileId": "JUR-04", "fileName": "JUR-04_DPA_NimbusCore_v2.pdf", "page": 6, "confidence": "89%", "quote": "Conservation après la fin du contrat : à confirmer.", "highlightText": "conservation après la fin du contrat" }
+      ],
+      "orchestrationDelays": [800, 1050, 1500],
+      "steps": [
+        { "id": "intent", "action": "analyzing", "entities": ["briefing négociation", "Legal", "formulations"], "queries": "@queries", "reasoning": "@text.analyze" },
+        { "id": "search", "action": "searching", "queries": ["écarts prioritaires plafond résiliation incident", "formulation cible politique contractuelle"], "reasoning": "@text.search" },
+        { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
+      ],
+      "content": {
+        "fr": {
+          "storeName": "Juriste d'entreprise",
+          "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
+          "question": "Prépare un briefing de négociation prêt pour Legal avec les formulations à obtenir.",
+          "finalAnswer": "NON PRÊT À SIGNER. Cinq formulations à obtenir, par priorité : [porter le plafond de responsabilité à 24 mois de redevances avec des carve-outs réciproques](cite:1)[, conformément au minimum interne](cite:2) ; [ouvrir la résiliation pour convenance aux deux parties](cite:3)[avec un préavis identique, comme l'exige la policy](cite:4) ; [faire courir la notification d'incident à 24 heures après découverte, et non après confirmation](cite:5)[, seul point de départ accepté en interne](cite:6). En complément : porter le SLA à 99,9 % ferme, et le préavis de non-renouvellement à 60 jours.\n\nÀ suivre hors priorité : [la durée de conservation des données après la fin du contrat, laissée « à confirmer » dans le DPA](cite:7), sans engagement chiffré. La décision finale de signature reste à Legal.",
+          "reasoning": "Je regroupe les écarts déjà identifiés en demandes de négociation concrètes, avec la formulation cible tirée de la politique interne pour chacune, et je signale le point d'information manquant à suivre séparément.",
+          "retrievalQueries": ["écarts prioritaires plafond résiliation incident", "formulation cible politique contractuelle"],
+          "threads": ["Agent Prosperify"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "Décomposer la demande : convertir chaque écart en formulation à obtenir, classée par priorité.",
+            "search": "Rechercher le MSA, la politique contractuelle et le DPA pour les formulations cibles.",
+            "generate": "Composer le briefing : conclusion, formulations prioritaires puis secondaires, point de suivi.",
+            "thinking": "Le briefing doit être actionnable pour Legal : pour chaque écart, je donne la position actuelle du MSA, le standard policy qui doit remplacer, et la citation double pour vérification rapide. Les trois écarts prioritaires (plafond, résiliation, incident) conditionnent la signature ; SLA et préavis sont importants mais négociables en position de repli. La rétention DPA « à confirmer » n'est pas un écart au sens strict — c'est une information manquante à compléter, pas nécessairement avant signature.",
+            "ls": "Parcourir le workspace du dossier Asteria/NimbusCore.", "read": "Ouvrir le MSA, la politique contractuelle et le DPA.", "screenshot": "Capturer un aperçu de page.", "lexical": "Rechercher les formulations exactes.", "lexicalResults": "Passages retrouvés.", "semantic": "Recherche sémantique.", "semanticResults": "Passage retrouvé.", "reviewNote": "Voir détail.",
+            "active": "Actifs", "archived": "Archivés", "chunks": "fragments", "closeDocument": "Fermer le document", "closeReview": "Fermer", "closeSidebar": "Fermer le panneau", "copy": "Copier", "edit": "Modifier", "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide.", "emptyTitle": "Aucun document ouvert", "entities": "entités", "justNow": "à l'instant", "metadata": "métadonnées", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Fils", "newChat": "Nouvelle conversation", "openDocument": "Ouvrir le lecteur de document", "openReview": "Essayer dans le chat", "openSidebar": "Ouvrir la liste des fils", "pages": "pages", "papers": "Papers", "regenerate": "Régénérer", "sourceFile": "Fichier", "storeStreaming": "Génération", "today": "Aujourd'hui", "tourBack": "Retour", "tourDone": "Terminer", "tourNext": "Suivant", "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici.", "tourOrchestrationTitle": "Suivez le raisonnement de l'agent", "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.", "tourPdfTitle": "Accédez à la source", "tourSkip": "Passer", "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.", "tourSourcesTitle": "Chaque affirmation est citée"
+          }
+        },
+        "en": {
+          "storeName": "Corporate lawyer",
+          "storeLabels": { "risk": "Risk & compliance", "legal": "Legal reviewer", "research": "Research scout" },
+          "question": "Prépare un briefing de négociation prêt pour Legal avec les formulations à obtenir.",
+          "finalAnswer": "NOT READY TO SIGN. [Raise the liability cap to 24 months with reciprocal carve-outs](cite:1)[per the internal minimum](cite:2)[; open termination for convenience to both parties](cite:3)[with matching notice](cite:4)[; move the incident notice to 24h from discovery](cite:5)[, the only accepted starting point internally](cite:6). Follow-up, not a blocker: [post-contract data retention is left « to confirm » in the DPA](cite:7).",
+          "reasoning": "English version pending.",
+          "retrievalQueries": ["priority gaps cap termination incident", "target wording internal policy"],
+          "threads": ["Prosperify agent"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "English version pending.", "search": "English version pending.", "generate": "English version pending.", "thinking": "English version pending.",
+            "ls": "English version pending.", "read": "English version pending.", "screenshot": "English version pending.", "lexical": "English version pending.", "lexicalResults": "English version pending.", "semantic": "English version pending.", "semanticResults": "English version pending.", "reviewNote": "English version pending.",
+            "active": "Active", "archived": "Archived", "chunks": "chunks", "closeDocument": "Close document", "closeReview": "Close", "closeSidebar": "Close sidebar", "copy": "Copy", "edit": "Edit", "emptySubtitle": "Close this panel to open an empty document.", "emptyTitle": "No document open", "entities": "entities", "justNow": "just now", "metadata": "metadata", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Threads", "newChat": "New chat", "openDocument": "Open document viewer", "openReview": "Try in chat", "openSidebar": "Open thread list", "pages": "pages", "papers": "Papers", "regenerate": "Regenerate", "sourceFile": "File", "storeStreaming": "Generating", "today": "Today", "tourBack": "Back", "tourDone": "Done", "tourNext": "Next", "tourOrchestrationContent": "Every reasoning and search step is traced here.", "tourOrchestrationTitle": "Follow the agent's reasoning", "tourPdfContent": "Citations open the PDF at the exact highlighted passage.", "tourPdfTitle": "Jump to the source", "tourSkip": "Skip", "tourSourcesContent": "Each sentence links to the passage that supports it.", "tourSourcesTitle": "Every claim is cited"
+          }
+        }
       }
     }
-  }
+  ]
 }

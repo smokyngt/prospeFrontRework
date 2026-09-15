@@ -6,33 +6,19 @@ import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ContactForm } from "@/features/contact/components";
-import { LazyHeroDemo } from "@/features/landing/components/demo/lazy-hero-demo";
+import { SectorHeroDemo } from "@/features/landing/components/sectors/sector-hero-demo";
 import { LandingFooter } from "@/features/landing/components/footer";
 import { LandingNavbar } from "@/features/landing/components/navigation";
-import { useCasesMenuLink } from "@/features/landing/components/navigation/navbar";
 import { RevealSection } from "@/features/landing/components/reveal";
 import i18n from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 import type { DemoSector } from "@/features/landing/components/demo-v2/data";
-import type { NavbarLink } from "@/features/landing/components/navigation/navbar";
 import type React from "react";
 
 const ACCENT = "#FF6A13";
 
 export type SectorId = "legal" | "healthcare" | "finance";
-
-const NAV_LINKS: NavbarLink[] = [
-  // depuis une page secteur, « Fonctionnalites » renvoie a la section de la home
-  { labelKey: "nav.features", href: "/#features" },
-  // le menu « Cas d'usage » remplace l'ancre interne : meme libelle, et il
-  // permet en plus de passer d'un secteur a l'autre
-  useCasesMenuLink(),
-  { labelKey: "sectors.common.nav.workflow", href: "#workflow" },
-  { labelKey: "sectors.common.nav.security", href: "#security" },
-  { labelKey: "sectors.common.nav.deployment", href: "#deployment" },
-  { labelKey: "sectors.common.nav.faq", href: "#faq" },
-];
 
 /** Chaque section reçoit son rang : l'ordre change selon le secteur. */
 type SectionProps = { number: string; sector: SectorId };
@@ -54,6 +40,8 @@ type Offer = { badge: string; features: string[]; meta: string; title: string };
 type FaqItem = { answer: string; question: string };
 type ChallengeItem = { description: string; title: string };
 type ComparisonRow = { criterion: string; generic: string; prosperify: string };
+type InsightItem = { finding: string; question: string; sources: string[]; tag: string };
+type CriterionItem = { description: string; title: string };
 
 /* ──────────────────────────────────────────────────────── */
 /*  Layout helpers — repris de la landing                    */
@@ -78,6 +66,19 @@ function SectionLabel({ number, label }: { label: string; number: string }) {
 
 function Divider() {
   return <div className="h-px" style={{ background: "var(--pf-border)" }} />;
+}
+
+/** CTA de fin de section : ramène vers la démo ou vers le formulaire de contact. */
+function SectionCta({ children, href }: { children: React.ReactNode; href: string }) {
+  return (
+    <a
+      className="mt-9 inline-flex items-center gap-2 text-[13.5px] font-semibold text-[#FF6A13] transition-colors hover:text-[#ff8232]"
+      href={href}
+    >
+      {children}
+      <span aria-hidden="true">→</span>
+    </a>
+  );
 }
 
 function Section({ children, id }: { children: React.ReactNode; id?: string }) {
@@ -260,7 +261,7 @@ function SectorHero({ sector }: { sector: SectorId }) {
               animation: "pf-fadeUp 0.6s ease",
             }}
           >
-            <LazyHeroDemo sector={demoSector} />
+            <SectorHeroDemo sector={demoSector} />
           </div>
         ) : (
           <div
@@ -384,6 +385,8 @@ function Challenge({ number, sector }: SectionProps) {
           </div>
         ))}
       </div>
+
+      <SectionCta href="#hero">{t(`sectors.${sector}.challenge.cta`)}</SectionCta>
     </Section>
   );
 }
@@ -651,6 +654,199 @@ function SourcedExample({ number, sector }: SectionProps) {
           {t("sectors.common.example.note")}
         </div>
       </div>
+    </Section>
+  );
+}
+
+/* ──────────────────────────────────────────────────────── */
+/*  Preuves tirées de la démo                                */
+/* ──────────────────────────────────────────────────────── */
+
+function SectorInsights({ number, sector }: SectionProps) {
+  const { t } = useTranslation();
+  const items = t(`sectors.${sector}.insights.items`, {
+    returnObjects: true,
+  }) as InsightItem[];
+
+  return (
+    <Section id="insights">
+      <SectionLabel
+        number={number}
+        label={t("sectors.common.labels.insights")}
+      />
+      <SectionTitle maxWidth={780}>
+        {t(`sectors.${sector}.insights.title`)}
+      </SectionTitle>
+      <p className="m-0 mt-[18px] max-w-[680px] text-[1.05rem] text-[var(--pf-fg-muted)]">
+        {t(`sectors.${sector}.insights.intro`)}
+      </p>
+
+      <div
+        className="mt-11 grid grid-cols-1 gap-px border lg:grid-cols-2"
+        style={{
+          borderColor: "var(--pf-border)",
+          background: "var(--pf-border)",
+        }}
+      >
+        {items.map((item, index) => (
+          <div
+            key={item.question}
+            className="flex flex-col gap-4"
+            style={{
+              background: "var(--pf-bg-card)",
+              padding: "clamp(24px, 2.6vw, 32px)",
+            }}
+          >
+            <div className="flex items-center justify-between gap-3">
+              <span className="font-mono text-[11px] font-semibold text-[#FF6A13]">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="text-right font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--pf-fg-dim)]">
+                {item.tag}
+              </span>
+            </div>
+            <p className="m-0 text-[1rem] font-semibold leading-[1.5] text-[var(--pf-fg)]">
+              « {item.question} »
+            </p>
+            <p className="m-0 text-[13.5px] leading-[1.65] text-[var(--pf-fg-muted)]">
+              {item.finding}
+            </p>
+            <div className="mt-1 flex flex-wrap gap-2">
+              {item.sources.map((source) => (
+                <span
+                  key={source}
+                  className="font-mono text-[10px] text-[var(--pf-fg-dim)]"
+                  style={{ border: "1px solid var(--pf-border)", padding: "3px 7px" }}
+                >
+                  {source}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-6 flex items-center gap-2.5 font-mono text-[11px] text-[var(--pf-fg-dim)]">
+        <span className="h-1.5 w-1.5 bg-[#FF6A13]" />
+        {t(`sectors.${sector}.insights.footnote`)}
+      </div>
+
+      <SectionCta href="#contact">{t(`sectors.${sector}.insights.cta`)}</SectionCta>
+    </Section>
+  );
+}
+
+/* ──────────────────────────────────────────────────────── */
+/*  Critères de fiabilité, hiérarchisés par secteur           */
+/* ──────────────────────────────────────────────────────── */
+
+function SectorCriteria({ number, sector }: SectionProps) {
+  const { t } = useTranslation();
+  const items = t(`sectors.${sector}.criteria.items`, {
+    returnObjects: true,
+  }) as CriterionItem[];
+
+  return (
+    <Section id="criteria">
+      <SectionLabel
+        number={number}
+        label={t("sectors.common.labels.criteria")}
+      />
+      <SectionTitle maxWidth={780}>
+        {t(`sectors.${sector}.criteria.title`)}
+      </SectionTitle>
+      <p className="m-0 mt-[18px] max-w-[660px] text-[1.05rem] text-[var(--pf-fg-muted)]">
+        {t(`sectors.${sector}.criteria.intro`)}
+      </p>
+
+      <div className="mt-11 flex flex-col" style={{ border: "1px solid var(--pf-border)" }}>
+        {items.map((item, index) => (
+          <div
+            key={item.title}
+            className="flex items-start gap-5 border-b last:border-b-0"
+            style={{ borderColor: "var(--pf-border)", padding: "clamp(20px, 2.4vw, 28px)" }}
+          >
+            <span
+              className="flex h-9 w-9 shrink-0 items-center justify-center font-mono text-[13px] font-bold text-[#FF6A13]"
+              style={{ background: "var(--pf-accent-bg)", border: `1px solid ${ACCENT}` }}
+            >
+              {index + 1}
+            </span>
+            <div className="min-w-0">
+              <h3 className="m-0 text-[1.05rem] font-bold text-[var(--pf-fg)]">
+                {item.title}
+              </h3>
+              <p className="m-0 mt-2 text-[13.5px] leading-[1.6] text-[var(--pf-fg-muted)]">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <SectionCta href="#contact">{t(`sectors.${sector}.criteria.cta`)}</SectionCta>
+    </Section>
+  );
+}
+
+/* ──────────────────────────────────────────────────────── */
+/*  Ce que le DSI va vérifier                                */
+/* ──────────────────────────────────────────────────────── */
+
+function SectorIntegration({ number, sector }: SectionProps) {
+  const { t } = useTranslation();
+  const items = t(`sectors.${sector}.integration.items`, {
+    returnObjects: true,
+  }) as CriterionItem[];
+
+  return (
+    <Section id="integration">
+      <SectionLabel
+        number={number}
+        label={t("sectors.common.labels.integration")}
+      />
+      <SectionTitle maxWidth={820}>
+        {t(`sectors.${sector}.integration.title`)}
+      </SectionTitle>
+      <p className="m-0 mt-[18px] max-w-[720px] text-[1.05rem] leading-[1.65] text-[var(--pf-fg-muted)]">
+        {t(`sectors.${sector}.integration.intro`)}
+      </p>
+
+      <div
+        className="mt-11 grid grid-cols-1 gap-px border md:grid-cols-2"
+        style={{
+          borderColor: "var(--pf-border)",
+          background: "var(--pf-border)",
+        }}
+      >
+        {items.map((item, index) => (
+          <div
+            key={item.title}
+            className="flex flex-col gap-3"
+            style={{
+              background: "var(--pf-bg-card)",
+              padding: "clamp(24px, 2.6vw, 32px)",
+            }}
+          >
+            <div className="flex items-center gap-3">
+              <span
+                className="flex h-8 w-8 shrink-0 items-center justify-center font-mono text-[12px] font-semibold text-[#FF6A13]"
+                style={{ background: "var(--pf-accent-bg)", border: `1px solid ${ACCENT}` }}
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="m-0 text-[1.02rem] font-bold text-[var(--pf-fg)]">
+                {item.title}
+              </h3>
+            </div>
+            <p className="m-0 text-[13.5px] leading-[1.65] text-[var(--pf-fg-muted)]">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <SectionCta href="#contact">{t(`sectors.${sector}.integration.cta`)}</SectionCta>
     </Section>
   );
 }
@@ -1048,6 +1244,9 @@ type SectionKey =
   | "workflow"
   | "security"
   | "example"
+  | "insights"
+  | "criteria"
+  | "integration"
   | "comparison"
   | "deployment"
   | "faq"
@@ -1062,6 +1261,9 @@ const SECTION_COMPONENTS: Record<
   workflow: WorkflowRag,
   security: Security,
   example: SourcedExample,
+  insights: SectorInsights,
+  criteria: SectorCriteria,
+  integration: SectorIntegration,
   comparison: GenericComparison,
   deployment: Deployment,
   faq: SectorFaq,
@@ -1072,6 +1274,11 @@ const SECTION_COMPONENTS: Record<
  * L'ordre des sections suit la hiérarchie d'arguments du secteur :
  * juridique → la preuve d'abord, santé → la sécurité d'abord,
  * finance → la vitesse d'abord.
+ *
+ * Finance a été reconstruite pour coller aux problématiques du secteur
+ * (preuves tirées de la démo, critères de fiabilité propres à la finance)
+ * plutôt que de dérouler les sections génériques de la home ; juridique et
+ * santé gardent la structure précédente en attendant la même passe.
  */
 const SECTION_ORDER: Record<SectorId, SectionKey[]> = {
   legal: [
@@ -1098,11 +1305,10 @@ const SECTION_ORDER: Record<SectorId, SectionKey[]> = {
   ],
   finance: [
     "challenge",
-    "useCases",
-    "workflow",
-    "example",
+    "insights",
+    "criteria",
+    "integration",
     "comparison",
-    "security",
     "deployment",
     "faq",
     "contact",
@@ -1146,7 +1352,8 @@ export function SectorPage({ lang, sector }: SectorPageProps) {
         }}
       />
 
-      <LandingNavbar badge={t(`sectors.${sector}.label`)} links={NAV_LINKS} />
+      {/* Navbar identique sur toutes les pages : mêmes liens que la home. */}
+      <LandingNavbar badge={t(`sectors.${sector}.label`)} />
 
       <main className="relative z-10 [overflow-anchor:none]">
         <div

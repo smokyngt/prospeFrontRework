@@ -1,34 +1,19 @@
 import finance from './demo-content.json';
-import healthcareScenario from './healthcare.json';
-import legalScenario from './legal.json';
+import healthcare from './healthcare.json';
+import legal from './legal.json';
 
 export type DemoSector = 'finance' | 'healthcare' | 'legal';
 
 export type DemoData = typeof finance;
 
 /**
- * Les jeux `legal.json` et `healthcare.json` ne portent que le scénario
- * (document, citations, étapes, textes). Tout le décor — stores, dossiers,
- * cadence d'orchestration, streaming, visite guidée et libellés `ui` — est
- * commun et repris du jeu finance.
+ * Chaque secteur porte son propre corpus réel (fichiers, scénarios) : plus de
+ * décor emprunté à `finance`, les trois jeux sont autonomes.
  */
-function withSharedChrome(scenario: unknown): DemoData {
-  const sector = scenario as DemoData;
-
-  return {
-    ...finance,
-    ...sector,
-    content: {
-      fr: { ...finance.content.fr, ...sector.content.fr },
-      en: { ...finance.content.en, ...sector.content.en },
-    },
-  } as unknown as DemoData;
-}
-
 const datasets: Record<DemoSector, DemoData> = {
   finance,
-  healthcare: withSharedChrome(healthcareScenario),
-  legal: withSharedChrome(legalScenario),
+  healthcare: healthcare as DemoData,
+  legal: legal as DemoData,
 };
 
 export const DEMO_SECTORS = Object.keys(datasets) as DemoSector[];

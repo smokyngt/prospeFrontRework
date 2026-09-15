@@ -58,9 +58,13 @@ type LazyHeroDemoProps = {
   /** Incrémenté pour ouvrir la démo plein écran et lancer la visite guidée. */
   autoOpenTick?: number;
   onTourEnd?: () => void;
-  /** Contenu du voile affiché au survol de l'aperçu (choix du secteur). */
+  /** Contenu du voile affiché au survol de l'aperçu (choix du secteur ou du prompt). */
   overlay?: ReactNode;
   sector?: DemoSector;
+  /** Quel prompt (parmi les 4 de demo-flow.md) est actuellement joué. */
+  promptIndex?: number;
+  /** Aperçu avant choix de secteur : fait défiler la première question de chaque secteur. */
+  sectorTeaser?: boolean;
 };
 
 export function LazyHeroDemo({
@@ -68,6 +72,8 @@ export function LazyHeroDemo({
   onTourEnd,
   overlay,
   sector,
+  promptIndex,
+  sectorTeaser,
 }: LazyHeroDemoProps) {
   const [ready, setReady] = useState(false);
 
@@ -94,6 +100,8 @@ export function LazyHeroDemo({
         onTourEnd={onTourEnd}
         overlay={overlay}
         sector={sector}
+        promptIndex={promptIndex}
+        sectorTeaser={sectorTeaser}
       />
     );
   }

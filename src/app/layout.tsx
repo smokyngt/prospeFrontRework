@@ -1,7 +1,8 @@
 import './globals.css';
 
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
+import { GeistSans } from 'geist/font/sans';
 import { Suspense } from 'react';
 
 import { canonicalUrl, SCHEMA_ORG, SITE_URL } from '@/config/constants';
@@ -17,11 +18,7 @@ const siteDescription =
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
-const bodyFont = Inter({
-  subsets: ['latin'],
-  variable: '--font-body',
-  display: 'swap',
-});
+const bodyFont = GeistSans;
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],

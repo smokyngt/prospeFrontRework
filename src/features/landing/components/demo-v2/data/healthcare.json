@@ -1,378 +1,251 @@
 {
-  "pdf": {
-    "totalPages": 14,
-    "url": "/assets/demo/Protocole_HELIOS-2.pdf"
-  },
+  "pdf": { "totalPages": 3, "url": "/assets/demo-usecase/healthcare/SAN-01_Note_consultation_medecine_generale_2026-01-12.pdf" },
   "files": [
-    {
-      "fileId": "demo-helios2-protocole",
-      "fileName": "Protocole_HELIOS-2.pdf",
-      "totalPages": 14,
-      "url": "/assets/demo/Protocole_HELIOS-2.pdf",
-      "metadata": {
-        "fileName": "Protocole_HELIOS-2.pdf",
-        "mime": "application/pdf",
-        "pages": "14",
-        "sourceAccess": "Secure workspace",
-        "sourceParser": "pdf text + page preview"
-      }
-    }
-  ],
-  "filterFiles": [
-    "Protocole_HELIOS-2.pdf"
+    { "fileId": "SAN-01", "fileName": "SAN-01_Note_consultation_medecine_generale_2026-01-12.pdf", "totalPages": 3, "url": "/assets/demo-usecase/healthcare/SAN-01_Note_consultation_medecine_generale_2026-01-12.pdf", "metadata": { "fileName": "SAN-01_Note_consultation_medecine_generale_2026-01-12.pdf", "mime": "application/pdf", "pages": "3", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" } },
+    { "fileId": "SAN-02", "fileName": "SAN-02_Ordonnance_active_2026-01-15.pdf", "totalPages": 2, "url": "/assets/demo-usecase/healthcare/SAN-02_Ordonnance_active_2026-01-15.pdf", "metadata": { "fileName": "SAN-02_Ordonnance_active_2026-01-15.pdf", "mime": "application/pdf", "pages": "2", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" } },
+    { "fileId": "SAN-03", "fileName": "SAN-03_Resultats_laboratoire_2026-06-18.pdf", "totalPages": 3, "url": "/assets/demo-usecase/healthcare/SAN-03_Resultats_laboratoire_2026-06-18.pdf", "metadata": { "fileName": "SAN-03_Resultats_laboratoire_2026-06-18.pdf", "mime": "application/pdf", "pages": "3", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" } },
+    { "fileId": "SAN-04", "fileName": "SAN-04_Synthese_longitudinale_2025-09_a_2026-06.pdf", "totalPages": 5, "url": "/assets/demo-usecase/healthcare/SAN-04_Synthese_longitudinale_2025-09_a_2026-06.pdf", "metadata": { "fileName": "SAN-04_Synthese_longitudinale_2025-09_a_2026-06.pdf", "mime": "application/pdf", "pages": "5", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" } },
+    { "fileId": "SAN-05", "fileName": "SAN-05_Lettre_cardiologie_2026-06-20.pdf", "totalPages": 2, "url": "/assets/demo-usecase/healthcare/SAN-05_Lettre_cardiologie_2026-06-20.pdf", "metadata": { "fileName": "SAN-05_Lettre_cardiologie_2026-06-20.pdf", "mime": "application/pdf", "pages": "2", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" } },
+    { "fileId": "SAN-06", "fileName": "SAN-06_Compte_rendu_sortie_2026-06-25.pdf", "totalPages": 6, "url": "/assets/demo-usecase/healthcare/SAN-06_Compte_rendu_sortie_2026-06-25.pdf", "metadata": { "fileName": "SAN-06_Compte_rendu_sortie_2026-06-25.pdf", "mime": "application/pdf", "pages": "6", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" } }
   ],
   "filterMetadata": [
-    {
-      "key": "author",
-      "value": "Assurance qualité"
-    },
-    {
-      "key": "date",
-      "value": "2026-01-12"
-    },
-    {
-      "key": "section",
-      "value": "Section 6"
-    }
+    { "key": "author", "value": "Équipe qualité" },
+    { "key": "date", "value": "2026-07-10" },
+    { "key": "section", "value": "Conciliation médicamenteuse" }
   ],
-  "citations": [
-    {
-      "confidence": "96%",
-      "fileId": "demo-helios2-protocole",
-      "fileName": "Protocole_HELIOS-2.pdf",
-      "highlightText": "Aucun ajustement posologique n'est requis en cas d'insuffisance rénale",
-      "id": 1,
-      "page": 2,
-      "quote": "Aucun ajustement posologique n'est requis en cas d'insuffisance rénale. La dose standard s'applique à l'ensemble des participants inclus."
-    },
-    {
-      "confidence": "97%",
-      "fileId": "demo-helios2-protocole",
-      "fileName": "Protocole_HELIOS-2.pdf",
-      "highlightText": "la dose est réduite à 50 % de la dose standard",
-      "id": 2,
-      "page": 10,
-      "quote": "En cas d'insuffisance rénale sévère (clairance de la créatinine inférieure à 30 mL/min), la dose est réduite à 50 % de la dose standard, soit 100 mg par jour."
-    },
-    {
-      "confidence": "95%",
-      "fileId": "demo-helios2-protocole",
-      "fileName": "Protocole_HELIOS-2.pdf",
-      "highlightText": "La fiche de synthèse en circulation reprend la version 1.2 et n'a pas été mise à jour après l'amendement n° 2",
-      "id": 3,
-      "page": 13,
-      "quote": "La fiche de synthèse en circulation reprend la version 1.2 et n'a pas été mise à jour après l'amendement n° 2. En cas de divergence, le protocole en vigueur prévaut sur tout document de synthèse."
-    },
-    {
-      "confidence": "93%",
-      "fileId": "demo-helios2-protocole",
-      "fileName": "Protocole_HELIOS-2.pdf",
-      "highlightText": "Toute décision de posologie relève de l'investigateur",
-      "id": 4,
-      "page": 14,
-      "quote": "Toute décision de posologie relève de l'investigateur, au vu de l'état clinique du participant et des résultats biologiques disponibles."
-    }
+  "stores": [
+    { "id": "store-active", "nameKey": "storeName", "short": "S", "disabled": false, "selected": true },
+    { "id": "store-risk", "nameKey": "risk", "short": "RC", "disabled": true, "selected": false },
+    { "id": "store-legal", "nameKey": "legal", "short": "LR", "disabled": true, "selected": false },
+    { "id": "store-research", "nameKey": "research", "short": "RS", "disabled": true, "selected": false }
   ],
-  "document": {
-    "articleOne": "Dose standard de 200 mg par jour en une prise unique - Section 6.1, p.10",
-    "articleThree": "Insuffisance rénale sévère : dose réduite à 50 % de la dose standard - Section 6.3, p.10",
-    "title": "Protocole d'étude clinique HELIOS-2 - version 2.0 du 12 janvier 2026",
-    "verifiedClause": "La fiche de synthèse reprend la version 1.2 et n'a pas été mise à jour après l'amendement n° 2 - Section 9.1, p.13"
-  },
-  "steps": [
-    {
-      "action": "analyzing",
-      "entities": [
-        "HELIOS-2",
-        "insuffisance rénale",
-        "adaptation de dose"
-      ],
-      "id": "intent",
-      "queries": "@queries",
-      "reasoning": "@text.analyze"
-    },
-    {
-      "action": "ls",
-      "id": "browse-store",
-      "reasoning": "@text.ls",
-      "toolName": "ls",
-      "toolParams": {
-        "path": "/Protocoles/HELIOS-2"
-      },
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "",
-            "metadata": {
-              "treeData": {
-                "path": "/Protocoles/HELIOS-2",
-                "folders": [],
-                "files": [
-                  {
-                    "fileId": "demo-helios2-protocole",
-                    "name": "Protocole_HELIOS-2.pdf",
-                    "size": 486000
-                  }
-                ]
-              }
-            }
-          }
-        ],
-        "count": 1,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "searching",
-      "id": "lexical-search",
-      "queries": [
-        "adaptation de dose insuffisance rénale clairance",
-        "fiche de synthèse version protocole"
-      ],
-      "reasoning": "@text.lexical"
-    },
-    {
-      "action": "retrieved",
-      "chunks": 9,
-      "id": "lexical-results",
-      "reasoning": "@text.lexicalResults",
-      "toolName": "search",
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "@doc.title",
-            "fileName": "Protocole_HELIOS-2.pdf",
-            "metadata": {
-              "section": "Fiche de synthèse",
-              "type": "text"
-            },
-            "pageNumber": 2,
-            "score": 0.93
-          },
-          {
-            "content": "@doc.articleThree",
-            "fileName": "Protocole_HELIOS-2.pdf",
-            "metadata": {
-              "section": "6. Posologie et adaptation de dose",
-              "type": "text"
-            },
-            "pageNumber": 10,
-            "score": 0.91
-          },
-          {
-            "content": "@doc.verifiedClause",
-            "fileName": "Protocole_HELIOS-2.pdf",
-            "metadata": {
-              "section": "9. Historique des versions",
-              "type": "text"
-            },
-            "pageNumber": 13,
-            "score": 0.86
-          }
-        ],
-        "count": 3,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "readFile",
-      "id": "read-file",
-      "reasoning": "@text.read",
-      "toolName": "read",
-      "toolParams": {
-        "fileName": "Protocole_HELIOS-2.pdf",
-        "pageRange": "2,10,13"
-      },
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "Fiche de synthèse, point 2 - aucun ajustement posologique n'est requis en cas d'insuffisance rénale ; la dose standard s'applique à l'ensemble des participants inclus.",
-            "fileId": "demo-helios2-protocole",
-            "fileName": "Protocole_HELIOS-2.pdf",
-            "pageNumber": 2,
-            "score": 0.96
-          },
-          {
-            "content": "Section 6.3 - en cas d'insuffisance rénale sévère (clairance inférieure à 30 mL/min), la dose est réduite à 50 % de la dose standard, soit 100 mg par jour. Entre 30 et 60 mL/min, la dose est réduite à 150 mg par jour.",
-            "fileId": "demo-helios2-protocole",
-            "fileName": "Protocole_HELIOS-2.pdf",
-            "pageNumber": 10,
-            "score": 0.97
-          },
-          {
-            "content": "Section 9.1 - la fiche de synthèse en circulation reprend la version 1.2 et n'a pas été mise à jour après l'amendement n° 2, qui a introduit l'adaptation de dose.",
-            "fileId": "demo-helios2-protocole",
-            "fileName": "Protocole_HELIOS-2.pdf",
-            "pageNumber": 13,
-            "score": 0.94
-          }
-        ],
-        "count": 3,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "screenshot",
-      "id": "page-screenshot",
-      "reasoning": "@text.screenshot",
-      "toolName": "screenshot",
-      "toolParams": {
-        "fileName": "Protocole_HELIOS-2.pdf",
-        "page": 1
-      },
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "",
-            "fileId": "demo-helios2-protocole",
-            "fileName": "Protocole_HELIOS-2.pdf",
-            "metadata": {
-              "type": "screenshot"
-            },
-            "pageNumber": 1,
-            "score": 0.94,
-            "type": "image"
-          },
-          {
-            "content": "",
-            "fileId": "demo-helios2-protocole",
-            "fileName": "Protocole_HELIOS-2.pdf",
-            "metadata": {
-              "type": "screenshot"
-            },
-            "pageNumber": 10,
-            "score": 0.92,
-            "type": "image"
-          }
-        ],
-        "count": 2,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "searching",
-      "id": "semantic-search",
-      "queries": [
-        "responsabilité décision posologie investigateur"
-      ],
-      "reasoning": "@text.semantic"
-    },
-    {
-      "action": "retrieved",
-      "chunks": 12,
-      "id": "semantic-results",
-      "reasoning": "@text.semanticResults",
-      "toolName": "search",
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "Section 10.2 - toute décision de posologie relève de l'investigateur, au vu de l'état clinique du participant et des résultats biologiques disponibles.",
-            "fileName": "Protocole_HELIOS-2.pdf",
-            "metadata": {
-              "section": "10. Responsabilités",
-              "type": "text"
-            },
-            "pageNumber": 14,
-            "score": 0.89
-          },
-          {
-            "content": "@text.reviewNote",
-            "fileName": "Protocole_HELIOS-2.pdf",
-            "metadata": {
-              "section": "Version en vigueur",
-              "type": "text"
-            },
-            "pageNumber": 13,
-            "score": 0.78
-          }
-        ],
-        "count": 2,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "generating",
-      "id": "answer",
-      "reasoning": "@text.generate",
-      "thinking": "@text.thinking"
-    }
+  "filterFiles": [
+    "SAN-01_Note_consultation_medecine_generale_2026-01-12.pdf",
+    "SAN-02_Ordonnance_active_2026-01-15.pdf",
+    "SAN-03_Resultats_laboratoire_2026-06-18.pdf",
+    "SAN-04_Synthese_longitudinale_2025-09_a_2026-06.pdf",
+    "SAN-05_Lettre_cardiologie_2026-06-20.pdf",
+    "SAN-06_Compte_rendu_sortie_2026-06-25.pdf"
   ],
-  "content": {
-    "fr": {
-      "storeName": "Protocoles & qualité",
-      "finalAnswer": "La fiche de synthèse assurance qualité (p.2) indique qu'aucun ajustement posologique n'est requis en cas d'insuffisance rénale [1]. Le protocole en vigueur dit l'inverse : la section 6.3 (p.10) impose, en cas d'insuffisance rénale sévère (clairance inférieure à 30 mL/min), une dose réduite à 50 % de la dose standard, soit 100 mg par jour [2], et une réduction à 150 mg entre 30 et 60 mL/min. L'écart s'explique : l'historique des versions (section 9.1, p.13) précise que la fiche de synthèse en circulation reprend la version 1.2 et n'a pas été mise à jour après l'amendement n° 2, qui a introduit cette adaptation de dose [3]. C'est donc le protocole en vigueur (version 2.0) qui fait foi, et non la fiche. La section 10.2 (p.14) rappelle par ailleurs que toute décision de posologie relève de l'investigateur, au vu de l'état clinique du participant [4] : cette réponse documente la règle applicable, elle ne la remplace pas. Deux actions : faire retirer la fiche de synthèse périmée des centres, et vérifier que les inclusions déjà réalisées sous clairance basse ont bien appliqué la réduction.",
-      "question": "Quelle posologie le protocole HELIOS-2 prévoit-il en cas d'insuffisance rénale ? Vérifie la cohérence avec la fiche de synthèse et cite les passages exacts.",
-      "reasoning": "La question porte sur l'adaptation de dose. Je relève ce qu'affirme la fiche de synthèse (p.2), puis je cherche la section posologie du protocole. La section 6.3 (p.10) impose une réduction à 50 % sous 30 mL/min, ce qui contredit la fiche. Je cherche ensuite l'origine de l'écart : l'historique des versions (p.13) montre que la fiche reprend la version 1.2, antérieure à l'amendement n° 2. Je cite chaque passage avec sa page, et je rappelle que la décision reste médicale.",
-      "retrievalQueries": [
-        "insuffisance rénale adaptation dose clairance créatinine",
-        "section 6.3 posologie réduction 50 %",
-        "fiche de synthèse version 1.2 amendement",
-        "responsabilité investigateur décision posologie"
+  "filterFolders": [
+    { "disabled": true, "label": "Contracts" },
+    { "disabled": true, "label": "Board memos" }
+  ],
+  "userInitials": "EQ",
+  "archivedThreadCount": 2,
+  "tour": [
+    { "uiKey": "tourOrchestration", "target": "orchestration", "placement": { "desktop": "right", "mobile": "bottom" }, "targetWaitTimeout": 8000, "onEnter": "expandReasoning", "onLeave": "awaitAnswer" },
+    { "uiKey": "tourSources", "target": "citations", "placement": { "desktop": "right", "mobile": "bottom" }, "targetWaitTimeout": 8000 },
+    { "uiKey": "tourPdf", "target": "pdf", "placement": { "desktop": "left", "mobile": "center" }, "targetWaitTimeout": 8000, "onEnter": "openCitation" }
+  ],
+  "streaming": { "minDurationMs": 2600, "durationRatio": 0.62, "minWordPauseMs": 24 },
+  "scenarios": [
+    {
+      "document": {},
+      "citations": [
+        { "id": 1, "fileId": "SAN-01", "fileName": "SAN-01_Note_consultation_medecine_generale_2026-01-12.pdf", "page": 1, "confidence": "95%", "quote": "Hypertension artérielle et fibrillation atriale permanente.", "highlightText": "Hypertension artérielle, suivie depuis 2017" },
+        { "id": 2, "fileId": "SAN-01", "fileName": "SAN-01_Note_consultation_medecine_generale_2026-01-12.pdf", "page": 2, "confidence": "96%", "quote": "Allergie à l'amoxicilline, éruption en 2019.", "highlightText": "éruption cutanée généralisée documentée en" },
+        { "id": 3, "fileId": "SAN-01", "fileName": "SAN-01_Note_consultation_medecine_generale_2026-01-12.pdf", "page": 3, "confidence": "93%", "quote": "Rivaroxaban, ramipril, bisoprolol, atorvastatine.", "highlightText": "Situation cardiovasculaire stable sur les éléments disponibles" },
+        { "id": 4, "fileId": "SAN-03", "fileName": "SAN-03_Resultats_laboratoire_2026-06-18.pdf", "page": 1, "confidence": "94%", "quote": "Débit de filtration glomérulaire à 44 le 18 juin.", "highlightText": "Les indicateurs signalent un écart par rapport à" },
+        { "id": 5, "fileId": "SAN-03", "fileName": "SAN-03_Resultats_laboratoire_2026-06-18.pdf", "page": 2, "confidence": "90%", "quote": "Commentaire automatique « stable ».", "highlightText": "Fonction rénale stable par rapport à" },
+        { "id": 6, "fileId": "SAN-06", "fileName": "SAN-06_Compte_rendu_sortie_2026-06-25.pdf", "page": 1, "confidence": "95%", "quote": "Admission pour malaise le 23 juin.", "highlightText": "malaise sans perte de connaissance complète" },
+        { "id": 7, "fileId": "SAN-06", "fileName": "SAN-06_Compte_rendu_sortie_2026-06-25.pdf", "page": 3, "confidence": "94%", "quote": "DFG 46 à l'admission, 52 à la sortie.", "highlightText": "52 mL/min/1,73 m²" },
+        { "id": 8, "fileId": "SAN-06", "fileName": "SAN-06_Compte_rendu_sortie_2026-06-25.pdf", "page": 5, "confidence": "93%", "quote": "Contrôle biologique sous 7 jours.", "highlightText": "dans les sept jours suivant la sortie" }
       ],
-      "threads": [
-        "Agent Prosperify"
+      "orchestrationDelays": [750, 950, 1450],
+      "steps": [
+        { "id": "intent", "action": "analyzing", "entities": ["Élise Bernard", "parcours clinique", "DFG"], "queries": "@queries", "reasoning": "@text.analyze" },
+        { "id": "search", "action": "searching", "queries": ["antécédents allergie traitements", "évolution DFG hospitalisation"], "reasoning": "@text.search" },
+        { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
-      "hallucinations": [
-        {
-          "start": 56,
-          "end": 97,
-          "reason": "Conflit de source : la fiche de synthèse reprend la version 1.2, alors que la section 6.3 du protocole en vigueur impose une réduction de dose à 50 % sous 30 mL/min.",
-          "score": 0.9,
-          "counterCitationId": 2,
-          "evidence": "En cas d'insuffisance rénale sévère (clairance de la créatinine inférieure à 30 mL/min), la dose est réduite à 50 % de la dose standard, soit 100 mg par jour."
+      "content": {
+        "fr": {
+          "storeName": "Coordinateur de soins",
+          "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
+          "question": "Reconstitue le parcours de cette patiente et résume les informations cliniques clés.",
+          "finalAnswer": "Dossier fictif — synthèse à valider par un professionnel de santé. [Élise Bernard, 64 ans : hypertension artérielle et fibrillation atriale permanente](cite:1)[, allergie à l'amoxicilline documentée en 2019](cite:2)[. Quatre traitements actifs avant l'hospitalisation : rivaroxaban, ramipril, bisoprolol, atorvastatine](cite:3). Le débit de filtration glomérulaire évolue de 68 en septembre 2025 [à 44 le 18 juin 2026](cite:4)[, avec un commentaire automatique « stable » qui n'en tient pas compte](cite:5). [Épisode de déshydratation et malaise du 23 au 25 juin 2026](cite:6)[, DFG à 46 à l'admission puis 52 à la sortie](cite:7)[, sortie le 25 juin avec un contrôle biologique attendu sous 7 jours](cite:8).",
+          "reasoning": "Je reconstitue la chronologie à partir de la note de médecine générale, des résultats de laboratoire et du compte rendu de sortie, en relevant systématiquement chaque valeur avec sa date et sa source.",
+          "retrievalQueries": ["antécédents allergie traitements", "évolution DFG hospitalisation"],
+          "threads": ["Agent Prosperify"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "Décomposer la demande : reconstituer la chronologie clinique puis repérer les valeurs biologiques clés.",
+            "search": "Rechercher les antécédents, le traitement actif et l'évolution du DFG.",
+            "generate": "Composer la synthèse : profil clinique, chronologie, sortie — chaque élément sourcé.",
+            "thinking": "Je pars des antécédents et du traitement actif documentés le 12 janvier : hypertension, fibrillation atriale, allergie à l'amoxicilline, quatre traitements. Le bilan biologique de référence (septembre 2025) donne un DFG de 68. Le 18 juin, un nouveau bilan montre un DFG à 44, avec un commentaire automatique « stable » qui ne reflète pas cette chute. L'hospitalisation du 23 au 25 juin pour déshydratation et malaise montre une amélioration partielle : DFG 46 à l'admission, 52 à la sortie. Le plan de sortie prévoit un contrôle biologique sous 7 jours, soit au plus tard le 2 juillet.",
+            "ls": "Parcourir le dossier du 12 janvier au 25 juin 2026.", "read": "Ouvrir la note de consultation et le compte rendu de sortie.", "screenshot": "Capturer un aperçu de page.", "lexical": "Rechercher les formulations exactes.", "lexicalResults": "Passages retrouvés.", "semantic": "Recherche sémantique.", "semanticResults": "Passage retrouvé.", "reviewNote": "Voir détail.",
+            "active": "Actifs", "archived": "Archivés", "chunks": "fragments", "closeDocument": "Fermer le document", "closeReview": "Fermer", "closeSidebar": "Fermer le panneau", "copy": "Copier", "edit": "Modifier", "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide.", "emptyTitle": "Aucun document ouvert", "entities": "entités", "justNow": "à l'instant", "metadata": "métadonnées", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Fils", "newChat": "Nouvelle conversation", "openDocument": "Ouvrir le lecteur de document", "openReview": "Essayer dans le chat", "openSidebar": "Ouvrir la liste des fils", "pages": "pages", "papers": "Papers", "regenerate": "Régénérer", "sourceFile": "Fichier", "storeStreaming": "Génération", "today": "Aujourd'hui", "tourBack": "Retour", "tourDone": "Terminer", "tourNext": "Suivant", "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici.", "tourOrchestrationTitle": "Suivez le raisonnement de l'agent", "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.", "tourPdfTitle": "Accédez à la source", "tourSkip": "Passer", "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.", "tourSourcesTitle": "Chaque affirmation est citée"
+          }
+        },
+        "en": {
+          "storeName": "Care coordinator",
+          "storeLabels": { "risk": "Risk & compliance", "legal": "Legal reviewer", "research": "Research scout" },
+          "question": "Reconstitue le parcours de cette patiente et résume les informations cliniques clés.",
+          "finalAnswer": "Fictional record — summary to be validated by a healthcare professional. [Élise Bernard, 64, hypertension and permanent atrial fibrillation](cite:1)[, amoxicillin allergy from 2019](cite:2)[. Four active medications](cite:3). eGFR moves from 68 [to 44 on June 18](cite:4)[, with a mismatched automated « stable » comment](cite:5)[. Dehydration episode June 23-25](cite:6)[, eGFR 46 on admission, 52 at discharge](cite:7)[, 7-day biology follow-up requested](cite:8).",
+          "reasoning": "English version pending.",
+          "retrievalQueries": ["history allergy medications", "eGFR trend hospitalization"],
+          "threads": ["Prosperify agent"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "English version pending.", "search": "English version pending.", "generate": "English version pending.", "thinking": "English version pending.",
+            "ls": "English version pending.", "read": "English version pending.", "screenshot": "English version pending.", "lexical": "English version pending.", "lexicalResults": "English version pending.", "semantic": "English version pending.", "semanticResults": "English version pending.", "reviewNote": "English version pending.",
+            "active": "Active", "archived": "Archived", "chunks": "chunks", "closeDocument": "Close document", "closeReview": "Close", "closeSidebar": "Close sidebar", "copy": "Copy", "edit": "Edit", "emptySubtitle": "Close this panel to open an empty document.", "emptyTitle": "No document open", "entities": "entities", "justNow": "just now", "metadata": "metadata", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Threads", "newChat": "New chat", "openDocument": "Open document viewer", "openReview": "Try in chat", "openSidebar": "Open thread list", "pages": "pages", "papers": "Papers", "regenerate": "Regenerate", "sourceFile": "File", "storeStreaming": "Generating", "today": "Today", "tourBack": "Back", "tourDone": "Done", "tourNext": "Next", "tourOrchestrationContent": "Every reasoning and search step is traced here.", "tourOrchestrationTitle": "Follow the agent's reasoning", "tourPdfContent": "Citations open the PDF at the exact highlighted passage.", "tourPdfTitle": "Jump to the source", "tourSkip": "Skip", "tourSourcesContent": "Each sentence links to the passage that supports it.", "tourSourcesTitle": "Every claim is cited"
+          }
         }
-      ],
-      "stepText": {
-        "analyze": "Décomposer la demande : retrouver la règle de posologie en insuffisance rénale, la confronter à la fiche de synthèse, et identifier la version qui fait foi.",
-        "ls": "Parcourir le store pour repérer les documents disponibles sur le protocole HELIOS-2.",
-        "read": "Ouvrir le PDF et lire les sections clés : fiche de synthèse (p.2), posologie (p.10), historique des versions (p.13).",
-        "screenshot": "Capturer un aperçu de page pour vérifier visuellement la source.",
-        "lexical": "Rechercher les formulations exactes : ajustement posologique, clairance de la créatinine, réduction de dose.",
-        "lexicalResults": "Passages retrouvés et classés : fiche de synthèse p.2, section 6.3 p.10, historique des versions p.13.",
-        "semantic": "Faire une seconde recherche sémantique sur la responsabilité de la décision posologique.",
-        "semanticResults": "Passage retrouvé à la section 10.2 p.14 : la décision de posologie relève de l'investigateur.",
-        "reviewNote": "En cas de divergence entre un document de synthèse et le protocole, c'est la version en vigueur du protocole qui fait foi : ici la version 2.0, section 6.3.",
-        "generate": "Composer une note structurée : ce qu'affirme la fiche, la règle réelle, l'origine de l'écart, et le rappel de responsabilité médicale.",
-        "thinking": "Règle de rédaction : la réponse porte sur une posologie, elle doit être strictement citée et jamais reformulée. Je présente la fiche, puis la section 6.3, puis l'explication de l'écart par l'historique des versions. Je termine sur la section 10.2 : la réponse documente la règle applicable, elle ne se substitue pas au jugement de l'investigateur."
       }
     },
-    "en": {
-      "storeName": "Protocols & quality",
-      "finalAnswer": "The quality assurance summary sheet (p.2) states that no dose adjustment is required in case of renal impairment [1]. The protocol in force says the opposite: section 6.3 (p.10) requires, for severe renal impairment (clearance below 30 mL/min), a dose reduced to 50% of the standard dose, i.e. 100 mg per day [2], and a reduction to 150 mg between 30 and 60 mL/min. The gap is explained: the version history (section 9.1, p.13) states that the summary sheet in circulation reflects version 1.2 and was not updated after amendment no. 2, which introduced this dose adaptation [3]. The protocol in force (version 2.0) therefore governs, not the sheet. Section 10.2 (p.14) also states that any dosing decision rests with the investigator, in light of the participant's clinical status [4]: this answer documents the applicable rule, it does not replace it. Two actions: have the outdated summary sheet withdrawn from the sites, and check that inclusions already made under low clearance did apply the reduction.",
-      "question": "What dosage does protocol HELIOS-2 set for renal impairment? Check consistency with the summary sheet and cite exact passages.",
-      "reasoning": "The question is about dose adaptation. I extract what the summary sheet claims (p.2), then look for the protocol's dosing section. Section 6.3 (p.10) requires a 50% reduction below 30 mL/min, contradicting the sheet. I then look for the cause of the gap: the version history (p.13) shows the sheet reflects version 1.2, predating amendment no. 2. I cite each passage with its page, and restate that the decision remains medical.",
-      "retrievalQueries": [
-        "renal impairment dose adaptation creatinine clearance",
-        "section 6.3 dosing 50% reduction",
-        "summary sheet version 1.2 amendment",
-        "investigator responsibility dosing decision"
+    {
+      "document": {},
+      "citations": [
+        { "id": 1, "fileId": "SAN-01", "fileName": "SAN-01_Note_consultation_medecine_generale_2026-01-12.pdf", "page": 2, "confidence": "96%", "quote": "Allergie amoxicilline documentée.", "highlightText": "éruption cutanée généralisée documentée en" },
+        { "id": 2, "fileId": "SAN-06", "fileName": "SAN-06_Compte_rendu_sortie_2026-06-25.pdf", "page": 2, "confidence": "95%", "quote": "Allergies connues : aucune connue.", "highlightText": "ALLERGIES CONNUES" },
+        { "id": 3, "fileId": "SAN-02", "fileName": "SAN-02_Ordonnance_active_2026-01-15.pdf", "page": 1, "confidence": "94%", "quote": "Rivaroxaban 20 mg le soir.", "highlightText": "RIVAROXABAN 20 mg" },
+        { "id": 4, "fileId": "SAN-06", "fileName": "SAN-06_Compte_rendu_sortie_2026-06-25.pdf", "page": 4, "confidence": "93%", "quote": "Rivaroxaban 20 mg à la sortie.", "highlightText": "Le présent compte rendu indique rivaroxaban 20 mg" },
+        { "id": 5, "fileId": "SAN-05", "fileName": "SAN-05_Lettre_cardiologie_2026-06-20.pdf", "page": 1, "confidence": "92%", "quote": "Rivaroxaban 15 mg/jour selon la liste reçue.", "highlightText": "Rivaroxaban 15 mg par jour" },
+        { "id": 6, "fileId": "SAN-06", "fileName": "SAN-06_Compte_rendu_sortie_2026-06-25.pdf", "page": 5, "confidence": "91%", "quote": "Aucun résultat de contrôle au 10 juillet.", "highlightText": "Au 10 juillet 2026, aucun résultat du" }
       ],
-      "threads": [
-        "Agent Prosperify"
+      "orchestrationDelays": [700, 950, 1350],
+      "steps": [
+        { "id": "intent", "action": "analyzing", "entities": ["conciliation", "allergie", "rivaroxaban"], "queries": "@queries", "reasoning": "@text.analyze" },
+        { "id": "search", "action": "searching", "queries": ["allergie amoxicilline contradiction", "dose rivaroxaban 20 15 mg"], "reasoning": "@text.search" },
+        { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
-      "hallucinations": [
-        {
-          "start": 54,
-          "end": 84,
-          "reason": "Source conflict: the summary sheet reflects version 1.2, whereas section 6.3 of the protocol in force requires a 50% dose reduction below 30 mL/min.",
-          "score": 0.9,
-          "counterCitationId": 2,
-          "evidence": "For severe renal impairment (creatinine clearance below 30 mL/min), the dose is reduced to 50% of the standard dose, i.e. 100 mg per day."
+      "content": {
+        "fr": {
+          "storeName": "Coordinateur de soins",
+          "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
+          "question": "Quelles incohérences du dossier doivent être vérifiées lors de la conciliation ?",
+          "finalAnswer": "Dossier fictif — synthèse à valider par un professionnel de santé. Trois points à vérifier, sans arbitrage possible sur les seules pièces du dossier : [l'allergie à l'amoxicilline, documentée en médecine générale](cite:1)[, indiquée « aucune connue » à la sortie](cite:2) ; [la dose de rivaroxaban — 20 mg sur l'ordonnance](cite:3)[et sur la liste de sortie](cite:4)[, 15 mg dans le courrier de cardiologie](cite:5) ; [le contrôle créatinine/potassium demandé sous 7 jours, absent du dossier au 10 juillet](cite:6).\n\nAucune de ces sources ne permet de trancher quelle valeur est correcte.",
+          "reasoning": "Je recherche chaque mention de l'allergie et de la dose de rivaroxaban dans les six documents, ainsi que le suivi du contrôle biologique demandé à la sortie.",
+          "retrievalQueries": ["allergie amoxicilline contradiction", "dose rivaroxaban 20 15 mg"],
+          "threads": ["Agent Prosperify"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "Décomposer la demande : rechercher les divergences documentaires à vérifier, sans les trancher.",
+            "search": "Rechercher chaque mention de l'allergie et de la dose de rivaroxaban.",
+            "generate": "Composer la réponse : trois divergences, chacune sourcée des deux côtés.",
+            "thinking": "L'allergie à l'amoxicilline est documentée clairement le 12 janvier, avec éruption en 2019 — mais le compte rendu de sortie du 25 juin indique « aucune connue », une contradiction directe. La dose de rivaroxaban varie selon la source : 20 mg sur l'ordonnance de janvier et sur la liste de sortie, mais 15 mg dans le courrier de cardiologie du 20 juin, sans qu'aucun document n'explique ce changement. Enfin, le contrôle biologique demandé pour le 2 juillet n'apparaît pas au dossier au 10 juillet. Dans les trois cas, je signale l'incohérence sans choisir quelle version est correcte.",
+            "ls": "Parcourir le dossier pour la conciliation.", "read": "Ouvrir l'ordonnance, la lettre de cardiologie et le compte rendu de sortie.", "screenshot": "Capturer un aperçu de page.", "lexical": "Rechercher les formulations exactes.", "lexicalResults": "Passages retrouvés.", "semantic": "Recherche sémantique.", "semanticResults": "Passage retrouvé.", "reviewNote": "Voir détail.",
+            "active": "Actifs", "archived": "Archivés", "chunks": "fragments", "closeDocument": "Fermer le document", "closeReview": "Fermer", "closeSidebar": "Fermer le panneau", "copy": "Copier", "edit": "Modifier", "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide.", "emptyTitle": "Aucun document ouvert", "entities": "entités", "justNow": "à l'instant", "metadata": "métadonnées", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Fils", "newChat": "Nouvelle conversation", "openDocument": "Ouvrir le lecteur de document", "openReview": "Essayer dans le chat", "openSidebar": "Ouvrir la liste des fils", "pages": "pages", "papers": "Papers", "regenerate": "Régénérer", "sourceFile": "Fichier", "storeStreaming": "Génération", "today": "Aujourd'hui", "tourBack": "Retour", "tourDone": "Terminer", "tourNext": "Suivant", "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici.", "tourOrchestrationTitle": "Suivez le raisonnement de l'agent", "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.", "tourPdfTitle": "Accédez à la source", "tourSkip": "Passer", "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.", "tourSourcesTitle": "Chaque affirmation est citée"
+          }
+        },
+        "en": {
+          "storeName": "Care coordinator",
+          "storeLabels": { "risk": "Risk & compliance", "legal": "Legal reviewer", "research": "Research scout" },
+          "question": "Quelles incohérences du dossier doivent être vérifiées lors de la conciliation ?",
+          "finalAnswer": "Fictional record — to validate. [Amoxicillin allergy documented](cite:1)[vs « none known » at discharge](cite:2). [Rivaroxaban 20mg on the prescription](cite:3)[and discharge list](cite:4)[vs 15mg in the cardiology letter](cite:5). [Requested lab control missing as of July 10](cite:6).",
+          "reasoning": "English version pending.",
+          "retrievalQueries": ["allergy contradiction", "rivaroxaban dose 20 15 mg"],
+          "threads": ["Prosperify agent"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "English version pending.", "search": "English version pending.", "generate": "English version pending.", "thinking": "English version pending.",
+            "ls": "English version pending.", "read": "English version pending.", "screenshot": "English version pending.", "lexical": "English version pending.", "lexicalResults": "English version pending.", "semantic": "English version pending.", "semanticResults": "English version pending.", "reviewNote": "English version pending.",
+            "active": "Active", "archived": "Archived", "chunks": "chunks", "closeDocument": "Close document", "closeReview": "Close", "closeSidebar": "Close sidebar", "copy": "Copy", "edit": "Edit", "emptySubtitle": "Close this panel to open an empty document.", "emptyTitle": "No document open", "entities": "entities", "justNow": "just now", "metadata": "metadata", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Threads", "newChat": "New chat", "openDocument": "Open document viewer", "openReview": "Try in chat", "openSidebar": "Open thread list", "pages": "pages", "papers": "Papers", "regenerate": "Regenerate", "sourceFile": "File", "storeStreaming": "Generating", "today": "Today", "tourBack": "Back", "tourDone": "Done", "tourNext": "Next", "tourOrchestrationContent": "Every reasoning and search step is traced here.", "tourOrchestrationTitle": "Follow the agent's reasoning", "tourPdfContent": "Citations open the PDF at the exact highlighted passage.", "tourPdfTitle": "Jump to the source", "tourSkip": "Skip", "tourSourcesContent": "Each sentence links to the passage that supports it.", "tourSourcesTitle": "Every claim is cited"
+          }
         }
+      }
+    },
+    {
+      "document": {},
+      "citations": [
+        { "id": 1, "fileId": "SAN-01", "fileName": "SAN-01_Note_consultation_medecine_generale_2026-01-12.pdf", "page": 2, "confidence": "93%", "quote": "DFG de référence 68, septembre 2025.", "highlightText": "68 mL/min/1,73 m²" },
+        { "id": 2, "fileId": "SAN-03", "fileName": "SAN-03_Resultats_laboratoire_2026-06-18.pdf", "page": 1, "confidence": "94%", "quote": "DFG 44 le 18 juin.", "highlightText": "Les indicateurs signalent un écart par rapport à" },
+        { "id": 3, "fileId": "SAN-06", "fileName": "SAN-06_Compte_rendu_sortie_2026-06-25.pdf", "page": 3, "confidence": "95%", "quote": "DFG 46 à l'admission, 52 à la sortie.", "highlightText": "52 mL/min/1,73 m²" },
+        { "id": 4, "fileId": "SAN-03", "fileName": "SAN-03_Resultats_laboratoire_2026-06-18.pdf", "page": 2, "confidence": "90%", "quote": "Commentaire automatique stable.", "highlightText": "Fonction rénale stable par rapport à" }
       ],
-      "stepText": {
-        "analyze": "Breaking down the request: find the dosing rule for renal impairment, compare it against the summary sheet, and identify which version governs.",
-        "ls": "Browsing the store to list the documents available on protocol HELIOS-2.",
-        "read": "Opening the PDF and reading key sections: summary sheet (p.2), dosing (p.10), version history (p.13).",
-        "screenshot": "Capturing a page preview for visual verification.",
-        "lexical": "Searching exact wording: dose adjustment, creatinine clearance, dose reduction.",
-        "lexicalResults": "Retrieved and ranked passages: summary sheet p.2, section 6.3 p.10, version history p.13.",
-        "semantic": "Running a second semantic search on responsibility for the dosing decision.",
-        "semanticResults": "Retrieved section 10.2 p.14: the dosing decision rests with the investigator.",
-        "reviewNote": "Where a summary document and the protocol diverge, the protocol version in force governs: here version 2.0, section 6.3.",
-        "generate": "Composing a structured note: what the sheet claims, the actual rule, the cause of the gap, and the reminder of medical responsibility.",
-        "thinking": "Drafting rule: the answer concerns a dosage, so it must be quoted strictly and never paraphrased. Present the sheet, then section 6.3, then the version history explaining the gap. Close on section 10.2: the answer documents the applicable rule, it does not replace the investigator's judgement."
+      "orchestrationDelays": [700, 900, 1300],
+      "steps": [
+        { "id": "intent", "action": "analyzing", "entities": ["DFG", "trajectoire rénale"], "queries": "@queries", "reasoning": "@text.analyze" },
+        { "id": "search", "action": "searching", "queries": ["évolution débit de filtration glomérulaire"], "reasoning": "@text.search" },
+        { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
+      ],
+      "content": {
+        "fr": {
+          "storeName": "Coordinateur de soins",
+          "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
+          "question": "Montre l'évolution de la fonction rénale et les documents qui expliquent chaque étape.",
+          "finalAnswer": "Dossier fictif — synthèse à valider par un professionnel de santé. [Débit de filtration glomérulaire à 68 mL/min/1,73 m² en septembre 2025](cite:1)[, puis 44 le 18 juin 2026](cite:2)[, 46 à l'admission le 23 juin et 52 à la sortie le 25 juin — une amélioration partielle pendant l'hospitalisation, sans mesure disponible après la sortie](cite:3). [Le commentaire automatique « stable » associé au résultat du 18 juin est incohérent avec cette chute de 68 à 44](cite:4).\n\n| Date | DFG (mL/min/1,73 m²) | Source |\n| --- | --- | --- |\n| Septembre 2025 | 68 | SAN-01 |\n| 18 juin 2026 | 44 | SAN-03 |\n| 23 juin 2026 (admission) | 46 | SAN-06 |\n| 25 juin 2026 (sortie) | 52 | SAN-06 |\n| Après sortie | Absent | — |",
+          "reasoning": "Je reconstruis la série chronologique du DFG à partir des documents qui en portent une mesure, en signalant l'incohérence du commentaire automatique.",
+          "retrievalQueries": ["évolution débit de filtration glomérulaire"],
+          "threads": ["Agent Prosperify"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "Décomposer la demande : rassembler tous les points de mesure du DFG avec leur date et leur source.",
+            "search": "Rechercher chaque valeur de DFG dans les quatre documents concernés.",
+            "generate": "Composer la réponse : trajectoire chiffrée puis incohérence du commentaire automatique.",
+            "thinking": "Quatre points de mesure du DFG existent dans le dossier : 68 en septembre 2025, 44 le 18 juin, 46 à l'admission et 52 à la sortie. La trajectoire montre une dégradation puis une amélioration partielle pendant le séjour, mais aucune mesure n'est disponible après la sortie. Le commentaire automatique « fonction rénale stable » généré sur le résultat du 18 juin ne tient pas compte de la baisse de 68 à 44 — c'est une incohérence à signaler, pas un fait clinique.",
+            "ls": "Parcourir le dossier pour la série rénale.", "read": "Ouvrir les résultats de laboratoire et le compte rendu de sortie.", "screenshot": "Capturer un aperçu de page.", "lexical": "Rechercher les formulations exactes.", "lexicalResults": "Passages retrouvés.", "semantic": "Recherche sémantique.", "semanticResults": "Passage retrouvé.", "reviewNote": "Voir détail.",
+            "active": "Actifs", "archived": "Archivés", "chunks": "fragments", "closeDocument": "Fermer le document", "closeReview": "Fermer", "closeSidebar": "Fermer le panneau", "copy": "Copier", "edit": "Modifier", "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide.", "emptyTitle": "Aucun document ouvert", "entities": "entités", "justNow": "à l'instant", "metadata": "métadonnées", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Fils", "newChat": "Nouvelle conversation", "openDocument": "Ouvrir le lecteur de document", "openReview": "Essayer dans le chat", "openSidebar": "Ouvrir la liste des fils", "pages": "pages", "papers": "Papers", "regenerate": "Régénérer", "sourceFile": "Fichier", "storeStreaming": "Génération", "today": "Aujourd'hui", "tourBack": "Retour", "tourDone": "Terminer", "tourNext": "Suivant", "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici.", "tourOrchestrationTitle": "Suivez le raisonnement de l'agent", "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.", "tourPdfTitle": "Accédez à la source", "tourSkip": "Passer", "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.", "tourSourcesTitle": "Chaque affirmation est citée"
+          }
+        },
+        "en": {
+          "storeName": "Care coordinator",
+          "storeLabels": { "risk": "Risk & compliance", "legal": "Legal reviewer", "research": "Research scout" },
+          "question": "Montre l'évolution de la fonction rénale et les documents qui expliquent chaque étape.",
+          "finalAnswer": "Fictional record — to validate. [eGFR 68 in September 2025](cite:1)[, 44 on June 18](cite:2)[, 46 on admission and 52 at discharge — partial improvement, no post-discharge measurement](cite:3). [The automated « stable » comment on June 18 is inconsistent with the 68→44 drop](cite:4).",
+          "reasoning": "English version pending.",
+          "retrievalQueries": ["eGFR trend"],
+          "threads": ["Prosperify agent"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "English version pending.", "search": "English version pending.", "generate": "English version pending.", "thinking": "English version pending.",
+            "ls": "English version pending.", "read": "English version pending.", "screenshot": "English version pending.", "lexical": "English version pending.", "lexicalResults": "English version pending.", "semantic": "English version pending.", "semanticResults": "English version pending.", "reviewNote": "English version pending.",
+            "active": "Active", "archived": "Archived", "chunks": "chunks", "closeDocument": "Close document", "closeReview": "Close", "closeSidebar": "Close sidebar", "copy": "Copy", "edit": "Edit", "emptySubtitle": "Close this panel to open an empty document.", "emptyTitle": "No document open", "entities": "entities", "justNow": "just now", "metadata": "metadata", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Threads", "newChat": "New chat", "openDocument": "Open document viewer", "openReview": "Try in chat", "openSidebar": "Open thread list", "pages": "pages", "papers": "Papers", "regenerate": "Regenerate", "sourceFile": "File", "storeStreaming": "Generating", "today": "Today", "tourBack": "Back", "tourDone": "Done", "tourNext": "Next", "tourOrchestrationContent": "Every reasoning and search step is traced here.", "tourOrchestrationTitle": "Follow the agent's reasoning", "tourPdfContent": "Citations open the PDF at the exact highlighted passage.", "tourPdfTitle": "Jump to the source", "tourSkip": "Skip", "tourSourcesContent": "Each sentence links to the passage that supports it.", "tourSourcesTitle": "Every claim is cited"
+          }
+        }
+      }
+    },
+    {
+      "document": {},
+      "citations": [
+        { "id": 1, "fileId": "SAN-01", "fileName": "SAN-01_Note_consultation_medecine_generale_2026-01-12.pdf", "page": 2, "confidence": "95%", "quote": "Allergie amoxicilline documentée.", "highlightText": "éruption cutanée généralisée documentée en" },
+        { "id": 2, "fileId": "SAN-06", "fileName": "SAN-06_Compte_rendu_sortie_2026-06-25.pdf", "page": 2, "confidence": "94%", "quote": "Allergies connues : aucune connue.", "highlightText": "ALLERGIES CONNUES" },
+        { "id": 3, "fileId": "SAN-02", "fileName": "SAN-02_Ordonnance_active_2026-01-15.pdf", "page": 1, "confidence": "93%", "quote": "Rivaroxaban 20 mg.", "highlightText": "RIVAROXABAN 20 mg" },
+        { "id": 4, "fileId": "SAN-05", "fileName": "SAN-05_Lettre_cardiologie_2026-06-20.pdf", "page": 1, "confidence": "92%", "quote": "Rivaroxaban 15 mg/jour.", "highlightText": "Rivaroxaban 15 mg par jour" },
+        { "id": 5, "fileId": "SAN-06", "fileName": "SAN-06_Compte_rendu_sortie_2026-06-25.pdf", "page": 5, "confidence": "90%", "quote": "Contrôle demandé pour le 2 juillet.", "highlightText": "dans les sept jours suivant la sortie" }
+      ],
+      "orchestrationDelays": [750, 950, 1400],
+      "steps": [
+        { "id": "intent", "action": "analyzing", "entities": ["fiche de revue", "consultation de suivi"], "queries": "@queries", "reasoning": "@text.analyze" },
+        { "id": "search", "action": "searching", "queries": ["points à vérifier consultation de suivi"], "reasoning": "@text.search" },
+        { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
+      ],
+      "content": {
+        "fr": {
+          "storeName": "Coordinateur de soins",
+          "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
+          "question": "Prépare une fiche de revue pour la consultation de suivi, sans donner de conseil médical.",
+          "finalAnswer": "Dossier fictif — synthèse à valider par un professionnel de santé. Trois vérifications avant la consultation de suivi : [confirmer et corriger le statut allergique à l'amoxicilline](cite:1)[, contredit à la sortie](cite:2) ; [établir la dose de rivaroxaban réellement prescrite et prise](cite:3)[, entre 20 mg sur l'ordonnance](cite:3)[et 15 mg au courrier de cardiologie](cite:4)[, aucune source ne permettant de trancher] ; [retrouver ou reprogrammer le contrôle créatinine/potassium demandé pour le 2 juillet](cite:5).\n\nAucune modification thérapeutique n'est proposée ici — validation par un professionnel de santé requise.",
+          "reasoning": "Je transforme les incohérences déjà identifiées en questions concrètes à vérifier pendant la consultation, sans proposer de décision clinique.",
+          "retrievalQueries": ["points à vérifier consultation de suivi"],
+          "threads": ["Agent Prosperify"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "Décomposer la demande : convertir chaque incohérence en point à vérifier, sans conseil médical.",
+            "search": "Rechercher les trois divergences documentées dans le dossier.",
+            "generate": "Composer la fiche : faits, divergence, question à poser — pour chaque point.",
+            "thinking": "La fiche de revue doit rester dans son rôle : signaler ce qui est à vérifier, pas trancher. Trois points ressortent : le statut allergique contradictoire, la dose de rivaroxaban divergente entre trois sources, et le contrôle biologique demandé mais non trouvé au dossier. Pour chacun, je donne les faits, la divergence, et la question à poser — sans indiquer quelle dose est correcte ni recommander d'ajustement.",
+            "ls": "Parcourir le dossier pour la fiche de revue.", "read": "Ouvrir l'ordonnance, la lettre de cardiologie et le compte rendu de sortie.", "screenshot": "Capturer un aperçu de page.", "lexical": "Rechercher les formulations exactes.", "lexicalResults": "Passages retrouvés.", "semantic": "Recherche sémantique.", "semanticResults": "Passage retrouvé.", "reviewNote": "Voir détail.",
+            "active": "Actifs", "archived": "Archivés", "chunks": "fragments", "closeDocument": "Fermer le document", "closeReview": "Fermer", "closeSidebar": "Fermer le panneau", "copy": "Copier", "edit": "Modifier", "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide.", "emptyTitle": "Aucun document ouvert", "entities": "entités", "justNow": "à l'instant", "metadata": "métadonnées", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Fils", "newChat": "Nouvelle conversation", "openDocument": "Ouvrir le lecteur de document", "openReview": "Essayer dans le chat", "openSidebar": "Ouvrir la liste des fils", "pages": "pages", "papers": "Papers", "regenerate": "Régénérer", "sourceFile": "Fichier", "storeStreaming": "Génération", "today": "Aujourd'hui", "tourBack": "Retour", "tourDone": "Terminer", "tourNext": "Suivant", "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici.", "tourOrchestrationTitle": "Suivez le raisonnement de l'agent", "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.", "tourPdfTitle": "Accédez à la source", "tourSkip": "Passer", "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.", "tourSourcesTitle": "Chaque affirmation est citée"
+          }
+        },
+        "en": {
+          "storeName": "Care coordinator",
+          "storeLabels": { "risk": "Risk & compliance", "legal": "Legal reviewer", "research": "Research scout" },
+          "question": "Prépare une fiche de revue pour la consultation de suivi, sans donner de conseil médical.",
+          "finalAnswer": "Fictional record — to validate. Three checks before follow-up: [confirm the allergy status](cite:1)[, contradicted at discharge](cite:2)[; establish the actual rivaroxaban dose](cite:3)[between 20mg and 15mg](cite:4)[; retrieve or reschedule the requested lab control](cite:5). No treatment change is proposed here.",
+          "reasoning": "English version pending.",
+          "retrievalQueries": ["follow-up review checklist"],
+          "threads": ["Prosperify agent"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "English version pending.", "search": "English version pending.", "generate": "English version pending.", "thinking": "English version pending.",
+            "ls": "English version pending.", "read": "English version pending.", "screenshot": "English version pending.", "lexical": "English version pending.", "lexicalResults": "English version pending.", "semantic": "English version pending.", "semanticResults": "English version pending.", "reviewNote": "English version pending.",
+            "active": "Active", "archived": "Archived", "chunks": "chunks", "closeDocument": "Close document", "closeReview": "Close", "closeSidebar": "Close sidebar", "copy": "Copy", "edit": "Edit", "emptySubtitle": "Close this panel to open an empty document.", "emptyTitle": "No document open", "entities": "entities", "justNow": "just now", "metadata": "metadata", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Threads", "newChat": "New chat", "openDocument": "Open document viewer", "openReview": "Try in chat", "openSidebar": "Open thread list", "pages": "pages", "papers": "Papers", "regenerate": "Regenerate", "sourceFile": "File", "storeStreaming": "Generating", "today": "Today", "tourBack": "Back", "tourDone": "Done", "tourNext": "Next", "tourOrchestrationContent": "Every reasoning and search step is traced here.", "tourOrchestrationTitle": "Follow the agent's reasoning", "tourPdfContent": "Citations open the PDF at the exact highlighted passage.", "tourPdfTitle": "Jump to the source", "tourSkip": "Skip", "tourSourcesContent": "Each sentence links to the passage that supports it.", "tourSourcesTitle": "Every claim is cited"
+          }
+        }
       }
     }
-  }
+  ]
 }

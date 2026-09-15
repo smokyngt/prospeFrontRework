@@ -151,22 +151,13 @@
         "tag": "CONNECT",
         "title": "Your sources, your perimeter",
         "description": "You decide what the agent may read.",
-        "searchPlaceholder": "Search a data store",
-        "selected": [
-          {
-            "name": "Supplier contracts",
-            "meta": "1,284 documents"
-          },
-          {
-            "name": "Internal policies",
-            "meta": "312 documents"
-          }
-        ],
-        "excluded": {
-          "name": "2019 archives",
-          "meta": "out of scope"
-        },
-        "summary": "2 sources selected · 1 excluded"
+        "searchPlaceholder": "Search a data store...",
+        "sources": [
+          { "name": "Supplier contracts", "checked": true },
+          { "name": "Internal policies", "checked": true },
+          { "name": "2019 archives", "checked": false },
+          { "name": "HR records", "checked": false }
+        ]
       },
       "search": {
         "tag": "SEARCH",
@@ -181,21 +172,19 @@
         "tag": "CITE",
         "title": "Every answer is sourced",
         "description": "Clause, page and document, to back it.",
-        "storeLabel": "Supplier contracts",
         "question": "Which clauses cap our liability?",
-        "agentLabel": "Prosperify Agent",
         "answerStart": "Liability is capped at ",
         "answerHighlight": "12 months of fees",
         "answerEnd": ".",
-        "sourcesLabel": "SOURCES USED",
+        "sourcesLabel": "Sources",
         "citations": [
           {
-            "label": "Master_agreement.pdf",
-            "page": "p.3"
+            "label": "Master_agreement_2024.pdf",
+            "page": "p. 3"
           },
           {
             "label": "Amendment_2024.pdf",
-            "page": "p.7"
+            "page": "p. 7"
           }
         ]
       }
@@ -418,6 +407,8 @@
         "useCases": "Use cases",
         "workflow": "Workflow",
         "security": "Security",
+        "insights": "Proof",
+        "integration": "Integration",
         "deployment": "Deployment",
         "faq": "FAQ"
       },
@@ -426,6 +417,9 @@
         "workflow": "RAG workflow",
         "security": "Security & compliance",
         "example": "Sourced answer",
+        "insights": "Proof from the demo",
+        "criteria": "What matters",
+        "integration": "Integration & IT",
         "deployment": "Deployment",
         "faq": "FAQ",
         "contact": "Contact",
@@ -645,7 +639,8 @@
             "title": "The cost of being wrong",
             "description": "A fast but undefensible answer has no value: what is at stake is the team's liability."
           }
-        ]
+        ],
+        "cta": "See how it works on your contracts"
       },
       "securityChips": [
         "Siloed by matter",
@@ -732,7 +727,8 @@
             "title": "No room for approximation",
             "description": "On sensitive data, an unsourced answer or a fuzzy deployment perimeter is enough to stop the project."
           }
-        ]
+        ],
+        "cta": "See how it works on your protocols"
       },
       "securityChips": [
         "Hosted in France",
@@ -801,11 +797,19 @@
         {
           "question": "Do we need to rebuild our tools?",
           "answer": "No. Prosperify adds a documentary layer on top of your existing tools, starting with one corpus and one use case."
+        },
+        {
+          "question": "How does Prosperify integrate with our existing ERP or DMS?",
+          "answer": "Through connectors to the repositories your finance team already uses (data room, file shares, accounting exports) and SSO authentication aligned with your identity provider. Prosperify reads on top of what's there, it doesn't replace it."
+        },
+        {
+          "question": "Who on the technical side can answer our IT team's questions?",
+          "answer": "A Prosperify engineer can talk directly with your IT or security team before the committee meeting, on architecture, data isolation and reversibility."
         }
       ],
       "challenge": {
         "title": "Between the document and the decision, there are days.",
-        "intro": "Finance teams are not just looking for information: they are looking to decide fast, on a basis that holds.",
+        "intro": "Finance teams are not just looking for information: they are looking to decide fast, on a basis that holds. And because these documents touch reporting and governance, the topic never stops at the controller's desk: it ends up on IT's desk too, who has to sign off on the tool before finance can use it on sensitive data.",
         "items": [
           {
             "title": "Data rooms beyond scale",
@@ -819,7 +823,8 @@
             "title": "A committed decision",
             "description": "One figure carried over without its source, and the committee signs off on a false basis."
           }
-        ]
+        ],
+        "cta": "See the demo on a real case"
       },
       "securityChips": [
         "Audit trail",
@@ -831,6 +836,80 @@
         "question": "Which normalized EBITDA should we use?",
         "generic": "A general-purpose assistant takes the first figure it meets, without separating summary, appendix and normalization bridge.",
         "cost": "Two different scopes conflated, and the valuation presented to the committee rests on an invisible gap."
+      },
+      "insights": {
+        "title": "What Prosperify just verified on this corpus",
+        "intro": "Four questions actually asked in the demo above, across the eight closing documents for August 2026. Every figure is recalculated from source, never summarized from memory — this is what a financial controller would otherwise spend hours, and several open documents, establishing by hand.",
+        "footnote": "Pick \"try another prompt\" in the demo above to replay each of these questions.",
+        "cta": "Replay these scenarios with your own documents",
+        "items": [
+          {
+            "tag": "Growth / cash paradox",
+            "question": "Summarize YTD performance and explain the paradox between growth and cash.",
+            "finding": "Revenue at €12.4M (+24%), EBITDA at €1.1M: on the P&L alone, the business looks healthy, and a first glance would stop there. But cash falls by €2.2M over the period, a drop driven entirely by operations. Cross-checking the P&L against the cash-flow detail narrows the gap to a single cause: rising receivables, with no anomaly elsewhere in working capital.",
+            "sources": ["FIN-02 · p.1", "FIN-02 · p.2", "FIN-03 · p.1", "FIN-03 · p.3"]
+          },
+          {
+            "tag": "Budget vs actual variance",
+            "question": "Compare actuals to budget and flag the variance that deserves board attention.",
+            "finding": "Revenue beats budget by €0.6M: on that metric alone, the quarter looks like a win. But cash is €1.4M short, a gap proportionally larger than the EBITDA miss. The cause shows up in the collection period, 78 days against a 49-day budget, tying up €1.52M more than planned — a figure neither document states on its own.",
+            "sources": ["FIN-04 · p.1", "FIN-04 · p.4", "FIN-05 · p.1"]
+          },
+          {
+            "tag": "Client risk concentration",
+            "question": "Which receivables explain the risk, and do the invoices confirm the aging report?",
+            "finding": "Two accounts, MetroFleet (€1.20M, 62 days overdue) and NordTransit (€0.75M, disputed), account for 47.6% of receivables on their own. The source invoices, recalculated line by line, reconcile to the cent with the aging report: the delay isn't a data-entry error, it's a real collection issue, with a distinct, documented cause for each account.",
+            "sources": ["FIN-05 · p.3", "FIN-06 · p.1", "FIN-06 · p.3"]
+          },
+          {
+            "tag": "Fact-checking the CFO note",
+            "question": "Challenge the CFO note and prepare three sourced closing actions.",
+            "finding": "The note to the board calls the cash tension \"mostly seasonal.\" The structural collection gap, 78 versus 49 budgeted days, contradicts that: it isn't a calendar effect, it's a drift that persists. The NordTransit dispute, worth €0.75M, isn't even mentioned in the note — exactly the kind of blind spot a cross-checked reading surfaces before the committee, not during it.",
+            "sources": ["FIN-08 · p.2", "FIN-08 · p.3", "FIN-04 · p.4", "FIN-07 · p.1"]
+          }
+        ]
+      },
+      "criteria": {
+        "title": "What a reliable answer must guarantee, in finance",
+        "intro": "On numbers that go to the board, the priority order isn't the same as for generic use.",
+        "cta": "Discuss your use case",
+        "items": [
+          {
+            "title": "Speed of detection",
+            "description": "A controller who manually cross-checks a P&L, a cash-flow statement and an aging report typically needs several hours to spot a gap like the ones above, and only if they know where to look. Prosperify takes the question in plain language and cross-checks the documents in seconds, before the gap reaches the board already softened into a cleaner story. The gain isn't just time: it's the ability to challenge a narrative before it becomes the official version."
+          },
+          {
+            "title": "Accuracy of the figures",
+            "description": "A general-purpose model paraphrases and rounds; on a P&L or an aging report, rounding is enough to make the gap that matters disappear. Prosperify recalculates every amount from the source documents — 1.20 + 0.75 = 1.95M, checkable line by line — and never states a figure it hasn't found written in the corpus. That's the difference between a plausible answer and one that holds up in front of an audit committee."
+          },
+          {
+            "title": "Full traceability",
+            "description": "Every claim in the answer links back to the document, page and sentence that supports it, and a click opens the PDF at the exact highlighted passage. In a review or an audit, the controller no longer has to hunt down the source by hand: it's already there, ready to be shown as-is."
+          }
+        ]
+      },
+      "integration": {
+        "title": "What your IT team will check before signing off",
+        "intro": "A CFO can be convinced by the demo above. IT looks at something else: where the documents live, who can access them, what happens if the vendor changes policy, and how long the integration will actually take. On a corpus that holds closing accounts, client invoices and internal notes bound for the board, these questions aren't secondary — they decide the go/no-go, often before the quality of the answers does.",
+        "cta": "Talk to an engineer before the technical committee",
+        "items": [
+          {
+            "title": "Integration with what you already have",
+            "description": "Prosperify doesn't replace your ERP or your DMS: it reads on top of them, with connectors to the repositories your finance team already uses (data room, file shares, accounting exports) and authentication aligned with your identity provider via SSO (OIDC or SAML). No re-entry, no extra document repository to maintain."
+          },
+          {
+            "title": "Isolation and encryption",
+            "description": "Each client gets a siloed instance, with no shared indexing across organizations. Documents are encrypted at rest and in transit, and depending on the deployment model, keys can stay under your control. Your documents are never used to train a general model: they're queried within your perimeter, full stop."
+          },
+          {
+            "title": "Operational traceability",
+            "description": "Every access, every query and every document opened is logged. In a security review or an internal audit, your security team has a full trail to present, not a promise to take on faith."
+          },
+          {
+            "title": "Reversibility",
+            "description": "Your documents and indexes stay exportable at any time. If you switch tools down the line, you leave with your data and your conversation history, not with a proprietary silo you have to negotiate to get back."
+          }
+        ]
       }
     }
   },
@@ -1161,6 +1240,13 @@
         "title": "Hosted in France",
         "description": "Infrastructure hosted in France, GDPR-compliant."
       }
+    },
+    "pipeline": {
+      "document": { "label": "Document", "caption": "Secure upload" },
+      "storage": { "label": "Storage", "caption": "Encrypted (AES-256)" },
+      "transit": { "label": "Transit", "caption": "TLS 1.3" },
+      "processing": { "label": "Processing", "caption": "Isolated environment" },
+      "response": { "label": "Answer", "caption": "Sourced and secured" }
     }
   },
   "faq": {

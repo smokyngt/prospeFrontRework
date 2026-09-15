@@ -9,12 +9,7 @@ type DemoContent = {
   storeName: string;
   storeLabels: Record<string, string>;
   citations: DemoCitation[];
-  document: {
-    articleOne: string;
-    articleThree: string;
-    title: string;
-    verifiedClause: string;
-  };
+  document: Record<string, string>;
   finalAnswer: string;
   hallucinations?: DemoHallucination[];
   language: 'en' | 'fr';
@@ -50,8 +45,8 @@ export function demoChatConfigFor(sector?: DemoSector) {
 
 export type DemoChatConfig = ReturnType<typeof demoChatConfigFor>;
 
-export function orchestrationDelaysFor(sector?: DemoSector): number[] {
-  return demoDataFor(sector).orchestrationDelays;
+export function orchestrationDelaysFor(sector?: DemoSector, scenarioIndex = 0): number[] {
+  return demoDataFor(sector).scenarios[scenarioIndex]?.orchestrationDelays ?? [];
 }
 
 export function streamingConfigFor(sector?: DemoSector) {
@@ -79,8 +74,9 @@ export function demoFileById(fileId?: null | string): DemoFile {
   return allDemoFiles.find((file) => file.fileId === fileId) ?? allDemoFiles[0];
 }
 
-function citationsFor(sector?: DemoSector): DemoCitation[] {
-  return demoDataFor(sector).citations.map((c) => ({
+function citationsFor(sector?: DemoSector, scenarioIndex = 0): DemoCitation[] {
+  const scenario = demoDataFor(sector).scenarios[scenarioIndex];
+  return (scenario?.citations ?? []).map((c) => ({
     confidence: c.confidence,
     fileId: c.fileId,
     fileName: c.fileName,
@@ -91,18 +87,28 @@ function citationsFor(sector?: DemoSector): DemoCitation[] {
   }));
 }
 
-function getContent(langKey: 'fr' | 'en', sector?: DemoSector) {
+function getContent(langKey: 'fr' | 'en', sector?: DemoSector, scenarioIndex = 0) {
   const demoData = demoDataFor(sector);
-  const langData = demoData.content[langKey];
-  const sharedCitations = citationsFor(sector);
+  const scenario = demoData.scenarios[scenarioIndex] ?? demoData.scenarios[0];
+  const langData = scenario.content[langKey];
+  const sharedCitations = citationsFor(sector, scenarioIndex);
 
   return {
     storeName: langData.storeName,
     storeLabels: { storeName: langData.storeName, ...langData.storeLabels },
     citations: sharedCitations,
-    document: demoData.document,
+    document: scenario.document,
     finalAnswer: langData.finalAnswer,
-    hallucinations: langData.hallucinations.map((h) => ({
+    hallucinations: (
+      (langData.hallucinations ?? []) as Array<{
+        counterCitationId?: number;
+        end: number;
+        evidence?: string;
+        reason: string;
+        score: number;
+        start: number;
+      }>
+    ).map((h) => ({
       start: h.start,
       end: h.end,
       evidence: h.evidence,
@@ -119,8 +125,17 @@ function getContent(langKey: 'fr' | 'en', sector?: DemoSector) {
 }
 
 export const demoContent = {
-  get(language?: string, sector?: DemoSector): DemoContent {
+  get(language?: string, sector?: DemoSector, scenarioIndex = 0): DemoContent {
     const isFrench = language?.startsWith('fr');
-    return isFrench ? getContent('fr', sector) : getContent('en', sector);
+    return isFrench
+      ? getContent('fr', sector, scenarioIndex)
+      : getContent('en', sector, scenarioIndex);
   },
 };
+
+/** Les 4 prompts d'un secteur, verbatim (`demo-flow.md`), pour le sélecteur. */
+export function demoQuestionsFor(language?: string, sector?: DemoSector): string[] {
+  const isFrench = language?.startsWith('fr');
+  const langKey = isFrench ? 'fr' : 'en';
+  return demoDataFor(sector).scenarios.map((scenario) => scenario.content[langKey].question);
+}

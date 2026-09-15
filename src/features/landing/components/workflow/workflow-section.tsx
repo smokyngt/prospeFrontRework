@@ -10,16 +10,14 @@ import {
   ExternalLink,
   FileText,
   Folder,
-  type LucideIcon,
   Search,
-  Sparkles,
-  X,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
 
+import type { LucideIcon } from "lucide-react";
 import type React from "react";
 
 const ACCENT = "#FF6A13";
@@ -29,10 +27,11 @@ const REVEAL_STAGGER_MS = 90;
 const PANEL = { background: "var(--pf-bg-card)", border: "1px solid var(--pf-border)" };
 const PANEL_2 = { background: "var(--pf-bg-card-2)", border: "1px solid var(--pf-border)" };
 
-const STORE_ICONS: LucideIcon[] = [Database, Folder];
+/** Une icône par source, dans l'ordre — deux stores et deux dossiers hors périmètre. */
+const SOURCE_ICONS: LucideIcon[] = [Database, Folder, Archive, Database];
 
 type Citation = { label: string; page: string };
-type Store = { meta: string; name: string };
+type Source = { checked: boolean; name: string };
 
 /* ──────────────────────────────────────────────────────── */
 /*  01 — data store picker                                   */
@@ -40,8 +39,7 @@ type Store = { meta: string; name: string };
 
 function ConnectVisual() {
   const { t } = useTranslation();
-  const selected = t("workflow.cards.connect.selected", { returnObjects: true }) as Store[];
-  const excluded = t("workflow.cards.connect.excluded", { returnObjects: true }) as Store;
+  const sources = t("workflow.cards.connect.sources", { returnObjects: true }) as Source[];
 
   return (
     <div className="flex h-full w-full min-w-0 flex-col p-5" style={PANEL}>
@@ -56,11 +54,11 @@ function ConnectVisual() {
       </div>
 
       <div className="mt-3.5 flex flex-col gap-2.5">
-        {selected.map((store, i) => {
-          const Icon = STORE_ICONS[i] ?? Database;
+        {sources.map((source, i) => {
+          const Icon = SOURCE_ICONS[i] ?? Database;
           return (
             <div
-              key={store.name}
+              key={source.name}
               className="flex items-center gap-3 px-3.5 py-3"
               style={{ background: "var(--pf-bg-card-2)", border: "1px solid var(--pf-border-2)" }}
             >
@@ -70,51 +68,22 @@ function ConnectVisual() {
               >
                 <Icon size={17} />
               </span>
-              <div className="min-w-0 flex-1">
-                <div className="truncate text-[13.5px] font-semibold text-[var(--pf-fg)]">{store.name}</div>
-                <div className="mt-0.5 truncate font-mono text-[11px] text-[var(--pf-fg-dim)]">{store.meta}</div>
-              </div>
+              <span className="min-w-0 flex-1 truncate text-[13.5px] font-medium text-[var(--pf-fg)]">
+                {source.name}
+              </span>
               <span
                 className="flex h-5 w-5 shrink-0 items-center justify-center"
-                style={{ background: ACCENT, color: "var(--pf-on-accent)" }}
+                style={
+                  source.checked
+                    ? { background: ACCENT, color: "var(--pf-on-accent)" }
+                    : { border: "1.5px solid var(--pf-border-2)" }
+                }
               >
-                <Check size={13} />
+                {source.checked ? <Check size={13} /> : null}
               </span>
             </div>
           );
         })}
-
-        <div
-          className="flex items-center gap-3 px-3.5 py-3"
-          style={{ background: "var(--pf-bg-card-2)", border: "1px dashed var(--pf-border-2)" }}
-        >
-          <span
-            className="flex h-8 w-8 shrink-0 items-center justify-center"
-            style={{ background: "var(--pf-bg)", border: "1px solid var(--pf-border)", color: "var(--pf-fg-dim)" }}
-          >
-            <Archive size={17} />
-          </span>
-          <div className="min-w-0 flex-1">
-            <div className="truncate text-[13.5px] font-medium text-[var(--pf-fg-dim)] line-through">
-              {excluded.name}
-            </div>
-            <div className="mt-0.5 truncate font-mono text-[11px] text-[var(--pf-fg-dim)]">{excluded.meta}</div>
-          </div>
-          <span
-            className="flex h-5 w-5 shrink-0 items-center justify-center"
-            style={{ border: "1px solid var(--pf-border-2)", color: "var(--pf-fg-dim)" }}
-          >
-            <X size={13} />
-          </span>
-        </div>
-      </div>
-
-      <div
-        className="mt-4 flex items-center gap-2.5 pt-3.5 font-mono text-[11px] tracking-[0.04em] text-[var(--pf-fg-muted)]"
-        style={{ borderTop: "1px solid var(--pf-border)" }}
-      >
-        <Check size={15} className="shrink-0" style={{ color: "var(--pf-fg-muted)" }} />
-        {t("workflow.cards.connect.summary")}
       </div>
     </div>
   );
@@ -151,7 +120,8 @@ function SearchVisual() {
 
         <div className="mt-4 flex flex-col gap-2.5">
           <div className="h-2 w-full" style={{ background: "var(--pf-border)" }} />
-          <div className="h-2 w-[92%]" style={{ background: "var(--pf-border)" }} />
+          <div className="h-2 w-[88%]" style={{ background: "var(--pf-border)" }} />
+          <div className="h-2 w-[65%]" style={{ background: "var(--pf-border)" }} />
         </div>
 
         <div
@@ -165,6 +135,12 @@ function SearchVisual() {
           <p className="m-0 text-[13.5px] leading-[1.5] font-medium" style={{ color: "var(--pf-fg)" }}>
             {t("workflow.cards.search.highlight")}
           </p>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-2.5">
+          <div className="h-2 w-full" style={{ background: "var(--pf-border)" }} />
+          <div className="h-2 w-[87%]" style={{ background: "var(--pf-border)" }} />
+          <div className="h-2 w-[61%]" style={{ background: "var(--pf-border)" }} />
         </div>
       </div>
     </div>
@@ -180,64 +156,44 @@ function CiteVisual() {
   const citations = t("workflow.cards.cite.citations", { returnObjects: true }) as Citation[];
 
   return (
-    <div className="flex h-full w-full min-w-0 flex-col p-5" style={PANEL}>
-      <div className="flex items-center gap-2.5 font-mono text-[11px] tracking-[0.04em] text-[var(--pf-fg-dim)]">
-        <Database size={14} className="shrink-0" />
-        <span className="truncate">{t("workflow.cards.cite.storeLabel")}</span>
-      </div>
-
-      <div
-        className="mt-3.5 max-w-[84%] self-end px-3.5 py-3"
-        style={{ background: ACCENT, color: "var(--pf-on-accent)" }}
-      >
-        <p className="m-0 text-[13px] leading-[1.45] font-semibold">
+    <div className="flex h-full w-full min-w-0 flex-col" style={PANEL}>
+      <div className="p-4" style={{ background: ACCENT, color: "var(--pf-on-accent)" }}>
+        <p className="m-0 text-[14.5px] leading-[1.45] font-semibold">
           {t("workflow.cards.cite.question")}
         </p>
       </div>
 
-      <div className="mt-3 px-4 py-3.5" style={PANEL_2}>
-        <div
-          className="mb-2.5 flex items-center gap-2 font-mono text-[9px] tracking-[0.14em] uppercase"
-          style={{ color: "var(--pf-fg-muted)" }}
-        >
-          <span
-            className="flex h-[15px] w-[15px] items-center justify-center"
-            style={{ background: "var(--pf-bg-card-2)", color: "var(--pf-fg-muted)" }}
-          >
-            <Sparkles size={9} />
-          </span>
-          {t("workflow.cards.cite.agentLabel")}
+      <div className="flex-1 p-5">
+        <div className="px-4 py-4" style={PANEL_2}>
+          <p className="m-0 text-[14px] leading-[1.55] font-medium text-[var(--pf-fg)]">
+            {t("workflow.cards.cite.answerStart")}
+            <strong style={{ color: ACCENT }}>{t("workflow.cards.cite.answerHighlight")}</strong>
+            {t("workflow.cards.cite.answerEnd")}
+          </p>
         </div>
-        <p className="m-0 text-[13.5px] leading-[1.55] font-medium text-[var(--pf-fg)]">
-          {t("workflow.cards.cite.answerStart")}
-          <span style={{ color: ACCENT }}>{t("workflow.cards.cite.answerHighlight")}</span>
-          {t("workflow.cards.cite.answerEnd")}
-          <span
-            className="ml-1.5 inline-flex h-4 min-w-4 items-center justify-center px-1 align-middle font-mono text-[10px] font-bold"
-            style={{ background: ACCENT, color: "var(--pf-on-accent)" }}
-          >
-            1
-          </span>
-        </p>
-      </div>
 
-      <div className="mt-4">
-        <div className="mb-3 font-mono text-[9px] tracking-[0.18em]" style={{ color: "var(--pf-fg-dim)" }}>
-          {t("workflow.cards.cite.sourcesLabel")}
-        </div>
-        <div className="flex flex-col gap-2">
-          {citations.map((citation) => (
-            <div key={citation.label} className="flex items-center gap-3 px-3.5 py-3" style={PANEL_2}>
-              <FileText size={16} className="shrink-0" style={{ color: "var(--pf-fg-dim)" }} />
-              <span className="min-w-0 flex-1 truncate font-mono text-[12px] text-[var(--pf-fg)]">
-                {citation.label}
-              </span>
-              <span className="shrink-0 font-mono text-[11px] font-medium" style={{ color: "var(--pf-fg-muted)" }}>
-                {citation.page}
-              </span>
-              <ExternalLink size={14} className="shrink-0 text-[var(--pf-fg-dim)]" />
-            </div>
-          ))}
+        <div className="mt-5">
+          <div
+            className="mb-2.5 flex items-center gap-2 text-[12px] font-medium"
+            style={{ color: "var(--pf-fg-muted)" }}
+          >
+            <FileText size={15} className="shrink-0" />
+            {t("workflow.cards.cite.sourcesLabel")}
+          </div>
+          <div className="flex flex-col gap-2">
+            {citations.map((citation) => (
+              <div key={citation.label} className="flex items-center gap-3 px-3.5 py-3" style={PANEL_2}>
+                <FileText size={16} className="shrink-0" style={{ color: "var(--pf-fg-dim)" }} />
+                <span className="min-w-0 flex-1 truncate font-mono text-[12px] text-[var(--pf-fg)]">
+                  {citation.label}
+                </span>
+                <span className="shrink-0 font-mono text-[11px] font-medium" style={{ color: "var(--pf-fg-muted)" }}>
+                  {citation.page}
+                </span>
+                <ExternalLink size={14} className="shrink-0 text-[var(--pf-fg-dim)]" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

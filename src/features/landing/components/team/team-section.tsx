@@ -90,6 +90,7 @@ export function TeamSection({
               <div className="flex flex-col items-center text-center">
                 <div className="h-20 w-20 overflow-hidden rounded-full border-2 border-neutral-200 dark:border-neutral-700">
                   {member.avatarUrl ? (
+                    // eslint-disable-next-line @next/next/no-img-element -- avatarUrl peut être une URL externe arbitraire (workspace.assetUrl.normalize), et next.config.ts ne déclare aucun remotePattern : next/image casserait au runtime sur ces hôtes.
                     <img
                       alt={member.name}
                       className="h-full w-full object-cover"

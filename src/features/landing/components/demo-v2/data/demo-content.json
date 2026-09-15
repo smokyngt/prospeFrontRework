@@ -1,559 +1,313 @@
 {
   "pdf": {
-    "totalPages": 7,
-    "url": "/assets/demo/rapport-dd-projet-helios.pdf"
+    "totalPages": 10,
+    "url": "/assets/demo-usecase/finance/FIN-01_Management_Accounts_Aout_2026.pdf"
   },
   "files": [
     {
-      "fileId": "demo-helios",
-      "fileName": "rapport-dd-projet-helios.pdf",
-      "totalPages": 7,
-      "url": "/assets/demo/rapport-dd-projet-helios.pdf",
-      "metadata": {
-        "fileName": "rapport-dd-projet-helios.pdf",
-        "mime": "application/pdf",
-        "pages": "7",
-        "sourceAccess": "Secure workspace",
-        "sourceParser": "pdf text + page preview"
-      }
+      "fileId": "FIN-01",
+      "fileName": "FIN-01_Management_Accounts_Aout_2026.pdf",
+      "totalPages": 10,
+      "url": "/assets/demo-usecase/finance/FIN-01_Management_Accounts_Aout_2026.pdf",
+      "metadata": { "fileName": "FIN-01_Management_Accounts_Aout_2026.pdf", "mime": "application/pdf", "pages": "10", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" }
     },
     {
-      "fileId": "demo-annexe-c",
-      "fileName": "annexe-c-contrats-sous-traitance.pdf",
-      "totalPages": 3,
-      "url": "/assets/demo/annexe-c-contrats-sous-traitance.pdf",
-      "metadata": {
-        "fileName": "annexe-c-contrats-sous-traitance.pdf",
-        "mime": "application/pdf",
-        "pages": "3",
-        "sourceAccess": "Secure workspace",
-        "sourceParser": "pdf text + page preview"
-      }
+      "fileId": "FIN-02",
+      "fileName": "FIN-02_PnL_YTD_Aout_2026.pdf",
+      "totalPages": 4,
+      "url": "/assets/demo-usecase/finance/FIN-02_PnL_YTD_Aout_2026.pdf",
+      "metadata": { "fileName": "FIN-02_PnL_YTD_Aout_2026.pdf", "mime": "application/pdf", "pages": "4", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" }
+    },
+    {
+      "fileId": "FIN-03",
+      "fileName": "FIN-03_Cash_Flow_YTD_Aout_2026.pdf",
+      "totalPages": 5,
+      "url": "/assets/demo-usecase/finance/FIN-03_Cash_Flow_YTD_Aout_2026.pdf",
+      "metadata": { "fileName": "FIN-03_Cash_Flow_YTD_Aout_2026.pdf", "mime": "application/pdf", "pages": "5", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" }
+    },
+    {
+      "fileId": "FIN-04",
+      "fileName": "FIN-04_Budget_vs_Actual_Aout_2026.pdf",
+      "totalPages": 6,
+      "url": "/assets/demo-usecase/finance/FIN-04_Budget_vs_Actual_Aout_2026.pdf",
+      "metadata": { "fileName": "FIN-04_Budget_vs_Actual_Aout_2026.pdf", "mime": "application/pdf", "pages": "6", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" }
+    },
+    {
+      "fileId": "FIN-05",
+      "fileName": "FIN-05_AR_Aging_2026-08-31.pdf",
+      "totalPages": 5,
+      "url": "/assets/demo-usecase/finance/FIN-05_AR_Aging_2026-08-31.pdf",
+      "metadata": { "fileName": "FIN-05_AR_Aging_2026-08-31.pdf", "mime": "application/pdf", "pages": "5", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" }
+    },
+    {
+      "fileId": "FIN-06",
+      "fileName": "FIN-06_Factures_clients_selection.pdf",
+      "totalPages": 4,
+      "url": "/assets/demo-usecase/finance/FIN-06_Factures_clients_selection.pdf",
+      "metadata": { "fileName": "FIN-06_Factures_clients_selection.pdf", "mime": "application/pdf", "pages": "4", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" }
+    },
+    {
+      "fileId": "FIN-07",
+      "fileName": "FIN-07_Rapprochement_bancaire_2026-08-31.pdf",
+      "totalPages": 4,
+      "url": "/assets/demo-usecase/finance/FIN-07_Rapprochement_bancaire_2026-08-31.pdf",
+      "metadata": { "fileName": "FIN-07_Rapprochement_bancaire_2026-08-31.pdf", "mime": "application/pdf", "pages": "4", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" }
+    },
+    {
+      "fileId": "FIN-08",
+      "fileName": "FIN-08_Note_CFO_Conseil_Septembre_2026.pdf",
+      "totalPages": 4,
+      "url": "/assets/demo-usecase/finance/FIN-08_Note_CFO_Conseil_Septembre_2026.pdf",
+      "metadata": { "fileName": "FIN-08_Note_CFO_Conseil_Septembre_2026.pdf", "mime": "application/pdf", "pages": "4", "sourceAccess": "Secure workspace", "sourceParser": "pdf text + page preview" }
     }
   ],
   "filterMetadata": [
-    {
-      "key": "author",
-      "value": "Cabinet Verrière"
-    },
-    {
-      "key": "date",
-      "value": "2025-03-15"
-    },
-    {
-      "key": "section",
-      "value": "Synthèse exécutive"
-    }
+    { "key": "author", "value": "Direction financière" },
+    { "key": "date", "value": "2026-09-02" },
+    { "key": "section", "value": "Clôture Août 2026" }
   ],
   "stores": [
-    {
-      "id": "store-active",
-      "nameKey": "storeName",
-      "short": "S",
-      "disabled": false,
-      "selected": true
-    },
-    {
-      "id": "store-risk",
-      "nameKey": "risk",
-      "short": "RC",
-      "disabled": true,
-      "selected": false
-    },
-    {
-      "id": "store-legal",
-      "nameKey": "legal",
-      "short": "LR",
-      "disabled": true,
-      "selected": false
-    },
-    {
-      "id": "store-research",
-      "nameKey": "research",
-      "short": "RS",
-      "disabled": true,
-      "selected": false
-    }
+    { "id": "store-active", "nameKey": "storeName", "short": "F", "disabled": false, "selected": true },
+    { "id": "store-risk", "nameKey": "risk", "short": "RC", "disabled": true, "selected": false },
+    { "id": "store-legal", "nameKey": "legal", "short": "LR", "disabled": true, "selected": false },
+    { "id": "store-research", "nameKey": "research", "short": "RS", "disabled": true, "selected": false }
   ],
-  "filterFiles": ["rapport-dd-projet-helios.pdf", "annexe-c-contrats-sous-traitance.pdf"],
+  "filterFiles": [
+    "FIN-01_Management_Accounts_Aout_2026.pdf",
+    "FIN-02_PnL_YTD_Aout_2026.pdf",
+    "FIN-03_Cash_Flow_YTD_Aout_2026.pdf",
+    "FIN-04_Budget_vs_Actual_Aout_2026.pdf",
+    "FIN-05_AR_Aging_2026-08-31.pdf",
+    "FIN-06_Factures_clients_selection.pdf",
+    "FIN-07_Rapprochement_bancaire_2026-08-31.pdf",
+    "FIN-08_Note_CFO_Conseil_Septembre_2026.pdf"
+  ],
   "filterFolders": [
-    {
-      "disabled": true,
-      "label": "Contracts"
-    },
-    {
-      "disabled": true,
-      "label": "Board memos"
-    }
+    { "disabled": true, "label": "Contracts" },
+    { "disabled": true, "label": "Board memos" }
   ],
-  "userInitials": "CB",
+  "userInitials": "CF",
   "archivedThreadCount": 2,
-  "orchestrationDelays": [680, 620, 1320, 920, 1200, 980, 1260, 1040, 1380],
-  "citations": [
-    {
-      "confidence": "98%",
-      "fileId": "demo-helios",
-      "fileName": "rapport-dd-projet-helios.pdf",
-      "highlightText": "multiple de 8,0x l'EBITDA normalisé 2025",
-      "id": 1,
-      "page": 2,
-      "quote": "EBITDA normalisé 2025 : 14,2 M€, multiple 8,0x, valeur d'entreprise 113,6 M€."
-    },
-    {
-      "confidence": "95%",
-      "fileId": "demo-helios",
-      "fileName": "rapport-dd-projet-helios.pdf",
-      "highlightText": "Coûts de sous-traitance logistique « ponctuelle »",
-      "id": 2,
-      "page": 5,
-      "quote": "Coûts de sous-traitance logistique « ponctuelle » : 2,4 M€, qualifiés non récurrents par le management."
-    },
-    {
-      "confidence": "91%",
-      "fileId": "demo-helios",
-      "fileName": "rapport-dd-projet-helios.pdf",
-      "highlightText": "EBITDA normalisé 2025 ressort à 11,8 M€ , et non 14,2 M€",
-      "id": 3,
-      "page": 5,
-      "quote": "Retraités correctement, l'EBITDA normalisé 2025 ressort à 11,8 M€, et non 14,2 M€."
-    },
-    {
-      "confidence": "89%",
-      "fileId": "demo-annexe-c",
-      "fileName": "annexe-c-contrats-sous-traitance.pdf",
-      "highlightText": "reconduits sans interruption sur 2023-2025",
-      "id": 4,
-      "page": 2,
-      "quote": "Les trois contrats logistiques ont été reconduits sans interruption sur 2023-2025, par tacite reconduction annuelle."
-    }
-  ],
-  "document": {
-    "articleOne": "EBITDA normalisé 2025 : 14,2 M€ - Synthèse exécutive p.2",
-    "articleThree": "Retraitement de 2,4 M€ qualifié non récurrent par le management - Quality of Earnings p.5",
-    "title": "Rapport de due diligence financière - Projet HELIOS",
-    "verifiedClause": "Les coûts de sous-traitance de 2,4 M€ sont en réalité récurrents (contrats pluriannuels 2023-2025) - Observation des conseils p.5"
-  },
-  "content": {
-    "fr": {
-      "storeName": "Analyste financier",
-      "storeLabels": {
-        "risk": "Risques & conformité",
-        "legal": "Juridique",
-        "research": "Veille documentaire"
-      },
-      "finalAnswer": "[La synthèse exécutive (p.2) retient un EBITDA normalisé 2025 de 14,2 M€ appliqué à un multiple de 8,0x, soit une valeur d'entreprise de 113,6 M€](cite:1)[. Le pont de normalisation (section Quality of Earnings, p.5) détaille les retraitements : +0,7 M€ (rémunération dirigeant), +0,6 M€ (honoraires M&A), +2,4 M€ (sous-traitance logistique dite « [ponctuelle](halluc:1) »), −1,6 M€ (cession d'actifs). L'observation des conseils signale que les 2,4 M€ de sous-traitance correspondent à trois contrats pluriannuels reconduits sans interruption sur 2023-2025, donc de nature récurrente](cite:2)[. Retraités correctement, l'EBITDA normalisé ressort à 11,8 M€ et non 14,2 M€](cite:3)[. La base de valorisation de la synthèse (14,2 M€) contredit donc le détail de la section 04. À 11,8 M€, le même multiple de 8,0x donne 94,4 M€, soit un écart de valeur d'entreprise d'environ 19,2 M€. Le chiffre n'est pas fiable tant que le comité n'a pas tranché la qualification du retraitement (p.7). L'annexe C (contrats de sous-traitance logistique) confirme que les trois contrats ont été reconduits sans interruption sur 2023-2025, par tacite reconduction annuelle](cite:4).\n\nL'impact est suffisamment significatif pour changer la recommandation :\n\n| Base | EBITDA normalisé | Multiple | Valeur d'entreprise |\n| --- | --- | --- | --- |\n| Synthèse exécutive | 14,2 M€ | 8,0x | 113,6 M€ |\n| Retraité (conseils) | 11,8 M€ | 8,0x | [94,4 M€](cite:3) |\n| **Écart** | **2,4 M€** | - | **19,2 M€** |\n\nLe comité doit confirmer la base retenue avant signature.",
-      "question": "Vérifie l'EBITDA normalisé 2025 du rapport HELIOS et la fiabilité du multiple de 8,0x, en citant les passages exacts.",
-      "reasoning": "La question porte sur la cohérence entre la synthèse (p.2) et le détail du Quality of Earnings (p.5). Je relève l'EBITDA normalisé de 14,2 M€ mentionné dans la synthèse avec le multiple de 8,0x, puis je le compare au pont de normalisation. Je constate une contradiction : le management qualifie 2,4 M€ de sous-traitance logistique de « non récurrents », mais l'annexe C montre que ces contrats sont pluriannuels et reconduits. Je calcule l'impact : à 11,8 M€ d'EBITDA retraité, la valeur d'entreprise tombe à 94,4 M€ au lieu de 113,6 M€, soit un écart de 19,2 M€. Je cite chaque passage avec sa page pour que le comité puisse vérifier.",
-      "retrievalQueries": [
-        "EBITDA normalisé 2025 valorisation synthèse exécutive",
-        "pont de normalisation EBITDA retraitements management",
-        "sous-traitance logistique ponctuelle 2,4 M€",
-        "observation conseils EBITDA 11,8 M€ écart 19,2 M€"
-      ],
-      "threads": ["Agent Prosperify"],
-      "hallucinations": [
-        {
-          "start": 341,
-          "end": 351,
-          "reason": "Conflit de source : le management qualifie ces coûts de ponctuels, mais l'annexe C montre trois contrats pluriannuels reconduits sur 2023‑2025.",
-          "score": 0.82,
-          "counterCitationId": 4,
-          "evidence": "Les trois contrats logistiques ont été reconduits sans interruption sur 2023-2025, par tacite reconduction annuelle."
-        }
-      ],
-      "stepText": {
-        "analyze": "Décomposer la demande : confirmer la base de valorisation, vérifier la cohérence avec le détail QoE, évaluer la fiabilité du multiple.",
-        "ls": "Parcourir le store pour repérer les documents disponibles sur Projet HELIOS.",
-        "read": "Ouvrir le PDF et lire les sections clés : Synthèse exécutive (p.2), Analyse financière (p.4), Quality of Earnings (p.5).",
-        "screenshot": "Capturer un aperçu de page pour vérifier visuellement la source.",
-        "lexical": "Rechercher les formulations exactes : EBITDA normalisé, multiple 8,0x, retraitement sous-traitance.",
-        "lexicalResults": "Passages retrouvés et classés : synthèse p.2, pont de normalisation p.5, observation conseils p.5.",
-        "semantic": "Faire une seconde recherche sémantique pour retrouver la conclusion et l'écart de valorisation.",
-        "semanticResults": "Passage retrouvé dans la synthèse des risques p.7 : écart de VE de 19,2 M€ selon la qualification du retraitement.",
-        "reviewNote": "À 11,8 M€ d'EBITDA normalisé, le même multiple de 8,0x donnerait 94,4 M€, soit un écart de VE d'environ 19,2 M€.",
-        "generate": "Composer une note structurée : chiffre synthèse, détail QoE, contradiction, impact.",
-        "thinking": "Comparer la base de valorisation retenue dans la synthèse exécutive (14,2 M€) avec le détail du pont de normalisation en section Quality of Earnings (retraitement net de 2,4 M€). Les deux chiffres devraient converger si la méthodologie est appliquée de façon cohérente d'une section à l'autre.\n\nLe retraitement de 2,4 M€ inclut un poste de sous-traitance logistique qualifié de « ponctuel » dans le corps du rapport. Or l'annexe C montre trois contrats pluriannuels reconduits sans interruption sur 2023-2025 par tacite reconduction annuelle, ce qui invalide cette qualification et remet en cause l'ajustement correspondant.\n\nEn retirant ce retraitement non justifié, l'EBITDA normalisé recalculé s'établit à 11,8 M€ plutôt que 14,2 M€. Appliqué au même multiple de 8,0x, cela donne une valeur d'entreprise de 94,4 M€ au lieu de 113,6 M€, soit un écart de 19,2 M€ qui doit être signalé avant validation du comité."
-      },
-      "ui": {
-        "active": "Actifs",
-        "archived": "Archivés",
-        "chunks": "fragments",
-        "closeDocument": "Fermer le document",
-        "closeReview": "Fermer",
-        "closeSidebar": "Fermer le panneau",
-        "copy": "Copier",
-        "edit": "Modifier",
-        "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide. Les sources citées y apparaîtront dès qu'une réponse référence un passage.",
-        "emptyTitle": "Aucun document ouvert",
-        "entities": "entités",
-        "justNow": "à l'instant",
-        "metadata": "métadonnées",
-        "mobileChat": "Chat",
-        "mobileDocument": "Document",
-        "mobileThreads": "Fils",
-        "newChat": "Nouvelle conversation",
-        "openDocument": "Ouvrir le lecteur de document",
-        "openReview": "Essayer dans le chat",
-        "openSidebar": "Ouvrir la liste des fils",
-        "pages": "pages",
-        "papers": "Papers",
-        "regenerate": "Régénérer",
-        "sourceFile": "Fichier",
-        "storeStreaming": "Génération",
-        "today": "Aujourd'hui",
-        "tourBack": "Retour",
-        "tourDone": "Terminer",
-        "tourNext": "Suivant",
-        "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici. Cliquez pour tout dérouler.",
-        "tourOrchestrationTitle": "Suivez le raisonnement de l'agent",
-        "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.",
-        "tourPdfTitle": "Accédez à la source",
-        "tourSkip": "Passer",
-        "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.",
-        "tourSourcesTitle": "Chaque affirmation est citée"
-      }
-    },
-    "en": {
-      "storeName": "Financial analyst",
-      "storeLabels": {
-        "risk": "Risk & compliance",
-        "legal": "Legal reviewer",
-        "research": "Research scout"
-      },
-      "finalAnswer": "[The executive summary (p.2) uses a normalized 2025 EBITDA of €14.2M applied to an 8.0x multiple, giving an enterprise value of €113.6M](cite:1)[. The EBITDA bridge (Quality of Earnings section, p.5) details the adjustments: +€0.7M (director excess remuneration), +€0.6M (M&A advisory fees), +€2.4M ('[one-off](halluc:1)' logistics subcontracting), −€1.6M (asset disposal gain). The advisors' note states that the €2.4M subcontracting cost corresponds to three multi-year contracts renewed without interruption over 2023-2025, making them recurring in nature](cite:2)[. Adjusted correctly, normalized EBITDA stands at €11.8M, not €14.2M](cite:3)[. The valuation basis in the summary (€14.2M) therefore contradicts the detailed section 04. At €11.8M, the same 8.0x multiple yields €94.4M, an enterprise value gap of approximately €19.2M. The figure is not reliable until the committee rules on the adjustment classification (p.7). Appendix C (logistics subcontracting agreements) confirms the three contracts were renewed without interruption over 2023-2025 under an annual tacit renewal clause](cite:4).\n\nThe impact is material enough to change the recommendation:\n\n| Basis | Normalized EBITDA | Multiple | Enterprise value |\n| --- | --- | --- | --- |\n| Executive summary | €14.2M | 8.0x | €113.6M |\n| Restated (advisors) | €11.8M | 8.0x | [€94.4M](cite:3) |\n| **Gap** | **€2.4M** | - | **€19.2M** |\n\nThe committee should confirm which basis applies before signing.",
-      "question": "Verify the 2025 normalized EBITDA in the HELIOS report and whether the 8.0x multiple holds. Cite the exact passages.",
-      "reasoning": "The question is about consistency between the executive summary (p.2) and the Quality of Earnings detail (p.5). I extract the €14.2M normalized EBITDA from the summary with the 8.0x multiple, then compare against the bridge. I find a contradiction: management adds back €2.4M of logistics subcontracting as 'non-recurring', but Appendix C shows these are multi-year renewed contracts. I calculate the impact: restated EBITDA €11.8M → EV €94.4M instead of €113.6M, a gap of €19.2M. I cite each passage with its page so the committee can verify.",
-      "retrievalQueries": [
-        "normalized EBITDA 2025 valuation executive summary",
-        "EBITDA bridge management adjustments normalization",
-        "logistics subcontracting 2.4M one-off retreatment",
-        "advisors observation EBITDA 11.8M gap 19.2M"
-      ],
-      "threads": ["Prosperify agent"],
-      "hallucinations": [
-        {
-          "start": 293,
-          "end": 302,
-          "reason": "Source conflict: management labels these costs as 'one-off', but Appendix C shows three multi-year contracts renewed over 2023‑2025.",
-          "score": 0.82,
-          "counterCitationId": 4,
-          "evidence": "The three logistics contracts were renewed without interruption over 2023-2025, by annual tacit renewal."
-        }
-      ],
-      "stepText": {
-        "analyze": "Breaking down the request: confirm the valuation basis, verify QoE consistency, assess multiple reliability.",
-        "ls": "Browsing the store to see what documents are available for Projet HELIOS.",
-        "read": "Opening the uploaded PDF and reading key sections: Executive Summary (p.2), Financial Analysis (p.4), Quality of Earnings (p.5).",
-        "screenshot": "Capturing page preview for visual verification.",
-        "lexical": "Searching exact wording: normalized EBITDA, 8.0x multiple, subcontracting retreatment.",
-        "lexicalResults": "Retrieved and ranked passages: summary p.2, EBITDA bridge p.5, advisors observation p.5.",
-        "semantic": "Running a second semantic search to find the conclusion and valuation gap.",
-        "semanticResults": "Retrieved the risk summary passage p.7: EV gap of €19.2M depending on retreatment qualification.",
-        "reviewNote": "At €11.8M normalized EBITDA, the same 8.0x multiple would give €94.4M, an EV gap of approximately €19.2M.",
-        "generate": "Composing a structured note: summary figure, QoE detail, contradiction, impact.",
-        "thinking": "Cross-check the valuation basis in the executive summary (€14.2M) against the EBITDA bridge detailed in the Quality of Earnings section (€2.4M net retreatment). Both figures should converge if the methodology is applied consistently across sections.\n\nThe €2.4M retreatment includes a logistics subcontracting line item labeled \"non-recurring\" in the report body. But Annex C shows three multi-year contracts renewed without interruption over 2023-2025 through automatic annual renewal, which invalidates that classification and calls the corresponding adjustment into question.\n\nRemoving this unjustified retreatment, the recalculated normalized EBITDA comes out to €11.8M rather than €14.2M. Applied to the same 8.0x multiple, that gives an enterprise value of €94.4M instead of €113.6M, a €19.2M gap that needs to be flagged before committee sign-off."
-      },
-      "ui": {
-        "active": "Active",
-        "archived": "Archived",
-        "chunks": "chunks",
-        "closeDocument": "Close document",
-        "closeReview": "Close",
-        "closeSidebar": "Close sidebar",
-        "copy": "Copy",
-        "edit": "Edit",
-        "emptySubtitle": "Close this panel to open an empty document  Cited sources will appear here as soon as an answer references a passage.",
-        "emptyTitle": "No document open",
-        "entities": "entities",
-        "justNow": "just now",
-        "metadata": "metadata",
-        "mobileChat": "Chat",
-        "mobileDocument": "Document",
-        "mobileThreads": "Threads",
-        "newChat": "New chat",
-        "openDocument": "Open document viewer",
-        "openReview": "Try in chat",
-        "openSidebar": "Open thread list",
-        "pages": "pages",
-        "papers": "Papers",
-        "regenerate": "Regenerate",
-        "sourceFile": "File",
-        "storeStreaming": "Generating",
-        "today": "Today",
-        "tourBack": "Back",
-        "tourDone": "Done",
-        "tourNext": "Next",
-        "tourOrchestrationContent": "Every reasoning and search step is traced here. Click to expand the full trail.",
-        "tourOrchestrationTitle": "Follow the agent's reasoning",
-        "tourPdfContent": "Citations open the PDF at the exact highlighted passage.",
-        "tourPdfTitle": "Jump to the source",
-        "tourSkip": "Skip",
-        "tourSourcesContent": "Each sentence links to the passage that supports it.",
-        "tourSourcesTitle": "Every claim is cited"
-      }
-    }
-  },
-  "steps": [
-    {
-      "action": "analyzing",
-      "entities": ["Projet HELIOS", "EBITDA normalisé", "retraitement sous-traitance"],
-      "id": "intent",
-      "queries": "@queries",
-      "reasoning": "@text.analyze"
-    },
-    {
-      "action": "ls",
-      "id": "browse-store",
-      "reasoning": "@text.ls",
-      "toolName": "ls",
-      "toolParams": {
-        "path": "/Projet HELIOS"
-      },
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "",
-            "metadata": {
-              "treeData": {
-                "path": "/Projet HELIOS",
-                "folders": [],
-                "files": [
-                  {
-                    "fileId": "demo-helios",
-                    "name": "rapport-dd-projet-helios.pdf",
-                    "size": 842000
-                  },
-                  {
-                    "fileId": "demo-annexe-c",
-                    "name": "annexe-c-contrats-sous-traitance.pdf",
-                    "size": 214000
-                  }
-                ]
-              }
-            }
-          }
-        ],
-        "count": 2,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "searching",
-      "id": "lexical-search",
-      "queries": ["EBITDA normalisé 2025 valorisation", "retraitement sous-traitance logistique"],
-      "reasoning": "@text.lexical"
-    },
-    {
-      "action": "retrieved",
-      "chunks": 8,
-      "id": "lexical-results",
-      "reasoning": "@text.lexicalResults",
-      "toolName": "search",
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "@doc.title",
-            "fileName": "rapport-dd-projet-helios.pdf",
-            "metadata": {
-              "section": "Synthèse exécutive",
-              "type": "text"
-            },
-            "pageNumber": 2,
-            "score": 0.91
-          },
-          {
-            "content": "@doc.articleOne",
-            "fileName": "rapport-dd-projet-helios.pdf",
-            "metadata": {
-              "section": "Synthèse exécutive",
-              "type": "text"
-            },
-            "pageNumber": 2,
-            "score": 0.89
-          },
-          {
-            "content": "@doc.articleThree",
-            "fileName": "rapport-dd-projet-helios.pdf",
-            "metadata": {
-              "section": "Quality of Earnings",
-              "type": "text"
-            },
-            "pageNumber": 5,
-            "score": 0.84
-          }
-        ],
-        "count": 3,
-        "status": "ok"
-      },
-      "topScore": 0.91
-    },
-    {
-      "action": "readFile",
-      "id": "read-file",
-      "reasoning": "@text.read",
-      "toolName": "read",
-      "toolParams": {
-        "fileName": "rapport-dd-projet-helios.pdf",
-        "pageRange": "2,4-5"
-      },
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "Synthèse exécutive - EBITDA normalisé 2025 : 14,2 M€, multiple 8,0x, valeur d'entreprise 113,6 M€.",
-            "fileId": "demo-helios",
-            "fileName": "rapport-dd-projet-helios.pdf",
-            "pageNumber": 2,
-            "score": 0.98
-          },
-          {
-            "content": "Pont de normalisation de l'EBITDA 2025 - retraitement « sous-traitance logistique ponctuelle » : +2,4 M€, qualifié non récurrent par le management.",
-            "fileId": "demo-helios",
-            "fileName": "rapport-dd-projet-helios.pdf",
-            "pageNumber": 5,
-            "score": 0.95
-          },
-          {
-            "content": "Observation des conseils - les coûts de sous-traitance de 2,4 M€ correspondent à trois contrats pluriannuels reconduits sur 2023-2025. Retraités, l'EBITDA normalisé ressort à 11,8 M€.",
-            "fileId": "demo-helios",
-            "fileName": "rapport-dd-projet-helios.pdf",
-            "pageNumber": 5,
-            "score": 0.91
-          }
-        ],
-        "count": 3,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "screenshot",
-      "id": "page-screenshot",
-      "reasoning": "@text.screenshot",
-      "toolName": "screenshot",
-      "toolParams": {
-        "fileName": "rapport-dd-projet-helios.pdf",
-        "page": 1
-      },
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "",
-            "fileId": "demo-helios",
-            "fileName": "rapport-dd-projet-helios.pdf",
-            "metadata": {
-              "type": "screenshot"
-            },
-            "pageNumber": 1,
-            "score": 0.94,
-            "type": "image"
-          },
-          {
-            "content": "",
-            "fileId": "demo-helios",
-            "fileName": "rapport-dd-projet-helios.pdf",
-            "metadata": {
-              "type": "screenshot"
-            },
-            "pageNumber": 2,
-            "score": 0.91,
-            "type": "image"
-          }
-        ],
-        "count": 2,
-        "status": "ok"
-      }
-    },
-    {
-      "action": "searching",
-      "id": "semantic-search",
-      "queries": ["impact écart valorisation EBITDA normalisé comité"],
-      "reasoning": "@text.semantic"
-    },
-    {
-      "action": "retrieved",
-      "chunks": 12,
-      "id": "semantic-results",
-      "reasoning": "@text.semanticResults",
-      "toolName": "search",
-      "toolResponse": {
-        "chunks": [
-          {
-            "content": "@doc.verifiedClause",
-            "fileName": "rapport-dd-projet-helios.pdf",
-            "metadata": {
-              "section": "Observation des conseils",
-              "type": "text"
-            },
-            "pageNumber": 5,
-            "score": 0.86
-          },
-          {
-            "content": "@text.reviewNote",
-            "fileName": "rapport-dd-projet-helios.pdf",
-            "metadata": {
-              "section": "Synthèse des risques",
-              "type": "text"
-            },
-            "pageNumber": 7,
-            "score": 0.74
-          },
-          {
-            "content": "Les trois contrats logistiques ont été reconduits sans interruption sur 2023-2025, par tacite reconduction annuelle prévue à l'article 4 de chaque contrat-cadre.",
-            "fileName": "annexe-c-contrats-sous-traitance.pdf",
-            "metadata": {
-              "section": "C.3.1 Reconduction",
-              "type": "text"
-            },
-            "pageNumber": 2,
-            "score": 0.71
-          }
-        ],
-        "count": 3,
-        "status": "ok"
-      },
-      "topScore": 0.86
-    },
-    {
-      "action": "generating",
-      "id": "answer",
-      "reasoning": "@text.generate",
-      "thinking": "@text.thinking"
-    }
-  ],
   "tour": [
-    {
-      "uiKey": "tourOrchestration",
-      "target": "orchestration",
-      "placement": {
-        "desktop": "right",
-        "mobile": "bottom"
-      },
-      "targetWaitTimeout": 8000,
-      "onEnter": "expandReasoning",
-      "onLeave": "awaitAnswer"
-    },
-    {
-      "uiKey": "tourSources",
-      "target": "citations",
-      "placement": {
-        "desktop": "right",
-        "mobile": "bottom"
-      },
-      "targetWaitTimeout": 8000
-    },
-    {
-      "uiKey": "tourPdf",
-      "target": "pdf",
-      "placement": {
-        "desktop": "left",
-        "mobile": "center"
-      },
-      "targetWaitTimeout": 8000,
-      "onEnter": "openCitation"
-    }
+    { "uiKey": "tourOrchestration", "target": "orchestration", "placement": { "desktop": "right", "mobile": "bottom" }, "targetWaitTimeout": 8000, "onEnter": "expandReasoning", "onLeave": "awaitAnswer" },
+    { "uiKey": "tourSources", "target": "citations", "placement": { "desktop": "right", "mobile": "bottom" }, "targetWaitTimeout": 8000 },
+    { "uiKey": "tourPdf", "target": "pdf", "placement": { "desktop": "left", "mobile": "center" }, "targetWaitTimeout": 8000, "onEnter": "openCitation" }
   ],
-  "streaming": {
-    "minDurationMs": 2600,
-    "durationRatio": 0.62,
-    "minWordPauseMs": 24
-  }
+  "streaming": { "minDurationMs": 2600, "durationRatio": 0.62, "minWordPauseMs": 24 },
+  "scenarios": [
+    {
+      "document": {},
+      "citations": [
+        { "id": 1, "fileId": "FIN-02", "fileName": "FIN-02_PnL_YTD_Aout_2026.pdf", "page": 1, "confidence": "97%", "quote": "CA 12,4 M€, coût des ventes 8,1 M€, marge brute 4,3 M€, Opex 3,2 M€, EBITDA 1,1 M€.", "highlightText": "Contrôle : 12 400 000 - 8 100 000 = 4 300 000" },
+        { "id": 2, "fileId": "FIN-02", "fileName": "FIN-02_PnL_YTD_Aout_2026.pdf", "page": 2, "confidence": "95%", "quote": "Croissance du chiffre d'affaires : 12,4 / 10,0 - 1 = 24 %.", "highlightText": "Croissance du chiffre d'affaires : 12,4 / 10,0 - 1 = 24 %" },
+        { "id": 3, "fileId": "FIN-03", "fileName": "FIN-03_Cash_Flow_YTD_Aout_2026.pdf", "page": 1, "confidence": "96%", "quote": "La trésorerie diminue de 2,2 M€ sur la période.", "highlightText": "La trésorerie diminue de 2,2 M€ sur la période" },
+        { "id": 4, "fileId": "FIN-03", "fileName": "FIN-03_Cash_Flow_YTD_Aout_2026.pdf", "page": 2, "confidence": "93%", "quote": "2,25 M€ de moins qu'en 2025 sur l'exploitation.", "highlightText": "2,25 M€ de moins qu'en 2025" },
+        { "id": 5, "fileId": "FIN-03", "fileName": "FIN-03_Cash_Flow_YTD_Aout_2026.pdf", "page": 3, "confidence": "94%", "quote": "La consommation de trésorerie d'exploitation s'explique intégralement par la hausse des créances clients.", "highlightText": "La consommation de trésorerie d'exploitation s'explique intégralement par la" }
+      ],
+      "orchestrationDelays": [750, 950, 1400],
+      "steps": [
+        { "id": "intent", "action": "analyzing", "entities": ["Lumio Mobility", "EBITDA", "cash-flow"], "queries": "@queries", "reasoning": "@text.analyze" },
+        { "id": "search", "action": "searching", "queries": ["chiffre d'affaires YTD EBITDA croissance", "pont de trésorerie flux d'exploitation créances clients"], "reasoning": "@text.search" },
+        { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
+      ],
+      "content": {
+        "fr": {
+          "storeName": "Analyste financier",
+          "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
+          "question": "Résume la performance YTD et explique le paradoxe entre croissance et trésorerie.",
+          "finalAnswer": "[Le chiffre d'affaires YTD s'établit à 12,4 M€ pour un EBITDA de 1,1 M€, calculé à partir d'une marge brute de 4,3 M€ moins 3,2 M€ d'Opex](cite:1)[, soit une croissance de 24 % par rapport aux 10,0 M€ de l'exercice précédent](cite:2). Pourtant, la trésorerie recule de 3,6 M€ à 1,4 M€ sur la période[, une baisse de 2,2 M€ portée entièrement par l'exploitation](cite:3)[, avec un flux d'exploitation 2,25 M€ inférieur à celui de 2025 alors que l'EBITDA progresse](cite:4)[. Cette consommation de trésorerie s'explique intégralement par la hausse du poste clients, sans anomalie sur les autres composantes du besoin en fonds de roulement](cite:5).\n\n| Indicateur | YTD 2026 | YTD 2025 | Variation |\n| --- | --- | --- | --- |\n| Chiffre d'affaires | 12,4 M€ | 10,0 M€ | + 24,0 % |\n| EBITDA | 1,1 M€ | 0,9 M€ | + 22,2 % |\n| Trésorerie de clôture | 1,4 M€ | 3,2 M€ | - 2,2 M€* |\n\n*Comparaison YTD à 8 mois, hors périmètre 2025 complet.\n\nLa croissance est réelle et rentable ; ce qui se dégrade, c'est la conversion de ce résultat en cash disponible.",
+          "reasoning": "La question porte sur l'écart entre performance comptable et trésorerie. Je compare le P&L (marge, EBITDA, croissance) au tableau de flux (pont de trésorerie, détail du flux d'exploitation) pour isoler la cause : la hausse des créances clients.",
+          "retrievalQueries": ["chiffre d'affaires YTD EBITDA croissance", "pont de trésorerie flux d'exploitation créances clients"],
+          "threads": ["Agent Prosperify"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "Décomposer la demande : vérifier la rentabilité YTD puis isoler la cause de la baisse de trésorerie.",
+            "search": "Rechercher les chiffres clés : chiffre d'affaires, EBITDA, pont de trésorerie, flux d'exploitation.",
+            "generate": "Composer la réponse : performance P&L, pont de trésorerie, cause de la consommation de cash.",
+            "thinking": "Je pars du compte de résultat : CA 12,4 M€, coût des ventes 8,1 M€, marge brute 4,3 M€, Opex 3,2 M€, EBITDA 1,1 M€. Comparé à l'exercice précédent (CA 10,0 M€, EBITDA 0,9 M€), la croissance est de 24 % et l'EBITDA progresse de 0,2 M€ : l'activité est saine.\n\nJe croise ensuite avec le tableau de flux : trésorerie d'ouverture 3,6 M€, clôture 1,4 M€, soit -2,2 M€. Le détail montre un flux d'exploitation de -1,4 M€, porté presque entièrement par une hausse de 2,5 M€ des créances clients, les autres postes de BFR se compensant. La baisse de trésorerie n'est donc pas un signe de non-rentabilité, mais un problème de conversion du résultat en cash.",
+            "ls": "Parcourir le workspace de clôture août 2026.",
+            "read": "Ouvrir le P&L et le tableau de flux.",
+            "screenshot": "Capturer un aperçu de page pour vérification visuelle.",
+            "lexical": "Rechercher les formulations exactes.",
+            "lexicalResults": "Passages retrouvés et classés.",
+            "semantic": "Recherche sémantique complémentaire.",
+            "semanticResults": "Passage retrouvé.",
+            "reviewNote": "Voir détail.",
+            "active": "Actifs", "archived": "Archivés", "chunks": "fragments", "closeDocument": "Fermer le document", "closeReview": "Fermer", "closeSidebar": "Fermer le panneau", "copy": "Copier", "edit": "Modifier", "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide.", "emptyTitle": "Aucun document ouvert", "entities": "entités", "justNow": "à l'instant", "metadata": "métadonnées", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Fils", "newChat": "Nouvelle conversation", "openDocument": "Ouvrir le lecteur de document", "openReview": "Essayer dans le chat", "openSidebar": "Ouvrir la liste des fils", "pages": "pages", "papers": "Papers", "regenerate": "Régénérer", "sourceFile": "Fichier", "storeStreaming": "Génération", "today": "Aujourd'hui", "tourBack": "Retour", "tourDone": "Terminer", "tourNext": "Suivant", "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici.", "tourOrchestrationTitle": "Suivez le raisonnement de l'agent", "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.", "tourPdfTitle": "Accédez à la source", "tourSkip": "Passer", "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.", "tourSourcesTitle": "Chaque affirmation est citée"
+          }
+        },
+        "en": {
+          "storeName": "Financial analyst",
+          "storeLabels": { "risk": "Risk & compliance", "legal": "Legal reviewer", "research": "Research scout" },
+          "question": "Résume la performance YTD et explique le paradoxe entre croissance et trésorerie.",
+          "finalAnswer": "[Le chiffre d'affaires YTD s'établit à 12,4 M€ pour un EBITDA de 1,1 M€](cite:1)[, soit une croissance de 24 %](cite:2). La trésorerie recule de 3,6 M€ à 1,4 M€[, portée par l'exploitation](cite:3)[, avec un flux 2,25 M€ inférieur à 2025](cite:4)[, expliqué par la hausse des créances clients](cite:5).",
+          "reasoning": "English version pending.",
+          "retrievalQueries": ["revenue YTD EBITDA growth", "cash bridge operating flow receivables"],
+          "threads": ["Prosperify agent"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "English version pending.", "search": "English version pending.", "generate": "English version pending.", "thinking": "English version pending.",
+            "ls": "English version pending.", "read": "English version pending.", "screenshot": "English version pending.", "lexical": "English version pending.", "lexicalResults": "English version pending.", "semantic": "English version pending.", "semanticResults": "English version pending.", "reviewNote": "English version pending.",
+            "active": "Active", "archived": "Archived", "chunks": "chunks", "closeDocument": "Close document", "closeReview": "Close", "closeSidebar": "Close sidebar", "copy": "Copy", "edit": "Edit", "emptySubtitle": "Close this panel to open an empty document.", "emptyTitle": "No document open", "entities": "entities", "justNow": "just now", "metadata": "metadata", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Threads", "newChat": "New chat", "openDocument": "Open document viewer", "openReview": "Try in chat", "openSidebar": "Open thread list", "pages": "pages", "papers": "Papers", "regenerate": "Regenerate", "sourceFile": "File", "storeStreaming": "Generating", "today": "Today", "tourBack": "Back", "tourDone": "Done", "tourNext": "Next", "tourOrchestrationContent": "Every reasoning and search step is traced here.", "tourOrchestrationTitle": "Follow the agent's reasoning", "tourPdfContent": "Citations open the PDF at the exact highlighted passage.", "tourPdfTitle": "Jump to the source", "tourSkip": "Skip", "tourSourcesContent": "Each sentence links to the passage that supports it.", "tourSourcesTitle": "Every claim is cited"
+          }
+        }
+      }
+    },
+    {
+      "document": {},
+      "citations": [
+        { "id": 1, "fileId": "FIN-04", "fileName": "FIN-04_Budget_vs_Actual_Aout_2026.pdf", "page": 1, "confidence": "96%", "quote": "CA réel 12,4 M€ vs budget 11,8 M€.", "highlightText": "Favorable, + 5,1 %" },
+        { "id": 2, "fileId": "FIN-04", "fileName": "FIN-04_Budget_vs_Actual_Aout_2026.pdf", "page": 2, "confidence": "95%", "quote": "EBITDA réel 1,1 M€ vs budget 1,3 M€.", "highlightText": "Défavorable, - 15,4 %" },
+        { "id": 3, "fileId": "FIN-04", "fileName": "FIN-04_Budget_vs_Actual_Aout_2026.pdf", "page": 3, "confidence": "94%", "quote": "Trésorerie réelle 1,4 M€ vs budget 2,8 M€.", "highlightText": "L'écart de trésorerie est" },
+        { "id": 4, "fileId": "FIN-04", "fileName": "FIN-04_Budget_vs_Actual_Aout_2026.pdf", "page": 4, "confidence": "92%", "quote": "DSO 78 jours vs 49 jours budgétés, sur-immobilisation 1,52 M€.", "highlightText": "Sur-immobilisation" },
+        { "id": 5, "fileId": "FIN-05", "fileName": "FIN-05_AR_Aging_2026-08-31.pdf", "page": 1, "confidence": "93%", "quote": "Le poste clients a doublé en un an.", "highlightText": "Le poste clients a doublé en un an" },
+        { "id": 6, "fileId": "FIN-05", "fileName": "FIN-05_AR_Aging_2026-08-31.pdf", "page": 2, "confidence": "95%", "quote": "1,65 + 0,85 + 0,90 + 0,45 + 0,25 = 4,10 M€.", "highlightText": "Contrôle : 1,65 + 0,85 + 0,90 + 0,45 + 0,25 = 4,10 M€" },
+        { "id": 7, "fileId": "FIN-05", "fileName": "FIN-05_AR_Aging_2026-08-31.pdf", "page": 3, "confidence": "94%", "quote": "1,20 + 0,75 = 1,95 M€, soit 47,6 % du poste clients.", "highlightText": "Contrôle : 1,20 + 0,75 = 1,95 M€" }
+      ],
+      "orchestrationDelays": [750, 950, 1450],
+      "steps": [
+        { "id": "intent", "action": "analyzing", "entities": ["budget", "réel", "DSO"], "queries": "@queries", "reasoning": "@text.analyze" },
+        { "id": "search", "action": "searching", "queries": ["budget vs actual août 2026", "balance âgée concentration client"], "reasoning": "@text.search" },
+        { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
+      ],
+      "content": {
+        "fr": {
+          "storeName": "Analyste financier",
+          "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
+          "question": "Compare le réel au budget et identifie la variance qui mérite l'attention du board.",
+          "finalAnswer": "[Le chiffre d'affaires réel dépasse le budget de 0,6 M€ (12,4 M€ contre 11,8 M€)](cite:1)[, mais l'EBITDA est inférieur de 0,2 M€ au budget (1,1 M€ contre 1,3 M€)](cite:2)[, et la trésorerie accuse un écart de 1,4 M€ par rapport au plan (1,4 M€ contre 2,8 M€ budgétés)](cite:3)[, proportionnellement plus important que celui de l'EBITDA](cite:4). Le délai de règlement client explique une bonne part de cet écart[ : le poste clients a doublé en un an, passant de 2,05 M€ à 4,10 M€](cite:5)[, avec un total qui recoupe exactement les cinq tranches d'ancienneté de la balance âgée](cite:6)[, et deux comptes concentrent déjà 47,6 % du solde total](cite:7).\n\n| Indicateur | Réel | Budget | Écart |\n| --- | --- | --- | --- |\n| Chiffre d'affaires | 12,4 M€ | 11,8 M€ | + 0,6 M€ |\n| EBITDA | 1,1 M€ | 1,3 M€ | - 0,2 M€ |\n| Trésorerie | 1,4 M€ | 2,8 M€ | - 1,4 M€ |\n| Délai de règlement client | 78 jours | 49 jours | + 29 jours |\n\nLa priorité du board doit être la conversion de cash, pas le chiffre d'affaires : la croissance dépasse le plan, mais elle immobilise plus de trésorerie que prévu.",
+          "reasoning": "Je compare chaque ligne du scorecard budget vs réel (CA, EBITDA, trésorerie, délai de règlement) puis je relie l'écart de trésorerie au poste clients détaillé dans la balance âgée.",
+          "retrievalQueries": ["budget vs actual août 2026", "balance âgée concentration client"],
+          "threads": ["Agent Prosperify"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "Décomposer la demande : comparer chaque indicateur au budget puis localiser la variance la plus significative.",
+            "search": "Rechercher le scorecard budget vs réel et la balance âgée des créances.",
+            "generate": "Composer la réponse : écarts CA/EBITDA/trésorerie, cause via le poste clients.",
+            "thinking": "Le scorecard montre un CA favorable (+0,6 M€) mais un EBITDA défavorable (-0,2 M€) et surtout un écart de trésorerie de -1,4 M€, deux fois supérieur en proportion à l'écart d'EBITDA.\n\nLe délai de règlement client à 78 jours contre 49 jours budgétés confirme cette lecture : à 49 jours, le poste clients serait de 2,58 M€ au lieu de 4,10 M€, soit 1,52 M€ de trésorerie immobilisée en plus. La balance âgée confirme : le poste clients a doublé en un an, et les deux plus gros comptes en représentent près de la moitié.",
+            "ls": "Parcourir le workspace de clôture août 2026.", "read": "Ouvrir le budget vs actual et la balance âgée.", "screenshot": "Capturer un aperçu de page.", "lexical": "Rechercher les formulations exactes.", "lexicalResults": "Passages retrouvés.", "semantic": "Recherche sémantique.", "semanticResults": "Passage retrouvé.", "reviewNote": "Voir détail.",
+            "active": "Actifs", "archived": "Archivés", "chunks": "fragments", "closeDocument": "Fermer le document", "closeReview": "Fermer", "closeSidebar": "Fermer le panneau", "copy": "Copier", "edit": "Modifier", "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide.", "emptyTitle": "Aucun document ouvert", "entities": "entités", "justNow": "à l'instant", "metadata": "métadonnées", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Fils", "newChat": "Nouvelle conversation", "openDocument": "Ouvrir le lecteur de document", "openReview": "Essayer dans le chat", "openSidebar": "Ouvrir la liste des fils", "pages": "pages", "papers": "Papers", "regenerate": "Régénérer", "sourceFile": "Fichier", "storeStreaming": "Génération", "today": "Aujourd'hui", "tourBack": "Retour", "tourDone": "Terminer", "tourNext": "Suivant", "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici.", "tourOrchestrationTitle": "Suivez le raisonnement de l'agent", "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.", "tourPdfTitle": "Accédez à la source", "tourSkip": "Passer", "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.", "tourSourcesTitle": "Chaque affirmation est citée"
+          }
+        },
+        "en": {
+          "storeName": "Financial analyst",
+          "storeLabels": { "risk": "Risk & compliance", "legal": "Legal reviewer", "research": "Research scout" },
+          "question": "Compare le réel au budget et identifie la variance qui mérite l'attention du board.",
+          "finalAnswer": "[Revenue beats budget by €0.6M](cite:1)[, but EBITDA is €0.2M below budget](cite:2)[, and cash is €1.4M off plan](cite:3)[, a gap larger in proportion than the EBITDA miss](cite:4)[. AR has doubled year over year](cite:5)[, reconciling exactly with the aging buckets](cite:6)[, with two accounts holding 47.6% of the balance](cite:7).",
+          "reasoning": "English version pending.",
+          "retrievalQueries": ["budget vs actual August 2026", "AR aging concentration"],
+          "threads": ["Prosperify agent"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "English version pending.", "search": "English version pending.", "generate": "English version pending.", "thinking": "English version pending.",
+            "ls": "English version pending.", "read": "English version pending.", "screenshot": "English version pending.", "lexical": "English version pending.", "lexicalResults": "English version pending.", "semantic": "English version pending.", "semanticResults": "English version pending.", "reviewNote": "English version pending.",
+            "active": "Active", "archived": "Archived", "chunks": "chunks", "closeDocument": "Close document", "closeReview": "Close", "closeSidebar": "Close sidebar", "copy": "Copy", "edit": "Edit", "emptySubtitle": "Close this panel to open an empty document.", "emptyTitle": "No document open", "entities": "entities", "justNow": "just now", "metadata": "metadata", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Threads", "newChat": "New chat", "openDocument": "Open document viewer", "openReview": "Try in chat", "openSidebar": "Open thread list", "pages": "pages", "papers": "Papers", "regenerate": "Regenerate", "sourceFile": "File", "storeStreaming": "Generating", "today": "Today", "tourBack": "Back", "tourDone": "Done", "tourNext": "Next", "tourOrchestrationContent": "Every reasoning and search step is traced here.", "tourOrchestrationTitle": "Follow the agent's reasoning", "tourPdfContent": "Citations open the PDF at the exact highlighted passage.", "tourPdfTitle": "Jump to the source", "tourSkip": "Skip", "tourSourcesContent": "Each sentence links to the passage that supports it.", "tourSourcesTitle": "Every claim is cited"
+          }
+        }
+      }
+    },
+    {
+      "document": {},
+      "citations": [
+        { "id": 1, "fileId": "FIN-05", "fileName": "FIN-05_AR_Aging_2026-08-31.pdf", "page": 3, "confidence": "95%", "quote": "MetroFleet 1,20 M€ échue 62 jours, NordTransit 0,75 M€ échue 32 jours.", "highlightText": "Contrôle : 1,20 + 0,75 = 1,95 M€" },
+        { "id": 2, "fileId": "FIN-06", "fileName": "FIN-06_Factures_clients_selection.pdf", "page": 1, "confidence": "96%", "quote": "Facture MF-260515 : 1 000 000 € HT.", "highlightText": "Contrôle : 574 000 + 203 000 + 125 000 + 98 000 = 1 000 000 € HT" },
+        { "id": 3, "fileId": "FIN-06", "fileName": "FIN-06_Factures_clients_selection.pdf", "page": 2, "confidence": "93%", "quote": "Aucune preuve de réception ou de mise en service signée.", "highlightText": "aucune preuve de" },
+        { "id": 4, "fileId": "FIN-06", "fileName": "FIN-06_Factures_clients_selection.pdf", "page": 3, "confidence": "96%", "quote": "Facture NT-260630 : 625 000 € HT.", "highlightText": "Contrôle : 369 000 + 130 500 + 60 000 + 65 500 = 625 000 € HT" },
+        { "id": 5, "fileId": "FIN-06", "fileName": "FIN-06_Factures_clients_selection.pdf", "page": 4, "confidence": "92%", "quote": "Le client conteste la ligne interface facturation.", "highlightText": "Le client conteste la ligne" }
+      ],
+      "orchestrationDelays": [700, 900, 1350],
+      "steps": [
+        { "id": "intent", "action": "analyzing", "entities": ["MetroFleet", "NordTransit", "factures"], "queries": "@queries", "reasoning": "@text.analyze" },
+        { "id": "search", "action": "searching", "queries": ["MetroFleet NordTransit exposition balance âgée", "factures justificatifs recouvrement"], "reasoning": "@text.search" },
+        { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
+      ],
+      "content": {
+        "fr": {
+          "storeName": "Analyste financier",
+          "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
+          "question": "Quelles créances expliquent le risque et les factures confirment-elles la balance âgée ?",
+          "finalAnswer": "[MetroFleet Group doit 1,20 M€, échue depuis 62 jours, avec une simple promesse de paiement reçue sans date ni écrit ; NordTransit AB doit 0,75 M€, échue depuis 32 jours, avec un litige documentaire ouvert](cite:1)[. La facture MetroFleet MF-260515 confirme le montant : 574 000 + 203 000 + 125 000 + 98 000 = 1 000 000 € HT, soit 1,20 M€ TTC](cite:2)[, mais aucune preuve de réception ou de mise en service signée par le client ne figure au dossier](cite:3)[. La facture NordTransit NT-260630 confirme également son montant : 369 000 + 130 500 + 60 000 + 65 500 = 625 000 € HT, soit 0,75 M€ TTC](cite:4)[, et le client conteste précisément la ligne d'interface facturée, faute de numéro de commande complet](cite:5).\n\nLes deux comptes cumulent 1,95 M€, soit 47,6 % du poste clients. Les montants concordent parfaitement entre balance âgée et factures ; les lacunes documentaires expliquent le retard, sans permettre de qualifier ces créances d'irrécouvrables.",
+          "reasoning": "Je croise la balance âgée avec les factures sources correspondantes, pour vérifier que les montants concordent et comprendre pourquoi ces deux comptes restent impayés.",
+          "retrievalQueries": ["MetroFleet NordTransit exposition balance âgée", "factures justificatifs recouvrement"],
+          "threads": ["Agent Prosperify"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "Décomposer la demande : identifier les comptes à risque puis vérifier leurs factures sources.",
+            "search": "Rechercher la balance âgée et les factures MetroFleet/NordTransit.",
+            "generate": "Composer la réponse : montants, concordance, lacunes documentaires.",
+            "thinking": "La balance âgée pointe deux comptes : MetroFleet (1,20 M€) et NordTransit (0,75 M€), ensemble 1,95 M€ soit 47,6 % du poste clients total de 4,10 M€. Je vérifie chaque facture source : MetroFleet MF-260515 recalcule bien à 1 000 000 € HT + 200 000 € TVA = 1 200 000 € TTC ; NordTransit NT-260630 recalcule à 625 000 € HT + 125 000 € TVA = 750 000 € TTC. Les deux montants concordent exactement avec la balance âgée.\n\nLes causes du retard diffèrent : MetroFleet n'a pas de preuve de réception signée au dossier malgré plusieurs relances, tandis que NordTransit conteste une ligne de facturation faute de numéro de commande complet.",
+            "ls": "Parcourir le workspace de clôture août 2026.", "read": "Ouvrir la balance âgée et les factures sélectionnées.", "screenshot": "Capturer un aperçu de page.", "lexical": "Rechercher les formulations exactes.", "lexicalResults": "Passages retrouvés.", "semantic": "Recherche sémantique.", "semanticResults": "Passage retrouvé.", "reviewNote": "Voir détail.",
+            "active": "Actifs", "archived": "Archivés", "chunks": "fragments", "closeDocument": "Fermer le document", "closeReview": "Fermer", "closeSidebar": "Fermer le panneau", "copy": "Copier", "edit": "Modifier", "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide.", "emptyTitle": "Aucun document ouvert", "entities": "entités", "justNow": "à l'instant", "metadata": "métadonnées", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Fils", "newChat": "Nouvelle conversation", "openDocument": "Ouvrir le lecteur de document", "openReview": "Essayer dans le chat", "openSidebar": "Ouvrir la liste des fils", "pages": "pages", "papers": "Papers", "regenerate": "Régénérer", "sourceFile": "Fichier", "storeStreaming": "Génération", "today": "Aujourd'hui", "tourBack": "Retour", "tourDone": "Terminer", "tourNext": "Suivant", "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici.", "tourOrchestrationTitle": "Suivez le raisonnement de l'agent", "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.", "tourPdfTitle": "Accédez à la source", "tourSkip": "Passer", "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.", "tourSourcesTitle": "Chaque affirmation est citée"
+          }
+        },
+        "en": {
+          "storeName": "Financial analyst",
+          "storeLabels": { "risk": "Risk & compliance", "legal": "Legal reviewer", "research": "Research scout" },
+          "question": "Quelles créances expliquent le risque et les factures confirment-elles la balance âgée ?",
+          "finalAnswer": "[MetroFleet owes €1.20M, 62 days overdue](cite:1)[; the invoice confirms €1.00M net](cite:2)[, but no proof of receipt is on file](cite:3)[. NordTransit's invoice confirms €625K net](cite:4)[, disputed over an incomplete purchase order](cite:5).",
+          "reasoning": "English version pending.",
+          "retrievalQueries": ["MetroFleet NordTransit exposure aging", "invoices recovery evidence"],
+          "threads": ["Prosperify agent"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "English version pending.", "search": "English version pending.", "generate": "English version pending.", "thinking": "English version pending.",
+            "ls": "English version pending.", "read": "English version pending.", "screenshot": "English version pending.", "lexical": "English version pending.", "lexicalResults": "English version pending.", "semantic": "English version pending.", "semanticResults": "English version pending.", "reviewNote": "English version pending.",
+            "active": "Active", "archived": "Archived", "chunks": "chunks", "closeDocument": "Close document", "closeReview": "Close", "closeSidebar": "Close sidebar", "copy": "Copy", "edit": "Edit", "emptySubtitle": "Close this panel to open an empty document.", "emptyTitle": "No document open", "entities": "entities", "justNow": "just now", "metadata": "metadata", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Threads", "newChat": "New chat", "openDocument": "Open document viewer", "openReview": "Try in chat", "openSidebar": "Open thread list", "pages": "pages", "papers": "Papers", "regenerate": "Regenerate", "sourceFile": "File", "storeStreaming": "Generating", "today": "Today", "tourBack": "Back", "tourDone": "Done", "tourNext": "Next", "tourOrchestrationContent": "Every reasoning and search step is traced here.", "tourOrchestrationTitle": "Follow the agent's reasoning", "tourPdfContent": "Citations open the PDF at the exact highlighted passage.", "tourPdfTitle": "Jump to the source", "tourSkip": "Skip", "tourSourcesContent": "Each sentence links to the passage that supports it.", "tourSourcesTitle": "Every claim is cited"
+          }
+        }
+      }
+    },
+    {
+      "document": {},
+      "citations": [
+        { "id": 1, "fileId": "FIN-08", "fileName": "FIN-08_Note_CFO_Conseil_Septembre_2026.pdf", "page": 2, "confidence": "94%", "quote": "Tension de trésorerie décrite comme principalement saisonnière.", "highlightText": "principalement un effet de saisonnalité" },
+        { "id": 2, "fileId": "FIN-08", "fileName": "FIN-08_Note_CFO_Conseil_Septembre_2026.pdf", "page": 3, "confidence": "93%", "quote": "Promesse de paiement MetroFleet confirmée, NordTransit non mentionné.", "highlightText": "une promesse de paiement nous a été confirmée" },
+        { "id": 3, "fileId": "FIN-04", "fileName": "FIN-04_Budget_vs_Actual_Aout_2026.pdf", "page": 4, "confidence": "92%", "quote": "DSO 78 jours vs 49 jours, sur-immobilisation 1,52 M€.", "highlightText": "Sur-immobilisation" },
+        { "id": 4, "fileId": "FIN-05", "fileName": "FIN-05_AR_Aging_2026-08-31.pdf", "page": 3, "confidence": "94%", "quote": "1,20 + 0,75 = 1,95 M€ de créances échues.", "highlightText": "Contrôle : 1,20 + 0,75 = 1,95 M€" },
+        { "id": 5, "fileId": "FIN-07", "fileName": "FIN-07_Rapprochement_bancaire_2026-08-31.pdf", "page": 1, "confidence": "96%", "quote": "1 250 000 + 180 000 - 30 000 = 1 400 000 €.", "highlightText": "Contrôle : 1 250 000 + 180 000 - 30 000 = 1 400 000 €" },
+        { "id": 6, "fileId": "FIN-07", "fileName": "FIN-07_Rapprochement_bancaire_2026-08-31.pdf", "page": 2, "confidence": "91%", "quote": "Solde du relevé avant prise en compte des éléments en transit.", "highlightText": "Le solde du relevé avant prise en compte des éléments en transit" }
+      ],
+      "orchestrationDelays": [800, 1000, 1500],
+      "steps": [
+        { "id": "intent", "action": "analyzing", "entities": ["note CFO", "saisonnalité", "remises en transit"], "queries": "@queries", "reasoning": "@text.analyze" },
+        { "id": "search", "action": "searching", "queries": ["note CFO saisonnalité trésorerie", "rapprochement bancaire remises en transit"], "reasoning": "@text.search" },
+        { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
+      ],
+      "content": {
+        "fr": {
+          "storeName": "Analyste financier",
+          "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
+          "question": "Challenge la note CFO et prépare trois actions de clôture sourcées.",
+          "finalAnswer": "[La note du CFO qualifie la tension de trésorerie de « principalement saisonnière »](cite:1)[et indique qu'une promesse de paiement a été confirmée pour MetroFleet, sans mentionner le litige NordTransit](cite:2)[. Or le délai de règlement client à 78 jours contre 49 jours budgétés traduit une sur-immobilisation structurelle de 1,52 M€, pas un simple effet saisonnier](cite:3)[, et les deux comptes MetroFleet et NordTransit cumulent 1,95 M€ de créances échues](cite:4)[. Les 180 k€ de remises en transit citées dans la note réconcilient bien le solde bancaire — 1 250 000 + 180 000 - 30 000 = 1 400 000 €](cite:5)[, mais l'une d'elles, 120 k€, reste en suspens depuis 12 jours, et l'ensemble ne pèse que 9 % des 1,95 M€ de créances échues](cite:6).\n\nTrois actions de clôture : documenter et réclamer formellement le paiement MetroFleet (procès-verbal de réception manquant) ; résoudre le bon de commande incomplet et le litige NordTransit ; vérifier la remise en transit de 120 k€ âgée de 12 jours. Aucune de ces actions ne relève d'un conseil d'investissement.",
+          "reasoning": "Je confronte chaque affirmation de la note CFO aux pièces qui la contredisent ou la nuancent, puis je formule des actions de clôture sourcées.",
+          "retrievalQueries": ["note CFO saisonnalité trésorerie", "rapprochement bancaire remises en transit"],
+          "threads": ["Agent Prosperify"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "Décomposer la demande : confronter la narration du CFO aux pièces, puis formuler des actions sourcées.",
+            "search": "Rechercher la note CFO, le budget vs actual, la balance âgée et le rapprochement bancaire.",
+            "generate": "Composer la réponse : affirmations challengées, actions de clôture.",
+            "thinking": "La note CFO avance trois idées : tension saisonnière, encaissement MetroFleet imminent, remises en transit rassurantes. Le délai de règlement (78 vs 49 jours budgétés) et la sur-immobilisation de 1,52 M€ qui en découle contredisent le mot « saisonnier ». La note ne mentionne pas NordTransit du tout, alors que ce compte représente 0,75 M€ de créances en litige.\n\nLes 180 k€ de remises en transit sont réels et réconcilient exactement le solde bancaire, mais ils ne représentent que 9 % des 1,95 M€ de créances échues des deux comptes principaux : présentés comme une solution générale, c'est trompeur.",
+            "ls": "Parcourir le workspace de clôture août 2026.", "read": "Ouvrir la note CFO et le rapprochement bancaire.", "screenshot": "Capturer un aperçu de page.", "lexical": "Rechercher les formulations exactes.", "lexicalResults": "Passages retrouvés.", "semantic": "Recherche sémantique.", "semanticResults": "Passage retrouvé.", "reviewNote": "Voir détail.",
+            "active": "Actifs", "archived": "Archivés", "chunks": "fragments", "closeDocument": "Fermer le document", "closeReview": "Fermer", "closeSidebar": "Fermer le panneau", "copy": "Copier", "edit": "Modifier", "emptySubtitle": "Fermez ce panneau pour ouvrir un espace document vide.", "emptyTitle": "Aucun document ouvert", "entities": "entités", "justNow": "à l'instant", "metadata": "métadonnées", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Fils", "newChat": "Nouvelle conversation", "openDocument": "Ouvrir le lecteur de document", "openReview": "Essayer dans le chat", "openSidebar": "Ouvrir la liste des fils", "pages": "pages", "papers": "Papers", "regenerate": "Régénérer", "sourceFile": "Fichier", "storeStreaming": "Génération", "today": "Aujourd'hui", "tourBack": "Retour", "tourDone": "Terminer", "tourNext": "Suivant", "tourOrchestrationContent": "Chaque étape de raisonnement et de recherche est tracée ici.", "tourOrchestrationTitle": "Suivez le raisonnement de l'agent", "tourPdfContent": "Les citations ouvrent le PDF sur le passage surligné.", "tourPdfTitle": "Accédez à la source", "tourSkip": "Passer", "tourSourcesContent": "Chaque phrase renvoie au passage qui la justifie.", "tourSourcesTitle": "Chaque affirmation est citée"
+          }
+        },
+        "en": {
+          "storeName": "Financial analyst",
+          "storeLabels": { "risk": "Risk & compliance", "legal": "Legal reviewer", "research": "Research scout" },
+          "question": "Challenge la note CFO et prépare trois actions de clôture sourcées.",
+          "finalAnswer": "[The CFO note calls the cash tension « mostly seasonal »](cite:1)[and confirms a MetroFleet payment promise without mentioning the NordTransit dispute](cite:2)[. DSO at 78 vs 49 budgeted days points to structural over-investment](cite:3)[, and both accounts total €1.95M overdue](cite:4)[. The €180K in-transit deposits reconcile the bank balance](cite:5)[, but only cover 9% of the overdue receivables](cite:6).",
+          "reasoning": "English version pending.",
+          "retrievalQueries": ["CFO note seasonality cash", "bank reconciliation in-transit deposits"],
+          "threads": ["Prosperify agent"],
+          "hallucinations": [],
+          "stepText": {
+            "analyze": "English version pending.", "search": "English version pending.", "generate": "English version pending.", "thinking": "English version pending.",
+            "ls": "English version pending.", "read": "English version pending.", "screenshot": "English version pending.", "lexical": "English version pending.", "lexicalResults": "English version pending.", "semantic": "English version pending.", "semanticResults": "English version pending.", "reviewNote": "English version pending.",
+            "active": "Active", "archived": "Archived", "chunks": "chunks", "closeDocument": "Close document", "closeReview": "Close", "closeSidebar": "Close sidebar", "copy": "Copy", "edit": "Edit", "emptySubtitle": "Close this panel to open an empty document.", "emptyTitle": "No document open", "entities": "entities", "justNow": "just now", "metadata": "metadata", "mobileChat": "Chat", "mobileDocument": "Document", "mobileThreads": "Threads", "newChat": "New chat", "openDocument": "Open document viewer", "openReview": "Try in chat", "openSidebar": "Open thread list", "pages": "pages", "papers": "Papers", "regenerate": "Regenerate", "sourceFile": "File", "storeStreaming": "Generating", "today": "Today", "tourBack": "Back", "tourDone": "Done", "tourNext": "Next", "tourOrchestrationContent": "Every reasoning and search step is traced here.", "tourOrchestrationTitle": "Follow the agent's reasoning", "tourPdfContent": "Citations open the PDF at the exact highlighted passage.", "tourPdfTitle": "Jump to the source", "tourSkip": "Skip", "tourSourcesContent": "Each sentence links to the passage that supports it.", "tourSourcesTitle": "Every claim is cited"
+          }
+        }
+      }
+    }
+  ]
 }

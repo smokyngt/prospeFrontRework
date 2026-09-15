@@ -1,0 +1,497 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Roman /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Italic /Encoding /WinAnsiEncoding >>
+endobj
+8 0 obj
+<< /Type /Pages /Count 6 /Kids [10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R] >>
+endobj
+9 0 obj
+<< /Length 5653 >>
+stream
+q 1 1 1 rg 0 0 595 842 re f Q
+BT /F2 7 Tf 0.094 0.133 0.290 rg 56.0 806.0 Td (SERVICE LEVEL AGREEMENT \227 V3) Tj ET
+BT /F1 7 Tf 0.431 0.463 0.502 rg 469.7 806.0 Td (SLA-NIM/V3 - PAGE 1/6) Tj ET
+q 0.094 0.133 0.290 RG 1 w 56.0 800.0 m 545.0 800.0 l S Q
+q 0.094 0.133 0.290 RG 0.4 w 56.0 797.5 m 545.0 797.5 l S Q
+BT /F2 7 Tf 0.145 0.306 0.620 rg 56.0 770.0 Td (ANNEXE DE SERVICE) Tj ET
+BT /F5 15 Tf 0.094 0.133 0.290 rg 56.0 743.0 Td (P\351rim\350tre et d\351finitions de mesure) Tj ET
+q 0.933 0.949 0.980 rg 56.0 669.0 489.0 52.0 re f Q
+q 0.776 0.808 0.878 RG 0.8 w 56.0 669.0 489.0 52.0 re S Q
+BT /F2 7 Tf 0.431 0.463 0.502 rg 66.0 703.0 Td (R\311F\311RENCE) Tj ET
+BT /F1 9.1 Tf 0.094 0.133 0.290 rg 66.0 688.0 Td (SLA-NIM-V3) Tj ET
+q 0.776 0.808 0.878 RG 0.6 w 178.2 669.0 m 178.2 721.0 l S Q
+BT /F2 7 Tf 0.431 0.463 0.502 rg 188.2 703.0 Td (APPLICABLE \300) Tj ET
+BT /F1 9.1 Tf 0.094 0.133 0.290 rg 188.2 688.0 Td (Order Form AST-NIM-004) Tj ET
+q 0.776 0.808 0.878 RG 0.6 w 300.5 669.0 m 300.5 721.0 l S Q
+BT /F2 7 Tf 0.431 0.463 0.502 rg 310.5 703.0 Td (ENTR\311E EN VIGUEUR) Tj ET
+BT /F1 9.1 Tf 0.094 0.133 0.290 rg 310.5 688.0 Td (1er novembre 2026) Tj ET
+q 0.776 0.808 0.878 RG 0.6 w 422.8 669.0 m 422.8 721.0 l S Q
+BT /F2 7 Tf 0.431 0.463 0.502 rg 432.8 703.0 Td (REVUE) Tj ET
+BT /F1 9.1 Tf 0.094 0.133 0.290 rg 432.8 688.0 Td (Trimestrielle) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 655.0 Td (Cette annexe d\351crit les engagements de service applicables \340 la plateforme de pr\351vision et la) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 640.8 Td (m\351thode de mesure associ\351e. Elle pr\351vaut sur toute autre description des niveaux de service, y) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 626.6 Td (compris commerciale.) Tj ET
+q 0.094 0.133 0.290 rg 56.0 582.4 489.0 20.0 re f Q
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 63.0 588.9 Td (COMPOSANT) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 262.2 588.9 Td (COUVERT PAR LE SLA) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 407.1 588.9 Td (FEN\312TRE DE SERVICE) Tj ET
+q 0.965 0.973 0.980 rg 56.0 559.6 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 568.4 Td (Interface web de pr\351vision) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 262.2 568.4 Td (Oui) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 407.1 568.4 Td (24/7) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 559.6 m 545.0 559.6 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 545.6 Td (API d'ingestion et de restitution) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 262.2 545.6 Td (Oui) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 407.1 545.6 Td (24/7) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 536.8 m 545.0 536.8 l S Q
+q 0.965 0.973 0.980 rg 56.0 502.2 489.0 34.6 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 522.8 Td (Traitements de calcul nocturnes) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 262.2 522.8 Td (Oui, sur l'horaire de) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 262.2 511.0 Td (livraison) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 407.1 522.8 Td (02 h 00 \226 06 h 00) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 502.2 m 545.0 502.2 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 488.2 Td (Environnements hors production) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 262.2 488.2 Td (Non) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 407.1 488.2 Td (Heures ouvr\351es irlandaises) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 479.4 m 545.0 479.4 l S Q
+q 0.965 0.973 0.980 rg 56.0 456.6 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 465.4 Td (Connecteurs d\351velopp\351s par le Client) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 262.2 465.4 Td (Non) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 407.1 465.4 Td (Sans objet) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 456.6 m 545.0 456.6 l S Q
+BT /F2 10.2 Tf 0.145 0.306 0.620 rg 56.0 440.6 Td (1.6 Fen\352tres de maintenance planifi\351e) Tj ET
+q 0.094 0.133 0.290 rg 56.0 402.6 489.0 20.0 re f Q
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 63.0 409.1 Td (TYPE DE MAINTENANCE) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 242.3 409.1 Td (FEN\312TRE) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 421.6 409.1 Td (FR\311QUENCE MAXIMALE) Tj ET
+q 0.965 0.973 0.980 rg 56.0 379.8 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 388.6 Td (Maintenance applicative) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 242.3 388.6 Td (Dimanche, 02 h 00 \226 06 h 00) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 421.6 388.6 Td (Deux fois par mois) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 379.8 m 545.0 379.8 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 365.8 Td (Maintenance d'infrastructure) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 242.3 365.8 Td (Samedi, 23 h 00 \226 03 h 00) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 421.6 365.8 Td (Une fois par trimestre) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 357.0 m 545.0 357.0 l S Q
+q 0.965 0.973 0.980 rg 56.0 334.2 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 343.0 Td (Maintenance d'urgence) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 242.3 343.0 Td (\300 tout moment) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 421.6 343.0 Td (Non plafonn\351e) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 334.2 m 545.0 334.2 l S Q
+BT /F3 8.1 Tf 0.431 0.463 0.502 rg 56.0 318.2 Td (La fr\351quence des maintenances d'urgence n'est pas plafonn\351e dans cette version.) Tj ET
+BT /F3 8.1 Tf 0.431 0.463 0.502 rg 56.0 297.6 Td (La disponibilit\351 est calcul\351e sur les composants couverts uniquement, et par mois calendaire complet.) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 60.0 m 545.0 60.0 l S Q
+BT /F2 6.5 Tf 0.145 0.306 0.620 rg 56.0 48.0 Td (DOCUMENT FICTIF - DEMONSTRATION PROSPERIFY) Tj ET
+BT /F1 6.5 Tf 0.431 0.463 0.502 rg 428.5 48.0 Td (JUR-03_SLA_NimbusCore_v3 - PAGE 1/6) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R /F5 5 0 R /F6 6 0 R /F7 7 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 5352 >>
+stream
+q 1 1 1 rg 0 0 595 842 re f Q
+BT /F2 7 Tf 0.094 0.133 0.290 rg 56.0 806.0 Td (SERVICE LEVEL AGREEMENT \227 V3) Tj ET
+BT /F1 7 Tf 0.431 0.463 0.502 rg 469.7 806.0 Td (SLA-NIM/V3 - PAGE 2/6) Tj ET
+q 0.094 0.133 0.290 RG 1 w 56.0 800.0 m 545.0 800.0 l S Q
+q 0.094 0.133 0.290 RG 0.4 w 56.0 797.5 m 545.0 797.5 l S Q
+BT /F2 7 Tf 0.145 0.306 0.620 rg 56.0 770.0 Td (\2472) Tj ET
+BT /F5 15 Tf 0.094 0.133 0.290 rg 56.0 743.0 Td (Disponibilit\351 mensuelle) Tj ET
+q 1.000 1.000 1.000 rg 56.0 641.0 156.3 80.0 re f Q
+q 0.769 0.792 0.824 RG 0.8 w 56.0 641.0 156.3 80.0 re S Q
+q 0.145 0.306 0.620 rg 56.0 717.0 156.3 4.0 re f Q
+BT /F2 7.2 Tf 0.431 0.463 0.502 rg 67.0 697.0 Td (ENGAGEMENT MENSUEL) Tj ET
+BT /F2 17 Tf 0.094 0.133 0.290 rg 67.0 672.0 Td (99,5 %) Tj ET
+BT /F1 7.6 Tf 0.145 0.306 0.620 rg 67.0 658.0 Td (Valeur contractuelle mesur\351e) Tj ET
+q 1.000 1.000 1.000 rg 222.3 641.0 156.3 80.0 re f Q
+q 0.769 0.792 0.824 RG 0.8 w 222.3 641.0 156.3 80.0 re S Q
+q 0.145 0.306 0.620 rg 222.3 717.0 156.3 4.0 re f Q
+BT /F2 7.2 Tf 0.431 0.463 0.502 rg 233.3 697.0 Td (INDISPONIBILIT\311 TOL\311R\311E) Tj ET
+BT /F2 17 Tf 0.094 0.133 0.290 rg 233.3 672.0 Td (3 h 39) Tj ET
+BT /F1 7.6 Tf 0.145 0.306 0.620 rg 233.3 658.0 Td (Par mois de 30 jours) Tj ET
+q 1.000 1.000 1.000 rg 388.7 641.0 156.3 80.0 re f Q
+q 0.769 0.792 0.824 RG 0.8 w 388.7 641.0 156.3 80.0 re S Q
+q 0.145 0.306 0.620 rg 388.7 717.0 156.3 4.0 re f Q
+BT /F2 7.2 Tf 0.431 0.463 0.502 rg 399.7 697.0 Td (MAINTENANCE PLANIFI\311E) Tj ET
+BT /F2 17 Tf 0.094 0.133 0.290 rg 399.7 672.0 Td (Exclue) Tj ET
+BT /F1 7.6 Tf 0.145 0.306 0.620 rg 399.7 658.0 Td (Sous r\351serve de notification) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 627.0 Td (La disponibilit\351 mensuelle est \351gale au rapport entre les minutes de service disponibles et les) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 612.8 Td (minutes du mois, d\351duction faite des exclusions list\351es ci-dessous. Le r\351sultat est arrondi \340 la) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 598.6 Td (deuxi\350me d\351cimale.) Tj ET
+q 0.094 0.133 0.290 rg 56.0 554.4 489.0 20.0 re f Q
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 63.0 560.9 Td (EXCLUSION) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 237.6 560.9 Td (CONDITION) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 394.8 560.9 Td (EFFET SUR LE CALCUL) Tj ET
+q 0.965 0.973 0.980 rg 56.0 519.8 489.0 34.6 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 540.4 Td (Maintenance planifi\351e) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 237.6 540.4 Td (Notifi\351e 48 h \340 l'avance) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 394.8 540.4 Td (Minutes retir\351es du) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 394.8 528.6 Td (d\351nominateur) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 519.8 m 545.0 519.8 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 505.8 Td (Maintenance d'urgence) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 237.6 505.8 Td (Notifi\351e d\350s que possible) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 394.8 505.8 Td (Minutes retir\351es du) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 394.8 494.0 Td (d\351nominateur) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 485.2 m 545.0 485.2 l S Q
+q 0.965 0.973 0.980 rg 56.0 450.6 489.0 34.6 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 471.2 Td (Indisponibilit\351 d'un fournisseur) Tj ET
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 459.4 Td (tiers) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 237.6 471.2 Td (Document\351e par le Fournisseur) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 394.8 471.2 Td (Minutes retir\351es du) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 394.8 459.4 Td (d\351nominateur) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 450.6 m 545.0 450.6 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 436.6 Td (Fait du Client ou de ses) Tj ET
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 424.8 Td (connecteurs) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 237.6 436.6 Td (Constat\351e au journal) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 394.8 436.6 Td (Non compt\351e comme panne) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 416.0 m 545.0 416.0 l S Q
+q 0.969 0.973 0.980 rg 56.0 344.2 489.0 55.8 re f Q
+q 0.769 0.792 0.824 RG 0.9 w 56.0 344.2 489.0 55.8 re S Q
+q 0.769 0.792 0.824 rg 56.0 344.2 3.0 55.8 re f Q
+BT /F2 7.9 Tf 0.145 0.306 0.620 rg 70.0 383.0 Td (PORT\311E DE LA MESURE) Tj ET
+BT /F1 9.1 Tf 0.094 0.133 0.290 rg 70.0 366.0 Td (Le taux mesur\351 selon la pr\351sente annexe est de 99,5 %. Aucun autre document contractuel ne d\351finit) Tj ET
+BT /F1 9.1 Tf 0.094 0.133 0.290 rg 70.0 353.6 Td (de m\351thode de mesure concurrente ; une valeur affich\351e ailleurs reste une indication commerciale.) Tj ET
+BT /F2 10.2 Tf 0.145 0.306 0.620 rg 56.0 328.2 Td (2.7 Publication de la mesure) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 310.2 Td (Le taux mensuel est publi\351 dans le rapport de service. Les donn\351es brutes de supervision sont) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 296.0 Td (conserv\351es six mois et communiqu\351es au Client sur demande motiv\351e, dans un format exploitable) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 281.8 Td (permettant de recalculer le taux annonc\351.) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 60.0 m 545.0 60.0 l S Q
+BT /F2 6.5 Tf 0.145 0.306 0.620 rg 56.0 48.0 Td (DOCUMENT FICTIF - DEMONSTRATION PROSPERIFY) Tj ET
+BT /F1 6.5 Tf 0.431 0.463 0.502 rg 428.5 48.0 Td (JUR-03_SLA_NimbusCore_v3 - PAGE 2/6) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R /F5 5 0 R /F6 6 0 R /F7 7 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 5859 >>
+stream
+q 1 1 1 rg 0 0 595 842 re f Q
+BT /F2 7 Tf 0.094 0.133 0.290 rg 56.0 806.0 Td (SERVICE LEVEL AGREEMENT \227 V3) Tj ET
+BT /F1 7 Tf 0.431 0.463 0.502 rg 469.7 806.0 Td (SLA-NIM/V3 - PAGE 3/6) Tj ET
+q 0.094 0.133 0.290 RG 1 w 56.0 800.0 m 545.0 800.0 l S Q
+q 0.094 0.133 0.290 RG 0.4 w 56.0 797.5 m 545.0 797.5 l S Q
+BT /F2 7 Tf 0.145 0.306 0.620 rg 56.0 770.0 Td (\2473) Tj ET
+BT /F5 15 Tf 0.094 0.133 0.290 rg 56.0 743.0 Td (Matrice de s\351v\351rit\351 et d\351lais d'intervention) Tj ET
+q 0.094 0.133 0.290 rg 56.0 701.0 489.0 20.0 re f Q
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 63.0 707.5 Td (S\311V\311RIT\311) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 129.3 707.5 Td (D\311FINITION) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 344.8 707.5 Td (PRISE EN COMPTE) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 444.3 707.5 Td (RESTAURATION CIBLE) Tj ET
+q 0.965 0.973 0.980 rg 56.0 666.4 489.0 34.6 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 687.0 Td (P1) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 129.3 687.0 Td (Service indisponible pour l'ensemble des) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 129.3 675.2 Td (magasins ou perte de donn\351es) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 344.8 687.0 Td (30 minutes) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 444.3 687.0 Td (4 heures) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 666.4 m 545.0 666.4 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 652.4 Td (P2) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 129.3 652.4 Td (Fonction majeure d\351grad\351e ou pr\351visions non) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 129.3 640.6 Td (livr\351es avant 07 h 00) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 344.8 652.4 Td (2 heures) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 444.3 652.4 Td (8 heures ouvr\351es) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 631.8 m 545.0 631.8 l S Q
+q 0.965 0.973 0.980 rg 56.0 597.2 489.0 34.6 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 617.8 Td (P3) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 129.3 617.8 Td (Fonction secondaire d\351grad\351e, contournement) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 129.3 606.0 Td (disponible) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 344.8 617.8 Td (1 jour ouvr\351) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 444.3 617.8 Td (5 jours ouvr\351s) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 597.2 m 545.0 597.2 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 583.2 Td (P4) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 129.3 583.2 Td (Demande d'information ou anomalie cosm\351tique) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 344.8 583.2 Td (2 jours ouvr\351s) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 444.3 583.2 Td (Prochaine version) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 574.4 m 545.0 574.4 l S Q
+BT /F2 10.2 Tf 0.145 0.306 0.620 rg 56.0 558.4 Td (3.5 R\350gles d'escalade) Tj ET
+BT /F2 9.3 Tf 0.145 0.306 0.620 rg 59.0 540.4 Td (-) Tj ET
+BT /F1 9.3 Tf 0.094 0.133 0.290 rg 71.0 540.4 Td (Un incident P1 non restaur\351 apr\350s 4 heures est escalad\351 au directeur du support du Fournisseur et) Tj ET
+BT /F1 9.3 Tf 0.094 0.133 0.290 rg 71.0 527.0 Td (au responsable de projet du Client.) Tj ET
+BT /F2 9.3 Tf 0.145 0.306 0.620 rg 59.0 507.6 Td (-) Tj ET
+BT /F1 9.3 Tf 0.094 0.133 0.290 rg 71.0 507.6 Td (Un incident P1 non restaur\351 apr\350s 8 heures fait l'objet d'un point de situation \351crit toutes les) Tj ET
+BT /F1 9.3 Tf 0.094 0.133 0.290 rg 71.0 494.2 Td (deux heures.) Tj ET
+BT /F2 9.3 Tf 0.145 0.306 0.620 rg 59.0 474.8 Td (-) Tj ET
+BT /F1 9.3 Tf 0.094 0.133 0.290 rg 71.0 474.8 Td (Le Client peut demander la requalification d'un incident ; \340 d\351faut d'accord, la s\351v\351rit\351 retenue) Tj ET
+BT /F1 9.3 Tf 0.094 0.133 0.290 rg 71.0 461.4 Td (est celle du Fournisseur, mentionn\351e au rapport mensuel.) Tj ET
+BT /F2 10.2 Tf 0.145 0.306 0.620 rg 56.0 435.0 Td (3.8 Heures de support) Tj ET
+q 0.094 0.133 0.290 rg 56.0 397.0 489.0 20.0 re f Q
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 63.0 403.5 Td (CANAL) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 231.6 403.5 Td (DISPONIBILIT\311) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 400.2 403.5 Td (S\311V\311RIT\311S ACCEPT\311ES) Tj ET
+q 0.965 0.973 0.980 rg 56.0 374.2 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 383.0 Td (T\351l\351phone d'astreinte) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 231.6 383.0 Td (24 h / 24, 7 j / 7) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 400.2 383.0 Td (P1 uniquement) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 374.2 m 545.0 374.2 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 360.2 Td (Portail de tickets) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 231.6 360.2 Td (24 h / 24, 7 j / 7) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 400.2 360.2 Td (Toutes s\351v\351rit\351s) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 351.4 m 545.0 351.4 l S Q
+q 0.965 0.973 0.980 rg 56.0 328.6 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 337.4 Td (Courriel du service client) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 231.6 337.4 Td (Heures ouvr\351es irlandaises) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 400.2 337.4 Td (P3 et P4) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 328.6 m 545.0 328.6 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 314.6 Td (Charg\351 de compte) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 231.6 314.6 Td (Heures ouvr\351es irlandaises) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 400.2 314.6 Td (Demandes non techniques) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 305.8 m 545.0 305.8 l S Q
+BT /F3 8.1 Tf 0.431 0.463 0.502 rg 56.0 289.8 Td (Les d\351lais courent \340 compter de l'ouverture du ticket dans l'outil du Fournisseur, et non de la survenance de) Tj ET
+BT /F3 8.1 Tf 0.431 0.463 0.502 rg 56.0 279.2 Td (l'incident.) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 60.0 m 545.0 60.0 l S Q
+BT /F2 6.5 Tf 0.145 0.306 0.620 rg 56.0 48.0 Td (DOCUMENT FICTIF - DEMONSTRATION PROSPERIFY) Tj ET
+BT /F1 6.5 Tf 0.431 0.463 0.502 rg 428.5 48.0 Td (JUR-03_SLA_NimbusCore_v3 - PAGE 3/6) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R /F5 5 0 R /F6 6 0 R /F7 7 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 4395 >>
+stream
+q 1 1 1 rg 0 0 595 842 re f Q
+BT /F2 7 Tf 0.094 0.133 0.290 rg 56.0 806.0 Td (SERVICE LEVEL AGREEMENT \227 V3) Tj ET
+BT /F1 7 Tf 0.431 0.463 0.502 rg 469.7 806.0 Td (SLA-NIM/V3 - PAGE 4/6) Tj ET
+q 0.094 0.133 0.290 RG 1 w 56.0 800.0 m 545.0 800.0 l S Q
+q 0.094 0.133 0.290 RG 0.4 w 56.0 797.5 m 545.0 797.5 l S Q
+BT /F2 7 Tf 0.145 0.306 0.620 rg 56.0 770.0 Td (\2474) Tj ET
+BT /F5 15 Tf 0.094 0.133 0.290 rg 56.0 743.0 Td (Cr\351dits de service) Tj ET
+q 0.094 0.133 0.290 rg 56.0 701.0 489.0 20.0 re f Q
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 63.0 707.5 Td (DISPONIBILIT\311 MENSUELLE CONSTAT\311E) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 284.4 707.5 Td (CR\311DIT ACCORD\311) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 468.5 707.5 Td (MONTANT INDICATIF) Tj ET
+q 0.965 0.973 0.980 rg 56.0 678.2 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 687.0 Td (Sup\351rieure ou \351gale \340 99,5 %) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 284.4 687.0 Td (Aucun) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 533.4 687.0 Td (\227) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 678.2 m 545.0 678.2 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 664.2 Td (De 99,0 % \340 99,49 %) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 284.4 664.2 Td (2 % des redevances du mois) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 506.1 664.2 Td (1 800 \200) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 655.4 m 545.0 655.4 l S Q
+q 0.965 0.973 0.980 rg 56.0 632.6 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 641.4 Td (De 98,0 % \340 98,99 %) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 284.4 641.4 Td (5 % des redevances du mois) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 506.1 641.4 Td (4 500 \200) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 632.6 m 545.0 632.6 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 618.6 Td (De 95,0 % \340 97,99 %) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 284.4 618.6 Td (8 % des redevances du mois) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 506.1 618.6 Td (7 200 \200) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 609.8 m 545.0 609.8 l S Q
+q 0.965 0.973 0.980 rg 56.0 587.0 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 595.8 Td (Inf\351rieure \340 95,0 %) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 284.4 595.8 Td (10 % des redevances du mois) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 506.1 595.8 Td (9 000 \200) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 587.0 m 545.0 587.0 l S Q
+q 0.988 0.953 0.945 rg 56.0 515.2 489.0 55.8 re f Q
+q 0.737 0.361 0.306 RG 0.9 w 56.0 515.2 489.0 55.8 re S Q
+q 0.737 0.361 0.306 rg 56.0 515.2 3.0 55.8 re f Q
+BT /F2 7.9 Tf 0.737 0.361 0.306 rg 70.0 554.0 Td (PLAFOND) Tj ET
+BT /F1 9.1 Tf 0.094 0.133 0.290 rg 70.0 537.0 Td (Le cumul des cr\351dits ne peut exc\351der 10 % des redevances du mois concern\351, quel que soit le nombre) Tj ET
+BT /F1 9.1 Tf 0.094 0.133 0.290 rg 70.0 524.6 Td (d'incidents. Aucun m\351canisme de p\351nalit\351 progressive n'est pr\351vu au-del\340 de ce plafond.) Tj ET
+BT /F2 10.2 Tf 0.145 0.306 0.620 rg 56.0 499.2 Td (4.4 Demande et imputation) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 481.2 Td (Le cr\351dit est demand\351 par le Client dans les trente jours suivant la publication du rapport) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 467.0 Td (mensuel. Il est imput\351 sur la facture suivante. Une demande pr\351sent\351e hors d\351lai est r\351put\351e) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 452.8 Td (abandonn\351e, m\352me si le manquement est \351tabli par le rapport.) Tj ET
+BT /F2 10.2 Tf 0.145 0.306 0.620 rg 56.0 428.6 Td (4.7 Exemple de calcul) Tj ET
+BT /F6 9.1 Tf 0.094 0.133 0.290 rg 56.0 410.6 Td (Mois de 30 jours  = 43 200 minutes) Tj ET
+BT /F6 9.1 Tf 0.094 0.133 0.290 rg 56.0 396.8 Td (Maintenance planifiee exclue = 240 minutes) Tj ET
+BT /F6 9.1 Tf 0.094 0.133 0.290 rg 56.0 383.0 Td (Denominateur retenu = 42 960 minutes) Tj ET
+BT /F6 9.1 Tf 0.094 0.133 0.290 rg 56.0 369.2 Td (Indisponibilite constatee = 430 minutes) Tj ET
+BT /F6 9.1 Tf 0.094 0.133 0.290 rg 56.0 355.4 Td (Disponibilite = \(42 960 - 430\) / 42 960 = 99,00 %) Tj ET
+BT /F6 9.1 Tf 0.094 0.133 0.290 rg 56.0 341.6 Td (Credit applicable = 2 % des redevances du mois = 1 800 EUR) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 60.0 m 545.0 60.0 l S Q
+BT /F2 6.5 Tf 0.145 0.306 0.620 rg 56.0 48.0 Td (DOCUMENT FICTIF - DEMONSTRATION PROSPERIFY) Tj ET
+BT /F1 6.5 Tf 0.431 0.463 0.502 rg 428.5 48.0 Td (JUR-03_SLA_NimbusCore_v3 - PAGE 4/6) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R /F5 5 0 R /F6 6 0 R /F7 7 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 4479 >>
+stream
+q 1 1 1 rg 0 0 595 842 re f Q
+BT /F2 7 Tf 0.094 0.133 0.290 rg 56.0 806.0 Td (SERVICE LEVEL AGREEMENT \227 V3) Tj ET
+BT /F1 7 Tf 0.431 0.463 0.502 rg 469.7 806.0 Td (SLA-NIM/V3 - PAGE 5/6) Tj ET
+q 0.094 0.133 0.290 RG 1 w 56.0 800.0 m 545.0 800.0 l S Q
+q 0.094 0.133 0.290 RG 0.4 w 56.0 797.5 m 545.0 797.5 l S Q
+BT /F2 7 Tf 0.145 0.306 0.620 rg 56.0 770.0 Td (\2475) Tj ET
+BT /F5 15 Tf 0.094 0.133 0.290 rg 56.0 743.0 Td (Recours et articulation contractuelle) Tj ET
+BT /F4 10.6 Tf 0.094 0.133 0.290 rg 56.0 721.0 Td (Les cr\351dits de service constituent le recours unique et exclusif du Client au titre du non-respect) Tj ET
+BT /F4 10.6 Tf 0.094 0.133 0.290 rg 56.0 705.4 Td (des engagements de disponibilit\351 et de d\351lais d\351crits \340 la pr\351sente annexe. Le Client renonce \340 toute) Tj ET
+BT /F4 10.6 Tf 0.094 0.133 0.290 rg 56.0 689.8 Td (autre demande, y compris indemnitaire, fond\351e sur ces seuls manquements.) Tj ET
+q 0.094 0.133 0.290 rg 56.0 644.2 489.0 20.0 re f Q
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 63.0 650.7 Td (QUESTION) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 285.3 650.7 Td (R\311PONSE DU SLA V3) Tj ET
+q 0.965 0.973 0.980 rg 56.0 621.4 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 630.2 Td (Les cr\351dits \351puisent-ils les recours ?) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 285.3 630.2 Td (Oui, pour les manquements de niveau de service.) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 621.4 m 545.0 621.4 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 607.4 Td (Une d\351faillance r\351p\351t\351e ouvre-t-elle un droit) Tj ET
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 595.6 Td (de r\351siliation ?) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 285.3 607.4 Td (Non pr\351vu \340 la pr\351sente annexe. \300 rechercher au) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 285.3 595.6 Td (contrat-cadre.) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 586.8 m 545.0 586.8 l S Q
+q 0.965 0.973 0.980 rg 56.0 552.2 489.0 34.6 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 572.8 Td (Le plafond de cr\351dits s'impute-t-il sur le) Tj ET
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 561.0 Td (plafond de responsabilit\351 ?) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 285.3 572.8 Td (Non trait\351.) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 552.2 m 545.0 552.2 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 538.2 Td (Le rapport mensuel est-il contradictoire ?) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 285.3 538.2 Td (Le Client peut contester sous 15 jours ; \340 d\351faut, le) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 285.3 526.4 Td (rapport est r\351put\351 accept\351.) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 517.6 m 545.0 517.6 l S Q
+q 0.988 0.953 0.945 rg 56.0 433.4 489.0 68.2 re f Q
+q 0.737 0.361 0.306 RG 0.9 w 56.0 433.4 489.0 68.2 re S Q
+q 0.737 0.361 0.306 rg 56.0 433.4 3.0 68.2 re f Q
+BT /F2 7.9 Tf 0.737 0.361 0.306 rg 70.0 484.6 Td (LECTURE COMBIN\311E) Tj ET
+BT /F1 9.1 Tf 0.094 0.133 0.290 rg 70.0 467.6 Td (Recours exclusif limit\351 aux cr\351dits, cr\351dits plafonn\351s \340 10 % des redevances mensuelles, aucune) Tj ET
+BT /F1 9.1 Tf 0.094 0.133 0.290 rg 70.0 455.2 Td (clause de sortie pour manquement r\351p\351t\351 dans cette annexe : le rem\350de contractuel disponible est) Tj ET
+BT /F1 9.1 Tf 0.094 0.133 0.290 rg 70.0 442.8 Td (faible au regard d'un service Tier 1.) Tj ET
+BT /F2 10.2 Tf 0.145 0.306 0.620 rg 56.0 417.4 Td (5.6 Points non trait\351s par la pr\351sente annexe) Tj ET
+BT /F2 9.3 Tf 0.145 0.306 0.620 rg 59.0 399.4 Td (-) Tj ET
+BT /F1 9.3 Tf 0.094 0.133 0.290 rg 71.0 399.4 Td (L'imputation des cr\351dits sur le plafond de responsabilit\351 du contrat-cadre.) Tj ET
+BT /F2 9.3 Tf 0.145 0.306 0.620 rg 59.0 380.0 Td (-) Tj ET
+BT /F1 9.3 Tf 0.094 0.133 0.290 rg 71.0 380.0 Td (Le droit de r\351siliation en cas de manquements r\351p\351t\351s aux niveaux de service.) Tj ET
+BT /F2 9.3 Tf 0.145 0.306 0.620 rg 59.0 360.6 Td (-) Tj ET
+BT /F1 9.3 Tf 0.094 0.133 0.290 rg 71.0 360.6 Td (La compensation des pr\351judices d'exploitation subis par le Client.) Tj ET
+BT /F2 9.3 Tf 0.145 0.306 0.620 rg 59.0 341.2 Td (-) Tj ET
+BT /F1 9.3 Tf 0.094 0.133 0.290 rg 71.0 341.2 Td (Les cons\351quences d'un retard de livraison des pr\351visions sur plusieurs jours cons\351cutifs.) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 60.0 m 545.0 60.0 l S Q
+BT /F2 6.5 Tf 0.145 0.306 0.620 rg 56.0 48.0 Td (DOCUMENT FICTIF - DEMONSTRATION PROSPERIFY) Tj ET
+BT /F1 6.5 Tf 0.431 0.463 0.502 rg 428.5 48.0 Td (JUR-03_SLA_NimbusCore_v3 - PAGE 5/6) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R /F5 5 0 R /F6 6 0 R /F7 7 0 R >> >> /Contents 17 0 R >>
+endobj
+19 0 obj
+<< /Length 5570 >>
+stream
+q 1 1 1 rg 0 0 595 842 re f Q
+BT /F2 7 Tf 0.094 0.133 0.290 rg 56.0 806.0 Td (SERVICE LEVEL AGREEMENT \227 V3) Tj ET
+BT /F1 7 Tf 0.431 0.463 0.502 rg 469.7 806.0 Td (SLA-NIM/V3 - PAGE 6/6) Tj ET
+q 0.094 0.133 0.290 RG 1 w 56.0 800.0 m 545.0 800.0 l S Q
+q 0.094 0.133 0.290 RG 0.4 w 56.0 797.5 m 545.0 797.5 l S Q
+BT /F2 7 Tf 0.145 0.306 0.620 rg 56.0 770.0 Td (\2476) Tj ET
+BT /F5 15 Tf 0.094 0.133 0.290 rg 56.0 743.0 Td (Reporting et gouvernance du service) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 721.0 Td (Le Fournisseur publie, avant le dixi\350me jour ouvr\351 de chaque mois, un rapport de service portant) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 706.8 Td (sur le mois pr\351c\351dent. Ce rapport constitue la source de r\351f\351rence pour le calcul des cr\351dits et) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 692.6 Td (pour les revues de gouvernance.) Tj ET
+q 0.094 0.133 0.290 rg 56.0 648.4 489.0 20.0 re f Q
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 63.0 654.9 Td (CONTENU DU RAPPORT MENSUEL) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 249.3 654.9 Td (D\311TAIL ATTENDU) Tj ET
+q 0.965 0.973 0.980 rg 56.0 625.6 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 634.4 Td (Disponibilit\351 mesur\351e) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 249.3 634.4 Td (Taux global et par composant couvert) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 625.6 m 545.0 625.6 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 611.6 Td (Journal des incidents) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 249.3 611.6 Td (Date, s\351v\351rit\351, dur\351e, cause identifi\351e, mesure corrective) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 602.8 m 545.0 602.8 l S Q
+q 0.965 0.973 0.980 rg 56.0 580.0 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 588.8 Td (Exclusions appliqu\351es) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 249.3 588.8 Td (Nature, dur\351e, preuve de notification) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 580.0 m 545.0 580.0 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 566.0 Td (Respect des d\351lais d'intervention) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 249.3 566.0 Td (Nombre de tickets par s\351v\351rit\351 et taux de respect) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 557.2 m 545.0 557.2 l S Q
+q 0.965 0.973 0.980 rg 56.0 534.4 489.0 22.8 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 543.2 Td (Cr\351dits calcul\351s) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 249.3 543.2 Td (Montant propos\351 ou motif d'absence de cr\351dit) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 534.4 m 545.0 534.4 l S Q
+BT /F2 10.2 Tf 0.145 0.306 0.620 rg 56.0 518.4 Td (6.4 Revue trimestrielle de service) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 500.4 Td (Une revue trimestrielle examine les tendances, les actions correctives et les demandes d'\351volution.) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 486.2 Td (Les d\351cisions y sont consign\351es mais ne modifient pas la pr\351sente annexe, qui ne peut \352tre amend\351e) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 472.0 Td (que par avenant \351crit sign\351 des deux parties.) Tj ET
+BT /F2 10.2 Tf 0.145 0.306 0.620 rg 56.0 447.8 Td (6.7 Conservation des rapports) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 429.8 Td (Les rapports mensuels sont conserv\351s par le Fournisseur pendant la dur\351e du Contrat et trois ans) Tj ET
+BT /F1 9.6 Tf 0.094 0.133 0.290 rg 56.0 415.6 Td (au-del\340. Ils constituent la source de preuve en cas de contestation du calcul des cr\351dits.) Tj ET
+q 0.094 0.133 0.290 rg 56.0 371.4 489.0 20.0 re f Q
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 63.0 377.9 Td (INSTANCE DE SERVICE) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 226.0 377.9 Td (PARTICIPANTS) Tj ET
+BT /F2 7.3 Tf 1.000 1.000 1.000 rg 374.2 377.9 Td (ORDRE DU JOUR PERMANENT) Tj ET
+q 0.965 0.973 0.980 rg 56.0 336.8 489.0 34.6 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 357.4 Td (Point hebdomadaire) Tj ET
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 345.6 Td (d'exploitation) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 226.0 357.4 Td (\311quipes techniques) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 374.2 357.4 Td (Incidents ouverts, changements) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 374.2 345.6 Td (planifi\351s) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 336.8 m 545.0 336.8 l S Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 322.8 Td (Revue mensuelle de service) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 226.0 322.8 Td (Service manager et) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 226.0 311.0 Td (responsable projet) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 374.2 322.8 Td (Rapport du mois, cr\351dits, actions) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 374.2 311.0 Td (correctives) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 302.2 m 545.0 302.2 l S Q
+q 0.965 0.973 0.980 rg 56.0 267.6 489.0 34.6 re f Q
+BT /F2 8.9 Tf 0.094 0.133 0.290 rg 63.0 288.2 Td (Revue trimestrielle) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 226.0 288.2 Td (Directions des deux parties) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 374.2 288.2 Td (Tendances, capacit\351, feuille de) Tj ET
+BT /F1 8.9 Tf 0.094 0.133 0.290 rg 374.2 276.4 Td (route) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 267.6 m 545.0 267.6 l S Q
+BT /F3 8.1 Tf 0.431 0.463 0.502 rg 56.0 251.6 Td (Aucune disposition de la pr\351sente annexe ne renvoie au bon de commande pour la d\351termination du taux de disponibilit\351.) Tj ET
+q 0.769 0.792 0.824 RG 0.5 w 56.0 60.0 m 545.0 60.0 l S Q
+BT /F2 6.5 Tf 0.145 0.306 0.620 rg 56.0 48.0 Td (DOCUMENT FICTIF - DEMONSTRATION PROSPERIFY) Tj ET
+BT /F1 6.5 Tf 0.431 0.463 0.502 rg 428.5 48.0 Td (JUR-03_SLA_NimbusCore_v3 - PAGE 6/6) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R /F5 5 0 R /F6 6 0 R /F7 7 0 R >> >> /Contents 19 0 R >>
+endobj
+21 0 obj
+<< /Type /Catalog /Pages 8 0 R >>
+endobj
+22 0 obj
+<< /Title (JUR-03_SLA_NimbusCore_v3.pdf) /Author (Prosperify Demo) /Subject (DOCUMENT FICTIF - DONNEES INVENTEES) /Creator (Prosperify corpus generator) >>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000000015 00000 n 
+0000000112 00000 n 
+0000000214 00000 n 
+0000000319 00000 n 
+0000000418 00000 n 
+0000000516 00000 n 
+0000000611 00000 n 
+0000000711 00000 n 
+0000000804 00000 n 
+0000006509 00000 n 
+0000006696 00000 n 
+0000012101 00000 n 
+0000012289 00000 n 
+0000018201 00000 n 
+0000018389 00000 n 
+0000022837 00000 n 
+0000023025 00000 n 
+0000027557 00000 n 
+0000027745 00000 n 
+0000033368 00000 n 
+0000033556 00000 n 
+0000033606 00000 n 
+trailer
+<< /Size 23 /Root 21 0 R /Info 22 0 R >>
+startxref
+33778
+%%EOF
