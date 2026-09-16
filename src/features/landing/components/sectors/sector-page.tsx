@@ -1,5 +1,15 @@
 "use client";
 
+import {
+  ArrowRight,
+  BarChart3,
+  Check,
+  Database,
+  LockKeyhole,
+  Search,
+  ShieldCheck,
+  UserRound,
+} from "lucide-react";
 import Image from "next/image";
 import Script from "next/script";
 import { Fragment, useEffect, useState } from "react";
@@ -40,8 +50,29 @@ type Offer = { badge: string; features: string[]; meta: string; title: string };
 type FaqItem = { answer: string; question: string };
 type ChallengeItem = { description: string; title: string };
 type ComparisonRow = { criterion: string; generic: string; prosperify: string };
-type InsightItem = { finding: string; question: string; sources: string[]; tag: string };
+type InsightMetric = { delta?: string; label: string; value: string };
+type InsightDocument = { code: string; marker: string; title: string };
+type InsightItem = {
+  documents: InsightDocument[];
+  finding: string;
+  highlight: string;
+  metrics: InsightMetric[];
+  question: string;
+  sources: string[];
+  tag: string;
+};
 type CriterionItem = { description: string; title: string };
+type HumanLoopCard = { items: string[]; title: string };
+type HeroProofItem = { text: string; title: string };
+type IntegrationArchitecture = {
+  environmentItems: string[];
+  environmentTitle: string;
+  instanceBadge: string;
+  instanceItems: string[];
+  instanceTitle: string;
+  sourcesItems: string[];
+  sourcesTitle: string;
+};
 
 /* ──────────────────────────────────────────────────────── */
 /*  Layout helpers — repris de la landing                    */
@@ -187,6 +218,39 @@ function SourcedAnswer({
 /*  Hero                                                     */
 /* ──────────────────────────────────────────────────────── */
 
+const HERO_PROOF_ICONS = [ShieldCheck, Database, LockKeyhole];
+
+function HeroProofStrip() {
+  const { t } = useTranslation();
+  const items = t("sectors.common.heroProof", {
+    returnObjects: true,
+  }) as HeroProofItem[];
+
+  return (
+    <div className="mt-[38px] flex flex-wrap gap-x-8 gap-y-4">
+      {items.map((item, index) => {
+        const Icon = HERO_PROOF_ICONS[index] ?? ShieldCheck;
+        return (
+          <div key={item.title} className="flex items-center gap-3">
+            <span
+              className="flex h-9 w-9 shrink-0 items-center justify-center text-[#FF6A13]"
+              style={{ background: "var(--pf-accent-bg)", border: `1px solid ${ACCENT}` }}
+            >
+              <Icon size={16} />
+            </span>
+            <div className="min-w-0">
+              <div className="text-[12.5px] font-semibold text-[var(--pf-fg)]">
+                {item.title}
+              </div>
+              <div className="text-[11.5px] text-[var(--pf-fg-muted)]">{item.text}</div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function SectorHero({ sector }: { sector: SectorId }) {
   const { t } = useTranslation();
   const demoSector = SECTOR_DEMO[sector];
@@ -249,6 +313,8 @@ function SectorHero({ sector }: { sector: SectorId }) {
               {t("sectors.common.ctaCases")}
             </a>
           </div>
+
+          <HeroProofStrip />
         </div>
 
         {/* Démo interactive si le secteur a son corpus, sinon un aperçu statique */}
@@ -662,11 +728,44 @@ function SourcedExample({ number, sector }: SectionProps) {
 /*  Preuves tirées de la démo                                */
 /* ──────────────────────────────────────────────────────── */
 
+/** Aperçu de document : quelques lignes de faux texte + le passage surligné. */
+function DocumentPreview({ document: doc }: { document: InsightDocument }) {
+  return (
+    <div className="flex flex-col gap-2.5">
+      <div className="flex items-baseline justify-between gap-2">
+        <span className="font-mono text-[10px] font-bold text-[#FF6A13]">
+          {doc.code}
+        </span>
+        <span className="truncate text-[11px] font-medium text-[var(--pf-fg-muted)]">
+          {doc.title}
+        </span>
+      </div>
+      <div
+        className="flex flex-col gap-2 p-3"
+        style={{ background: "var(--pf-bg-card-2)", border: "1px solid var(--pf-border)" }}
+      >
+        <span className="block h-1 w-[85%]" style={{ background: "var(--pf-border-2)" }} />
+        <span className="block h-1 w-full" style={{ background: "var(--pf-border-2)" }} />
+        <span
+          className="my-0.5 px-2 py-1.5 text-[10px] font-semibold text-[#FF6A13]"
+          style={{ background: "var(--pf-accent-bg)", borderLeft: `2px solid ${ACCENT}` }}
+        >
+          {doc.marker}
+        </span>
+        <span className="block h-1 w-[60%]" style={{ background: "var(--pf-border-2)" }} />
+        <span className="block h-1 w-[75%]" style={{ background: "var(--pf-border-2)" }} />
+      </div>
+    </div>
+  );
+}
+
 function SectorInsights({ number, sector }: SectionProps) {
   const { t } = useTranslation();
   const items = t(`sectors.${sector}.insights.items`, {
     returnObjects: true,
   }) as InsightItem[];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = items[activeIndex] ?? items[0];
 
   return (
     <Section id="insights">
@@ -681,38 +780,92 @@ function SectorInsights({ number, sector }: SectionProps) {
         {t(`sectors.${sector}.insights.intro`)}
       </p>
 
+      {/* Onglets : un scénario réellement joué dans la démo par bouton */}
       <div
-        className="mt-11 grid grid-cols-1 gap-px border lg:grid-cols-2"
-        style={{
-          borderColor: "var(--pf-border)",
-          background: "var(--pf-border)",
-        }}
+        className="mt-11 grid grid-cols-1 border sm:grid-cols-2 lg:grid-cols-4"
+        style={{ borderColor: "var(--pf-border)" }}
       >
         {items.map((item, index) => (
-          <div
+          <button
             key={item.question}
-            className="flex flex-col gap-4"
+            type="button"
+            onClick={() => setActiveIndex(index)}
+            className={cn(
+              "border-b px-4 py-3.5 text-left text-[11.5px] font-semibold transition-colors sm:border-b-0 sm:border-r last:border-r-0",
+              index === activeIndex
+                ? "text-[#080808]"
+                : "text-[var(--pf-fg-muted)] hover:text-[var(--pf-fg)]",
+            )}
             style={{
-              background: "var(--pf-bg-card)",
-              padding: "clamp(24px, 2.6vw, 32px)",
+              borderColor: "var(--pf-border)",
+              background: index === activeIndex ? ACCENT : "var(--pf-bg-card)",
             }}
           >
-            <div className="flex items-center justify-between gap-3">
-              <span className="font-mono text-[11px] font-semibold text-[#FF6A13]">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="text-right font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--pf-fg-dim)]">
-                {item.tag}
+            {item.tag}
+          </button>
+        ))}
+      </div>
+
+      {active && (
+        <div
+          className="grid grid-cols-1 border border-t-0 lg:grid-cols-[1.1fr_0.9fr]"
+          style={{ borderColor: "var(--pf-border)" }}
+        >
+          <div
+            className="flex flex-col gap-4 border-b lg:border-r lg:border-b-0"
+            style={{ borderColor: "var(--pf-border)", padding: "clamp(24px, 2.8vw, 36px)" }}
+          >
+            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--pf-fg-dim)]">
+              {t("sectors.common.labels.example")}
+            </span>
+            <h3 className="m-0 text-[1.3rem] font-bold leading-[1.2] text-[var(--pf-fg)]">
+              « {active.question} »
+            </h3>
+            <p className="m-0 text-[13.5px] leading-[1.65] text-[var(--pf-fg-muted)]">
+              {active.finding}
+            </p>
+
+            <div
+              className="flex flex-col gap-1 p-4"
+              style={{ background: "var(--pf-accent-bg)", borderLeft: `3px solid ${ACCENT}` }}
+            >
+              <span className="text-[13px] font-semibold leading-[1.5] text-[var(--pf-fg)]">
+                {active.highlight}
               </span>
             </div>
-            <p className="m-0 text-[1rem] font-semibold leading-[1.5] text-[var(--pf-fg)]">
-              « {item.question} »
-            </p>
-            <p className="m-0 text-[13.5px] leading-[1.65] text-[var(--pf-fg-muted)]">
-              {item.finding}
-            </p>
-            <div className="mt-1 flex flex-wrap gap-2">
-              {item.sources.map((source) => (
+
+            <div className="mt-1 grid grid-cols-3 gap-2.5">
+              {active.metrics.map((metric) => (
+                <div
+                  key={metric.label}
+                  className="flex flex-col gap-1 p-3"
+                  style={{ border: "1px solid var(--pf-border)" }}
+                >
+                  <span className="text-[1.05rem] font-bold text-[var(--pf-fg)]">
+                    {metric.value}
+                  </span>
+                  <span className="text-[10px] leading-[1.35] text-[var(--pf-fg-muted)]">
+                    {metric.label}
+                  </span>
+                  {metric.delta && (
+                    <span className="font-mono text-[10px] text-[#FF6A13]">{metric.delta}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ padding: "clamp(24px, 2.8vw, 36px)" }}>
+            <span className="mb-4 block font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--pf-fg-dim)]">
+              {t("sectors.common.sourcesLabel")}
+            </span>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              {active.documents.map((doc) => (
+                <DocumentPreview key={doc.code} document={doc} />
+              ))}
+            </div>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {active.sources.map((source) => (
                 <span
                   key={source}
                   className="font-mono text-[10px] text-[var(--pf-fg-dim)]"
@@ -723,8 +876,8 @@ function SectorInsights({ number, sector }: SectionProps) {
               ))}
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      )}
 
       <div className="mt-6 flex items-center gap-2.5 font-mono text-[11px] text-[var(--pf-fg-dim)]">
         <span className="h-1.5 w-1.5 bg-[#FF6A13]" />
@@ -732,6 +885,75 @@ function SectorInsights({ number, sector }: SectionProps) {
       </div>
 
       <SectionCta href="#contact">{t(`sectors.${sector}.insights.cta`)}</SectionCta>
+    </Section>
+  );
+}
+
+/* ──────────────────────────────────────────────────────── */
+/*  Humain dans la boucle                                     */
+/* ──────────────────────────────────────────────────────── */
+
+const HUMAN_LOOP_ICONS = [Search, UserRound, BarChart3];
+
+function SectorHumanLoop({ number, sector }: SectionProps) {
+  const { t } = useTranslation();
+  const cards = t(`sectors.${sector}.humanLoop.cards`, {
+    returnObjects: true,
+  }) as HumanLoopCard[];
+
+  return (
+    <Section id="human-loop">
+      <SectionLabel
+        number={number}
+        label={t("sectors.common.labels.humanLoop")}
+      />
+      <SectionTitle maxWidth={720}>
+        {t(`sectors.${sector}.humanLoop.title`)}
+      </SectionTitle>
+      <p className="m-0 mt-[18px] max-w-[640px] text-[1.05rem] text-[var(--pf-fg-muted)]">
+        {t(`sectors.${sector}.humanLoop.intro`)}
+      </p>
+
+      <div className="mt-11 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        {cards.map((card, index) => {
+          const Icon = HUMAN_LOOP_ICONS[index] ?? Search;
+          const isLast = index === cards.length - 1;
+
+          return (
+            <article
+              key={card.title}
+              className="flex flex-col"
+              style={{
+                background: isLast ? "var(--pf-accent-bg)" : "var(--pf-bg-card)",
+                border: `1px solid ${isLast ? ACCENT : "var(--pf-border)"}`,
+                padding: "clamp(24px, 2.6vw, 30px)",
+              }}
+            >
+              <span
+                className="flex h-11 w-11 items-center justify-center"
+                style={{
+                  background: isLast ? "var(--pf-bg-card)" : "var(--pf-accent-bg)",
+                  border: `1px solid ${ACCENT}`,
+                  color: "#FF6A13",
+                }}
+              >
+                <Icon size={20} />
+              </span>
+              <h3 className="m-0 mt-5 text-[1.1rem] font-bold leading-[1.25] text-[var(--pf-fg)]">
+                {card.title}
+              </h3>
+              <div className="mt-5 flex flex-col gap-2.5">
+                {card.items.map((item) => (
+                  <div key={item} className="flex items-center gap-2.5 text-[13px] text-[var(--pf-fg-muted)]">
+                    <Check size={14} className="shrink-0 text-[#FF6A13]" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </article>
+          );
+        })}
+      </div>
     </Section>
   );
 }
@@ -793,6 +1015,76 @@ function SectorCriteria({ number, sector }: SectionProps) {
 /*  Ce que le DSI va vérifier                                */
 /* ──────────────────────────────────────────────────────── */
 
+/** Colonne de l'architecture : titre + liste d'éléments (+ badge optionnel). */
+function ArchitectureColumn({
+  badge,
+  highlighted = false,
+  items,
+  title,
+}: {
+  badge?: string;
+  highlighted?: boolean;
+  items: string[];
+  title: string;
+}) {
+  return (
+    <div
+      className="flex flex-col gap-2 p-4"
+      style={{
+        background: highlighted ? "var(--pf-accent-bg)" : "var(--pf-bg-card)",
+        border: `1px solid ${highlighted ? ACCENT : "var(--pf-border)"}`,
+      }}
+    >
+      <div className="mb-1 flex flex-col items-center text-center">
+        <span className="text-[12px] font-bold text-[var(--pf-fg)]">{title}</span>
+        {badge && (
+          <span className="mt-1 font-mono text-[9px] uppercase tracking-[0.1em] text-[#FF6A13]">
+            {badge}
+          </span>
+        )}
+      </div>
+      {items.map((item, index) => (
+        <Fragment key={item}>
+          <div
+            className="px-2.5 py-2.5 text-center text-[11px] font-medium text-[var(--pf-fg-muted)]"
+            style={{
+              background: highlighted ? "var(--pf-bg-card)" : "var(--pf-bg-dim)",
+              border: "1px solid var(--pf-border)",
+            }}
+          >
+            {item}
+          </div>
+          {index < items.length - 1 && (
+            <span className="mx-auto h-3 w-px" style={{ background: "var(--pf-border-2)" }} />
+          )}
+        </Fragment>
+      ))}
+    </div>
+  );
+}
+
+function IntegrationArchitectureDiagram({ sector }: { sector: SectorId }) {
+  const { t } = useTranslation();
+  const architecture = t(`sectors.${sector}.integration.architecture`, {
+    returnObjects: true,
+  }) as IntegrationArchitecture;
+
+  return (
+    <div className="mt-11 grid grid-cols-1 items-center gap-4 lg:grid-cols-[1fr_28px_1.2fr_28px_1fr]">
+      <ArchitectureColumn items={architecture.sourcesItems} title={architecture.sourcesTitle} />
+      <ArrowRight className="mx-auto rotate-90 text-[var(--pf-fg-dim)] lg:rotate-0" size={20} />
+      <ArchitectureColumn
+        badge={architecture.instanceBadge}
+        highlighted
+        items={architecture.instanceItems}
+        title={architecture.instanceTitle}
+      />
+      <ArrowRight className="mx-auto rotate-90 text-[var(--pf-fg-dim)] lg:rotate-0" size={20} />
+      <ArchitectureColumn items={architecture.environmentItems} title={architecture.environmentTitle} />
+    </div>
+  );
+}
+
 function SectorIntegration({ number, sector }: SectionProps) {
   const { t } = useTranslation();
   const items = t(`sectors.${sector}.integration.items`, {
@@ -811,6 +1103,8 @@ function SectorIntegration({ number, sector }: SectionProps) {
       <p className="m-0 mt-[18px] max-w-[720px] text-[1.05rem] leading-[1.65] text-[var(--pf-fg-muted)]">
         {t(`sectors.${sector}.integration.intro`)}
       </p>
+
+      <IntegrationArchitectureDiagram sector={sector} />
 
       <div
         className="mt-11 grid grid-cols-1 gap-px border md:grid-cols-2"
@@ -1245,6 +1539,7 @@ type SectionKey =
   | "security"
   | "example"
   | "insights"
+  | "humanLoop"
   | "criteria"
   | "integration"
   | "comparison"
@@ -1262,6 +1557,7 @@ const SECTION_COMPONENTS: Record<
   security: Security,
   example: SourcedExample,
   insights: SectorInsights,
+  humanLoop: SectorHumanLoop,
   criteria: SectorCriteria,
   integration: SectorIntegration,
   comparison: GenericComparison,
@@ -1283,10 +1579,10 @@ const SECTION_COMPONENTS: Record<
 const SECTION_ORDER: Record<SectorId, SectionKey[]> = {
   legal: [
     "challenge",
-    "example",
-    "useCases",
-    "workflow",
-    "security",
+    "insights",
+    "humanLoop",
+    "criteria",
+    "integration",
     "comparison",
     "deployment",
     "faq",
@@ -1294,10 +1590,10 @@ const SECTION_ORDER: Record<SectorId, SectionKey[]> = {
   ],
   healthcare: [
     "challenge",
-    "security",
-    "useCases",
-    "example",
-    "workflow",
+    "insights",
+    "humanLoop",
+    "criteria",
+    "integration",
     "comparison",
     "deployment",
     "faq",
@@ -1306,6 +1602,7 @@ const SECTION_ORDER: Record<SectorId, SectionKey[]> = {
   finance: [
     "challenge",
     "insights",
+    "humanLoop",
     "criteria",
     "integration",
     "comparison",

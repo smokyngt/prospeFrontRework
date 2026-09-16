@@ -418,6 +418,7 @@
         "security": "Security & compliance",
         "example": "Sourced answer",
         "insights": "Proof from the demo",
+        "humanLoop": "Human in the loop",
         "criteria": "What matters",
         "integration": "Integration & IT",
         "deployment": "Deployment",
@@ -431,6 +432,11 @@
       "sourcesLabel": "SOURCES USED",
       "heroVerified": "Answer verified against sources",
       "useCasesSubtitle": "Concrete document tasks, made reliable by sourced answers.",
+      "heroProof": [
+        { "title": "Sourced answers", "text": "down to the page" },
+        { "title": "Inside your", "text": "trusted perimeter" },
+        { "title": "Built for", "text": "sensitive data" }
+      ],
       "workflow": {
         "title": "From question to verified answer",
         "subtitle": "A simple, governed sequence: hybrid search, sourced passages, answer re-checked against sources.",
@@ -652,6 +658,162 @@
         "question": "Does the contract include a change-of-control clause?",
         "generic": "A general-purpose assistant produces a plausible, well-drafted clause, one the contract does not contain.",
         "cost": "An invented clause is not defensible, and stays undetectable without re-reading the whole contract."
+      },
+      "insights": {
+        "title": "What Prosperify just verified on this deal",
+        "intro": "Four questions actually asked in the demo above, across the six documents of the Asteria / NimbusCore file. Every gap is recalculated and cited from source, never summarized from memory — this is what a lawyer would otherwise spend hours, and six open documents, establishing by hand.",
+        "footnote": "Pick \"try another prompt\" in the demo above to replay each of these questions.",
+        "cta": "Replay these scenarios with your own contracts",
+        "items": [
+          {
+            "tag": "Key terms and open points",
+            "question": "Summarize the key terms of this deal and tell me what's still open before signature.",
+            "finding": "The contract binds Asteria Retail and NimbusCore for €3.24M over 36 months, 420 stores, with automatic renewal every 12 months. But five clauses remain open: termination for convenience is one-sided after 12 months, the liability cap is 12 months of fees, the SLA commits to only 99.5% availability, and the incident notice runs from confirmation rather than discovery. None of these five clauses match Asteria's internal standard.",
+            "highlight": "Five clauses remain open before signature, none aligned with the internal standard.",
+            "sources": ["JUR-06 · p.1", "JUR-01 · p.4", "JUR-01 · p.8", "JUR-01 · p.11", "JUR-03 · p.2"],
+            "metrics": [
+              { "value": "€3.24M", "label": "Contract value" },
+              { "value": "36 months", "label": "Initial term" },
+              { "value": "5", "label": "Open clauses" }
+            ],
+            "documents": [
+              { "code": "JUR-06", "title": "Order form", "marker": "€3,240,000 net" },
+              { "code": "JUR-01", "title": "MSA (redline)", "marker": "Termination: supplier only" }
+            ]
+          },
+          {
+            "tag": "Gaps vs contract policy",
+            "question": "Compare the final package to our contract policy and rank the gaps by priority.",
+            "finding": "Three gaps touch structural protections and are top priority: the liability cap (€1.08M against a €2.16M policy minimum), one-sided termination, and the incident notice (72 hours from confirmation against 24 hours from discovery — two different starting points, not just two different durations). Two gaps are secondary: the 99.5% SLA and the 30-day non-renewal notice.",
+            "highlight": "Three top-priority gaps touch structural protections: cap, termination, incident notice.",
+            "sources": ["JUR-01 · p.11", "JUR-02 · p.3", "JUR-01 · p.8", "JUR-02 · p.4", "JUR-04 · p.4", "JUR-02 · p.5"],
+            "metrics": [
+              { "value": "€1.08M", "label": "Current cap", "delta": "vs €2.16M policy" },
+              { "value": "72 h", "label": "Incident notice", "delta": "vs 24 h policy" },
+              { "value": "3", "label": "Top-priority gaps" }
+            ],
+            "documents": [
+              { "code": "JUR-01", "title": "MSA (redline)", "marker": "12 months of fees = €1.08M" },
+              { "code": "JUR-02", "title": "Contract policy", "marker": "24 months of fees" }
+            ]
+          },
+          {
+            "tag": "Contradictions between documents",
+            "question": "Do the documents contradict each other on service level and security?",
+            "finding": "Yes, on two fronts. The order form shows 99.9% as a \"contractual target,\" while the SLA — the only document that defines the measurement method — commits to only 99.5%, and the negotiation note wrongly states this is \"resolved.\" On security, the DPA runs the incident notice from confirmation (72 hours) while internal policy requires 24 hours from discovery. The MSA's precedence order doesn't settle which availability figure applies.",
+            "highlight": "Two documented contradictions need to be resolved before signature.",
+            "sources": ["JUR-06 · p.2", "JUR-03 · p.2", "JUR-05 · p.3", "JUR-04 · p.4", "JUR-02 · p.5"],
+            "metrics": [
+              { "value": "99.9% / 99.5%", "label": "Availability", "delta": "two figures, two documents" },
+              { "value": "72 h / 24 h", "label": "Notice period" },
+              { "value": "2", "label": "Unresolved contradictions" }
+            ],
+            "documents": [
+              { "code": "JUR-06", "title": "Order form", "marker": "99.9% — contractual target" },
+              { "code": "JUR-03", "title": "SLA", "marker": "Measured rate: 99.5%" }
+            ]
+          },
+          {
+            "tag": "Negotiation briefing",
+            "question": "Prepare a negotiation briefing for Legal with the wording to obtain.",
+            "finding": "Verdict: not ready to sign. Five priority wordings to obtain — raise the cap to 24 months of fees with reciprocal carve-outs, open termination for convenience to both parties with matching notice, move the incident notice to 24 hours from discovery. In addition: a firm 99.9% SLA and a 60-day non-renewal notice. Follow-up, not a blocker: post-contract data retention, left \"to confirm\" in the DPA.",
+            "highlight": "Verdict: NOT READY TO SIGN until three priority wordings are obtained.",
+            "sources": ["JUR-01 · p.11", "JUR-02 · p.3", "JUR-01 · p.8", "JUR-04 · p.4", "JUR-04 · p.6"],
+            "metrics": [
+              { "value": "NOT READY", "label": "Signature status" },
+              { "value": "5", "label": "Wordings to obtain" },
+              { "value": "24 h", "label": "Target notice", "delta": "vs 72 h today" }
+            ],
+            "documents": [
+              { "code": "JUR-01", "title": "MSA (redline)", "marker": "Current cap: €1.08M" },
+              { "code": "JUR-04", "title": "DPA", "marker": "Retention: to confirm" }
+            ]
+          }
+        ]
+      },
+      "humanLoop": {
+        "title": "Legal expertise stays at the center",
+        "intro": "Prosperify doesn't replace the lawyer. It gives them a more complete basis to negotiate and decide, faster.",
+        "cards": [
+          {
+            "title": "The agent prepares the review",
+            "items": [
+              "Searches the contract and its exhibits",
+              "Cross-checks versions and redlines",
+              "Flags open clauses and contradictions",
+              "Provides the exact citations, clause by clause"
+            ]
+          },
+          {
+            "title": "The lawyer analyzes and negotiates",
+            "items": [
+              "Interprets the actual legal risk",
+              "Validates or challenges each gap",
+              "Adds the context of the business relationship",
+              "Decides the wording to obtain"
+            ]
+          },
+          {
+            "title": "A faster, better-prepared negotiation",
+            "items": [
+              "Less time spent re-reading",
+              "A complete view of the gaps",
+              "Fewer blind spots before signature",
+              "A defensible briefing, not just a plausible one"
+            ]
+          }
+        ]
+      },
+      "criteria": {
+        "title": "What a reliable answer must guarantee, in legal",
+        "intro": "On contractual commitments, the priority order isn't the same as for generic use.",
+        "cta": "Discuss your use case",
+        "items": [
+          {
+            "title": "Risk detection before signature",
+            "description": "A lawyer who manually cross-checks an MSA, a contract policy and an SLA typically needs several hours to spot an open clause or a contradiction like the ones above. Prosperify takes the question in plain language and cross-checks the documents in seconds, before the contract is signed on an incomplete basis. The gain isn't just time: it's the ability to detect the risk before it becomes contractual."
+          },
+          {
+            "title": "Accuracy of the cited clause",
+            "description": "A general-purpose model paraphrases a plausible, well-drafted clause, sometimes one the contract doesn't contain. Prosperify only cites what it finds written in the document, at the right version — the redline under negotiation, not an outdated draft. That's the difference between a plausible clause and a defensible one."
+          },
+          {
+            "title": "Defensible traceability",
+            "description": "Every claim in the answer links back to the document, page and clause that supports it, and a click opens the PDF at the exact highlighted passage. In a dispute or a review, the lawyer no longer has to hunt down the clause by hand: it's already there, ready to be shown as-is."
+          }
+        ]
+      },
+      "integration": {
+        "title": "What your IT team will check before signing off",
+        "intro": "General counsel can be convinced by the demo above. IT looks at something else: where the contracts live, who can access them, what happens if the vendor changes policy, and how long the integration will actually take. On a corpus that holds confidential contracts and negotiation notes, these questions aren't secondary — they decide the go/no-go, often before the quality of the answers does.",
+        "cta": "Talk to an engineer before the technical committee",
+        "architecture": {
+          "sourcesTitle": "Your sources",
+          "sourcesItems": ["Legal DMS", "Electronic vault", "Contract lifecycle tool", "File shares"],
+          "instanceTitle": "Your Prosperify instance",
+          "instanceBadge": "single-tenant",
+          "instanceItems": ["Connectors", "Legal stores", "Indexing + hybrid search", "Prosperify agent", "Answer + citations"],
+          "environmentTitle": "Your environment",
+          "environmentItems": ["Your perimeter", "Your security rules", "Your existing tools", "Audit logs"]
+        },
+        "items": [
+          {
+            "title": "Integration with what you already have",
+            "description": "Prosperify doesn't replace your legal DMS or your electronic vault: it reads on top of them, with connectors to the repositories your team already uses and authentication aligned with your identity provider via SSO (OIDC or SAML). No re-entry, no extra document repository to maintain."
+          },
+          {
+            "title": "Isolation and encryption",
+            "description": "Each client gets a siloed instance, with no shared indexing across organizations. Documents are encrypted at rest and in transit, and depending on the deployment model, keys can stay under your control. Your contracts are never used to train a general model: they're queried within your perimeter, full stop."
+          },
+          {
+            "title": "Operational traceability",
+            "description": "Every access, every query and every document opened is logged. In a security review or an internal audit, your security team has a full trail to present, not a promise to take on faith."
+          },
+          {
+            "title": "Reversibility",
+            "description": "Your documents and indexes stay exportable at any time. If you switch tools down the line, you leave with your data and your conversation history, not with a proprietary silo you have to negotiate to get back."
+          }
+        ]
       }
     },
     "healthcare": {
@@ -740,6 +902,162 @@
         "question": "What dosage applies in case of renal impairment?",
         "generic": "A general-purpose assistant answers from general literature, not from the version of the protocol in force at your site.",
         "cost": "A dosage that is right in general can be wrong in your protocol, and nothing in the answer flags the gap."
+      },
+      "insights": {
+        "title": "What Prosperify just verified on this record",
+        "intro": "Four questions actually asked in the demo above, across the six documents of the longitudinal record (January to June 2026). Every element is recalculated and cited from source, never summarized from memory — this is what a care coordinator would otherwise spend hours, and six open documents, establishing by hand. Fictional record, for demonstration only: any summary remains to be validated by a healthcare professional.",
+        "footnote": "Pick \"try another prompt\" in the demo above to replay each of these questions.",
+        "cta": "Replay these scenarios with your own records",
+        "items": [
+          {
+            "tag": "Patient journey reconstruction",
+            "question": "Reconstruct this patient's journey and summarize the key clinical information.",
+            "finding": "History: hypertension and permanent atrial fibrillation, amoxicillin allergy documented in 2019, four active medications before hospitalization. Estimated GFR moves from 68 in September 2025 to 44 on June 18, 2026, with a mismatched automated \"stable\" comment. Dehydration episode from June 23-25, eGFR 46 on admission then 52 at discharge, with a lab follow-up expected within 7 days.",
+            "highlight": "eGFR drops from 68 to 44 over 9 months, with an automated comment that doesn't reflect it.",
+            "sources": ["SAN-01 · p.1", "SAN-01 · p.2", "SAN-03 · p.1", "SAN-06 · p.3", "SAN-06 · p.5"],
+            "metrics": [
+              { "value": "68 → 44", "label": "eGFR (mL/min/1.73m²)", "delta": "Sep 2025 → Jun 2026" },
+              { "value": "46 → 52", "label": "eGFR during hospitalization" },
+              { "value": "7 days", "label": "Lab follow-up expected" }
+            ],
+            "documents": [
+              { "code": "SAN-01", "title": "Consultation note", "marker": "Amoxicillin allergy (2019)" },
+              { "code": "SAN-06", "title": "Discharge summary", "marker": "eGFR: 52 mL/min/1.73m²" }
+            ]
+          },
+          {
+            "tag": "Inconsistencies to verify",
+            "question": "Which record inconsistencies need to be verified during medication reconciliation?",
+            "finding": "Three points to verify, none resolvable from the file alone: the amoxicillin allergy, documented in primary care, shown as \"none known\" in the discharge summary; the rivaroxaban dose — 20mg on the prescription and discharge list, 15mg in the cardiology letter; the creatinine/potassium check requested within 7 days, missing from the record as of July 10. None of these sources settles which value is correct.",
+            "highlight": "Three documented discrepancies, none resolvable from the file alone.",
+            "sources": ["SAN-01 · p.2", "SAN-06 · p.2", "SAN-02 · p.1", "SAN-06 · p.4", "SAN-05 · p.1", "SAN-06 · p.5"],
+            "metrics": [
+              { "value": "2 versions", "label": "Allergy status", "delta": "documented vs \"none known\"" },
+              { "value": "20mg / 15mg", "label": "Rivaroxaban dose" },
+              { "value": "0", "label": "Follow-up result as of Jul 10" }
+            ],
+            "documents": [
+              { "code": "SAN-01", "title": "Consultation note", "marker": "Amoxicillin allergy documented" },
+              { "code": "SAN-06", "title": "Discharge summary", "marker": "\"KNOWN ALLERGIES: none\"" }
+            ]
+          },
+          {
+            "tag": "Renal function trend",
+            "question": "Show the trend in renal function and the documents that explain each step.",
+            "finding": "Estimated GFR at 68 mL/min/1.73m² in September 2025, then 44 on June 18, 2026, 46 on admission June 23 and 52 at discharge June 25 — a partial improvement during hospitalization, with no measurement available after discharge. The automated \"stable\" comment attached to the June 18 result is inconsistent with this drop from 68 to 44.",
+            "highlight": "The automated \"stable\" comment is inconsistent with the drop from 68 to 44.",
+            "sources": ["SAN-01 · p.2", "SAN-03 · p.1", "SAN-06 · p.3", "SAN-03 · p.2"],
+            "metrics": [
+              { "value": "68", "label": "eGFR Sep 2025" },
+              { "value": "44", "label": "eGFR Jun 18, 2026" },
+              { "value": "52", "label": "eGFR at discharge" }
+            ],
+            "documents": [
+              { "code": "SAN-03", "title": "Lab results", "marker": "Comment: \"stable\" (inconsistent)" },
+              { "code": "SAN-06", "title": "Discharge summary", "marker": "52 mL/min/1.73m²" }
+            ]
+          },
+          {
+            "tag": "Pre-visit review sheet",
+            "question": "Prepare a review sheet for the follow-up visit, without giving medical advice.",
+            "finding": "Three checks before the follow-up visit: confirm and correct the amoxicillin allergy status, contradicted at discharge; establish the rivaroxaban dose actually prescribed and taken, between 20mg on the prescription and 15mg in the cardiology letter; retrieve or reschedule the creatinine/potassium check requested for July 2. No treatment change is proposed here — validation by a healthcare professional required.",
+            "highlight": "Three points flagged for review — no clinical decision is proposed.",
+            "sources": ["SAN-01 · p.2", "SAN-06 · p.2", "SAN-02 · p.1", "SAN-05 · p.1", "SAN-06 · p.5"],
+            "metrics": [
+              { "value": "3", "label": "Points to verify" },
+              { "value": "0", "label": "Clinical recommendation given" },
+              { "value": "Jul 2", "label": "Requested check, not found" }
+            ],
+            "documents": [
+              { "code": "SAN-02", "title": "Active prescription", "marker": "Rivaroxaban 20mg" },
+              { "code": "SAN-05", "title": "Cardiology letter", "marker": "Rivaroxaban 15mg/day" }
+            ]
+          }
+        ]
+      },
+      "humanLoop": {
+        "title": "Clinical judgment stays at the center",
+        "intro": "Prosperify doesn't make a diagnosis and doesn't recommend any treatment adjustment. It flags what needs to be verified by a healthcare professional.",
+        "cards": [
+          {
+            "title": "The agent prepares the summary",
+            "items": [
+              "Searches the longitudinal record",
+              "Cross-checks documents against each other",
+              "Flags inconsistencies and at-risk values",
+              "Provides the exact citations, section by section"
+            ]
+          },
+          {
+            "title": "The healthcare professional validates",
+            "items": [
+              "Interprets the clinical context",
+              "Confirms or corrects each flagged point",
+              "Brings the medical judgment",
+              "Decides on the course of action"
+            ]
+          },
+          {
+            "title": "A better-prepared consultation",
+            "items": [
+              "Less time spent re-reading the record",
+              "A complete longitudinal view",
+              "Fewer unseen inconsistencies",
+              "A review sheet, never a diagnosis"
+            ]
+          }
+        ]
+      },
+      "criteria": {
+        "title": "What a reliable answer must guarantee, in healthcare",
+        "intro": "On clinical data, the priority order isn't the same as for generic use: accuracy comes before speed.",
+        "cta": "Discuss your use case",
+        "items": [
+          {
+            "title": "Semantic accuracy",
+            "description": "Confusing \"allergy documented\" with \"no known allergy,\" or paraphrasing a dosage by rounding it, doesn't carry the same consequences in healthcare as elsewhere. Prosperify doesn't paraphrase clinical facts: it cites the exact passage, with its date and source, and flags the discrepancy rather than resolving it in the clinician's place. That's the difference between a reliable summary and a dangerous approximation."
+          },
+          {
+            "title": "Clinical traceability",
+            "description": "Every element of the summary links back to the document, section and date that support it, and a click opens the PDF at the exact passage. During a visit, the clinician doesn't have to search for where the information lives: it's already there, ready to be checked before any decision."
+          },
+          {
+            "title": "Speed, without ever replacing clinical judgment",
+            "description": "Reconstructing a patient's journey across six documents and nine months of history normally takes several hours. Prosperify does it in seconds — but the time saved goes toward better verification, never toward skipping it: no treatment recommendation is made, only points to confirm with a healthcare professional."
+          }
+        ]
+      },
+      "integration": {
+        "title": "What your IT team will check before signing off",
+        "intro": "A quality team or a care coordinator can be convinced by the demo above. IT looks at something else: where the records live, who can access them, what happens if the vendor changes policy, and how long the integration will actually take. On health data, these questions aren't secondary — they decide the go/no-go, often before the quality of the answers does.",
+        "cta": "Talk to an engineer before the technical committee",
+        "architecture": {
+          "sourcesTitle": "Your sources",
+          "sourcesItems": ["Electronic health record", "Quality DMS", "Lab results", "Medical letters"],
+          "instanceTitle": "Your Prosperify instance",
+          "instanceBadge": "single-tenant",
+          "instanceItems": ["Connectors", "Healthcare stores", "Indexing + hybrid search", "Prosperify agent", "Answer + citations"],
+          "environmentTitle": "Your environment",
+          "environmentItems": ["Your perimeter", "Your security rules", "Your existing tools", "Audit logs"]
+        },
+        "items": [
+          {
+            "title": "Integration with what you already have",
+            "description": "Prosperify doesn't replace your electronic health record: it reads on top of it, with connectors to the repositories your teams already use (EHR, quality DMS, lab results) and authentication aligned with your identity provider via SSO (OIDC or SAML). No re-entry, no extra document repository to maintain."
+          },
+          {
+            "title": "Isolation and encryption",
+            "description": "Each facility gets a siloed instance, with no shared indexing across organizations. Documents are encrypted at rest and in transit, and depending on the deployment model, keys can stay under your control. Your records are never used to train a general model: they're queried within your perimeter, full stop."
+          },
+          {
+            "title": "Operational traceability",
+            "description": "Every access, every query and every document opened is logged. In a security review or an internal audit, your security team has a full trail to present, not a promise to take on faith."
+          },
+          {
+            "title": "Reversibility",
+            "description": "Your documents and indexes stay exportable at any time. If you switch tools down the line, you leave with your data, not with a proprietary silo you have to negotiate to get back."
+          }
+        ]
       }
     },
     "finance": {
@@ -847,25 +1165,99 @@
             "tag": "Growth / cash paradox",
             "question": "Summarize YTD performance and explain the paradox between growth and cash.",
             "finding": "Revenue at €12.4M (+24%), EBITDA at €1.1M: on the P&L alone, the business looks healthy, and a first glance would stop there. But cash falls by €2.2M over the period, a drop driven entirely by operations. Cross-checking the P&L against the cash-flow detail narrows the gap to a single cause: rising receivables, with no anomaly elsewhere in working capital.",
-            "sources": ["FIN-02 · p.1", "FIN-02 · p.2", "FIN-03 · p.1", "FIN-03 · p.3"]
+            "highlight": "Rising receivables alone explain the entire cash decline.",
+            "sources": ["FIN-02 · p.1", "FIN-02 · p.2", "FIN-03 · p.1", "FIN-03 · p.3"],
+            "metrics": [
+              { "value": "€12.4M", "label": "YTD revenue", "delta": "+24%" },
+              { "value": "€1.1M", "label": "EBITDA", "delta": "+22%" },
+              { "value": "-€2.2M", "label": "Cash" }
+            ],
+            "documents": [
+              { "code": "FIN-02", "title": "P&L statement", "marker": "Revenue: €12.4M" },
+              { "code": "FIN-03", "title": "Cash-flow statement", "marker": "-€2.2M" }
+            ]
           },
           {
             "tag": "Budget vs actual variance",
             "question": "Compare actuals to budget and flag the variance that deserves board attention.",
             "finding": "Revenue beats budget by €0.6M: on that metric alone, the quarter looks like a win. But cash is €1.4M short, a gap proportionally larger than the EBITDA miss. The cause shows up in the collection period, 78 days against a 49-day budget, tying up €1.52M more than planned — a figure neither document states on its own.",
-            "sources": ["FIN-04 · p.1", "FIN-04 · p.4", "FIN-05 · p.1"]
+            "highlight": "The 78-day collection period ties up €1.52M more than budgeted.",
+            "sources": ["FIN-04 · p.1", "FIN-04 · p.4", "FIN-05 · p.1"],
+            "metrics": [
+              { "value": "+€0.6M", "label": "Revenue vs budget" },
+              { "value": "-€0.2M", "label": "EBITDA vs budget" },
+              { "value": "78 days", "label": "Collection period", "delta": "vs 49 budgeted" }
+            ],
+            "documents": [
+              { "code": "FIN-04", "title": "Budget vs actual", "marker": "Cash: -€1.4M" },
+              { "code": "FIN-05", "title": "AR aging report", "marker": "Receivables doubled" }
+            ]
           },
           {
             "tag": "Client risk concentration",
             "question": "Which receivables explain the risk, and do the invoices confirm the aging report?",
             "finding": "Two accounts, MetroFleet (€1.20M, 62 days overdue) and NordTransit (€0.75M, disputed), account for 47.6% of receivables on their own. The source invoices, recalculated line by line, reconcile to the cent with the aging report: the delay isn't a data-entry error, it's a real collection issue, with a distinct, documented cause for each account.",
-            "sources": ["FIN-05 · p.3", "FIN-06 · p.1", "FIN-06 · p.3"]
+            "highlight": "Two accounts already account for 47.6% of total receivables.",
+            "sources": ["FIN-05 · p.3", "FIN-06 · p.1", "FIN-06 · p.3"],
+            "metrics": [
+              { "value": "€1.95M", "label": "Receivables at risk" },
+              { "value": "47.6%", "label": "Of total receivables" },
+              { "value": "62 days", "label": "MetroFleet overdue" }
+            ],
+            "documents": [
+              { "code": "FIN-05", "title": "AR aging report", "marker": "€1.95M (47.6%)" },
+              { "code": "FIN-06", "title": "Client invoices", "marker": "Check: €1,000,000 net" }
+            ]
           },
           {
             "tag": "Fact-checking the CFO note",
             "question": "Challenge the CFO note and prepare three sourced closing actions.",
             "finding": "The note to the board calls the cash tension \"mostly seasonal.\" The structural collection gap, 78 versus 49 budgeted days, contradicts that: it isn't a calendar effect, it's a drift that persists. The NordTransit dispute, worth €0.75M, isn't even mentioned in the note — exactly the kind of blind spot a cross-checked reading surfaces before the committee, not during it.",
-            "sources": ["FIN-08 · p.2", "FIN-08 · p.3", "FIN-04 · p.4", "FIN-07 · p.1"]
+            "highlight": "The structural DSO contradicts the note's \"seasonal\" diagnosis.",
+            "sources": ["FIN-08 · p.2", "FIN-08 · p.3", "FIN-04 · p.4", "FIN-07 · p.1"],
+            "metrics": [
+              { "value": "78 days", "label": "Actual DSO", "delta": "vs 49 budgeted" },
+              { "value": "€1.52M", "label": "Over-investment" },
+              { "value": "9%", "label": "Covered by in-transit deposits" }
+            ],
+            "documents": [
+              { "code": "FIN-08", "title": "CFO note to the board", "marker": "\"mostly seasonal\"" },
+              { "code": "FIN-04", "title": "Budget vs actual", "marker": "78 vs 49 days" },
+              { "code": "FIN-07", "title": "Bank reconciliation", "marker": "€180K in transit" }
+            ]
+          }
+        ]
+      },
+      "humanLoop": {
+        "title": "Human expertise stays at the center",
+        "intro": "Prosperify doesn't replace the controller or the CFO. It gives them a more complete basis to decide, faster.",
+        "cards": [
+          {
+            "title": "The agent prepares the analysis",
+            "items": [
+              "Searches across your documents",
+              "Cross-checks the sources against each other",
+              "Flags gaps and inconsistencies",
+              "Provides the exact citations"
+            ]
+          },
+          {
+            "title": "The controller or CFO decides",
+            "items": [
+              "Interprets the business context",
+              "Validates or challenges the figures",
+              "Adds what the AI doesn't know",
+              "Makes the final call"
+            ]
+          },
+          {
+            "title": "A faster, better-supported decision",
+            "items": [
+              "Less time spent searching",
+              "A more complete view of the file",
+              "Fewer blind spots before the committee",
+              "A defensible answer, not just a plausible one"
+            ]
           }
         ]
       },
@@ -892,6 +1284,15 @@
         "title": "What your IT team will check before signing off",
         "intro": "A CFO can be convinced by the demo above. IT looks at something else: where the documents live, who can access them, what happens if the vendor changes policy, and how long the integration will actually take. On a corpus that holds closing accounts, client invoices and internal notes bound for the board, these questions aren't secondary — they decide the go/no-go, often before the quality of the answers does.",
         "cta": "Talk to an engineer before the technical committee",
+        "architecture": {
+          "sourcesTitle": "Your sources",
+          "sourcesItems": ["ERP", "DMS / SharePoint", "Data room", "File shares"],
+          "instanceTitle": "Your Prosperify instance",
+          "instanceBadge": "single-tenant",
+          "instanceItems": ["Connectors", "Finance stores", "Indexing + hybrid search", "Prosperify agent", "Answer + citations"],
+          "environmentTitle": "Your environment",
+          "environmentItems": ["Your perimeter", "Your security rules", "Your existing tools", "Audit logs"]
+        },
         "items": [
           {
             "title": "Integration with what you already have",

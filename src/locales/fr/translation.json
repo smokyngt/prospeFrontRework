@@ -418,6 +418,7 @@
         "security": "Sécurité & conformité",
         "example": "Réponse sourcée",
         "insights": "Preuves tirées de la démo",
+        "humanLoop": "Humain dans la boucle",
         "criteria": "Ce qui compte",
         "integration": "Intégration & DSI",
         "deployment": "Déploiement",
@@ -431,6 +432,11 @@
       "sourcesLabel": "SOURCES UTILISÉES",
       "heroVerified": "Réponse vérifiée face aux sources",
       "useCasesSubtitle": "Des tâches documentaires concrètes, fiabilisées par des réponses sourcées.",
+      "heroProof": [
+        { "title": "Réponses sourcées", "text": "à la page près" },
+        { "title": "Dans votre", "text": "périmètre de confiance" },
+        { "title": "Conçu pour", "text": "les données sensibles" }
+      ],
       "workflow": {
         "title": "De la question à la réponse vérifiée",
         "subtitle": "Une séquence simple et gouvernée : recherche hybride, passages sourcés, réponse recomparée aux sources.",
@@ -652,6 +658,162 @@
         "question": "Le contrat prévoit-il une clause de changement de contrôle ?",
         "generic": "Un assistant généraliste produit une clause plausible, correctement rédigée, et absente du contrat.",
         "cost": "Une clause inventée n'est pas opposable, et reste indétectable sans relecture intégrale du contrat."
+      },
+      "insights": {
+        "title": "Ce que Prosperify vient de vérifier sur ce dossier",
+        "intro": "Quatre questions réellement posées dans la démo ci-dessus, sur les six pièces du dossier Asteria / NimbusCore. Chaque écart est recalculé et cité depuis la source, jamais résumé de mémoire — voici ce qu'un juriste aurait mis plusieurs heures, et six documents ouverts en parallèle, à établir lui-même.",
+        "footnote": "Choisissez « essayer un autre prompt » dans la démo ci-dessus pour rejouer chacune de ces questions.",
+        "cta": "Rejouer ces scénarios avec vos propres contrats",
+        "items": [
+          {
+            "tag": "Termes clés et points ouverts",
+            "question": "Résume les termes clés de cet accord et dis-moi ce qui reste ouvert avant signature.",
+            "finding": "Le contrat lie Asteria Retail et NimbusCore pour 3,24 M€ HT sur 36 mois, 420 magasins, avec renouvellement automatique par périodes de 12 mois. Mais cinq clauses restent ouvertes : la résiliation pour convenance n'est accessible qu'au fournisseur après douze mois, le plafond de responsabilité est limité à douze mois de redevances, le SLA n'engage que 99,5 % de disponibilité, et le délai de notification d'incident part de la confirmation plutôt que de la découverte. Aucune de ces cinq clauses n'est alignée avec le standard interne d'Asteria.",
+            "highlight": "Cinq clauses restent ouvertes avant signature, aucune alignée sur le standard interne.",
+            "sources": ["JUR-06 · p.1", "JUR-01 · p.4", "JUR-01 · p.8", "JUR-01 · p.11", "JUR-03 · p.2"],
+            "metrics": [
+              { "value": "3,24 M€", "label": "Valeur du contrat" },
+              { "value": "36 mois", "label": "Durée initiale" },
+              { "value": "5", "label": "Clauses ouvertes" }
+            ],
+            "documents": [
+              { "code": "JUR-06", "title": "Bon de commande", "marker": "3 240 000 € HT" },
+              { "code": "JUR-01", "title": "MSA (redline)", "marker": "Résiliation : fournisseur seul" }
+            ]
+          },
+          {
+            "tag": "Écarts vs politique contractuelle",
+            "question": "Compare le paquet final à notre politique contractuelle et classe les écarts par priorité.",
+            "finding": "Trois écarts touchent des protections structurelles et sont prioritaires : le plafond de responsabilité (1,08 M€ contre un minimum policy de 2,16 M€), la résiliation asymétrique (ouverte au seul fournisseur), et le délai de notification d'incident (72 heures après confirmation contre 24 heures après découverte — deux points de départ différents, pas seulement deux durées). Deux écarts sont secondaires : le SLA à 99,5 % et le préavis de non-renouvellement à 30 jours.",
+            "highlight": "Trois écarts prioritaires touchent des protections structurelles : plafond, résiliation, incident.",
+            "sources": ["JUR-01 · p.11", "JUR-02 · p.3", "JUR-01 · p.8", "JUR-02 · p.4", "JUR-04 · p.4", "JUR-02 · p.5"],
+            "metrics": [
+              { "value": "1,08 M€", "label": "Plafond actuel", "delta": "vs 2,16 M€ policy" },
+              { "value": "72 h", "label": "Délai incident", "delta": "vs 24 h policy" },
+              { "value": "3", "label": "Écarts prioritaires" }
+            ],
+            "documents": [
+              { "code": "JUR-01", "title": "MSA (redline)", "marker": "12 mois de fees = 1,08 M€" },
+              { "code": "JUR-02", "title": "Politique contractuelle", "marker": "24 mois de redevances" }
+            ]
+          },
+          {
+            "tag": "Contradictions entre documents",
+            "question": "Les documents se contredisent-ils sur le niveau de service et la sécurité ?",
+            "finding": "Oui, sur deux plans. L'Order Form affiche 99,9 % comme « cible contractuelle », alors que le SLA, seul document qui définit la méthode de mesure, n'engage que 99,5 % — et la note de négociation affirme à tort que ce sujet est « résolu ». Sur la sécurité, le DPA fait courir le délai de notification à 72 heures après confirmation quand la politique interne exige 24 heures après découverte. L'ordre de préséance du MSA ne précise pas lequel des deux chiffres de disponibilité constitue l'engagement mesurable.",
+            "highlight": "Deux contradictions documentées doivent être résolues avant signature.",
+            "sources": ["JUR-06 · p.2", "JUR-03 · p.2", "JUR-05 · p.3", "JUR-04 · p.4", "JUR-02 · p.5"],
+            "metrics": [
+              { "value": "99,9 % / 99,5 %", "label": "Disponibilité", "delta": "deux chiffres, deux documents" },
+              { "value": "72 h / 24 h", "label": "Délai de notification" },
+              { "value": "2", "label": "Contradictions non résolues" }
+            ],
+            "documents": [
+              { "code": "JUR-06", "title": "Bon de commande", "marker": "99,9 % — cible contractuelle" },
+              { "code": "JUR-03", "title": "SLA", "marker": "Taux mesuré : 99,5 %" }
+            ]
+          },
+          {
+            "tag": "Briefing de négociation",
+            "question": "Prépare un briefing de négociation prêt pour Legal avec les formulations à obtenir.",
+            "finding": "Verdict : non prêt à signer. Cinq formulations à obtenir par priorité — porter le plafond à 24 mois de redevances avec carve-outs réciproques, ouvrir la résiliation pour convenance aux deux parties avec un préavis identique, faire courir la notification d'incident à 24 heures après découverte. En complément : SLA à 99,9 % ferme et préavis de non-renouvellement à 60 jours. À suivre séparément, hors priorité : la durée de conservation des données après la fin du contrat, laissée « à confirmer » dans le DPA.",
+            "highlight": "Verdict : NON PRÊT À SIGNER tant que trois formulations prioritaires ne sont pas obtenues.",
+            "sources": ["JUR-01 · p.11", "JUR-02 · p.3", "JUR-01 · p.8", "JUR-04 · p.4", "JUR-04 · p.6"],
+            "metrics": [
+              { "value": "NON PRÊT", "label": "Statut de signature" },
+              { "value": "5", "label": "Formulations à obtenir" },
+              { "value": "24 h", "label": "Notification cible", "delta": "vs 72 h actuels" }
+            ],
+            "documents": [
+              { "code": "JUR-01", "title": "MSA (redline)", "marker": "Plafond actuel : 1,08 M€" },
+              { "code": "JUR-04", "title": "DPA", "marker": "Conservation : à confirmer" }
+            ]
+          }
+        ]
+      },
+      "humanLoop": {
+        "title": "L'expertise juridique reste au centre",
+        "intro": "Prosperify ne remplace pas le juriste. Il lui donne une base plus complète pour négocier et décider, plus vite.",
+        "cards": [
+          {
+            "title": "L'agent prépare la revue",
+            "items": [
+              "Recherche dans le contrat et ses annexes",
+              "Recoupe les versions et les redlines",
+              "Identifie les clauses ouvertes et les contradictions",
+              "Fournit les citations exactes, clause par clause"
+            ]
+          },
+          {
+            "title": "Le juriste analyse et négocie",
+            "items": [
+              "Interprète le risque juridique réel",
+              "Valide ou challenge chaque écart",
+              "Ajoute le contexte de la relation commerciale",
+              "Décide de la formulation à obtenir"
+            ]
+          },
+          {
+            "title": "Une négociation plus rapide, mieux préparée",
+            "items": [
+              "Moins de temps passé sur la relecture",
+              "Une vision complète des écarts",
+              "Moins d'angles morts avant signature",
+              "Un briefing opposable, pas seulement plausible"
+            ]
+          }
+        ]
+      },
+      "criteria": {
+        "title": "Ce qu'une réponse fiable doit garantir, en juridique",
+        "intro": "Sur des engagements contractuels, l'ordre des priorités n'est pas celui d'un usage générique.",
+        "cta": "Discuter de votre cas d'usage",
+        "items": [
+          {
+            "title": "Détection du risque avant signature",
+            "description": "Un juriste qui recroise manuellement un MSA, une politique contractuelle et un SLA met généralement plusieurs heures à repérer une clause ouverte ou une contradiction comme celles des scénarios ci-dessus. Prosperify pose la question en langage naturel et recroise les documents en quelques secondes, avant que le contrat ne soit signé sur une base incomplète. Le gain n'est pas seulement le temps gagné : c'est la capacité à détecter le risque avant qu'il ne devienne contractuel."
+          },
+          {
+            "title": "Exactitude de la clause citée",
+            "description": "Un modèle généraliste reformule une clause plausible, correctement rédigée, et parfois absente du contrat. Prosperify ne cite que ce qu'il retrouve écrit noir sur blanc dans le document, à la bonne version — le redline en cours de négociation, pas un brouillon dépassé. C'est la différence entre une clause plausible et une clause opposable."
+          },
+          {
+            "title": "Traçabilité opposable",
+            "description": "Chaque affirmation de la réponse est reliée au document, à la page et à la clause qui la justifie, et un clic ouvre le PDF au passage exact, surligné. En cas de litige ou de revue, ce n'est plus le juriste qui doit retrouver la clause à la main : la source est déjà là, prête à être montrée telle quelle."
+          }
+        ]
+      },
+      "integration": {
+        "title": "Ce que votre DSI va vérifier avant de signer",
+        "intro": "Un directeur juridique peut être convaincu par la démonstration ci-dessus. Un DSI regarde autre chose : où vivent les contrats, qui peut y accéder, ce qui se passe si l'éditeur change de politique, et combien de temps prendra réellement l'intégration. Sur un corpus qui contient des contrats confidentiels et des notes de négociation, ces questions ne sont pas secondaires : elles conditionnent le go/no-go, souvent avant même la qualité des réponses.",
+        "cta": "Parler à un ingénieur avant le comité technique",
+        "architecture": {
+          "sourcesTitle": "Vos sources",
+          "sourcesItems": ["GED juridique", "Coffre-fort électronique", "Contract lifecycle", "Partage de fichiers"],
+          "instanceTitle": "Votre instance Prosperify",
+          "instanceBadge": "single-tenant",
+          "instanceItems": ["Connecteurs", "Stores Juridique", "Indexation + recherche hybride", "Agent Prosperify", "Réponse + citations"],
+          "environmentTitle": "Votre environnement",
+          "environmentItems": ["Votre périmètre", "Vos règles de sécurité", "Vos outils existants", "Journaux d'audit"]
+        },
+        "items": [
+          {
+            "title": "Intégration avec l'existant",
+            "description": "Prosperify ne remplace ni votre GED juridique ni votre coffre-fort électronique : il vient lire par-dessus, avec des connecteurs vers les référentiels que votre équipe utilise déjà et une authentification alignée sur votre fournisseur d'identité via SSO (OIDC ou SAML). Aucune ressaisie, aucun référentiel documentaire supplémentaire à maintenir."
+          },
+          {
+            "title": "Isolation et chiffrement",
+            "description": "Chaque client dispose d'une instance cloisonnée, sans mutualisation d'index entre organisations. Les documents sont chiffrés au repos et en transit, et selon le modèle de déploiement retenu, les clés peuvent rester sous votre contrôle. Vos contrats ne servent jamais à entraîner un modèle général : ils sont interrogés dans votre périmètre, point final."
+          },
+          {
+            "title": "Traçabilité opérationnelle",
+            "description": "Chaque accès, chaque requête et chaque document consulté est journalisé. En cas de revue de sécurité ou d'audit interne, votre RSSI dispose d'une piste complète à présenter, pas d'une promesse à vérifier sur parole."
+          },
+          {
+            "title": "Réversibilité",
+            "description": "Vos documents et vos index restent exportables à tout moment. Si vous changez d'outil, vous repartez avec vos données et l'historique de vos conversations, pas avec un silo propriétaire qu'il faut négocier pour récupérer."
+          }
+        ]
       }
     },
     "healthcare": {
@@ -740,6 +902,162 @@
         "question": "Quelle posologie prévoir en cas d'insuffisance rénale ?",
         "generic": "Un assistant généraliste répond depuis la littérature générale, pas depuis la version du protocole en vigueur chez vous.",
         "cost": "Une posologie juste en général peut être fausse dans votre protocole, et rien dans la réponse ne signale l'écart."
+      },
+      "insights": {
+        "title": "Ce que Prosperify vient de vérifier sur ce dossier",
+        "intro": "Quatre questions réellement posées dans la démo ci-dessus, sur les six pièces du dossier longitudinal (janvier à juin 2026). Chaque élément est recalculé et cité depuis la source, jamais résumé de mémoire — voici ce qu'un coordinateur de soins aurait mis plusieurs heures, et six documents ouverts en parallèle, à établir lui-même. Dossier fictif, à but de démonstration : toute synthèse reste à valider par un professionnel de santé.",
+        "footnote": "Choisissez « essayer un autre prompt » dans la démo ci-dessus pour rejouer chacune de ces questions.",
+        "cta": "Rejouer ces scénarios avec vos propres dossiers",
+        "items": [
+          {
+            "tag": "Reconstitution du parcours",
+            "question": "Reconstitue le parcours de cette patiente et résume les informations cliniques clés.",
+            "finding": "Antécédents : hypertension artérielle et fibrillation atriale permanente, allergie à l'amoxicilline documentée en 2019, quatre traitements actifs avant l'hospitalisation. Le débit de filtration glomérulaire évolue de 68 en septembre 2025 à 44 le 18 juin 2026, avec un commentaire automatique « stable » qui n'en tient pas compte. Épisode de malaise du 23 au 25 juin, DFG à 46 à l'admission puis 52 à la sortie, avec un contrôle biologique attendu sous 7 jours.",
+            "highlight": "Le DFG chute de 68 à 44 en 9 mois, avec un commentaire automatique qui ne le reflète pas.",
+            "sources": ["SAN-01 · p.1", "SAN-01 · p.2", "SAN-03 · p.1", "SAN-06 · p.3", "SAN-06 · p.5"],
+            "metrics": [
+              { "value": "68 → 44", "label": "DFG (mL/min/1,73 m²)", "delta": "sept. 2025 → juin 2026" },
+              { "value": "46 → 52", "label": "DFG pendant l'hospitalisation" },
+              { "value": "7 jours", "label": "Contrôle biologique attendu" }
+            ],
+            "documents": [
+              { "code": "SAN-01", "title": "Note de consultation", "marker": "Allergie amoxicilline (2019)" },
+              { "code": "SAN-06", "title": "Compte rendu de sortie", "marker": "DFG : 52 mL/min/1,73 m²" }
+            ]
+          },
+          {
+            "tag": "Incohérences à vérifier",
+            "question": "Quelles incohérences du dossier doivent être vérifiées lors de la conciliation ?",
+            "finding": "Trois points à vérifier, sans arbitrage possible sur les seules pièces du dossier : l'allergie à l'amoxicilline, documentée en médecine générale, indiquée « aucune connue » au compte rendu de sortie ; la dose de rivaroxaban — 20 mg sur l'ordonnance et la liste de sortie, 15 mg dans le courrier de cardiologie ; le contrôle créatinine/potassium demandé sous 7 jours, absent du dossier au 10 juillet. Aucune de ces sources ne permet de trancher quelle valeur est correcte.",
+            "highlight": "Trois divergences documentées, aucune ne peut être tranchée sur les seules pièces du dossier.",
+            "sources": ["SAN-01 · p.2", "SAN-06 · p.2", "SAN-02 · p.1", "SAN-06 · p.4", "SAN-05 · p.1", "SAN-06 · p.5"],
+            "metrics": [
+              { "value": "2 versions", "label": "Statut allergique", "delta": "documentée vs « aucune connue »" },
+              { "value": "20 mg / 15 mg", "label": "Dose de rivaroxaban" },
+              { "value": "0", "label": "Résultat de contrôle au 10 juillet" }
+            ],
+            "documents": [
+              { "code": "SAN-01", "title": "Note de consultation", "marker": "Allergie amoxicilline documentée" },
+              { "code": "SAN-06", "title": "Compte rendu de sortie", "marker": "« ALLERGIES CONNUES : aucune »" }
+            ]
+          },
+          {
+            "tag": "Évolution de la fonction rénale",
+            "question": "Montre l'évolution de la fonction rénale et les documents qui expliquent chaque étape.",
+            "finding": "Débit de filtration glomérulaire à 68 mL/min/1,73 m² en septembre 2025, puis 44 le 18 juin 2026, 46 à l'admission le 23 juin et 52 à la sortie le 25 juin — une amélioration partielle pendant l'hospitalisation, sans mesure disponible après la sortie. Le commentaire automatique « stable » associé au résultat du 18 juin est incohérent avec cette chute de 68 à 44.",
+            "highlight": "Le commentaire automatique « stable » est incohérent avec la chute de 68 à 44.",
+            "sources": ["SAN-01 · p.2", "SAN-03 · p.1", "SAN-06 · p.3", "SAN-03 · p.2"],
+            "metrics": [
+              { "value": "68", "label": "DFG sept. 2025" },
+              { "value": "44", "label": "DFG 18 juin 2026" },
+              { "value": "52", "label": "DFG à la sortie" }
+            ],
+            "documents": [
+              { "code": "SAN-03", "title": "Résultats de laboratoire", "marker": "Commentaire : « stable » (incohérent)" },
+              { "code": "SAN-06", "title": "Compte rendu de sortie", "marker": "52 mL/min/1,73 m²" }
+            ]
+          },
+          {
+            "tag": "Fiche de revue pré-consultation",
+            "question": "Prépare une fiche de revue pour la consultation de suivi, sans donner de conseil médical.",
+            "finding": "Trois vérifications avant la consultation de suivi : confirmer et corriger le statut allergique à l'amoxicilline, contredit à la sortie ; établir la dose de rivaroxaban réellement prescrite et prise, entre 20 mg à l'ordonnance et 15 mg au courrier de cardiologie ; retrouver ou reprogrammer le contrôle créatinine/potassium demandé pour le 2 juillet. Aucune modification thérapeutique n'est proposée ici — validation par un professionnel de santé requise.",
+            "highlight": "Trois points à vérifier signalés — aucune décision clinique n'est proposée.",
+            "sources": ["SAN-01 · p.2", "SAN-06 · p.2", "SAN-02 · p.1", "SAN-05 · p.1", "SAN-06 · p.5"],
+            "metrics": [
+              { "value": "3", "label": "Points à vérifier" },
+              { "value": "0", "label": "Recommandation clinique donnée" },
+              { "value": "2 juillet", "label": "Contrôle demandé, non retrouvé" }
+            ],
+            "documents": [
+              { "code": "SAN-02", "title": "Ordonnance active", "marker": "Rivaroxaban 20 mg" },
+              { "code": "SAN-05", "title": "Lettre de cardiologie", "marker": "Rivaroxaban 15 mg/jour" }
+            ]
+          }
+        ]
+      },
+      "humanLoop": {
+        "title": "Le jugement clinique reste au centre",
+        "intro": "Prosperify ne pose pas de diagnostic et ne recommande aucun ajustement thérapeutique. Il signale ce qui doit être vérifié par un professionnel de santé.",
+        "cards": [
+          {
+            "title": "L'agent prépare la synthèse",
+            "items": [
+              "Recherche dans le dossier longitudinal",
+              "Recoupe les documents entre eux",
+              "Signale les incohérences et les valeurs à risque",
+              "Fournit les citations exactes, section par section"
+            ]
+          },
+          {
+            "title": "Le professionnel de santé valide",
+            "items": [
+              "Interprète le contexte clinique",
+              "Confirme ou corrige chaque point signalé",
+              "Apporte le jugement médical",
+              "Décide de la conduite à tenir"
+            ]
+          },
+          {
+            "title": "Une consultation mieux préparée",
+            "items": [
+              "Moins de temps passé à relire le dossier",
+              "Une vision longitudinale complète",
+              "Moins d'incohérences non vues",
+              "Une fiche de revue, jamais un diagnostic"
+            ]
+          }
+        ]
+      },
+      "criteria": {
+        "title": "Ce qu'une réponse fiable doit garantir, en santé",
+        "intro": "Sur des données cliniques, l'ordre des priorités n'est pas celui d'un usage générique : l'exactitude prime sur la vitesse.",
+        "cta": "Discuter de votre cas d'usage",
+        "items": [
+          {
+            "title": "Exactitude sémantique",
+            "description": "Confondre « allergie documentée » et « aucune allergie connue », ou reformuler une posologie en l'arrondissant, n'a pas les mêmes conséquences en santé que dans un autre secteur. Prosperify ne reformule pas les faits cliniques : il cite le passage exact, avec sa date et sa source, et signale la divergence plutôt que de trancher à la place du professionnel de santé. C'est la différence entre une synthèse fiable et une approximation dangereuse."
+          },
+          {
+            "title": "Traçabilité clinique",
+            "description": "Chaque élément de la synthèse est relié au document, à la section et à la date qui le justifient, et un clic ouvre le PDF au passage exact. En consultation, le professionnel de santé n'a pas à chercher où se trouve l'information : elle est déjà là, prête à être vérifiée avant toute décision."
+          },
+          {
+            "title": "Rapidité, sans jamais se substituer au jugement clinique",
+            "description": "Reconstituer un parcours patient sur six documents et neuf mois d'historique prend normalement plusieurs heures. Prosperify le fait en quelques secondes — mais le gain de temps sert à mieux vérifier, jamais à sauter la vérification : aucune recommandation thérapeutique n'est formulée, seulement des points à confirmer par un professionnel de santé."
+          }
+        ]
+      },
+      "integration": {
+        "title": "Ce que votre DSI va vérifier avant de signer",
+        "intro": "Une équipe qualité ou un coordinateur de soins peut être convaincu par la démonstration ci-dessus. Un DSI regarde autre chose : où vivent les dossiers, qui peut y accéder, ce qui se passe si l'éditeur change de politique, et combien de temps prendra réellement l'intégration. Sur des données de santé, ces questions ne sont pas secondaires : elles conditionnent le go/no-go, souvent avant même la qualité des réponses.",
+        "cta": "Parler à un ingénieur avant le comité technique",
+        "architecture": {
+          "sourcesTitle": "Vos sources",
+          "sourcesItems": ["Dossier patient informatisé", "GED qualité", "Résultats de laboratoire", "Courriers médicaux"],
+          "instanceTitle": "Votre instance Prosperify",
+          "instanceBadge": "single-tenant",
+          "instanceItems": ["Connecteurs", "Stores Santé", "Indexation + recherche hybride", "Agent Prosperify", "Réponse + citations"],
+          "environmentTitle": "Votre environnement",
+          "environmentItems": ["Votre périmètre", "Vos règles de sécurité", "Vos outils existants", "Journaux d'audit"]
+        },
+        "items": [
+          {
+            "title": "Intégration avec l'existant",
+            "description": "Prosperify ne remplace pas votre dossier patient informatisé : il vient lire par-dessus, avec des connecteurs vers les référentiels que vos équipes utilisent déjà (DPI, GED qualité, résultats de laboratoire) et une authentification alignée sur votre fournisseur d'identité via SSO (OIDC ou SAML). Aucune ressaisie, aucun référentiel documentaire supplémentaire à maintenir."
+          },
+          {
+            "title": "Isolation et chiffrement",
+            "description": "Chaque établissement dispose d'une instance cloisonnée, sans mutualisation d'index entre organisations. Les documents sont chiffrés au repos et en transit, et selon le modèle de déploiement retenu, les clés peuvent rester sous votre contrôle. Vos dossiers ne servent jamais à entraîner un modèle général : ils sont interrogés dans votre périmètre, point final."
+          },
+          {
+            "title": "Traçabilité opérationnelle",
+            "description": "Chaque accès, chaque requête et chaque document consulté est journalisé. En cas de revue de sécurité ou d'audit interne, votre RSSI dispose d'une piste complète à présenter, pas d'une promesse à vérifier sur parole."
+          },
+          {
+            "title": "Réversibilité",
+            "description": "Vos documents et vos index restent exportables à tout moment. Si vous changez d'outil, vous repartez avec vos données, pas avec un silo propriétaire qu'il faut négocier pour récupérer."
+          }
+        ]
       }
     },
     "finance": {
@@ -847,25 +1165,99 @@
             "tag": "Paradoxe croissance / trésorerie",
             "question": "Résume la performance YTD et explique le paradoxe entre croissance et trésorerie.",
             "finding": "CA à 12,4 M€ (+24 %), EBITDA à 1,1 M€ : sur le seul compte de résultat, l'activité est saine, et un premier coup d'œil s'arrêterait là. Mais la trésorerie recule de 2,2 M€ sur la période, un recul entièrement porté par l'exploitation. En recoupant le P&L avec le détail du tableau de flux, l'écart se resserre sur une seule cause : la hausse du poste clients, sans anomalie sur les autres composantes du besoin en fonds de roulement.",
-            "sources": ["FIN-02 · p.1", "FIN-02 · p.2", "FIN-03 · p.1", "FIN-03 · p.3"]
+            "highlight": "La hausse du poste clients explique, à elle seule, tout le recul de trésorerie.",
+            "sources": ["FIN-02 · p.1", "FIN-02 · p.2", "FIN-03 · p.1", "FIN-03 · p.3"],
+            "metrics": [
+              { "value": "12,4 M€", "label": "CA YTD", "delta": "+24 %" },
+              { "value": "1,1 M€", "label": "EBITDA", "delta": "+22 %" },
+              { "value": "-2,2 M€", "label": "Trésorerie" }
+            ],
+            "documents": [
+              { "code": "FIN-02", "title": "Compte de résultat", "marker": "CA : 12,4 M€" },
+              { "code": "FIN-03", "title": "Tableau de flux", "marker": "-2,2 M€" }
+            ]
           },
           {
             "tag": "Écart budget vs réel",
             "question": "Compare le réel au budget et identifie la variance qui mérite l'attention du board.",
             "finding": "Le CA dépasse le budget de 0,6 M€ : sur ce seul indicateur, le trimestre a l'air d'un succès. Mais la trésorerie manque 1,4 M€ à l'appel, un écart proportionnellement plus lourd que celui de l'EBITDA. La cause se lit dans le délai de règlement client, 78 jours contre 49 budgétés, soit 1,52 M€ immobilisés en plus que prévu — un chiffre qu'aucun des deux documents ne donne isolément.",
-            "sources": ["FIN-04 · p.1", "FIN-04 · p.4", "FIN-05 · p.1"]
+            "highlight": "Le délai de règlement à 78 jours immobilise 1,52 M€ de plus que budgété.",
+            "sources": ["FIN-04 · p.1", "FIN-04 · p.4", "FIN-05 · p.1"],
+            "metrics": [
+              { "value": "+0,6 M€", "label": "Écart CA vs budget" },
+              { "value": "-0,2 M€", "label": "Écart EBITDA vs budget" },
+              { "value": "78 j", "label": "Délai de règlement", "delta": "vs 49 j budgétés" }
+            ],
+            "documents": [
+              { "code": "FIN-04", "title": "Budget vs réel", "marker": "Trésorerie : -1,4 M€" },
+              { "code": "FIN-05", "title": "Balance âgée", "marker": "Poste clients doublé" }
+            ]
           },
           {
             "tag": "Concentration du risque client",
             "question": "Quelles créances expliquent le risque et les factures confirment-elles la balance âgée ?",
             "finding": "Deux comptes, MetroFleet (1,20 M€, 62 jours de retard) et NordTransit (0,75 M€, en litige), cumulent 47,6 % du poste clients à eux seuls. Les factures sources, recalculées ligne à ligne, concordent au centime près avec la balance âgée : le retard n'est donc pas une erreur de saisie, mais un vrai sujet de recouvrement, avec pour chaque compte une cause différente et documentée.",
-            "sources": ["FIN-05 · p.3", "FIN-06 · p.1", "FIN-06 · p.3"]
+            "highlight": "Deux comptes concentrent déjà 47,6 % du poste clients total.",
+            "sources": ["FIN-05 · p.3", "FIN-06 · p.1", "FIN-06 · p.3"],
+            "metrics": [
+              { "value": "1,95 M€", "label": "Créances à risque" },
+              { "value": "47,6 %", "label": "Du poste clients" },
+              { "value": "62 j", "label": "Retard MetroFleet" }
+            ],
+            "documents": [
+              { "code": "FIN-05", "title": "Balance âgée", "marker": "1,95 M€ (47,6 %)" },
+              { "code": "FIN-06", "title": "Factures clients", "marker": "Contrôle : 1 000 000 € HT" }
+            ]
           },
           {
             "tag": "Fact-check de la note CFO",
             "question": "Challenge la note CFO et prépare trois actions de clôture sourcées.",
             "finding": "La note destinée au board qualifie la tension de trésorerie de « principalement saisonnière ». Le délai de règlement structurel, 78 contre 49 jours budgétés, contredit ce diagnostic : ce n'est pas un effet de calendrier, c'est une dérive qui dure. Le litige NordTransit, qui pèse 0,75 M€, n'est même pas mentionné dans la note — c'est ce genre d'angle mort qu'une lecture croisée révèle avant le comité, pas pendant.",
-            "sources": ["FIN-08 · p.2", "FIN-08 · p.3", "FIN-04 · p.4", "FIN-07 · p.1"]
+            "highlight": "Le DSO structurel contredit le diagnostic « saisonnier » de la note.",
+            "sources": ["FIN-08 · p.2", "FIN-08 · p.3", "FIN-04 · p.4", "FIN-07 · p.1"],
+            "metrics": [
+              { "value": "78 j", "label": "DSO réel", "delta": "vs 49 j budgétés" },
+              { "value": "1,52 M€", "label": "Sur-immobilisation" },
+              { "value": "9 %", "label": "Couvert par les remises en transit" }
+            ],
+            "documents": [
+              { "code": "FIN-08", "title": "Note CFO au board", "marker": "« principalement saisonnière »" },
+              { "code": "FIN-04", "title": "Budget vs réel", "marker": "78 j vs 49 j" },
+              { "code": "FIN-07", "title": "Rapprochement bancaire", "marker": "180 k€ en transit" }
+            ]
+          }
+        ]
+      },
+      "humanLoop": {
+        "title": "L'expertise humaine reste au centre",
+        "intro": "Prosperify ne remplace pas le contrôleur de gestion ou le DAF. Il leur donne une base plus complète pour décider, plus vite.",
+        "cards": [
+          {
+            "title": "L'agent prépare l'analyse",
+            "items": [
+              "Recherche dans vos documents",
+              "Recoupe les sources entre elles",
+              "Identifie les écarts et incohérences",
+              "Fournit les citations exactes"
+            ]
+          },
+          {
+            "title": "Le contrôleur ou le DAF décide",
+            "items": [
+              "Interprète le contexte métier",
+              "Valide ou challenge les chiffres",
+              "Ajoute ce que l'IA ne sait pas",
+              "Prend la décision finale"
+            ]
+          },
+          {
+            "title": "Une décision plus rapide, mieux étayée",
+            "items": [
+              "Moins de temps passé à chercher",
+              "Une vision plus complète du dossier",
+              "Moins d'angles morts avant le comité",
+              "Une réponse défendable, pas seulement plausible"
+            ]
           }
         ]
       },
@@ -892,6 +1284,15 @@
         "title": "Ce que votre DSI va vérifier avant de signer",
         "intro": "Un DAF peut être convaincu par la démonstration ci-dessus. Un DSI regarde autre chose : où vivent les documents, qui peut y accéder, ce qui se passe si l'éditeur change de politique, et combien de temps prendra réellement l'intégration. Sur un corpus qui contient des comptes de clôture, des factures clients et des notes internes destinées au board, ces questions ne sont pas secondaires : elles conditionnent le go/no-go, souvent avant même la qualité des réponses.",
         "cta": "Parler à un ingénieur avant le comité technique",
+        "architecture": {
+          "sourcesTitle": "Vos sources",
+          "sourcesItems": ["ERP", "GED / SharePoint", "Data room", "Partage de fichiers"],
+          "instanceTitle": "Votre instance Prosperify",
+          "instanceBadge": "single-tenant",
+          "instanceItems": ["Connecteurs", "Stores Finance", "Indexation + recherche hybride", "Agent Prosperify", "Réponse + citations"],
+          "environmentTitle": "Votre environnement",
+          "environmentItems": ["Votre périmètre", "Vos règles de sécurité", "Vos outils existants", "Journaux d'audit"]
+        },
         "items": [
           {
             "title": "Intégration avec l'existant",
