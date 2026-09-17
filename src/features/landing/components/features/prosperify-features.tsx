@@ -4,7 +4,6 @@ import {
   Brain,
   CheckCheck,
   Database,
-  Eye,
   FileText,
   Image as ImageIcon,
   Layers,
@@ -16,7 +15,6 @@ import {
   ShieldCheck,
   SlidersHorizontal,
   Sparkles,
-  TriangleAlert,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -40,12 +38,6 @@ const OK_BOX = {
   background: opaqueTint("rgba(22,163,74,0.08)"),
   border: "1px solid rgba(22,163,74,0.28)",
 };
-const WARN_TEXT = "text-[#B7791F] dark:text-[#E3A008]";
-const WARN_BOX = {
-  background: opaqueTint("rgba(183,121,31,0.09)"),
-  border: "1px solid rgba(183,121,31,0.30)",
-};
-
 const PANEL = { background: "var(--pf-bg)", border: "1px solid var(--pf-border)" };
 const ACCENT_BOX = {
   background: opaqueTint("var(--pf-accent-bg)"),
@@ -94,14 +86,10 @@ function PopChip({
 
 function CitedAnswerIllustration() {
   const { t } = useTranslation();
-  const files = [
-    { name: t("features.illustrations.citedAnswer.file1"), ref: t("features.illustrations.citedAnswer.ref1") },
-    { name: t("features.illustrations.citedAnswer.file2"), ref: t("features.illustrations.citedAnswer.ref2") },
-  ];
 
   return (
     <div className="flex w-full min-w-0 flex-col">
-      <p className="m-0 text-[12.5px] leading-[1.65] text-[var(--pf-fg-muted)]">
+      <p className="m-0 text-[13px] leading-[1.7] text-[var(--pf-fg-muted)]">
         {t("features.illustrations.citedAnswer.answerLead")}
         <span className="font-semibold" style={{ color: ACCENT }}>
           {t("features.illustrations.citedAnswer.valueReported")}
@@ -110,23 +98,22 @@ function CitedAnswerIllustration() {
         <Ref n="1" />
       </p>
 
-      <div className="mt-4 min-w-0" style={PANEL}>
-        <div className="flex flex-col gap-2.5 px-3 py-3">
-          {files.map((f) => (
-            <div key={f.name} className="flex items-center gap-2.5">
-              <FileText size={15} className="shrink-0" style={{ color: ACCENT }} />
-              <span className="min-w-0 flex-1 truncate font-mono text-[11.5px] text-[var(--pf-fg)]">
-                {f.name}
-              </span>
-              <PopChip
-                className="font-mono text-[10.5px]"
-                style={{ color: ACCENT, ...ACCENT_BOX, padding: "3px 8px" }}
-              >
-                {f.ref}
-              </PopChip>
-            </div>
-          ))}
-        </div>
+      <div className="mt-4 flex items-center gap-2.5 px-3 py-3" style={PANEL}>
+        <FileText size={15} className="shrink-0" style={{ color: ACCENT }} />
+        <span className="min-w-0 flex-1 truncate font-mono text-[12px] text-[var(--pf-fg)]">
+          {t("features.illustrations.citedAnswer.file1")}
+        </span>
+        <PopChip
+          className="font-mono text-[10.5px]"
+          style={{
+            color: ACCENT,
+            ...ACCENT_BOX,
+            padding: "3px 8px",
+            animation: "pf-elem-pulse 2.6s ease-in-out infinite",
+          }}
+        >
+          {t("features.illustrations.citedAnswer.ref1")}
+        </PopChip>
       </div>
     </div>
   );
@@ -154,35 +141,31 @@ function HybridSearchIllustration() {
         </span>
       </div>
 
-      <div className="mt-3.5 grid grid-cols-4 gap-2">
-        {SEARCH_METHODS.map((m) => (
-          <div
+      <div className="mt-3.5 flex justify-center gap-3">
+        {SEARCH_METHODS.map((m, i) => (
+          <span
             key={m.key}
-            className="flex min-w-0 flex-col items-center gap-2 px-1.5 py-3 text-center"
-            style={PANEL}
+            className="flex h-[34px] w-[34px] shrink-0 items-center justify-center"
+            style={{
+              ...ACCENT_BOX,
+              color: ACCENT,
+              animation: "pf-elem-pulse 3.2s ease-in-out infinite",
+              animationDelay: `${i * 0.45}s`,
+            }}
           >
-            <span className="flex h-[30px] w-[30px] items-center justify-center" style={{ ...ACCENT_BOX, color: ACCENT }}>
-              <m.icon size={15} />
-            </span>
-            <span className="text-[10px] leading-[1.1] font-semibold" style={{ color: "var(--pf-fg-muted)" }}>
-              {t(`features.illustrations.hybridSearch.${m.key}`)}
-            </span>
-          </div>
+            <m.icon size={16} />
+          </span>
         ))}
       </div>
 
-      <div className="mt-3.5 flex gap-3 px-3 py-3" style={PANEL}>
-        <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-1.5">
-            <FileText size={14} className="shrink-0" style={{ color: "var(--pf-fg-dim)" }} />
-            <span className="min-w-0 truncate font-mono text-[11.5px] text-[var(--pf-fg)]">
-              {t("features.illustrations.hybridSearch.resultFile")}
-            </span>
-            <span className="shrink-0 font-mono text-[10.5px]" style={{ color: "var(--pf-fg-dim)" }}>
-              {t("features.illustrations.hybridSearch.resultPage")}
-            </span>
-          </div>
-        </div>
+      <div className="mt-3.5 flex items-center gap-1.5 px-3 py-3" style={PANEL}>
+        <FileText size={14} className="shrink-0" style={{ color: "var(--pf-fg-dim)" }} />
+        <span className="min-w-0 flex-1 truncate font-mono text-[12px] text-[var(--pf-fg)]">
+          {t("features.illustrations.hybridSearch.resultFile")}
+        </span>
+        <span className="shrink-0 font-mono text-[10.5px]" style={{ color: "var(--pf-fg-dim)" }}>
+          {t("features.illustrations.hybridSearch.resultPage")}
+        </span>
       </div>
     </div>
   );
@@ -214,13 +197,19 @@ function SynthesisIllustration() {
       <div className="relative h-0.5 w-[46px] shrink-0 self-center">
         <div
           className="absolute inset-0"
-          style={{ background: "repeating-linear-gradient(90deg, var(--pf-dash) 0 4px, transparent 4px 9px)" }}
+          style={{
+            background: "repeating-linear-gradient(90deg, var(--pf-dash) 0 4px, transparent 4px 9px)",
+            animation: "pf-dash-slide 0.85s linear infinite",
+          }}
         />
       </div>
 
       <div className="min-w-0 flex-1 px-4 py-4" style={PANEL}>
         <div className="flex items-center gap-2">
-          <span className="flex h-[26px] w-[26px] shrink-0 items-center justify-center" style={{ ...ACCENT_BOX, color: ACCENT }}>
+          <span
+            className="flex h-[26px] w-[26px] shrink-0 items-center justify-center"
+            style={{ ...ACCENT_BOX, color: ACCENT, animation: "pf-elem-pulse 2.8s ease-in-out infinite" }}
+          >
             <Sparkles size={14} />
           </span>
           <span className="text-[12.5px] font-bold text-[var(--pf-fg)]">
@@ -261,7 +250,6 @@ function SynthesisIllustration() {
 
 const STORES = [
   { key: "store1", icon: Pencil, accent: true, ok: false },
-  { key: "store2", icon: Eye, accent: false, ok: false },
   { key: "store3", icon: Lock, accent: false, ok: true },
 ];
 
@@ -286,7 +274,12 @@ function GovernanceIllustration() {
             className="flex h-8 w-8 shrink-0 items-center justify-center"
             style={
               store.accent
-                ? { background: "var(--pf-bg)", border: "1px solid var(--pf-accent-dim-border)", color: ACCENT }
+                ? {
+                    background: "var(--pf-bg)",
+                    border: "1px solid var(--pf-accent-dim-border)",
+                    color: ACCENT,
+                    animation: "pf-elem-pulse 2.4s ease-in-out infinite",
+                  }
                 : { background: "var(--pf-bg-card)", border: "1px solid var(--pf-border)", color: "var(--pf-fg-muted)" }
             }
           >
@@ -342,7 +335,10 @@ function ReviewFlowIllustration() {
               <div className="relative h-[15px] w-full">
                 <div
                   className="absolute top-0 bottom-0 left-1/2 -ml-px w-0.5"
-                  style={{ background: "repeating-linear-gradient(180deg, var(--pf-dash) 0 4px, transparent 4px 9px)" }}
+                  style={{
+                    background: "repeating-linear-gradient(180deg, var(--pf-dash) 0 4px, transparent 4px 9px)",
+                    animation: "pf-dash-slide 0.85s linear infinite",
+                  }}
                 />
               </div>
             )}
@@ -361,23 +357,14 @@ function ReviewFlowIllustration() {
         ))}
       </div>
 
-      <div className="mt-4 flex flex-col gap-2.5 px-3 py-3" style={PANEL}>
-        <div className="flex flex-wrap items-center gap-2">
-          <span
-            className={cn("inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-semibold", WARN_TEXT)}
-            style={WARN_BOX}
-          >
-            <TriangleAlert size={12} />
-            {t("features.illustrations.reviewFlow.hallucination")}
-          </span>
-          <span
-            className={cn("inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-semibold", OK_TEXT)}
-            style={OK_BOX}
-          >
-            <ShieldCheck size={12} />
-            {t("features.illustrations.reviewFlow.verified")}
-          </span>
-        </div>
+      <div className="mt-4 flex justify-center px-3 py-3" style={PANEL}>
+        <span
+          className={cn("inline-flex items-center gap-1.5 px-2.5 py-1 text-[11.5px] font-semibold", OK_TEXT)}
+          style={{ ...OK_BOX, animation: "pf-verify-pulse 2.4s ease-in-out infinite" }}
+        >
+          <ShieldCheck size={12} />
+          {t("features.illustrations.reviewFlow.verified")}
+        </span>
       </div>
     </div>
   );
@@ -387,7 +374,7 @@ function ReviewFlowIllustration() {
 /*  06 — differentiation: data sovereignty                     */
 /* ──────────────────────────────────────────────────────── */
 
-const SOVEREIGNTY_MODES = ["modeDedicated", "modeHybrid", "modeLocal"];
+const SOVEREIGNTY_MODES = ["modeDedicated", "modeLocal"];
 
 function SovereigntyIllustration() {
   const { t } = useTranslation();
@@ -418,6 +405,7 @@ function SovereigntyIllustration() {
               style={{
                 background: opaqueTint("rgba(22,163,74,0.16)"),
                 border: "2px solid var(--pf-bg-card)",
+                animation: "pf-verify-pulse 2.6s ease-in-out infinite",
               }}
             >
               <Lock size={13} />

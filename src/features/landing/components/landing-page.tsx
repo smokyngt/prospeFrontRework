@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 
 import { ContactForm } from "@/features/contact/components";
 import { HeroDemoPicker } from "@/features/landing/components/demo/hero-demo-picker";
-import { RevealSection } from "@/features/landing/components/reveal";
 import { FAQSection } from "@/features/landing/components/faq";
 import { ProsperifyFeatures } from "@/features/landing/components/features";
 import { LandingFooter } from "@/features/landing/components/footer";
@@ -16,6 +15,8 @@ import { ProductSection } from "@/features/landing/components/products";
 import { SecuritySection } from "@/features/landing/components/security";
 import { WorkflowSection } from "@/features/landing/components/workflow";
 import i18n from "@/lib/i18n";
+
+import type React from "react";
 
 type LandingPageProps = {
   lang?: string;
@@ -63,6 +64,7 @@ function HeroSectionWrapper() {
       style={{
         paddingTop: "clamp(116px, 15vh, 160px)",
         paddingBottom: "clamp(56px, 7vh, 88px)",
+        background: "var(--pf-column-bg)",
       }}
     >
       <div className="flex flex-wrap items-center gap-10 lg:gap-12">
@@ -122,15 +124,15 @@ function HeroSectionWrapper() {
 
 function ContactSectionWrapper() {
   const { t } = useTranslation();
-  const checks = t("contact.checks", { returnObjects: true }) as string[];
 
   return (
-    <RevealSection
+    <section
       id="contact"
       className="px-5 sm:px-8 lg:px-12"
       style={{
         paddingTop: "clamp(72px, 10vh, 112px)",
         paddingBottom: "clamp(72px, 10vh, 112px)",
+        background: "var(--pf-column-bg)",
       }}
     >
       <div
@@ -154,21 +156,6 @@ function ContactSectionWrapper() {
           <p className="mx-auto mt-5 max-w-[440px] text-base leading-[1.65] text-[var(--pf-fg-muted)]">
             {t("contact.lead")}
           </p>
-          <div className="mx-auto mt-7 flex w-fit flex-col gap-2">
-            {checks.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 border px-3.5 py-3 text-sm font-medium text-[var(--pf-fg)]"
-                style={{
-                  borderColor: "var(--pf-border)",
-                  background: "var(--pf-bg-card-2)",
-                }}
-              >
-                <span className="h-2 w-2 bg-[#FF6A13]" />
-                {item}
-              </div>
-            ))}
-          </div>
         </div>
         <div
           style={{
@@ -179,7 +166,7 @@ function ContactSectionWrapper() {
           <ContactForm />
         </div>
       </div>
-    </RevealSection>
+    </section>
   );
 }
 
@@ -277,7 +264,7 @@ export default function LandingPage({ lang }: LandingPageProps) {
       className="relative min-h-screen [overflow-anchor:none]"
       style={{ background: "var(--pf-bg)" }}
     >
-      {/* Grille de fond statique */}
+      {/* Grille de fond statique — cantonnée à la largeur de la colonne, jamais visible dans les marges */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
@@ -300,95 +287,98 @@ export default function LandingPage({ lang }: LandingPageProps) {
 
       <main className="relative z-10 [overflow-anchor:none]">
         {/* Colonne bordée — toutes les sections */}
-        <div
-          className="mx-auto max-w-[1360px] border-x border-[var(--pf-border)] [overflow-anchor:none]"
-          style={{ background: "var(--pf-column-bg)" }}
-        >
+        <div className="mx-auto max-w-[1360px] border-x border-[var(--pf-border)] [overflow-anchor:none]">
           <HeroSectionWrapper />
 
           <Divider />
 
-          <RevealSection
+          <section
             id="workflow"
             className="px-5 sm:px-8 lg:px-12"
             style={{
               paddingTop: "clamp(72px, 10vh, 112px)",
               paddingBottom: "clamp(72px, 10vh, 112px)",
+              background: "var(--pf-column-bg)",
             }}
           >
             <SectionBanner label={t("sectionLabels.workflow")} />
             <WorkflowSection />
-          </RevealSection>
+          </section>
 
           <Divider />
 
-          <RevealSection
+          <section
             id="features"
             className="px-5 sm:px-8 lg:px-12"
             style={{
               paddingTop: "clamp(72px, 10vh, 112px)",
               paddingBottom: "clamp(72px, 10vh, 112px)",
+              background: "var(--pf-column-bg)",
             }}
           >
             <SectionBanner label={t("sectionLabels.features")} />
             <ProsperifyFeatures />
-          </RevealSection>
+          </section>
 
           <Divider />
 
-          <RevealSection
+          <section
             id="products"
             className="px-5 sm:px-8 lg:px-12"
             style={{
               paddingTop: "clamp(72px, 10vh, 112px)",
               paddingBottom: "clamp(72px, 10vh, 112px)",
+              background: "var(--pf-column-bg)",
             }}
           >
             <SectionBanner label={t("sectionLabels.products")} />
             <ProductSection />
-          </RevealSection>
+          </section>
 
           <Divider />
 
-          <RevealSection
+          <section
             id="sovereignty"
             className="px-5 sm:px-8 lg:px-12"
             style={{
               paddingTop: "clamp(72px, 10vh, 112px)",
               paddingBottom: "clamp(72px, 10vh, 112px)",
+              background: "var(--pf-column-bg)",
             }}
           >
             <SectionBanner label={t("sectionLabels.integration")} />
             <IntegrationSection />
-          </RevealSection>
+          </section>
 
           <Divider />
 
-          <RevealSection
+          <section
             id="security"
             className="px-5 sm:px-8 lg:px-12"
             style={{
               paddingTop: "clamp(72px, 10vh, 112px)",
               paddingBottom: "clamp(72px, 10vh, 112px)",
+              background: "var(--pf-column-bg)",
             }}
           >
             <SectionBanner label={t("sectionLabels.security")} />
             <SecuritySection />
-          </RevealSection>
+          </section>
 
           <Divider />
 
-          <RevealSection
+          <section
             id="faq"
             className="px-5 sm:px-8 lg:px-12"
             style={{
               paddingTop: "clamp(72px, 10vh, 112px)",
               paddingBottom: "clamp(72px, 10vh, 112px)",
+              background: "var(--pf-column-bg)",
             }}
           >
             <SectionBanner label={t("sectionLabels.faq")} />
             <FAQSection />
-          </RevealSection>
+          </section>
 
           <Divider />
 

@@ -18,7 +18,7 @@ import {
   Shield,
   Users,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Safari } from "@/components/shared";
@@ -406,15 +406,10 @@ function IntegrationItemRow({ item }: { item: IntegrationItem }) {
   );
 }
 
-/* ──────────────────────────────────────────────────────── */
-/*  Stack mockup — tilted device + overlapping panel,         */
-/*  with a light scroll-linked parallax (skipped when the     */
-/*  visitor prefers reduced motion)                           */
-function IntegrationColumn({
-  first,
+/** Carte autoportante : un groupe de logos, chacun cliquable vers sa page de doc. */
+function IntegrationGroupCard({
   group,
 }: {
-  first: boolean;
   group: IntegrationGroup & { moreLabel: string; title: string };
 }) {
   const { t } = useTranslation();
@@ -422,10 +417,10 @@ function IntegrationColumn({
 
   return (
     <div
-      className="px-6 py-6"
-      style={{ borderLeft: first ? "none" : "1px solid var(--pf-border)" }}
+      className="px-5 py-5"
+      style={{ border: "1px solid var(--pf-border)", background: "var(--pf-bg-card)" }}
     >
-      <div className="mb-4 flex items-center gap-3">
+      <div className="mb-3.5 flex items-center gap-3">
         <span
           className="flex h-8 w-8 shrink-0 items-center justify-center"
           style={{
@@ -436,7 +431,7 @@ function IntegrationColumn({
         >
           <GroupIcon size={16} />
         </span>
-        <span className="text-[14px] font-bold text-[var(--pf-fg)]">
+        <span className="text-[13.5px] font-bold text-[var(--pf-fg)]">
           {group.title}
         </span>
       </div>
@@ -465,6 +460,10 @@ function IntegrationColumn({
 }
 
 /* ──────────────────────────────────────────────────────── */
+/*  Stack mockup — l'interface de code au centre, les          */
+/*  intégrations qu'elle relie affichées de part et d'autre,   */
+/*  chaque logo cliquable renvoyant vers sa page de doc.        */
+/* ──────────────────────────────────────────────────────── */
 
 function StackMockup({
   copy,
@@ -473,110 +472,54 @@ function StackMockup({
   copy: IntegrationCopy;
   docsUrl: string;
 }) {
-  const stageRef = useRef<HTMLDivElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const stage = stageRef.current;
-    const panel = panelRef.current;
-    if (!stage || !panel) {
-      return undefined;
-    }
-
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (media.matches) {
-      return undefined;
-    }
-
-    let raf = 0;
-    const onScroll = () => {
-      const r = stage.getBoundingClientRect();
-      const vh = window.innerHeight || 800;
-      let p = (vh * 0.55 - r.top) / (vh * 0.6);
-      p = Math.min(Math.max(p, 0), 1);
-      panel.style.transform = `translateY(${(p * 56).toFixed(1)}px)`;
-      stage.style.transform = `translateY(${(-p * 16).toFixed(1)}px)`;
-    };
-    const schedule = () => {
-      window.cancelAnimationFrame(raf);
-      raf = window.requestAnimationFrame(onScroll);
-    };
-
-    schedule();
-    window.addEventListener("scroll", schedule, { passive: true });
-    window.addEventListener("resize", schedule, { passive: true });
-    return () => {
-      window.cancelAnimationFrame(raf);
-      window.removeEventListener("scroll", schedule);
-      window.removeEventListener("resize", schedule);
-    };
-  }, []);
+  const namedGroups = GROUPS.map((group, i) => ({
+    ...group,
+    moreLabel: copy.moreLabel(group.rest.length),
+    title: copy.groupTitles[i] ?? "",
+  }));
+  const [sources, platforms, identity] = namedGroups;
 
   return (
-    <div className="relative">
-      {/* Ecran Safari, droit */}
-      <div ref={stageRef} className="flex justify-center will-change-transform">
-        {/*
-          L'ombre est posee sur l'enveloppe, pas via `className` : twMerge
-          classe `shadow-[<valeur>]` comme une couleur d'ombre et ne retire
-          donc pas le `shadow-2xl` du composant.
-        */}
+    <div>
+      <div className="grid grid-cols-1 items-start gap-5 lg:grid-cols-[260px_1fr_260px] lg:gap-6">
+        {/* Colonne gauche : ce que l'agent lit */}
+        <div className="flex flex-col gap-5 lg:order-1">
+          {sources && <IntegrationGroupCard group={sources} />}
+          {platforms && <IntegrationGroupCard group={platforms} />}
+        </div>
+
+        {/* Interface de code, au centre */}
         <div
-          className="w-full"
-          style={{ boxShadow: "var(--pf-demo-shadow)", maxWidth: 880 }}
+          className="lg:order-2"
+          style={{ boxShadow: "var(--pf-demo-shadow)" }}
         >
           <Safari className="shadow-none" opaque url="docs.prosperify.app">
             <CodePanel />
           </Safari>
         </div>
-      </div>
 
-      {/* Connected systems — its own block, no overlap with the device */}
-      <div
-        ref={panelRef}
-        className="relative z-10 mx-auto mt-8 will-change-transform"
-        style={{ maxWidth: 1080 }}
-      >
-        <div
-          style={{
-            border: "1px solid var(--pf-border)",
-            background: "var(--pf-bg-card)",
-            overflow: "hidden",
-          }}
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-3">
-            {GROUPS.map((group, i) => (
-              <IntegrationColumn
-                key={copy.groupTitles[i] ?? i}
-                first={i === 0}
-                group={{
-                  ...group,
-                  moreLabel: copy.moreLabel(group.rest.length),
-                  title: copy.groupTitles[i] ?? "",
-                }}
-              />
-            ))}
-          </div>
-
+        {/* Colonne droite : comment l'agent authentifie ses accès */}
+        <div className="flex flex-col gap-5 lg:order-3">
+          {identity && <IntegrationGroupCard group={identity} />}
           <p
-            className="m-0 px-6 py-5 text-[13.5px] leading-[1.6] text-[var(--pf-fg-muted)]"
-            style={{ borderTop: "1px solid var(--pf-border)" }}
+            className="m-0 px-5 py-4 text-[12.5px] leading-[1.6] text-[var(--pf-fg-muted)]"
+            style={{ border: "1px solid var(--pf-border)", background: "var(--pf-bg-card-2)" }}
           >
             {copy.authText}
           </p>
         </div>
+      </div>
 
-        <div className="mt-6 flex justify-center">
-          <a
-            href={docsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-[#FF6A13] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#ff8232]"
-          >
-            <BookOpen size={16} />
-            {copy.docsLabel}
-          </a>
-        </div>
+      <div className="mt-8 flex justify-center">
+        <a
+          href={docsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2.5 bg-[#FF6A13] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#ff8232]"
+        >
+          <BookOpen size={16} />
+          {copy.docsLabel}
+        </a>
       </div>
     </div>
   );

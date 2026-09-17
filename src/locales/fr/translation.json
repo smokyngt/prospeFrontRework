@@ -425,7 +425,7 @@
         "faq": "FAQ",
         "contact": "Contact",
         "challenge": "Le problème",
-        "comparison": "LLM généraliste"
+        "comparison": "Architecture"
       },
       "ctaDemo": "Demander une démo",
       "ctaCases": "Voir les cas d'usage",
@@ -437,6 +437,42 @@
         { "title": "Dans votre", "text": "périmètre de confiance" },
         { "title": "Conçu pour", "text": "les données sensibles" }
       ],
+      "diagrams": {
+        "pipeline": {
+          "alt": "Schéma du pipeline : une question se scinde en recherche lexicale et recherche sémantique, converge vers un recoupement multi-documents, produit une réponse sourcée avec citations, puis passe par une vérification humaine.",
+          "hybridLabel": "recherche hybride",
+          "answerLabel": "réponse composée phrase par phrase",
+          "citationLabel": "chaque citation → page exacte",
+          "question": "Question",
+          "questionSub": "langage naturel",
+          "lexical": "Recherche lexicale",
+          "lexicalSub": "mots-clés exacts",
+          "semantic": "Recherche sémantique",
+          "semanticSub": "sens, synonymes, contexte",
+          "crossCheck": "Recoupement",
+          "crossCheckSub": "confronte plusieurs sources",
+          "answer": "Réponse sourcée",
+          "answerSub": "chaque phrase → un passage",
+          "verify": "Vérification",
+          "verifySub": "humaine",
+          "caption": "Le trajet d'une question : recherche hybride, recoupement, réponse citée, validation experte."
+        },
+        "humanLoop": {
+          "alt": "Schéma de la boucle humain-agent : l'agent prépare l'analyse et la transmet à l'expert métier, qui la valide ou la corrige — ses corrections reviennent vers l'agent — puis prend la décision.",
+          "forwardLabel": "analyse + citations exactes",
+          "feedbackLabel": "corrections, contexte métier",
+          "decideLabel": "valide et décide",
+          "agent": "L'agent",
+          "agentSub1": "prépare l'analyse,",
+          "agentSub2": "cite ses sources",
+          "expert": "L'expert métier",
+          "expertSub1": "juriste, DAF,",
+          "expertSub2": "professionnel de santé",
+          "decision": "Décision",
+          "decisionSub": "plus rapide, mieux étayée",
+          "caption": "Le gain n'est pas de retirer l'expert, c'est de raccourcir chaque aller-retour."
+        }
+      },
       "workflow": {
         "title": "De la question à la réponse vérifiée",
         "subtitle": "Une séquence simple et gouvernée : recherche hybride, passages sourcés, réponse recomparée aux sources.",
@@ -542,34 +578,22 @@
         ]
       },
       "comparison": {
-        "title": "Un assistant généraliste ne lit pas vos documents",
-        "intro": "Un modèle généraliste répond depuis ce qu'il a appris, pas depuis vos corpus. Sur des documents sensibles, l'écart ne se voit pas dans la réponse : il se voit quand on essaie de la vérifier.",
-        "genericColumn": "Assistant généraliste",
-        "prosperifyColumn": "Prosperify",
-        "rows": [
+        "title": "Une architecture pensée pour l'entreprise",
+        "intro": "Le choix ne se limite pas à la qualité d'une réponse. Il porte sur la façon dont l'outil s'intègre à votre organisation, à votre sécurité et à vos outils existants.",
+        "pillars": [
           {
-            "criterion": "Origine de la réponse",
-            "generic": "Ce que le modèle a mémorisé, sans lien vers un document.",
-            "prosperify": "Les passages de vos documents, cités avec leur page."
+            "title": "Modularité",
+            "description": "Un assistant par cas d'usage, un corpus par assistant. Vous ajoutez un service, une équipe ou un secteur documentaire sans reconstruire le socle."
           },
           {
-            "criterion": "Périmètre interrogé",
-            "generic": "Ce qui a été collé dans la conversation, rien de plus.",
-            "prosperify": "Le corpus autorisé pour cet assistant, et lui seul."
+            "title": "Sécurité",
+            "description": "Chaque rôle, chaque assistant et chaque corpus reste dans son périmètre. L'accès est gouverné, pas supposé."
           },
           {
-            "criterion": "Droits d'accès",
-            "generic": "Ceux de la personne qui colle le document.",
-            "prosperify": "Rôle, assistant et corpus : chacun reste dans son périmètre."
-          },
-          {
-            "criterion": "Fraîcheur",
-            "generic": "Figée à l'entraînement : une version périmée fait autorité.",
-            "prosperify": "L'index suit vos documents ; la version en vigueur reste identifiable."
+            "title": "Intégration",
+            "description": "Prosperify se branche sur vos outils existants au lieu de les remplacer : aucune migration forcée, aucun silo supplémentaire à maintenir."
           }
-        ],
-        "failureLabel": "Ce que ça donne concrètement",
-        "costLabel": "Le coût"
+        ]
       }
     },
     "legal": {

@@ -622,6 +622,29 @@ html {
   100% { stroke-dashoffset: 0; }
 }
 
+/* Pointillés en `background: repeating-linear-gradient(...)` (pas de SVG) :
+   un seul décalage diagonal anime la ligne, horizontale ou verticale, quelle
+   que soit celle des deux composantes qui porte réellement le motif. */
+@keyframes pf-dash-slide {
+  to { background-position: -13px -13px; }
+}
+
+/* Connecteur du pipeline sécurité : vertical en mobile, horizontal à partir
+   de lg — même breakpoint que le composant, le pointillé change d'axe avec lui. */
+.pf-connector-line {
+  background: repeating-linear-gradient(to bottom, var(--pf-accent) 0 5px, transparent 5px 10px);
+  animation: pf-dash-slide-v 0.7s linear infinite;
+}
+@keyframes pf-dash-slide-v { to { background-position: 0 -10px; } }
+
+@media (min-width: 1024px) {
+  .pf-connector-line {
+    background: repeating-linear-gradient(to right, var(--pf-accent) 0 5px, transparent 5px 10px);
+    animation: pf-dash-slide-h 0.7s linear infinite;
+  }
+  @keyframes pf-dash-slide-h { to { background-position: -10px 0; } }
+}
+
 @keyframes pf-flow-diag {
   0% { transform: translate(0, 0); opacity: 0; }
   15% { opacity: 1; }
@@ -697,6 +720,137 @@ html {
   .pf-flow-track { width: 1px; height: 24px; }
   .pf-flow-dot-travel { display: none; }
   .pf-flow-chevron { margin-left: 0; transform: rotate(90deg); }
+}
+
+/* Sélecteur progressif (workflow de la home) : une barre qui se remplit
+   progressivement pendant le tour de son étape, puis revient à zéro pendant
+   que les deux autres jouent le leur. */
+.pf-stepper-track {
+  display: block;
+  height: 3px;
+  background: var(--pf-border-2);
+}
+
+.pf-stepper-fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #ff6a13;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.pf-stepper-title {
+  animation-timing-function: steps(1, end);
+  animation-iteration-count: infinite;
+}
+
+/* La carte entière (visuel + libellé) : vraiment grisée/désactivée quand ce
+   n'est pas son tour, pleine couleur quand elle est active. */
+.pf-stepper-card {
+  animation-timing-function: steps(1, end);
+  animation-iteration-count: infinite;
+}
+
+@keyframes pf-stepper-fill-3 {
+  0% { transform: scaleX(0); }
+  32% { transform: scaleX(1); }
+  32.01%, 100% { transform: scaleX(0); }
+}
+@keyframes pf-stepper-title-3 {
+  0%, 32% { color: var(--pf-fg); }
+  33.3%, 100% { color: var(--pf-fg-dim); }
+}
+@keyframes pf-stepper-card-3 {
+  0%, 32% { opacity: 1; filter: grayscale(0); }
+  33.3%, 100% { opacity: 0.4; filter: grayscale(1); }
+}
+
+/* Diagrammes du pipeline documentaire (pages secteur) */
+.pf-diagram-edge {
+  stroke: var(--pf-fg-dim);
+  stroke-width: 1.3;
+  fill: none;
+  stroke-dasharray: 5 5;
+  animation: pf-dash 1.6s linear infinite;
+}
+
+.pf-diagram-edge-dashed {
+  stroke: var(--pf-fg-dim);
+  stroke-width: 1.2;
+  fill: none;
+  stroke-dasharray: 4 4;
+  animation: pf-dash 1.6s linear infinite reverse;
+}
+
+.pf-diagram-node {
+  fill: var(--pf-bg-card);
+  stroke: var(--pf-border);
+  stroke-width: 1.4;
+}
+
+.pf-diagram-node-accent {
+  fill: #ff6a13;
+  stroke: #ff6a13;
+  stroke-width: 1.4;
+}
+
+.pf-diagram-dot {
+  fill: #ff6a13;
+}
+
+.pf-diagram-dot-dim {
+  fill: var(--pf-fg-dim);
+}
+
+.pf-diagram-title {
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--pf-fg);
+}
+
+.pf-diagram-title-accent {
+  font-size: 14px;
+  font-weight: 600;
+  fill: #080808;
+}
+
+.pf-diagram-sub {
+  font-size: 11px;
+  fill: var(--pf-fg-muted);
+}
+
+.pf-diagram-sub-accent {
+  font-size: 11px;
+  fill: #080808;
+  opacity: 0.82;
+}
+
+.pf-diagram-edge-label {
+  font-size: 10.5px;
+  fill: var(--pf-fg-dim);
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+.pf-diagram-frame {
+  border: 1px solid var(--pf-border);
+  background: var(--pf-bg-card-2);
+  padding: 20px clamp(10px, 2.4vw, 26px);
+  overflow-x: auto;
+}
+
+.pf-diagram-caption {
+  margin-top: 12px;
+  font-size: 11.5px;
+  color: var(--pf-fg-dim);
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+@media (max-width: 640px) {
+  .pf-stepper { flex-wrap: wrap; }
+  .pf-stepper-step { flex: 1 1 calc(50% - 10px); }
 }
 
 /* Apparition des sections au défilement.

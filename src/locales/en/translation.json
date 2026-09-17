@@ -425,7 +425,7 @@
         "faq": "FAQ",
         "contact": "Contact",
         "challenge": "The problem",
-        "comparison": "General-purpose LLM"
+        "comparison": "Architecture"
       },
       "ctaDemo": "Request a demo",
       "ctaCases": "See use cases",
@@ -437,6 +437,42 @@
         { "title": "Inside your", "text": "trusted perimeter" },
         { "title": "Built for", "text": "sensitive data" }
       ],
+      "diagrams": {
+        "pipeline": {
+          "alt": "Diagram of the pipeline: a question splits into lexical search and semantic search, converges into cross-checking across documents, produces a sourced answer with citations, then goes through human verification.",
+          "hybridLabel": "hybrid search",
+          "answerLabel": "answer composed sentence by sentence",
+          "citationLabel": "every citation → exact page",
+          "question": "Question",
+          "questionSub": "plain language",
+          "lexical": "Lexical search",
+          "lexicalSub": "exact keywords",
+          "semantic": "Semantic search",
+          "semanticSub": "meaning, synonyms, context",
+          "crossCheck": "Cross-check",
+          "crossCheckSub": "confronts multiple sources",
+          "answer": "Sourced answer",
+          "answerSub": "every sentence → a passage",
+          "verify": "Human",
+          "verifySub": "verification",
+          "caption": "The path a question takes: hybrid search, cross-checking, cited answer, expert validation."
+        },
+        "humanLoop": {
+          "alt": "Diagram of the human-agent loop: the agent prepares the analysis and hands it to the business expert, who validates or corrects it — corrections flow back to the agent — then makes the decision.",
+          "forwardLabel": "analysis + exact citations",
+          "feedbackLabel": "corrections, business context",
+          "decideLabel": "validates and decides",
+          "agent": "The agent",
+          "agentSub1": "prepares the analysis,",
+          "agentSub2": "cites its sources",
+          "expert": "The business expert",
+          "expertSub1": "lawyer, CFO,",
+          "expertSub2": "healthcare professional",
+          "decision": "Decision",
+          "decisionSub": "faster, better supported",
+          "caption": "The gain isn't removing the expert, it's shortening every round trip."
+        }
+      },
       "workflow": {
         "title": "From question to verified answer",
         "subtitle": "A simple, governed sequence: hybrid search, sourced passages, answer re-checked against sources.",
@@ -542,34 +578,22 @@
         ]
       },
       "comparison": {
-        "title": "A general-purpose assistant doesn't read your documents",
-        "intro": "A general-purpose model answers from what it memorized, not from your corpora. On sensitive documents the gap never shows in the answer. It shows when you try to verify it.",
-        "genericColumn": "General-purpose assistant",
-        "prosperifyColumn": "Prosperify",
-        "rows": [
+        "title": "An architecture built for the enterprise",
+        "intro": "The choice isn't only about answer quality. It's about how the tool fits your organization, your security model, and your existing tools.",
+        "pillars": [
           {
-            "criterion": "Where the answer comes from",
-            "generic": "What the model memorized, with no link to a document.",
-            "prosperify": "Passages from your documents, cited with their page."
+            "title": "Modularity",
+            "description": "One assistant per use case, one corpus per assistant. You add a team, a service or a document domain without rebuilding the foundation."
           },
           {
-            "criterion": "Scope queried",
-            "generic": "Whatever was pasted into the conversation, nothing more.",
-            "prosperify": "The corpus authorized for that assistant, and only that one."
+            "title": "Security",
+            "description": "Every role, every assistant and every corpus stays within its own perimeter. Access is governed, not assumed."
           },
           {
-            "criterion": "Access rights",
-            "generic": "Those of whoever pastes the document.",
-            "prosperify": "Role, assistant and corpus: everyone stays within their scope."
-          },
-          {
-            "criterion": "Freshness",
-            "generic": "Frozen at training time: an outdated version speaks with authority.",
-            "prosperify": "The index follows your documents; the version in force stays identifiable."
+            "title": "Integration",
+            "description": "Prosperify plugs into your existing tools instead of replacing them: no forced migration, no extra silo to maintain."
           }
-        ],
-        "failureLabel": "What that looks like in practice",
-        "costLabel": "The cost"
+        ]
       }
     },
     "legal": {

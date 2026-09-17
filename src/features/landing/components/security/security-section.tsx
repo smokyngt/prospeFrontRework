@@ -98,7 +98,7 @@ function SecurityCard({ index, item }: { index: number; item: SecurityItem }) {
   );
 }
 
-function PipelineCard({ step }: { step: PipelineStep }) {
+function PipelineCard({ isLast, step }: { isLast: boolean; step: PipelineStep }) {
   const { t } = useTranslation();
   const Icon = step.icon;
 
@@ -109,11 +109,20 @@ function PipelineCard({ step }: { step: PipelineStep }) {
     >
       <span
         className="flex h-10 w-10 shrink-0 items-center justify-center"
-        style={{
-          background: "var(--pf-accent-bg)",
-          border: "1px solid var(--pf-accent-dim-border)",
-          color: "var(--pf-accent)",
-        }}
+        style={
+          isLast
+            ? {
+                background: "var(--pf-accent-bg)",
+                border: "1px solid var(--pf-accent-dim-border)",
+                color: "var(--pf-accent)",
+                animation: "pf-verify-pulse 2.4s ease-in-out infinite",
+              }
+            : {
+                background: "var(--pf-accent-bg)",
+                border: "1px solid var(--pf-accent-dim-border)",
+                color: "var(--pf-accent)",
+              }
+        }
       >
         <Icon size={17} strokeWidth={1.7} />
       </span>
@@ -129,14 +138,22 @@ function PipelineCard({ step }: { step: PipelineStep }) {
   );
 }
 
-/** Trait + pastille entre deux étapes du pipeline — vertical en mobile, horizontal à partir de lg. */
+/**
+ * Trait + pastille entre deux étapes du pipeline — vertical en mobile,
+ * horizontal à partir de lg. Le trait défile pour montrer le document qui
+ * avance d'étape en étape ; la pastille marque le passage.
+ */
 function PipelineConnector() {
   return (
     <div className="relative flex h-6 w-full shrink-0 items-center justify-center lg:h-auto lg:w-6 lg:flex-1 lg:self-stretch">
-      <span className="h-full w-px lg:h-px lg:w-full" style={{ background: "var(--pf-accent)" }} />
+      <span className="pf-connector-line h-full w-[3px] lg:h-[3px] lg:w-full" />
       <span
         className="absolute h-2.5 w-2.5"
-        style={{ background: "var(--pf-bg-card)", border: "2px solid var(--pf-accent)" }}
+        style={{
+          background: "var(--pf-bg-card)",
+          border: "2px solid var(--pf-accent)",
+          animation: "pf-pulse 1.6s ease-in-out infinite",
+        }}
       />
     </div>
   );
@@ -173,7 +190,7 @@ export function SecuritySection() {
         {PIPELINE_STEPS.map((step, index) => (
           <Fragment key={step.key}>
             {index > 0 ? <PipelineConnector /> : null}
-            <PipelineCard step={step} />
+            <PipelineCard isLast={index === PIPELINE_STEPS.length - 1} step={step} />
           </Fragment>
         ))}
       </div>

@@ -50,7 +50,7 @@ export function FAQSection() {
           {t("faq.titleLine1")}{" "}
           <span className="text-[#FF6A13]">{t("faq.titleHighlight")}</span>
         </h2>
-        <p className="mx-auto mb-11 mt-[18px] max-w-[640px] text-center text-[1.05rem] text-[var(--pf-fg-muted)]">
+        <p className="mx-auto mb-8 mt-[14px] max-w-[640px] text-center text-[1rem] text-[var(--pf-fg-muted)]">
           {t("faq.subtitle")}
         </p>
 
@@ -67,30 +67,30 @@ export function FAQSection() {
                   type="button"
                   onClick={() => toggleItem(index)}
                   className="flex w-full cursor-pointer items-center justify-between gap-5 border-none bg-transparent text-left"
-                  style={{ padding: "20px clamp(18px, 2.4vw, 28px)" }}
+                  style={{ padding: "13px clamp(16px, 2vw, 24px)" }}
                 >
-                  <span className="flex min-w-0 items-center gap-4">
+                  <span className="flex min-w-0 items-center gap-3.5">
                     <span className="shrink-0 font-mono text-xs text-[#FF6A13]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <span
                       className={cn(
-                        "text-[15px] font-semibold",
+                        "text-[13.5px] font-semibold",
                         isOpen ? "text-[var(--pf-fg)]" : "text-[var(--pf-fg-muted)]",
                       )}
                     >
                       {t(item.questionKey)}
                     </span>
                   </span>
-                  <span className="shrink-0 font-mono text-[18px] text-[#FF6A13]">
+                  <span className="shrink-0 font-mono text-[16px] text-[#FF6A13]">
                     {isOpen ? "−" : "+"}
                   </span>
                 </button>
                 {isOpen && (
                   <p
-                    className="m-0 text-sm leading-[1.65] text-[var(--pf-fg-muted)]"
+                    className="m-0 text-[13px] leading-[1.55] text-[var(--pf-fg-muted)]"
                     style={{
-                      padding: "0 clamp(18px, 2.4vw, 28px) 22px 50px",
+                      padding: "0 clamp(16px, 2vw, 24px) 15px 44px",
                     }}
                   >
                     {t(item.answerKey)}

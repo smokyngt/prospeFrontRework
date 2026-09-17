@@ -8,7 +8,6 @@ type Sector = {
   descKey: string;
   href: string;
   icon: LucideIcon;
-  tagsKey: string;
   titleKey: string;
 };
 
@@ -17,21 +16,18 @@ const SECTORS: Sector[] = [
     icon: Scale,
     titleKey: "products.sectors.legal.title",
     descKey: "products.sectors.legal.description",
-    tagsKey: "products.sectors.legal.tags",
     href: "/sectors/legal",
   },
   {
     icon: HeartPulse,
     titleKey: "products.sectors.healthcare.title",
     descKey: "products.sectors.healthcare.description",
-    tagsKey: "products.sectors.healthcare.tags",
     href: "/sectors/healthcare",
   },
   {
     icon: Landmark,
     titleKey: "products.sectors.finance.title",
     descKey: "products.sectors.finance.description",
-    tagsKey: "products.sectors.finance.tags",
     href: "/sectors/finance",
   },
 ];
@@ -39,18 +35,27 @@ const SECTORS: Sector[] = [
 function SectorCard({ sector }: { sector: Sector }) {
   const { t } = useTranslation();
   const Icon = sector.icon;
-  const tags = t(sector.tagsKey, { returnObjects: true }) as string[];
 
   return (
     <div
-      className="flex flex-col items-center px-6 py-7 text-center sm:p-8"
+      className="relative flex flex-col items-center overflow-hidden px-6 py-7 text-center sm:p-8"
       style={{
         background: "var(--pf-bg-card)",
         border: "1px solid var(--pf-border)",
       }}
     >
+      {/* Logo du secteur en filigrane, dominant, pour donner une identité propre à chaque carte */}
+      <Icon
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-6 -bottom-8"
+        color="var(--pf-accent)"
+        size={168}
+        strokeWidth={1}
+        style={{ opacity: 0.08 }}
+      />
+
       <span
-        className="flex h-11 w-11 shrink-0 items-center justify-center"
+        className="relative flex h-11 w-11 shrink-0 items-center justify-center"
         style={{
           background: "var(--pf-accent-bg)",
           border: "1px solid var(--pf-accent-dim-border)",
@@ -59,25 +64,14 @@ function SectorCard({ sector }: { sector: Sector }) {
       >
         <Icon size={22} />
       </span>
-      <h3 className="m-0 mt-5 text-[19px] font-bold text-[var(--pf-fg)]">
+      <h3 className="relative m-0 mt-5 text-[19px] font-bold text-[var(--pf-fg)]">
         {t(sector.titleKey)}
       </h3>
-      <p className="m-0 mt-3 max-w-[320px] text-[14px] leading-[1.6] text-[var(--pf-fg-muted)]">
+      <p className="relative m-0 mt-3 max-w-[320px] text-[14px] leading-[1.6] text-[var(--pf-fg-muted)]">
         {t(sector.descKey)}
       </p>
-      <div className="mt-5 flex flex-wrap justify-center gap-1.5">
-        {tags.map((tag) => (
-          <span
-            key={tag}
-            className="font-mono text-[10.5px] text-[var(--pf-fg-dim)]"
-            style={{ border: "1px solid var(--pf-border)", padding: "4px 9px" }}
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
       <Link
-        className="mt-6 inline-flex items-center gap-1.5 pt-1 text-[13.5px] font-semibold transition-colors hover:text-[#ff8232]"
+        className="relative mt-6 inline-flex items-center gap-1.5 pt-1 text-[13.5px] font-semibold transition-colors hover:text-[#ff8232]"
         href={sector.href}
         style={{ color: "var(--pf-accent)" }}
       >

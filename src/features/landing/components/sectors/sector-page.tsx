@@ -17,6 +17,10 @@ import { useTranslation } from "react-i18next";
 
 import { ContactForm } from "@/features/contact/components";
 import { SectorHeroDemo } from "@/features/landing/components/sectors/sector-hero-demo";
+import {
+  HumanLoopDiagram,
+  PipelineDiagram,
+} from "@/features/landing/components/sectors/sector-workflow-diagram";
 import { LandingFooter } from "@/features/landing/components/footer";
 import { LandingNavbar } from "@/features/landing/components/navigation";
 import { RevealSection } from "@/features/landing/components/reveal";
@@ -49,7 +53,7 @@ type SecurityArea = { description: string; title: string };
 type Offer = { badge: string; features: string[]; meta: string; title: string };
 type FaqItem = { answer: string; question: string };
 type ChallengeItem = { description: string; title: string };
-type ComparisonRow = { criterion: string; generic: string; prosperify: string };
+type ArchitecturePillar = { description: string; title: string };
 type InsightMetric = { delta?: string; label: string; value: string };
 type InsightDocument = { code: string; marker: string; title: string };
 type InsightItem = {
@@ -780,6 +784,10 @@ function SectorInsights({ number, sector }: SectionProps) {
         {t(`sectors.${sector}.insights.intro`)}
       </p>
 
+      <div className="mt-9">
+        <PipelineDiagram />
+      </div>
+
       {/* Onglets : un scénario réellement joué dans la démo par bouton */}
       <div
         className="mt-11 grid grid-cols-1 border sm:grid-cols-2 lg:grid-cols-4"
@@ -913,6 +921,10 @@ function SectorHumanLoop({ number, sector }: SectionProps) {
       <p className="m-0 mt-[18px] max-w-[640px] text-[1.05rem] text-[var(--pf-fg-muted)]">
         {t(`sectors.${sector}.humanLoop.intro`)}
       </p>
+
+      <div className="mt-9">
+        <HumanLoopDiagram />
+      </div>
 
       <div className="mt-11 grid grid-cols-1 gap-6 lg:grid-cols-3">
         {cards.map((card, index) => {
@@ -1146,14 +1158,14 @@ function SectorIntegration({ number, sector }: SectionProps) {
 }
 
 /* ──────────────────────────────────────────────────────── */
-/*  Pourquoi pas un LLM généraliste                          */
+/*  Pourquoi cette architecture, pour l'entreprise            */
 /* ──────────────────────────────────────────────────────── */
 
-function GenericComparison({ number, sector }: SectionProps) {
+function ArchitectureFit({ number }: SectionProps) {
   const { t } = useTranslation();
-  const rows = t("sectors.common.comparison.rows", {
+  const pillars = t("sectors.common.comparison.pillars", {
     returnObjects: true,
-  }) as ComparisonRow[];
+  }) as ArchitecturePillar[];
 
   return (
     <Section id="comparison">
@@ -1161,99 +1173,39 @@ function GenericComparison({ number, sector }: SectionProps) {
         number={number}
         label={t("sectors.common.labels.comparison")}
       />
-      <SectionTitle maxWidth={860}>
+      <SectionTitle maxWidth={780}>
         {t("sectors.common.comparison.title")}
       </SectionTitle>
-      <p className="m-0 mt-[18px] max-w-[680px] text-[1.05rem] text-[var(--pf-fg-muted)]">
+      <p className="m-0 mt-[18px] max-w-[660px] text-[1.05rem] text-[var(--pf-fg-muted)]">
         {t("sectors.common.comparison.intro")}
       </p>
 
-      {/* L'échec concret, propre au secteur */}
       <div
-        className="mt-11 flex flex-col gap-4 p-6 sm:p-8"
-        style={{
-          background: "var(--pf-bg-card)",
-          border: "1px solid var(--pf-border)",
-          borderLeft: `2px solid ${ACCENT}`,
-        }}
-      >
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#FF6A13]">
-          {t("sectors.common.comparison.failureLabel")}
-        </span>
-        <p className="m-0 text-[1.05rem] font-semibold leading-[1.5] text-[var(--pf-fg)]">
-          « {t(`sectors.${sector}.genericFailure.question`)} »
-        </p>
-        <p className="m-0 max-w-[760px] text-[14.5px] leading-[1.65] text-[var(--pf-fg-muted)]">
-          {t(`sectors.${sector}.genericFailure.generic`)}
-        </p>
-        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 pt-1">
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--pf-fg-dim)]">
-            {t("sectors.common.comparison.costLabel")}
-          </span>
-          <span className="max-w-[700px] text-[14.5px] leading-[1.65] text-[var(--pf-fg)]">
-            {t(`sectors.${sector}.genericFailure.cost`)}
-          </span>
-        </div>
-      </div>
-
-      {/* Le tableau de comparaison */}
-      <div
-        className="mt-8 grid grid-cols-1 gap-px border md:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)_minmax(0,1fr)]"
+        className="mt-11 grid grid-cols-1 gap-px border md:grid-cols-3"
         style={{
           borderColor: "var(--pf-border)",
           background: "var(--pf-border)",
         }}
       >
-        <div
-          className="hidden px-5 py-3 md:block"
-          style={{ background: "var(--pf-bg-card-2)" }}
-        />
-        <div
-          className="hidden px-5 py-3 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--pf-fg-dim)] md:block"
-          style={{ background: "var(--pf-bg-card-2)" }}
-        >
-          {t("sectors.common.comparison.genericColumn")}
-        </div>
-        <div
-          className="hidden px-5 py-3 font-mono text-[11px] uppercase tracking-[0.14em] text-[#FF6A13] md:block"
-          style={{ background: "var(--pf-bg-card-2)" }}
-        >
-          {t("sectors.common.comparison.prosperifyColumn")}
-        </div>
-
-        {rows.map((row) => (
-          <Fragment key={row.criterion}>
-            <div
-              className="px-5 py-5 text-[13.5px] font-semibold text-[var(--pf-fg)]"
-              style={{ background: "var(--pf-bg-card)" }}
-            >
-              {row.criterion}
-            </div>
-            <div
-              className="px-5 py-5 text-[13.5px] leading-[1.6] text-[var(--pf-fg-dim)]"
-              style={{ background: "var(--pf-bg-card)" }}
-            >
-              <span className="mb-1.5 block font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--pf-fg-dim)] md:hidden">
-                {t("sectors.common.comparison.genericColumn")}
-              </span>
-              {row.generic}
-            </div>
-            <div
-              className="px-5 py-5 text-[13.5px] leading-[1.6] text-[var(--pf-fg-muted)]"
-              style={{ background: "var(--pf-bg-card)" }}
-            >
-              <span className="mb-1.5 block font-mono text-[10px] uppercase tracking-[0.14em] text-[#FF6A13] md:hidden">
-                {t("sectors.common.comparison.prosperifyColumn")}
-              </span>
-              <span className="flex gap-2.5">
-                <span
-                  className="mt-[7px] h-1.5 w-1.5 shrink-0"
-                  style={{ background: ACCENT }}
-                />
-                <span>{row.prosperify}</span>
-              </span>
-            </div>
-          </Fragment>
+        {pillars.map((pillar, index) => (
+          <div
+            key={pillar.title}
+            className="flex flex-col gap-3"
+            style={{
+              background: "var(--pf-bg-card)",
+              padding: "clamp(24px, 2.6vw, 32px)",
+            }}
+          >
+            <span className="font-mono text-[11px] font-semibold text-[#FF6A13]">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <h3 className="m-0 text-[1.1rem] font-bold text-[var(--pf-fg)]">
+              {pillar.title}
+            </h3>
+            <p className="m-0 text-[13.5px] leading-[1.6] text-[var(--pf-fg-muted)]">
+              {pillar.description}
+            </p>
+          </div>
         ))}
       </div>
     </Section>
@@ -1560,7 +1512,7 @@ const SECTION_COMPONENTS: Record<
   humanLoop: SectorHumanLoop,
   criteria: SectorCriteria,
   integration: SectorIntegration,
-  comparison: GenericComparison,
+  comparison: ArchitectureFit,
   deployment: Deployment,
   faq: SectorFaq,
   contact: SectorContact,
@@ -1631,7 +1583,7 @@ export function SectorPage({ lang, sector }: SectorPageProps) {
       className="relative min-h-screen [overflow-anchor:none]"
       style={{ background: "var(--pf-bg)" }}
     >
-      {/* Grille de fond statique */}
+      {/* Grille de fond statique — cantonnée à la largeur de la colonne, jamais visible dans les marges */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{

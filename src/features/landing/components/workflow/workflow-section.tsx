@@ -23,6 +23,9 @@ import type React from "react";
 const ACCENT = "#FF6A13";
 const REVEAL_MS = 380;
 const REVEAL_STAGGER_MS = 90;
+/** Durée d'une étape du sélecteur progressif — 3 étapes, un cycle complet toutes les 3 × STEP_SECONDS. */
+const STEP_SECONDS = 2.2;
+const STEP_COUNT = 3;
 
 const PANEL = { background: "var(--pf-bg-card)", border: "1px solid var(--pf-border)" };
 const PANEL_2 = { background: "var(--pf-bg-card-2)", border: "1px solid var(--pf-border)" };
@@ -204,15 +207,36 @@ function CiteVisual() {
 /*  Libellé d'étape — sous chaque visuel                     */
 /* ──────────────────────────────────────────────────────── */
 
-function StepLabel({ card, number }: { card: string; number: string }) {
+/** Anime en boucle : pleine couleur à son tour, vraiment grisée/désactivée sinon. */
+function cardCycleStyle(index: number): React.CSSProperties {
+  return {
+    animationName: "pf-stepper-card-3",
+    animationDuration: `${STEP_COUNT * STEP_SECONDS}s`,
+    animationDelay: `${index * STEP_SECONDS}s`,
+  };
+}
+
+function StepLabel({ card, index, number }: { card: string; index: number; number: string }) {
   const { t } = useTranslation();
+  const delay = `${index * STEP_SECONDS}s`;
+  const duration = `${STEP_COUNT * STEP_SECONDS}s`;
 
   return (
-    <div className="pt-6 text-center">
-      <div className="flex items-center justify-center font-mono text-[12px] tracking-[0.16em]">
+    <div className="pf-stepper-card pt-6 text-center" style={cardCycleStyle(index)}>
+      {/* Sélecteur progressif : la barre se remplit pendant le tour de cette étape */}
+      <span className="pf-stepper-track mx-auto block max-w-[160px] overflow-hidden">
+        <span
+          className="pf-stepper-fill"
+          style={{ animationName: "pf-stepper-fill-3", animationDuration: duration, animationDelay: delay }}
+        />
+      </span>
+      <div className="mt-4 flex items-center justify-center font-mono text-[12px] tracking-[0.16em]">
         <span style={{ color: "var(--pf-fg-dim)" }}>{number}</span>
         <span className="px-2" />
-        <span style={{ color: "var(--pf-fg-muted)" }}>
+        <span
+          className="pf-stepper-title font-semibold"
+          style={{ animationName: "pf-stepper-title-3", animationDuration: duration, animationDelay: delay }}
+        >
           {t(`workflow.cards.${card}.tag`)}
         </span>
       </div>
@@ -317,10 +341,12 @@ function WorkflowSection() {
       >
         <div className="flex w-[86%] shrink-0 snap-center flex-col lg:contents">
           <div style={revealStyle(0)} className="flex min-w-0 lg:col-start-1 lg:row-start-1">
-            <ConnectVisual />
+            <div className="pf-stepper-card w-full" style={cardCycleStyle(0)}>
+              <ConnectVisual />
+            </div>
           </div>
           <div style={revealStyle(0)} className="min-w-0 lg:col-start-1 lg:row-start-2">
-            <StepLabel card="connect" number="01" />
+            <StepLabel card="connect" index={0} number="01" />
           </div>
         </div>
 
@@ -331,10 +357,12 @@ function WorkflowSection() {
 
         <div className="flex w-[86%] shrink-0 snap-center flex-col lg:contents">
           <div style={revealStyle(1)} className="flex min-w-0 lg:col-start-3 lg:row-start-1">
-            <SearchVisual />
+            <div className="pf-stepper-card w-full" style={cardCycleStyle(1)}>
+              <SearchVisual />
+            </div>
           </div>
           <div style={revealStyle(1)} className="min-w-0 lg:col-start-3 lg:row-start-2">
-            <StepLabel card="search" number="02" />
+            <StepLabel card="search" index={1} number="02" />
           </div>
         </div>
 
@@ -344,10 +372,12 @@ function WorkflowSection() {
 
         <div className="flex w-[86%] shrink-0 snap-center flex-col lg:contents">
           <div style={revealStyle(2)} className="flex min-w-0 lg:col-start-5 lg:row-start-1">
-            <CiteVisual />
+            <div className="pf-stepper-card w-full" style={cardCycleStyle(2)}>
+              <CiteVisual />
+            </div>
           </div>
           <div style={revealStyle(2)} className="min-w-0 lg:col-start-5 lg:row-start-2">
-            <StepLabel card="cite" number="03" />
+            <StepLabel card="cite" index={2} number="03" />
           </div>
         </div>
       </div>
