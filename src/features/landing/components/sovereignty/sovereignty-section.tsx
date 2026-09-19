@@ -164,7 +164,7 @@ export function SovereigntySection() {
     <div>
       <h2 style={{
         margin: 0, fontWeight: 700, lineHeight: 1.06, letterSpacing: "-0.02em",
-        color: "var(--pf-fg)", fontSize: "clamp(1.9rem, 4vw, 3.1rem)", maxWidth: 820,
+        color: "var(--pf-fg)", fontSize: "clamp(2.05rem, 4.5vw, 3.5rem)", maxWidth: 900,
       }}>
         Connectez vos systèmes.<br />
         <span style={{ color: "var(--pf-accent)" }}>Aucune refonte nécessaire.</span>

@@ -4,6 +4,7 @@ import Script from "next/script";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { Collapse } from "@/features/landing/components/collapse/collapse";
 import { cn } from "@/lib/utils";
 
 const faqData = Array.from({ length: 8 }, (_, index) => ({
@@ -50,7 +51,7 @@ export function FAQSection() {
           {t("faq.titleLine1")}{" "}
           <span className="text-[#FF6A13]">{t("faq.titleHighlight")}</span>
         </h2>
-        <p className="mx-auto mb-8 mt-[14px] max-w-[640px] text-center text-[1rem] text-[var(--pf-fg-muted)]">
+        <p className="mx-auto mb-5 mt-2 max-w-[640px] text-center text-[0.95rem] text-[var(--pf-fg-muted)]">
           {t("faq.subtitle")}
         </p>
 
@@ -65,11 +66,12 @@ export function FAQSection() {
               >
                 <button
                   type="button"
+                  aria-expanded={isOpen}
                   onClick={() => toggleItem(index)}
-                  className="flex w-full cursor-pointer items-center justify-between gap-5 border-none bg-transparent text-left"
-                  style={{ padding: "13px clamp(16px, 2vw, 24px)" }}
+                  className="flex w-full cursor-pointer items-center justify-between gap-4 border-none bg-transparent text-left"
+                  style={{ padding: "9px clamp(14px, 1.6vw, 20px)" }}
                 >
-                  <span className="flex min-w-0 items-center gap-3.5">
+                  <span className="flex min-w-0 items-center gap-3">
                     <span className="shrink-0 font-mono text-xs text-[#FF6A13]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
@@ -86,16 +88,14 @@ export function FAQSection() {
                     {isOpen ? "−" : "+"}
                   </span>
                 </button>
-                {isOpen && (
+                <Collapse open={isOpen}>
                   <p
                     className="m-0 text-[13px] leading-[1.55] text-[var(--pf-fg-muted)]"
-                    style={{
-                      padding: "0 clamp(16px, 2vw, 24px) 15px 44px",
-                    }}
+                    style={{ padding: "0 clamp(14px, 1.6vw, 20px) 11px 40px" }}
                   >
                     {t(item.answerKey)}
                   </p>
-                )}
+                </Collapse>
               </div>
             );
           })}

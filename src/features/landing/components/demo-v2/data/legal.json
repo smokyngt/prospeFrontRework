@@ -53,7 +53,7 @@
       "orchestrationDelays": [750, 950, 1400],
       "steps": [
         { "id": "intent", "action": "analyzing", "entities": ["Asteria Retail", "NimbusCore", "MSA"], "queries": "@queries", "reasoning": "@text.analyze" },
-        { "id": "search", "action": "searching", "queries": ["conditions commerciales durée MSA", "clauses ouvertes résiliation plafond SLA incident"], "reasoning": "@text.search" },
+        { "id": "search", "action": "searching", "queries": ["conditions commerciales durée MSA", "clauses ouvertes résiliation plafond SLA incident"], "reasoning": "@text.search", "toolResponse": { "chunks": "@chunks" } },
         { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
       "content": {
@@ -61,7 +61,7 @@
           "storeName": "Juriste d'entreprise",
           "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
           "question": "Résume les termes clés de cet accord et dis-moi ce qui reste ouvert avant signature.",
-          "finalAnswer": "[Le contrat lie Asteria Retail SAS et NimbusCore Ltd pour une plateforme SaaS de prévision de la demande, 420 magasins, 90 000 €/mois sur 36 mois soit 3 240 000 € HT](cite:1)[, avec un renouvellement automatique par périodes de douze mois](cite:2). Cinq sujets restent ouverts avant signature : [la résiliation pour convenance, ouverte au seul fournisseur après douze mois](cite:3)[, le plafond de responsabilité limité à douze mois de redevances](cite:4)[, le niveau de service mesuré à 99,5 % par le SLA](cite:5)[, et le délai de notification d'incident du DPA, qui part de la confirmation et non de la découverte](cite:6).\n\nEn l'état, aucun de ces cinq points n'est aligné avec le standard interne d'Asteria.",
+          "finalAnswer": "[Le contrat lie Asteria Retail SAS et NimbusCore Ltd pour une plateforme SaaS de prévision de la demande, 420 magasins, 90 000 €/mois sur 36 mois soit 3 240 000 € HT](cite:1)[, avec un renouvellement automatique par périodes de douze mois](cite:2). Cinq sujets restent ouverts avant signature : [la résiliation pour convenance, ouverte au seul fournisseur après douze mois](cite:3)[, le plafond de responsabilité limité à douze mois de redevances](cite:4)[, le niveau de service mesuré à 99,5 % par le SLA](cite:5)[, et le délai de notification d'incident du DPA, qui part de la confirmation et non de la découverte](cite:6).\n\n| Clause | Position actuelle du MSA |\n| --- | --- |\n| Résiliation pour convenance | Fournisseur seul, après 12 mois |\n| Plafond de responsabilité | 12 mois de redevances |\n| Disponibilité (SLA) | 99,5 % |\n| Notification d'incident | Court à partir de la confirmation, pas de la découverte |\n\nEn l'état, aucun de ces cinq points n'est aligné avec le standard interne d'Asteria.",
           "reasoning": "Je résume les conditions commerciales du bon de commande, la durée du MSA, puis je relève les clauses marquées comme des écarts par la policy interne pour identifier ce qui reste ouvert.",
           "retrievalQueries": ["conditions commerciales durée MSA", "clauses ouvertes résiliation plafond SLA incident"],
           "threads": ["Agent Prosperify"],
@@ -105,7 +105,7 @@
       "orchestrationDelays": [750, 950, 1450],
       "steps": [
         { "id": "intent", "action": "analyzing", "entities": ["policy Asteria", "écarts", "priorité"], "queries": "@queries", "reasoning": "@text.analyze" },
-        { "id": "search", "action": "searching", "queries": ["MSA vs politique contractuelle plafond résiliation", "incident 24h 72h découverte confirmation"], "reasoning": "@text.search" },
+        { "id": "search", "action": "searching", "queries": ["MSA vs politique contractuelle plafond résiliation", "incident 24h 72h découverte confirmation"], "reasoning": "@text.search", "toolResponse": { "chunks": "@chunks" } },
         { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
       "content": {
@@ -157,7 +157,7 @@
       "orchestrationDelays": [750, 1000, 1450],
       "steps": [
         { "id": "intent", "action": "analyzing", "entities": ["SLA", "incident", "préséance"], "queries": "@queries", "reasoning": "@text.analyze" },
-        { "id": "search", "action": "searching", "queries": ["disponibilité 99,9 vs 99,5", "notification incident délai contradiction"], "reasoning": "@text.search" },
+        { "id": "search", "action": "searching", "queries": ["disponibilité 99,9 vs 99,5", "notification incident délai contradiction"], "reasoning": "@text.search", "toolResponse": { "chunks": "@chunks" } },
         { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
       "content": {
@@ -165,7 +165,7 @@
           "storeName": "Juriste d'entreprise",
           "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
           "question": "Les documents se contredisent-ils sur le niveau de service et la sécurité ?",
-          "finalAnswer": "Oui, sur les deux plans. [L'Order Form affiche 99,9 % comme « cible contractuelle »](cite:1)[alors que le SLA, seul document qui définit la méthode de mesure, n'engage que 99,5 %](cite:2)[, et la note de négociation affirme à tort que ce sujet est « résolu »](cite:3). Sur la sécurité, [le DPA fait courir le délai de notification à 72 heures à partir de la confirmation de l'incident](cite:4)[quand la politique interne exige 24 heures à partir de sa découverte](cite:5)[. L'ordre de préséance du MSA donne priorité au bon de commande pour les éléments commerciaux, mais ne précise pas lequel des deux chiffres de disponibilité constitue l'engagement mesurable](cite:6).\n\nCes deux contradictions doivent être résolues avant signature.",
+          "finalAnswer": "Oui, sur les deux plans. [L'Order Form affiche 99,9 % comme « cible contractuelle »](cite:1)[alors que le SLA, seul document qui définit la méthode de mesure, n'engage que 99,5 %](cite:2)[, et la note de négociation affirme à tort que ce sujet est « résolu »](cite:3). Sur la sécurité, [le DPA fait courir le délai de notification à 72 heures à partir de la confirmation de l'incident](cite:4)[quand la politique interne exige 24 heures à partir de sa découverte](cite:5)[. L'ordre de préséance du MSA donne priorité au bon de commande pour les éléments commerciaux, mais ne précise pas lequel des deux chiffres de disponibilité constitue l'engagement mesurable](cite:6).\n\n| Sujet | Document A | Document B |\n| --- | --- | --- |\n| Disponibilité | Bon de commande : 99,9 % (cible) | SLA : 99,5 % (engagement mesuré) |\n| Notification d'incident | DPA : 72h après confirmation | Politique interne : 24h après découverte |\n\nCes deux contradictions doivent être résolues avant signature.",
           "reasoning": "Je recherche chaque mention du taux de disponibilité et du délai d'incident dans les six documents, pour vérifier s'ils concordent, puis je vérifie si l'ordre de préséance du MSA tranche ces conflits.",
           "retrievalQueries": ["disponibilité 99,9 vs 99,5", "notification incident délai contradiction"],
           "threads": ["Agent Prosperify"],
@@ -210,7 +210,7 @@
       "orchestrationDelays": [800, 1050, 1500],
       "steps": [
         { "id": "intent", "action": "analyzing", "entities": ["briefing négociation", "Legal", "formulations"], "queries": "@queries", "reasoning": "@text.analyze" },
-        { "id": "search", "action": "searching", "queries": ["écarts prioritaires plafond résiliation incident", "formulation cible politique contractuelle"], "reasoning": "@text.search" },
+        { "id": "search", "action": "searching", "queries": ["écarts prioritaires plafond résiliation incident", "formulation cible politique contractuelle"], "reasoning": "@text.search", "toolResponse": { "chunks": "@chunks" } },
         { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
       "content": {
@@ -218,7 +218,7 @@
           "storeName": "Juriste d'entreprise",
           "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
           "question": "Prépare un briefing de négociation prêt pour Legal avec les formulations à obtenir.",
-          "finalAnswer": "NON PRÊT À SIGNER. Cinq formulations à obtenir, par priorité : [porter le plafond de responsabilité à 24 mois de redevances avec des carve-outs réciproques](cite:1)[, conformément au minimum interne](cite:2) ; [ouvrir la résiliation pour convenance aux deux parties](cite:3)[avec un préavis identique, comme l'exige la policy](cite:4) ; [faire courir la notification d'incident à 24 heures après découverte, et non après confirmation](cite:5)[, seul point de départ accepté en interne](cite:6). En complément : porter le SLA à 99,9 % ferme, et le préavis de non-renouvellement à 60 jours.\n\nÀ suivre hors priorité : [la durée de conservation des données après la fin du contrat, laissée « à confirmer » dans le DPA](cite:7), sans engagement chiffré. La décision finale de signature reste à Legal.",
+          "finalAnswer": "NON PRÊT À SIGNER. Cinq formulations à obtenir, par priorité : [porter le plafond de responsabilité à 24 mois de redevances avec des carve-outs réciproques](cite:1)[, conformément au minimum interne](cite:2) ; [ouvrir la résiliation pour convenance aux deux parties](cite:3)[avec un préavis identique, comme l'exige la policy](cite:4) ; [faire courir la notification d'incident à 24 heures après découverte, et non après confirmation](cite:5)[, seul point de départ accepté en interne](cite:6). En complément : porter le SLA à 99,9 % ferme, et le préavis de non-renouvellement à 60 jours.\n\n| Clause | Position actuelle | Cible à négocier |\n| --- | --- | --- |\n| Plafond de responsabilité | 12 mois de redevances | 24 mois + carve-outs réciproques |\n| Résiliation pour convenance | Fournisseur seul | Réciproque, préavis identique |\n| Notification d'incident | 72h après confirmation | 24h après découverte |\n| Disponibilité (SLA) | 99,5 % | 99,9 % ferme |\n| Préavis de non-renouvellement | 30 jours | ≥ 60 jours |\n\n\n\nÀ suivre hors priorité : [la durée de conservation des données après la fin du contrat, laissée « à confirmer » dans le DPA](cite:7), sans engagement chiffré. La décision finale de signature reste à Legal.",
           "reasoning": "Je regroupe les écarts déjà identifiés en demandes de négociation concrètes, avec la formulation cible tirée de la politique interne pour chacune, et je signale le point d'information manquant à suivre séparément.",
           "retrievalQueries": ["écarts prioritaires plafond résiliation incident", "formulation cible politique contractuelle"],
           "threads": ["Agent Prosperify"],

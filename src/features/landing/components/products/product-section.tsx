@@ -1,109 +1,137 @@
-"use client";
+'use client';
 
-import { ArrowUpRight, HeartPulse, Landmark, type LucideIcon, Scale } from "lucide-react";
-import Link from "next/link";
-import { useTranslation } from "react-i18next";
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
-type Sector = {
-  descKey: string;
-  href: string;
-  icon: LucideIcon;
-  titleKey: string;
-};
+import { USE_CASE_ICONS, USE_CASE_IDS } from '@/features/landing/data/use-cases';
+import { cn } from '@/lib/utils';
 
-const SECTORS: Sector[] = [
-  {
-    icon: Scale,
-    titleKey: "products.sectors.legal.title",
-    descKey: "products.sectors.legal.description",
-    href: "/sectors/legal",
-  },
-  {
-    icon: HeartPulse,
-    titleKey: "products.sectors.healthcare.title",
-    descKey: "products.sectors.healthcare.description",
-    href: "/sectors/healthcare",
-  },
-  {
-    icon: Landmark,
-    titleKey: "products.sectors.finance.title",
-    descKey: "products.sectors.finance.description",
-    href: "/sectors/finance",
-  },
-];
-
-function SectorCard({ sector }: { sector: Sector }) {
-  const { t } = useTranslation();
-  const Icon = sector.icon;
-
-  return (
-    <div
-      className="relative flex flex-col items-center overflow-hidden px-6 py-7 text-center sm:p-8"
-      style={{
-        background: "var(--pf-bg-card)",
-        border: "1px solid var(--pf-border)",
-      }}
-    >
-      {/* Logo du secteur en filigrane, dominant, pour donner une identité propre à chaque carte */}
-      <Icon
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-6 -bottom-8"
-        color="var(--pf-accent)"
-        size={168}
-        strokeWidth={1}
-        style={{ opacity: 0.08 }}
-      />
-
-      <span
-        className="relative flex h-11 w-11 shrink-0 items-center justify-center"
-        style={{
-          background: "var(--pf-accent-bg)",
-          border: "1px solid var(--pf-accent-dim-border)",
-          color: "var(--pf-accent)",
-        }}
-      >
-        <Icon size={22} />
-      </span>
-      <h3 className="relative m-0 mt-5 text-[19px] font-bold text-[var(--pf-fg)]">
-        {t(sector.titleKey)}
-      </h3>
-      <p className="relative m-0 mt-3 max-w-[320px] text-[14px] leading-[1.6] text-[var(--pf-fg-muted)]">
-        {t(sector.descKey)}
-      </p>
-      <Link
-        className="relative mt-6 inline-flex items-center gap-1.5 pt-1 text-[13.5px] font-semibold transition-colors hover:text-[#ff8232]"
-        href={sector.href}
-        style={{ color: "var(--pf-accent)" }}
-      >
-        {t("products.learnMore")}
-        <ArrowUpRight size={15} />
-      </Link>
-    </div>
-  );
-}
+const CYCLE_MS = 4500;
 
 export default function ProductSection() {
   const { t } = useTranslation();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el) {
+      return undefined;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(Boolean(entry?.isIntersecting)),
+      { threshold: 0.3 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible || isPaused || document.hidden) {
+      return undefined;
+    }
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % USE_CASE_IDS.length);
+    }, CYCLE_MS);
+    return () => clearInterval(timer);
+  }, [isVisible, isPaused]);
 
   return (
-    <div>
-      <h2
-        className="m-0 mx-auto max-w-[820px] text-center font-bold leading-[1.06] tracking-[-0.02em] text-[var(--pf-fg)]"
-        style={{ fontSize: "clamp(1.9rem, 4vw, 3.1rem)" }}
-      >
-        {t("products.titlePrefix")}{" "}
-        <span className="text-[#FF6A13]">{t("products.titleHighlight")}</span>
-      </h2>
-      <p className="mx-auto mt-[18px] max-w-[640px] text-center text-[1.05rem] leading-[1.65] text-[var(--pf-fg-muted)]">
-        {t("products.subtitle")}
-      </p>
+    <div ref={rootRef} className="mx-auto max-w-5xl [overflow-anchor:none] 2xl:max-w-[1300px]">
+      <div className="scroll-mt-8 text-center">
+        <h2
+          className="mx-auto max-w-2xl text-balance font-bold leading-[1.08] tracking-tight text-neutral-950 dark:text-neutral-50"
+          style={{ fontSize: "clamp(1.9rem, 4vw, 3.1rem)" }}
+        >
+          {t('products.title_prefix')}{' '}
+          <span className="text-orange-500">{t('products.title_highlight')}</span>
+        </h2>
+        <p className="mx-auto mt-2 max-w-xl text-sm font-medium leading-6 text-neutral-600 dark:text-neutral-300 sm:text-base">
+          {t('products.intro')}
+        </p>
+      </div>
 
-      <div
-        className="mt-11 grid grid-cols-1 gap-4 sm:grid-cols-3"
-      >
-        {SECTORS.map((sector) => (
-          <SectorCard key={sector.titleKey} sector={sector} />
-        ))}
+      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-stretch">
+        {USE_CASE_IDS.map((caseId, index) => {
+          const Icon = USE_CASE_ICONS[caseId];
+          const isActive = activeIndex === index;
+          const path = `products.use_cases.${caseId}`;
+
+          return (
+            <div
+              key={caseId}
+              onMouseEnter={() => {
+                setActiveIndex(index);
+                setIsPaused(true);
+              }}
+              onMouseLeave={() => setIsPaused(false)}
+              className="relative flex flex-1 flex-col overflow-hidden border border-neutral-200 bg-[var(--pf-bg-card)] p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-orange-300 hover:shadow-[0_20px_40px_-24px_rgba(255,106,19,0.5)] dark:border-neutral-800 dark:bg-[var(--pf-bg-card)] dark:hover:border-orange-500/50 sm:p-7"
+            >
+              <Icon
+                aria-hidden
+                strokeWidth={0.75}
+                className={cn(
+                  'pointer-events-none absolute -bottom-8 -right-8 h-44 w-44 rotate-[-8deg] transition-colors duration-500',
+                  isActive
+                    ? 'text-orange-200/70 dark:text-orange-500/20'
+                    : 'text-neutral-200 dark:text-neutral-800',
+                )}
+              />
+
+              <button
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                onFocus={() => {
+                  setActiveIndex(index);
+                  setIsPaused(true);
+                }}
+                onBlur={() => setIsPaused(false)}
+                aria-pressed={isActive}
+                className="relative z-10 flex w-full items-center gap-3 text-left"
+              >
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-orange-200 bg-orange-50 text-orange-500 dark:border-orange-500/25 dark:bg-orange-500/10">
+                  <Icon size={18} strokeWidth={1.7} />
+                </div>
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-orange-600 dark:text-orange-400">
+                  {t(`${path}.label`)}
+                </span>
+              </button>
+
+              <div className="relative z-10 mt-5">
+                <h3 className="text-xl font-semibold leading-snug text-neutral-950 dark:text-neutral-50">
+                  {t(`${path}.title`)}
+                </h3>
+                <Link
+                  href={`/use-cases/${caseId}`}
+                  className="group mt-4 inline-flex items-center gap-2 text-sm font-semibold text-neutral-950 transition-colors hover:text-orange-600 dark:text-neutral-50"
+                >
+                  {t('products.explore')}
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <Link
+          href="/use-cases"
+          className="inline-flex items-center justify-center gap-2 border border-neutral-200 bg-white px-6 py-3 text-sm font-semibold text-neutral-950 transition-colors hover:border-orange-200 hover:text-orange-600 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50 dark:hover:border-orange-500/25"
+        >
+          {t('products.view_all')}
+        </Link>
+        <a
+          href="#contact"
+          className="inline-flex items-center justify-center gap-2 bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-orange-600"
+        >
+          {t('products.cta')}
+          <ArrowRight className="h-4 w-4" />
+        </a>
       </div>
     </div>
   );

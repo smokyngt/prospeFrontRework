@@ -20,7 +20,11 @@ import {
   getCurrentLandingTheme,
 } from "@/features/landing/lib/theme";
 import i18n from "@/lib/i18n";
+
+import { Collapse } from "@/features/landing/components/collapse/collapse";
 import { cn } from "@/lib/utils";
+
+import { LanguageSwitch } from "./language-switch";
 
 export type NavbarMenuItem = {
   descriptionKey: string;
@@ -93,7 +97,7 @@ function ProsperifyLogo() {
       alt=""
       width={148}
       height={80}
-      className="h-[30px] w-auto object-contain"
+      className="h-[42px] w-auto object-contain"
       priority
     />
   );
@@ -195,11 +199,14 @@ function NavDropdown({
         )}
       </button>
 
-      {open && (
-        <div
-          className="absolute left-0 top-full w-[340px] border border-[var(--pf-border)] shadow-xl"
-          style={{ background: "var(--pf-bg-card)" }}
-        >
+      <div
+        aria-hidden={!open}
+        className={cn(
+          "absolute left-0 top-full w-[340px] border border-[var(--pf-border)] shadow-xl transition-[opacity,transform,visibility] duration-200 ease-out",
+          open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1.5 opacity-0",
+        )}
+        style={{ background: "var(--pf-bg-card)" }}
+      >
           {items.map((item) => {
             const Icon = item.icon;
             const current = pathname === item.href;
@@ -240,8 +247,7 @@ function NavDropdown({
               </a>
             );
           })}
-        </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -399,39 +405,7 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
         {/* Right controls */}
         <div className="flex items-center gap-2.5">
           {/* Lang switcher */}
-          <div
-            className="hidden border border-[var(--pf-border)] sm:flex"
-            style={{ background: "var(--pf-bg-dim)" }}
-          >
-            <button
-              type="button"
-              onClick={() => switchLang("fr")}
-              aria-label="Français"
-              aria-pressed={currentLang === "fr"}
-              className={cn(
-                "flex h-8 w-8 items-center justify-center text-[16px] leading-none transition-colors",
-                currentLang === "fr"
-                  ? "bg-[#FF6A13]"
-                  : "opacity-50 hover:opacity-80",
-              )}
-            >
-              🇫🇷
-            </button>
-            <button
-              type="button"
-              onClick={() => switchLang("en")}
-              aria-label="English"
-              aria-pressed={currentLang === "en"}
-              className={cn(
-                "flex h-8 w-8 items-center justify-center text-[16px] leading-none transition-colors",
-                currentLang === "en"
-                  ? "bg-[#FF6A13]"
-                  : "opacity-50 hover:opacity-80",
-              )}
-            >
-              🇬🇧
-            </button>
-          </div>
+          <LanguageSwitch onChange={switchLang} value={currentLang} />
 
           {/* Theme toggle */}
           <button
@@ -467,9 +441,9 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
+      <Collapse className="lg:hidden" open={mobileOpen}>
         <div
-          className="border-t border-[var(--pf-border)] px-5 py-6 lg:hidden"
+          className="border-t border-[var(--pf-border)] px-5 py-6"
           style={{ background: "var(--pf-bg)" }}
         >
           <div className="flex flex-col gap-1">
@@ -517,35 +491,6 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
 
             {/* Mobile lang + theme */}
             <div className="mt-3 flex gap-2">
-              <div
-                className="flex border border-[var(--pf-border)] sm:hidden"
-                style={{ background: "var(--pf-bg-dim)" }}
-              >
-                <button
-                  type="button"
-                  onClick={() => switchLang("fr")}
-                  aria-label="Français"
-                  aria-pressed={currentLang === "fr"}
-                  className={cn(
-                    "flex h-[38px] w-[38px] items-center justify-center text-[16px] leading-none transition-colors",
-                    currentLang === "fr" ? "bg-[#FF6A13]" : "opacity-50",
-                  )}
-                >
-                  🇫🇷
-                </button>
-                <button
-                  type="button"
-                  onClick={() => switchLang("en")}
-                  aria-label="English"
-                  aria-pressed={currentLang === "en"}
-                  className={cn(
-                    "flex h-[38px] w-[38px] items-center justify-center text-[16px] leading-none transition-colors",
-                    currentLang === "en" ? "bg-[#FF6A13]" : "opacity-50",
-                  )}
-                >
-                  🇬🇧
-                </button>
-              </div>
               <button
                 type="button"
                 onClick={toggleTheme}
@@ -566,7 +511,7 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
             </a>
           </div>
         </div>
-      )}
+      </Collapse>
     </nav>
   );
 }

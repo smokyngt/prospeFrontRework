@@ -16,6 +16,7 @@ import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ContactForm } from "@/features/contact/components";
+import { Collapse } from "@/features/landing/components/collapse/collapse";
 import { SectorHeroDemo } from "@/features/landing/components/sectors/sector-hero-demo";
 import {
   HumanLoopDiagram,
@@ -141,7 +142,7 @@ function SectionTitle({
   return (
     <h2
       className="m-0 font-bold leading-[1.06] tracking-[-0.02em] text-[var(--pf-fg)]"
-      style={{ fontSize: "clamp(1.9rem, 4vw, 3.1rem)", maxWidth }}
+      style={{ fontSize: "clamp(2.05rem, 4.5vw, 3.5rem)", maxWidth }}
     >
       {children}
     </h2>
@@ -300,7 +301,7 @@ function SectorHero({ sector }: { sector: SectorId }) {
 
           <div className="mt-[34px] flex flex-wrap gap-3">
             <a
-              className="inline-flex items-center gap-2 px-[26px] py-3.5 text-[14px] font-semibold text-[#080808] transition-colors hover:bg-[#ff8232]"
+              className="inline-flex items-center gap-2 px-[26px] py-3.5 text-[14px] font-semibold text-[var(--pf-on-accent)] transition-colors hover:bg-[#ff8232]"
               href="#contact"
               style={{ background: ACCENT }}
             >
@@ -709,7 +710,7 @@ function SourcedExample({ number, sector }: SectionProps) {
         }}
       >
         <div
-          className="max-w-[560px] self-start px-[18px] py-3.5 text-[14px] font-semibold text-[#080808]"
+          className="max-w-[560px] self-start px-[18px] py-3.5 text-[14px] font-semibold text-[var(--pf-on-accent)]"
           style={{ background: ACCENT }}
         >
           {t(`sectors.${sector}.question`)}
@@ -801,7 +802,7 @@ function SectorInsights({ number, sector }: SectionProps) {
             className={cn(
               "border-b px-4 py-3.5 text-left text-[11.5px] font-semibold transition-colors sm:border-b-0 sm:border-r last:border-r-0",
               index === activeIndex
-                ? "text-[#080808]"
+                ? "text-[var(--pf-on-accent)]"
                 : "text-[var(--pf-fg-muted)] hover:text-[var(--pf-fg)]",
             )}
             style={{
@@ -1264,7 +1265,7 @@ function Deployment({ number }: SectionProps) {
               </span>
               {offer.badge && (
                 <span
-                  className="font-mono text-[9px] font-semibold tracking-[0.14em] text-[#080808]"
+                  className="font-mono text-[9px] font-semibold tracking-[0.14em] text-[var(--pf-on-accent)]"
                   style={{ background: ACCENT, padding: "4px 8px" }}
                 >
                   {offer.badge}
@@ -1388,14 +1389,14 @@ function SectorFaq({ number, sector }: SectionProps) {
                   {isOpen ? "−" : "+"}
                 </span>
               </button>
-              {isOpen && (
+              <Collapse open={isOpen}>
                 <p
                   className="m-0 text-sm leading-[1.65] text-[var(--pf-fg-muted)]"
                   style={{ padding: "0 clamp(18px, 2.4vw, 28px) 22px 50px" }}
                 >
                   {item.answer}
                 </p>
-              )}
+              </Collapse>
             </div>
           );
         })}
@@ -1433,7 +1434,7 @@ function SectorContact({ number }: SectionProps) {
         <div
           style={{
             background: "var(--pf-bg-card)",
-            padding: "clamp(28px, 3vw, 44px)",
+            padding: "clamp(20px, 2.4vw, 32px)",
           }}
         >
           <SectionLabel
@@ -1442,19 +1443,19 @@ function SectorContact({ number }: SectionProps) {
           />
           <h2
             className="m-0 font-bold leading-[1.08] tracking-[-0.02em] text-[var(--pf-fg)]"
-            style={{ fontSize: "clamp(1.7rem, 3vw, 2.6rem)" }}
+            style={{ fontSize: "clamp(1.8rem, 3.6vw, 2.9rem)" }}
           >
             {t("sectors.common.contact.title")}
           </h2>
-          <p className="mt-5 text-base leading-[1.65] text-[var(--pf-fg-muted)]">
+          <p className="mt-4 text-[0.95rem] leading-[1.6] text-[var(--pf-fg-muted)]">
             {t("sectors.common.contact.subtitle")}
           </p>
 
-          <div className="mt-7 flex flex-col gap-2">
+          <div className="mt-5 flex flex-col gap-1.5">
             {checks.map((check) => (
               <div
                 key={check}
-                className="flex items-center gap-3 px-3.5 py-3 text-sm font-medium text-[var(--pf-fg)]"
+                className="flex items-center gap-3 px-3.5 py-2 text-[13px] font-medium text-[var(--pf-fg)]"
                 style={{
                   border: "1px solid var(--pf-border)",
                   background: "var(--pf-bg-card-2)",
@@ -1470,7 +1471,7 @@ function SectorContact({ number }: SectionProps) {
         <div
           style={{
             background: "var(--pf-bg-card-3)",
-            padding: "clamp(28px, 3vw, 44px)",
+            padding: "clamp(20px, 2.4vw, 32px)",
           }}
         >
           <ContactForm />
@@ -1583,24 +1584,6 @@ export function SectorPage({ lang, sector }: SectorPageProps) {
       className="relative min-h-screen [overflow-anchor:none]"
       style={{ background: "var(--pf-bg)" }}
     >
-      {/* Grille de fond statique — cantonnée à la largeur de la colonne, jamais visible dans les marges */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, var(--pf-grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--pf-grid-line) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
-      {/* Halo orange */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 44% at 50% -6%, rgba(255,106,19,0.07), transparent 62%)",
-        }}
-      />
-
       {/* Navbar identique sur toutes les pages : mêmes liens que la home. */}
       <LandingNavbar badge={t(`sectors.${sector}.label`)} />
 

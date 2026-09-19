@@ -629,22 +629,6 @@ html {
   to { background-position: -13px -13px; }
 }
 
-/* Connecteur du pipeline sécurité : vertical en mobile, horizontal à partir
-   de lg — même breakpoint que le composant, le pointillé change d'axe avec lui. */
-.pf-connector-line {
-  background: repeating-linear-gradient(to bottom, var(--pf-accent) 0 5px, transparent 5px 10px);
-  animation: pf-dash-slide-v 0.7s linear infinite;
-}
-@keyframes pf-dash-slide-v { to { background-position: 0 -10px; } }
-
-@media (min-width: 1024px) {
-  .pf-connector-line {
-    background: repeating-linear-gradient(to right, var(--pf-accent) 0 5px, transparent 5px 10px);
-    animation: pf-dash-slide-h 0.7s linear infinite;
-  }
-  @keyframes pf-dash-slide-h { to { background-position: -10px 0; } }
-}
-
 @keyframes pf-flow-diag {
   0% { transform: translate(0, 0); opacity: 0; }
   15% { opacity: 1; }
@@ -814,7 +798,7 @@ html {
 .pf-diagram-title-accent {
   font-size: 14px;
   font-weight: 600;
-  fill: #080808;
+  fill: #ffffff;
 }
 
 .pf-diagram-sub {
@@ -824,14 +808,54 @@ html {
 
 .pf-diagram-sub-accent {
   font-size: 11px;
-  fill: #080808;
-  opacity: 0.82;
+  fill: #ffffff;
+  opacity: 0.9;
 }
 
 .pf-diagram-edge-label {
   font-size: 10.5px;
   fill: var(--pf-fg-dim);
   font-family: var(--font-jetbrains-mono), monospace;
+}
+
+/* Schéma sécurité : périmètre de confiance et cadenas des liens chiffrés */
+.pf-diagram-perimeter {
+  fill: var(--pf-accent-bg);
+  stroke: #ff6a13;
+  stroke-width: 1.6;
+  stroke-dasharray: 9 9;
+}
+
+.pf-diagram-label-accent {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  fill: #ff6a13;
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+.pf-diagram-lock {
+  fill: #ffffff;
+  stroke: #ff6a13;
+  stroke-width: 1.6;
+}
+
+.pf-diagram-lock-glyph {
+  fill: #ff6a13;
+  stroke: #ff6a13;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.dark .pf-diagram-lock {
+  fill: #ff6a13;
+  stroke: var(--pf-bg-card-2);
+  stroke-width: 3;
+}
+
+.dark .pf-diagram-lock-glyph {
+  fill: #080808;
+  stroke: #080808;
 }
 
 .pf-diagram-frame {
@@ -868,5 +892,56 @@ html {
     transition:
       opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
       transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* Barre d'onglets aceternity/tabs : défilement horizontal sans scrollbar visible. */
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Workflow de la home : barre de progression et apparition des étapes */
+@keyframes workflow-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes workflow-rise {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.workflow-progress {
+  transform-origin: left;
+  animation-name: workflow-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.workflow-rise {
+  transform-box: view-box;
+  animation: workflow-rise 460ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workflow-progress,
+  .workflow-rise {
+    animation: none;
   }
 }

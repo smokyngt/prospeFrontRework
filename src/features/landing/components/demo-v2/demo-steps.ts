@@ -15,6 +15,16 @@ function resolveToken(
   if (token === '@queries') {
     return copy.retrievalQueries;
   }
+  if (token === '@chunks') {
+    const scenario = demoDataFor(sector).scenarios[scenarioIndex];
+    return (scenario?.citations ?? []).map((citation) => ({
+      content: citation.quote,
+      fileId: citation.fileId,
+      fileName: citation.fileName,
+      pageNumber: citation.page,
+      score: Number.parseInt(citation.confidence, 10) / 100,
+    }));
+  }
   if (token.startsWith('@text.')) {
     const key = token.slice('@text.'.length);
     const scenario = demoDataFor(sector).scenarios[scenarioIndex];

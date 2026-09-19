@@ -49,10 +49,6 @@ function SectionBanner({ label }: { label: string }) {
   );
 }
 
-function Divider() {
-  return <div className="h-px" style={{ background: "var(--pf-border)" }} />;
-}
-
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 
 function HeroSectionWrapper() {
@@ -130,8 +126,8 @@ function ContactSectionWrapper() {
       id="contact"
       className="px-5 sm:px-8 lg:px-12"
       style={{
-        paddingTop: "clamp(72px, 10vh, 112px)",
-        paddingBottom: "clamp(72px, 10vh, 112px)",
+        paddingTop: "clamp(36px, 5vh, 56px)",
+        paddingBottom: "clamp(36px, 5vh, 56px)",
         background: "var(--pf-column-bg)",
       }}
     >
@@ -142,24 +138,24 @@ function ContactSectionWrapper() {
         <div
           className="text-center"
           style={{
-            padding: "clamp(28px,3vw,44px)",
+            padding: "clamp(20px,2.4vw,32px)",
             background: "var(--pf-bg-card)",
           }}
         >
           <SectionBanner label={t("sectionLabels.contact")} />
           <h2
             className="font-bold leading-[1.08] tracking-[-0.02em] text-[var(--pf-fg)]"
-            style={{ fontSize: "clamp(1.7rem, 3vw, 2.6rem)" }}
+            style={{ fontSize: "clamp(1.9rem, 4vw, 3.1rem)" }}
           >
             {t("contact.title")}
           </h2>
-          <p className="mx-auto mt-5 max-w-[440px] text-base leading-[1.65] text-[var(--pf-fg-muted)]">
+          <p className="mx-auto mt-4 max-w-[440px] text-[0.95rem] leading-[1.65] text-[var(--pf-fg-muted)]">
             {t("contact.lead")}
           </p>
         </div>
         <div
           style={{
-            padding: "clamp(28px,3vw,44px)",
+            padding: "clamp(20px,2.4vw,32px)",
             background: "var(--pf-bg-card-3)",
           }}
         >
@@ -264,24 +260,6 @@ export default function LandingPage({ lang }: LandingPageProps) {
       className="relative min-h-screen [overflow-anchor:none]"
       style={{ background: "var(--pf-bg)" }}
     >
-      {/* Grille de fond statique — cantonnée à la largeur de la colonne, jamais visible dans les marges */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, var(--pf-grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--pf-grid-line) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
-      {/* Halo orange */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 44% at 50% -6%, rgba(255,106,19,0.07), transparent 62%)",
-        }}
-      />
-
       <LandingNavbar />
       <SectionNavigator />
 
@@ -289,8 +267,6 @@ export default function LandingPage({ lang }: LandingPageProps) {
         {/* Colonne bordée — toutes les sections */}
         <div className="mx-auto max-w-[1360px] border-x border-[var(--pf-border)] [overflow-anchor:none]">
           <HeroSectionWrapper />
-
-          <Divider />
 
           <section
             id="workflow"
@@ -305,22 +281,18 @@ export default function LandingPage({ lang }: LandingPageProps) {
             <WorkflowSection />
           </section>
 
-          <Divider />
-
           <section
             id="features"
             className="px-5 sm:px-8 lg:px-12"
             style={{
-              paddingTop: "clamp(72px, 10vh, 112px)",
-              paddingBottom: "clamp(72px, 10vh, 112px)",
+              paddingTop: "clamp(36px, 5vh, 56px)",
+              paddingBottom: "clamp(36px, 5vh, 56px)",
               background: "var(--pf-column-bg)",
             }}
           >
             <SectionBanner label={t("sectionLabels.features")} />
             <ProsperifyFeatures />
           </section>
-
-          <Divider />
 
           <section
             id="products"
@@ -335,14 +307,12 @@ export default function LandingPage({ lang }: LandingPageProps) {
             <ProductSection />
           </section>
 
-          <Divider />
-
           <section
             id="sovereignty"
             className="px-5 sm:px-8 lg:px-12"
             style={{
-              paddingTop: "clamp(72px, 10vh, 112px)",
-              paddingBottom: "clamp(72px, 10vh, 112px)",
+              paddingTop: "clamp(36px, 5vh, 56px)",
+              paddingBottom: "clamp(36px, 5vh, 56px)",
               background: "var(--pf-column-bg)",
             }}
           >
@@ -350,14 +320,12 @@ export default function LandingPage({ lang }: LandingPageProps) {
             <IntegrationSection />
           </section>
 
-          <Divider />
-
           <section
             id="security"
             className="px-5 sm:px-8 lg:px-12"
             style={{
-              paddingTop: "clamp(72px, 10vh, 112px)",
-              paddingBottom: "clamp(72px, 10vh, 112px)",
+              paddingTop: "clamp(36px, 5vh, 56px)",
+              paddingBottom: "clamp(36px, 5vh, 56px)",
               background: "var(--pf-column-bg)",
             }}
           >
@@ -365,22 +333,18 @@ export default function LandingPage({ lang }: LandingPageProps) {
             <SecuritySection />
           </section>
 
-          <Divider />
-
           <section
             id="faq"
             className="px-5 sm:px-8 lg:px-12"
             style={{
-              paddingTop: "clamp(72px, 10vh, 112px)",
-              paddingBottom: "clamp(72px, 10vh, 112px)",
+              paddingTop: "clamp(32px, 4vh, 48px)",
+              paddingBottom: "clamp(32px, 4vh, 48px)",
               background: "var(--pf-column-bg)",
             }}
           >
             <SectionBanner label={t("sectionLabels.faq")} />
             <FAQSection />
           </section>
-
-          <Divider />
 
           <ContactSectionWrapper />
         </div>

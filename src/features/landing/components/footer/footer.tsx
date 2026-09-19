@@ -2,7 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+
+import { CloudShader } from "@/components/ui/cloud-shader";
+import {
+  getCurrentLandingTheme,
+  LANDING_THEME_CHANGE_EVENT,
+} from "@/features/landing/lib/theme";
+
+import type { LandingTheme } from "@/features/landing/lib/theme";
 
 type FooterGroup = {
   links: { href: string; labelKey: string }[];
@@ -48,15 +57,38 @@ const footerGroups: FooterGroup[] = [
 const MAPPING_AURA_URL =
   "https://francedigitale.org/publications/mapping-startups-aura-2026";
 
+const SKY: Record<LandingTheme, { bottom: string; cloud: string; top: string }> = {
+  dark: { bottom: "#0a0a0a", cloud: "#3a2313", top: "#0a0a0a" },
+  light: { bottom: "#f7f7f7", cloud: "#ffdcc2", top: "#f7f7f7" },
+};
+
 export function LandingFooter() {
   const { t } = useTranslation();
+  const [theme, setTheme] = useState<LandingTheme>("light");
+
+  useEffect(() => {
+    const sync = () => setTheme(getCurrentLandingTheme());
+    sync();
+    window.addEventListener(LANDING_THEME_CHANGE_EVENT, sync);
+    return () => window.removeEventListener(LANDING_THEME_CHANGE_EVENT, sync);
+  }, []);
+
+  const sky = SKY[theme];
 
   return (
     <footer
-      className="relative z-10 border-t border-[var(--pf-border)]"
+      className="relative z-10 overflow-hidden border-t border-[var(--pf-border)]"
       style={{ background: "var(--pf-bg-card)" }}
     >
-      <div className="mx-auto max-w-[1360px] border-x border-[var(--pf-border)] px-5 py-10 sm:px-8 lg:px-12">
+      <CloudShader
+        className="absolute inset-0 h-full min-h-0"
+        cloudColor={sky.cloud}
+        count={4}
+        skyBottomColor={sky.bottom}
+        skyTopColor={sky.top}
+        speed={0.6}
+      />
+      <div className="relative z-10 mx-auto max-w-[1360px] border-x border-[var(--pf-border)] px-5 py-10 sm:px-8 lg:px-12">
         <div className="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-[1.1fr_repeat(4,1fr)]">
           <div className="col-span-2 lg:col-span-1">
             <Link

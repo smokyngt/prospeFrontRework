@@ -55,7 +55,7 @@
       "orchestrationDelays": [750, 950, 1450],
       "steps": [
         { "id": "intent", "action": "analyzing", "entities": ["Élise Bernard", "parcours clinique", "DFG"], "queries": "@queries", "reasoning": "@text.analyze" },
-        { "id": "search", "action": "searching", "queries": ["antécédents allergie traitements", "évolution DFG hospitalisation"], "reasoning": "@text.search" },
+        { "id": "search", "action": "searching", "queries": ["antécédents allergie traitements", "évolution DFG hospitalisation"], "reasoning": "@text.search", "toolResponse": { "chunks": "@chunks" } },
         { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
       "content": {
@@ -107,7 +107,7 @@
       "orchestrationDelays": [700, 950, 1350],
       "steps": [
         { "id": "intent", "action": "analyzing", "entities": ["conciliation", "allergie", "rivaroxaban"], "queries": "@queries", "reasoning": "@text.analyze" },
-        { "id": "search", "action": "searching", "queries": ["allergie amoxicilline contradiction", "dose rivaroxaban 20 15 mg"], "reasoning": "@text.search" },
+        { "id": "search", "action": "searching", "queries": ["allergie amoxicilline contradiction", "dose rivaroxaban 20 15 mg"], "reasoning": "@text.search", "toolResponse": { "chunks": "@chunks" } },
         { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
       "content": {
@@ -115,7 +115,7 @@
           "storeName": "Coordinateur de soins",
           "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
           "question": "Quelles incohérences du dossier doivent être vérifiées lors de la conciliation ?",
-          "finalAnswer": "Dossier fictif — synthèse à valider par un professionnel de santé. Trois points à vérifier, sans arbitrage possible sur les seules pièces du dossier : [l'allergie à l'amoxicilline, documentée en médecine générale](cite:1)[, indiquée « aucune connue » à la sortie](cite:2) ; [la dose de rivaroxaban — 20 mg sur l'ordonnance](cite:3)[et sur la liste de sortie](cite:4)[, 15 mg dans le courrier de cardiologie](cite:5) ; [le contrôle créatinine/potassium demandé sous 7 jours, absent du dossier au 10 juillet](cite:6).\n\nAucune de ces sources ne permet de trancher quelle valeur est correcte.",
+          "finalAnswer": "Dossier fictif — synthèse à valider par un professionnel de santé. Trois points à vérifier, sans arbitrage possible sur les seules pièces du dossier : [l'allergie à l'amoxicilline, documentée en médecine générale](cite:1)[, indiquée « aucune connue » à la sortie](cite:2) ; [la dose de rivaroxaban — 20 mg sur l'ordonnance](cite:3)[et sur la liste de sortie](cite:4)[, 15 mg dans le courrier de cardiologie](cite:5) ; [le contrôle créatinine/potassium demandé sous 7 jours, absent du dossier au 10 juillet](cite:6).\n\n| Point | Source A | Source B |\n| --- | --- | --- |\n| Allergie amoxicilline | Documentée (médecine générale) | « Aucune connue » (sortie) |\n| Dose rivaroxaban | 20 mg (ordonnance + liste de sortie) | 15 mg (courrier de cardiologie) |\n| Contrôle créatinine/potassium | Demandé sous 7 jours | Absent du dossier au 10 juillet |\n\nAucune de ces sources ne permet de trancher quelle valeur est correcte.",
           "reasoning": "Je recherche chaque mention de l'allergie et de la dose de rivaroxaban dans les six documents, ainsi que le suivi du contrôle biologique demandé à la sortie.",
           "retrievalQueries": ["allergie amoxicilline contradiction", "dose rivaroxaban 20 15 mg"],
           "threads": ["Agent Prosperify"],
@@ -157,7 +157,7 @@
       "orchestrationDelays": [700, 900, 1300],
       "steps": [
         { "id": "intent", "action": "analyzing", "entities": ["DFG", "trajectoire rénale"], "queries": "@queries", "reasoning": "@text.analyze" },
-        { "id": "search", "action": "searching", "queries": ["évolution débit de filtration glomérulaire"], "reasoning": "@text.search" },
+        { "id": "search", "action": "searching", "queries": ["évolution débit de filtration glomérulaire"], "reasoning": "@text.search", "toolResponse": { "chunks": "@chunks" } },
         { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
       "content": {
@@ -208,7 +208,7 @@
       "orchestrationDelays": [750, 950, 1400],
       "steps": [
         { "id": "intent", "action": "analyzing", "entities": ["fiche de revue", "consultation de suivi"], "queries": "@queries", "reasoning": "@text.analyze" },
-        { "id": "search", "action": "searching", "queries": ["points à vérifier consultation de suivi"], "reasoning": "@text.search" },
+        { "id": "search", "action": "searching", "queries": ["points à vérifier consultation de suivi"], "reasoning": "@text.search", "toolResponse": { "chunks": "@chunks" } },
         { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
       "content": {

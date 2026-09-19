@@ -140,12 +140,58 @@
       "Human in the loop"
     ]
   },
+  "workflow_tabs": {
+    "create": {
+      "title": "Connect",
+      "heading": "Your sources, your perimeter",
+      "description": "You decide what the agent can read.",
+      "preview": {
+        "search": "Search a data store",
+        "store_first": "Supplier contracts",
+        "store_first_meta": "1,284 documents",
+        "store_second": "Internal policies",
+        "store_second_meta": "312 documents",
+        "store_excluded": "2019 archives",
+        "store_excluded_meta": "outside perimeter",
+        "selected": "1 data store and 1 folder selected"
+      }
+    },
+    "unify": {
+      "title": "Search",
+      "heading": "Semantic, keyword and visual",
+      "description": "Text, tables and scanned pages.",
+      "preview": {
+        "file": "Master_agreement_2024.pdf",
+        "page": "3 / 42",
+        "title": "Article 12 - Liability",
+        "highlight_first": "The provider caps its liability",
+        "highlight_second": "at 12 months of fees."
+      }
+    },
+    "chat": {
+      "title": "Cite",
+      "heading": "Every answer is sourced",
+      "description": "Clause, page and document, attached.",
+      "preview": {
+        "question_first": "Which clauses cap",
+        "question_second": "our liability?",
+        "answer_first": "Liability is capped at",
+        "answer_second": "12 months of fees.",
+        "sources": "Sources",
+        "source_first": "Master_agreement.pdf",
+        "source_first_page": "p. 3",
+        "source_second": "Amendment_2024.pdf",
+        "source_second_page": "p. 7"
+      }
+    }
+  },
   "workflow": {
+    "title_highlight": "The agent cites them.",
     "badge": "HOW IT WORKS",
     "title": "You choose the sources.",
     "titleHighlight": "The agent cites its own.",
     "titleSuffix": "",
-    "subtitle": "Three steps, from picking your sources to a cited answer.",
+    "subtitle": "Three steps, from choosing the sources to a cited answer.",
     "cards": {
       "connect": {
         "tag": "CONNECT",
@@ -161,12 +207,22 @@
       },
       "search": {
         "tag": "SEARCH",
-        "title": "Semantic, keyword and visual",
-        "description": "Text, tables and scanned pages.",
-        "fileName": "Master_agreement_2024.pdf",
-        "page": "3 / 42",
-        "articleTitle": "Article 12: Liability",
-        "highlight": "The provider caps its liability at 12 months of fees."
+        "title": "Cross-checks several documents at once",
+        "description": "Every passage found is compared against the others before answering.",
+        "searchPlaceholder": "liability clause...",
+        "crossCheckNote": "2 documents cross-checked",
+        "matches": [
+          {
+            "fileName": "Master_agreement_2024.pdf",
+            "page": "p. 3",
+            "snippet": "Liability capped at 12 months of fees."
+          },
+          {
+            "fileName": "Amendment_2024.pdf",
+            "page": "p. 7",
+            "snippet": "Cap confirmed, no conflicting clause."
+          }
+        ]
       },
       "cite": {
         "tag": "CITE",
@@ -339,11 +395,23 @@
       "description": "Prefer a live discussion? Open a pre-filled Google Calendar event with Prosperify already added as a guest.",
       "cta": "Open Google Calendar",
       "note": "When you save or send the event, Prosperify is included on the invitation. Add Google Meet from the calendar event before sending if it is not enabled by default.",
-      "title": "Prosperify deployment discussion",
+      "title": "Prosperify discovery call",
       "details": "Discuss document scope, security requirements, deployment model and next steps with Prosperify.",
       "location": "Google Meet"
     },
     "form": {
+      "name_placeholder": "Your full name",
+      "company_placeholder": "Your company name",
+      "email_placeholder": "Your email",
+      "phone_placeholder": "Phone (optional)",
+      "subject_placeholder": "Select a subject",
+      "subject_information": "Request a demo",
+      "subject_partnership": "Frame a legal pilot",
+      "subject_other": "Frame an accounting & finance pilot",
+      "subject_api": "Frame a medical & health pilot",
+      "subject_virtual_partner": "Assess a sovereign deployment",
+      "message_placeholder": "Your message",
+      "status_send_error": "Sending error.",
       "namePlaceholder": "Your full name",
       "companyPlaceholder": "Your company name",
       "emailPlaceholder": "Your email",
@@ -1339,6 +1407,123 @@
     }
   },
   "products": {
+    "badge": "THE OFFER",
+    "title_prefix": "The research agent",
+    "title_highlight": "for your domain",
+    "intro": "One agent, three professions: legal, finance, health. Each with its own vocabulary, documents and access rules.",
+    "cta": "Request a demo",
+    "view_all": "View all use cases",
+    "explore": "Details",
+    "use_cases": {
+      "legal": {
+        "slug": "legal",
+        "label": "Legal",
+        "title": "The exact clause, in seconds",
+        "description": "Query contracts, case files and regulatory filings in plain language. Every answer points to the clause and page that back it.",
+        "problems": [
+          "An auto-renewal clause slips through unnoticed",
+          "Comparing amendments version by version takes hours",
+          "A generic assistant cites no clause or page"
+        ],
+        "benefits": [
+          "Contradictions and risky clauses surfaced before a counterparty does",
+          "Review the whole matter in minutes, not days",
+          "Every answer cites the exact clause and page"
+        ],
+        "security": [
+          "Access controlled by matter, client and role",
+          "Confidentiality preserved: model is never trained on your documents",
+          "Deploy in our EU cloud or entirely in your own perimeter"
+        ],
+        "faq": [
+          {
+            "question": "Can Prosperify review a whole data room at once?",
+            "answer": "Yes. Upload a data room, ask about any clause, party or obligation, and every answer cites its clause and page."
+          },
+          {
+            "question": "How does it handle confidentiality for legal teams?",
+            "answer": "Access is scoped by matter, client and role, and the model is never trained on your documents. You can deploy it in your own cloud or perimeter."
+          },
+          {
+            "question": "Does it flag contradictions between related documents?",
+            "answer": "Yes. It cross-references amendments and versions and surfaces contradictions so you can resolve them before a counterparty raises them."
+          }
+        ],
+        "sample_question": "Which supplier contracts renew automatically before Q2, and do any include a change-of-control clause?"
+      },
+      "accounting": {
+        "slug": "accounting",
+        "label": "Accounting & finance",
+        "title": "Catch the discrepancy before the board does",
+        "description": "Every published figure stays linked to its source, from the ledger to the final report. Discrepancies surface before close.",
+        "problems": [
+          "Reconciling a statement against its bridge schedule is slow",
+          "A discrepancy buried in the notes reaches the board first",
+          "A spreadsheet never says which report a number came from"
+        ],
+        "benefits": [
+          "Every published figure stays traced to its originating line",
+          "Discrepancies flagged before reporting or due diligence closes",
+          "Answers always cite the exact page"
+        ],
+        "security": [
+          "Access controlled by engagement and client",
+          "Financial data kept confidential: model is never trained on your documents",
+          "Deploy in our EU cloud or entirely in your own perimeter"
+        ],
+        "faq": [
+          {
+            "question": "Can Prosperify verify a reported financial figure back to its source?",
+            "answer": "Yes. Ask about any figure and it returns the underlying adjustments and the page each one comes from."
+          },
+          {
+            "question": "Does it handle audit files and due diligence data rooms?",
+            "answer": "Yes. Search across statements, audit files, management reports and data rooms with access scoped by engagement and client."
+          },
+          {
+            "question": "How is a discrepancy treated?",
+            "answer": "Prosperify cross-references sources and flags where a figure disagrees with its underlying detail, so you can investigate before reporting."
+          }
+        ],
+        "sample_question": "Does the reported EBITDA match the underlying adjustments in the bridge, and which figures come from non-recurring items?"
+      },
+      "medical": {
+        "slug": "medical",
+        "label": "Medical & health",
+        "title": "Never miss a contraindication again",
+        "description": "Search patient files, studies and protocols in a single question. Every answer cites the exact page, ready for review.",
+        "problems": [
+          "A clinical detail buried in dozens of pages",
+          "Inconsistencies between records slip past the system",
+          "An uncited answer can't be validated in review"
+        ],
+        "benefits": [
+          "Search across patient files, studies and protocols in one query",
+          "Inconsistencies and contradictions surfaced between related records",
+          "Every answer cited to the exact page"
+        ],
+        "security": [
+          "Access controlled by care team and confidentiality level",
+          "Health data protected: model is never trained on your documents",
+          "Deploy in our EU cloud or entirely in your own perimeter"
+        ],
+        "faq": [
+          {
+            "question": "Can Prosperify search across patient files and clinical studies together?",
+            "answer": "Yes. Ask one question and it searches files, studies and protocols, returning an answer cited to the exact page."
+          },
+          {
+            "question": "How is access and confidentiality handled?",
+            "answer": "Access is scoped by care team and confidentiality level, and the model is never trained on your documents. You can deploy it in your own perimeter."
+          },
+          {
+            "question": "Does it flag inconsistencies between records?",
+            "answer": "Yes. It surfaces contradictions and inconsistencies between related records so reviewers can focus on what needs attention."
+          }
+        ],
+        "sample_question": "Which patient files mention this contraindication, and what protocol governs its handling?"
+      }
+    },
     "titlePrefix": "Document intelligence",
     "titleHighlight": "built for your sector",
     "subtitle": "Prosperify specializes in three sectors with demanding documentation needs: legal, healthcare and finance.",
@@ -1417,15 +1602,27 @@
     },
     "illustrations": {
       "citedAnswer": {
+        "terms": ["normalized EBITDA", "Helios"],
         "answerLead": "The executive summary reports a normalized EBITDA of ",
         "valueReported": "€14.2M",
         "answerMid1": " at an 8.0x multiple.",
         "file1": "dd-report-project-helios.pdf",
         "ref1": "p. 2",
         "file2": "appendix-c-contracts.pdf",
-        "ref2": "p. 7"
+        "ref2": "p. 7",
+        "question": "What is Project Helios' normalized EBITDA?",
+        "answerTail": " Covenants remain compliant.",
+        "excerpt1": "… a normalized EBITDA of ",
+        "excerptValue": "€14.2M",
+        "excerpt2": " after adjusting for non-recurring items …"
       },
       "hybridSearch": {
+        "terms": ["early termination"],
+        "resultsLabel": "3 relevant passages",
+        "result2File": "Amendment_2024.pdf",
+        "result2Page": "p. 4",
+        "result3File": "Appendix_B_Terms.pdf",
+        "result3Page": "p. 11",
         "placeholder": "early termination clause",
         "methodSemantic": "Semantic",
         "methodKeyword": "Keywords",
@@ -1447,9 +1644,17 @@
         "store2Name": "Contracts 2025",
         "store2Role": "Viewer",
         "store3Name": "Data Room M&A",
-        "store3Role": "Restricted"
+        "store3Role": "Restricted",
+        "userName": "Camille R.",
+        "userRole": "Analyst",
+        "permRead": "Read",
+        "permWrite": "Write",
+        "permExport": "Export"
       },
       "reviewFlow": {
+        "stepSearchMeta": "12 passages",
+        "stepAnswerMeta": "3 citations",
+        "stepVerifyMeta": "3/3 confirmed",
         "stepSearch": "Search",
         "stepAnswer": "Answer",
         "stepVerify": "Verify",
@@ -1457,6 +1662,11 @@
         "verified": "Verified"
       },
       "sovereignty": {
+        "nodeDocuments": "Documents",
+        "nodeIndex": "Index",
+        "nodeModel": "Model",
+        "nodeAnswers": "Answers",
+        "noEgress": "No external egress",
         "perimeter": "YOUR PERIMETER",
         "modeDedicated": "Dedicated",
         "modeHybrid": "Hybrid",
@@ -1557,9 +1767,9 @@
   },
   "integration": {
     "badge": "INTEGRATION",
-    "titlePrefix": "Connect",
+    "titlePrefix": "No overhaul:",
     "titleHighlight": "Prosperify",
-    "titleSuffix": "to your stack",
+    "titleSuffix": "sits on top of your stack",
     "subtitle": "Python and TypeScript SDKs, a documented REST API, OAuth 2.0 and SSO authentication.",
     "steps": [
       {
@@ -1666,12 +1876,18 @@
         "description": "Infrastructure hosted in France, GDPR-compliant."
       }
     },
-    "pipeline": {
-      "document": { "label": "Document", "caption": "Secure upload" },
-      "storage": { "label": "Storage", "caption": "Encrypted (AES-256)" },
-      "transit": { "label": "Transit", "caption": "TLS 1.3" },
-      "processing": { "label": "Processing", "caption": "Isolated environment" },
-      "response": { "label": "Answer", "caption": "Sourced and secured" }
+    "diagram": {
+      "alt": "Infrastructure diagram: your question enters a trust perimeter through controlled access, search and AI process it in an isolated environment by querying your encrypted data under dedicated keys, every link encrypted and authenticated, then a sourced answer comes out.",
+      "perimeter": "TRUST PERIMETER",
+      "question": "Your question",
+      "gateway": "Controlled access",
+      "compute": "Search + AI",
+      "computeSub": "isolated environment",
+      "data": "Your data",
+      "dataSub": "encrypted · dedicated keys",
+      "gatewaySub": "identity · roles",
+      "answer": "Sourced answer",
+      "caption": "Every link is encrypted and authenticated. Nothing leaves the perimeter."
     }
   },
   "faq": {

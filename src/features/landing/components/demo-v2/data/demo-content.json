@@ -107,7 +107,7 @@
       "orchestrationDelays": [750, 950, 1400],
       "steps": [
         { "id": "intent", "action": "analyzing", "entities": ["Lumio Mobility", "EBITDA", "cash-flow"], "queries": "@queries", "reasoning": "@text.analyze" },
-        { "id": "search", "action": "searching", "queries": ["chiffre d'affaires YTD EBITDA croissance", "pont de trésorerie flux d'exploitation créances clients"], "reasoning": "@text.search" },
+        { "id": "search", "action": "searching", "queries": ["chiffre d'affaires YTD EBITDA croissance", "pont de trésorerie flux d'exploitation créances clients"], "reasoning": "@text.search", "toolResponse": { "chunks": "@chunks" } },
         { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
       "content": {
@@ -167,7 +167,7 @@
       "orchestrationDelays": [750, 950, 1450],
       "steps": [
         { "id": "intent", "action": "analyzing", "entities": ["budget", "réel", "DSO"], "queries": "@queries", "reasoning": "@text.analyze" },
-        { "id": "search", "action": "searching", "queries": ["budget vs actual août 2026", "balance âgée concentration client"], "reasoning": "@text.search" },
+        { "id": "search", "action": "searching", "queries": ["budget vs actual août 2026", "balance âgée concentration client"], "reasoning": "@text.search", "toolResponse": { "chunks": "@chunks" } },
         { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
       "content": {
@@ -218,7 +218,7 @@
       "orchestrationDelays": [700, 900, 1350],
       "steps": [
         { "id": "intent", "action": "analyzing", "entities": ["MetroFleet", "NordTransit", "factures"], "queries": "@queries", "reasoning": "@text.analyze" },
-        { "id": "search", "action": "searching", "queries": ["MetroFleet NordTransit exposition balance âgée", "factures justificatifs recouvrement"], "reasoning": "@text.search" },
+        { "id": "search", "action": "searching", "queries": ["MetroFleet NordTransit exposition balance âgée", "factures justificatifs recouvrement"], "reasoning": "@text.search", "toolResponse": { "chunks": "@chunks" } },
         { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
       "content": {
@@ -226,7 +226,7 @@
           "storeName": "Analyste financier",
           "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
           "question": "Quelles créances expliquent le risque et les factures confirment-elles la balance âgée ?",
-          "finalAnswer": "[MetroFleet Group doit 1,20 M€, échue depuis 62 jours, avec une simple promesse de paiement reçue sans date ni écrit ; NordTransit AB doit 0,75 M€, échue depuis 32 jours, avec un litige documentaire ouvert](cite:1)[. La facture MetroFleet MF-260515 confirme le montant : 574 000 + 203 000 + 125 000 + 98 000 = 1 000 000 € HT, soit 1,20 M€ TTC](cite:2)[, mais aucune preuve de réception ou de mise en service signée par le client ne figure au dossier](cite:3)[. La facture NordTransit NT-260630 confirme également son montant : 369 000 + 130 500 + 60 000 + 65 500 = 625 000 € HT, soit 0,75 M€ TTC](cite:4)[, et le client conteste précisément la ligne d'interface facturée, faute de numéro de commande complet](cite:5).\n\nLes deux comptes cumulent 1,95 M€, soit 47,6 % du poste clients. Les montants concordent parfaitement entre balance âgée et factures ; les lacunes documentaires expliquent le retard, sans permettre de qualifier ces créances d'irrécouvrables.",
+          "finalAnswer": "[MetroFleet Group doit 1,20 M€, échue depuis 62 jours, avec une simple promesse de paiement reçue sans date ni écrit ; NordTransit AB doit 0,75 M€, échue depuis 32 jours, avec un litige documentaire ouvert](cite:1)[. La facture MetroFleet MF-260515 confirme le montant : 574 000 + 203 000 + 125 000 + 98 000 = 1 000 000 € HT, soit 1,20 M€ TTC](cite:2)[, mais aucune preuve de réception ou de mise en service signée par le client ne figure au dossier](cite:3)[. La facture NordTransit NT-260630 confirme également son montant : 369 000 + 130 500 + 60 000 + 65 500 = 625 000 € HT, soit 0,75 M€ TTC](cite:4)[, et le client conteste précisément la ligne d'interface facturée, faute de numéro de commande complet](cite:5).\n\n| Compte | Montant | Retard | Facture source | Statut |\n| --- | --- | --- | --- | --- |\n| MetroFleet Group | 1,20 M€ | 62 jours | MF-260515 (1 000 000 € HT) | Preuve de réception manquante |\n| NordTransit AB | 0,75 M€ | 32 jours | NT-260630 (625 000 € HT) | Ligne contestée, litige ouvert |\n\nLes deux comptes cumulent 1,95 M€, soit 47,6 % du poste clients. Les montants concordent parfaitement entre balance âgée et factures ; les lacunes documentaires expliquent le retard, sans permettre de qualifier ces créances d'irrécouvrables.",
           "reasoning": "Je croise la balance âgée avec les factures sources correspondantes, pour vérifier que les montants concordent et comprendre pourquoi ces deux comptes restent impayés.",
           "retrievalQueries": ["MetroFleet NordTransit exposition balance âgée", "factures justificatifs recouvrement"],
           "threads": ["Agent Prosperify"],
@@ -270,7 +270,7 @@
       "orchestrationDelays": [800, 1000, 1500],
       "steps": [
         { "id": "intent", "action": "analyzing", "entities": ["note CFO", "saisonnalité", "remises en transit"], "queries": "@queries", "reasoning": "@text.analyze" },
-        { "id": "search", "action": "searching", "queries": ["note CFO saisonnalité trésorerie", "rapprochement bancaire remises en transit"], "reasoning": "@text.search" },
+        { "id": "search", "action": "searching", "queries": ["note CFO saisonnalité trésorerie", "rapprochement bancaire remises en transit"], "reasoning": "@text.search", "toolResponse": { "chunks": "@chunks" } },
         { "id": "answer", "action": "generating", "reasoning": "@text.generate", "thinking": "@text.thinking" }
       ],
       "content": {
@@ -278,7 +278,7 @@
           "storeName": "Analyste financier",
           "storeLabels": { "risk": "Risques & conformité", "legal": "Juridique", "research": "Veille documentaire" },
           "question": "Challenge la note CFO et prépare trois actions de clôture sourcées.",
-          "finalAnswer": "[La note du CFO qualifie la tension de trésorerie de « principalement saisonnière »](cite:1)[et indique qu'une promesse de paiement a été confirmée pour MetroFleet, sans mentionner le litige NordTransit](cite:2)[. Or le délai de règlement client à 78 jours contre 49 jours budgétés traduit une sur-immobilisation structurelle de 1,52 M€, pas un simple effet saisonnier](cite:3)[, et les deux comptes MetroFleet et NordTransit cumulent 1,95 M€ de créances échues](cite:4)[. Les 180 k€ de remises en transit citées dans la note réconcilient bien le solde bancaire — 1 250 000 + 180 000 - 30 000 = 1 400 000 €](cite:5)[, mais l'une d'elles, 120 k€, reste en suspens depuis 12 jours, et l'ensemble ne pèse que 9 % des 1,95 M€ de créances échues](cite:6).\n\nTrois actions de clôture : documenter et réclamer formellement le paiement MetroFleet (procès-verbal de réception manquant) ; résoudre le bon de commande incomplet et le litige NordTransit ; vérifier la remise en transit de 120 k€ âgée de 12 jours. Aucune de ces actions ne relève d'un conseil d'investissement.",
+          "finalAnswer": "[La note du CFO qualifie la tension de trésorerie de « principalement saisonnière »](cite:1)[et indique qu'une promesse de paiement a été confirmée pour MetroFleet, sans mentionner le litige NordTransit](cite:2)[. Or le délai de règlement client à 78 jours contre 49 jours budgétés traduit une sur-immobilisation structurelle de 1,52 M€, pas un simple effet saisonnier](cite:3)[, et les deux comptes MetroFleet et NordTransit cumulent 1,95 M€ de créances échues](cite:4)[. Les 180 k€ de remises en transit citées dans la note réconcilient bien le solde bancaire — 1 250 000 + 180 000 - 30 000 = 1 400 000 €](cite:5)[, mais l'une d'elles, 120 k€, reste en suspens depuis 12 jours, et l'ensemble ne pèse que 9 % des 1,95 M€ de créances échues](cite:6).\n\n| Affirmation de la note | Réalité documentée |\n| --- | --- |\n| Tension « principalement saisonnière » | DSO structurel 78 j vs 49 j budgétés → 1,52 M€ sur-immobilisés |\n| Paiement MetroFleet confirmé | NordTransit (0,75 M€, litige ouvert) non mentionné |\n| Remises en transit rassurantes | 180 k€ ne couvrent que 9 % des 1,95 M€ de créances échues |\n\nTrois actions de clôture : documenter et réclamer formellement le paiement MetroFleet (procès-verbal de réception manquant) ; résoudre le bon de commande incomplet et le litige NordTransit ; vérifier la remise en transit de 120 k€ âgée de 12 jours. Aucune de ces actions ne relève d'un conseil d'investissement.",
           "reasoning": "Je confronte chaque affirmation de la note CFO aux pièces qui la contredisent ou la nuancent, puis je formule des actions de clôture sourcées.",
           "retrievalQueries": ["note CFO saisonnalité trésorerie", "rapprochement bancaire remises en transit"],
           "threads": ["Agent Prosperify"],

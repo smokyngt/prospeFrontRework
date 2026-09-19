@@ -140,7 +140,53 @@
       "Humain dans la boucle"
     ]
   },
+  "workflow_tabs": {
+    "create": {
+      "title": "Connecter",
+      "heading": "Vos sources, votre périmètre",
+      "description": "Vous décidez ce que l'agent peut lire.",
+      "preview": {
+        "search": "Rechercher un data store",
+        "store_first": "Contrats fournisseurs",
+        "store_first_meta": "1 284 documents",
+        "store_second": "Politiques internes",
+        "store_second_meta": "312 documents",
+        "store_excluded": "Archives 2019",
+        "store_excluded_meta": "hors périmètre",
+        "selected": "1 data store et 1 dossier sélectionnés"
+      }
+    },
+    "unify": {
+      "title": "Rechercher",
+      "heading": "Sémantique, mots-clés et visuel",
+      "description": "Texte, tableaux et pages scannées.",
+      "preview": {
+        "file": "Contrat_cadre_2024.pdf",
+        "page": "3 / 42",
+        "title": "Article 12 - Responsabilité",
+        "highlight_first": "Le prestataire limite sa responsabilité",
+        "highlight_second": "à 12 mois de redevances."
+      }
+    },
+    "chat": {
+      "title": "Citer",
+      "heading": "Chaque réponse est sourcée",
+      "description": "Clause, page et document, à l'appui.",
+      "preview": {
+        "question_first": "Quelles clauses limitent",
+        "question_second": "notre responsabilité ?",
+        "answer_first": "La responsabilité est plafonnée à",
+        "answer_second": "12 mois de redevances.",
+        "sources": "Sources",
+        "source_first": "Contrat_cadre.pdf",
+        "source_first_page": "p. 3",
+        "source_second": "Avenant_2024.pdf",
+        "source_second_page": "p. 7"
+      }
+    }
+  },
   "workflow": {
+    "title_highlight": "L'agent cite les siennes.",
     "badge": "WORKFLOW",
     "title": "Vous choisissez les sources.",
     "titleHighlight": "L'agent cite les siennes.",
@@ -161,12 +207,22 @@
       },
       "search": {
         "tag": "RECHERCHER",
-        "title": "Sémantique, mots-clés et visuel",
-        "description": "Texte, tableaux et pages scannées.",
-        "fileName": "Contrat_cadre_2024.pdf",
-        "page": "3 / 42",
-        "articleTitle": "Article 12 : Responsabilité",
-        "highlight": "Le prestataire limite sa responsabilité à 12 mois de redevances."
+        "title": "Recoupe plusieurs documents à la fois",
+        "description": "Chaque passage retrouvé est comparé aux autres avant la réponse.",
+        "searchPlaceholder": "clause de responsabilité...",
+        "crossCheckNote": "2 documents recoupés",
+        "matches": [
+          {
+            "fileName": "Contrat_cadre_2024.pdf",
+            "page": "p. 3",
+            "snippet": "Responsabilité limitée à 12 mois de redevances."
+          },
+          {
+            "fileName": "Avenant_2024.pdf",
+            "page": "p. 7",
+            "snippet": "Plafond confirmé, aucune clause contraire."
+          }
+        ]
       },
       "cite": {
         "tag": "CITER",
@@ -339,11 +395,23 @@
       "description": "Vous préférez un échange direct ? Ouvrez un événement Google Calendar prérempli avec Prosperify déjà ajouté en invité.",
       "cta": "Ouvrir Google Calendar",
       "note": "Quand vous enregistrez ou envoyez l'événement, Prosperify est inclus dans l'invitation. Ajoutez Google Meet depuis l'événement si ce n'est pas activé par défaut.",
-      "title": "Discussion de déploiement Prosperify",
+      "title": "Échange de découverte Prosperify",
       "details": "Échanger sur le périmètre documentaire, les exigences de sécurité, le modèle de déploiement et les prochaines étapes avec Prosperify.",
       "location": "Google Meet"
     },
     "form": {
+      "name_placeholder": "Votre nom complet",
+      "company_placeholder": "Nom de votre entreprise",
+      "email_placeholder": "Votre email",
+      "phone_placeholder": "Téléphone (optionnel)",
+      "subject_placeholder": "Sélectionnez l'objet",
+      "subject_information": "Demander une démonstration",
+      "subject_partnership": "Cadrer un pilote juridique",
+      "subject_other": "Cadrer un pilote comptabilité & finance",
+      "subject_api": "Cadrer un pilote médical & santé",
+      "subject_virtual_partner": "Évaluer un déploiement souverain",
+      "message_placeholder": "Votre message",
+      "status_send_error": "Erreur d'envoi.",
       "namePlaceholder": "Votre nom complet",
       "companyPlaceholder": "Nom de votre entreprise",
       "emailPlaceholder": "Votre email",
@@ -1339,6 +1407,123 @@
     }
   },
   "products": {
+    "badge": "L'OFFRE",
+    "title_prefix": "L'agent de recherche",
+    "title_highlight": "adapté à votre domaine",
+    "intro": "Un seul agent, trois métiers : juridique, finance, santé. Chacun avec son vocabulaire, ses documents et ses règles d'accès.",
+    "cta": "Demander une démo",
+    "view_all": "Voir tous les cas d'usage",
+    "explore": "Détails",
+    "use_cases": {
+      "legal": {
+        "slug": "legal",
+        "label": "Juridique",
+        "title": "La clause exacte, en quelques secondes",
+        "description": "Interrogez contrats, dossiers et textes réglementaires en langage naturel. Chaque réponse renvoie à la clause et à la page qui la justifient.",
+        "problems": [
+          "Une clause de renouvellement automatique passe inaperçue",
+          "Comparer les avenants version par version prend des heures",
+          "Un assistant générique ne cite ni clause ni page"
+        ],
+        "benefits": [
+          "Contradictions et clauses à risque signalées avant la contrepartie",
+          "Révisez data room et dossier complet en quelques minutes",
+          "Chaque réponse cite la clause et la page exactes"
+        ],
+        "security": [
+          "Accès contrôlé par dossier, client et rôle",
+          "Confidentialité préservée : le modèle n'est jamais entraîné sur vos documents",
+          "Déploiement dans notre cloud européen ou entièrement dans votre périmètre"
+        ],
+        "faq": [
+          {
+            "question": "Prosperify peut-il relire une data room entière d'un coup ?",
+            "answer": "Oui. Importez une data room, posez une question sur n'importe quelle clause, partie ou obligation, et chaque réponse cite sa clause et sa page."
+          },
+          {
+            "question": "Comment la confidentialité est-elle gérée pour les équipes juridiques ?",
+            "answer": "L'accès est limité par dossier, client et rôle, et le modèle n'est jamais entraîné sur vos documents. Vous pouvez le déployer dans votre propre cloud ou périmètre."
+          },
+          {
+            "question": "Signale-t-il les contradictions entre documents liés ?",
+            "answer": "Oui. Il croise les avenants et les versions et remonte les contradictions pour que vous les traitiez avant qu'une contrepartie ne les soulève."
+          }
+        ],
+        "sample_question": "Quels contrats fournisseurs se renouvellent automatiquement avant le T2, et lesquels incluent une clause de changement de contrôle ?"
+      },
+      "accounting": {
+        "slug": "accounting",
+        "label": "Comptabilité & finance",
+        "title": "Repérez l'écart avant le comité",
+        "description": "Chaque chiffre publié reste relié à sa source, du grand livre au rapport final. Les écarts remontent avant la clôture.",
+        "problems": [
+          "Réconcilier un état avec son tableau de passage est lent",
+          "Un écart enfoui dans une annexe atteint le comité",
+          "Un tableur ne dit jamais d'où vient le chiffre"
+        ],
+        "benefits": [
+          "Chaque chiffre publié reste tracé jusqu'à sa ligne d'origine",
+          "Écarts signalés avant la clôture ou la due diligence",
+          "Les réponses citent toujours la page exacte"
+        ],
+        "security": [
+          "Accès contrôlé par mission et client",
+          "Données financières confidentielles : le modèle n'est jamais entraîné sur vos documents",
+          "Déploiement dans notre cloud européen ou entièrement dans votre périmètre"
+        ],
+        "faq": [
+          {
+            "question": "Prosperify peut-il vérifier un chiffre publié jusqu'à sa source ?",
+            "answer": "Oui. Interrogez n'importe quel chiffre et il renvoie les retraitements sous-jacents et la page dont chacun provient."
+          },
+          {
+            "question": "Gère-t-il les dossiers d'audit et les data rooms de due diligence ?",
+            "answer": "Oui. Recherchez dans les états, dossiers d'audit, rapports de gestion et data rooms avec un accès limité par mission et client."
+          },
+          {
+            "question": "Comment un écart est-il traité ?",
+            "answer": "Prosperify croise les sources et signale lorsqu'un chiffre contredit son détail sous-jacent, pour que vous enquêtiez avant la publication."
+          }
+        ],
+        "sample_question": "L'EBITDA publié correspond-il aux retraitements du pont de normalisation, et quels chiffres proviennent d'éléments non récurrents ?"
+      },
+      "medical": {
+        "slug": "medical",
+        "label": "Médical & santé",
+        "title": "Ne manquez plus une contre-indication",
+        "description": "Croisez dossiers patients, études et protocoles en une seule question. Chaque réponse cite la page exacte, prête pour la revue.",
+        "problems": [
+          "Un détail clinique perdu dans des dizaines de pages",
+          "Les incohérences entre dossiers échappent au système",
+          "Une réponse sans page citée n'est pas validable"
+        ],
+        "benefits": [
+          "Recherchez dossiers patients, études et protocoles en une seule requête",
+          "Incohérences et contradictions remontées entre dossiers liés",
+          "Chaque réponse citée à la page exacte"
+        ],
+        "security": [
+          "Accès contrôlé par équipe soignante et niveau de confidentialité",
+          "Données de santé protégées : le modèle n'est jamais entraîné sur vos documents",
+          "Déploiement dans notre cloud européen ou entièrement dans votre périmètre"
+        ],
+        "faq": [
+          {
+            "question": "Prosperify peut-il rechercher dossiers patients et études cliniques ensemble ?",
+            "answer": "Oui. Posez une question et il interroge dossiers, études et protocoles, puis renvoie une réponse citée à la page exacte."
+          },
+          {
+            "question": "Comment l'accès et la confidentialité sont-ils gérés ?",
+            "answer": "L'accès est limité par équipe soignante et niveau de confidentialité, et le modèle n'est jamais entraîné sur vos documents. Vous pouvez le déployer dans votre périmètre."
+          },
+          {
+            "question": "Signale-t-il les incohérences entre dossiers ?",
+            "answer": "Oui. Il remonte les contradictions et incohérences entre dossiers liés pour que les réviseurs se concentrent sur ce qui compte."
+          }
+        ],
+        "sample_question": "Quels dossiers patients mentionnent cette contre-indication, et quel protocole en régit la prise en charge ?"
+      }
+    },
     "titlePrefix": "Une intelligence documentaire",
     "titleHighlight": "pensée pour votre secteur",
     "subtitle": "Prosperify se spécialise sur trois secteurs à forte exigence documentaire : juridique, santé et financier.",
@@ -1417,15 +1602,27 @@
     },
     "illustrations": {
       "citedAnswer": {
+        "terms": ["EBITDA normalisé", "Helios"],
         "answerLead": "La synthèse exécutive retient un EBITDA normalisé de ",
         "valueReported": "14,2 M€",
         "answerMid1": " au multiple de 8,0x.",
         "file1": "rapport-dd-projet-helios.pdf",
         "ref1": "p. 2",
         "file2": "annexe-c-contrats.pdf",
-        "ref2": "p. 7"
+        "ref2": "p. 7",
+        "question": "Quel est l'EBITDA normalisé du projet Helios ?",
+        "answerTail": " Les covenants restent respectés.",
+        "excerpt1": "… un EBITDA normalisé de ",
+        "excerptValue": "14,2 M€",
+        "excerpt2": " après retraitement des éléments non récurrents …"
       },
       "hybridSearch": {
+        "terms": ["résiliation anticipée"],
+        "resultsLabel": "3 passages pertinents",
+        "result2File": "Avenant_2024.pdf",
+        "result2Page": "p. 4",
+        "result3File": "Annexe_B_Conditions.pdf",
+        "result3Page": "p. 11",
         "placeholder": "clause de résiliation anticipée",
         "methodSemantic": "Sémantique",
         "methodKeyword": "Mots-clés",
@@ -1447,9 +1644,17 @@
         "store2Name": "Contrats 2025",
         "store2Role": "Lecteur",
         "store3Name": "Data Room M&A",
-        "store3Role": "Restreint"
+        "store3Role": "Restreint",
+        "userName": "Camille R.",
+        "userRole": "Analyste",
+        "permRead": "Lecture",
+        "permWrite": "Écriture",
+        "permExport": "Export"
       },
       "reviewFlow": {
+        "stepSearchMeta": "12 passages",
+        "stepAnswerMeta": "3 citations",
+        "stepVerifyMeta": "3/3 confirmées",
         "stepSearch": "Recherche",
         "stepAnswer": "Réponse",
         "stepVerify": "Vérification",
@@ -1457,6 +1662,11 @@
         "verified": "Vérifié"
       },
       "sovereignty": {
+        "nodeDocuments": "Documents",
+        "nodeIndex": "Index",
+        "nodeModel": "Modèle",
+        "nodeAnswers": "Réponses",
+        "noEgress": "Aucune sortie externe",
         "perimeter": "VOTRE PÉRIMÈTRE",
         "modeDedicated": "Dédié",
         "modeHybrid": "Hybride",
@@ -1557,9 +1767,9 @@
   },
   "integration": {
     "badge": "INTÉGRATION",
-    "titlePrefix": "Connectez",
+    "titlePrefix": "Aucune refonte :",
     "titleHighlight": "Prosperify",
-    "titleSuffix": "à votre stack",
+    "titleSuffix": "se pose sur votre SI",
     "subtitle": "SDKs Python et TypeScript, API REST documentée, authentification OAuth 2.0 et SSO.",
     "steps": [
       {
@@ -1666,12 +1876,18 @@
         "description": "Infrastructure hébergée en France, conforme au RGPD."
       }
     },
-    "pipeline": {
-      "document": { "label": "Document", "caption": "Upload sécurisé" },
-      "storage": { "label": "Stockage", "caption": "Chiffré (AES-256)" },
-      "transit": { "label": "Transit", "caption": "TLS 1.3" },
-      "processing": { "label": "Traitement", "caption": "Environnement isolé" },
-      "response": { "label": "Réponse", "caption": "Sourcée et sécurisée" }
+    "diagram": {
+      "alt": "Schéma de l'infrastructure : votre question entre dans un périmètre de confiance par un accès contrôlé, la recherche et l'IA la traitent dans un environnement isolé en interrogeant vos données chiffrées à clés dédiées, chaque lien étant chiffré et authentifié, puis une réponse sourcée ressort.",
+      "perimeter": "PÉRIMÈTRE DE CONFIANCE",
+      "question": "Votre question",
+      "gateway": "Accès contrôlé",
+      "compute": "Recherche + IA",
+      "computeSub": "environnement isolé",
+      "data": "Vos données",
+      "dataSub": "chiffrées · clés dédiées",
+      "gatewaySub": "identité · rôles",
+      "answer": "Réponse sourcée",
+      "caption": "Chaque lien est chiffré et authentifié. Rien ne quitte le périmètre."
     }
   },
   "faq": {

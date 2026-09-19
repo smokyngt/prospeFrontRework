@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun run typecheck)",
+      "Bash(bun run lint)",
+      "Bash(bunx tsc --noEmit)",
+      "Bash(bunx tsc --noEmit -p .)",
+      "Bash(bunx tsc --noEmit -p tsconfig.json)",
+      "Bash(bunx eslint src)",
+      "Bash(bunx eslint .)"
+    ]
+  }
+}

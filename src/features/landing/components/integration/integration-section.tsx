@@ -188,7 +188,7 @@ function CodePanel() {
                   ? {
                       background: "#FF6A13",
                       border: "1px solid #FF6A13",
-                      color: "#080808",
+                      color: "var(--pf-on-accent)",
                     }
                   : {
                       background: "var(--pf-bg)",
@@ -418,7 +418,7 @@ function IntegrationGroupCard({
   return (
     <div
       className="px-5 py-5"
-      style={{ border: "1px solid var(--pf-border)", background: "var(--pf-bg-card)" }}
+      style={{ border: "1px solid var(--pf-border)", background: "var(--pf-bg)" }}
     >
       <div className="mb-3.5 flex items-center gap-3">
         <span
@@ -555,7 +555,7 @@ export function IntegrationSection() {
   return (
     <div>
       <h2
-        className="m-0 mx-auto max-w-[820px] text-center font-bold leading-[1.06] tracking-[-0.02em] text-[var(--pf-fg)]"
+        className="m-0 mx-auto max-w-[900px] text-center font-bold leading-[1.06] tracking-[-0.02em] text-[var(--pf-fg)]"
         style={{ fontSize: "clamp(1.9rem, 4vw, 3.1rem)" }}
       >
         {t("integration.titlePrefix")}{" "}

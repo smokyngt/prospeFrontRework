@@ -16,6 +16,10 @@ export function normalizeLandingLanguage(
   return language === 'en' ? 'en' : 'fr';
 }
 
+export function uiLanguage(locale: string | undefined): LandingLanguage {
+  return locale?.startsWith('fr') ? 'fr' : 'en';
+}
+
 export function readStoredLandingTheme(): LandingTheme {
   if (typeof window === 'undefined') {
     return 'light';
