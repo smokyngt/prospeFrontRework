@@ -1,7 +1,8 @@
 "use client";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -15,12 +16,14 @@ export type Tab = {
 
 export const Tabs = ({
   tabs: propTabs,
+  arrowClassName,
   containerClassName,
   activeTabClassName,
   tabClassName,
   contentClassName,
 }: {
   activeTabClassName?: string;
+  arrowClassName?: string;
   contentClassName?: string;
   containerClassName?: string;
   tabClassName?: string;
@@ -29,11 +32,30 @@ export const Tabs = ({
   const [order, setOrder] = useState<string[]>(() => propTabs.map((tab) => tab.value));
   const [instant, setInstant] = useState(false);
   const busy = useRef(false);
+  const rowRef = useRef<HTMLDivElement>(null);
+  const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const firstRender = useRef(true);
 
   const tabs = order
     .map((value) => propTabs.find((tab) => tab.value === value))
     .filter((tab): tab is Tab => tab !== undefined);
   const active = tabs[0];
+  const activeIndex = propTabs.findIndex((tab) => tab.value === active.value);
+
+  // Sur petit écran la rangée défile : l'onglet actif est ramené au centre, sans toucher au scroll vertical.
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    const row = rowRef.current;
+    const button = buttonRefs.current[active.value];
+    if (!row || !button) return;
+    row.scrollTo({
+      behavior: "smooth",
+      left: button.offsetLeft - (row.clientWidth - button.offsetWidth) / 2,
+    });
+  }, [active.value]);
 
   const arrange = (front: string, second: string) => [
     front,
@@ -65,9 +87,18 @@ export const Tabs = ({
     );
   };
 
+  const step = (delta: number) =>
+    select(propTabs[(activeIndex + delta + propTabs.length) % propTabs.length].value);
+
+  const arrowClasses = cn(
+    "pointer-events-auto absolute top-1/2 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center",
+    arrowClassName,
+  );
+
   return (
     <>
       <div
+        ref={rowRef}
         className={cn(
           "flex flex-row items-center justify-start [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full",
           containerClassName,
@@ -76,6 +107,9 @@ export const Tabs = ({
         {propTabs.map((tab) => (
           <button
             key={tab.value}
+            ref={(node) => {
+              buttonRefs.current[tab.value] = node;
+            }}
             type="button"
             onClick={() => select(tab.value)}
             className={cn("relative px-4 py-2 rounded-full", tabClassName)}
@@ -106,6 +140,26 @@ export const Tabs = ({
       <FadeInDiv
         className={cn("mt-32", contentClassName)}
         instant={instant}
+        overlay={
+          <>
+            <button
+              type="button"
+              aria-label="Previous"
+              onClick={() => step(-1)}
+              className={cn(arrowClasses, "left-0 -translate-x-1/2")}
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              type="button"
+              aria-label="Next"
+              onClick={() => step(1)}
+              className={cn(arrowClasses, "right-0 translate-x-1/2")}
+            >
+              <ChevronRight size={18} />
+            </button>
+          </>
+        }
         tabs={tabs}
       />
     </>
@@ -120,9 +174,11 @@ export const FadeInDiv = ({
   className,
   tabs,
   instant,
+  overlay,
 }: {
   className?: string;
   instant?: boolean;
+  overlay?: React.ReactNode;
   tabs: Tab[];
 }) => {
   const isActive = (tab: Tab) => tab.value === tabs[0].value;
@@ -145,6 +201,11 @@ export const FadeInDiv = ({
           {tab.content}
         </motion.div>
       ))}
+      {overlay ? (
+        <div className={cn("pointer-events-none absolute top-0 left-0 z-20 h-full w-full", className)}>
+          {overlay}
+        </div>
+      ) : null}
     </div>
   );
 };

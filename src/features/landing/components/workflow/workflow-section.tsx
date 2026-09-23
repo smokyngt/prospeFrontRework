@@ -64,22 +64,22 @@ function WorkflowSection() {
   const isRunning = isVisible && !isPaused;
 
   return (
-    <div ref={rootRef} className="mx-auto max-w-6xl [overflow-anchor:none] 2xl:max-w-[1180px]">
-      <div className="mb-6 scroll-mt-8 text-center sm:mb-8">
+    <div ref={rootRef} className="w-full [overflow-anchor:none]">
+      <div className="mb-[var(--pf-content-gap)] scroll-mt-8 text-center">
         <h2
-          className="mb-3 text-balance font-semibold leading-[1.08]"
+          className="m-0 text-balance font-semibold leading-[1.08]"
           style={{ fontSize: "clamp(1.9rem, 4vw, 3.1rem)" }}
         >
           {t('workflow.title')}{' '}
           <span className="text-orange-500">{t('workflow.title_highlight')}</span>
         </h2>
-        <p className="mx-auto max-w-xl text-base leading-7 text-neutral-600 dark:text-neutral-400 sm:text-lg">
+        <p className="mx-auto mt-3 max-w-xl text-base leading-7 text-neutral-600 dark:text-neutral-400 sm:text-lg">
           {t('workflow.subtitle')}
         </p>
       </div>
 
       <PipelineDiagram activeStep={activeStep} />
-      <div className="mt-8 grid grid-cols-3 gap-3 sm:mt-10 sm:gap-6">
+      <div className="mt-[var(--pf-cta-gap)] grid grid-cols-3 gap-3 sm:gap-[var(--pf-block-gap)]">
         {steps.map((step, index) => {
           const isActive = activeStep === index;
 
@@ -105,9 +105,7 @@ function WorkflowSection() {
                 aria-hidden
                 className={cn(
                   'absolute inset-x-0 bottom-0 h-0.5 transition-colors duration-500',
-                  isActive
-                    ? 'bg-orange-200 dark:bg-orange-500/25'
-                    : 'bg-neutral-200 group-hover:bg-orange-200 dark:bg-neutral-800',
+                  'bg-neutral-200 dark:bg-neutral-800',
                 )}
               />
               {isActive && (
@@ -126,7 +124,7 @@ function WorkflowSection() {
                 <span
                   aria-hidden
                   className={cn(
-                    'font-mono text-xs tabular-nums transition-colors duration-500',
+                    'font-mono text-xs tabular-nums transition-colors duration-500 sm:text-sm',
                     isActive
                       ? 'text-orange-500 dark:text-orange-400'
                       : 'text-neutral-300 dark:text-neutral-700',
@@ -136,7 +134,7 @@ function WorkflowSection() {
                 </span>
                 <span
                   className={cn(
-                    'text-[10px] font-semibold uppercase tracking-[0.1em] transition-colors duration-500 sm:text-xs sm:tracking-[0.16em]',
+                    'text-[10px] font-semibold uppercase tracking-[0.1em] transition-colors duration-500 sm:text-sm sm:tracking-[0.16em]',
                     isActive
                       ? 'text-orange-600 dark:text-orange-400'
                       : 'text-neutral-400 dark:text-neutral-500',
@@ -148,7 +146,7 @@ function WorkflowSection() {
 
               <span
                 className={cn(
-                  'mt-1.5 hidden text-base font-semibold leading-snug tracking-tight transition-colors duration-500 sm:block sm:text-lg',
+                  'mt-2 hidden text-base font-semibold leading-snug tracking-tight transition-colors duration-500 sm:block sm:text-xl',
                   isActive
                     ? 'text-neutral-950 dark:text-neutral-50'
                     : 'text-neutral-500 dark:text-neutral-400',
@@ -158,7 +156,7 @@ function WorkflowSection() {
               </span>
               <span
                 className={cn(
-                  'mt-1 hidden text-[13px] leading-5 transition-colors duration-500 sm:block',
+                  'mt-1.5 hidden text-[15px] leading-6 transition-colors duration-500 sm:block',
                   isActive
                     ? 'text-neutral-600 dark:text-neutral-300'
                     : 'text-neutral-400 dark:text-neutral-500',
@@ -191,7 +189,7 @@ function PipelineDiagram({ activeStep }: { activeStep: number }) {
       <svg
         viewBox="0 20 1100 292"
         preserveAspectRatio="xMidYMid meet"
-        className="mx-auto hidden h-auto w-full max-w-[980px] lg:block"
+        className="mx-auto hidden h-auto w-full max-w-[1180px] lg:block"
         fill="none"
         aria-hidden
       >

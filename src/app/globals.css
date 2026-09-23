@@ -62,6 +62,12 @@
   --pf-demo-shadow:     0 40px 80px -40px rgba(255, 106, 19, 0.30);
   /* Texte pose sur un aplat orange : blanc en clair, noir en sombre. */
   --pf-on-accent:       #FFFFFF;
+
+  /* Rythme de la landing : sections, titres, blocs et appels à l'action. */
+  --pf-section-space:   clamp(48px, 7vw, 96px);
+  --pf-content-gap:     clamp(32px, 4vw, 48px);
+  --pf-block-gap:       24px;
+  --pf-cta-gap:         32px;
 }
 
 .dark {
@@ -176,6 +182,13 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Sur grand écran la landing paraissait zoomée : échelle globale légèrement réduite. */
+@media (min-width: 1024px) {
+  html {
+    zoom: 0.95;
+  }
 }
 
 @keyframes pf-pulse {
@@ -841,7 +854,7 @@ html {
 }
 
 .pf-diagram-lock-glyph {
-  fill: #ff6a13;
+  fill: none;
   stroke: #ff6a13;
   stroke-width: 1.6;
   stroke-linecap: round;
@@ -854,7 +867,7 @@ html {
 }
 
 .dark .pf-diagram-lock-glyph {
-  fill: #080808;
+  fill: none;
   stroke: #080808;
 }
 
@@ -906,10 +919,45 @@ html {
   display: none;
 }
 
+/* Fonctionnalités : liaison décorative entre les boutons, sur une seule rangée. */
+.pf-feature-tabs {
+  counter-reset: pf-feature;
+}
+
+.pf-feature-tabs > button {
+  counter-increment: pf-feature;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.pf-feature-tabs > button > span::before {
+  content: counter(pf-feature, decimal-leading-zero);
+  margin-right: 8px;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+}
+
+.pf-feature-tabs > button + button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.pf-feature-tabs > button + button::before {
+  left: -13px;
+  width: 12px;
+  height: 1px;
+  background: var(--pf-border-2);
+}
+
 /* Workflow de la home : barre de progression et apparition des étapes */
 @keyframes workflow-progress {
   from {
-    transform: scaleX(0);
+    transform: scaleX(0.04);
   }
   to {
     transform: scaleX(1);
@@ -942,6 +990,39 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .workflow-progress,
   .workflow-rise {
+    animation: none;
+  }
+}
+
+/* Page juridique : l'encadré d'un cas d'usage « respire » quand on le choisit dans le menu. */
+@keyframes pf-case-pop {
+  0% { transform: scale(0.96); opacity: 0.5; }
+  55% { transform: scale(1.012); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.pf-case-pop {
+  animation: pf-case-pop 750ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pf-legal-capabilities[data-revealed="false"] .pf-capability-card {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  .pf-legal-capabilities[data-revealed="true"] .pf-capability-card {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .pf-legal-capabilities .pf-capability-card:nth-child(2) { transition-delay: 70ms; }
+  .pf-legal-capabilities .pf-capability-card:nth-child(3) { transition-delay: 140ms; }
+  .pf-legal-capabilities .pf-capability-card:nth-child(4) { transition-delay: 210ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-case-pop {
     animation: none;
   }
 }

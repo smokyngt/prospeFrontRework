@@ -41,7 +41,7 @@ export default function ProductSection() {
   }, [isVisible, isPaused]);
 
   return (
-    <div ref={rootRef} className="mx-auto max-w-5xl [overflow-anchor:none] 2xl:max-w-[1300px]">
+    <div ref={rootRef} className="w-full [overflow-anchor:none]">
       <div className="scroll-mt-8 text-center">
         <h2
           className="mx-auto max-w-2xl text-balance font-bold leading-[1.08] tracking-tight text-neutral-950 dark:text-neutral-50"
@@ -50,12 +50,12 @@ export default function ProductSection() {
           {t('products.title_prefix')}{' '}
           <span className="text-orange-500">{t('products.title_highlight')}</span>
         </h2>
-        <p className="mx-auto mt-2 max-w-xl text-sm font-medium leading-6 text-neutral-600 dark:text-neutral-300 sm:text-base">
+        <p className="mx-auto mt-3 max-w-xl text-base leading-7 text-neutral-600 dark:text-neutral-300 sm:text-lg">
           {t('products.intro')}
         </p>
       </div>
 
-      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-stretch">
+      <div className="mt-[var(--pf-block-gap)] flex flex-col gap-[var(--pf-block-gap)] sm:flex-row sm:items-stretch">
         {USE_CASE_IDS.map((caseId, index) => {
           const Icon = USE_CASE_ICONS[caseId];
           const isActive = activeIndex === index;
@@ -69,7 +69,7 @@ export default function ProductSection() {
                 setIsPaused(true);
               }}
               onMouseLeave={() => setIsPaused(false)}
-              className="relative flex flex-1 flex-col overflow-hidden border border-neutral-200 bg-[var(--pf-bg-card)] p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-orange-300 hover:shadow-[0_20px_40px_-24px_rgba(255,106,19,0.5)] dark:border-neutral-800 dark:bg-[var(--pf-bg-card)] dark:hover:border-orange-500/50 sm:p-7"
+              className="relative flex min-h-[260px] min-w-0 flex-1 flex-col items-center overflow-hidden border border-neutral-200 bg-transparent px-6 py-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-orange-300 hover:shadow-[0_20px_40px_-24px_rgba(255,106,19,0.5)] dark:border-neutral-800 dark:hover:border-orange-500/50 sm:min-h-[300px] lg:px-8 lg:py-10"
             >
               <Icon
                 aria-hidden
@@ -91,23 +91,20 @@ export default function ProductSection() {
                 }}
                 onBlur={() => setIsPaused(false)}
                 aria-pressed={isActive}
-                className="relative z-10 flex w-full items-center gap-3 text-left"
+                className="relative z-10 flex w-full flex-col items-center gap-3 text-center"
               >
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-orange-200 bg-orange-50 text-orange-500 dark:border-orange-500/25 dark:bg-orange-500/10">
-                  <Icon size={18} strokeWidth={1.7} />
-                </div>
-                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-orange-600 dark:text-orange-400">
+                <span className="text-base font-semibold uppercase tracking-[0.14em] text-orange-600 dark:text-orange-400 sm:text-lg">
                   {t(`${path}.label`)}
                 </span>
               </button>
 
-              <div className="relative z-10 mt-5">
+              <div className="relative z-10 mt-[var(--pf-block-gap)] flex w-full flex-1 flex-col items-center text-center">
                 <h3 className="text-xl font-semibold leading-snug text-neutral-950 dark:text-neutral-50">
                   {t(`${path}.title`)}
                 </h3>
                 <Link
-                  href={`/use-cases/${caseId}`}
-                  className="group mt-4 inline-flex items-center gap-2 text-sm font-semibold text-neutral-950 transition-colors hover:text-orange-600 dark:text-neutral-50"
+                  href={`/sectors/${caseId === "accounting" ? "finance" : caseId === "medical" ? "healthcare" : "legal"}`}
+                  className="group mt-auto inline-flex items-center gap-2 pt-[var(--pf-cta-gap)] text-sm font-semibold text-neutral-950 transition-colors hover:text-orange-600 dark:text-neutral-50"
                 >
                   {t('products.explore')}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -118,13 +115,7 @@ export default function ProductSection() {
         })}
       </div>
 
-      <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <Link
-          href="/use-cases"
-          className="inline-flex items-center justify-center gap-2 border border-neutral-200 bg-white px-6 py-3 text-sm font-semibold text-neutral-950 transition-colors hover:border-orange-200 hover:text-orange-600 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50 dark:hover:border-orange-500/25"
-        >
-          {t('products.view_all')}
-        </Link>
+      <div className="mt-[var(--pf-cta-gap)] flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a
           href="#contact"
           className="inline-flex items-center justify-center gap-2 bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-orange-600"

@@ -65,26 +65,32 @@
         "label": "Vue d'ensemble",
         "description": "Ce que fait la plateforme, de la source à la réponse citée."
       },
+      "useCases": {
+        "label": "Tous les cas d'usage",
+        "description": "Trois exemples interactifs de réponses documentaires sourcées."
+      },
       "legal": {
-        "label": "Prosperify pour le juridique",
+        "label": "Juridique",
         "description": "Clauses, obligations et précédents, avec la source."
       },
       "healthcare": {
-        "label": "Prosperify pour la santé",
+        "label": "Santé",
         "description": "Protocoles, littérature et dossiers réglementaires."
       },
       "finance": {
-        "label": "Prosperify pour la finance",
+        "label": "Finance",
         "description": "Due diligence, reporting et conformité."
       }
-    }
+    },
+    "sectorPages": "Secteurs"
   },
   "sectionLabels": {
+    "hero": "Accueil",
     "workflow": "Workflow",
     "features": "Fonctionnalités",
     "products": "Nos offres",
     "integration": "Intégration",
-    "security": "Sécurité",
+    "security": "Sécurité & souveraineté",
     "faq": "FAQ",
     "contact": "Contact"
   },
@@ -117,7 +123,7 @@
     "titleLine1": "L'intelligence documentaire",
     "titleHighlight": "souveraine",
     "titleLine2": "pour vos corpus sensibles.",
-    "subtitle": "Prosperify aide les équipes à interroger leurs corpus juridiques, médicaux et financiers avec des sources visibles, des accès gouvernés et un périmètre de déploiement clair.",
+    "subtitle": "Interrogez vos corpus sensibles avec une IA souveraine, des réponses sourcées et des accès maîtrisés.",
     "primaryCta": "Demander une démo",
     "secondaryCta": "Voir le workflow",
     "demoCaption": "",
@@ -191,7 +197,7 @@
     "title": "Vous choisissez les sources.",
     "titleHighlight": "L'agent cite les siennes.",
     "titleSuffix": "",
-    "subtitle": "Trois étapes, du choix des sources jusqu'à la réponse citée.",
+    "subtitle": "Des sources à la réponse citée, en trois étapes.",
     "cards": {
       "connect": {
         "tag": "CONNECTER",
@@ -199,10 +205,22 @@
         "description": "Vous décidez ce que l'agent peut lire.",
         "searchPlaceholder": "Rechercher un data store...",
         "sources": [
-          { "name": "Contrats fournisseurs", "checked": true },
-          { "name": "Politiques internes", "checked": true },
-          { "name": "Archives 2019", "checked": false },
-          { "name": "Données RH", "checked": false }
+          {
+            "name": "Contrats fournisseurs",
+            "checked": true
+          },
+          {
+            "name": "Politiques internes",
+            "checked": true
+          },
+          {
+            "name": "Archives 2019",
+            "checked": false
+          },
+          {
+            "name": "Données RH",
+            "checked": false
+          }
         ]
       },
       "search": {
@@ -384,7 +402,7 @@
   },
   "contact": {
     "title": "Cadrons votre premier cas d'usage documentaire",
-    "lead": "Identifiez un corpus sensible, un store métier ou un workflow à fiabiliser. Prosperify vous aide à cadrer un pilote mesurable, sécurisé et aligné sur vos exigences de confidentialité.",
+    "lead": "Cadrons un pilote adapté à vos documents, vos outils et vos exigences de sécurité.",
     "checks": [
       "Corpus sensible",
       "Store métier",
@@ -470,6 +488,1014 @@
     }
   },
   "sectors": {
+    "legalPage": {
+      "trustLabel": "Ils nous font confiance",
+      "capabilities": {
+        "label": "L'agent juridique",
+        "titleStart": "L'intelligence juridique, ",
+        "titleHighlight": "à vos conditions",
+        "titleEnd": ".",
+        "intro": "Un assistant déployé dans votre environnement, branché sur vos référentiels, sous accès gouvernés — jamais un modèle général entraîné sur vos dossiers.",
+        "items": [
+          {
+            "title": "Réponses sourcées",
+            "description": "Chaque réponse reste reliée au document, à la page et à la clause exacte. Opposable, pas seulement plausible."
+          },
+          {
+            "title": "Vos dossiers cloisonnés",
+            "description": "Accès gouvernés par rôle, dossier et corpus, dans une instance dédiée hébergée en France."
+          },
+          {
+            "title": "Traçabilité opposable",
+            "description": "Chaque accès et chaque consultation est journalisé. Une piste complète, prête pour l'audit ou le litige."
+          },
+          {
+            "title": "Le juriste au centre",
+            "description": "L'agent prépare la revue et cite ses sources. L'analyse et la décision restent portées par vos juristes."
+          }
+        ]
+      },
+      "useCases": {
+        "label": "Cas d'usage",
+        "titleStart": "Ce que vos équipes juridiques peuvent enfin ",
+        "titleHighlight": "déléguer",
+        "browse": "Parcourir",
+        "items": [
+          {
+            "tag": "01 · Recherche documentaire",
+            "title": "Retrouver une information précise",
+            "description": "Identifier une clause, une obligation, un passage ou un élément de preuve dans des contrats, actes, pièces de procédure ou archives.",
+            "audience": "Avocats · Juristes · Notaires · Contentieux"
+          },
+          {
+            "tag": "02 · Analyse et comparaison",
+            "title": "Comparer plusieurs documents",
+            "description": "Rapprocher les dispositions de plusieurs documents et retrouver les sources qui permettent d'examiner leurs différences.",
+            "audience": "Directions juridiques · Cabinets d'avocats · M&A"
+          },
+          {
+            "tag": "03 · Analyse d'un dossier",
+            "title": "Reconstituer une chronologie documentaire",
+            "description": "Rassembler les pièces d'un dossier, remettre les échanges dans leur ordre et garder la référence vers chaque document.",
+            "audience": "Avocats en contentieux · Gestion des litiges · Commissaires de justice"
+          },
+          {
+            "tag": "04 · Recherche de précédents",
+            "title": "Retrouver des formulations déjà utilisées",
+            "description": "Rechercher des modèles, formulations et dossiers antérieurs dans les corpus internes auxquels l'équipe est autorisée à accéder.",
+            "audience": "Cabinets d'avocats · Directions juridiques · Études notariales"
+          }
+        ],
+        "contract": {
+          "file": "Contrat Verdi.pdf",
+          "queryLabel": "Question",
+          "query": "durée de renouvellement",
+          "outlineLabel": "Structure du document",
+          "matchLabel": "1 correspondance",
+          "sections": [
+            {
+              "no": "1",
+              "title": "Objet du contrat",
+              "width": "72%"
+            },
+            {
+              "no": "2",
+              "title": "Périmètre des services",
+              "width": "58%"
+            },
+            {
+              "no": "3",
+              "title": "Obligations des parties",
+              "width": "80%"
+            },
+            {
+              "no": "4.1",
+              "title": "Renouvellement",
+              "width": "64%"
+            },
+            {
+              "no": "5",
+              "title": "Redevances",
+              "width": "45%"
+            }
+          ],
+          "jumpLabel": "Ouvre la source exacte",
+          "pageLabel": "p.10",
+          "pageTitle": "4.1 · Renouvellement",
+          "hitBefore": "Durée initiale : ",
+          "hitValue": "trois ans",
+          "hitAfter": " · reconduction sur accord écrit",
+          "cite": "Verdi.pdf · p.10 · clause 4.1"
+        },
+        "dataroom": {
+          "title": "Data room · Asteria / NimbusCore",
+          "subtitle": "3 contrats comparés",
+          "clauseLabel": "Clause",
+          "diffLabel": "Écart",
+          "columns": [
+            "MSA",
+            "Avenant",
+            "SLA"
+          ],
+          "rows": [
+            {
+              "clause": "Durée",
+              "values": [
+                "3 ans",
+                "3 ans",
+                ""
+              ],
+              "diff": false
+            },
+            {
+              "clause": "Disponibilité",
+              "values": [
+                "99,5 %",
+                "",
+                "99,9 %"
+              ],
+              "diff": true
+            },
+            {
+              "clause": "Plafond de responsabilité",
+              "values": [
+                "1,08 M€",
+                "2,16 M€",
+                ""
+              ],
+              "diff": true
+            },
+            {
+              "clause": "Préavis",
+              "values": [
+                "90 j",
+                "90 j",
+                "90 j"
+              ],
+              "diff": false
+            }
+          ],
+          "footer": "2 écarts à trancher avant signature"
+        },
+        "search": {
+          "queryLabel": "Requête",
+          "query": "clause de changement de contrôle",
+          "retrieveLabel": "Récupération hybride",
+          "branches": [
+            {
+              "label": "Sémantique",
+              "meta": "142 passages"
+            },
+            {
+              "label": "Lexical BM25",
+              "meta": "87 passages"
+            }
+          ],
+          "rerankLabel": "Fusion + reranking",
+          "rerankMeta": "229 → 3 passages",
+          "resultsLabel": "Passages cités",
+          "results": [
+            {
+              "file": "Contrat cadre.pdf",
+              "page": "p.18",
+              "score": "0,92"
+            },
+            {
+              "file": "Avenant_2024.pdf",
+              "page": "p.4",
+              "score": "0,71"
+            },
+            {
+              "file": "Annexe_B.pdf",
+              "page": "p.11",
+              "score": "0,58"
+            }
+          ]
+        },
+        "sectionLabel": "Quatre besoins documentaires",
+        "mockDisclaimer": "Exemples de maquette : noms, dossiers, dates et réponses fictifs."
+      },
+      "proof": {
+        "label": "Preuve à l'appui",
+        "titleStart": "Une réponse, ses sources, sa ",
+        "titleHighlight": "vérification",
+        "prompt": "Compare le paquet final à notre politique contractuelle et classe les écarts par priorité.",
+        "answerStart": "Trois écarts touchent des protections structurelles et sont prioritaires : le ",
+        "answerHighlight": "plafond de responsabilité",
+        "answerEnd": " (1,08 M€ contre un minimum policy de 2,16 M€), la résiliation asymétrique, et le délai de notification d'incident (72 h après confirmation contre 24 h après découverte). Deux écarts sont secondaires : le SLA à 99,5 % et le préavis de non-renouvellement.",
+        "stats": [
+          {
+            "value": "1,08 M€",
+            "label": "Plafond actuel",
+            "versus": "vs 2,16 M€ policy"
+          },
+          {
+            "value": "72 h",
+            "label": "Délai incident",
+            "versus": "vs 24 h policy"
+          },
+          {
+            "value": "3",
+            "label": "Écarts prioritaires",
+            "versus": ""
+          }
+        ],
+        "sources": [
+          "JUR-01 · p.11",
+          "JUR-02 · p.3",
+          "JUR-04 · p.4"
+        ]
+      },
+      "governance": {
+        "label": "Confidentialité & infrastructure",
+        "titleStart": "Des données juridiques sous votre ",
+        "titleHighlight": "contrôle",
+        "intro": "Définissez où résident vos contrats, quelles équipes peuvent y accéder et comment le service s'intègre à votre environnement.",
+        "items": [
+          {
+            "title": "Intégration avec l'existant",
+            "description": "Prosperify lit par-dessus votre GED et votre coffre-fort, via connecteurs et SSO (OIDC / SAML). Aucune ressaisie, aucun référentiel supplémentaire à maintenir."
+          },
+          {
+            "title": "Isolation et chiffrement",
+            "description": "Instance cloisonnée, sans mutualisation d'index. Documents chiffrés au repos et en transit. Vos contrats ne servent jamais à entraîner un modèle général."
+          },
+          {
+            "title": "Traçabilité & réversibilité",
+            "description": "Chaque accès et requête journalisé, pour votre RSSI. Documents et index exportables à tout moment : vous repartez avec vos données, pas un silo propriétaire."
+          }
+        ]
+      },
+      "cta": "Cadrons votre premier dossier juridique",
+      "context": {
+        "label": "Le dossier documentaire",
+        "title": "Une négociation, plusieurs sources de vérité",
+        "description": "Pour trancher une clause, le juriste croise le contrat en cours, les standards internes et l'historique des arbitrages.",
+        "questionLabel": "LA QUESTION DU JURISTE",
+        "note": "La démo interactive prend un dossier contractuel comme exemple. Le corpus du pilote se définit selon le métier et les pièces de chaque équipe."
+      },
+      "reliability": {
+        "label": "Fiabilité documentaire",
+        "titleStart": "Une clause retrouvée ne suffit pas. ",
+        "titleHighlight": "Il faut la vérifier."
+      },
+      "confidentiality": {
+        "label": "Confidentialité appliquée au dossier",
+        "title": "Un même outil. Des dossiers qui ne se croisent pas.",
+        "description": "Les habilitations définissent qui peut consulter chaque périmètre documentaire.",
+        "teams": [
+          {
+            "name": "Équipe A",
+            "type": "Data room M&A",
+            "dossier": "Acquisition Asteria"
+          },
+          {
+            "name": "Équipe B",
+            "type": "Pièces et notes internes",
+            "dossier": "Contentieux Verdi"
+          }
+        ],
+        "note": "Une recherche reste dans le périmètre documentaire autorisé à l'utilisateur. L'instance dédiée et son hébergement sont cadrés avec votre organisation."
+      },
+      "pilot": {
+        "label": "Du pilote au quotidien",
+        "title": "Commencer sur un dossier concret",
+        "description": "Un pilote permet de vérifier le workflow sur vos documents et selon vos critères de revue.",
+        "steps": [
+          {
+            "title": "Choisir le corpus",
+            "description": "Délimiter un dossier, un lot de contrats ou un corpus de précédents."
+          },
+          {
+            "title": "Définir les accès",
+            "description": "Préciser les équipes concernées et les périmètres documentaires."
+          },
+          {
+            "title": "Tester un workflow",
+            "description": "Essayer une revue contractuelle ou une due diligence sur des pièces représentatives."
+          },
+          {
+            "title": "Vérifier les résultats",
+            "description": "Contrôler les sources, la couverture du corpus et les limites avant d'élargir le pilote."
+          }
+        ]
+      },
+      "illustrations": {
+        "research": {
+          "document": "Contrat Verdi.pdf",
+          "pages": "42 pages",
+          "pageTitle": "PAGE 10",
+          "section": "4.1 Renouvellement",
+          "questionLabel": "QUESTION",
+          "question": "Durée et renouvellement ?",
+          "responseLabel": "RÉPONSE",
+          "answer": "3 ans. Renouvellement sur accord écrit.",
+          "citation": "Contrat Verdi.pdf · p. 10 · clause 4.1",
+          "quote": "3 ans · accord écrit"
+        },
+        "comparison": {
+          "folder": "Dossier Asteria",
+          "questionLabel": "QUESTION",
+          "question": "Contrat conforme à la politique ?",
+          "responseLabel": "RÉPONSE",
+          "answer": [
+            "12 mois au contrat, 24 mois minimum dans la politique."
+          ],
+          "contract": {
+            "title": "Contrat négocié",
+            "file": "MSA v7.pdf",
+            "page": "p. 11",
+            "quote": "Plafond : 12 mois"
+          },
+          "policy": {
+            "title": "Politique interne",
+            "file": "Politique contractuelle.pdf",
+            "page": "p. 3",
+            "quote": "Minimum : 24 mois"
+          }
+        },
+        "dossier": {
+          "title": "Dossier contentieux / Verdi",
+          "total": "8 pièces",
+          "questionLabel": "QUESTION",
+          "question": "Chronologie du retard ?",
+          "answerLabel": "CHRONOLOGIE",
+          "documents": [
+            "Courrier_12_mars.pdf",
+            "Mise_en_demeure.pdf",
+            "Réponse_fournisseur.pdf",
+            "Contrat_Verdi.pdf"
+          ],
+          "events": [
+            {
+              "date": "12 MARS",
+              "text": "Retard signalé",
+              "file": "Courrier_12_mars.pdf",
+              "page": "1"
+            },
+            {
+              "date": "18 MARS",
+              "text": "Mise en demeure",
+              "file": "Mise_en_demeure.pdf",
+              "page": "2"
+            },
+            {
+              "date": "22 MARS",
+              "text": "Nouveau calendrier",
+              "file": "Réponse_fournisseur.pdf",
+              "page": "1"
+            }
+          ]
+        },
+        "precedents": {
+          "title": "Archives contractuelles",
+          "documents": "126 documents",
+          "questionLabel": "QUESTION",
+          "question": "Contrats avec un plafond de 12 mois ?",
+          "answer": "2 contrats trouvés",
+          "results": [
+            {
+              "quote": "Plafond : 12 mois",
+              "file": "Contrat_Alpha.pdf",
+              "page": "p. 8"
+            },
+            {
+              "quote": "12 mois · exception confidentialité",
+              "file": "Contrat_Beta.pdf",
+              "page": "p. 12"
+            }
+          ]
+        }
+      },
+      "problem": {
+        "label": "DOSSIER CONTRACTUEL · 3 DOCUMENTS",
+        "corpusLabel": "CONTRATS · AVENANTS · POLITIQUES",
+        "title": "Des pièces juridiques dispersées, des versions à rapprocher.",
+        "description": "Contrats, actes et pièces de procédure coexistent dans des dossiers différents. Retrouver la bonne version et remettre chaque clause dans son contexte prend du temps.",
+        "documents": [
+          {
+            "title": "Contrat négocié.pdf",
+            "detail": "Clauses et versions en discussion"
+          },
+          {
+            "title": "Politique contractuelle.pdf",
+            "detail": "Référentiel interne à appliquer"
+          },
+          {
+            "title": "Pièces du dossier.pdf",
+            "detail": "Échanges et documents associés"
+          }
+        ],
+        "questionLabel": "ENJEU DE RECHERCHE",
+        "question": "Quelle version s'applique, et que prévoient les documents sur ce point ?",
+        "note": "Les exemples affichés sont fictifs et servent à illustrer les corpus documentaires."
+      }
+    },
+    "financePage": {
+      "capabilities": {
+        "label": "Capacités",
+        "titleStart": "Ce que vos équipes finance peuvent enfin ",
+        "titleHighlight": "déléguer",
+        "titleEnd": "",
+        "intro": "Quatre traitements qui occupent aujourd'hui des journées d'analyste, ramenés à des réponses recalculées depuis la source.",
+        "items": [
+          {
+            "title": "Extraction d'agrégats",
+            "description": "Retrouver CA, EBITDA, BFR et multiples dans des rapports de plusieurs centaines de pages, chaque montant relié à sa page d'origine."
+          },
+          {
+            "title": "Recoupement inter-documents",
+            "description": "Confronter le même agrégat entre la synthèse, l'annexe et le pont de normalisation, et faire ressortir les écarts de périmètre."
+          },
+          {
+            "title": "Recalcul vérifiable",
+            "description": "Refaire l'addition depuis les documents sources plutôt que de reprendre un chiffre résumé, ligne par ligne et montant par montant."
+          },
+          {
+            "title": "Complétude de data room",
+            "description": "Passer une checklist sur plusieurs centaines de pièces et signaler ce qui manque avant que le comité ne se prononce."
+          }
+        ]
+      },
+      "useCases": {
+        "browse": "Parcourir",
+        "items": [
+          {
+            "tag": "01 · M&A",
+            "title": "Due diligence M&A",
+            "description": "Reconstituer le pont de normalisation d'un EBITDA : chaque ajustement retrouvé dans le rapport, chiffré et relié à sa page. Sur le rapport HELIOS, l'EBITDA normalisé à 14,2 M€ se vérifie ajustement par ajustement, sans reprendre la synthèse sur parole."
+          },
+          {
+            "tag": "02 · Rapports",
+            "title": "Analyse de rapports",
+            "description": "Le même agrégat apparaît dans la synthèse, l'annexe et le pont de normalisation, avec des périmètres différents. Prosperify les confronte, isole l'écart et recalcule le montant depuis la source au lieu de reprendre le résumé."
+          },
+          {
+            "tag": "03 · Conformité",
+            "title": "Reporting & conformité",
+            "description": "Passer une data room de plusieurs centaines de pièces au crible d'une checklist réglementaire, et remonter les manques avant la revue plutôt qu'en séance."
+          }
+        ],
+        "bridge": {
+          "file": "Rapport HELIOS.pdf",
+          "pageLabel": "QoE · p.42",
+          "title": "Pont de normalisation · EBITDA 2025",
+          "baseLabel": "EBITDA reporté",
+          "baseValue": "11,8 M€",
+          "steps": [
+            {
+              "label": "Coûts non récurrents",
+              "value": "+1,6 M€",
+              "page": "p.44",
+              "sign": "plus"
+            },
+            {
+              "label": "Retraitement des loyers",
+              "value": "+1,2 M€",
+              "page": "p.45",
+              "sign": "plus"
+            },
+            {
+              "label": "Produits exceptionnels",
+              "value": "−0,4 M€",
+              "page": "p.46",
+              "sign": "minus"
+            }
+          ],
+          "resultLabel": "EBITDA normalisé",
+          "resultValue": "14,2 M€",
+          "checkLabel": "Multiple 8,0x · cohérent"
+        },
+        "reconcile": {
+          "title": "Recoupement · EBITDA normalisé",
+          "subtitle": "3 documents",
+          "docLabel": "Document",
+          "rows": [
+            {
+              "doc": "Synthèse",
+              "page": "p.3",
+              "value": "14,2 M€",
+              "match": true
+            },
+            {
+              "doc": "Annexe comptable",
+              "page": "p.18",
+              "value": "14,2 M€",
+              "match": true
+            },
+            {
+              "doc": "Pont de normalisation",
+              "page": "p.42",
+              "value": "13,8 M€",
+              "match": false
+            }
+          ],
+          "gapLabel": "Écart",
+          "gapValue": "0,4 M€",
+          "gapNote": "périmètre différent : crédit d'impôt non retraité",
+          "recalcLabel": "Recalculé depuis la source",
+          "recalc": "0,25 + 0,15 = 0,40 M€"
+        },
+        "dataroom": {
+          "title": "Data room · Asteria",
+          "subtitle": "342 pièces",
+          "checklistLabel": "Checklist réglementaire",
+          "categories": [
+            {
+              "label": "Financier",
+              "count": "128",
+              "pct": "100",
+              "warn": false
+            },
+            {
+              "label": "Juridique",
+              "count": "94",
+              "pct": "92",
+              "warn": false
+            },
+            {
+              "label": "Fiscal",
+              "count": "61",
+              "pct": "74",
+              "warn": true
+            },
+            {
+              "label": "RH",
+              "count": "59",
+              "pct": "88",
+              "warn": false
+            }
+          ],
+          "missingLabel": "Pièces manquantes",
+          "missing": [
+            {
+              "code": "FIS-07",
+              "label": "Liasse fiscale 2024"
+            },
+            {
+              "code": "FIS-12",
+              "label": "Contrôle URSSAF · réponse"
+            }
+          ],
+          "footer": "7 manques signalés avant la revue du comité"
+        }
+      },
+      "proof": {
+        "label": "Preuve à l'appui",
+        "titleStart": "Un chiffre, son calcul, sa ",
+        "titleHighlight": "source",
+        "prompt": "L'EBITDA normalisé 2025 du rapport HELIOS est-il cohérent avec le pont de normalisation ?",
+        "answerStart": "Source « Rapport HELIOS.pdf », Quality of Earnings p. 42 : EBITDA normalisé de ",
+        "answerHighlight": "14,2 M€",
+        "answerEnd": ". Le multiple de 8,0x apparaît cohérent avec les ajustements listés, dont 1,6 M€ de coûts non récurrents et 1,2 M€ de retraitement des loyers. La synthèse p. 3 retient le même montant ; le pont p. 42 affiche 13,8 M€ parce qu'il ne retraite pas le crédit d'impôt.",
+        "stats": [
+          {
+            "value": "14,2 M€",
+            "label": "EBITDA normalisé 2025",
+            "versus": "reporté 11,8 M€"
+          },
+          {
+            "value": "8,0x",
+            "label": "Multiple retenu",
+            "versus": "cohérent"
+          },
+          {
+            "value": "+2,4 M€",
+            "label": "Total des ajustements",
+            "versus": "3 retraitements"
+          }
+        ],
+        "sources": [
+          "HELIOS.pdf · p.42",
+          "QoE · pont",
+          "Synthèse · p.3"
+        ]
+      },
+      "governance": {
+        "label": "CONFIDENTIALITÉ & INFRASTRUCTURE",
+        "titleStart": "Vos corpus financiers, sous contrôle ",
+        "titleHighlight": "maîtrisé",
+        "intro": "Les rapports et dossiers financiers sont accessibles dans un périmètre défini avec les équipes et les responsables du système d'information.",
+        "items": [
+          {
+            "title": "Accès gouvernés",
+            "description": "Les documents sont accessibles selon les rôles et les autorisations accordées."
+          },
+          {
+            "title": "Corpus délimités",
+            "description": "Chaque recherche porte sur le périmètre documentaire retenu pour l'équipe."
+          },
+          {
+            "title": "Intégration cadrée",
+            "description": "Les exigences d'hébergement et de connexion sont validées avec votre organisation."
+          }
+        ]
+      },
+      "problem": {
+        "label": "DOCUMENTATION FINANCIÈRE",
+        "corpusLabel": "RAPPORTS · ANNEXES · PRÉSENTATIONS",
+        "title": "Des chiffres répartis entre plusieurs rapports et périodes.",
+        "description": "Un même indicateur peut varier selon la période, le périmètre ou la source. Le rapprocher demande de retrouver les tableaux d'origine et d'expliciter les écarts.",
+        "documents": [
+          {
+            "title": "Rapport financier.pdf",
+            "detail": "Indicateurs et périodes de référence"
+          },
+          {
+            "title": "Annexes comptables.pdf",
+            "detail": "Détail des lignes et des montants"
+          },
+          {
+            "title": "Présentation comité.pdf",
+            "detail": "Chiffres de synthèse à vérifier"
+          }
+        ],
+        "questionLabel": "QUESTION DOCUMENTAIRE",
+        "question": "Quels montants diffèrent entre les rapports, et quelles périodes couvrent-ils ?",
+        "note": "Les exemples financiers sont fictifs et ne constituent pas une analyse de placement."
+      },
+      "pilot": {
+        "label": "DÉPLOIEMENT & PILOTE",
+        "title": "Cadrons un premier corpus financier.",
+        "description": "Un pilote vérifie la qualité des rapprochements sur un jeu de documents délimité et des questions métiers choisies avec vos équipes.",
+        "steps": [
+          {
+            "title": "Choisir les documents",
+            "description": "Définir les rapports, annexes et périodes."
+          },
+          {
+            "title": "Cadrer les accès",
+            "description": "Aligner les droits sur votre organisation."
+          },
+          {
+            "title": "Vérifier les résultats",
+            "description": "Contrôler les montants et les références."
+          },
+          {
+            "title": "Évaluer le pilote",
+            "description": "Mesurer les résultats selon vos critères."
+          }
+        ]
+      },
+      "cta": "Cadrons votre premier cas documentaire finance"
+    },
+    "healthcarePage": {
+      "capabilities": {
+        "label": "Capacités",
+        "titleStart": "Ce que vos équipes médicales peuvent enfin ",
+        "titleHighlight": "déléguer",
+        "titleEnd": "",
+        "intro": "Quatre traitements où l'approximation n'est pas permise, ramenés à des réponses citées et versionnées.",
+        "items": [
+          {
+            "title": "Version en vigueur",
+            "description": "Identifier quelle version d'un protocole s'applique aujourd'hui, et citer le paragraphe exact plutôt qu'un brouillon archivé."
+          },
+          {
+            "title": "Conduites à tenir",
+            "description": "Restituer une posologie avec ses conditions d'application : seuils, contre-indications et validations requises."
+          },
+          {
+            "title": "Veille documentaire",
+            "description": "Synthétiser publications, rapports de pharmacovigilance et RCP avec les références utilisables telles quelles."
+          },
+          {
+            "title": "Écarts qualité",
+            "description": "Comparer comptes-rendus et documents qualité, et remonter les points à valider avant la revue."
+          }
+        ]
+      },
+      "useCases": {
+        "browse": "Parcourir",
+        "items": [
+          {
+            "tag": "01 · Synthèse de dossiers",
+            "title": "Rassembler les éléments d'un dossier",
+            "description": "Retrouver les informations consignées dans plusieurs comptes rendus et préparer une synthèse reliée aux sources documentaires."
+          },
+          {
+            "tag": "02 · Protocoles",
+            "title": "Comparer les versions d'un protocole",
+            "description": "Repérer les dispositions qui évoluent, retrouver leur formulation et replacer chaque passage dans son contexte."
+          },
+          {
+            "tag": "03 · Recherche documentaire",
+            "title": "Rapprocher les documents de référence",
+            "description": "Rechercher dans des publications, rapports et documents de référence, puis vérifier les passages associés à une question."
+          }
+        ],
+        "protocol": {
+          "file": "Protocole HELIOS-2.pdf",
+          "versionLabel": "v3.0 · en vigueur",
+          "queryLabel": "Question",
+          "query": "posologie · insuffisance rénale",
+          "treeLabel": "Clairance de la créatinine",
+          "branches": [
+            {
+              "condition": "≥ 60 mL/min",
+              "result": "Dose standard",
+              "active": false
+            },
+            {
+              "condition": "30 – 59 mL/min",
+              "result": "75 % de la dose",
+              "active": false
+            },
+            {
+              "condition": "< 30 mL/min",
+              "result": "50 % de la dose",
+              "active": true
+            }
+          ],
+          "warningLabel": "Validation médicale requise",
+          "cite": "HELIOS-2.pdf · §6.3 · Tableau 6"
+        },
+        "versions": {
+          "title": "Protocole HELIOS-2 · versions",
+          "currentLabel": "En vigueur",
+          "archivedLabel": "Archivée",
+          "versions": [
+            {
+              "tag": "v1.0",
+              "date": "04/2023",
+              "current": false
+            },
+            {
+              "tag": "v2.1",
+              "date": "11/2024",
+              "current": false
+            },
+            {
+              "tag": "v3.0",
+              "date": "02/2026",
+              "current": true
+            }
+          ],
+          "diffLabel": "Différences v2.1 → v3.0",
+          "changes": [
+            {
+              "ref": "§6.3",
+              "label": "Posologie · insuffisance rénale",
+              "kind": "modified"
+            },
+            {
+              "ref": "§9.1",
+              "label": "Surveillance biologique",
+              "kind": "added"
+            },
+            {
+              "ref": "§4.2",
+              "label": "Critère d'inclusion",
+              "kind": "removed"
+            }
+          ],
+          "kindLabels": {
+            "modified": "Modifié",
+            "added": "Ajouté",
+            "removed": "Retiré"
+          },
+          "footer": "La réponse cite toujours la version en vigueur"
+        },
+        "watch": {
+          "queryLabel": "Veille",
+          "query": "interactions médicamenteuses · HELIOS-2",
+          "corpusLabel": "Corpus validé",
+          "corpus": [
+            {
+              "label": "Publications",
+              "count": "1 284"
+            },
+            {
+              "label": "Rapports de pharmacovigilance",
+              "count": "312"
+            },
+            {
+              "label": "RCP et notices",
+              "count": "47"
+            }
+          ],
+          "filterLabel": "Filtrage + reranking",
+          "filterMeta": "1 643 → 3 références",
+          "resultsLabel": "Références retenues",
+          "results": [
+            {
+              "ref": "Lancet 2025;405:112",
+              "meta": "Étude de phase III",
+              "score": "0,94"
+            },
+            {
+              "ref": "PV-2024-0891",
+              "meta": "Signal confirmé",
+              "score": "0,81"
+            },
+            {
+              "ref": "RCP HELIOS-2 · §4.5",
+              "meta": "Interactions",
+              "score": "0,66"
+            }
+          ],
+          "footer": "Aucune source hors du corpus validé"
+        },
+        "visuals": {
+          "summary": {
+            "title": "Dossier patient · démo fictive",
+            "count": "8 documents",
+            "questionLabel": "QUESTION",
+            "question": "Résume le parcours documenté de cette patiente et les principaux éléments de son suivi.",
+            "answerLabel": "RÉPONSE DE PROSPERIFY",
+            "answer": "Le dossier rassemble une consultation initiale, deux bilans et un compte rendu de suivi. Les documents retracent les antécédents et l'évolution des éléments consignés au fil des consultations.",
+            "documents": [
+              {
+                "name": "Consultation_initiale.pdf",
+                "reference": "p.2",
+                "detail": "Antécédents et motif de prise en charge"
+              },
+              {
+                "name": "Bilan_biologique.pdf",
+                "reference": "p.1",
+                "detail": "Résultats consignés au suivi"
+              },
+              {
+                "name": "Compte_rendu_suivi.pdf",
+                "reference": "p.3",
+                "detail": "Éléments de la consultation"
+              }
+            ]
+          },
+          "protocols": {
+            "title": "HELIOS-2 · protocoles",
+            "count": "2 versions",
+            "questionLabel": "QUESTION",
+            "question": "Quelles différences existe-t-il entre les sections 6.3 des versions 2.1 et 3.0 ?",
+            "answerLabel": "COMPARAISON DOCUMENTAIRE",
+            "answer": "Les deux sections présentent des formulations différentes sur les conditions d'application et les validations requises. La comparaison décrit les écarts entre les textes sans déterminer quelle version est réglementairement applicable.",
+            "documents": [
+              {
+                "name": "HELIOS-2_v2.1.pdf",
+                "reference": "§6.3",
+                "detail": "Passage de la version 2.1"
+              },
+              {
+                "name": "HELIOS-2_v3.0.pdf",
+                "reference": "§6.3",
+                "detail": "Passage de la version 3.0"
+              }
+            ]
+          },
+          "research": {
+            "title": "Corpus scientifique · démo fictive",
+            "count": "2 publications",
+            "questionLabel": "QUESTION",
+            "question": "Quelles différences méthodologiques présentent ces études concernant leurs critères d'inclusion ?",
+            "answerLabel": "RÉPONSE DE PROSPERIFY",
+            "answer": "Les textes décrivent des populations d'étude différentes. L'étude Alpha retient une population adulte, tandis que l'étude Beta ajoute des critères de sélection plus restrictifs.",
+            "documents": [
+              {
+                "name": "Étude_Alpha.pdf",
+                "reference": "p.4",
+                "detail": "Population décrite dans la méthodologie"
+              },
+              {
+                "name": "Étude_Beta.pdf",
+                "reference": "p.6",
+                "detail": "Critères d'inclusion et d'exclusion"
+              }
+            ]
+          }
+        }
+      },
+      "proof": {
+        "label": "Preuve à l'appui",
+        "titleStart": "Une réponse, plusieurs sources, un contexte ",
+        "titleHighlight": "vérifiable",
+        "prompt": "Quelles différences les documents présentent-ils concernant les critères de sélection de l'étude ?",
+        "answerStart": "Le protocole initial décrit ",
+        "answerHighlight": "une population adulte sans critère supplémentaire lié à la fonction rénale",
+        "answerEnd": ". L'amendement n° 2 ajoute un critère d'exclusion à la section 3.1. Les passages ci-dessous permettent de vérifier les deux formulations dans leur contexte.",
+        "stats": [
+          {
+            "value": "2",
+            "label": "Documents rapprochés",
+            "versus": "Protocole + amendement"
+          },
+          {
+            "value": "§4.2",
+            "label": "Passage initial",
+            "versus": "Protocole initial"
+          },
+          {
+            "value": "§3.1",
+            "label": "Passage modifié",
+            "versus": "Amendement n° 2"
+          }
+        ],
+        "sources": [
+          "Protocole_initial.pdf · §4.2",
+          "Amendement_02.pdf · §3.1"
+        ],
+        "passages": [
+          {
+            "title": "Protocole initial",
+            "reference": "§4.2",
+            "quote": "La population inclut les adultes répondant aux critères décrits dans le protocole.",
+            "context": "Critères d'inclusion initiaux"
+          },
+          {
+            "title": "Amendement n° 2",
+            "reference": "§3.1",
+            "quote": "Un critère d'exclusion complémentaire est ajouté pour la sélection des participants.",
+            "context": "Modification des critères de sélection"
+          }
+        ]
+      },
+      "governance": {
+        "label": "CONFIDENTIALITÉ & INFRASTRUCTURE",
+        "titleStart": "Des corpus sensibles, des accès ",
+        "titleHighlight": "maîtrisés",
+        "intro": "Le périmètre de confiance se définit avec l'organisation : qui accède aux documents, quels corpus sont consultables et dans quelles conditions le service est déployé.",
+        "items": [
+          {
+            "title": "Accès selon les rôles",
+            "description": "Les utilisateurs consultent les documents autorisés selon les droits définis par l'organisation."
+          },
+          {
+            "title": "Corpus séparés",
+            "description": "Les recherches restent dans le périmètre documentaire prévu pour l'équipe et son usage."
+          },
+          {
+            "title": "Déploiement cadré",
+            "description": "Les exigences applicables aux données et à l'hébergement sont examinées avant le pilote."
+          }
+        ],
+        "diagram": {
+          "corpusTitle": "Corpus documentaires",
+          "corpus": [
+            "Dossiers cliniques",
+            "Protocoles et procédures",
+            "Publications et rapports"
+          ],
+          "accessTitle": "Périmètre d'accès",
+          "access": [
+            "Droits définis par rôle",
+            "Corpus autorisés",
+            "Déploiement cadré avec l'organisation"
+          ],
+          "teamsTitle": "Équipes habilitées",
+          "teams": [
+            "Coordination et soins",
+            "Recherche clinique",
+            "Qualité et affaires réglementaires"
+          ]
+        }
+      },
+      "problem": {
+        "label": "DOCUMENTATION DE SANTÉ",
+        "corpusLabel": "COMPTES RENDUS · PROTOCOLES · PUBLICATIONS",
+        "title": "Une information dispersée dans des documents qui évoluent.",
+        "description": "Dossiers, protocoles et publications se recoupent sans toujours partager la même date ou le même contexte. Retrouver l'information utile suppose d'identifier la source et sa version.",
+        "documents": [
+          {
+            "title": "Compte rendu.pdf",
+            "detail": "Éléments du dossier documentés"
+          },
+          {
+            "title": "Protocole en vigueur.pdf",
+            "detail": "Version et conditions d'application"
+          },
+          {
+            "title": "Publication de référence.pdf",
+            "detail": "Source scientifique à vérifier"
+          }
+        ],
+        "questionLabel": "QUESTION DOCUMENTAIRE",
+        "question": "Quelles informations sont disponibles sur ce sujet et dans quels documents sont-elles consignées ?",
+        "note": "Les exemples sont fictifs. Prosperify restitue les documents et leur contexte pour vérification par les équipes."
+      },
+      "pilot": {
+        "label": "DÉPLOIEMENT & PILOTE",
+        "title": "Cadrons un premier cas documentaire.",
+        "description": "Un pilote délimité permet de valider les sources, les accès et la qualité des réponses avec les équipes concernées.",
+        "steps": [
+          {
+            "title": "Choisir le corpus",
+            "description": "Définir les documents et versions à inclure."
+          },
+          {
+            "title": "Définir les accès",
+            "description": "Identifier les équipes et périmètres autorisés."
+          },
+          {
+            "title": "Tester les questions",
+            "description": "Évaluer les réponses et leurs références."
+          },
+          {
+            "title": "Décider de la suite",
+            "description": "Partager les résultats et les critères validés."
+          }
+        ]
+      },
+      "cta": "Cadrons votre premier cas documentaire santé"
+    },
     "common": {
       "nav": {
         "useCases": "Cas d'usage",
@@ -481,6 +1507,7 @@
         "faq": "FAQ"
       },
       "labels": {
+        "capabilities": "Capacités",
         "useCases": "Cas d'usage",
         "workflow": "Workflow RAG",
         "security": "Sécurité & conformité",
@@ -493,17 +1520,31 @@
         "faq": "FAQ",
         "contact": "Contact",
         "challenge": "Le problème",
-        "comparison": "Architecture"
+        "comparison": "Architecture",
+        "overview": "Présentation",
+        "documentation": "Documents",
+        "verification": "Sources",
+        "confidentiality": "Accès"
       },
       "ctaDemo": "Demander une démo",
       "ctaCases": "Voir les cas d'usage",
+      "ctaPilot": "Cadrons votre premier cas documentaire",
       "sourcesLabel": "SOURCES UTILISÉES",
       "heroVerified": "Réponse vérifiée face aux sources",
       "useCasesSubtitle": "Des tâches documentaires concrètes, fiabilisées par des réponses sourcées.",
       "heroProof": [
-        { "title": "Réponses sourcées", "text": "à la page près" },
-        { "title": "Dans votre", "text": "périmètre de confiance" },
-        { "title": "Conçu pour", "text": "les données sensibles" }
+        {
+          "title": "Réponses sourcées",
+          "text": "à la page près"
+        },
+        {
+          "title": "Dans votre",
+          "text": "périmètre de confiance"
+        },
+        {
+          "title": "Conçu pour",
+          "text": "les données sensibles"
+        }
       ],
       "diagrams": {
         "pipeline": {
@@ -662,15 +1703,16 @@
             "description": "Prosperify se branche sur vos outils existants au lieu de les remplacer : aucune migration forcée, aucun silo supplémentaire à maintenir."
           }
         ]
-      }
+      },
+      "documents": "documents"
     },
     "legal": {
       "label": "Juridique",
       "badge": "JURIDIQUE · DONNÉES CONFIDENTIELLES",
-      "titleStart": "Vos contrats et dossiers, en réponses sourcées ",
-      "titleHighlight": "à la clause près",
-      "titleEnd": ".",
-      "subtitle": "Prosperify aide les équipes juridiques à retrouver, comparer et vérifier clauses, obligations et précédents dans des corpus confidentiels : sources visibles, accès gouvernés, périmètre hébergé en France.",
+      "titleStart": "Une revue juridique croise ",
+      "titleHighlight": "plusieurs sources",
+      "titleEnd": " et leurs versions.",
+      "subtitle": "Avocats, juristes, notaires, contentieux ou M&A : recherchez, analysez et rapprochez contrats, actes, pièces de procédure et archives, avec les sources sous les yeux.",
       "chatTitle": "Assistant juridique",
       "question": "Quelle est la durée du contrat Verdi et ses conditions de renouvellement ?",
       "answerStart": "Source « Contrat Verdi.pdf », p. 10 : durée initiale de ",
@@ -680,7 +1722,7 @@
         "Verdi.pdf · p.10",
         "Clause 4.1"
       ],
-      "useCasesTitle": "Ce que vos équipes juridiques peuvent enfin déléguer",
+      "useCasesTitle": "Les mêmes besoins documentaires, dans tous les métiers du droit",
       "useCases": [
         {
           "tag": "contrats",
@@ -706,7 +1748,7 @@
       "faq": [
         {
           "question": "Les réponses citent-elles la clause exacte ?",
-          "answer": "Oui. Chaque réponse reste reliée aux passages utilisés (document, page et clause) pour faciliter la revue et l'opposabilité."
+          "answer": "Oui. Chaque réponse renvoie aux passages utilisés, avec le document, la page et la clause, afin de faciliter le contrôle par le juriste."
         },
         {
           "question": "Mes dossiers confidentiels restent-ils cloisonnés ?",
@@ -762,15 +1804,38 @@
             "question": "Résume les termes clés de cet accord et dis-moi ce qui reste ouvert avant signature.",
             "finding": "Le contrat lie Asteria Retail et NimbusCore pour 3,24 M€ HT sur 36 mois, 420 magasins, avec renouvellement automatique par périodes de 12 mois. Mais cinq clauses restent ouvertes : la résiliation pour convenance n'est accessible qu'au fournisseur après douze mois, le plafond de responsabilité est limité à douze mois de redevances, le SLA n'engage que 99,5 % de disponibilité, et le délai de notification d'incident part de la confirmation plutôt que de la découverte. Aucune de ces cinq clauses n'est alignée avec le standard interne d'Asteria.",
             "highlight": "Cinq clauses restent ouvertes avant signature, aucune alignée sur le standard interne.",
-            "sources": ["JUR-06 · p.1", "JUR-01 · p.4", "JUR-01 · p.8", "JUR-01 · p.11", "JUR-03 · p.2"],
+            "sources": [
+              "JUR-06 · p.1",
+              "JUR-01 · p.4",
+              "JUR-01 · p.8",
+              "JUR-01 · p.11",
+              "JUR-03 · p.2"
+            ],
             "metrics": [
-              { "value": "3,24 M€", "label": "Valeur du contrat" },
-              { "value": "36 mois", "label": "Durée initiale" },
-              { "value": "5", "label": "Clauses ouvertes" }
+              {
+                "value": "3,24 M€",
+                "label": "Valeur du contrat"
+              },
+              {
+                "value": "36 mois",
+                "label": "Durée initiale"
+              },
+              {
+                "value": "5",
+                "label": "Clauses ouvertes"
+              }
             ],
             "documents": [
-              { "code": "JUR-06", "title": "Bon de commande", "marker": "3 240 000 € HT" },
-              { "code": "JUR-01", "title": "MSA (redline)", "marker": "Résiliation : fournisseur seul" }
+              {
+                "code": "JUR-06",
+                "title": "Bon de commande",
+                "marker": "3 240 000 € HT"
+              },
+              {
+                "code": "JUR-01",
+                "title": "MSA (redline)",
+                "marker": "Résiliation : fournisseur seul"
+              }
             ]
           },
           {
@@ -778,15 +1843,41 @@
             "question": "Compare le paquet final à notre politique contractuelle et classe les écarts par priorité.",
             "finding": "Trois écarts touchent des protections structurelles et sont prioritaires : le plafond de responsabilité (1,08 M€ contre un minimum policy de 2,16 M€), la résiliation asymétrique (ouverte au seul fournisseur), et le délai de notification d'incident (72 heures après confirmation contre 24 heures après découverte — deux points de départ différents, pas seulement deux durées). Deux écarts sont secondaires : le SLA à 99,5 % et le préavis de non-renouvellement à 30 jours.",
             "highlight": "Trois écarts prioritaires touchent des protections structurelles : plafond, résiliation, incident.",
-            "sources": ["JUR-01 · p.11", "JUR-02 · p.3", "JUR-01 · p.8", "JUR-02 · p.4", "JUR-04 · p.4", "JUR-02 · p.5"],
+            "sources": [
+              "JUR-01 · p.11",
+              "JUR-02 · p.3",
+              "JUR-01 · p.8",
+              "JUR-02 · p.4",
+              "JUR-04 · p.4",
+              "JUR-02 · p.5"
+            ],
             "metrics": [
-              { "value": "1,08 M€", "label": "Plafond actuel", "delta": "vs 2,16 M€ policy" },
-              { "value": "72 h", "label": "Délai incident", "delta": "vs 24 h policy" },
-              { "value": "3", "label": "Écarts prioritaires" }
+              {
+                "value": "1,08 M€",
+                "label": "Plafond actuel",
+                "delta": "vs 2,16 M€ policy"
+              },
+              {
+                "value": "72 h",
+                "label": "Délai incident",
+                "delta": "vs 24 h policy"
+              },
+              {
+                "value": "3",
+                "label": "Écarts prioritaires"
+              }
             ],
             "documents": [
-              { "code": "JUR-01", "title": "MSA (redline)", "marker": "12 mois de fees = 1,08 M€" },
-              { "code": "JUR-02", "title": "Politique contractuelle", "marker": "24 mois de redevances" }
+              {
+                "code": "JUR-01",
+                "title": "MSA (redline)",
+                "marker": "12 mois de fees = 1,08 M€"
+              },
+              {
+                "code": "JUR-02",
+                "title": "Politique contractuelle",
+                "marker": "24 mois de redevances"
+              }
             ]
           },
           {
@@ -794,15 +1885,39 @@
             "question": "Les documents se contredisent-ils sur le niveau de service et la sécurité ?",
             "finding": "Oui, sur deux plans. L'Order Form affiche 99,9 % comme « cible contractuelle », alors que le SLA, seul document qui définit la méthode de mesure, n'engage que 99,5 % — et la note de négociation affirme à tort que ce sujet est « résolu ». Sur la sécurité, le DPA fait courir le délai de notification à 72 heures après confirmation quand la politique interne exige 24 heures après découverte. L'ordre de préséance du MSA ne précise pas lequel des deux chiffres de disponibilité constitue l'engagement mesurable.",
             "highlight": "Deux contradictions documentées doivent être résolues avant signature.",
-            "sources": ["JUR-06 · p.2", "JUR-03 · p.2", "JUR-05 · p.3", "JUR-04 · p.4", "JUR-02 · p.5"],
+            "sources": [
+              "JUR-06 · p.2",
+              "JUR-03 · p.2",
+              "JUR-05 · p.3",
+              "JUR-04 · p.4",
+              "JUR-02 · p.5"
+            ],
             "metrics": [
-              { "value": "99,9 % / 99,5 %", "label": "Disponibilité", "delta": "deux chiffres, deux documents" },
-              { "value": "72 h / 24 h", "label": "Délai de notification" },
-              { "value": "2", "label": "Contradictions non résolues" }
+              {
+                "value": "99,9 % / 99,5 %",
+                "label": "Disponibilité",
+                "delta": "deux chiffres, deux documents"
+              },
+              {
+                "value": "72 h / 24 h",
+                "label": "Délai de notification"
+              },
+              {
+                "value": "2",
+                "label": "Contradictions non résolues"
+              }
             ],
             "documents": [
-              { "code": "JUR-06", "title": "Bon de commande", "marker": "99,9 % — cible contractuelle" },
-              { "code": "JUR-03", "title": "SLA", "marker": "Taux mesuré : 99,5 %" }
+              {
+                "code": "JUR-06",
+                "title": "Bon de commande",
+                "marker": "99,9 % — cible contractuelle"
+              },
+              {
+                "code": "JUR-03",
+                "title": "SLA",
+                "marker": "Taux mesuré : 99,5 %"
+              }
             ]
           },
           {
@@ -810,15 +1925,39 @@
             "question": "Prépare un briefing de négociation prêt pour Legal avec les formulations à obtenir.",
             "finding": "Verdict : non prêt à signer. Cinq formulations à obtenir par priorité — porter le plafond à 24 mois de redevances avec carve-outs réciproques, ouvrir la résiliation pour convenance aux deux parties avec un préavis identique, faire courir la notification d'incident à 24 heures après découverte. En complément : SLA à 99,9 % ferme et préavis de non-renouvellement à 60 jours. À suivre séparément, hors priorité : la durée de conservation des données après la fin du contrat, laissée « à confirmer » dans le DPA.",
             "highlight": "Verdict : NON PRÊT À SIGNER tant que trois formulations prioritaires ne sont pas obtenues.",
-            "sources": ["JUR-01 · p.11", "JUR-02 · p.3", "JUR-01 · p.8", "JUR-04 · p.4", "JUR-04 · p.6"],
+            "sources": [
+              "JUR-01 · p.11",
+              "JUR-02 · p.3",
+              "JUR-01 · p.8",
+              "JUR-04 · p.4",
+              "JUR-04 · p.6"
+            ],
             "metrics": [
-              { "value": "NON PRÊT", "label": "Statut de signature" },
-              { "value": "5", "label": "Formulations à obtenir" },
-              { "value": "24 h", "label": "Notification cible", "delta": "vs 72 h actuels" }
+              {
+                "value": "NON PRÊT",
+                "label": "Statut de signature"
+              },
+              {
+                "value": "5",
+                "label": "Formulations à obtenir"
+              },
+              {
+                "value": "24 h",
+                "label": "Notification cible",
+                "delta": "vs 72 h actuels"
+              }
             ],
             "documents": [
-              { "code": "JUR-01", "title": "MSA (redline)", "marker": "Plafond actuel : 1,08 M€" },
-              { "code": "JUR-04", "title": "DPA", "marker": "Conservation : à confirmer" }
+              {
+                "code": "JUR-01",
+                "title": "MSA (redline)",
+                "marker": "Plafond actuel : 1,08 M€"
+              },
+              {
+                "code": "JUR-04",
+                "title": "DPA",
+                "marker": "Conservation : à confirmer"
+              }
             ]
           }
         ]
@@ -881,12 +2020,28 @@
         "cta": "Parler à un ingénieur avant le comité technique",
         "architecture": {
           "sourcesTitle": "Vos sources",
-          "sourcesItems": ["GED juridique", "Coffre-fort électronique", "Contract lifecycle", "Partage de fichiers"],
+          "sourcesItems": [
+            "GED juridique",
+            "Coffre-fort électronique",
+            "Contract lifecycle",
+            "Partage de fichiers"
+          ],
           "instanceTitle": "Votre instance Prosperify",
           "instanceBadge": "single-tenant",
-          "instanceItems": ["Connecteurs", "Stores Juridique", "Indexation + recherche hybride", "Agent Prosperify", "Réponse + citations"],
+          "instanceItems": [
+            "Connecteurs",
+            "Stores Juridique",
+            "Indexation + recherche hybride",
+            "Agent Prosperify",
+            "Réponse + citations"
+          ],
           "environmentTitle": "Votre environnement",
-          "environmentItems": ["Votre périmètre", "Vos règles de sécurité", "Vos outils existants", "Journaux d'audit"]
+          "environmentItems": [
+            "Votre périmètre",
+            "Vos règles de sécurité",
+            "Vos outils existants",
+            "Journaux d'audit"
+          ]
         },
         "items": [
           {
@@ -910,11 +2065,11 @@
     },
     "healthcare": {
       "label": "Santé",
-      "badge": "SANTÉ · DONNÉES SENSIBLES",
-      "titleStart": "Protocoles, études et dossiers, interrogés en réponses ",
-      "titleHighlight": "sourcées et vérifiables",
+      "badge": "SANTÉ · DOCUMENTS ET SOURCES",
+      "titleStart": "Vos documents de santé, ",
+      "titleHighlight": "des informations retrouvées et vérifiables",
       "titleEnd": ".",
-      "subtitle": "Prosperify aide les équipes santé à retrouver et vérifier l'information dans protocoles, littérature et dossiers réglementaires, dans un périmètre de confiance clair, hébergé en France.",
+      "subtitle": "Dossiers cliniques, protocoles, publications scientifiques et documentation réglementaire : Prosperify aide les professionnels de santé à retrouver, rapprocher et synthétiser les informations de leurs corpus documentaires, avec des réponses reliées à leurs sources et des accès maîtrisés.",
       "chatTitle": "Assistant santé",
       "question": "Quelle posologie le protocole HELIOS-2 prévoit-il en cas d'insuffisance rénale ?",
       "answerStart": "Source « Protocole HELIOS-2.pdf », §6.3 : dose ajustée à ",
@@ -949,20 +2104,20 @@
       ],
       "faq": [
         {
-          "question": "Où sont hébergées les données de santé ?",
-          "answer": "Selon le modèle retenu (cloud dédié, hybride ou local), avec un périmètre hébergé en France. Les arrangements exacts sont définis avec le client."
+          "question": "Les réponses renvoient-elles aux documents médicaux d'origine ?",
+          "answer": "Oui. Les réponses peuvent être reliées aux extraits documentaires utilisés, avec le titre du document et sa référence, afin que l'équipe puisse les consulter et les vérifier."
         },
         {
-          "question": "Les réponses sont-elles vérifiables ?",
-          "answer": "Oui. Chaque réponse renvoie aux extraits utilisés (section, tableau, page) et signale les points nécessitant une validation médicale."
+          "question": "Peut-on limiter l'accès aux dossiers et aux corpus sensibles ?",
+          "answer": "Les accès et les corpus consultables sont définis selon les rôles et le périmètre retenus avec l'organisation."
         },
         {
-          "question": "Mes corpus servent-ils à entraîner des modèles ?",
-          "answer": "Non. Les documents sont uniquement interrogés dans votre périmètre, jamais réutilisés pour entraîner des modèles généraux."
+          "question": "Nos documents servent-ils à entraîner des modèles ?",
+          "answer": "Les documents interrogés dans votre environnement ne sont pas utilisés pour entraîner des modèles généraux."
         },
         {
-          "question": "Prosperify pose-t-il un diagnostic ?",
-          "answer": "Non. Il retrouve et synthétise l'information documentaire. L'interprétation et la décision restent médicales."
+          "question": "Prosperify peut-il poser un diagnostic ou prendre une décision médicale ?",
+          "answer": "Non. Prosperify recherche et synthétise des informations documentaires. L'interprétation des sources et toute décision médicale restent du ressort des professionnels de santé."
         }
       ],
       "challenge": {
@@ -1006,15 +2161,39 @@
             "question": "Reconstitue le parcours de cette patiente et résume les informations cliniques clés.",
             "finding": "Antécédents : hypertension artérielle et fibrillation atriale permanente, allergie à l'amoxicilline documentée en 2019, quatre traitements actifs avant l'hospitalisation. Le débit de filtration glomérulaire évolue de 68 en septembre 2025 à 44 le 18 juin 2026, avec un commentaire automatique « stable » qui n'en tient pas compte. Épisode de malaise du 23 au 25 juin, DFG à 46 à l'admission puis 52 à la sortie, avec un contrôle biologique attendu sous 7 jours.",
             "highlight": "Le DFG chute de 68 à 44 en 9 mois, avec un commentaire automatique qui ne le reflète pas.",
-            "sources": ["SAN-01 · p.1", "SAN-01 · p.2", "SAN-03 · p.1", "SAN-06 · p.3", "SAN-06 · p.5"],
+            "sources": [
+              "SAN-01 · p.1",
+              "SAN-01 · p.2",
+              "SAN-03 · p.1",
+              "SAN-06 · p.3",
+              "SAN-06 · p.5"
+            ],
             "metrics": [
-              { "value": "68 → 44", "label": "DFG (mL/min/1,73 m²)", "delta": "sept. 2025 → juin 2026" },
-              { "value": "46 → 52", "label": "DFG pendant l'hospitalisation" },
-              { "value": "7 jours", "label": "Contrôle biologique attendu" }
+              {
+                "value": "68 → 44",
+                "label": "DFG (mL/min/1,73 m²)",
+                "delta": "sept. 2025 → juin 2026"
+              },
+              {
+                "value": "46 → 52",
+                "label": "DFG pendant l'hospitalisation"
+              },
+              {
+                "value": "7 jours",
+                "label": "Contrôle biologique attendu"
+              }
             ],
             "documents": [
-              { "code": "SAN-01", "title": "Note de consultation", "marker": "Allergie amoxicilline (2019)" },
-              { "code": "SAN-06", "title": "Compte rendu de sortie", "marker": "DFG : 52 mL/min/1,73 m²" }
+              {
+                "code": "SAN-01",
+                "title": "Note de consultation",
+                "marker": "Allergie amoxicilline (2019)"
+              },
+              {
+                "code": "SAN-06",
+                "title": "Compte rendu de sortie",
+                "marker": "DFG : 52 mL/min/1,73 m²"
+              }
             ]
           },
           {
@@ -1022,15 +2201,40 @@
             "question": "Quelles incohérences du dossier doivent être vérifiées lors de la conciliation ?",
             "finding": "Trois points à vérifier, sans arbitrage possible sur les seules pièces du dossier : l'allergie à l'amoxicilline, documentée en médecine générale, indiquée « aucune connue » au compte rendu de sortie ; la dose de rivaroxaban — 20 mg sur l'ordonnance et la liste de sortie, 15 mg dans le courrier de cardiologie ; le contrôle créatinine/potassium demandé sous 7 jours, absent du dossier au 10 juillet. Aucune de ces sources ne permet de trancher quelle valeur est correcte.",
             "highlight": "Trois divergences documentées, aucune ne peut être tranchée sur les seules pièces du dossier.",
-            "sources": ["SAN-01 · p.2", "SAN-06 · p.2", "SAN-02 · p.1", "SAN-06 · p.4", "SAN-05 · p.1", "SAN-06 · p.5"],
+            "sources": [
+              "SAN-01 · p.2",
+              "SAN-06 · p.2",
+              "SAN-02 · p.1",
+              "SAN-06 · p.4",
+              "SAN-05 · p.1",
+              "SAN-06 · p.5"
+            ],
             "metrics": [
-              { "value": "2 versions", "label": "Statut allergique", "delta": "documentée vs « aucune connue »" },
-              { "value": "20 mg / 15 mg", "label": "Dose de rivaroxaban" },
-              { "value": "0", "label": "Résultat de contrôle au 10 juillet" }
+              {
+                "value": "2 versions",
+                "label": "Statut allergique",
+                "delta": "documentée vs « aucune connue »"
+              },
+              {
+                "value": "20 mg / 15 mg",
+                "label": "Dose de rivaroxaban"
+              },
+              {
+                "value": "0",
+                "label": "Résultat de contrôle au 10 juillet"
+              }
             ],
             "documents": [
-              { "code": "SAN-01", "title": "Note de consultation", "marker": "Allergie amoxicilline documentée" },
-              { "code": "SAN-06", "title": "Compte rendu de sortie", "marker": "« ALLERGIES CONNUES : aucune »" }
+              {
+                "code": "SAN-01",
+                "title": "Note de consultation",
+                "marker": "Allergie amoxicilline documentée"
+              },
+              {
+                "code": "SAN-06",
+                "title": "Compte rendu de sortie",
+                "marker": "« ALLERGIES CONNUES : aucune »"
+              }
             ]
           },
           {
@@ -1038,15 +2242,37 @@
             "question": "Montre l'évolution de la fonction rénale et les documents qui expliquent chaque étape.",
             "finding": "Débit de filtration glomérulaire à 68 mL/min/1,73 m² en septembre 2025, puis 44 le 18 juin 2026, 46 à l'admission le 23 juin et 52 à la sortie le 25 juin — une amélioration partielle pendant l'hospitalisation, sans mesure disponible après la sortie. Le commentaire automatique « stable » associé au résultat du 18 juin est incohérent avec cette chute de 68 à 44.",
             "highlight": "Le commentaire automatique « stable » est incohérent avec la chute de 68 à 44.",
-            "sources": ["SAN-01 · p.2", "SAN-03 · p.1", "SAN-06 · p.3", "SAN-03 · p.2"],
+            "sources": [
+              "SAN-01 · p.2",
+              "SAN-03 · p.1",
+              "SAN-06 · p.3",
+              "SAN-03 · p.2"
+            ],
             "metrics": [
-              { "value": "68", "label": "DFG sept. 2025" },
-              { "value": "44", "label": "DFG 18 juin 2026" },
-              { "value": "52", "label": "DFG à la sortie" }
+              {
+                "value": "68",
+                "label": "DFG sept. 2025"
+              },
+              {
+                "value": "44",
+                "label": "DFG 18 juin 2026"
+              },
+              {
+                "value": "52",
+                "label": "DFG à la sortie"
+              }
             ],
             "documents": [
-              { "code": "SAN-03", "title": "Résultats de laboratoire", "marker": "Commentaire : « stable » (incohérent)" },
-              { "code": "SAN-06", "title": "Compte rendu de sortie", "marker": "52 mL/min/1,73 m²" }
+              {
+                "code": "SAN-03",
+                "title": "Résultats de laboratoire",
+                "marker": "Commentaire : « stable » (incohérent)"
+              },
+              {
+                "code": "SAN-06",
+                "title": "Compte rendu de sortie",
+                "marker": "52 mL/min/1,73 m²"
+              }
             ]
           },
           {
@@ -1054,15 +2280,38 @@
             "question": "Prépare une fiche de revue pour la consultation de suivi, sans donner de conseil médical.",
             "finding": "Trois vérifications avant la consultation de suivi : confirmer et corriger le statut allergique à l'amoxicilline, contredit à la sortie ; établir la dose de rivaroxaban réellement prescrite et prise, entre 20 mg à l'ordonnance et 15 mg au courrier de cardiologie ; retrouver ou reprogrammer le contrôle créatinine/potassium demandé pour le 2 juillet. Aucune modification thérapeutique n'est proposée ici — validation par un professionnel de santé requise.",
             "highlight": "Trois points à vérifier signalés — aucune décision clinique n'est proposée.",
-            "sources": ["SAN-01 · p.2", "SAN-06 · p.2", "SAN-02 · p.1", "SAN-05 · p.1", "SAN-06 · p.5"],
+            "sources": [
+              "SAN-01 · p.2",
+              "SAN-06 · p.2",
+              "SAN-02 · p.1",
+              "SAN-05 · p.1",
+              "SAN-06 · p.5"
+            ],
             "metrics": [
-              { "value": "3", "label": "Points à vérifier" },
-              { "value": "0", "label": "Recommandation clinique donnée" },
-              { "value": "2 juillet", "label": "Contrôle demandé, non retrouvé" }
+              {
+                "value": "3",
+                "label": "Points à vérifier"
+              },
+              {
+                "value": "0",
+                "label": "Recommandation clinique donnée"
+              },
+              {
+                "value": "2 juillet",
+                "label": "Contrôle demandé, non retrouvé"
+              }
             ],
             "documents": [
-              { "code": "SAN-02", "title": "Ordonnance active", "marker": "Rivaroxaban 20 mg" },
-              { "code": "SAN-05", "title": "Lettre de cardiologie", "marker": "Rivaroxaban 15 mg/jour" }
+              {
+                "code": "SAN-02",
+                "title": "Ordonnance active",
+                "marker": "Rivaroxaban 20 mg"
+              },
+              {
+                "code": "SAN-05",
+                "title": "Lettre de cardiologie",
+                "marker": "Rivaroxaban 15 mg/jour"
+              }
             ]
           }
         ]
@@ -1125,12 +2374,28 @@
         "cta": "Parler à un ingénieur avant le comité technique",
         "architecture": {
           "sourcesTitle": "Vos sources",
-          "sourcesItems": ["Dossier patient informatisé", "GED qualité", "Résultats de laboratoire", "Courriers médicaux"],
+          "sourcesItems": [
+            "Dossier patient informatisé",
+            "GED qualité",
+            "Résultats de laboratoire",
+            "Courriers médicaux"
+          ],
           "instanceTitle": "Votre instance Prosperify",
           "instanceBadge": "single-tenant",
-          "instanceItems": ["Connecteurs", "Stores Santé", "Indexation + recherche hybride", "Agent Prosperify", "Réponse + citations"],
+          "instanceItems": [
+            "Connecteurs",
+            "Stores Santé",
+            "Indexation + recherche hybride",
+            "Agent Prosperify",
+            "Réponse + citations"
+          ],
           "environmentTitle": "Votre environnement",
-          "environmentItems": ["Votre périmètre", "Vos règles de sécurité", "Vos outils existants", "Journaux d'audit"]
+          "environmentItems": [
+            "Votre périmètre",
+            "Vos règles de sécurité",
+            "Vos outils existants",
+            "Journaux d'audit"
+          ]
         },
         "items": [
           {
@@ -1258,15 +2523,39 @@
             "question": "Résume la performance YTD et explique le paradoxe entre croissance et trésorerie.",
             "finding": "CA à 12,4 M€ (+24 %), EBITDA à 1,1 M€ : sur le seul compte de résultat, l'activité est saine, et un premier coup d'œil s'arrêterait là. Mais la trésorerie recule de 2,2 M€ sur la période, un recul entièrement porté par l'exploitation. En recoupant le P&L avec le détail du tableau de flux, l'écart se resserre sur une seule cause : la hausse du poste clients, sans anomalie sur les autres composantes du besoin en fonds de roulement.",
             "highlight": "La hausse du poste clients explique, à elle seule, tout le recul de trésorerie.",
-            "sources": ["FIN-02 · p.1", "FIN-02 · p.2", "FIN-03 · p.1", "FIN-03 · p.3"],
+            "sources": [
+              "FIN-02 · p.1",
+              "FIN-02 · p.2",
+              "FIN-03 · p.1",
+              "FIN-03 · p.3"
+            ],
             "metrics": [
-              { "value": "12,4 M€", "label": "CA YTD", "delta": "+24 %" },
-              { "value": "1,1 M€", "label": "EBITDA", "delta": "+22 %" },
-              { "value": "-2,2 M€", "label": "Trésorerie" }
+              {
+                "value": "12,4 M€",
+                "label": "CA YTD",
+                "delta": "+24 %"
+              },
+              {
+                "value": "1,1 M€",
+                "label": "EBITDA",
+                "delta": "+22 %"
+              },
+              {
+                "value": "-2,2 M€",
+                "label": "Trésorerie"
+              }
             ],
             "documents": [
-              { "code": "FIN-02", "title": "Compte de résultat", "marker": "CA : 12,4 M€" },
-              { "code": "FIN-03", "title": "Tableau de flux", "marker": "-2,2 M€" }
+              {
+                "code": "FIN-02",
+                "title": "Compte de résultat",
+                "marker": "CA : 12,4 M€"
+              },
+              {
+                "code": "FIN-03",
+                "title": "Tableau de flux",
+                "marker": "-2,2 M€"
+              }
             ]
           },
           {
@@ -1274,15 +2563,37 @@
             "question": "Compare le réel au budget et identifie la variance qui mérite l'attention du board.",
             "finding": "Le CA dépasse le budget de 0,6 M€ : sur ce seul indicateur, le trimestre a l'air d'un succès. Mais la trésorerie manque 1,4 M€ à l'appel, un écart proportionnellement plus lourd que celui de l'EBITDA. La cause se lit dans le délai de règlement client, 78 jours contre 49 budgétés, soit 1,52 M€ immobilisés en plus que prévu — un chiffre qu'aucun des deux documents ne donne isolément.",
             "highlight": "Le délai de règlement à 78 jours immobilise 1,52 M€ de plus que budgété.",
-            "sources": ["FIN-04 · p.1", "FIN-04 · p.4", "FIN-05 · p.1"],
+            "sources": [
+              "FIN-04 · p.1",
+              "FIN-04 · p.4",
+              "FIN-05 · p.1"
+            ],
             "metrics": [
-              { "value": "+0,6 M€", "label": "Écart CA vs budget" },
-              { "value": "-0,2 M€", "label": "Écart EBITDA vs budget" },
-              { "value": "78 j", "label": "Délai de règlement", "delta": "vs 49 j budgétés" }
+              {
+                "value": "+0,6 M€",
+                "label": "Écart CA vs budget"
+              },
+              {
+                "value": "-0,2 M€",
+                "label": "Écart EBITDA vs budget"
+              },
+              {
+                "value": "78 j",
+                "label": "Délai de règlement",
+                "delta": "vs 49 j budgétés"
+              }
             ],
             "documents": [
-              { "code": "FIN-04", "title": "Budget vs réel", "marker": "Trésorerie : -1,4 M€" },
-              { "code": "FIN-05", "title": "Balance âgée", "marker": "Poste clients doublé" }
+              {
+                "code": "FIN-04",
+                "title": "Budget vs réel",
+                "marker": "Trésorerie : -1,4 M€"
+              },
+              {
+                "code": "FIN-05",
+                "title": "Balance âgée",
+                "marker": "Poste clients doublé"
+              }
             ]
           },
           {
@@ -1290,15 +2601,36 @@
             "question": "Quelles créances expliquent le risque et les factures confirment-elles la balance âgée ?",
             "finding": "Deux comptes, MetroFleet (1,20 M€, 62 jours de retard) et NordTransit (0,75 M€, en litige), cumulent 47,6 % du poste clients à eux seuls. Les factures sources, recalculées ligne à ligne, concordent au centime près avec la balance âgée : le retard n'est donc pas une erreur de saisie, mais un vrai sujet de recouvrement, avec pour chaque compte une cause différente et documentée.",
             "highlight": "Deux comptes concentrent déjà 47,6 % du poste clients total.",
-            "sources": ["FIN-05 · p.3", "FIN-06 · p.1", "FIN-06 · p.3"],
+            "sources": [
+              "FIN-05 · p.3",
+              "FIN-06 · p.1",
+              "FIN-06 · p.3"
+            ],
             "metrics": [
-              { "value": "1,95 M€", "label": "Créances à risque" },
-              { "value": "47,6 %", "label": "Du poste clients" },
-              { "value": "62 j", "label": "Retard MetroFleet" }
+              {
+                "value": "1,95 M€",
+                "label": "Créances à risque"
+              },
+              {
+                "value": "47,6 %",
+                "label": "Du poste clients"
+              },
+              {
+                "value": "62 j",
+                "label": "Retard MetroFleet"
+              }
             ],
             "documents": [
-              { "code": "FIN-05", "title": "Balance âgée", "marker": "1,95 M€ (47,6 %)" },
-              { "code": "FIN-06", "title": "Factures clients", "marker": "Contrôle : 1 000 000 € HT" }
+              {
+                "code": "FIN-05",
+                "title": "Balance âgée",
+                "marker": "1,95 M€ (47,6 %)"
+              },
+              {
+                "code": "FIN-06",
+                "title": "Factures clients",
+                "marker": "Contrôle : 1 000 000 € HT"
+              }
             ]
           },
           {
@@ -1306,16 +2638,43 @@
             "question": "Challenge la note CFO et prépare trois actions de clôture sourcées.",
             "finding": "La note destinée au board qualifie la tension de trésorerie de « principalement saisonnière ». Le délai de règlement structurel, 78 contre 49 jours budgétés, contredit ce diagnostic : ce n'est pas un effet de calendrier, c'est une dérive qui dure. Le litige NordTransit, qui pèse 0,75 M€, n'est même pas mentionné dans la note — c'est ce genre d'angle mort qu'une lecture croisée révèle avant le comité, pas pendant.",
             "highlight": "Le DSO structurel contredit le diagnostic « saisonnier » de la note.",
-            "sources": ["FIN-08 · p.2", "FIN-08 · p.3", "FIN-04 · p.4", "FIN-07 · p.1"],
+            "sources": [
+              "FIN-08 · p.2",
+              "FIN-08 · p.3",
+              "FIN-04 · p.4",
+              "FIN-07 · p.1"
+            ],
             "metrics": [
-              { "value": "78 j", "label": "DSO réel", "delta": "vs 49 j budgétés" },
-              { "value": "1,52 M€", "label": "Sur-immobilisation" },
-              { "value": "9 %", "label": "Couvert par les remises en transit" }
+              {
+                "value": "78 j",
+                "label": "DSO réel",
+                "delta": "vs 49 j budgétés"
+              },
+              {
+                "value": "1,52 M€",
+                "label": "Sur-immobilisation"
+              },
+              {
+                "value": "9 %",
+                "label": "Couvert par les remises en transit"
+              }
             ],
             "documents": [
-              { "code": "FIN-08", "title": "Note CFO au board", "marker": "« principalement saisonnière »" },
-              { "code": "FIN-04", "title": "Budget vs réel", "marker": "78 j vs 49 j" },
-              { "code": "FIN-07", "title": "Rapprochement bancaire", "marker": "180 k€ en transit" }
+              {
+                "code": "FIN-08",
+                "title": "Note CFO au board",
+                "marker": "« principalement saisonnière »"
+              },
+              {
+                "code": "FIN-04",
+                "title": "Budget vs réel",
+                "marker": "78 j vs 49 j"
+              },
+              {
+                "code": "FIN-07",
+                "title": "Rapprochement bancaire",
+                "marker": "180 k€ en transit"
+              }
             ]
           }
         ]
@@ -1378,12 +2737,28 @@
         "cta": "Parler à un ingénieur avant le comité technique",
         "architecture": {
           "sourcesTitle": "Vos sources",
-          "sourcesItems": ["ERP", "GED / SharePoint", "Data room", "Partage de fichiers"],
+          "sourcesItems": [
+            "ERP",
+            "GED / SharePoint",
+            "Data room",
+            "Partage de fichiers"
+          ],
           "instanceTitle": "Votre instance Prosperify",
           "instanceBadge": "single-tenant",
-          "instanceItems": ["Connecteurs", "Stores Finance", "Indexation + recherche hybride", "Agent Prosperify", "Réponse + citations"],
+          "instanceItems": [
+            "Connecteurs",
+            "Stores Finance",
+            "Indexation + recherche hybride",
+            "Agent Prosperify",
+            "Réponse + citations"
+          ],
           "environmentTitle": "Votre environnement",
-          "environmentItems": ["Votre périmètre", "Vos règles de sécurité", "Vos outils existants", "Journaux d'audit"]
+          "environmentItems": [
+            "Votre périmètre",
+            "Vos règles de sécurité",
+            "Vos outils existants",
+            "Journaux d'audit"
+          ]
         },
         "items": [
           {
@@ -1406,11 +2781,21 @@
       }
     }
   },
+  "use_cases_page": {
+    "badge": "CAS D'USAGE",
+    "title_prefix": "Des exemples concrets",
+    "title_highlight": "pour vos équipes",
+    "subtitle": "Trois pages dédiées pour explorer Prosperify par métier.",
+    "search_placeholder": "Rechercher un cas d’usage",
+    "search_empty": "Aucun cas ne correspond à votre recherche.",
+    "view_details": "Explorer",
+    "back_to_use_cases": "Tous les cas d’usage"
+  },
   "products": {
     "badge": "L'OFFRE",
     "title_prefix": "L'agent de recherche",
     "title_highlight": "adapté à votre domaine",
-    "intro": "Un seul agent, trois métiers : juridique, finance, santé. Chacun avec son vocabulaire, ses documents et ses règles d'accès.",
+    "intro": "Un agent documentaire pour le juridique, la finance et la santé.",
     "cta": "Demander une démo",
     "view_all": "Voir tous les cas d'usage",
     "explore": "Détails",
@@ -1562,7 +2947,7 @@
     "badge": "FONCTIONNALITÉS",
     "title": "Une intelligence documentaire",
     "titleHighlight": "sourcée, gouvernée et vérifiable",
-    "subtitle": "",
+    "subtitle": "Retrouvez, comparez et vérifiez l’information dans vos documents.",
     "items": {
       "precision": {
         "shortTitle": "Réponses sourcées",
@@ -1602,7 +2987,10 @@
     },
     "illustrations": {
       "citedAnswer": {
-        "terms": ["EBITDA normalisé", "Helios"],
+        "terms": [
+          "EBITDA normalisé",
+          "Helios"
+        ],
         "answerLead": "La synthèse exécutive retient un EBITDA normalisé de ",
         "valueReported": "14,2 M€",
         "answerMid1": " au multiple de 8,0x.",
@@ -1617,7 +3005,9 @@
         "excerpt2": " après retraitement des éléments non récurrents …"
       },
       "hybridSearch": {
-        "terms": ["résiliation anticipée"],
+        "terms": [
+          "résiliation anticipée"
+        ],
         "resultsLabel": "3 passages pertinents",
         "result2File": "Avenant_2024.pdf",
         "result2Page": "p. 4",
@@ -1770,7 +3160,7 @@
     "titlePrefix": "Aucune refonte :",
     "titleHighlight": "Prosperify",
     "titleSuffix": "se pose sur votre SI",
-    "subtitle": "SDKs Python et TypeScript, API REST documentée, authentification OAuth 2.0 et SSO.",
+    "subtitle": "SDK Python et TypeScript, API REST, OAuth 2.0 et SSO.",
     "steps": [
       {
         "title": "Cadrage",
@@ -1851,43 +3241,45 @@
     }
   },
   "security": {
-    "titlePrefix": "Sécurité et",
-    "titleHighlight": "chiffrement de bout en bout",
-    "subtitle": "Les documents et les échanges restent protégés à chaque étape, du stockage jusqu'à la réponse.",
+    "titlePrefix": "Vos données protégées,",
+    "titleHighlight": "votre souveraineté préservée",
+    "subtitle": "Un environnement dédié, des accès maîtrisés et vos données sous contrôle.",
     "items": {
-      "atRest": {
-        "title": "Chiffrement au repos",
-        "description": "Documents et index chiffrés (AES-256) sur l'ensemble du périmètre de stockage."
+      "dedicated": {
+        "title": "Un hébergement souverain",
+        "description": "Vos documents et vos traitements restent en France, dans un environnement dédié chez Scaleway."
       },
-      "inTransit": {
-        "title": "Chiffrement en transit",
-        "description": "Toutes les communications passent en TLS, de bout en bout."
+      "access": {
+        "title": "Des accès sous votre contrôle",
+        "description": "Vous décidez qui peut consulter quoi. Vos règles de connexion et vos autorisations s'appliquent."
       },
-      "keys": {
-        "title": "Gestion des clés",
-        "description": "Clés de chiffrement isolées par client, avec rotation régulière."
+      "models": {
+        "title": "Une IA qui respecte vos données",
+        "description": "Vos documents restent dans votre périmètre dédié, sans envoi à une IA publique ni réutilisation pour l'entraînement."
       },
       "audit": {
-        "title": "Audit et traçabilité",
-        "description": "Chaque accès et chaque réponse générée sont journalisés."
+        "title": "La traçabilité sans exposer vos contenus",
+        "description": "Les accès et les actions sont journalisés. Le contenu de vos questions, réponses et documents reste hors des journaux."
       },
-      "hosting": {
-        "title": "Hébergement en France",
-        "description": "Infrastructure hébergée en France, conforme au RGPD."
+      "backups": {
+        "title": "Des données protégées et maîtrisées",
+        "description": "Documents, échanges et sauvegardes chiffrés. Vous pouvez demander la suppression de vos données selon les délais convenus."
       }
     },
     "diagram": {
-      "alt": "Schéma de l'infrastructure : votre question entre dans un périmètre de confiance par un accès contrôlé, la recherche et l'IA la traitent dans un environnement isolé en interrogeant vos données chiffrées à clés dédiées, chaque lien étant chiffré et authentifié, puis une réponse sourcée ressort.",
-      "perimeter": "PÉRIMÈTRE DE CONFIANCE",
-      "question": "Votre question",
-      "gateway": "Accès contrôlé",
-      "compute": "Recherche + IA",
-      "computeSub": "environnement isolé",
-      "data": "Vos données",
-      "dataSub": "chiffrées · clés dédiées",
-      "gatewaySub": "identité · rôles",
+      "alt": "Boucle de consultation dans un environnement dédié en France : vos équipes accèdent aux documents autorisés, l'IA dédiée prépare une réponse sourcée qui revient aux équipes pour vérification. Documents et traitements restent dans le même périmètre, avec des échanges chiffrés.",
+      "perimeter": "PÉRIMÈTRE PROTÉGÉ · FRANCE",
+      "question": "Vos équipes",
+      "questionSub": "question · vérification",
+      "gateway": "Accès autorisés",
+      "compute": "Votre IA dédiée",
+      "computeSub": "recherche · réponse",
+      "data": "Vos documents",
+      "dataSub": "stockés en France",
+      "gatewaySub": "selon vos règles",
       "answer": "Réponse sourcée",
-      "caption": "Chaque lien est chiffré et authentifié. Rien ne quitte le périmètre."
+      "answerSub": "à vérifier par vos équipes",
+      "caption": "Une boucle protégée, dans votre environnement dédié en France. Vos équipes vérifient les sources ; vous gardez le contrôle des accès et des données."
     }
   },
   "faq": {
@@ -1895,7 +3287,7 @@
     "titleLine1": "Questions",
     "titleHighlight": "fréquentes",
     "titleLine2": "",
-    "subtitle": "Les réponses essentielles sur les sources, la sécurité, le déploiement et la gouvernance documentaire avec Prosperify.",
+    "subtitle": "Sources, sécurité, déploiement : l’essentiel sur Prosperify.",
     "items": [
       {
         "question": "Mes données servent-elles à entraîner des modèles ?",

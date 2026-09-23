@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { useTranslation } from "react-i18next";
 
 import { CloudShader } from "@/components/ui/cloud-shader";
@@ -10,8 +10,6 @@ import {
   getCurrentLandingTheme,
   LANDING_THEME_CHANGE_EVENT,
 } from "@/features/landing/lib/theme";
-
-import type { LandingTheme } from "@/features/landing/lib/theme";
 
 type FooterGroup = {
   links: { href: string; labelKey: string }[];
@@ -40,7 +38,6 @@ const footerGroups: FooterGroup[] = [
     titleKey: "footer.company",
     links: [
       { labelKey: "footer.links.team", href: "/team" },
-      { labelKey: "footer.links.jobs", href: "/jobs" },
       { labelKey: "footer.links.contact", href: "#contact" },
     ],
   },
@@ -57,37 +54,33 @@ const footerGroups: FooterGroup[] = [
 const MAPPING_AURA_URL =
   "https://francedigitale.org/publications/mapping-startups-aura-2026";
 
-const SKY: Record<LandingTheme, { bottom: string; cloud: string; top: string }> = {
-  dark: { bottom: "#0a0a0a", cloud: "#3a2313", top: "#0a0a0a" },
-  light: { bottom: "#f7f7f7", cloud: "#ffdcc2", top: "#f7f7f7" },
+const FOOTER_SKY = {
+  dark: { background: "#080808", cloud: "#3a2313" },
+  light: { background: "#FFFFFF", cloud: "#ffdcc2" },
 };
+
+function subscribeToTheme(onChange: () => void) {
+  window.addEventListener(LANDING_THEME_CHANGE_EVENT, onChange);
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, { attributeFilter: ["class"], attributes: true });
+  return () => {
+    window.removeEventListener(LANDING_THEME_CHANGE_EVENT, onChange);
+    observer.disconnect();
+  };
+}
+
+const getServerTheme = () => "light" as const;
 
 export function LandingFooter() {
   const { t } = useTranslation();
-  const [theme, setTheme] = useState<LandingTheme>("light");
-
-  useEffect(() => {
-    const sync = () => setTheme(getCurrentLandingTheme());
-    sync();
-    window.addEventListener(LANDING_THEME_CHANGE_EVENT, sync);
-    return () => window.removeEventListener(LANDING_THEME_CHANGE_EVENT, sync);
-  }, []);
-
-  const sky = SKY[theme];
+  const theme = useSyncExternalStore(subscribeToTheme, getCurrentLandingTheme, getServerTheme);
+  const sky = FOOTER_SKY[theme];
 
   return (
     <footer
       className="relative z-10 overflow-hidden border-t border-[var(--pf-border)]"
-      style={{ background: "var(--pf-bg-card)" }}
+      style={{ background: "var(--pf-bg)" }}
     >
-      <CloudShader
-        className="absolute inset-0 h-full min-h-0"
-        cloudColor={sky.cloud}
-        count={4}
-        skyBottomColor={sky.bottom}
-        skyTopColor={sky.top}
-        speed={0.6}
-      />
       <div className="relative z-10 mx-auto max-w-[1360px] border-x border-[var(--pf-border)] px-5 py-10 sm:px-8 lg:px-12">
         <div className="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-[1.1fr_repeat(4,1fr)]">
           <div className="col-span-2 lg:col-span-1">
@@ -136,7 +129,7 @@ export function LandingFooter() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-5">
             <a
-              className="max-w-[280px] truncate text-[12px] text-[var(--pf-fg-dim)] transition-colors hover:text-[var(--pf-fg-muted)]"
+              className="max-w-[560px] text-[14px] leading-snug text-[var(--pf-fg-dim)] transition-colors hover:text-[var(--pf-fg-muted)]"
               href={MAPPING_AURA_URL}
               rel="noopener noreferrer"
               target="_blank"
@@ -148,7 +141,7 @@ export function LandingFooter() {
               alt="La French Tech Saint-Étienne Lyon"
               width={965}
               height={1206}
-              className="h-[30px] w-auto object-contain opacity-80"
+              className="h-[48px] w-auto object-contain"
             />
             <a
               href="https://www.linkedin.com/company/prosperify-ai/"
@@ -162,21 +155,23 @@ export function LandingFooter() {
           </div>
         </div>
 
-        {/*
-          Mot-symbole decoratif, jamais lu. Le degrade le fait descendre vers le
-          fond ; le `padding-bottom` laisse passer la jambe du « y », que le
-          `line-height` serre couperait sinon.
-        */}
+        {/* Mot-symbole dans son dégradé d'origine, avec le point orange. */}
         <div
           aria-hidden="true"
-          className="mt-[clamp(32px,5vh,56px)] overflow-hidden pb-[clamp(8px,2vh,24px)]"
+          className="relative isolate mt-[clamp(32px,5vh,56px)] overflow-hidden rounded-[clamp(24px,4vw,48px)] bg-[var(--pf-bg)] px-4 pt-[clamp(32px,5vw,72px)] pb-[clamp(20px,3vw,40px)] sm:px-8"
         >
+          <CloudShader
+            className="absolute inset-0 h-full min-h-0"
+            cloudColor={sky.cloud}
+            count={4}
+            skyBottomColor={sky.background}
+            skyTopColor={sky.background}
+            speed={0.6}
+          />
           <div
-            className="bg-clip-text font-extrabold leading-[0.82] tracking-[-0.04em] whitespace-nowrap text-transparent select-none"
+            className="relative z-10 bg-[linear-gradient(180deg,#e4e4e4_0%,#f9d5c0_100%)] bg-clip-text text-center font-extrabold leading-[0.82] tracking-[-0.04em] whitespace-nowrap text-transparent select-none dark:bg-[linear-gradient(180deg,#282828_0%,#45210c_100%)]"
             style={{
-              backgroundImage:
-                "linear-gradient(180deg, var(--pf-border) 0%, rgba(255, 106, 19, 0.24) 100%)",
-              fontSize: "clamp(4rem, 15vw, 15rem)",
+              fontSize: "clamp(2rem, 13vw, 12rem)",
               paddingBottom: "0.2em",
             }}
           >

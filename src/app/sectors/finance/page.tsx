@@ -1,4 +1,4 @@
-import { SectorPage } from "@/features/landing/components/sectors";
+import { SectorTemplatePage } from "@/features/landing/components/sectors";
 import { getServerTranslation } from "@/lib/translations";
 
 import type { Metadata } from "next";
@@ -12,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function FinanceSectorRoute() {
-  return <SectorPage sector="finance" lang="fr" />;
+  return <SectorTemplatePage sector="finance" lang="fr" />;
 }

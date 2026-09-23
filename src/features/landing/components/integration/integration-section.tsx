@@ -48,35 +48,48 @@ const CODE_TS: CodeLine[] = [
     { k: "type", t: "ProsperifyClient" },
     { t: "({" },
   ],
-  [{ t: "  baseUrl: env.PROSPERIFY_API_URL," }],
-  [{ t: "  clientId: env.PROSPERIFY_CLIENT_ID," }],
-  [{ t: "  clientSecret: env.CLIENT_SECRET," }],
+  [{ t: "  baseUrl: process.env.PROSPERIFY_API_URL!," }],
+  [{ t: "  clientId: process.env.PROSPERIFY_CLIENT_ID!," }],
+  [{ t: "  clientSecret: process.env.PROSPERIFY_CLIENT_SECRET!," }],
   [{ t: "});" }],
   [],
-  [{ k: "cm", t: "// OAuth 2.0 client-credentials" }],
+  [{ k: "cm", t: "// Authenticate using the OAuth 2.0 client-credentials grant." }],
   [{ k: "kw", t: "await " }, { t: "client.authenticate();" }],
   [],
-  [{ k: "cm", key: "createStore", t: "// " }],
+  [{ k: "cm", t: "// Create a knowledge store and upload documents to it." }],
   [
     { k: "kw", t: "const " },
     { t: "{ store } = " },
     { k: "kw", t: "await " },
-    { t: "client.stores.create({" },
+    { t: "client.stores.create({ name: " },
+    { k: "str", t: '"knowledge-base"' },
+    { t: " });" },
   ],
-  [{ t: "  name: " }, { k: "str", t: '"knowledge-base"' }, { t: "," }],
-  [{ t: "});" }],
   [
     { k: "kw", t: "await " },
-    { t: "client.uploads.documents(store.id, files);" },
+    { t: "client.uploads.documents(store.id, [file]);" },
   ],
   [],
-  [{ k: "cm", key: "query", t: "// " }],
+  [{ k: "cm", t: "// Create a chat thread scoped to the store and send a message." }],
   [
     { k: "kw", t: "const " },
-    { t: "thread = " },
+    { t: "{ thread } = " },
     { k: "kw", t: "await " },
     { t: "client.threads.create({ storeIds: [store.id] });" },
   ],
+  [
+    { k: "kw", t: "const " },
+    { t: "response = " },
+    { k: "kw", t: "await " },
+    { t: "client.chat.send({" },
+  ],
+  [{ t: "  thread: thread.id," }],
+  [
+    { t: "  text: " },
+    { k: "str", t: '"How do we handle incident escalation?"' },
+    { t: "," },
+  ],
+  [{ t: "});" }],
 ];
 
 const CODE_PY: CodeLine[] = [
@@ -481,16 +494,16 @@ function StackMockup({
 
   return (
     <div>
-      <div className="grid grid-cols-1 items-start gap-5 lg:grid-cols-[260px_1fr_260px] lg:gap-6">
+      <div className="grid grid-cols-1 items-start gap-[var(--pf-block-gap)] sm:grid-cols-3 sm:items-stretch lg:grid-cols-[minmax(0,1fr)_minmax(0,2.6667fr)_minmax(0,1fr)] lg:items-start">
         {/* Colonne gauche : ce que l'agent lit */}
-        <div className="flex flex-col gap-5 lg:order-1">
+        <div className="contents lg:flex lg:min-w-0 lg:flex-col lg:gap-[var(--pf-block-gap)]">
           {sources && <IntegrationGroupCard group={sources} />}
           {platforms && <IntegrationGroupCard group={platforms} />}
         </div>
 
         {/* Interface de code, au centre */}
         <div
-          className="lg:order-2"
+          className="order-first min-w-0 sm:col-span-3 lg:order-none lg:col-span-1"
           style={{ boxShadow: "var(--pf-demo-shadow)" }}
         >
           <Safari className="shadow-none" opaque url="docs.prosperify.app">
@@ -499,10 +512,10 @@ function StackMockup({
         </div>
 
         {/* Colonne droite : comment l'agent authentifie ses accès */}
-        <div className="flex flex-col gap-5 lg:order-3">
+        <div className="contents lg:flex lg:min-w-0 lg:flex-col lg:gap-[var(--pf-block-gap)]">
           {identity && <IntegrationGroupCard group={identity} />}
           <p
-            className="m-0 px-5 py-4 text-[12.5px] leading-[1.6] text-[var(--pf-fg-muted)]"
+            className="m-0 px-5 py-4 text-[12.5px] leading-[1.6] text-[var(--pf-fg-muted)] sm:col-span-3"
             style={{ border: "1px solid var(--pf-border)", background: "var(--pf-bg-card-2)" }}
           >
             {copy.authText}
@@ -510,7 +523,7 @@ function StackMockup({
         </div>
       </div>
 
-      <div className="mt-8 flex justify-center">
+      <div className="mt-[var(--pf-cta-gap)] flex justify-center">
         <a
           href={docsUrl}
           target="_blank"
@@ -564,11 +577,12 @@ export function IntegrationSection() {
         </span>{" "}
         {t("integration.titleSuffix")}
       </h2>
-      <p className="mx-auto mt-[18px] max-w-[640px] text-center text-[1.05rem] leading-[1.65] text-[var(--pf-fg-muted)]">
+
+      <p className="mx-auto mt-3 max-w-[640px] text-center text-base leading-7 text-[var(--pf-fg-muted)]">
         {t("integration.subtitle")}
       </p>
 
-      <div className="mt-11">
+      <div className="mt-[var(--pf-block-gap)]">
         <StackMockup copy={copy} docsUrl={docsUrl} />
       </div>
     </div>

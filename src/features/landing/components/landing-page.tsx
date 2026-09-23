@@ -1,7 +1,6 @@
 "use client";
 
-import { ArrowDown, ArrowUp } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ContactForm } from "@/features/contact/components";
@@ -16,22 +15,9 @@ import { SecuritySection } from "@/features/landing/components/security";
 import { WorkflowSection } from "@/features/landing/components/workflow";
 import i18n from "@/lib/i18n";
 
-import type React from "react";
-
 type LandingPageProps = {
   lang?: string;
 };
-
-const SECTION_IDS = [
-  "hero",
-  "workflow",
-  "features",
-  "products",
-  "sovereignty",
-  "security",
-  "faq",
-  "contact",
-];
 
 // ─── Layout helpers ───────────────────────────────────────────────────────────
 
@@ -59,7 +45,7 @@ function HeroSectionWrapper() {
       className="px-5 sm:px-8 lg:px-12"
       style={{
         paddingTop: "clamp(116px, 15vh, 160px)",
-        paddingBottom: "clamp(56px, 7vh, 88px)",
+        paddingBottom: "var(--pf-section-space)",
         background: "var(--pf-column-bg)",
       }}
     >
@@ -75,13 +61,10 @@ function HeroSectionWrapper() {
             <br />
             {t("hero.titleLine2")}
           </h1>
-          <p
-            className="mt-6 max-w-[620px] leading-[1.65] text-[var(--pf-fg-muted)]"
-            style={{ fontSize: "clamp(1rem, 1.5vw, 1.2rem)" }}
-          >
+          <p className="mt-5 max-w-[620px] leading-[1.65] text-[var(--pf-fg-muted)]" style={{ fontSize: "clamp(1rem, 1.35vw, 1.12rem)" }}>
             {t("hero.subtitle")}
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-[var(--pf-cta-gap)] flex flex-wrap gap-3">
             <a
               href="#contact"
               className="inline-flex items-center gap-2 bg-[#FF6A13] px-6 py-3.5 text-sm font-semibold text-[var(--pf-on-accent)] transition-colors hover:bg-[#ff8232]"
@@ -126,8 +109,8 @@ function ContactSectionWrapper() {
       id="contact"
       className="px-5 sm:px-8 lg:px-12"
       style={{
-        paddingTop: "clamp(36px, 5vh, 56px)",
-        paddingBottom: "clamp(36px, 5vh, 56px)",
+        paddingTop: "var(--pf-section-space)",
+        paddingBottom: "var(--pf-section-space)",
         background: "var(--pf-column-bg)",
       }}
     >
@@ -149,7 +132,7 @@ function ContactSectionWrapper() {
           >
             {t("contact.title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-[440px] text-[0.95rem] leading-[1.65] text-[var(--pf-fg-muted)]">
+          <p className="mx-auto mt-3 max-w-[440px] text-[0.95rem] leading-[1.6] text-[var(--pf-fg-muted)]">
             {t("contact.lead")}
           </p>
         </div>
@@ -163,84 +146,6 @@ function ContactSectionWrapper() {
         </div>
       </div>
     </section>
-  );
-}
-
-// ─── Section navigator ────────────────────────────────────────────────────────
-
-function SectionNavigator() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const sectionIds = useMemo(() => SECTION_IDS, []);
-
-  useEffect(() => {
-    const sections = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter((element): element is HTMLElement => Boolean(element));
-
-    if (sections.length === 0) {
-      return undefined;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (!visible) {
-          return;
-        }
-
-        if (visible.target.id) {
-          const nextIndex = sectionIds.indexOf(visible.target.id);
-          if (nextIndex >= 0) {
-            setActiveIndex(nextIndex);
-          }
-        }
-      },
-      { rootMargin: "-34% 0px -48% 0px", threshold: [0.08, 0.18, 0.32] },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
-  }, [sectionIds]);
-
-  const scrollToIndex = (index: number) => {
-    const nextIndex = Math.min(Math.max(index, 0), sectionIds.length - 1);
-    document
-      .getElementById(sectionIds[nextIndex])
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  return (
-    <div
-      className="fixed bottom-6 right-5 z-40 hidden flex-col border border-[var(--pf-border)] p-1 backdrop-blur-md sm:flex"
-      style={{ background: "var(--pf-widget-bg)" }}
-    >
-      <button
-        type="button"
-        aria-label="Previous section"
-        className="flex h-10 w-10 items-center justify-center text-[var(--pf-fg-dim)] transition-colors hover:bg-[#FF6A13]/10 hover:text-[#FF6A13] disabled:pointer-events-none disabled:opacity-30"
-        disabled={activeIndex === 0}
-        onClick={() => scrollToIndex(activeIndex - 1)}
-      >
-        <ArrowUp className="h-4 w-4" />
-      </button>
-      <div
-        className="mx-auto my-1 h-px w-6"
-        style={{ background: "var(--pf-border)" }}
-      />
-      <button
-        type="button"
-        aria-label="Next section"
-        className="flex h-10 w-10 items-center justify-center text-[var(--pf-fg-dim)] transition-colors hover:bg-[#FF6A13]/10 hover:text-[#FF6A13] disabled:pointer-events-none disabled:opacity-30"
-        disabled={activeIndex === sectionIds.length - 1}
-        onClick={() => scrollToIndex(activeIndex + 1)}
-      >
-        <ArrowDown className="h-4 w-4" />
-      </button>
-    </div>
   );
 }
 
@@ -261,7 +166,6 @@ export default function LandingPage({ lang }: LandingPageProps) {
       style={{ background: "var(--pf-bg)" }}
     >
       <LandingNavbar />
-      <SectionNavigator />
 
       <main className="relative z-10 [overflow-anchor:none]">
         {/* Colonne bordée — toutes les sections */}
@@ -272,8 +176,8 @@ export default function LandingPage({ lang }: LandingPageProps) {
             id="workflow"
             className="px-5 sm:px-8 lg:px-12"
             style={{
-              paddingTop: "clamp(72px, 10vh, 112px)",
-              paddingBottom: "clamp(72px, 10vh, 112px)",
+              paddingTop: "var(--pf-section-space)",
+              paddingBottom: "var(--pf-section-space)",
               background: "var(--pf-column-bg)",
             }}
           >
@@ -285,8 +189,8 @@ export default function LandingPage({ lang }: LandingPageProps) {
             id="features"
             className="px-5 sm:px-8 lg:px-12"
             style={{
-              paddingTop: "clamp(36px, 5vh, 56px)",
-              paddingBottom: "clamp(36px, 5vh, 56px)",
+              paddingTop: "var(--pf-section-space)",
+              paddingBottom: "var(--pf-section-space)",
               background: "var(--pf-column-bg)",
             }}
           >
@@ -298,8 +202,8 @@ export default function LandingPage({ lang }: LandingPageProps) {
             id="products"
             className="px-5 sm:px-8 lg:px-12"
             style={{
-              paddingTop: "clamp(72px, 10vh, 112px)",
-              paddingBottom: "clamp(72px, 10vh, 112px)",
+              paddingTop: "var(--pf-section-space)",
+              paddingBottom: "var(--pf-section-space)",
               background: "var(--pf-column-bg)",
             }}
           >
@@ -311,8 +215,8 @@ export default function LandingPage({ lang }: LandingPageProps) {
             id="sovereignty"
             className="px-5 sm:px-8 lg:px-12"
             style={{
-              paddingTop: "clamp(36px, 5vh, 56px)",
-              paddingBottom: "clamp(36px, 5vh, 56px)",
+              paddingTop: "var(--pf-section-space)",
+              paddingBottom: "var(--pf-section-space)",
               background: "var(--pf-column-bg)",
             }}
           >
@@ -324,8 +228,8 @@ export default function LandingPage({ lang }: LandingPageProps) {
             id="security"
             className="px-5 sm:px-8 lg:px-12"
             style={{
-              paddingTop: "clamp(36px, 5vh, 56px)",
-              paddingBottom: "clamp(36px, 5vh, 56px)",
+              paddingTop: "var(--pf-section-space)",
+              paddingBottom: "var(--pf-section-space)",
               background: "var(--pf-column-bg)",
             }}
           >
@@ -337,8 +241,8 @@ export default function LandingPage({ lang }: LandingPageProps) {
             id="faq"
             className="px-5 sm:px-8 lg:px-12"
             style={{
-              paddingTop: "clamp(32px, 4vh, 48px)",
-              paddingBottom: "clamp(32px, 4vh, 48px)",
+              paddingTop: "var(--pf-section-space)",
+              paddingBottom: "var(--pf-section-space)",
               background: "var(--pf-column-bg)",
             }}
           >

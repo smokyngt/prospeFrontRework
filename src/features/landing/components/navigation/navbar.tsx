@@ -38,6 +38,7 @@ export type NavbarLink = {
   /** Présent = l'entrée ouvre un menu déroulant au lieu de naviguer seule. */
   items?: NavbarMenuItem[];
   labelKey: string;
+  separatesSections?: boolean;
 };
 
 const useCasesMenuItems: NavbarMenuItem[] = [
@@ -62,8 +63,8 @@ const useCasesMenuItems: NavbarMenuItem[] = [
 ];
 
 /**
- * Entrée « Cas d'usage » : le menu deroulant liste les pages secteur.
- * Son `href` pointe sur le premier secteur — il sert de repli au clic mobile
+ * Entrée « Cas d'usage » : le menu deroulant liste la page générale puis les pages secteur.
+ * Son `href` pointe sur la page générale — il sert de repli au clic mobile
  * et a l'etat actif. Surtout, il ne doit pas doublonner avec l'ancre de
  * l'entree « Fonctionnalites » : la navbar s'en sert comme cle React.
  *
@@ -74,20 +75,43 @@ const useCasesMenuItems: NavbarMenuItem[] = [
 export function casesMenuLink(): NavbarLink {
   return {
     labelKey: "nav.useCases",
-    href: useCasesMenuItems[0].href,
+    href: "/sectors/legal",
     items: useCasesMenuItems,
   };
 }
 
-const defaultNavLinks: NavbarLink[] = [
-  { labelKey: "nav.features", href: "#features" },
+/** Liens d'une page secteur : sections dans la navbar, puis pages à découvrir. */
+export function sectorPageNavLinks(sector: "legal" | "healthcare" | "finance"): NavbarLink[] {
+  return [
+    { labelKey: "sectors.common.labels.overview", href: "#hero" },
+    { labelKey: "sectors.common.labels.documentation", href: "#problem" },
+    { labelKey: "sectors.common.labels.useCases", href: "#use-cases" },
+    { labelKey: "sectors.common.labels.verification", href: sector === "legal" ? "#demo" : "#proof" },
+    { labelKey: "sectors.common.labels.confidentiality", href: sector === "legal" ? "#confidentiality" : "#governance" },
+    { labelKey: "sectors.common.labels.deployment", href: "#pilot" },
+    { labelKey: "sectors.common.labels.faq", href: "#faq" },
+    { ...casesMenuLink(), labelKey: "nav.sectorPages", separatesSections: true },
+    { labelKey: "nav.blog", href: "/blog" },
+    { labelKey: "nav.team", href: "/team" },
+  ];
+}
+
+const pageNavLinks: NavbarLink[] = [
   casesMenuLink(),
+  { labelKey: "nav.blog", href: "/blog" },
+  { labelKey: "nav.team", href: "/team" },
+];
+
+const landingNavLinks: NavbarLink[] = [
+  { labelKey: "sectionLabels.workflow", href: "#workflow" },
+  { labelKey: "nav.features", href: "#features" },
   { labelKey: "nav.products", href: "#products" },
   { labelKey: "nav.sovereignty", href: "#sovereignty" },
   { labelKey: "nav.security", href: "#security" },
+  { labelKey: "sectionLabels.faq", href: "#faq" },
+  { ...casesMenuLink(), separatesSections: true },
   { labelKey: "nav.blog", href: "/blog" },
   { labelKey: "nav.team", href: "/team" },
-  { labelKey: "nav.jobs", href: "/jobs" },
 ];
 
 function ProsperifyLogo() {
@@ -141,9 +165,11 @@ function MoonIcon() {
 /** Entrée de nav qui ouvre un panneau : survol au pointeur, clic/clavier sinon. */
 function NavDropdown({
   active,
+  compact = false,
   link,
 }: {
   active: boolean;
+  compact?: boolean;
   link: NavbarLink;
 }) {
   const { t } = useTranslation();
@@ -183,7 +209,10 @@ function NavDropdown({
         aria-haspopup="true"
         onClick={() => setOpen((previous) => !previous)}
         className={cn(
-          "relative flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors",
+          cn(
+            "relative flex shrink-0 items-center gap-1.5 whitespace-nowrap py-2 font-medium transition-colors",
+            compact ? "gap-1 px-2 text-[12px] font-semibold" : "px-3 text-[13px]",
+          ),
           active || open
             ? "text-[var(--pf-fg)]"
             : "text-[var(--pf-fg-muted)] hover:text-[var(--pf-fg)]",
@@ -253,17 +282,16 @@ function NavDropdown({
 }
 
 type LandingNavbarProps = {
-  /** Pastille affichée à côté du logo (ex. nom du secteur). */
-  badge?: string;
   /** Liens de navigation ; les ancres restent locales à la page courante. */
   links?: NavbarLink[];
 };
 
-export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
+export function LandingNavbar({ links }: LandingNavbarProps = {}) {
   const { t } = useTranslation();
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navLinks = links ?? defaultNavLinks;
+  const navLinks = links ?? (pathname === "/" ? landingNavLinks : pageNavLinks);
+  const compactNavigation = navLinks.length > 9;
   /** Ancres locales : page d'accueil, ou page fournissant ses propres liens. */
   const localAnchors = Boolean(links) || pathname === "/";
   const [activeHash, setActiveHash] = useState(
@@ -280,7 +308,7 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
     setCurrentLang(target);
   };
 
-  const contactHref = localAnchors ? "#contact" : "/#contact";
+  const contactHref = pathname === "/" ? "#contact" : "/#contact";
 
   useEffect(() => {
     setIsDark(document.documentElement.classList.contains("dark"));
@@ -360,44 +388,64 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
           aria-label="Prosperify"
         >
           <ProsperifyLogo />
-          {badge && (
-            <span className="hidden items-center gap-[7px] border-l border-[var(--pf-border)] pl-3 sm:flex">
-              <span className="h-1.5 w-1.5 bg-[#FF6A13]" />
-              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-[var(--pf-fg-muted)]">
-                {badge}
-              </span>
-            </span>
-          )}
         </a>
 
         {/* Desktop nav links */}
-        <div className="hidden items-center gap-0.5 lg:flex">
+        <div className={cn("hidden items-center gap-0.5 xl:flex", compactNavigation && "gap-0")}>
           {navLinks.map((link) => {
-            const active = localAnchors && link.href === activeHash;
+            const active = link.items
+              ? pathname === link.href || link.items.some((item) => pathname === item.href)
+              : localAnchors && link.href === activeHash;
 
             if (link.items) {
               return (
-                <NavDropdown key={link.labelKey} active={active} link={link} />
+                <Fragment key={link.labelKey}>
+                  {link.separatesSections && (
+                    <span className={cn("mx-2 flex shrink-0 items-center gap-2", compactNavigation && "mx-1.5")}>
+                      <span className="h-5 w-px bg-[var(--pf-border)]" aria-hidden="true" />
+                      <span className="whitespace-nowrap font-mono text-[9px] uppercase tracking-[0.08em] text-[var(--pf-fg-muted)]">
+                        {t("nav.otherPages", {
+                          defaultValue: i18n.language.startsWith("fr") ? "Pages à découvrir" : "Pages to explore",
+                        })}
+                      </span>
+                    </span>
+                  )}
+                  <NavDropdown active={active} compact={compactNavigation} link={link} />
+                </Fragment>
               );
             }
 
             return (
-              <a
-                key={link.labelKey}
-                href={resolveHref(link.href)}
-                className={cn(
-                  "relative px-3 py-2 text-[13px] font-medium transition-colors",
-                  active
-                    ? "text-[var(--pf-fg)]"
-                    : "text-[var(--pf-fg-muted)] hover:text-[var(--pf-fg)]",
+              <Fragment key={link.labelKey}>
+                {link.separatesSections && (
+                  <span className={cn("mx-2 flex shrink-0 items-center gap-2", compactNavigation && "mx-1.5")}>
+                    <span className="h-5 w-px bg-[var(--pf-border)]" aria-hidden="true" />
+                      <span className="whitespace-nowrap font-mono text-[9px] uppercase tracking-[0.08em] text-[var(--pf-fg-muted)]">
+                      {t("nav.otherPages", {
+                        defaultValue: i18n.language.startsWith("fr") ? "Pages à découvrir" : "Pages to explore",
+                      })}
+                    </span>
+                  </span>
                 )}
-                onClick={handleAnchorClick(link.href)}
-              >
-                {t(link.labelKey)}
-                {active && (
-                  <span className="absolute inset-x-3 -bottom-[13px] h-0.5 bg-[#FF6A13]" />
-                )}
-              </a>
+                <a
+                  href={resolveHref(link.href)}
+                  className={cn(
+                    cn(
+                      "relative shrink-0 whitespace-nowrap py-2 font-medium transition-colors",
+                      compactNavigation ? "px-1.5 text-[12px] font-semibold" : "px-2.5 text-[12px]",
+                    ),
+                    active
+                      ? "text-[var(--pf-fg)]"
+                      : "text-[var(--pf-fg-muted)] hover:text-[var(--pf-fg)]",
+                  )}
+                  onClick={handleAnchorClick(link.href)}
+                >
+                  {t(link.labelKey)}
+                  {active && (
+                    <span className="absolute inset-x-2.5 -bottom-[13px] h-0.5 bg-[#FF6A13]" />
+                  )}
+                </a>
+              </Fragment>
             );
           })}
         </div>
@@ -422,12 +470,12 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
             href={contactHref}
             className="hidden items-center gap-2 bg-[#FF6A13] px-[18px] py-[9px] text-[13px] font-semibold text-white transition-colors hover:bg-[#ff8232] sm:inline-flex"
           >
-            {t("footer.links.contact")} →
+            {t("footer.links.contact")}
           </a>
 
           <button
             type="button"
-            className="text-[var(--pf-fg-muted)] lg:hidden"
+            className="text-[var(--pf-fg-muted)] xl:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -441,7 +489,7 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
       </div>
 
       {/* Mobile menu */}
-      <Collapse className="lg:hidden" open={mobileOpen}>
+      <Collapse className="xl:hidden" open={mobileOpen}>
         <div
           className="border-t border-[var(--pf-border)] px-5 py-6"
           style={{ background: "var(--pf-bg)" }}
@@ -449,6 +497,13 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
           <div className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <Fragment key={link.labelKey}>
+                {link.separatesSections && (
+                  <div className="my-2 border-t border-[var(--pf-border)] pt-2 font-mono text-[9px] uppercase tracking-[0.14em] text-[var(--pf-fg-dim)]">
+                    {t("nav.otherPages", {
+                      defaultValue: i18n.language.startsWith("fr") ? "Pages à découvrir" : "Pages to explore",
+                    })}
+                  </div>
+                )}
                 <a
                   href={resolveHref(link.href)}
                   className={cn(
@@ -507,7 +562,7 @@ export function LandingNavbar({ badge, links }: LandingNavbarProps = {}) {
               className="mt-2 inline-flex items-center justify-center bg-[#FF6A13] px-5 py-2.5 text-sm font-semibold text-[var(--pf-on-accent)] transition-colors hover:bg-[#ff8232] sm:hidden"
               onClick={() => setMobileOpen(false)}
             >
-              {t("footer.links.contact")} →
+              {t("footer.links.contact")}
             </a>
           </div>
         </div>

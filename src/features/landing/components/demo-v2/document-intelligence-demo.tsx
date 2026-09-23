@@ -1084,7 +1084,7 @@ export function IntelligenceDemo({
           </TooltipProvider>
         </Safari>
         {!fullscreen && overlay ? (
-          <div className="absolute inset-0 z-50 flex items-center justify-center overflow-y-auto bg-background/70 p-4 opacity-100 backdrop-blur-[2px] transition-all duration-300 sm:bg-background/10 sm:opacity-0 sm:backdrop-blur-0 sm:hover:bg-background/70 sm:hover:opacity-100 sm:hover:backdrop-blur-[2px] sm:focus-within:bg-background/70 sm:focus-within:opacity-100 sm:focus-within:backdrop-blur-[2px]">
+          <div className="absolute inset-0 z-50 flex items-center justify-center overflow-y-auto bg-white/45 p-4 opacity-100 backdrop-blur-[2px] transition-all duration-300 sm:bg-white/5 sm:opacity-0 sm:backdrop-blur-0 sm:hover:bg-white/55 sm:hover:opacity-100 sm:hover:backdrop-blur-[2px] sm:focus-within:bg-white/55 sm:focus-within:opacity-100 sm:focus-within:backdrop-blur-[2px]">
             {overlay}
           </div>
         ) : null}

@@ -7,7 +7,7 @@ export type Lang = "en" | "fr";
 /** Drapeaux en SVG : les emojis 🇫🇷/🇬🇧 s'affichent en lettres « FR »/« GB » sous Windows. */
 function FrenchFlag() {
   return (
-    <svg viewBox="0 0 3 2" className="block h-[14px] w-[21px]" aria-hidden="true">
+    <svg viewBox="0 0 3 2" className="block h-[12px] w-[18px]" aria-hidden="true">
       <rect width="1" height="2" fill="#0055A4" />
       <rect x="1" width="1" height="2" fill="#FFFFFF" />
       <rect x="2" width="1" height="2" fill="#EF4135" />
@@ -17,7 +17,7 @@ function FrenchFlag() {
 
 function BritishFlag() {
   return (
-    <svg viewBox="0 0 60 30" className="block h-[14px] w-[21px]" aria-hidden="true" preserveAspectRatio="none">
+    <svg viewBox="0 0 60 30" className="block h-[12px] w-[18px]" aria-hidden="true" preserveAspectRatio="none">
       <rect width="60" height="30" fill="#012169" />
       <path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFFFFF" strokeWidth="6" />
       <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="2" />
@@ -49,7 +49,6 @@ export function LanguageSwitch({
       role="radiogroup"
       aria-label="Language"
       className={cn("relative flex border border-[var(--pf-border)]", className)}
-      style={{ background: "var(--pf-bg-dim)" }}
     >
       <span
         aria-hidden="true"
@@ -67,7 +66,7 @@ export function LanguageSwitch({
           onClick={() => onChange(option)}
           className={cn(
             "relative z-10 flex items-center justify-center transition-opacity",
-            size === "lg" ? "h-[38px] w-[46px]" : "h-8 w-[38px]",
+            size === "lg" ? "h-[30px] w-[42px]" : "h-6 w-[34px]",
             value === option ? "opacity-100" : "opacity-55 hover:opacity-90",
           )}
         >

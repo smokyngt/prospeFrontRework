@@ -6,8 +6,6 @@ import type { MetadataRoute } from 'next';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_URL;
 
-  const useCaseSlugs = ['legal', 'accounting', 'medical'];
-
   const posts = await blog.posts().catch(() => []);
 
   const routes = [
@@ -17,18 +15,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly' as const,
       priority: 1,
     },
-    {
-      url: `${baseUrl}/use-cases`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    ...useCaseSlugs.map((slug) => ({
-      url: `${baseUrl}/use-cases/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    })),
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
@@ -40,12 +26,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/jobs`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
     },
     {
       url: `${baseUrl}/privacy`,

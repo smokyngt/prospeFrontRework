@@ -603,15 +603,7 @@ function SovereigntyIllustration() {
  */
 function FeatureIllustration({ children }: { children: React.ReactNode }) {
   return (
-    <div
-      className="flex min-w-0 flex-1 items-center justify-center p-5 sm:p-6"
-      style={{
-        background: "var(--pf-bg)",
-        border: "1px solid var(--pf-border)",
-      }}
-    >
-      {children}
-    </div>
+    <div className="flex min-w-0 flex-1 items-center justify-center p-5 sm:p-6">{children}</div>
   );
 }
 
@@ -621,7 +613,7 @@ function FeaturePanel({ id, illustration }: { id: FeatureId; illustration: React
 
   return (
     <div
-      className="grid h-full grid-cols-1 overflow-auto lg:grid-cols-[0.85fr_1.3fr] lg:items-stretch"
+      className="grid h-full grid-cols-1 overflow-hidden lg:grid-cols-[0.85fr_1.3fr] lg:items-stretch"
       style={{ border: "1px solid var(--pf-border)", background: "var(--pf-bg-card)" }}
     >
       <div className="flex flex-col justify-center gap-3 p-6 sm:p-8">
@@ -703,12 +695,16 @@ export default function ProsperifyFeatures() {
         {t("features.title")}{" "}
         <span className="text-[#FF6A13]">{t("features.titleHighlight")}</span>
       </h2>
+      <p className="mx-auto mt-3 max-w-[640px] text-center text-base leading-7 text-[var(--pf-fg-muted)]">
+        {t("features.subtitle")}
+      </p>
 
-      <div className="relative mt-11 mb-6 flex h-[769px] w-full flex-col items-start justify-start [perspective:1000px] sm:h-[673px] lg:h-[493px]">
+      <div className="relative mt-[var(--pf-block-gap)] flex h-[769px] w-full flex-col items-start justify-start [perspective:1000px] sm:h-[713px] lg:h-[493px]">
         <Tabs
           activeTabClassName="rounded-none bg-[#FF6A13] dark:bg-[#FF6A13]"
-          containerClassName="gap-3 mb-9 sm:justify-center"
-          contentClassName="mt-6"
+          arrowClassName="border border-[var(--pf-border)] bg-white text-black shadow-[0_8px_20px_-8px_rgba(0,0,0,0.25)] transition-colors hover:border-[#FF6A13] hover:bg-[#FF6A13] hover:text-white"
+          containerClassName="pf-feature-tabs gap-3 mb-[var(--pf-block-gap)] sm:justify-center"
+          contentClassName="mt-[var(--pf-block-gap)]"
           tabClassName="rounded-none border text-[13px] font-semibold border-[var(--pf-border)] bg-white hover:bg-gray-100"
           tabs={tabs}
         />

@@ -1,6 +1,6 @@
 "use client";
 
-import { ClipboardCheck, KeyRound, Landmark, Lock, type LucideIcon, ShieldCheck } from "lucide-react";
+import { ClipboardCheck, Cpu, HardDrive, type LucideIcon, Server, ShieldCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
@@ -15,19 +15,19 @@ type SecurityItem = {
 
 const PILLARS: SecurityItem[] = [
   {
-    icon: Lock,
-    titleKey: "security.items.atRest.title",
-    descKey: "security.items.atRest.description",
+    icon: Server,
+    titleKey: "security.items.dedicated.title",
+    descKey: "security.items.dedicated.description",
   },
   {
     icon: ShieldCheck,
-    titleKey: "security.items.inTransit.title",
-    descKey: "security.items.inTransit.description",
+    titleKey: "security.items.access.title",
+    descKey: "security.items.access.description",
   },
   {
-    icon: KeyRound,
-    titleKey: "security.items.keys.title",
-    descKey: "security.items.keys.description",
+    icon: Cpu,
+    titleKey: "security.items.models.title",
+    descKey: "security.items.models.description",
   },
 ];
 
@@ -38,14 +38,14 @@ const FOOTER_ITEMS: SecurityItem[] = [
     descKey: "security.items.audit.description",
   },
   {
-    icon: Landmark,
-    titleKey: "security.items.hosting.title",
-    descKey: "security.items.hosting.description",
+    icon: HardDrive,
+    titleKey: "security.items.backups.title",
+    descKey: "security.items.backups.description",
   },
 ];
 
 /** Carte icône + texte, utilisée pour les 3 piliers et les 2 cartes de bas de section. */
-function SecurityCard({ index, item }: { index: number; item: SecurityItem }) {
+function SecurityCard({ centered, index, item }: { centered?: boolean; index: number; item: SecurityItem }) {
   const { t } = useTranslation();
   const Icon = item.icon;
 
@@ -53,6 +53,7 @@ function SecurityCard({ index, item }: { index: number; item: SecurityItem }) {
     <div
       className={cn(
         "flex min-h-[118px] items-center gap-4 p-5",
+        centered && "flex-col justify-start gap-3.5 px-6 py-7 text-center",
         index !== 0 && "border-t border-dashed sm:border-l sm:border-t-0",
       )}
       style={{ background: "var(--pf-bg)", borderColor: "var(--pf-border)" }}
@@ -89,28 +90,29 @@ export function SecuritySection() {
         {t("security.titlePrefix")}{" "}
         <span className="text-[#FF6A13]">{t("security.titleHighlight")}</span>
       </h2>
-      <p className="mx-auto mt-[18px] max-w-[640px] text-center text-[1.05rem] leading-[1.65] text-[var(--pf-fg-muted)]">
+
+      <p className="mx-auto mt-3 max-w-[640px] text-center text-base leading-7 text-[var(--pf-fg-muted)]">
         {t("security.subtitle")}
       </p>
 
-      {/* Piliers : chiffrement au repos, en transit, gestion des clés */}
+      {/* Infrastructure dédiée, accès et modèles dans le même périmètre. */}
       <div
-        className="mt-9 grid grid-cols-1 sm:grid-cols-3"
+        className="mt-[var(--pf-content-gap)] grid grid-cols-1 sm:grid-cols-3"
         style={{ border: "1px solid var(--pf-border)" }}
       >
         {PILLARS.map((item, index) => (
-          <SecurityCard index={index} item={item} key={item.titleKey} />
+          <SecurityCard centered index={index} item={item} key={item.titleKey} />
         ))}
       </div>
 
-      {/* Infrastructure : périmètre de confiance et liens chiffrés */}
-      <div className="mt-7 lg:mt-8">
+      {/* Boucle de consultation dans l'environnement dédié. */}
+      <div className="mt-[var(--pf-block-gap)]">
         <SecurityDiagram />
       </div>
 
-      {/* Audit et hébergement */}
+      {/* Exploitation : traçabilité et sauvegardes. */}
       <div
-        className="mt-7 grid grid-cols-1 sm:grid-cols-2 lg:mt-8"
+        className="mt-[var(--pf-block-gap)] grid grid-cols-1 sm:grid-cols-2"
         style={{ border: "1px solid var(--pf-border)" }}
       >
         {FOOTER_ITEMS.map((item, index) => (

@@ -4,6 +4,7 @@ import { Cloud, KeyRound, Plus, Puzzle } from 'lucide-react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 
 import { stringListAt } from '@/features/landing/lib/i18n';
 
@@ -18,6 +19,40 @@ const GROUPS: { icon: LucideIcon; key: 'sources' | 'platforms' | 'identity' }[] 
 ];
 
 const VISIBLE_COUNT = 3;
+const CODE_LOGOS = ['SharePoint', 'Slack', 'Google Drive', 'Entra ID', 'Notion'];
+
+const CODE_SNIPPETS = {
+  typescript: `import { ProsperifyClient } from "@prosperify/sdk";
+
+const client = new ProsperifyClient({
+  baseUrl: env.PROSPERIFY_API_URL,
+  clientId: process.env.PROSPERIFY_CLIENT_ID!,
+  clientSecret: process.env.PROSPERIFY_CLIENT_SECRET!,
+});
+
+// Interroge avec réponses sourcées
+const { thread } = await client.threads.create({ storeIds: [storeId] });
+const answer = await client.chat.send({
+  thread: thread.id,
+  text: question,
+  effort: 15,
+});
+// answer.response + answer.citations`,
+  python: `from prosperify import ProsperifyClient
+
+client = ProsperifyClient(
+    base_url=os.environ["PROSPERIFY_API_URL"],
+    client_id=os.environ["PROSPERIFY_CLIENT_ID"],
+    client_secret=os.environ["PROSPERIFY_CLIENT_SECRET"],
+)
+
+# Interroge avec réponses sourcées
+thread = await client.threads.create(store_ids=[store_id])
+answer = await client.chat.send(
+    thread=thread.id, text=question, effort=15
+)
+# answer.response + answer.citations`,
+} as const;
 
 const INTEGRATION_LOGOS: Record<string, string> = {
   SharePoint: '/assets/integrations/sharepoint.svg',
@@ -76,6 +111,7 @@ function IntegrationLogo({ name }: { name: string }) {
 
 export default function IntegrationsSection() {
   const { t } = useTranslation();
+  const [language, setLanguage] = useState<keyof typeof CODE_SNIPPETS>('typescript');
 
   return (
     <div className="max-w-5xl mx-auto 2xl:max-w-[1300px]">
@@ -90,6 +126,43 @@ export default function IntegrationsSection() {
       </div>
 
       <div className="mt-4 border border-neutral-200 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04),0_12px_32px_-16px_rgba(0,0,0,0.08)] dark:border-neutral-800 dark:bg-neutral-950">
+        <div className="overflow-hidden border-b border-neutral-200 dark:border-neutral-800">
+          <div className="flex h-7 items-center gap-1.5 border-b border-neutral-200 bg-neutral-100 px-4 dark:border-neutral-800 dark:bg-neutral-900">
+            <span className="h-2.5 w-2.5 rounded-full bg-red-500" />
+            <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
+            <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
+          </div>
+          <div className="flex items-center justify-between border-b border-neutral-200 bg-white px-4 py-2 dark:border-neutral-800 dark:bg-neutral-950">
+            <span className="flex-1 border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400">
+              🔒 docs.prosperify.app
+            </span>
+            <div className="ml-3 flex shrink-0 border border-neutral-200 p-0.5 dark:border-neutral-700">
+              {(Object.keys(CODE_SNIPPETS) as Array<keyof typeof CODE_SNIPPETS>).map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => setLanguage(item)}
+                  className={`px-2 py-1 text-[10px] font-semibold transition-colors ${
+                    language === item
+                      ? 'bg-orange-500 text-white'
+                      : 'text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50'
+                  }`}
+                >
+                  {item === 'typescript' ? 'TypeScript' : 'Python'}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="flex h-12 items-center justify-center gap-3 border-b border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900">
+            {CODE_LOGOS.map((name) => (
+              <IntegrationLogo key={name} name={name} />
+            ))}
+          </div>
+          <pre className="max-h-[360px] overflow-auto bg-neutral-50 px-4 py-5 text-[11px] leading-5 text-neutral-700 dark:bg-neutral-950 dark:text-neutral-300 sm:px-6 sm:text-xs">
+            <code>{CODE_SNIPPETS[language]}</code>
+          </pre>
+        </div>
+
         <div className="grid md:grid-cols-3">
           {GROUPS.map(({ icon: Icon, key }, index) => {
             const items = stringListAt(t, `integrations.groups.${key}.items`);

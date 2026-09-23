@@ -68,6 +68,12 @@ function CountrySelect({
   );
 }
 
+const COUNTRIES: Country[] = [
+  'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE',
+  'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE',
+  'US',
+];
+
 const CONTAINER_CLASS =
   'flex w-full items-stretch border border-neutral-200 bg-white transition-colors focus-within:border-orange-400 focus-within:ring-1 focus-within:ring-orange-300 dark:border-neutral-800 dark:bg-neutral-950 ' +
   '[&_.PhoneInputInput]:min-w-0 [&_.PhoneInputInput]:flex-1 [&_.PhoneInputInput]:border-0 [&_.PhoneInputInput]:bg-transparent [&_.PhoneInputInput]:px-3 [&_.PhoneInputInput]:py-2.5 [&_.PhoneInputInput]:text-sm [&_.PhoneInputInput]:text-neutral-900 [&_.PhoneInputInput]:outline-none [&_.PhoneInputInput]:placeholder:text-neutral-400 dark:[&_.PhoneInputInput]:text-neutral-50';
@@ -82,6 +88,7 @@ export function PhoneInput({
   return (
     <RPNInput
       className={CONTAINER_CLASS}
+      countries={COUNTRIES}
       countrySelectComponent={CountrySelect}
       defaultCountry="FR"
       international

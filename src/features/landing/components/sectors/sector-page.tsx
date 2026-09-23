@@ -4,10 +4,7 @@ import {
   ArrowRight,
   BarChart3,
   Check,
-  Database,
-  LockKeyhole,
   Search,
-  ShieldCheck,
   UserRound,
 } from "lucide-react";
 import Image from "next/image";
@@ -68,7 +65,6 @@ type InsightItem = {
 };
 type CriterionItem = { description: string; title: string };
 type HumanLoopCard = { items: string[]; title: string };
-type HeroProofItem = { text: string; title: string };
 type IntegrationArchitecture = {
   environmentItems: string[];
   environmentTitle: string;
@@ -83,10 +79,10 @@ type IntegrationArchitecture = {
 /*  Layout helpers — repris de la landing                    */
 /* ──────────────────────────────────────────────────────── */
 
-function SectionLabel({ number, label }: { label: string; number: string }) {
+export function SectionLabel({ number, label }: { label: string; number: string }) {
   return (
     <div className="mb-6 flex items-center gap-3">
-      <span className="font-mono text-xs tracking-[0.2em] text-[#FF6A13]">
+      <span className="font-sans text-[13px] font-semibold tracking-normal text-[#FF6A13]">
         {number}
       </span>
       <span
@@ -100,7 +96,7 @@ function SectionLabel({ number, label }: { label: string; number: string }) {
   );
 }
 
-function Divider() {
+export function Divider() {
   return <div className="h-px" style={{ background: "var(--pf-border)" }} />;
 }
 
@@ -117,14 +113,22 @@ function SectionCta({ children, href }: { children: React.ReactNode; href: strin
   );
 }
 
-function Section({ children, id }: { children: React.ReactNode; id?: string }) {
+function Section({
+  children,
+  embedded = false,
+  id,
+}: {
+  children: React.ReactNode;
+  embedded?: boolean;
+  id?: string;
+}) {
   return (
     <RevealSection
       className="px-5 sm:px-8 lg:px-12"
       id={id}
       style={{
-        paddingTop: "clamp(72px, 10vh, 112px)",
-        paddingBottom: "clamp(72px, 10vh, 112px)",
+        paddingTop: embedded ? "clamp(32px, 4vh, 48px)" : "clamp(72px, 10vh, 112px)",
+        paddingBottom: embedded ? "clamp(32px, 4vh, 48px)" : "clamp(72px, 10vh, 112px)",
       }}
     >
       {children}
@@ -223,42 +227,9 @@ function SourcedAnswer({
 /*  Hero                                                     */
 /* ──────────────────────────────────────────────────────── */
 
-const HERO_PROOF_ICONS = [ShieldCheck, Database, LockKeyhole];
-
-function HeroProofStrip() {
+export function SectorHero({ sector, showDemo = true }: { sector: SectorId; showDemo?: boolean }) {
   const { t } = useTranslation();
-  const items = t("sectors.common.heroProof", {
-    returnObjects: true,
-  }) as HeroProofItem[];
-
-  return (
-    <div className="mt-[38px] flex flex-wrap gap-x-8 gap-y-4">
-      {items.map((item, index) => {
-        const Icon = HERO_PROOF_ICONS[index] ?? ShieldCheck;
-        return (
-          <div key={item.title} className="flex items-center gap-3">
-            <span
-              className="flex h-9 w-9 shrink-0 items-center justify-center text-[#FF6A13]"
-              style={{ background: "var(--pf-accent-bg)", border: `1px solid ${ACCENT}` }}
-            >
-              <Icon size={16} />
-            </span>
-            <div className="min-w-0">
-              <div className="text-[12.5px] font-semibold text-[var(--pf-fg)]">
-                {item.title}
-              </div>
-              <div className="text-[11.5px] text-[var(--pf-fg-muted)]">{item.text}</div>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-function SectorHero({ sector }: { sector: SectorId }) {
-  const { t } = useTranslation();
-  const demoSector = SECTOR_DEMO[sector];
+  const demoSector = showDemo ? SECTOR_DEMO[sector] : undefined;
 
   return (
     <section
@@ -269,18 +240,8 @@ function SectorHero({ sector }: { sector: SectorId }) {
         paddingBottom: "clamp(56px, 7vh, 88px)",
       }}
     >
-      <div className="flex flex-wrap items-center gap-6 lg:gap-12">
-        <div className="min-w-0 max-w-[580px] flex-1 basis-80">
-          <div className="mb-[26px] flex items-center gap-3">
-            <span
-              className="h-[7px] w-[7px] bg-[#FF6A13]"
-              style={{ animation: "pf-pulse 2.4s ease-in-out infinite" }}
-            />
-            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#FF6A13]">
-              {t(`sectors.${sector}.badge`)}
-            </span>
-          </div>
-
+      <div className={cn("flex flex-wrap items-center gap-6 lg:gap-12", !showDemo && "justify-center")}>
+        <div className={cn("min-w-0 max-w-[580px] flex-1 basis-80", !showDemo && "mx-auto max-w-[820px] text-center")}>
           <h1
             className="m-0 font-extrabold leading-[1.03] tracking-[-0.03em] text-[var(--pf-fg)]"
             style={{ fontSize: "clamp(2.3rem, 5.4vw, 4.1rem)" }}
@@ -293,16 +254,16 @@ function SectorHero({ sector }: { sector: SectorId }) {
           </h1>
 
           <p
-            className="mt-[26px] max-w-[600px] leading-[1.65] text-[var(--pf-fg-muted)]"
+            className={cn("mt-[26px] max-w-[600px] leading-[1.65] text-[var(--pf-fg-muted)]", !showDemo && "mx-auto")}
             style={{ fontSize: "clamp(1rem, 1.5vw, 1.18rem)" }}
           >
             {t(`sectors.${sector}.subtitle`)}
           </p>
 
-          <div className="mt-[34px] flex flex-wrap gap-3">
+          <div className={cn("mt-[34px] flex flex-wrap gap-3", !showDemo && "justify-center")}>
             <a
               className="inline-flex items-center gap-2 px-[26px] py-3.5 text-[14px] font-semibold text-[var(--pf-on-accent)] transition-colors hover:bg-[#ff8232]"
-              href="#contact"
+              href={sector === "legal" ? "#demo" : "#contact"}
               style={{ background: ACCENT }}
             >
               {t("sectors.common.ctaDemo")} →
@@ -319,7 +280,6 @@ function SectorHero({ sector }: { sector: SectorId }) {
             </a>
           </div>
 
-          <HeroProofStrip />
         </div>
 
         {/* Démo interactive si le secteur a son corpus, sinon un aperçu statique */}
@@ -334,7 +294,7 @@ function SectorHero({ sector }: { sector: SectorId }) {
           >
             <SectorHeroDemo sector={demoSector} />
           </div>
-        ) : (
+        ) : showDemo ? (
           <div
             className="flex min-w-0 flex-1 basis-96 flex-col"
             style={{
@@ -410,7 +370,7 @@ function SectorHero({ sector }: { sector: SectorId }) {
               </div>
             </div>
           </div>
-        )}
+        ) : null}
       </div>
     </section>
   );
@@ -1217,7 +1177,7 @@ function ArchitectureFit({ number }: SectionProps) {
 /*  05 · Déploiement                                         */
 /* ──────────────────────────────────────────────────────── */
 
-function Deployment({ number }: SectionProps) {
+export function Deployment({ number }: SectionProps) {
   const { t } = useTranslation();
   const offers = t("sectors.common.deployment.offers", {
     returnObjects: true,
@@ -1318,7 +1278,7 @@ function Deployment({ number }: SectionProps) {
 /*  06 · FAQ                                                 */
 /* ──────────────────────────────────────────────────────── */
 
-function SectorFaq({ number, sector }: SectionProps) {
+export function SectorFaq({ embedded = false, number, sector }: SectionProps & { embedded?: boolean }) {
   const { t } = useTranslation();
   const items = t(`sectors.${sector}.faq`, {
     returnObjects: true,
@@ -1342,15 +1302,17 @@ function SectorFaq({ number, sector }: SectionProps) {
   };
 
   return (
-    <Section id="faq">
+    <Section embedded={embedded} id="faq">
       <Script
         id={`sector-faq-jsonld-${sector}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <SectionLabel number={number} label={t("sectors.common.labels.faq")} />
-      <SectionTitle>{t("sectors.common.faqTitle")}</SectionTitle>
+      {!embedded && <SectionLabel number={number} label={t("sectors.common.labels.faq")} />}
+      <div className={cn(embedded && "flex flex-col items-center text-center")}>
+        <SectionTitle>{t("sectors.common.faqTitle")}</SectionTitle>
+      </div>
 
       <div className="mt-11 border" style={{ borderColor: "var(--pf-border)" }}>
         {items.map((item, index) => {
@@ -1409,7 +1371,7 @@ function SectorFaq({ number, sector }: SectionProps) {
 /*  07 · Contact                                             */
 /* ──────────────────────────────────────────────────────── */
 
-function SectorContact({ number }: SectionProps) {
+export function SectorContact({ embedded = false, number }: SectionProps & { embedded?: boolean }) {
   const { t } = useTranslation();
   const checks = t("sectors.common.contact.checks", {
     returnObjects: true,
@@ -1420,8 +1382,8 @@ function SectorContact({ number }: SectionProps) {
       className="px-5 sm:px-8 lg:px-12"
       id="contact"
       style={{
-        paddingTop: "clamp(72px, 10vh, 112px)",
-        paddingBottom: "clamp(72px, 10vh, 112px)",
+        paddingTop: embedded ? "clamp(32px, 4vh, 48px)" : "clamp(72px, 10vh, 112px)",
+        paddingBottom: embedded ? "clamp(32px, 4vh, 48px)" : "clamp(72px, 10vh, 112px)",
       }}
     >
       <div
@@ -1437,17 +1399,19 @@ function SectorContact({ number }: SectionProps) {
             padding: "clamp(20px, 2.4vw, 32px)",
           }}
         >
-          <SectionLabel
-            number={number}
-            label={t("sectors.common.labels.contact")}
-          />
+          {!embedded && (
+            <SectionLabel number={number} label={t("sectors.common.labels.contact")} />
+          )}
           <h2
-            className="m-0 font-bold leading-[1.08] tracking-[-0.02em] text-[var(--pf-fg)]"
+            className={cn(
+              "m-0 font-bold leading-[1.08] tracking-[-0.02em] text-[var(--pf-fg)]",
+              embedded && "text-center",
+            )}
             style={{ fontSize: "clamp(1.8rem, 3.6vw, 2.9rem)" }}
           >
             {t("sectors.common.contact.title")}
           </h2>
-          <p className="mt-4 text-[0.95rem] leading-[1.6] text-[var(--pf-fg-muted)]">
+          <p className={cn("mt-4 text-[0.95rem] leading-[1.6] text-[var(--pf-fg-muted)]", embedded && "text-center")}>
             {t("sectors.common.contact.subtitle")}
           </p>
 
@@ -1571,8 +1535,6 @@ type SectorPageProps = {
 };
 
 export function SectorPage({ lang, sector }: SectorPageProps) {
-  const { t } = useTranslation();
-
   useEffect(() => {
     if (lang === "fr" || lang === "en") {
       i18n.changeLanguage(lang).catch(() => undefined);
@@ -1585,7 +1547,7 @@ export function SectorPage({ lang, sector }: SectorPageProps) {
       style={{ background: "var(--pf-bg)" }}
     >
       {/* Navbar identique sur toutes les pages : mêmes liens que la home. */}
-      <LandingNavbar badge={t(`sectors.${sector}.label`)} />
+      <LandingNavbar />
 
       <main className="relative z-10 [overflow-anchor:none]">
         <div
